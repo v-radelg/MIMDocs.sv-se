@@ -1,11 +1,26 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [MIMDocs\DeployUse\deploying-mim-password-change-notification-service-on-domain-controller.md](https://github.com/Microsoft/MIMDocs-pr/blob/875ed6b96929822ac166a4a262cc8547a4ea3b2a/MIMDocs/DeployUse/deploying-mim-password-change-notification-service-on-domain-controller.md) | InSyncHandedBackSuccess | [Details](#85e83b85f047ca2c2648b42ec68b832caae645ee8)
 
 ## Item Details
+##### <a name='85e83b85f047ca2c2648b42ec68b832caae645ee8'></a> Source: [MIMDocs\DeployUse\deploying-mim-password-change-notification-service-on-domain-controller.md](https://github.com/Microsoft/MIMDocs-pr/blob/875ed6b96929822ac166a4a262cc8547a4ea3b2a/MIMDocs/DeployUse/deploying-mim-password-change-notification-service-on-domain-controller.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [MIMDocs\DeployUse\deploying-mim-password-change-notification-service-on-domain-controller.md](https://github.com/Microsoft/MIMDocs-pr.sv-se/blob/de09b82de92c931b374a7c862bfb69ee0962b9f7/MIMDocs/DeployUse/deploying-mim-password-change-notification-service-on-domain-controller.md)
+* Handoff File: [deploying-mim-password-change-notification-service-on-domain-controller.afdb373626bbd0d122da747e9f586318deea2e70.sv-se.xlf](https://github.com/Microsoft/EM.handoff/blob/7cf4c163d362be99c6d481331411ad7c97769a2d/ol-handoff/Microsoft/MIMDocs-pr.sv-se/master/deploying-mim-password-change-notification-service-on-domain-controller.afdb373626bbd0d122da747e9f586318deea2e70.sv-se.xlf)
+* Handoff Datetime: 2016-04-27 19:59:13
+* Handoff Reason: Include
+* Archive File: [deploying-mim-password-change-notification-service-on-domain-controller.afdb373626bbd0d122da747e9f586318deea2e70.sv-se.xlf](https://github.com/Microsoft/EM.handoff/blob/df866b9b87ed439bc8c065bdefe71d13368bdbc4/ol-handoff/Microsoft/MIMDocs-pr.sv-se/master/archive/deploying-mim-password-change-notification-service-on-domain-controller.afdb373626bbd0d122da747e9f586318deea2e70.sv-se.xlf)
+* Archive Datetime: 2016-04-28 12:44:46
+* Handback File: [deploying-mim-password-change-notification-service-on-domain-controller.afdb373626bbd0d122da747e9f586318deea2e70.sv-se.xlf](https://github.com/Microsoft/EM.handback/blob/31438ea1175b906583c23afff61ffa17c95755bf/ol-handback/Microsoft/MIMDocs-pr.sv-se/master/deploying-mim-password-change-notification-service-on-domain-controller.afdb373626bbd0d122da747e9f586318deea2e70.sv-se.xlf)
+* Handback Datetime: 2016-05-19 00:43:10
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
