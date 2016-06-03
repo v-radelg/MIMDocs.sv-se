@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [MIMDocs\DeployUse\install-mim-sync-ad-service.md](https://github.com/Microsoft/MIMDocs-pr/blob/8fd779bcc4d41b6e67d0fa31aa0f37c4ea2b410a/MIMDocs/DeployUse/install-mim-sync-ad-service.md) | OutofSyncHandedBackSuccess | [Details](#f4e94980c6a03b08221fd46e19c421cce226086d11)
+ [MIMDocs\index.md](https://github.com/Microsoft/MIMDocs-pr/blob/d333b77ae65be2ce2082a18c7e352a99195c2773/MIMDocs/index.md) | OutofSyncHandedBackSuccess | [Details](#285205578983eca4189da7ac0fdf0a9ee52b3bc681)
 
 ## Item Details
-##### <a name='f4e94980c6a03b08221fd46e19c421cce226086d11'></a> Source: [MIMDocs\DeployUse\install-mim-sync-ad-service.md](https://github.com/Microsoft/MIMDocs-pr/blob/8fd779bcc4d41b6e67d0fa31aa0f37c4ea2b410a/MIMDocs/DeployUse/install-mim-sync-ad-service.md)
+##### <a name='285205578983eca4189da7ac0fdf0a9ee52b3bc681'></a> Source: [MIMDocs\index.md](https://github.com/Microsoft/MIMDocs-pr/blob/d333b77ae65be2ce2082a18c7e352a99195c2773/MIMDocs/index.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [install-mim-sync-ad-service.2a07d4547ca2bf0ca43e7ed04fa3bf20de000a33.sv-se.xlf](https://github.com/Microsoft/EM.handoff/blob/58034dd680c9671590343a45abf22ca3fdb39e33/ol-handoff/Microsoft/MIMDocs-pr.sv-se/master/install-mim-sync-ad-service.2a07d4547ca2bf0ca43e7ed04fa3bf20de000a33.sv-se.xlf)
-* Handoff Datetime: 2016-06-03 18:49:39
+* Handoff File: [index.a54b2324d63a6d513b6900195023b9a8089553b4.sv-se.xlf](https://github.com/Microsoft/EM.handoff/blob/dde8c4334af877f142689bcc011435ba3150abd9/ol-handoff/Microsoft/MIMDocs-pr.sv-se/master/index.a54b2324d63a6d513b6900195023b9a8089553b4.sv-se.xlf)
+* Handoff Datetime: 2016-06-03 21:49:45
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [MIMDocs\DeployUse\install-mim-sync-ad-service.md](https://github.com/Microsoft/MIMDocs-pr.sv-se/blob/45a9c5670cf72613331ec9ce9a530598c668f7b8/MIMDocs/DeployUse/install-mim-sync-ad-service.md)
-* Current Handback File: [install-mim-sync-ad-service.2a07d4547ca2bf0ca43e7ed04fa3bf20de000a33.sv-se.xlf](https://github.com/Microsoft/EM.handback/blob/d37cf24d579d4f8f670488ee51b656cd38147a46/ol-handback/Microsoft/MIMDocs-pr.sv-se/master/install-mim-sync-ad-service.2a07d4547ca2bf0ca43e7ed04fa3bf20de000a33.sv-se.xlf)
+* Current Target File: [MIMDocs\index.md](https://github.com/Microsoft/MIMDocs-pr.sv-se/blob/45a9c5670cf72613331ec9ce9a530598c668f7b8/MIMDocs/index.md)
+* Current Handback File: [index.a54b2324d63a6d513b6900195023b9a8089553b4.sv-se.xlf](https://github.com/Microsoft/EM.handback/blob/d37cf24d579d4f8f670488ee51b656cd38147a46/ol-handback/Microsoft/MIMDocs-pr.sv-se/master/index.a54b2324d63a6d513b6900195023b9a8089553b4.sv-se.xlf)
 * Current Handback Datetime: 2016-05-23 20:47:01
 * [Back to Top](#report-top)
 
