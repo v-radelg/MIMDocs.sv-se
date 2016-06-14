@@ -6,7 +6,7 @@ description: Lär dig hur du uppgraderar FIM 2010 R 2-komponenterna och sedan in
 keywords:
 author: kgremban
 manager: stevenpo
-ms.date: 04/28/2016
+ms.date: 05/13/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -25,16 +25,22 @@ ms.suite: ems
 
 ---
 
-# Uppgradera från Forefront Identity Manager 2010 R2 till Microsoft Identity Manager 2016
-I det här avsnittet beskrivs hur du uppgraderar en befintlig testversion av FIM 2010 R2-systemet till MIM 2016. De installationsprogram som används vid uppgraderingen är de samma som används vid en ny distribution.
+# Uppgradera från Forefront Identity Manager 2010 R2
 
-Det här avsnittet förutsätter att du har en befintlig FIM 2010 R2-lösning som distribuerats i en testmiljö. Dina servrar körs på Windows Server 2012, Windows Server 2012 R2 eller Windows Server 2008 R2, vilka är de vanliga operativsystemen för FIM 2010 R2-servrar, och alla lokala och miljömässiga krav (SQL Server, Exchange Server, SharePoint Services osv.) är konfigurerade för FIM 2010 R2.
+Använd den här artikeln som vägledning om du har en Forefront Identity Manager (FIM) 2010 R2-miljö och vill prova Microsoft Identity Manager (MIM) 2016. Det finns tre faser i uppgraderingen:
 
-1.  MIM-synkroniseringstjänsten (Sync) blir först installerad och körs på en server som är domänkopplad till AD-domänen och ersätter FIM 2010 R2-instansen av Sync.
+1.  Installera MIM-synkroniseringstjänsten (Sync) på en server som är domänansluten till Active Directory-domänen (AD). Det här ersätter FIM 2010 R2-instansen av Sync.
 
-2.  MIM-tjänsten och -portalen, inklusive SSPR-registreringsportalen och SSPR-tjänstportalen vid behov, och exklusive funktionsuppsättningen Privilegierad åtkomsthantering, installeras sedan.
+2.  Installera MIM-tjänsten och -portalen. Du kan nu även välja att installera registreringsportalen och tjänsteportalen för lösenordsåterställning via självbetjäning (SSPR). och exklusive funktionsuppsättningen för privilegierad åtkomst, som sedan installeras.
 
-3.  MIM-tillägg inklusive den integrerade klienten SSPR Windows-inloggning kan sedan distribueras på en separat klientdator.
+3.  Distribuera MIM-tillägg på en separat klientdator. Detta omfattar den integrerade klienten för SSPR Windows-inloggning.
+
+
+Den här guiden förutsätter att du redan har konfigurerat följande:
+- FIM 2010 R2 distribuerat i en testmiljö
+- Servrar som kör Windows Server 2012, Windows Server 2012 R2 eller Windows Server 2008 R2
+- Lokala och miljörelaterade krav (SQL Server, Exchange Server, SharePoint Services osv.) som har konfigurerats för FIM 2010 R2.
+
 
 ## Förberedelse
 
@@ -62,7 +68,7 @@ Det här avsnittet förutsätter att du har en befintlig FIM 2010 R2-lösning so
 
     ![Bild av Konfigurera tjänstkonto för MIM-synkronisering](media/MIM-UpgFIM3.png)
 
-7.  Validera att namnen på säkerhetsgrupperna är korrekta och klicka på **Nästa**.
+7.  Verifiera att namnen på säkerhetsgrupperna är korrekta och klicka på **Nästa**.
 
     ![Bild av Konfigurera säkerhetsgrupper i MIM-synkronisering](media/MIM-UpgFIM4.png)
 
@@ -134,13 +140,13 @@ Det här avsnittet förutsätter att du har en befintlig FIM 2010 R2-lösning so
 
     ![Bild av Konfigurera MIM-tjänsten och portalen](media/MIM-UpgSP10.png)
 
-13. När du installerar MIM-portalen ska du ange MIM-tjänstserverns adress. Klicka på **Nästa**..
+13. När du installerar MIM-portalen ska du ange MIM-tjänstserverns adress. Klicka på **Nästa**.
 
-14. När du installerar MIM-portalen ska du ange webbadressen för den SharePoint-webbplatssamling som för närvarande är värd för FIM-portalen. Klicka på **Nästa**..
+14. När du installerar MIM-portalen ska du ange webbadressen för den SharePoint-webbplatssamling som för närvarande är värd för FIM-portalen. Klicka på **Nästa**.
 
 ## Installera MIM-portalen för lösenordsregistrering
 
-1. Om du installerar MIM-portalen för lösenordsregistrering ska du ange den webbadress som krävs för portalen för lösenordsregistrering. Klicka på **Nästa**..
+1. Om du installerar MIM-portalen för lösenordsregistrering ska du ange den webbadress som krävs för portalen för lösenordsregistrering. Klicka på **Nästa**.
 
 2. Konfigurera funktionerna för klienter och slutanvändare så att de kan använda tjänsten och portalen.
 
@@ -148,7 +154,7 @@ Det här avsnittet förutsätter att du har en befintlig FIM 2010 R2-lösning so
 
     2.  Markera om du vill **Bevilja autentiserade användare åtkomst till MIM-portalwebbplatsen**.
 
-    3.  Klicka på **Nästa**..
+    3.  Klicka på **Nästa**.
 
 3. Ange åtkomstuppgifter och autentiseringsuppgifter för MIM-portalen för registrering av lösenord.
 
@@ -160,7 +166,7 @@ Det här avsnittet förutsätter att du har en befintlig FIM 2010 R2-lösning so
 
     3.  Markera alternativet **Öppna port i brandväggen**.
 
-    4.  Klicka på **Nästa**..
+    4.  Klicka på **Nästa**.
 
 4. På nästa konfigurationsskärm för MIM-portalen för registrering av lösenord:
 
@@ -180,7 +186,7 @@ Det här avsnittet förutsätter att du har en befintlig FIM 2010 R2-lösning so
 
     3.  Markera alternativet **Öppna port i brandväggen**.
 
-    4.  Klicka på **Nästa**..
+    4.  Klicka på **Nästa**.
 
 2. På nästa konfigurationsskärm för återställning av lösenord i MIM:
 
@@ -201,6 +207,6 @@ Det här avsnittet förutsätter att du har en befintlig FIM 2010 R2-lösning so
 Obs: Om FIM-tilläggen för närvarande finns distribuerade på användarens dator för SSPR ska du inte konfigurera de nya MFA-telefongrindarna för återställning av lösenord förrän alla FIM-tillägg har uppgraderats till MIM 2016.  Eftersom FIM 2010- och FIM 2010 R2-tilläggen inte kan identifiera de nya grindarna orsakar de ett fel och användaren kan inte slutföra  återställningen av lösenordet.
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=Jun16_HO1-->
 
 

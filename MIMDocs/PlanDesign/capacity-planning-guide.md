@@ -6,7 +6,7 @@ description: Den här guiden hjälper dig att förstå de variabler du bör tän
 keywords:
 author: kgremban
 manager: stevenpo
-ms.date: 04/28/2016
+ms.date: 05/13/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -27,7 +27,9 @@ ms.suite: ems
 
 # Guide för kapacitetsplanering
 
-När du är redo att distribuera Microsoft Identity Manager (MIM) ska du använda den här guiden tillsammans med testmiljöerna för att utforma distributionen. Den här artikeln går igenom ett antal vanliga faktorer som du bör tänka på. Varje distribution är emellertid unik och det bästa sättet att komma fram till vilka servrar, topologier och vilken hårdvara som bäst passar för dina behov är därför att testa dina scenarier i ett labb.
+Med Microsoft Identity Manager (MIM) kan du skapa, uppdatera och ta bort användarkonton i hela organisationen. Det ger även slutanvändare möjligheten att hantera sina egna konton med självbetjäningsfunktioner. Även i en liten miljö kan alla dessa åtgärder bli en stor arbetsbörda på kort tid.
+
+Innan du börjar med MIM använder du den här guiden, tillsammans med testmiljöerna, för att förstå lämplig omfattning för distributionen. Den här artikeln går igenom ett antal vanliga faktorer som du bör tänka på. Varje distribution är emellertid unik och det bästa sättet att komma fram till vilka servrar, topologier och vilken hårdvara som bäst passar för dina behov är därför att testa dina scenarier i ett labb.
 
 Om du ännu inte har bekantat dig med MIM 2016 och dess komponenter bör du läsa mer om  [Microsoft Identity Manager 2016](/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016) innan du fortsätter.
 
@@ -98,6 +100,6 @@ Konfiguration av MIM-policyn omfattar också beslut om etablering i din miljö. 
 - Du kan hämta [Kapacitetsplaneringsguiden för Forefront Identity Manager (FIM) 2010](http://go.microsoft.com/fwlink/?LinkId=200180) som innehåller mer information om en testversion och resultaten av prestandatest.
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=Jun16_HO1-->
 
 

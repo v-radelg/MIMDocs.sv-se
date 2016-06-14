@@ -1,12 +1,12 @@
 ---
 # required metadata
 
-title: Identity Manager-hybridrapportering i Azure | Microsoft Identity Manager
+title: Rapporter för hybrididentitetshantering | Microsoft Identity Manager
 description: Med hybridrapportering i Azure Active Directory kan du skapa anpassade rapporter som omfattar både lokala händelser och händelser i molnet.
 keywords:
 author: kgremban
 manager: stevenpo
-ms.date: 04/28/2016
+ms.date: 05/13/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -25,8 +25,8 @@ ms.suite: ems
 
 ---
 
-# Identity Manager-hybridrapportering i Azure
-Med Azure Active Directory (AD) kan du skapa en enstaka rapport som visar aktivitet om identitetshantering som har skett antingen lokalt eller i molnet. Den här rapporteringsfunktionen innebär att du kan hantera identitets- och åtkomstdata på en och samma plats, vilket minskar de totala kostnaderna.
+# Rapporter för hybrididentitetshantering i Azure
+Med Azure Active Directory (AD) kan du skapa en enstaka rapport för att övervaka aktivitet om identitetshantering som sker antingen lokalt eller i molnet. Med den här funktionen kan du hantera alla identitets- och åtkomstdata på en plats, vilket sparar tid och minskar totalkostnaderna.
 
 ## Vad är Azure AD-hybridrapportering?
 Hybridrapporteringen hjälper IT-proffs att hantera vanliga problem vad gäller rapportering av identitetshantering.
@@ -52,6 +52,6 @@ Hybridrapporteringen följer de här stegen:
 - Läs mer om [Arbeta med hybridrapportering i Identity Manager](/microsoft-identity-manager/deploy-use/working-with-identity-manager-hybrid-reporting)
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=Jun16_HO1-->
 
 
