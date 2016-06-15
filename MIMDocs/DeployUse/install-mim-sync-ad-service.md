@@ -27,8 +27,7 @@ ms.suite: ems
 
 # Installera MIM 2016: synkronisera Active Directory och MIM-tjänsten
 
->[!div class="step-by-step"]
-[« MIM-tjänst och -portal](install-mim-service-portal.md)
+>[!div class="step-by-step"] [« MIM-tjänst och portal](install-mim-service-portal.md)
 
 > [!NOTE]
 > I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
@@ -43,8 +42,7 @@ MIM-hanteringsagenten (MA) används för anslutning av MIM Sync till MIM-tjänst
 
 När du ska konfigurera en MIM-hanteringsagent måste du ange ett användarkonto. I det här dokumentet används **MIMMA** som namn på det här kontot.
 
-> [!NOTE]
-> Kontot du använder för MIM-hanteringsagenten måste vara samma konto som du angav vid installationen av MIM-tjänsten.
+> [!NOTE] Kontot du använder för MIM-hanteringsagenten måste vara samma konto som du angav vid installationen av MIM-tjänsten.
 
 ###Skapa MIMMA
 
@@ -99,69 +97,69 @@ När du ska konfigurera en MIM-hanteringsagent måste du ange ett användarkonto
 
 9.  På sidan **Konfigurera attributflöde** tillämpar du följande mappningar av attributflödet och klickar sedan på **Nästa**
 
-    | **Flödesriktning** | **Attribut för datakälla** | **Attribut för metaversum** |
+    | **Attribut för datakälla** | **Flödesriktning** | **Attribut för metaversum** |
     |-|-|-|
-    |Importera|Importera|kontonamn|
-    |Importera|Importera|företag|
-    |Importera|Importera|visningsnamn|
-    |Importera|Importera|anställnings-ID|
-    |Importera|Importera|anställningstyp|
-    |Importera|Importera|förnamn|
-    |Importera|Importera|efternamn|
-    |Importera|Importera|Manager|
-    |Importera|Importera|objekt-SID|
-    |Exportera|Exportera|kontonamn|
-    |Exportera|Exportera|företag|
-    |Exportera|Exportera|visningsnamn|
-    |Exportera|Exportera|domän|
-    |Exportera|Exportera|anställnings-ID|
-    |Exportera|Exportera|anställningstyp|
-    |Exportera|Exportera|förnamn|
-    |Exportera|Exportera|efternamn|
-    |Exportera|Exportera|manager|
-    |Exportera|Exportera|objekt-SID|
+    | Kontonamn | Exportera | kontonamn |
+    | DisplayName | Exportera | visningsnamn |
+    | Domain | Exportera | domän |
+    | EmployeeID | Exportera | anställnings-ID |
+    | Anställningstyp | Exportera | anställningstyp |
+    | E-post | Exportera | e-post |
+    | Förnamn | Exportera | förnamn |
+    | Efternamn | Exportera | efternamn |
+    | Objekt-SID | Exportera | objekt-SID |
 
 10.  Välj **Person** som typ av datakällobjekt.
 
-    -   Select **Person** as the Metaverse object type.
+    -   Välj **Person** som typ av metaversumobjekt.
 
-    -   Select **Direct** as the Mapping Type.
+    -   Välj **Direkt** som mappningstyp.
 
-    -   For each row in the previous table, complete the following steps:
+    -   Utför följande steg för varje rad i den föregående tabellen:
 
-        -   Select the **Flow direction** shown for that row in the table.
+        -   Välj den **flödesriktning** som visas för den raden i tabellen.
 
-        -   Select the **Data source attribute** shown for that row in the table.
+        -   Välj det **datakällsattribut** som visas för den raden i tabellen.
 
-        -   Select the **Metaverse attribute** shown for that row in the table.
+        -   Välj det **Metaversum-attribut** som visas för den raden i tabellen.
 
-        -   To apply the flow mapping, click **New**.
+        -   För att använda flödesmappningen, klicka på **Ny**.
 
-    -   Select **Group** as the data source type and as the metaverse object type.
+    -   Välj **Grupp** som typ av datakälla och metaversum-objekttyp.
 
-    -   Select **Direct** as the Mapping Type.
+    -   Välj **Direkt** som mappningstyp.
 
-    -   For each row in the following table, complete these steps:
+    -   Utför följande steg för varje rad i följande tabell:
 
-        -   Select the **Flow direction** shown for that row in the table.
+        -   Välj den **flödesriktning** som visas för den raden i tabellen.
 
-        -   Select the **Data source attribute** shown for that row in the table.
+        -   Välj det **datakällsattribut** som visas för den raden i tabellen.
 
-        -   Select the **Metaverse attribute** shown for that row in the table.
+        -   Välj det **Metaversum-attribut** som visas för den raden i tabellen.
 
-        -   To apply the flow mapping, click **New**.
+        -   För att använda flödesmappningen, klicka på **Ny**.
 
-    | Flow Direction | Data Source Attribute | Metaverse Attribute |
+    | **Attribut för datakälla** | **Flödesriktning** | **Attribut för metaversum** |
     |-|-|-|
-    | Export | AccountName | accountName |
-    | Export | DisplayName | displayName |
-    | Export | Domain | domain |
-    | Export | Scope | scope |
-    | Export | Type | type |
-    | Export | Member | member |
-    | Export | MembershipLocked | membershipLocked |
-    | Export | MembershipAddWorkflow | membershipAddWorkflow |
-    | Export | Manager | manager |
+    | Kontonamn | Exportera | kontonamn |
+    | DisplayName | Exportera | visningsnamn |
+    | Domain | Exportera | domän |
+    | E-post | Exportera | e-post |
+    | Smeknamn för e-post | Exportera | smeknamn för e-post |
+    | Medlem | Exportera | medlem |
+    | Objekt-SID | Exportera | objekt-SID |
+    | Omfång | Exportera | omfång |
+    | Typ | Exportera | typ |
+    | Lägg till arbetsflöde för medlemskap | Exportera | lägg till arbetsflöde för medlemskap |
+    | Medlemskap låst | Exportera | medlemskap låst |
+    | DisplayName | Importera | visningsnamn |
+    | Omfång | Importera | omfång |
+    | Typ | Importera | typ |
+    | Medlem | Importera | medlem |
+    | Kontonamn | Importera | kontonamn |
+    | Visad ägare | Importera | visad ägare |
+    | Smeknamn för e-post | Importera | smeknamn för e-post |
+
 
 11.  På sidan **Konfigurera avetablering** klickar du på **Nästa**
 
@@ -439,10 +437,9 @@ Följ dessa steg för att köra var och en av de tre körningsprofilerna.
     - Välj den körningsprofil du vill köra i listan **Körningsprofiler**.
     - Klicka på **OK** för att starta körningsprofilen.
 
->[!div class="step-by-step"]
-[« MIM-tjänst och -portal](install-mim-service-portal.md)
+>[!div class="step-by-step"] [« MIM-tjänst och portal](install-mim-service-portal.md)
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=Jun16_HO1-->
 
 
