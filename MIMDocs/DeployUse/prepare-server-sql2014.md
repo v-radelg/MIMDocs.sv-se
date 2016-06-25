@@ -1,8 +1,8 @@
 ---
 # required metadata
 
-title: Konfigurera en server för identitetshantering: SQL Server 2014 | Microsoft Identity Manager
-description: Installera SQL Server 2014 inför installationen av MIM 2016.
+title: "Konfigurera en server för identitetshantering: SQL Server 2014 | Microsoft Identity Manager"
+description: "Installera SQL Server 2014 inför installationen av MIM 2016."
 keywords:
 author: kgremban
 manager: stevenpo

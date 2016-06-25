@@ -1,8 +1,8 @@
 ---
 # required metadata
 
-title: Konfigurera en server för identitetshantering: Windows Server 2012 R2 | Microsoft Identity Manager
-description: Hämta stegen och minimikraven för att förbereda Windows Server 2012 RS för att arbeta med MIM 2016.
+title: "Konfigurera en server för identitetshantering: Windows Server 2012 R2 | Microsoft Identity Manager"
+description: "Hämta stegen och minimikraven för att förbereda Windows Server 2012 RS för att arbeta med MIM 2016."
 keywords:
 author: kgremban
 manager: stevenpo

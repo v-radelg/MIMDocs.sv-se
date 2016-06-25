@@ -1,8 +1,8 @@
 ---
 # required metadata
 
-title: Konfigurera en server för identitetshantering: SharePoint | Microsoft Identity Manager
-description: Installera och konfigurera SharePoint Foundation så att den kan vara värd för MIM-portalsidan.
+title: "Konfigurera en server för identitetshantering: SharePoint | Microsoft Identity Manager"
+description: "Installera och konfigurera SharePoint Foundation så att den kan vara värd för MIM-portalsidan."
 keywords:
 author: kgremban
 manager: stevenpo

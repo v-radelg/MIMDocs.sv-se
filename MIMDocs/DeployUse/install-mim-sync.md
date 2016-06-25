@@ -1,8 +1,8 @@
 ---
 # required metadata
 
-title: Installera MIM 2016: MIM-synkroniseringstjänsten | Microsoft Identity Manager
-description: Kom igång med MIM 2016-komponenterna genom att installera och konfigurera Synkroniseringstjänsten.
+title: "Installera MIM 2016: MIM-synkroniseringstjänsten | Microsoft Identity Manager"
+description: "Kom igång med MIM 2016-komponenterna genom att installera och konfigurera Synkroniseringstjänsten."
 keywords:
 author: kgremban
 manager: stevenpo

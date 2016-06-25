@@ -1,8 +1,8 @@
 ---
 # required metadata
 
-title: Konfigurera en server för identitetshantering: Exchange | Microsoft Identity Manager
-description: Om du vill kan du distribuera Exchange Server för att aktivera MIM 2016 att skicka e-post och skapa postlådor.
+title: "Konfigurera en server för identitetshantering: Exchange | Microsoft Identity Manager"
+description: "Om du vill kan du distribuera Exchange Server för att aktivera MIM 2016 att skicka e-post och skapa postlådor."
 keywords:
 author: kgremban
 manager: stevenpo
