@@ -1,29 +1,11 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [MIMDocs\Understand\microsoft-identity-manager-2016.md](https://github.com/Microsoft/MIMDocs-pr/blob/84fd813d33828e04ecec5b6f35364c5aae197547/MIMDocs/Understand/microsoft-identity-manager-2016.md) | OutofSyncHandedBackSuccess | [Details](#d6aaf5372efe39da005d05e8a0f2ea80ad303658300)
 
 ## Item Details
-##### <a name='d6aaf5372efe39da005d05e8a0f2ea80ad303658300'></a> Source: [MIMDocs\Understand\microsoft-identity-manager-2016.md](https://github.com/Microsoft/MIMDocs-pr/blob/84fd813d33828e04ecec5b6f35364c5aae197547/MIMDocs/Understand/microsoft-identity-manager-2016.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [microsoft-identity-manager-2016.c859ce21f65f43a82f84385a63d9b72e566e0aa6.sv-se.xlf](https://github.com/Microsoft/EM.handoff/blob/11a1c8d32b30569ce9c8b637769183e006afcbf6/ol-handoff/Microsoft/MIMDocs-pr.sv-se/master/microsoft-identity-manager-2016.c859ce21f65f43a82f84385a63d9b72e566e0aa6.sv-se.xlf)
-* Handoff Datetime: 2016-06-27 18:26:24
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [MIMDocs\Understand\microsoft-identity-manager-2016.md](https://github.com/Microsoft/MIMDocs-pr.sv-se/blob/45a9c5670cf72613331ec9ce9a530598c668f7b8/MIMDocs/Understand/microsoft-identity-manager-2016.md)
-* Current Handback File: [microsoft-identity-manager-2016.c859ce21f65f43a82f84385a63d9b72e566e0aa6.sv-se.xlf](https://github.com/Microsoft/EM.handback/blob/d37cf24d579d4f8f670488ee51b656cd38147a46/ol-handback/Microsoft/MIMDocs-pr.sv-se/master/microsoft-identity-manager-2016.c859ce21f65f43a82f84385a63d9b72e566e0aa6.sv-se.xlf)
-* Current Handback Datetime: 2016-05-23 20:47:01
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
