@@ -1,26 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [MIMDocs\microsoft-identity-manager-2016-release-notes.md](https://github.com/Microsoft/MIMDocs-pr/blob/62108908497d1dcf69579ba144545346b6a42266/MIMDocs/microsoft-identity-manager-2016-release-notes.md) | InSyncHandedBackSuccess | [Details](#12f245624e644b12825239e378a26752f7a86846197)
 
 ## Item Details
-##### <a name='12f245624e644b12825239e378a26752f7a86846197'></a> Source: [MIMDocs\microsoft-identity-manager-2016-release-notes.md](https://github.com/Microsoft/MIMDocs-pr/blob/62108908497d1dcf69579ba144545346b6a42266/MIMDocs/microsoft-identity-manager-2016-release-notes.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [MIMDocs\microsoft-identity-manager-2016-release-notes.md](https://github.com/Microsoft/MIMDocs-pr.sv-se/blob/19bf69a96c23a0e2643421f02a2d8c1f7a365cae/MIMDocs/microsoft-identity-manager-2016-release-notes.md)
-* Handoff File: [microsoft-identity-manager-2016-release-notes.bb80432114b9927d6f332b2605274e3406715709.sv-se.xlf](https://github.com/Microsoft/EM.handoff/blob/626375f9d895cbfb9b7306f139fc5ec4c396aaca/ol-handoff/Microsoft/MIMDocs-pr.sv-se/master/microsoft-identity-manager-2016-release-notes.bb80432114b9927d6f332b2605274e3406715709.sv-se.xlf)
-* Handoff Datetime: 2016-06-27 09:25:43
-* Handoff Reason: Include
-* Archive File: [microsoft-identity-manager-2016-release-notes.bb80432114b9927d6f332b2605274e3406715709.sv-se.xlf](https://github.com/Microsoft/EM.handoff/blob/9a9bc1d8a88bcb05c44f7a71604adc09cb9b25a8/ol-handoff/Microsoft/MIMDocs-pr.sv-se/master/archive/microsoft-identity-manager-2016-release-notes.bb80432114b9927d6f332b2605274e3406715709.sv-se.xlf)
-* Archive Datetime: 2016-07-01 23:34:03
-* Handback File: [microsoft-identity-manager-2016-release-notes.bb80432114b9927d6f332b2605274e3406715709.sv-se.xlf](https://github.com/Microsoft/EM.handback/blob/5e0f63f73dddc62d6c611d5d9a25ee19cd358f82/ol-handback/Microsoft/MIMDocs-pr.sv-se/master/microsoft-identity-manager-2016-release-notes.bb80432114b9927d6f332b2605274e3406715709.sv-se.xlf)
-* Handback Datetime: 2016-07-02 23:33:34
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
