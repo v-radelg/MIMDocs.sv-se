@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Konfigurera en domän | Microsoft Identity Manager
-description: Skapa en Active Directory-domänkontrollant innan du installerar MIM 2016
-keywords:
+title: "Konfigurera en domän | Microsoft Identity Manager"
+description: "Skapa en Active Directory-domänkontrollant innan du installerar MIM 2016"
+keywords: 
 author: kgremban
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: b2578d50f855486183ae182330bacb688011c273
+ms.openlocfilehash: b84a6c7c7b53a122eefc3846ba93b92b34edb6ce
+
 
 ---
 
@@ -99,6 +93,7 @@ Alla komponenter i MIM-distributionen behöver ha egna identiteter i domänen. D
 [Windows Server 2012 R2 »](prepare-server-ws2012r2.md)
 
 
-<!--HONumber=Jun16_HO1-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Installera MIM 2016&#58; synkronisera Active Directory and MIM-tjänsten | Microsoft Identity Manager
-description: Använd hanteringsagenter och MIM-synkroniseringstjänsten för att synkronisera Active Directory och MIM-databaser.
-keywords:
+title: "Installera MIM 2016&#58; synkronisera Active Directory and MIM-tjänsten | Microsoft Identity Manager"
+description: "Använd hanteringsagenter och MIM-synkroniseringstjänsten för att synkronisera Active Directory och MIM-databaser."
+keywords: 
 author: kgremban
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,22 +10,19 @@ ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 5e532b67-64a6-4af6-a806-980a6c11a82d
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 8fd779bcc4d41b6e67d0fa31aa0f37c4ea2b410a
+ms.openlocfilehash: f4e94980c6a03b08221fd46e19c421cce226086d
+
 
 ---
 
 # Installera MIM 2016: synkronisera Active Directory och MIM-tjänsten
 
->[!div class="step-by-step"] [« MIM-tjänst och portal](install-mim-service-portal.md)
+>[!div class="step-by-step"]
+[« MIM-tjänst och -portal](install-mim-service-portal.md)
 
 > [!NOTE]
 > I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
@@ -42,7 +37,8 @@ MIM-hanteringsagenten (MA) används för anslutning av MIM Sync till MIM-tjänst
 
 När du ska konfigurera en MIM-hanteringsagent måste du ange ett användarkonto. I det här dokumentet används **MIMMA** som namn på det här kontot.
 
-> [!NOTE] Kontot du använder för MIM-hanteringsagenten måste vara samma konto som du angav vid installationen av MIM-tjänsten.
+> [!NOTE]
+> Kontot du använder för MIM-hanteringsagenten måste vara samma konto som du angav vid installationen av MIM-tjänsten.
 
 ###Skapa MIMMA
 
@@ -437,9 +433,11 @@ Följ dessa steg för att köra var och en av de tre körningsprofilerna.
     - Välj den körningsprofil du vill köra i listan **Körningsprofiler**.
     - Klicka på **OK** för att starta körningsprofilen.
 
->[!div class="step-by-step"] [« MIM-tjänst och portal](install-mim-service-portal.md)
+>[!div class="step-by-step"]
+[« MIM-tjänst och -portal](install-mim-service-portal.md)
 
 
-<!--HONumber=Jun16_HO1-->
+
+<!--HONumber=Jun16_HO4-->
 
 

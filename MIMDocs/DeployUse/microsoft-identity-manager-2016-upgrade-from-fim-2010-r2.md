@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Uppgradera från Forefront Identity Manager 2010 R2 | Microsoft Identity Manager
-description: Lär dig hur du uppgraderar FIM 2010 R 2-komponenterna och sedan installerar de komponenter som är nya i MIM 2016.
-keywords:
+title: "Uppgradera från Forefront Identity Manager 2010 R2 | Microsoft Identity Manager"
+description: "Lär dig hur du uppgraderar FIM 2010 R 2-komponenterna och sedan installerar de komponenter som är nya i MIM 2016."
+keywords: 
 author: kgremban
 manager: stevenpo
 ms.date: 05/13/2016
@@ -12,16 +10,12 @@ ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 9471ccc1-bafe-46ee-b169-1464262380e1
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 7e61e201b277a2e8ec9fee785e9e34fca3b1cb29
+ms.openlocfilehash: 24a7bf5bfb0a7450becd08be6743ed7ab1755559
+
 
 ---
 
@@ -207,6 +201,7 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 Obs: Om FIM-tilläggen för närvarande finns distribuerade på användarens dator för SSPR ska du inte konfigurera de nya MFA-telefongrindarna för återställning av lösenord förrän alla FIM-tillägg har uppgraderats till MIM 2016.  Eftersom FIM 2010- och FIM 2010 R2-tilläggen inte kan identifiera de nya grindarna orsakar de ett fel och användaren kan inte slutföra  återställningen av lösenordet.
 
 
-<!--HONumber=Jun16_HO1-->
+
+<!--HONumber=Jun16_HO4-->
 
 
