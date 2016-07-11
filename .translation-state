@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "e0261b00d5df35458d2b1bfc54e9481c5778bfdd",
-  "LastTranslatedCommit": "c1e2895a2e2b327265971b2919be952adf4dc3c6",
+  "LastTranslatedCommit": "3edcc99c9726b50b0f1f6ee00e03a455ddbeb253",
   "Items": {
     "50c0edd60abfa6550cb5a873d32a842e8c099811": {
       "FileHash": "50c0edd60abfa6550cb5a873d32a842e8c099811",
@@ -164,7 +164,7 @@
       "TargetFilePath": "MIMDocs\\DeployUse\\install-mim-sync.md",
       "HandbackFilePath": "ol-handback\\Microsoft\\MIMDocs-pr.sv-se\\master\\install-mim-sync.187fbc84d7198ab90d1445b38ea0a3044b228547.sv-se.xlf",
       "HandbackFileCommit": "d083836cbadb692679ccef5f2a847b69f1f97252",
-      "HandbackDateTime": "2016-07-11T20:51:28.5428122Z",
+      "HandbackDateTime": "2016-07-11T21:25:55.6761366Z",
       "HandbackException": {
         "internal_error_code": "handback_transform_failed",
         "internal_error_message": "Handback file: C:\\ol\\master\\EM.handback\\e189a7\\ol-handback\\Microsoft\\MIMDocs-pr.sv-se\\master\\install-mim-sync.187fbc84d7198ab90d1445b38ea0a3044b228547.sv-se.xlf failed.",
@@ -174,7 +174,7 @@
         "stack_trace": "   at Microsoft.OpenLocalization.Transformer.TransformerClient.XliffToMarkdown(Stream xliffStream, Stream skeletonStream, Stream targetStream) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\TransformerClient.cs:line 119\r\n   at Microsoft.OpenLocalization.Helper.XliffTransformUtil.XliffToMarkdown(String skeletonFile, String xliffFile, String mdfile, Boolean useJavascriptTransformer) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Helper\\XliffTransformUtil.cs:line 92\r\n   at Microsoft.OpenLocalization.Localization.LocalizationCore.<>c__DisplayClass5_0.<GetHandbackFiles>b__0(String file) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Localization\\HandbackCore.cs:line 406",
         "extended_information": null
       },
-      "HandbackFailureTimes": 3,
+      "HandbackFailureTimes": 4,
       "UpdatedDateTime": "2016-06-25T16:46:19.8019819Z",
       "ArchiveFilePath": "ol-handoff\\Microsoft\\MIMDocs-pr.sv-se\\master\\archive\\install-mim-sync.187fbc84d7198ab90d1445b38ea0a3044b228547.sv-se.xlf",
       "ArchiveFileCommit": "9a9bc1d8a88bcb05c44f7a71604adc09cb9b25a8",
@@ -1804,7 +1804,7 @@
       "TargetFilePath": "MIMDocs\\DeployUse\\prepare-server-exchange.md",
       "HandbackFilePath": "ol-handback\\Microsoft\\MIMDocs-pr.sv-se\\master\\prepare-server-exchange.62b650aec624862b1ad85b574bfdb8525ebc36e5.sv-se.xlf",
       "HandbackFileCommit": "d083836cbadb692679ccef5f2a847b69f1f97252",
-      "HandbackDateTime": "2016-07-11T20:51:28.5428122Z",
+      "HandbackDateTime": "2016-07-11T21:25:55.6761366Z",
       "HandbackException": {
         "internal_error_code": "handback_transform_failed",
         "internal_error_message": "Handback file: C:\\ol\\master\\EM.handback\\e189a7\\ol-handback\\Microsoft\\MIMDocs-pr.sv-se\\master\\prepare-server-exchange.62b650aec624862b1ad85b574bfdb8525ebc36e5.sv-se.xlf failed.",
@@ -1814,7 +1814,7 @@
         "stack_trace": "   at Microsoft.OpenLocalization.Transformer.TransformerClient.XliffToMarkdown(Stream xliffStream, Stream skeletonStream, Stream targetStream) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\TransformerClient.cs:line 119\r\n   at Microsoft.OpenLocalization.Helper.XliffTransformUtil.XliffToMarkdown(String skeletonFile, String xliffFile, String mdfile, Boolean useJavascriptTransformer) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Helper\\XliffTransformUtil.cs:line 92\r\n   at Microsoft.OpenLocalization.Localization.LocalizationCore.<>c__DisplayClass5_0.<GetHandbackFiles>b__0(String file) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Localization\\HandbackCore.cs:line 406",
         "extended_information": null
       },
-      "HandbackFailureTimes": 3,
+      "HandbackFailureTimes": 4,
       "UpdatedDateTime": "2016-06-25T16:46:19.8019819Z",
       "ArchiveFilePath": "ol-handoff\\Microsoft\\MIMDocs-pr.sv-se\\master\\archive\\prepare-server-exchange.62b650aec624862b1ad85b574bfdb8525ebc36e5.sv-se.xlf",
       "ArchiveFileCommit": "9a9bc1d8a88bcb05c44f7a71604adc09cb9b25a8",
@@ -1882,7 +1882,7 @@
       "TargetFilePath": "MIMDocs\\DeployUse\\prepare-server-sql2014.md",
       "HandbackFilePath": "ol-handback\\Microsoft\\MIMDocs-pr.sv-se\\master\\prepare-server-sql2014.908ce04c42d7be500304a71be06bc4b1acfdd6b7.sv-se.xlf",
       "HandbackFileCommit": "d083836cbadb692679ccef5f2a847b69f1f97252",
-      "HandbackDateTime": "2016-07-11T20:51:28.5428122Z",
+      "HandbackDateTime": "2016-07-11T21:25:55.6761366Z",
       "HandbackException": {
         "internal_error_code": "handback_transform_failed",
         "internal_error_message": "Handback file: C:\\ol\\master\\EM.handback\\e189a7\\ol-handback\\Microsoft\\MIMDocs-pr.sv-se\\master\\prepare-server-sql2014.908ce04c42d7be500304a71be06bc4b1acfdd6b7.sv-se.xlf failed.",
@@ -1892,7 +1892,7 @@
         "stack_trace": "   at Microsoft.OpenLocalization.Transformer.TransformerClient.XliffToMarkdown(Stream xliffStream, Stream skeletonStream, Stream targetStream) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\TransformerClient.cs:line 119\r\n   at Microsoft.OpenLocalization.Helper.XliffTransformUtil.XliffToMarkdown(String skeletonFile, String xliffFile, String mdfile, Boolean useJavascriptTransformer) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Helper\\XliffTransformUtil.cs:line 92\r\n   at Microsoft.OpenLocalization.Localization.LocalizationCore.<>c__DisplayClass5_0.<GetHandbackFiles>b__0(String file) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Localization\\HandbackCore.cs:line 406",
         "extended_information": null
       },
-      "HandbackFailureTimes": 3,
+      "HandbackFailureTimes": 4,
       "UpdatedDateTime": "2016-06-25T16:46:19.8019819Z",
       "ArchiveFilePath": "ol-handoff\\Microsoft\\MIMDocs-pr.sv-se\\master\\archive\\prepare-server-sql2014.908ce04c42d7be500304a71be06bc4b1acfdd6b7.sv-se.xlf",
       "ArchiveFileCommit": "9a9bc1d8a88bcb05c44f7a71604adc09cb9b25a8",
@@ -1925,7 +1925,7 @@
       "TargetFilePath": "MIMDocs\\DeployUse\\prepare-server-ws2012r2.md",
       "HandbackFilePath": "ol-handback\\Microsoft\\MIMDocs-pr.sv-se\\master\\prepare-server-ws2012r2.da656f0c9d903e4ab85b248548bd985fcaa0c74a.sv-se.xlf",
       "HandbackFileCommit": "d083836cbadb692679ccef5f2a847b69f1f97252",
-      "HandbackDateTime": "2016-07-11T20:51:28.5428122Z",
+      "HandbackDateTime": "2016-07-11T21:25:55.6761366Z",
       "HandbackException": {
         "internal_error_code": "handback_transform_failed",
         "internal_error_message": "Handback file: C:\\ol\\master\\EM.handback\\e189a7\\ol-handback\\Microsoft\\MIMDocs-pr.sv-se\\master\\prepare-server-ws2012r2.da656f0c9d903e4ab85b248548bd985fcaa0c74a.sv-se.xlf failed.",
@@ -1935,7 +1935,7 @@
         "stack_trace": "   at Microsoft.OpenLocalization.Transformer.TransformerClient.XliffToMarkdown(Stream xliffStream, Stream skeletonStream, Stream targetStream) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\TransformerClient.cs:line 119\r\n   at Microsoft.OpenLocalization.Helper.XliffTransformUtil.XliffToMarkdown(String skeletonFile, String xliffFile, String mdfile, Boolean useJavascriptTransformer) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Helper\\XliffTransformUtil.cs:line 92\r\n   at Microsoft.OpenLocalization.Localization.LocalizationCore.<>c__DisplayClass5_0.<GetHandbackFiles>b__0(String file) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Localization\\HandbackCore.cs:line 406",
         "extended_information": null
       },
-      "HandbackFailureTimes": 3,
+      "HandbackFailureTimes": 4,
       "UpdatedDateTime": "2016-06-25T16:46:19.8019819Z",
       "ArchiveFilePath": "ol-handoff\\Microsoft\\MIMDocs-pr.sv-se\\master\\archive\\prepare-server-ws2012r2.da656f0c9d903e4ab85b248548bd985fcaa0c74a.sv-se.xlf",
       "ArchiveFileCommit": "9a9bc1d8a88bcb05c44f7a71604adc09cb9b25a8",
@@ -3863,7 +3863,7 @@
       "TargetFilePath": null,
       "HandbackFilePath": null,
       "HandbackFileCommit": null,
-      "HandbackDateTime": "2016-07-11T20:51:28.5428122Z",
+      "HandbackDateTime": "2016-07-11T21:25:55.6761366Z",
       "HandbackException": {
         "internal_error_code": "handback_transform_failed",
         "internal_error_message": "Handback file: C:\\ol\\master\\EM.handback\\e189a7\\ol-handback\\Microsoft\\MIMDocs-pr.sv-se\\master\\prepare-server-sharepoint.ea9bf41d1869c4bf8841649fee7599cbc80b640e.sv-se.xlf failed.",
@@ -3873,7 +3873,7 @@
         "stack_trace": "   at Microsoft.OpenLocalization.Transformer.TransformerClient.XliffToMarkdown(Stream xliffStream, Stream skeletonStream, Stream targetStream) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\TransformerClient.cs:line 119\r\n   at Microsoft.OpenLocalization.Helper.XliffTransformUtil.XliffToMarkdown(String skeletonFile, String xliffFile, String mdfile, Boolean useJavascriptTransformer) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Helper\\XliffTransformUtil.cs:line 92\r\n   at Microsoft.OpenLocalization.Localization.LocalizationCore.<>c__DisplayClass5_0.<GetHandbackFiles>b__0(String file) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Localization\\HandbackCore.cs:line 406",
         "extended_information": null
       },
-      "HandbackFailureTimes": 3,
+      "HandbackFailureTimes": 4,
       "UpdatedDateTime": "0001-01-01T00:00:00",
       "ArchiveFilePath": "ol-handoff\\Microsoft\\MIMDocs-pr.sv-se\\master\\archive\\prepare-server-sharepoint.ea9bf41d1869c4bf8841649fee7599cbc80b640e.sv-se.xlf",
       "ArchiveFileCommit": "9a9bc1d8a88bcb05c44f7a71604adc09cb9b25a8",
