@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Registrera smartkort för icke-administratörer | Microsoft Identity Manager
-description: Lär dig hur du registrerar smartkort för användare utan administratörsåtkomst till sina datorer så att de kan använda Certifikathanteraren.
-keywords:
+title: "Registrera smartkort för icke-administratörer | Microsoft Identity Manager"
+description: "Lär dig hur du registrerar smartkort för användare utan administratörsåtkomst till sina datorer så att de kan använda Certifikathanteraren."
+keywords: 
 author: kgremban
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: bfabc562-a2f0-4cff-ac31-36927f41e102
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 875ed6b96929822ac166a4a262cc8547a4ea3b2a
+ms.openlocfilehash: 50c0edd60abfa6550cb5a873d32a842e8c099811
+
 
 ---
 
@@ -76,11 +70,11 @@ Om en användare inte är lokal administratör på sin dator kan denne normalt i
 
     1.  Logga in på CM-portalen som en användare med administratörsbehörighet.
 
-    2.  Gå till **Administration** &gt; **Hantera profilmallar** och kontrollera att kryssrutan bredvid den profilmall du skapat är markerad, och klicka sedan på Kopiera en vald profilmall.
+    2.  Gå till **Administration** &gt; **Hantera profilmallar** och kontrollera att kryssrutan bredvid den profilmall du skapat är markerad. Klicka sedan på Kopiera en vald profilmall.
 
-    3.  Ange namnet på profilmallen, lägg till ”nonAdmin” och klicka sedan på **OK**.
+    3.  Ange namnet på profilmallen, lägg till ”nonAdmin” och klicka på **OK**.
 
-    4.  När de allmänna inställningarna för profilmallen visas rullar du ned till slutet och under **Konfiguration av smartkort** klickar du på **Ändra inställningar**.
+    4.  När de allmänna inställningarna för profilmallen visas rullar du ned till slutet. Under **Konfiguration av smartkort** klickar du på **Ändra inställningar**.
 
     5.  Under **Ursprungligt värde för administratörsnyckel (hex)** anger du den förinställda administratörsnyckeln: ”010203040506070801020304050607080102030405060708”
 
@@ -101,6 +95,7 @@ Om en användare inte är lokal administratör på sin dator kan denne normalt i
 8.  **Starta CM-appen och registrera uppgifterna för ett virtuellt smartkort**
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jun16_HO4-->
 
 

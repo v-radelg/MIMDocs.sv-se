@@ -1,27 +1,21 @@
 ---
-# required metadata
-
 title: Microsoft Identity Manager 2016 | Microsoft Identity Manager
-description: Förstå hur MIM 2016 fungerar och gör identitetshanteringen säkrare och enklare både lokalt och i molnet.
-keywords:
+description: "Förstå hur MIM 2016 fungerar och gör identitetshanteringen säkrare och enklare både lokalt och i molnet."
+keywords: 
 author: kgremban
-manager: stevenpo
-ms.date: 04/28/2016
+manager: femila
+ms.date: 06/27/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ccdd8a9f-02da-440a-81a8-354800dcd2a8
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 9e5f51d5ca731b3564b8262db0f4cddeb850231a
+ms.openlocfilehash: 5247cce895344ac6148b735fe550eb16c39103c7
+
 
 ---
 
@@ -36,21 +30,10 @@ Microsoft Identity Manager 2016 fungerar tillsammans med Azure och ger dig kontr
 ## Privileged Identity Management
 Privileged Identity Management styr och hanterar administrativ åtkomst genom att tillhandahålla tillfällig och uppgiftsbaserad åtkomst till känsliga resurser. Det innebär att du bara behöver ge användare så mycket behörighet som krävs, vilket minskar risken för att en cyberangripare får fullständig administrativ åtkomst. Dessutom extraherar och isolerar Privileged Identity Management administrativa konton från befintliga Active Directory-skogar.
 
-## Plattformar som stöds
-
-MIM stöder en uppdaterad lista över produkter och plattformar, inklusive de senaste Microsoft-plattformarna och Office-/serverstackarna, Windows klient-OS, Windows Server-OS, SharePoint, SQL och Outlook, speciellt:
-
--   Windows 8.1 med Internet Explorer 8 och senare
-
--   Windows Server 2012 R2
-
--   SQL 2014
-
--   Outlook 2013
-
--   System Center Service Manager 2012 och 2012 R2
+MIM har stöd för en lokal Privileged Identity Management-lösning för hantering av Active Directory. Kom igång genom att [använda Privileged Access Management](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services).
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jun16_HO5-->
 
 

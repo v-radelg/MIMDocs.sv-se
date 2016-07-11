@@ -1,9 +1,7 @@
 ---
-# required metadata
-
 title: Skapa programcertifikat | Microsoft Identity Manager
-description: Lär dig att använda Certifikathanteraren för att skapa och förnya programcertifikat med profilmallar.
-keywords:
+description: "Lär dig att använda Certifikathanteraren för att skapa och förnya programcertifikat med profilmallar."
+keywords: 
 author: kgremban
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: fed5ada9-d80f-4825-aad7-4172ac5d71d3
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: f9b01ac2cee2b96f64a9fda917f4f4146ca2eeda
+ms.openlocfilehash: 6b58093744656b9bfa62c1cfcab340ea88e6e168
+
 
 ---
 
@@ -34,11 +28,11 @@ För att registrera och förnya programcertifikat behöver du inte vara administ
 
 2.  Klicka på **Arkiv** och sedan på **Lägg till/ta bort snapin-modul**.
 
-3.  I listan över tillgängliga snapin-moduler klickar du på **Certifikatmallar** och sedan på **Lägg till**.
+3.  Klicka på **Certifikatmallar** i listan Tillgängliga snapin-moduler och klicka sedan på **Lägg till**.
 
 4.  **Certifikatmallar** finns nu under konsolroten i MMC. Dubbelklicka på den för att visa alla tillgängliga certifikatmallar.
 
-5.  Högerklicka på **Användarmallen** och klicka sedan på **Duplicera mallen**.
+5.  Högerklicka på **Användarmall** och klicka sedan på **Kopiera mallen**.
 
 6.  På fliken **Kompatibilitet** under Certifikatutfärdare väljer du Windows Server 2008 och under Certifikatmottagare väljer du Windows 8.1/Windows Server 2012 R2.
 
@@ -48,25 +42,25 @@ För att registrera och förnya programcertifikat behöver du inte vara administ
 
         1.  anger du **Syfte** som Signatur och kryptering.
 
-        2.  Markera **Inkludera symmetriska algoritmer som tillåts av subjektet**.
+        2.  Markera **Inkludera symmetriska algoritmer som tillåts av ämnet**.
 
-        3.  Om du vill arkivera nyckeln markerar du **Arkivera subjektets privata krypteringsnyckel**.
+        3.  Om du vill arkivera nyckeln markerar du **Arkivera ämnets privata krypteringsnyckel**.
 
-        4.  Under Gör följande ... väljer du **Uppmana användaren under registreringen**.
+        4.  Under Gör följande ... väljer du **Ställ frågor till användaren när registrering sker**.
 
     3.  På fliken **Kryptografi**
 
         1.  under Leverantörskategori väljer du **Nyckellagringsleverantör**
 
-        2.  Välj **Begäranden kan använda alla leverantörer som är tillgängliga på subjektets dator**.
+        2.  Välj **Begäranden kan använda valfri provider som finns på ämnets dator**.
 
     4.  På fliken **Säkerhet** lägger du till den säkerhetsgrupp till vilken du vill ge åtkomst för att **Registrera**. Om du till exempel vill ge alla användare åtkomst väljer du gruppen **Autentiserade** användare och väljer sedan **Registrera** behörigheter för dessa.
 
     5.  På fliken **Ämnesnamn**
 
-        1.  avmarkerar du **Inkludera e-postnamn i ämnesnamnet **.
+        1.  avmarkerar du **Inkludera e-postnamnet i ämnesnamnet**.
 
-        2.  Under **Inkludera den här informationen i alternativt ämnesnamn** avmarkerar du **E-postnamn**.
+        2.  Under **Inkludera följande information i alternativt ämnesnamn** avmarkerar du **E-postnamn**.
 
     6.  Klicka på **OK** för att slutföra ändringarna och skapa den nya mallen. Den nya mallen bör nu visas i listan över certifikatmallar.
 
@@ -76,25 +70,25 @@ För att registrera och förnya programcertifikat behöver du inte vara administ
 
     9. Högerklicka på **Certifikatmallar**, klicka på **Ny** och klicka sedan på **Certifikatmall** att utfärda.
 
-    10. Välj i listan den nya mall du just skapat (**Arkiverad certifikatmall**) och klicka sedan på **OK**.
+    10. I listan väljer du den nya mall du just skapat (**Arkiverad certifikatmall**) och klickar sedan på **OK**.
 
 ## Skapa profilmallen
 
-1.  Logga in på CM-portalen som användare med administratörsbehörighet.
+1.  Logga in på CM-portalen som en användare med administratörsbehörighet.
 
-2.  Gå till **Administration &gt; Hantera profilmallar** och kontrollera att kryssrutan bredvid **Exempelprofilmall för smartkortsinlogging i MIM CM** är markerad och klicka sedan på **Kopiera en markerad profilmall**.
+2.  Gå till **Administration &gt; Hantera profilmallar** och markera rutan bredvid **MIM CM Exempelprofilmall för smartkort** och klicka sedan på **Kopiera en markerad profilmall**.
 
-3.  Ange namnet på profilmallen och klicka på **OK**.
+3.  Skriv in profilmallens namn och klicka på **OK**.
 
 4.  På nästa skärm klickar du på **Lägg till ny certifikatmall**. Se till att markera kryssrutan bredvid namnet på Certifikatutfärdaren.
 
 5.  Markera kryssrutan bredvid namnet på det arkiverade programcertifikatet och klicka på **Lägg till**.
 
-6.  Ta bort användarmallen genom att markera kryssrutan bredvid den och klicka sedan på **Ta bort markerade certifikatmallar** och sedan på **OK**.
+6.  Ta bort användarmallen genom att markera kryssrutan bredvid den och klicka sedan på **Ta bort markerade certifikatmallar**. Klicka på **OK**.
 
 7.  Klicka på **Ändra allmänna inställningar**.
 
-8.  Markera kryssrutorna till vänster om **Generera krypteringsnycklar på servern** och klicka på **OK**. I det vänstra fönstret klickar du på **Återställ policy**.
+8.  Markera kryssrutorna till vänster om **Generera krypteringsnycklar på servern** och klicka på **OK**. I det vänstra fönstret klickar du på **Återställ princip**.
 
 9. Klicka på **Ändra allmänna inställningar**.
 
@@ -103,6 +97,7 @@ För att registrera och förnya programcertifikat behöver du inte vara administ
 11. Om du använder Certifikathanteraren för virtuella smartkort måste du inaktivera datainsamlingsobjekt eftersom det inte fungerar när datainsamling har aktiverats. Inaktivera datainsamling för varje policy genom att klicka på respektive policy i den vänstra rutan och avmarkera sedan kryssrutan bredvid **Exempeldataobjekt** och klicka sedan på **Ta bort datainsamlingsobjekt**. Klicka sedan på **OK**.
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jun16_HO4-->
 
 

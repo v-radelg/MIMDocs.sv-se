@@ -1,9 +1,7 @@
 ---
-# required metadata
-
 title: Arbeta med MIM Certificate Manager| Microsoft Identity Manager
-description: Läs mer om hur du distribuerar Certificate Manager-appen, så att  användarna kan hantera sina egna åtkomsträttigheter. 
-keywords:
+description: "Läs mer om hur du distribuerar Certificate Manager-appen, så att  användarna kan hantera sina egna åtkomsträttigheter."
+keywords: 
 author: kgremban
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 66060045-d0be-4874-914b-5926fd924ede
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: f9b01ac2cee2b96f64a9fda917f4f4146ca2eeda
+ms.openlocfilehash: 3e0e6cea0b268836bb6347e81694deec93320ce3
+
 
 ---
 
@@ -43,9 +37,9 @@ Du skapar en certifikatmall för CM-appen på samma sätt som du normalt skapar 
 
 2.  Öppna MMC.
 
-3.  Klicka på **Arkiv &gt; Lägg till/ta bort snapin-modul**.;
+3.  Klicka på **Arkiv &gt; Lägg till/ta bort snapin-modul**.
 
-4.  Klicka på **Certifikatmallar** i listan Tillgängliga snapin-moduler och klicka sedan på **Lägg till**.
+4.  I listan Tillgängliga snapin-moduler klickar du på **Certifikatmallar** och sedan på **Lägg till**.
 
 5.  Du ser nu **Certifikatmallar** under **Konsolrot** i MMC. Dubbelklicka på den för att se alla tillgängliga certifikatmallar.
 
@@ -54,11 +48,11 @@ Du skapar en certifikatmall för CM-appen på samma sätt som du normalt skapar 
 7.  Välj Windows Server 2008 på fliken Kompatibilitet under certifikatutfärdare, och välj Windows 8.1/Windows Server 2012 R2 under certifikatmottagare.
     Det här steget är mycket viktigt eftersom det säkerställer att du har en certifikatmall av version 3 (eller senare), och det är endast version 3 som fungerar med appen för certifikathantering. Om du inte skapade certifikatmallen på detta sätt går det, på grund av att versionen konfigureras första gången du skapar och sparar certifikatmallen, inte att ändra den till korrekt version och du måste skapa en ny innan du fortsätter.
 
-8.  På fliken **Allmänt** i fältet **Visningsnamn** anger du det namn du vill ska visas i appens användargränssnitt, som **Inloggning för virtuellt smartkort**.
+8.  På fliken **Allmänt** i fältet **Visningsnamn** anger du det namn du vill ska visas i appens användargränssnitt, till exempel **Inloggning för virtuellt smartkort**.
 
-9. På fliken **Hantering av begäranden** ska **Syfte** ställas in på **Signatur och kryptering** under **Gör följande...** välj **Fråga användaren under registreringen**.
+9. På fliken **Hantering av begäranden** ska **Syfte** ställas in på **Signatur och kryptering** under **Gör följande...** väljer du **Ställ frågor till användaren när registrering sker**.
 
-10. På fliken **Kryptografi** under **Leverantörskategori** väljer du **Nyckellagringsprovider och begäranden kan använda valfri provider som är tillgänglig på användarens dator**.
+10. På fliken **Kryptografi** under **Leverantörskategori** väljer du **Nyckellagringsprovider och Begäranden kan använda valfri provider som finns på användarens dator**.
 
     > [!NOTE]
     > Nyckellagringsprovider visas endast som alternativ om din mall är av version 3. Om du kan se den beror det förmodligen på att du inte skapade certifikatmallen på ett korrekt sätt med rätt version. Börja om från steg 5 ovan.
@@ -67,7 +61,7 @@ Du skapar en certifikatmall för CM-appen på samma sätt som du normalt skapar 
 
 12. Klicka på **OK** för att slutföra ändringarna och skapa den nya mallen. Du ska se din nya mall i listan med certifikatmallar.
 
-13. Välj **Arkiv** och klicka på **Lägg till/ta bort snapin-modulen** för att lägga till snapin-modulen för certifikatutfärdaren till MMC-konsolen. När du tillfrågas om vilken dator du vill hantera ska du välja **Lokal dator**.
+13. Välj **Arkiv** och klicka på **Lägg till/ta bort snapin-modulen** för att lägga till snapin-modulen för certifikatutfärdaren till MMC-konsolen. När du tillfrågas om vilken dator du vill hantera väljer du **Lokal dator**.
 
 14. Expandera **Certifikatutfärdare (lokal)** i rutan till vänster i MMC och expandera sedan din certifikatutfärdare i listan med certifikatutfärdare.
 
@@ -84,15 +78,15 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
 3.  Skriv in profilmallens namn och klicka på **OK**.
 
-4.  På nästa sida klickar du på **Lägg till ny certifikatmall** och se till att kryssrutan bredvid certifikatutfärdarens namn är markerad.
+4.  På nästa skärm klickar du på **Lägg till ny certifikatmall**. Se till att markera kryssrutan bredvid namnet på Certifikatutfärdaren.
 
 5.  Markera rutan bredvid namnet på profilmallen **Inloggning** och klicka på **Lägg till**.
 
-6.  Ta bort mallen för smartkortsinloggning genom att markera rutan bredvid den och klicka på **Radera markerade certifikatmallar** och sedan på **OK**.
+6.  Ta bort mallen för smartkortsinloggning genom att markera rutan bredvid den och klicka på **Ta bort markerade certifikatmallar** och sedan på **OK**.
 
-7.  Bläddra tills du kommer längst ner på sidan och klicka på **Ändra inställningar**.
+7.  Bläddra ned till slutet av sidan och klicka på **Ändra inställningar**.
 
-8.  Markera kryssrutorna bredvid **Skapa/ta bort virtuellt smartkort** och ** Distribuera admin. nyckel**.
+8.  Markera kryssrutorna bredvid **Skapa/ta bort virtuellt smartkort** och ** Distribuera admin-nyckel**.
 
 9. Under **Princip för användar-PIN** väljer du **Anges av användaren**.
 
@@ -261,6 +255,7 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 När du konfigurerar CM-appen hämtar du filen MIMDMModernApp_&lt;version&gt;_AnyCPU_Test.zip i Download Center och extraherar allt dess innehåll. .appx-filen är installationsprogrammet. Du kan distribuera den på samma sätt du normalt distribuerar appar från Windows Store, genom att använda [System Center Configuration Manager](https://technet.microsoft.com/library/dn613840.aspx) eller [Intune](https://technet.microsoft.com/library/dn613839.aspx) för att läsa in appen separat så att användare kan få åtkomst till den genom företagsportalen eller genom att den överförs direkt till deras datorer.
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jun16_HO4-->
 
 

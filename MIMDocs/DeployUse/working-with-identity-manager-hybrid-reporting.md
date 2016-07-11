@@ -1,9 +1,7 @@
 ---
-# required metadata
-
 title: Arbeta med Identity Manager Hybrid Reporting | Microsoft Identity Manager
-description: Lär dig hur du sammanför lokala data och molndata i hybridrapporter i Azure och hur du hanterar och visar dessa rapporter.
-keywords:
+description: "Lär dig hur du sammanför lokala data och molndata i hybridrapporter i Azure och hur du hanterar och visar dessa rapporter."
+keywords: 
 author: kgremban
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,23 +10,19 @@ ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 68df2817-2040-407d-b6d2-f46b9a9a3dbb
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: f9b01ac2cee2b96f64a9fda917f4f4146ca2eeda
+ms.openlocfilehash: e2d0bd6120628d4fd2a14718fc205cde976c7785
+
 
 ---
 
 # Arbeta med Identity Manager Hybrid Reporting
 
 ## Tillgängliga hybridrapporter
-De första tre Microsoft Identity Manager (MIM)-rapporterna som är tillgängliga i Azure AD är **Återställningsaktivitet för lösenord**, **Registrering för lösenordsåterställning** och **Aktiviteter för självbetjäningsgrupper**.
+De första tre Microsoft Identity Manager (MIM)-rapporterna i Azure AD är **Återställningsaktivitet för lösenord**, **Registrering för lösenordsåterställning** och **Aktiviteter för självbetjäningsgrupper**.
 
 -   Återställningsaktiviteten för lösenord visar alla tillfällen någon användare har genomfört en lösenordåterställningsaktivitet via SSPR och anger de portaler eller **metoder** som användes vid autentiseringen.
 
@@ -89,7 +83,7 @@ Efter att rapportagenten har installerats exporteras data från aktiviteten i Mi
 
 3.  Välj klientkatalogen i listan över tillgängliga kataloger för ditt abonnemang.
 
-4.  Klicka på **Rapporter** och sedan **Återställningsaktivitet för lösenord**.
+4.  Klicka på **Rapporter** och sedan på **Återställningsaktivitet för lösenord**.
 
 5.  Var noga med att välja **Identity Manager** i källans nedrullningsbara meny.
 
@@ -100,7 +94,7 @@ Efter att rapportagenten har installerats exporteras data från aktiviteten i Mi
 Om du vill avbryta uppladdningen av rapportdata från Microsoft Identity Manager till Azure Active Directory ska du avinstallera hybridrapporteringsagenten. Använd Windows-verktyget **Lägg till eller ta bort program** för att avinstallera Microsoft Identity Manager Hybrid Reporting.
 
 ## Windows-händelser som används för hybridrapportering
-Händelser som genererats av Microsoft Identity Manager loggas i Windows händelselogg och visas i Loggboken under Program- och tjänstloggar&gt; **Begärandelogg för Identity Manager**. Varje MIM-begäran exporteras som en händelse i Windows händelselogg i JSON-strukturen. Denna kan exporteras till din SIEM.
+Händelser som genererats av Microsoft Identity Manager loggas i Windows händelselogg och visas i Loggboken under Program- och tjänstloggar &gt; **Begärandelogg för Identity Manager**. Varje MIM-begäran exporteras som en händelse i Windows händelselogg i JSON-strukturen. Denna kan exporteras till din SIEM.
 
 |Händelsetyp|ID|Händelseinformation|
 |--------------|------|-----------------|
@@ -108,6 +102,7 @@ Händelser som genererats av Microsoft Identity Manager loggas i Windows händel
 |Information|4137|Förlängning av MIM-händelse 4121, om det finns för många data för en enskild händelse. Rubriken för den här händelsen är i följande format: `"Request: <GUID> , message <xxx> out of <xxx>`|
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jun16_HO4-->
 
 

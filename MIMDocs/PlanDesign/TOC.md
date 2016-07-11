@@ -4,9 +4,10 @@
 ## [Kapacitetsplanering](capacity-planning-guide.md)
 ## [Distributionstopologi](topology-considerations.md)
 # [Distribuera och använda](/microsoft-identity-manager/deploy-use/microsoft-identity-manager-deploy)
+# [Använda Privileged Access Management](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)
 # [För utvecklare](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-developer-reference)
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=Jun16_HO3-->
 
 

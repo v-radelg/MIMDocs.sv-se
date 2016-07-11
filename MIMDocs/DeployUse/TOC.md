@@ -17,9 +17,10 @@
 ## [MIM Certifikathanterare](working-with-mim-certificate-manager.md)
 ### [Registrera smartkort](certificate-manager-for-non-administrators.md)
 ### [Skapa programcertifikat](certificate-manager-for-software-certificates.md)
+# [Använda Privileged Access Management](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)
 # [För utvecklare](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-developer-reference)
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=Jun16_HO3-->
 
 
