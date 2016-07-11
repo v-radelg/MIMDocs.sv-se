@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Arbeta med självbetjäning för återställning av lösenord | Microsoft Identity Manager
-description: Se vad som är nytt med självbetjäning för återställning av lösenord i MIM 2016, inklusive hur SSPR fungerar med multifaktorautentisering. 
-keywords:
+title: "Arbeta med självbetjäning för återställning av lösenord | Microsoft Identity Manager"
+description: "Se vad som är nytt med självbetjäning för återställning av lösenord i MIM 2016, inklusive hur SSPR fungerar med multifaktorautentisering."
+keywords: 
 author: kgremban
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: f9b01ac2cee2b96f64a9fda917f4f4146ca2eeda
+ms.openlocfilehash: 3a4350e54383dc1098c778090bb29b435082045f
+
 
 ---
 
@@ -71,7 +65,7 @@ I nästa avsnitt ställer du in Azure MFA-leverantören i Microsoft Azure Active
 
 1.  Gå till [Azures klassiska portal](http://manage.windowsazure.com) och logga in som administratör för ett Azure-abonnemang.
 
-2.  Klicka på **Ny** i det nedre vänstra hörnet.
+2.  Klicka på **Ny** längst ned till vänster.
 
 3.  Klicka på **Apptjänster &gt; Active Directory &gt; Leverantör av multifaktorautent. &gt; Snabbregistrering**.
 
@@ -107,9 +101,9 @@ I nästa avsnitt ställer du in Azure MFA-leverantören i Microsoft Azure Active
 
 3. Använd Windows Explorer och navigera till mappen **\pf\certs** i ZIP-filen som hämtades i föregående avsnitt och kopiera filen **cert_key.p12** till den nya katalogen.
 
-4.  Gå till mappen **\pf** i zipfilen under SDK och öppna filen **pf_auth.cs**.
+4.  Gå till mappen **\pf** i SDK-zipfilen och öppna filen **pf_auth.cs**.
 
-5.  Lokalisera dessa tre parametrar: `LICENSE_KEY, GROUP_KEY, CERT_PASSWORD`.
+5.  Leta upp de här tre parametrarna: `LICENSE_KEY, GROUP_KEY, CERT_PASSWORD`.
 
     ![pf_auth.cs code image](media/MIM-SSPR-pFile.png)
 
@@ -131,7 +125,7 @@ I nästa avsnitt ställer du in Azure MFA-leverantören i Microsoft Azure Active
 
     ![Bild av navigering i MIM-portalen](media/MIM-SSPR-workflow.jpg)
 
-2.  Markera **Autent. för lösenordsåterställning Arbetsflöde**.
+2.  Markera **Återställning av lösenord för AuthN-arbetsflöde**.
 
     ![Bild av Arbetsflöden i MIM-portalen](media/MIM-SSPR-PwdResetAuthNworkflow.jpg)
 
@@ -147,7 +141,7 @@ Användare i din organisation kan nu registrera sig för att få sina lösenord 
 
     De måste gå till portalen för lösenordsregistrering och autentiseras med sitt användarnamn och lösenord
 
-2.  I fältet **Telefonnummer** eller **mobiltelefon** anger de en landskod, mellanslag och sedan telefonnumret och klickar på **Nästa**.
+2.  I fältet **Telefonnummer** eller **Mobiltelefon** anger de en landskod, mellanslag och sedan telefonnumret och klickar på **Nästa**.
 
     ![Bild av MIM telefonverifiering](media/MIM-SSPR-PhoneVerification.JPG)
 
@@ -187,7 +181,7 @@ Genom att installera MIM-tillägg och -förlängningar på en domänansluten dat
 
 #### Åtkomst från självbetjäningsportalen
 
-1.  Användare kan öppna en webbläsare, navigera till **portalen för återställning av lösenord**, ange sitt lösenord och klicka på **Nästa**.
+1.  Användaren kan öppna en webbläsare, navigera till **portalen för återställning av lösenord**, ange sitt lösenord och klicka på **Nästa**.
 
     Om MFA har konfigurerats får användaren ett telefonsamtal. Det som händer i bakgrunden är att Azure MFA ringer upp det nummer användaren angav vid registreringen för tjänsten.
 
@@ -211,6 +205,7 @@ Genom att installera MIM-tillägg och -förlängningar på en domänansluten dat
     ![Bild av MIM inloggningsassistent för lösenordsåterställning](media/MIM-SSPR-PR1.JPG)
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jun16_HO4-->
 
 
