@@ -1,7 +1,7 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 5
+ Total Files | 6
 
 ## File List
  Source File | Status | Details 
@@ -11,6 +11,7 @@
  [MIMDocs\DeployUse\prepare-server-sharepoint.md](https://github.com/Microsoft/MIMDocs-pr/blob/9e5f51d5ca731b3564b8262db0f4cddeb850231a/MIMDocs/DeployUse/prepare-server-sharepoint.md) | HandedBackFailed | [Details](#b144f28b41eb8e02afa44495c0019ccc8102200567)
  [MIMDocs\DeployUse\prepare-server-sql2014.md](https://github.com/Microsoft/MIMDocs-pr/blob/c023d147d0fcc1525fefbe866c952e217f7bee6b/MIMDocs/DeployUse/prepare-server-sql2014.md) | InSyncHandedBackSuccess | [Details](#2c0ff0bdbba4bcf979def8d5c7aa381947d6cc8768)
  [MIMDocs\DeployUse\prepare-server-ws2012r2.md](https://github.com/Microsoft/MIMDocs-pr/blob/af9f7f75f19bb29f2e29577c787252f6b7fabb7d/MIMDocs/DeployUse/prepare-server-ws2012r2.md) | InSyncHandedBackSuccess | [Details](#cd4ac84af4e5416512cf546a5d23b342ebe13c3969)
+ [MIMDocs\DeployUse\working-with-self-service-password-reset.md](https://github.com/Microsoft/MIMDocs-pr/blob/f9b01ac2cee2b96f64a9fda917f4f4146ca2eeda/MIMDocs/DeployUse/working-with-self-service-password-reset.md) | InSyncHandedBackSuccess | [Details](#3a4350e54383dc1098c778090bb29b435082045f74)
 
 ## Item Details
 ##### <a name='8a99b3a291d2b145f453732a72244c43f9c535d611'></a> Source: [MIMDocs\DeployUse\install-mim-sync.md](https://github.com/Microsoft/MIMDocs-pr/blob/c023d147d0fcc1525fefbe866c952e217f7bee6b/MIMDocs/DeployUse/install-mim-sync.md)
@@ -22,7 +23,7 @@
 * Archive File: [install-mim-sync.187fbc84d7198ab90d1445b38ea0a3044b228547.sv-se.xlf](https://github.com/Microsoft/EM.handoff/blob/9a9bc1d8a88bcb05c44f7a71604adc09cb9b25a8/ol-handoff/Microsoft/MIMDocs-pr.sv-se/master/archive/install-mim-sync.187fbc84d7198ab90d1445b38ea0a3044b228547.sv-se.xlf)
 * Archive Datetime: 2016-07-01 23:34:03
 * Handback File: [install-mim-sync.187fbc84d7198ab90d1445b38ea0a3044b228547.sv-se.xlf](https://github.com/Microsoft/EM.handback/blob/d083836cbadb692679ccef5f2a847b69f1f97252/ol-handback/Microsoft/MIMDocs-pr.sv-se/master/install-mim-sync.187fbc84d7198ab90d1445b38ea0a3044b228547.sv-se.xlf)
-* Handback Datetime: 2016-07-11 21:58:13
+* Handback Datetime: 2016-07-11 22:29:11
 * Handback Error: [handback_transform_failed](#8a99b3a291d2b145f453732a72244c43f9c535d611handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -35,7 +36,7 @@
 * Archive File: [prepare-server-exchange.62b650aec624862b1ad85b574bfdb8525ebc36e5.sv-se.xlf](https://github.com/Microsoft/EM.handoff/blob/9a9bc1d8a88bcb05c44f7a71604adc09cb9b25a8/ol-handoff/Microsoft/MIMDocs-pr.sv-se/master/archive/prepare-server-exchange.62b650aec624862b1ad85b574bfdb8525ebc36e5.sv-se.xlf)
 * Archive Datetime: 2016-07-01 23:34:03
 * Handback File: [prepare-server-exchange.62b650aec624862b1ad85b574bfdb8525ebc36e5.sv-se.xlf](https://github.com/Microsoft/EM.handback/blob/d083836cbadb692679ccef5f2a847b69f1f97252/ol-handback/Microsoft/MIMDocs-pr.sv-se/master/prepare-server-exchange.62b650aec624862b1ad85b574bfdb8525ebc36e5.sv-se.xlf)
-* Handback Datetime: 2016-07-11 21:58:13
+* Handback Datetime: 2016-07-11 22:29:11
 * Handback Error: [handback_transform_failed](#b69ea20f375869d4ad08987a08aba05913fd1db166handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -61,7 +62,7 @@
 * Archive File: [prepare-server-sql2014.908ce04c42d7be500304a71be06bc4b1acfdd6b7.sv-se.xlf](https://github.com/Microsoft/EM.handoff/blob/9a9bc1d8a88bcb05c44f7a71604adc09cb9b25a8/ol-handoff/Microsoft/MIMDocs-pr.sv-se/master/archive/prepare-server-sql2014.908ce04c42d7be500304a71be06bc4b1acfdd6b7.sv-se.xlf)
 * Archive Datetime: 2016-07-01 23:34:03
 * Handback File: [prepare-server-sql2014.908ce04c42d7be500304a71be06bc4b1acfdd6b7.sv-se.xlf](https://github.com/Microsoft/EM.handback/blob/d083836cbadb692679ccef5f2a847b69f1f97252/ol-handback/Microsoft/MIMDocs-pr.sv-se/master/prepare-server-sql2014.908ce04c42d7be500304a71be06bc4b1acfdd6b7.sv-se.xlf)
-* Handback Datetime: 2016-07-11 21:58:13
+* Handback Datetime: 2016-07-11 22:29:11
 * Handback Error: [handback_transform_failed](#2c0ff0bdbba4bcf979def8d5c7aa381947d6cc8768handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -74,8 +75,20 @@
 * Archive File: [prepare-server-ws2012r2.da656f0c9d903e4ab85b248548bd985fcaa0c74a.sv-se.xlf](https://github.com/Microsoft/EM.handoff/blob/9a9bc1d8a88bcb05c44f7a71604adc09cb9b25a8/ol-handoff/Microsoft/MIMDocs-pr.sv-se/master/archive/prepare-server-ws2012r2.da656f0c9d903e4ab85b248548bd985fcaa0c74a.sv-se.xlf)
 * Archive Datetime: 2016-07-01 23:34:03
 * Handback File: [prepare-server-ws2012r2.da656f0c9d903e4ab85b248548bd985fcaa0c74a.sv-se.xlf](https://github.com/Microsoft/EM.handback/blob/d083836cbadb692679ccef5f2a847b69f1f97252/ol-handback/Microsoft/MIMDocs-pr.sv-se/master/prepare-server-ws2012r2.da656f0c9d903e4ab85b248548bd985fcaa0c74a.sv-se.xlf)
-* Handback Datetime: 2016-07-11 21:58:13
+* Handback Datetime: 2016-07-11 22:29:11
 * Handback Error: [handback_transform_failed](#cd4ac84af4e5416512cf546a5d23b342ebe13c3969handback_transform_failed)
+* [Back to Top](#report-top)
+
+##### <a name='3a4350e54383dc1098c778090bb29b435082045f74'></a> Source: [MIMDocs\DeployUse\working-with-self-service-password-reset.md](https://github.com/Microsoft/MIMDocs-pr/blob/f9b01ac2cee2b96f64a9fda917f4f4146ca2eeda/MIMDocs/DeployUse/working-with-self-service-password-reset.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [MIMDocs\DeployUse\working-with-self-service-password-reset.md](https://github.com/Microsoft/MIMDocs-pr.sv-se/blob/ef443913f28c4da4caa96d5b825351c8ce38474a/MIMDocs/DeployUse/working-with-self-service-password-reset.md)
+* Handoff File: [working-with-self-service-password-reset.bcd57dd12a02054bccbba77422a81b03c5e3b624.sv-se.xlf](https://github.com/Microsoft/EM.handoff/blob/626375f9d895cbfb9b7306f139fc5ec4c396aaca/ol-handoff/Microsoft/MIMDocs-pr.sv-se/master/working-with-self-service-password-reset.bcd57dd12a02054bccbba77422a81b03c5e3b624.sv-se.xlf)
+* Handoff Datetime: 2016-06-27 09:25:43
+* Handoff Reason: Include
+* Archive File: [working-with-self-service-password-reset.bcd57dd12a02054bccbba77422a81b03c5e3b624.sv-se.xlf](https://github.com/Microsoft/EM.handoff/blob/9a9bc1d8a88bcb05c44f7a71604adc09cb9b25a8/ol-handoff/Microsoft/MIMDocs-pr.sv-se/master/archive/working-with-self-service-password-reset.bcd57dd12a02054bccbba77422a81b03c5e3b624.sv-se.xlf)
+* Archive Datetime: 2016-07-01 23:34:03
+* Handback File: [working-with-self-service-password-reset.bcd57dd12a02054bccbba77422a81b03c5e3b624.sv-se.xlf](https://github.com/Microsoft/EM.handback/blob/a13eed25b0c0d170aafc23206121a28253f97a3f/ol-handback/Microsoft/MIMDocs-pr.sv-se/master/working-with-self-service-password-reset.bcd57dd12a02054bccbba77422a81b03c5e3b624.sv-se.xlf)
+* Handback Datetime: 2016-07-11 22:29:11
 * [Back to Top](#report-top)
 
 
