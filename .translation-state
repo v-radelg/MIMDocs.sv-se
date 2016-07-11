@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "d348acc2137d578c8625a6ebe5e05fbc0a1ff8fc",
+  "LastProcessedCommit": "e0261b00d5df35458d2b1bfc54e9481c5778bfdd",
   "LastTranslatedCommit": "19bf69a96c23a0e2643421f02a2d8c1f7a365cae",
   "Items": {
     "50c0edd60abfa6550cb5a873d32a842e8c099811": {
@@ -4294,6 +4294,41 @@
       "ArchiveFilePath": "ol-handoff\\Microsoft\\MIMDocs-pr.sv-se\\master\\archive\\TOC.4ef4520be73ef9e7aa69c2f08e700c80a68a239d.sv-se.xlf",
       "ArchiveFileCommit": "7ec580c163a5e19c1044a3f3b2ce1b2c1b40b9b7",
       "ArchiveFileDateTime": "2016-07-08T23:20:39.3157622Z",
+      "ArchiveException": null,
+      "BilingualFilePath": null,
+      "BilingualFileCommit": null,
+      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualException": null
+    },
+    "e3e755779dfa60f0f5b2af0d4aae25de6b07afa6": {
+      "FileHash": "e3e755779dfa60f0f5b2af0d4aae25de6b07afa6",
+      "SourceFileCommit": "6b6e324c2c2400145573c00c964c69d01ecf7e39",
+      "SourceFilePath": "MIMDocs\\index.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "MIMDocs\\index.md"
+      ],
+      "HasMetadata": true,
+      "TranslationType": 1,
+      "HandoffFilePath": "ol-handoff\\Microsoft\\MIMDocs-pr.sv-se\\master\\index.a54b2324d63a6d513b6900195023b9a8089553b4.sv-se.xlf",
+      "HandoffFileCommit": "896f2fa8a5d7feecd9e055011035efcbc967e7aa",
+      "HandoffDateTime": "2016-07-11T20:31:09.7216515Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
       "ArchiveException": null,
       "BilingualFilePath": null,
       "BilingualFileCommit": null,
