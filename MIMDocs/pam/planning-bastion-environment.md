@@ -252,6 +252,6 @@ Nästa steg är att definiera PAM-rollerna och associera de användare och grupp
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

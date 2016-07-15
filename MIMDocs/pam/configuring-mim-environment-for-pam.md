@@ -37,10 +37,11 @@ De här stegen är uppbyggda så att du kan skapa en testmiljö från grunden. O
 
 7.  Demonstrera begäran, mottagande och användning av privilegierad utökad åtkomst till en skyddad resurs.
 
->[!div class="step-by-step"] [Start »](step-1-prepare-corp-domain.md)
+>[!div class="step-by-step"]
+[[!div class="step-by-step"] [Start »](step-1-prepare-corp-domain.md)](step-1-prepare-corp-domain.md)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

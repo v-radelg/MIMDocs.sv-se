@@ -20,7 +20,8 @@ ms.openlocfilehash: b21e2fed4588572fd1b793c4942860871ae9a51c
 
 # Steg 6 – Överföra en grupp till Privileged Access Management
 
->[!div class="step-by-step"] [« Steg 5 ](step-5-establish-trust-between-priv-corp-forests.md)
+>[!div class="step-by-step"]
+[!div class="step-by-step"] [« Steg 5 ](step-5-establish-trust-between-priv-corp-forests.md)
 [Steg 7 »](step-7-elevate-user-access.md)
 
 Privilegierade konto skapas i PRIV-skogen med PowerShell-cmdletar. Dessa cmdletar utför följande funktioner:
@@ -82,11 +83,12 @@ Du måste köra cmdletarna en gång för varje grupp och en gång för varje med
 
 Om du vill visa att åtkomstbehörigheter mellan skogar gäller för användarens administratörskonto fortsätter du till nästa steg.
 
->[!div class="step-by-step"] [« Steg 5 ](step-5-establish-trust-between-priv-corp-forests.md)
+>[!div class="step-by-step"]
+[!div class="step-by-step"] [« Steg 5 ](step-5-establish-trust-between-priv-corp-forests.md)
 [Steg 7 »](step-7-elevate-user-access.md)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

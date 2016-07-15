@@ -33,6 +33,6 @@ De enheter där de virtuella datorernas diskavbildningar ska sparas måste ha mi
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

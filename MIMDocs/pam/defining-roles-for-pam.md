@@ -202,6 +202,6 @@ Roller för hantering av icke-administrativa användare och datorer kan vara:
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 
