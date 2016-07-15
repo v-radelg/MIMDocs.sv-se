@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "7bde0a52219370e47852ca7551a93544777d957e",
-  "LastTranslatedCommit": "484e1115edf18466376a1d17c3ba0ea8e65dabe6",
+  "LastTranslatedCommit": "46ce57d6a8eb10e547bd73ad8a6385c907723d96",
   "Items": {
     "50c0edd60abfa6550cb5a873d32a842e8c099811": {
       "FileHash": "50c0edd60abfa6550cb5a873d32a842e8c099811",
@@ -3863,7 +3863,7 @@
       "TargetFilePath": null,
       "HandbackFilePath": null,
       "HandbackFileCommit": null,
-      "HandbackDateTime": "2016-07-15T22:07:37.4843399Z",
+      "HandbackDateTime": "2016-07-15T22:27:05.8763726Z",
       "HandbackException": {
         "internal_error_code": "handback_transform_failed",
         "internal_error_message": "Handback file: C:\\ol\\master\\EM.handback\\e189a7\\ol-handback\\Microsoft\\MIMDocs-pr.sv-se\\master\\prepare-server-sharepoint.ea9bf41d1869c4bf8841649fee7599cbc80b640e.sv-se.xlf failed.",
@@ -3873,7 +3873,7 @@
         "stack_trace": "   at Microsoft.OpenLocalization.Transformer.TransformerClient.XliffToMarkdown(Stream xliffStream, Stream skeletonStream, Stream targetStream) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\TransformerClient.cs:line 119\r\n   at Microsoft.OpenLocalization.Helper.XliffTransformUtil.XliffToMarkdown(String skeletonFile, String xliffFile, String mdfile, Boolean useJavascriptTransformer) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Helper\\XliffTransformUtil.cs:line 92\r\n   at Microsoft.OpenLocalization.Localization.LocalizationCore.<>c__DisplayClass5_0.<GetHandbackFiles>b__0(String file) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Localization\\HandbackCore.cs:line 406",
         "extended_information": null
       },
-      "HandbackFailureTimes": 2,
+      "HandbackFailureTimes": 3,
       "UpdatedDateTime": "0001-01-01T00:00:00",
       "ArchiveFilePath": "ol-handoff\\Microsoft\\MIMDocs-pr.sv-se\\master\\archive\\prepare-server-sharepoint.ea9bf41d1869c4bf8841649fee7599cbc80b640e.sv-se.xlf",
       "ArchiveFileCommit": "9a9bc1d8a88bcb05c44f7a71604adc09cb9b25a8",
