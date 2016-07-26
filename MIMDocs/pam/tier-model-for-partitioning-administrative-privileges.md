@@ -1,10 +1,10 @@
 ---
-title: "Nivåmodell för partitionering av administratörsbehörighet | Microsoft Identity Manager"
-description: 
+title: "PAM-miljönivåmodell | Microsoft Identity Manager"
+description: "Läs mer om nivåmodellen som segregerar ditt system baserat på säkerhetsrelaterade risker."
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 06/14/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: c6e3cd02-1e32-4194-a8ed-3a0b3d022a43
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 9e5f51d5ca731b3564b8262db0f4cddeb850231a
-ms.openlocfilehash: 509c05bbda5f0a0b936518fb023000771c45d4f7
+ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
+ms.openlocfilehash: 1a750bedee2aac667c84113d2d08daa20428c260
 
 
 ---
@@ -44,7 +44,7 @@ Inloggningsbegränsningar bör tillämpas för att säkerställa att konton med 
 - Domänadministratörer (nivå 0) kan inte logga in på företagsservrar (nivå 1) och standardanvändares arbetsstationer (nivå 2).
 - Serveradministratörer (nivå 1) kan inte logga in på standardanvändare arbetsstationer (nivå 2).
 
->[!NOTE] 
+>[!NOTE]
 > Serveradministratörer bör inte ingå i gruppen för domänadministratörer. Medarbetare som har ansvar för hantering av både domänkontrollanter och företagsservrar bör tilldelas separata konton.
 
 Inloggningsbegränsningar kan tillämpas med:
@@ -62,6 +62,6 @@ I nästa artikel [Planera en skyddsmiljö](planning-bastion-environment.md) får
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO3-->
 
 

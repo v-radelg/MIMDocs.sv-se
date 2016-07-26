@@ -1,27 +1,21 @@
 ---
-# required metadata
-
-title: "Konfigurera en server för identitetshantering: Exchange | Microsoft Identity Manager"
+title: Konfigurera Exchange-server | Microsoft Identity Manager
 description: "Om du vill kan du distribuera Exchange Server för att aktivera MIM 2016 att skicka e-post och skapa postlådor."
-keywords:
+keywords: 
 author: kgremban
-manager: stevenpo
-ms.date: 04/28/2016
+manager: femila
+ms.date: 07/21/2016
 ms.topic: get-started-article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 34a8c16e-3bed-4e16-939b-b9fe17dd834b
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
+ms.openlocfilehash: 77e790f57f9060310a99f8bd3f2a446323a9fafc
+
 
 ---
 
@@ -49,6 +43,7 @@ Om du vill konfigurera MIM för att skicka och ta emot e-post eller skapa postl�
 [Synkroniseringstjänst för MIM »](install-mim-sync.md)
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jul16_HO3-->
 
 

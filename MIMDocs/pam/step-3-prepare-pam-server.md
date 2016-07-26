@@ -1,10 +1,10 @@
 ---
-title: "Steg 3 – Förbereda en PAM-server | Microsoft Identity Manager"
-description: 
+title: "Distribuera PAM steg 3 – PAM-server | Microsoft Identity Manager"
+description: "Förbered en PAM-server som ska vara värd för både SQL och SharePoint för distribution av Privileged Access Management."
 keywords: 
-author: 
+author: kgremban
 manager: femila
-ms.date: 06/17/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -14,8 +14,8 @@ ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 9e5f51d5ca731b3564b8262db0f4cddeb850231a
-ms.openlocfilehash: ec65078cea33b73aa9482e831a1870df477c6581
+ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
+ms.openlocfilehash: 1a21399df9528f689b811400a660543853d88472
 
 
 ---
@@ -51,7 +51,7 @@ Lägg till roller för webbserver (IIS) och programserver, .NET Framework 3.5-fu
 
 1.  Logga in som PRIV-domänadministratör (PRIV\Administratör) och starta PowerShell.
 
-2.  Skriv in följande kommandon: Observera att du kan behöva ange en annan plats för källfilerna för .NET Framework 3.5-funktionerna. De här funktionerna finns vanligtvis inte när du installerar Windows Server, men är tillgängliga i mappen sida-vid-sida (SxS) i mappen Sources på OS-installationsdisken, till exempel d:\Sources\SxS\.\.
+2.  Skriv in följande kommandon: Observera att du kan behöva ange en annan plats för källfilerna för .NET Framework 3.5-funktionerna. De här funktionerna finns vanligtvis inte när du installerar Windows Server, men är tillgängliga i mappen sida-vid-sida (SxS) i mappen Sources på OS-installationsdisken, till exempel d:\Sources\SxS\\.
 
     ```
     import-module ServerManager
@@ -118,7 +118,7 @@ Om SQL Server inte är i skyddsmiljön, installerar du antingen SQL Server 2012 
 
 Med SharePoint Foundation 2013 med SP1-installationsprogrammet installerar du SharePoints programvarukrav på PAMSRV.
 
-> [!NOTE] 
+> [!NOTE]
 > Internetanslutning krävs för att installationsprogrammet ska kunna ladda ned allt som behövs. När det har installerats startas servern om.
 
 1. Högerklicka på PowerShell och välj **Kör som administratör**.  
@@ -158,7 +158,7 @@ När guiden har slutförts använder du PowerShell till att skapa en SharePoint 
 
 2. Ett varningsmeddelande visas med information om att Windows Classic-autentiseringsmetoden används och att det kan ta flera minuter för kommandot att returneras.  När det är klart klar visas den nya portalens URL som utdata.
 
-> [!NOTE] 
+> [!NOTE]
 > Lämna fönstret SharePoint 2013 Management Shell öppet. Det ska användas i nästa steg.
 
 ## Skapa en SharePoint-webbplatssamling
@@ -212,6 +212,6 @@ I steg 4 börjar du installera MIM-komponenterna på PAM-servern.
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO3-->
 
 

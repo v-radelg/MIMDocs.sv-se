@@ -1,10 +1,10 @@
 ---
-title: "Installera MIM 2016&#58; synkronisera Active Directory and MIM-tjänsten | Microsoft Identity Manager"
+title: "Synkronisera AD och MIM-tjänst | Microsoft Identity Manager"
 description: "Använd hanteringsagenter och MIM-synkroniseringstjänsten för att synkronisera Active Directory och MIM-databaser."
 keywords: 
 author: kgremban
-manager: stevenpo
-ms.date: 04/28/2016
+manager: femila
+ms.date: 07/21/2016
 ms.topic: get-started-article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: 5e532b67-64a6-4af6-a806-980a6c11a82d
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 8fd779bcc4d41b6e67d0fa31aa0f37c4ea2b410a
-ms.openlocfilehash: f4e94980c6a03b08221fd46e19c421cce226086d
+ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
+ms.openlocfilehash: f17f256653936ffd06da9fae87dccfbf1c12a553
 
 
 ---
@@ -316,7 +316,7 @@ Så här skapar du regeln för inkommande synkronisering av AD-användare:
 
     -   Resurstyp för metaversum: person
     -   Externt system: ADMA
-    -   Resurstyp för externt system: person
+    -   Resurstyp för externt system: användare
 
 6. På fliken **Relation** anger du följande uppgifter och klickar sedan på **Nästa**:
 
@@ -328,9 +328,9 @@ Så här skapar du regeln för inkommande synkronisering av AD-användare:
 
     | Flödesregel | Källa | Mål |
     |-|-|-|
-    |Regel 1|samAccountName|f|
+    |Regel 1|samAccountName|kontonamn|
     |Regel 2|visningsnamn|visningsnamn|
-    |Regel 3|Anställningstyp|Anställningstyp|
+    |Regel 3|Anställningstyp|anställningstyp|
     |Regel 4|förnamn|förnamn|
     |Regel 5|sn|efternamn|
     |Regel 6|Manager|manager|
@@ -438,6 +438,6 @@ Följ dessa steg för att köra var och en av de tre körningsprofilerna.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO3-->
 
 

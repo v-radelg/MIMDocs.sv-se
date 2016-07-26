@@ -1,38 +1,32 @@
 ---
-# required metadata
-
-title: "Konfigurera en server för identitetshantering: Windows Server 2012 R2 | Microsoft Identity Manager"
+title: Konfigurera Windows Server | Microsoft Identity Manager
 description: "Hämta stegen och minimikraven för att förbereda Windows Server 2012 RS för att arbeta med MIM 2016."
-keywords:
+keywords: 
 author: kgremban
-manager: stevenpo
-ms.date: 04/28/2016
+manager: femila
+ms.date: 07/21/2016
 ms.topic: get-started-article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
+ms.openlocfilehash: e1d69eb7946f9adfdfa7c55cecd3fa1d799a2cd3
+
 
 ---
 
 # Konfigurera en server för identitetshantering: Windows Server 2012 R2
 
 >[!div class="step-by-step"]
-[«Förbereda en domän](preparing-domain.md)
+[« Förbereda en domän](preparing-domain.md)
 [SQL Server 2014 »](prepare-server-sql2014.md)
 
 > [!NOTE]
-> Den här genomgången använder exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
+> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
 > - Namn på domänkontrollant – **mimservername**
 > - Domännamn – **contoso**
 > - Lösenord – **Pass@word1**
@@ -47,7 +41,7 @@ Börja med en dator med Windows Server 2012 R2, med minst 8 GB RAM-minne. Vid i
 
 3. Öppna Kontrollpanelen och anslut datorn till domänen du konfigurerade i det sista steget, *contoso.local*.  Detta omfattar att ange användarnamnet och autentiseringsuppgifterna för en domänadministratör, t.ex. *Contoso\Administratör*.  Efter att välkomstmeddelandet har visats kan du stänga dialogrutan och starta om servern igen.
 
-4. Logga in på datorn *CorpIDM* som en domänadministratör, t.ex. *Contoso\Administratör*.
+4. Logga in på datorn *CorpIDM* som domänadministratör, t.ex. *Contoso\Administratör*.
 
 5. Öppna ett PowerShell-fönster som administratör och skriv följande kommando för att uppdatera datorn med inställningarna för grupprincipen.
 
@@ -57,11 +51,11 @@ Börja med en dator med Windows Server 2012 R2, med minst 8 GB RAM-minne. Vid i
 
     Inom mindre än en minut slutförs uppdateringen med meddelandet ”Uppdatering av grupprincip har slutförts”.
 
-6. Lägg till roller för **Webbserver (IIS)** och **Programserver**, funktionerna för **.NET Framework** 3.5 och 4.0 4.5 och **Active Directory-modulen för Windows PowerShell**.
+6. Lägg till roller för **Webbserver (IIS)** och **Programserver**, funktionerna för **.NET Framework** 3.5, 4.0 och 4.5 och **Active Directory-modulen för Windows PowerShell**.
 
     ![Bild av PowerShell-funktioner](media/MIM-DeployWS2.png)
 
-7. Skriv följande kommandon i PowerShell. Observera att det kan vara nödvändigt att ange en annan plats för källfilerna för **.NET Framework** 3.5-funktionerna. De här funktionerna finns vanligtvis inte när du installerar Windows Server, men är tillgängliga i mappen sida-vid-sida (SxS) i mappen Sources på OS-installationsdisken, t.ex. ”* d:\Sources\SxS\*”.
+7. Skriv följande kommandon i PowerShell. Observera att det kan vara nödvändigt att ange en annan plats för källfilerna för **.NET Framework** 3.5-funktionerna. De här funktionerna finns vanligtvis inte när du installerar Windows Server, men är tillgängliga i mappen sida-vid-sida (SxS) i mappen Sources på OS-installationsdisken, t.ex. ”* d:\Sources\SxS\\*”.
 
     ```
     import-module ServerManager
@@ -112,10 +106,11 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
     ```
 
 >[!div class="step-by-step"]  
-[«Förbereda en domän](preparing-domain.md)
+[« Förbereda en domän](preparing-domain.md)
 [SQL Server 2014 »](prepare-server-sql2014.md)
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jul16_HO3-->
 
 

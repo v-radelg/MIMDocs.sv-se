@@ -1,10 +1,10 @@
 ---
-title: "Steg 5 – upprätta förtroende mellan PRIV- och CORP-skogar | Microsoft Identity Manager"
-description: 
+title: "Distribuera PAM steg 5 – Skogslänkar | Microsoft Identity Manager"
+description: "Upprätta förtroende mellan skogarna PRIV och CORP så att privilegierade användare i PRIV fortfarande kan komma åt resurser i CORP."
 keywords: 
-author: 
+author: kgremban
 manager: femila
-ms.date: 06/16/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -12,15 +12,17 @@ ms.technology: active-directory-domain-services
 ms.assetid: eef248c4-b3b6-4b28-9dd0-ae2f0b552425
 ms.reviewer: mwahl
 ms.suite: ems
-ms.sourcegitcommit: 06319438d93d8d92edc833e2d0bf6492dd5919a6
-ms.openlocfilehash: 1260b4e1792bf43a7288866cf3afa41fabe79fe9
+translationtype: Human Translation
+ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
+ms.openlocfilehash: 3a7039f5d7c950cd0d4c8ab713a7beacc5c45526
 
 
 ---
 
 # Steg 5 – upprätta förtroende mellan PRIV- och CORP-skogar
 
->[!div class="step-by-step"] [« Steg 4](step-4-install-mim-components-on-pam-server.md)
+>[!div class="step-by-step"]
+[« Steg 4](step-4-install-mim-components-on-pam-server.md)
 [Steg 6 »](step-6-transition-group-to-pam.md)
 
 
@@ -104,11 +106,12 @@ Aktivera läsbehörighet till AD för PRIV-administratörer och övervakningstj�
 
 I nästa steg flyttar du en grupp till PAM.
 
->[!div class="step-by-step"] [« Steg 4](step-4-install-mim-components-on-pam-server.md)
+>[!div class="step-by-step"]
+[« Steg 4](step-4-install-mim-components-on-pam-server.md)
 [Steg 6 »](step-6-transition-group-to-pam.md)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jul16_HO3-->
 
 

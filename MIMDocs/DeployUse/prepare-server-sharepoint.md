@@ -1,38 +1,32 @@
 ---
-# required metadata
-
-title: "Konfigurera en server för identitetshantering: SharePoint | Microsoft Identity Manager"
+title: Konfigurera SharePoint | Microsoft Identity Manager
 description: "Installera och konfigurera SharePoint Foundation så att den kan vara värd för MIM-portalsidan."
-keywords:
+keywords: 
 author: kgremban
-manager: stevenpo
-ms.date: 04/28/2016
+manager: femila
+ms.date: 07/21/2016
 ms.topic: get-started-article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: mwahl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
+ms.openlocfilehash: 9885579d9fb72dd4e73ec5a8a359b35c49d10440
+
 
 ---
 
 # Konfigurera en server för identitetshantering: SharePoint
 
 >[!div class="step-by-step"]
-[« SQL Server 2014](prepare-server-sql2014.md)
-[Exchange Server »](prepare-server-exchange.md)
+[«SQL Server 2014](prepare-server-sql2014.md)
+[Exchange Server»](prepare-server-exchange.md)
 
 > [!NOTE]
-> Den här genomgången använder exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
+> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
 > - Namn på domänkontrollant – **mimservername**
 > - Domännamn – **contoso**
 > - Lösenord – **Pass@word1**
@@ -90,7 +84,7 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
 > [!NOTE]
 > SSL konfigureras inte första gången. Se till att konfigurera SSL eller motsvarande innan du aktiverar åtkomst till portalen.
 
-1. Starta  **SharePoint 2013 Management Shell** och kör följande PowerShell-skript för att skapa ett **SharePoint Foundation 2013-webbprogram**.
+1. Starta **SharePoint 2013 Management Shell** och kör följande PowerShell-skript för att skapa en **SharePoint Foundation 2013-webbapp**.
 
     ```
     $dbManagedAccount = Get-SPManagedAccount -Identity contoso\SharePoint
@@ -98,7 +92,8 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
     -ApplicationPoolAccount $dbManagedAccount -AuthenticationMethod "Kerberos" -Port 82 -URL http://corpidm.contoso.local
     ```
 
-    > [!NOTE] Ett varningsmeddelande visas med information om att Windows Classic-autentiseringsmetoden används och att det kan ta flera minuter för kommandot att returneras. När du är klar visas den nya portalens URL som utdata. Håll **SharePoint 2013 Management Shell**-fönstret öppet för senare referens.
+    > [!NOTE]
+    > Ett varningsmeddelande visas med information om att Windows Classic-autentiseringsmetoden används och att det kan ta flera minuter för kommandot att returneras. När du är klar visas den nya portalens URL som utdata. Håll **SharePoint 2013 Management Shell**-fönstret öppet för senare referens.
 
 2. Starta SharePoint 2013 Management Shell och kör följande PowerShell-skript för att skapa en **SharePoint-webbplatssamling** som är associerad med det webbprogrammet.
 
@@ -112,7 +107,8 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
   $s.CompatibilityLevel
   ```
 
-  > [!NOTE] Kontrollera att resultatet för *CompatibilityLevel* är ”14”. Om resultatet är ”15” skapades inte webbplatssamlingen för erfarenhetsversion 2010. Ta bort webbplatssamlingen och skapa den igen.
+  > [!NOTE]
+  > Kontrollera att resultatet för *CompatibilityLevel* är ”14”. Om resultatet är ”15” skapades inte webbplatssamlingen för erfarenhetsversion 2010. Ta bort webbplatssamlingen och skapa den igen.
 
 3. Inaktivera **Vytillstånd på SharePoint Server-sidan** och SharePoint-uppgiften ”Hälsoanalysjobb (Varje timme, Microsoft SharePoint Foundation-timer, alla servrar)” genom att köra följande PowerShell-kommandon i **SharePoint 2013 Management Shell**:
 
@@ -136,10 +132,11 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
 7. Öppna programmet **Administrationsverktyg**, navigera till **Tjänster**, leta upp SharePoints Administrationstjänst och starta den om den inte redan körs.
 
 >[!div class="step-by-step"]  
-[« SQL Server 2014](prepare-server-sql2014.md)
-[Exchange Server »](prepare-server-exchange.md)
+[«SQL Server 2014](prepare-server-sql2014.md)
+[Exchange Server»](prepare-server-exchange.md)
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=Jul16_HO3-->
 
 

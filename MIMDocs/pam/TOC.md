@@ -11,7 +11,7 @@
 ### [Definiera roller](defining-roles-for-pam.md)
 ### [Hög tillgänglighet och haveriberedskap](high-availability-disaster-recovery-considerations-bastion-environment.md)
 ### [Maskin- och programvarukrav](hardware-software-requirements.md)
-## [Distribuera MIM för Privileged Access Management](configuring-mim-environment-for-pam.md)
+## [Konfigurera MIM för Privileged Access Management](configuring-mim-environment-for-pam.md)
 ### [Steg 1 – CORP-domän](step-1-prepare-corp-domain.md)
 ### [Steg 2 – PRIV-domänkontrollant](step-2-prepare-priv-domain-controller.md)
 ### [Steg 3 – PAM-server](step-3-prepare-pam-server.md)
@@ -23,6 +23,6 @@
 # [För utvecklare](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-developer-reference)
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Jul16_HO3-->
 
 
