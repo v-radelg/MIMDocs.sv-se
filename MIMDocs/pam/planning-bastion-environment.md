@@ -123,7 +123,7 @@ Administrativa värdar omfattar följande datorer:
 
 - **Säker Start** skyddar mot angripare och skadlig kod som försöker läsa in osignerad kod i startprocessen.
 
-- **Begränsning av programvara** så att endast auktoriserade administrativa program körs på de administrativa värdarna. Kunder kan använda AppLocker för den här uppgiften med en vitlista för auktoriserade program och på så sätt förhindra att skadlig programvara och obehöriga program körs.
+- **Begränsning av programvara** så att endast auktoriserade administrativa program körs på de administrativa värdarna. Kunder kan använda AppLocker för den här uppgiften med en godkänd lista över auktoriserade program och på så sätt förhindra att skadlig programvara och obehöriga program körs.
 
 - **Fullständig volymkryptering** skyddar mot fysisk förlust av datorer, som bärbara administrationsdatorer för fjärranvändning.
 
