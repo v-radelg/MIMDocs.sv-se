@@ -13,8 +13,8 @@ ms.assetid: 5325fce2-ae35-45b0-9c1a-ad8b592fcd07
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
-ms.openlocfilehash: b4b3f4c0605fabc7166e8ff8309078f80461301e
+ms.sourcegitcommit: 9b5b7460e6307ab38b1b9356a638eb0200fd97d1
+ms.openlocfilehash: 009091a65dba31de2066e45930e438442fcd89a0
 
 
 ---
@@ -93,7 +93,7 @@ Aktivera på begäran privilegierad åtkomst via PAM-exempelportalen.
 8. På den vänstra fliken klickar du på **Aktivera**. Välj **PAM-roll** och klicka på **Aktivera**.
 
 > [!Note]
-> I den här miljön kan du också lära dig att utveckla program som använder PAM REST-API:t. Information om hur du gör det finns i [REST API-referens för Privileged Access Management](/microsoft-identity-manager/reference/privileged-access-management-rest-api-reference.md).
+> I den här miljön kan du också lära dig hur du utvecklar program som använder PAM REST API, som beskrivs i [referensen för Privileged Access Management REST API](/microsoft-identity-manager/reference/privileged-access-management-rest-api-reference).
 
 ## Sammanfattning
 När du har slutfört stegen i den här genomgången kommer du att ha genomfört ett scenario för privilegierad åtkomsthantering. I det utökas användarens behörighet under en begränsad tid så att användaren kommer åt skyddade resurser med ett separat privilegierat konto. När den utökade sessionen upphör kommer det privilegierade kontot inte längre åt den skyddade resursen. PAM-administratören koordinerar beslutet om vilka säkerhetsgrupper som representerar privilegierade roller. När åtkomstbehörigheten har migrerats till Privileged Access Management-systemet, blir åtkomst som tidigare var möjlig med det ursprungliga användarkontot endast möjlig genom att logga in med ett särskilt privilegierat konto och görs tillgänglig på begäran. Gruppmedlemskap för mycket privilegierade grupper gäller därför bara under en begränsad tid.
@@ -103,6 +103,6 @@ När du har slutfört stegen i den här genomgången kommer du att ha genomfört
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Jul16_HO4-->
 
 

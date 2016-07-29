@@ -12,18 +12,19 @@ ms.technology: active-directory-domain-services
 ms.assetid: cf3796f7-bc68-4cf7-b887-c5b14e855297
 ms.reviewer: mwahl
 ms.suite: ems
-experimental: true
 experiment_id: kgremban_images
 translationtype: Human Translation
 ms.sourcegitcommit: e695dd47e4bd31c4004c7d0d9ec76498d52fb56a
-ms.openlocfilehash: b46c2b50873023d504fb7b440a1d4e40e8fa3ac7
+ms.openlocfilehash: 82c97351f66558c3270821f786560ef4b3e0c473
 
 ---
 
 # Privileged Access Management för Active Directory Domain Services
-Privileged Access Management (PAM) är en lösning som hjälper organisationer att begränsa privilegierad åtkomst i befintliga Active Directory-miljöer.
+Privileged Access Management (PAM) hjälper organisationer att begränsa privilegierad åtkomst i befintliga Active Directory-miljöer.
 
-Med Privileged Access Management uppnår du två saker:
+![PAM-stegen: förbereda, skydda, använda, övervaka – diagram](media/MIM_PIM_SetupProcess.png)
+
+Genom att fokusera på en cykel som förbereder, skyddar och övervakar miljön uppnår Privileged Access Management två mål:
 
 - Återupprätta kontroll över en komprometterad Active Directory-miljö genom att hantera en separat skyddsmiljö som inte påverkas inte av skadliga attacker.  
 - Minska risken för att autentiseringsuppgifter stjäls genom att isolera användningen av privilegierade konton.
@@ -43,7 +44,6 @@ PAM bygger på principen för just-in-time-administration, som är relaterat til
 
 PAM-installationen och -driften består av fyra steg.
 
-![PAM-stegen: förbereda, skydda, använda, övervaka – diagram](media/MIM_PIM_SetupProcess.png)
 
 1.  **Förbereda**: identifiera vilka grupper i den befintliga skogen som har betydande behörighet. Återskapa dessa grupper utan medlemmar i skyddsskogen.
 
