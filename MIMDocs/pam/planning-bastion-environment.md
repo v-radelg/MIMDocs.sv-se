@@ -12,6 +12,7 @@ ms.technology: active-directory-domain-services
 ms.assetid: bfc7cb64-60c7-4e35-b36a-bbe73b99444b
 ms.reviewer: mwahl
 ms.suite: ems
+translationtype: Human Translation
 ms.sourcegitcommit: b8af77d2354428da19d91d5f02b490012835f544
 ms.openlocfilehash: 0ed48d43825e1a876c4d96cafcb6c17cac26610f
 
@@ -122,7 +123,7 @@ Administrativa värdar omfattar följande datorer:
 
 - **Säker Start** skyddar mot angripare och skadlig kod som försöker läsa in osignerad kod i startprocessen.
 
-- **Begränsning av programvara** så att endast auktoriserade administrativa program körs på de administrativa värdarna. Kunder kan använda AppLocker för den här uppgiften med en vitlista för auktoriserade program och på så sätt förhindra att skadlig programvara och obehöriga program körs.
+- **Begränsning av programvara** så att endast auktoriserade administrativa program körs på de administrativa värdarna. Kunder kan använda AppLocker för den här uppgiften med en godkänd lista över auktoriserade program och på så sätt förhindra att skadlig programvara och obehöriga program körs.
 
 - **Fullständig volymkryptering** skyddar mot fysisk förlust av datorer, som bärbara administrationsdatorer för fjärranvändning.
 
@@ -252,6 +253,6 @@ Nästa steg är att definiera PAM-rollerna och associera de användare och grupp
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Jul16_HO3-->
 
 

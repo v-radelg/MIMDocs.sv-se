@@ -1,10 +1,10 @@
 ---
-title: "Miljööversikt | Microsoft Identity Manager"
-description: 
+title: "PAM-miljööversikt | Microsoft Identity Manager"
+description: "Hitta antalet av virtuella datorer och konfigurationen av virtuella datorer som krävs för att distribuera Privileged Access Management"
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 06/14/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -12,15 +12,16 @@ ms.technology: active-directory-domain-services
 ms.assetid: 479db14c-1bfb-4d7c-a344-cd718a01f328
 ms.reviewer: mwahl
 ms.suite: ems
-ms.sourcegitcommit: b8af77d2354428da19d91d5f02b490012835f544
-ms.openlocfilehash: a01cb2e1df52f3157b3d84a4eab837cececfbe1b
+translationtype: Human Translation
+ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
+ms.openlocfilehash: 3057618c609ed251efe1f6cc6b2d3694ac61eafd
 
 
 ---
 
-# Miljööversikt
+# Översikt över miljön
 
-PAM arbetar med virtuella datorer med separata enheter som är anslutna till varandra i ett delat nätverk. De här virtuella datorerna kan hanteras på Windows 8.1, Windows Server 2012 R2 och andra operativsystemsplattformar.
+Privileged Access Management arbetar med virtuella datorer med separata enheter som är anslutna till varandra i ett delat nätverk. De här virtuella datorerna kan hanteras på Windows 8.1, Windows Server 2012 R2 och andra operativsystemsplattformar.
 
 ![PAM-servrar: relationer och plattformar som stöds – diagram](media/pam-test-lab-architecture.png)
 
@@ -33,6 +34,6 @@ De enheter där de virtuella datorernas diskavbildningar ska sparas måste ha mi
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Jul16_HO3-->
 
 

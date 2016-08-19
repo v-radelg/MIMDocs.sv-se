@@ -1,10 +1,10 @@
 ---
-title: "Aktivera med hjälp av Azure MFA | Microsoft Identity Manager"
-description: 
+title: "Använd Azure MFA för att aktivera PAM | Microsoft Identity Manager"
+description: "Ställ in Azure MFA som ett andra säkerhetslager när dina användare aktiverar roller i Privileged Access Management."
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 06/17/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 9e5f51d5ca731b3564b8262db0f4cddeb850231a
-ms.openlocfilehash: d6f6927eec479c705fd9ef7f33fafdeec05857e0
+ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
+ms.openlocfilehash: 518a7e165946049745c8eea15ecb61866d6f9c04
 
 
 ---
@@ -70,7 +70,7 @@ Nu genererar du en fil som innehåller de autentiseringsuppgifter som krävs fö
 
 7.  Kopiera den skapade ZIP-filen till alla system där MIM-tjänsten är installerad. 
 
->[!NOTE] 
+>[!NOTE]
 > ZIP-filen innehåller nyckeluppgifter som används vid autentisering via Azure MFA-tjänsten.
 
 ## Konfigurera MIM-tjänsten för Azure MFA
@@ -99,7 +99,7 @@ Nu genererar du en fil som innehåller de autentiseringsuppgifter som krävs fö
 
 11.  Spara och skriv över filen **MfaSettings.xml** i MIM-tjänstmappen `C:\\Program Files\\Microsoft Forefront Identity Manager\\2010\\Service`. 
 
-> [!NOTE] 
+> [!NOTE]
 > I slutet av processen kontrollerar du att filen **MfaSettings.xml**, eventuella kopior av den och ZIP-filen inte kan läsas offentligt.
 
 ## Konfigurera PAM-användare för Azure MFA
@@ -151,6 +151,6 @@ Du kan också visa eller ladda ned en rapport från Azure MFA om du vill veta me
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO3-->
 
 

@@ -1,10 +1,10 @@
 ---
-title: "Steg 6 – Överföra en grupp till Privileged Access Management | Microsoft Identity Manager"
-description: 
+title: "Distribuera PAM steg 6 – Flytta grupp | Microsoft Identity Manager"
+description: "Migrera en grupp i PRIV-skogen så att den kan hanteras med Privileged Access Management."
 keywords: 
-author: 
+author: kgremban
 manager: femila
-ms.date: 06/16/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -12,8 +12,9 @@ ms.technology: active-directory-domain-services
 ms.assetid: 7b689eff-3a10-4f51-97b2-cb1b4827b63c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.sourcegitcommit: 01470689e862b47625346d5d5bc6bc7def11da9c
-ms.openlocfilehash: b21e2fed4588572fd1b793c4942860871ae9a51c
+translationtype: Human Translation
+ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
+ms.openlocfilehash: 603e5e28f0eee0f648ef7e00ef137f5a08b2ba34
 
 
 ---
@@ -21,8 +22,8 @@ ms.openlocfilehash: b21e2fed4588572fd1b793c4942860871ae9a51c
 # Steg 6 – Överföra en grupp till Privileged Access Management
 
 >[!div class="step-by-step"]
-[!div class="step-by-step"] [« Steg 5 ](step-5-establish-trust-between-priv-corp-forests.md)
-[Steg 7 »](step-7-elevate-user-access.md)
+[«Steg 5 ](step-5-establish-trust-between-priv-corp-forests.md)
+[Steg 7»](step-7-elevate-user-access.md)
 
 Privilegierade konto skapas i PRIV-skogen med PowerShell-cmdletar. Dessa cmdletar utför följande funktioner:
 
@@ -84,11 +85,11 @@ Du måste köra cmdletarna en gång för varje grupp och en gång för varje med
 Om du vill visa att åtkomstbehörigheter mellan skogar gäller för användarens administratörskonto fortsätter du till nästa steg.
 
 >[!div class="step-by-step"]
-[!div class="step-by-step"] [« Steg 5 ](step-5-establish-trust-between-priv-corp-forests.md)
-[Steg 7 »](step-7-elevate-user-access.md)
+[«Steg 5 ](step-5-establish-trust-between-priv-corp-forests.md)
+[Steg 7»](step-7-elevate-user-access.md)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Jul16_HO3-->
 
 

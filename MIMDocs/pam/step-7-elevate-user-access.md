@@ -1,10 +1,10 @@
 ---
-title: "Steg 7 – Utöka en användares behörighet | Microsoft Identity Manager"
-description: 
+title: "Distribuera PAM steg 7 – användaråtkomst | Microsoft Identity Manager"
+description: "Som ett sista steg kan du ge en privilegierad användare tillfällig åtkomst för att se om distributionen av Privileged Access Management lyckades."
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 06/16/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: 5325fce2-ae35-45b0-9c1a-ad8b592fcd07
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 9e5f51d5ca731b3564b8262db0f4cddeb850231a
-ms.openlocfilehash: ee47c69788a98075372ca62943e0c4b101c5354f
+ms.sourcegitcommit: 9b5b7460e6307ab38b1b9356a638eb0200fd97d1
+ms.openlocfilehash: 009091a65dba31de2066e45930e438442fcd89a0
 
 
 ---
@@ -46,7 +46,7 @@ Utan utökad behörighet kan Lisa inte komma åt den privilegierade resursen i C
 2. När du uppmanas anger du lösenordet för kontot PRIV.Lisa. Ett nytt kommandotolksfönster visas.
 3. Skriv följande kommandon när PowerShell-fönstret visas.
 
-    > [!NOTE] 
+    > [!NOTE]
     > Alla steg som följer efter att du har kört kommandona måste utföras inom en viss tid.
 
     ```
@@ -92,8 +92,8 @@ Aktivera på begäran privilegierad åtkomst via PAM-exempelportalen.
 7. Stäng dialogrutan **Internetalternativ**.
 8. På den vänstra fliken klickar du på **Aktivera**. Välj **PAM-roll** och klicka på **Aktivera**.
 
-> [!Note] 
-> I den här miljön kan du också lära dig att utveckla program som använder PAM REST-API:t. Information om hur du gör det finns i [REST API-referens för Privileged Access Management](/microsoft-identity-manager/reference/privileged-access-management-rest-api-reference.md).
+> [!Note]
+> I den här miljön kan du också lära dig hur du utvecklar program som använder PAM REST API, som beskrivs i [referensen för Privileged Access Management REST API](/microsoft-identity-manager/reference/privileged-access-management-rest-api-reference).
 
 ## Sammanfattning
 När du har slutfört stegen i den här genomgången kommer du att ha genomfört ett scenario för privilegierad åtkomsthantering. I det utökas användarens behörighet under en begränsad tid så att användaren kommer åt skyddade resurser med ett separat privilegierat konto. När den utökade sessionen upphör kommer det privilegierade kontot inte längre åt den skyddade resursen. PAM-administratören koordinerar beslutet om vilka säkerhetsgrupper som representerar privilegierade roller. När åtkomstbehörigheten har migrerats till Privileged Access Management-systemet, blir åtkomst som tidigare var möjlig med det ursprungliga användarkontot endast möjlig genom att logga in med ett särskilt privilegierat konto och görs tillgänglig på begäran. Gruppmedlemskap för mycket privilegierade grupper gäller därför bara under en begränsad tid.
@@ -103,6 +103,6 @@ När du har slutfört stegen i den här genomgången kommer du att ha genomfört
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO4-->
 
 

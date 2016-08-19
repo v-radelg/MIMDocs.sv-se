@@ -1,10 +1,10 @@
 ---
-title: "Steg 4 – installera MIM-komponenter på PAM-servern och arbetsstationen | Microsoft Identity Manager"
-description: 
+title: "Distribuera PAM steg 4 – Installera MIM | Microsoft Identity Manager"
+description: "Installera och konfigurera MIM-tjänsten och -portalen på Privileged Access Management-servern och arbetsstationer."
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 06/16/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -14,8 +14,8 @@ ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 9e5f51d5ca731b3564b8262db0f4cddeb850231a
-ms.openlocfilehash: 4e0298099dad9b11812d533e23101fb995fe33d5
+ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
+ms.openlocfilehash: 92939d32da25896d07bec61e4633f58230a78181
 
 
 ---
@@ -29,7 +29,7 @@ ms.openlocfilehash: 4e0298099dad9b11812d533e23101fb995fe33d5
 
 På PAMSRV loggar du in som PRIV\Administratör för att kunna installera MIM-tjänsten och portalen och exempelwebbappen för portalen.
 
-  > [!NOTE] 
+  > [!NOTE]
   > Du måste vara domänadministratör. Om du inte kör följande kommandon som domänadministratör slutförs inte förtroendekontrollerna i nästa steg.
 
 Om du har laddat ned MIM packar du upp MIM-installationsarkivet till en ny mapp.
@@ -44,7 +44,7 @@ Följ riktlinjerna i installationsprogrammet och slutför installationen.
 
 2.  När du konfigurerar vanliga tjänster och anslutningen till MIM-databasen, anger du **Skapa en ny databas**.
 
-    > [!NOTE] 
+    > [!NOTE]
     > Om du installerar MIM-tjänsten flera gånger för hög tillgänglighet anger du **Använd en befintlig databas** för alla efterföljande installationer.
 
 3.  När du konfigurerar en anslutning till en e-postserver, anger du värdnamnet för en Exchange- eller SMTP-server för CORP-miljön som e-postserver (använd corpdc.contoso.local om du inte har en e-postserver) och avmarkerar kryssrutorna **Använd SSL** och **E-postservern är Exchange Server 2007 eller Exchange Server 2010**.
@@ -193,6 +193,6 @@ I nästa steg ska du upprätta förtroende mellan PRIV- och CORP-skogar.
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO3-->
 
 

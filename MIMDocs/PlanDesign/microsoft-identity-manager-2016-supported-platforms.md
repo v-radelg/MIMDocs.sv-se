@@ -1,10 +1,10 @@
 ---
-title: "Plattformar som stöds för MIM 2016 | Microsoft Identity Manager"
+title: "Programvaruplattformar som stöds | Microsoft Identity Manager"
 description: "Sök efter produkter och versioner som är kompatibla med respektive MIM 2016-komponent."
 keywords: 
 author: kgremban
-manager: stevenpo
-ms.date: 04/28/2016
+manager: femila
+ms.date: 08/18/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: 4978f60d-044d-4e84-8d93-65801fce1144
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: a59e7471a8aaafc6752c9be34d52fd3509104dec
-ms.openlocfilehash: bb3e3abfdc12d78108676d4a9f029531d9df17fd
+ms.sourcegitcommit: b4527c61dcdbef21c46414e190e0f0d0852e3aa3
+ms.openlocfilehash: d3995474ac91f109052c004ec9b84ac66efafbc7
 
 
 ---
@@ -44,13 +44,13 @@ ms.openlocfilehash: bb3e3abfdc12d78108676d4a9f029531d9df17fd
 || Informationslagerdatabas | SQL Server 2008 R2 SP3<br/>SQL Server 2012 SP2 |
 | **MIM-portalerna för återställning och registrering av lösenord** | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 |
 || Webbläsare | Internet Explorer 7, 8, 9, 10 eller 11<br/>Andra webbläsare |
-| **MIM-tillägg** | Windows | Windows 7<br/>Windows 8<br/>Windows 8.1<br/>Windows 10 |
+| **MIM-tillägg** | Windows | Windows 7<br/>Windows 8<br/>Windows 8,1<br/>Windows 10 |
 || Outlook-integrering (valfritt) | Outlook 2007 SP2<br/>Outlook 2010<br/>Outlook 2013 |
-|| PAM PowerShells begärande-cmdlet:ar (valfritt) | Windows 8.1<br/>Windows 10 |
+|| PAM PowerShells begärande-cmdlet:ar (valfritt) | Windows 8,1<br/>Windows 10 |
 | **Certifikathantering i MIM** (server och integrering med certifikatutfärdare (CA)) | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012 R2 |
 || Certifikatutfärdare | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 |
-|| MIM CM-databas | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 |
-| **Certifikathantering i MIM** (program) | Windows | Windows 8<br/>Windows 8.1<br/>Windows 10 |
+|| MIM CM-databas | SQL Server 2008 R2 SP3<br/>SQL Server 2012 SP2<br/>SQL Server 2014 SP1 |
+| **Certifikathantering i MIM** (program) | Windows | Windows 8<br/>Windows 8,1<br/>Windows 10 |
 | **Certifikathantering i MIM** (klient och bulkklient) | Windows | Windows 7 |
 | **MIM BHOLD-programsvit** | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012 R2 |
 || BHOLD-databas | SQL Server 2008 R2 SP3<br/>SQL Server 2012 SP2 |
@@ -59,6 +59,6 @@ ms.openlocfilehash: bb3e3abfdc12d78108676d4a9f029531d9df17fd
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

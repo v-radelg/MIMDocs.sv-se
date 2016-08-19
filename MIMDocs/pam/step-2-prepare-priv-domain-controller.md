@@ -1,10 +1,10 @@
 ---
-title: "Steg 2 – Förbereda PRIV-domänkontrollanten | Microsoft Identity Manager"
-description: 
+title: "Distribuera PAM steg 2 – PRIV DC | Microsoft Identity Manager"
+description: "Förbered PRIV-domänkontrollanten, som kommer att tillhandahålla skyddsmiljön där Privileged Access Management är isolerat."
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 06/16/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: 0e9993a0-b8ae-40e2-8228-040256adb7e2
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 9e5f51d5ca731b3564b8262db0f4cddeb850231a
-ms.openlocfilehash: 62d80222ea85fe5066cfa396b5e5a10bced4d3cd
+ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
+ms.openlocfilehash: 048a17c6b8150501185b7a13c3d2cb292791c9e8
 
 
 ---
@@ -221,7 +221,7 @@ Med PowerShell på PRIVDC konfigurerar du vidarebefordran av DNS-namn så att PR
   Add-DnsServerConditionalForwarderZone –name "contoso.local" –masterservers 10.1.1.31
   ```
 
-> [!NOTE] 
+> [!NOTE]
 > De andra skogarna måste också kunna vidarebefordra DNS-frågor för PRIV-skogen till den här domänkontrollanten.  Om du har flera befintliga Active Directory-skogar måste du också lägga till en villkorlig DNS-vidarebefordrare för var och en av dessa skogar.
 
 ### Konfigurera Kerberos
@@ -235,7 +235,7 @@ Med PowerShell på PRIVDC konfigurerar du vidarebefordran av DNS-namn så att PR
   setspn -S FIMService/pamsrv PRIV\MIMService
   ```
 
-> [!NOTE] 
+> [!NOTE]
 > I nästa steg i det här dokumentet beskrivs hur du installerar MIM 2016 serverkomponenter på en enskild dator. Om du vill lägga till en annan server för hög tillgänglighet behöver du ytterligare Kerberos-konfigurationen enligt beskrivningen i [FIM 2010: Konfiguration av Kerberos-autentisering](http://social.technet.microsoft.com/wiki/contents/articles/3385.fim-2010-kerberos-authentication-setup.aspx).
 
 ### Konfigurera tilldelning för att ge åtkomst till MIM-tjänstkonton
@@ -307,6 +307,6 @@ I nästa steg ska du förbereda en PAM-server.
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO3-->
 
 

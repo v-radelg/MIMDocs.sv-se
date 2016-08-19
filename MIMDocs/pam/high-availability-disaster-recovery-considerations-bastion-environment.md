@@ -1,10 +1,10 @@
 ---
-title: "Överväganden för hög tillgänglighet och haveriberedskap i skyddsmiljön | Microsoft Identity Manager"
-description: 
+title: "PAM-katastrofåterställning | Microsoft Identity Manager"
+description: "Lär dig hur du konfigurerar Privileged Access Management för hög tillgänglighet och katastrofåterställning."
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 06/17/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: 03e521cd-cbf0-49f8-9797-dbc284c63018
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 9e5f51d5ca731b3564b8262db0f4cddeb850231a
-ms.openlocfilehash: 1d9e005bfb3e26f9a2b818667f14acd3e5239523
+ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
+ms.openlocfilehash: 9164e48bf10fa27ff6c87ba3816b586a940dda69
 
 
 ---
@@ -161,7 +161,7 @@ I en typisk produktionsdistribution av Privileged Access Management ingår minst
 
 Anvisningar för att lägga till en ytterligare domänkontrollant finns i [Installera en replikerad Windows Server 2012-domänkontrollant på en befintlig domän (nivå 200)](https://technet.microsoft.com/library/jj574134.aspx).  
 
->[!NOTE] 
+>[!NOTE]
 > Om domänkontrollanten ska finnas på en virtualiseringsplattform som Hyper-V läser du varningarna i [Distribution och konfiguration av virtualiserad domänkontrollant](https://technet.microsoft.com/library/jj574223.aspx).
 
 #### Återställning
@@ -199,7 +199,7 @@ Information om hög tillgänglighet finns i Windows Server-dokumenten [ Maskinva
 
 Vid produktionsdistribution över flera servrar kan du kan använda Utjämning av nätverksbelastning för att distribuera bearbetningsbelastningen.  Du bör även ha ett enda alias (till exempel A- eller CNAME-poster) så att ett allmänt namn visas för användaren.
 
->[!IMPORTANT] 
+>[!IMPORTANT]
 > Om du använder en annan teknik för belastningsutjämning än funktionen för utjämning av nätverksbelastning i Windows Server 2012 R2, ska du kontrollera att lösningen omdirigerar sessioner till samma server och inte till slumpmässiga servrar.
 
 I en MIM distribution med flera servrar har varje MIM-tjänst ett externt värdnamn, ett tjänstnamn och ett tjänstpartitionsnamn.  Standardvärdet för tjänstnamnet är datorns namn och standardvärdet för det externa värdnamnet och tjänstpartitionsnamnet konfigureras under installationen av MIM-tjänsten på skärmen där du uppmanas att ange MIM-tjänstserverns adress. Dessa tre namn lagras i filen %ProgramFiles%\Microsoft Forefront Identity Manager\Service\Microsoft.ResourceManagementService.exe.config som attribut `externalHostName`, `serviceName` och `servicePartitionName` i konfigurationsnoden `resourceManagementService`.  
@@ -224,6 +224,6 @@ Om funktionsnivån för skyddsmiljöns skog är Windows Server 2012 R2, använde
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO3-->
 
 

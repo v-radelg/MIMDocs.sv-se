@@ -1,10 +1,10 @@
 ---
-title: "Steg 1 – förbereda värden och CORP-domänen | Microsoft Identity Manager"
-description: 
+title: "Distribuera PAM steg 1 – CORP-domän | Microsoft Identity Manager"
+description: "Förbered CORP-domänen med befintliga eller nya identiteter som ska hanteras av Privileged Identity Manager"
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 06/10/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 9e5f51d5ca731b3564b8262db0f4cddeb850231a
-ms.openlocfilehash: 7d6888ad4d694ad0ed746598563de32d7c363936
+ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
+ms.openlocfilehash: 9a2fafa86c5c928339ff8d7ad1593472046ccb98
 
 
 ---
@@ -94,7 +94,7 @@ I vissa fall kan gruppen redan finnas. Det är normalt om domänen också har an
 
 Om du har skapat en ny CORP-domän bör du skapa ytterligare användare och grupper för att visa PAM-scenariot. De användare och grupper du skapar i exempelsyfte bör inte vara domänadministratörer eller styras av inställningarna för adminSDHolder i AD.
 
-> [!NOTE] 
+> [!NOTE]
 > Om du redan har en domän som du tänker använda som CORP-domän och har en användare och en grupp som du kan använda som exempel kan du gå vidare till avsnittet [Konfigurera granskning](#configure-auditing).
 
 Vi ska skapa en säkerhetsgrupp med namnet *CorpAdmins* och en användare med namnet *Lisa*. Du kan använda olika namn om du vill.
@@ -167,7 +167,7 @@ Domänkontrollanten CORPDC startas om. Mer information om den här registerinst�
 
 Om du inte redan har kopplat en arbetsstationsdator till domänen följer du de här anvisningarna för hur du förbereder en.  
 
-> [!NOTE] 
+> [!NOTE]
 > Om du redan har en arbetsstation kopplad till domänen går du vidare till [Skapa en resurs i exempelsyfte](#create-a-resource-for-demonstration-purposes).
 
 ### Installera Windows 8.1 eller Windows 10 Enterprise som en virtuell dator
@@ -215,6 +215,6 @@ I nästa steg förbereder du PRIV-domänkontrollanten.
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO3-->
 
 
