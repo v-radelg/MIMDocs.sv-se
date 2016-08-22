@@ -4,7 +4,7 @@ description: "Kom igång med MIM 2016-komponenterna genom att installera och kon
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 07/21/2016
+ms.date: 08/11/2016
 ms.topic: get-started-article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: 2585e9c5-ce34-46c7-bdcf-8c08773901dc
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
-ms.openlocfilehash: 2dfc89d32ef3b615201f1eb57ed3b8f5daed513e
+ms.sourcegitcommit: 739797502e09c2b92e35767e2c943308cd1de5c9
+ms.openlocfilehash: ba399da1431ea1d2d1633d0469e054ffd89f1d34
 
 
 ---
@@ -26,7 +26,7 @@ ms.openlocfilehash: 2dfc89d32ef3b615201f1eb57ed3b8f5daed513e
 [MIM-tjänst och portal»](install-mim-service-portal.md)
 
 > [!NOTE]
-> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
+> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
 > - Namn på domänkontrollant – **mimservername**
 > - Domännamn – **contoso**
 > - Lösenord – **Pass@word1**
@@ -53,7 +53,7 @@ För att kunna installera Microsoft Identity Manager 2016-komponenterna måste d
 
     ![Bild på anpassad installation](media/MIM-Install2.png)
 
-6.  På skärmen Konfiguration av synkroniseringsdatabasen väljer du:
+6.  På skärmen för konfiguration av synkroniseringstjänstens databas väljer du:
 
     1.  SQL Server finns på: **Den här datorn**.
 
@@ -71,7 +71,7 @@ För att kunna installera Microsoft Identity Manager 2016-komponenterna måste d
 
     ![Bild av tjänstkonto](media/MIM-Install4.png)
 
-8.  Ange de relevanta säkerhetsgrupperna i installationsprogrammet för MIM-synkronisering:
+8.  Ange de relevanta säkerhetsgrupperna i installationsprogrammet för MIM-synkroniseringstjänsten:
 
     1. Administratör = *contoso\MIMSyncAdmins*
 
@@ -87,11 +87,11 @@ För att kunna installera Microsoft Identity Manager 2016-komponenterna måste d
 
 9. På skärmen för säkerhetsinställningar markerar du **Aktivera brandväggsregler för inkommande RPC-kommunikation** och klickar på **Nästa**.
 
-10. Klicka på **Installera** för att starta installationen av MIM-synkronisering.
+10. Klicka på **Installera** för att påbörja installationen av MIM-synkroniseringstjänsten.
 
     1. Det kan hända att en varning om MIM-synkroniseringstjänstkontot visas. Klicka i så fall på **OK**.
 
-    2. MIM-synkronisering installeras.
+    2. MIM-synkroniseringstjänsten kommer nu att installeras.
 
     3. Ett meddelande om att skapa en säkerhetskopia för krypteringsnyckeln visas – klicka på **OK**, välj sedan en mapp där säkerhetskopian av krypteringsnyckeln ska lagras.
 
@@ -107,6 +107,6 @@ För att kunna installera Microsoft Identity Manager 2016-komponenterna måste d
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO2-->
 
 
