@@ -4,7 +4,7 @@ description: "Hämta anvisningarna för att konfigurera och installera MIM-tjän
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 07/21/2016
+ms.date: 08/11/2016
 ms.topic: get-started-article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
-ms.openlocfilehash: c18ea7b0390ca11c213ed66bfd1476454cf86951
+ms.sourcegitcommit: 739797502e09c2b92e35767e2c943308cd1de5c9
+ms.openlocfilehash: 438754773057043b8560562bab0ae260fb3a4bc2
 
 
 ---
@@ -26,7 +26,7 @@ ms.openlocfilehash: c18ea7b0390ca11c213ed66bfd1476454cf86951
 [Synkronisera databaser»](install-mim-sync-ad-service.md)
 
 > [!NOTE]
-> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
+> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
 > - Namn på domänkontrollant – **mimservername**
 > - Domännamn – **contoso**
 > - Lösenord – **Pass@word1**
@@ -93,7 +93,7 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 1.  Ange *Contoso\MIMSSPRService* som namn på tjänstkontot för SSPR-registrering och *Pass@word1* som lösenord.
 
-2.  Ange *CORPIDM* som värdnamn för registrering av lösenord i MIM och ange porten som **8080**. Aktivera alternativet **Öppna port i brandväggen**.
+2.  Ange *CORPIDM* som värdnamn på portalen för återställning av lösenord i MIM och ange porten som **8088**. Aktivera alternativet **Öppna port i brandväggen**.
 
     ![Bild på Ange konfigurationsinformation som används av IIS](media/MIM-Install15.png)
 
@@ -152,6 +152,6 @@ Verifiera att MIM-portalen är aktiv när installationen är klar.
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO2-->
 
 

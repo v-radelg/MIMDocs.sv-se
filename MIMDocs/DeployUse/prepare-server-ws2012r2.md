@@ -4,7 +4,7 @@ description: "Hämta stegen och minimikraven för att förbereda Windows Server 
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 07/21/2016
+ms.date: 08/11/2016
 ms.topic: get-started-article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
-ms.openlocfilehash: e1d69eb7946f9adfdfa7c55cecd3fa1d799a2cd3
+ms.sourcegitcommit: 739797502e09c2b92e35767e2c943308cd1de5c9
+ms.openlocfilehash: bdf1f4b7c5762095f4986506f9e17369dadea011
 
 
 ---
@@ -26,7 +26,7 @@ ms.openlocfilehash: e1d69eb7946f9adfdfa7c55cecd3fa1d799a2cd3
 [SQL Server 2014 »](prepare-server-sql2014.md)
 
 > [!NOTE]
-> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
+> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
 > - Namn på domänkontrollant – **mimservername**
 > - Domännamn – **contoso**
 > - Lösenord – **Pass@word1**
@@ -74,7 +74,7 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 
     ![Bild för Lokal säkerhetsprincip](media/MIM-DeployWS3.png)
 
-4. Klicka på **Lägg till användare eller grupp** och skriv `contoso\mimsync; contoso\mimma; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\mimsspr` i textrutan, klicka på **Kontrollera namn** och klicka på **OK**.
+4. Klicka på **Lägg till användare eller grupp** och skriv `contoso\MIMSync; contoso\MIMMA; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\MIMSSPR` i textrutan, klicka på **Kontrollera namn** och klicka på **OK**.
 
 5. Klicka på **OK** för att stänga fönstret **Logga in som en tjänst Egenskaper**.
 
@@ -111,6 +111,6 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO2-->
 
 
