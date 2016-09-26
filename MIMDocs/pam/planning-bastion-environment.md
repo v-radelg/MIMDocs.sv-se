@@ -4,7 +4,7 @@ description:
 keywords: 
 author: kgremban
 manager: femila
-ms.date: 06/14/2016
+ms.date: 09/16/2016
 ms.topic: article
 ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: bfc7cb64-60c7-4e35-b36a-bbe73b99444b
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b8af77d2354428da19d91d5f02b490012835f544
-ms.openlocfilehash: 0ed48d43825e1a876c4d96cafcb6c17cac26610f
+ms.sourcegitcommit: 9eefdf21d0cab3f7c488a66cbb3984d40498f4ef
+ms.openlocfilehash: fc4161f98d4367a2124e6253fe11dd1f2712d614
 
 
 ---
@@ -43,7 +43,7 @@ Enligt [nivåmodellen](tier-model-for-partitioning-administrative-privileges.md)
 
 *CORP*-skogen för produktion bör ha förtroende för den administrativa *PRIV*-skogen, men inte tvärtom. Det kan vara ett domänförtroende eller ett skogsförtroende. Den administrativa skogens domän behöver inte ha förtroende för hanterade domäner och skogar för att hantera Active Directory, men för ytterligare program kan det krävas en dubbelriktad förtroenderelation, säkerhetsvalidering och testning.
 
-Selektiv autentisering bör användas för att säkerställa att kontona i den administrativa skogen endast använder rätt produktionsvärdar. För att hantera domänkontrollanter och delegera behörigheter i Active Directory kräver detta att behörigheten "Tillåts att logga in" på domänkontrollanter tilldelas angivna administratörskonton på nivå 0 i den administrativa skogen. Mer information finns i [Konfigurera inställningar för selektiv autentisering](http://technet.microsoft.com/library/cc755844.aspx).
+Selektiv autentisering bör användas för att säkerställa att kontona i den administrativa skogen endast använder rätt produktionsvärdar. För att hantera domänkontrollanter och delegera behörigheter i Active Directory kräver detta att behörigheten "Tillåts att logga in" på domänkontrollanter tilldelas angivna administratörskonton på nivå 0 i den administrativa skogen. I [Configuring Selective Authentication Settings](http://technet.microsoft.com/library/cc816580.aspx) (Konfigurera inställningar för selektiv autentisering) finns mer information.
 
 ## Upprätthålla logisk uppdelning
 
@@ -149,7 +149,7 @@ MIM använder PowerShell-cmdletar till att upprätta förtroende mellan de befin
 
 När den befintliga Active Directory-topologin ändras kan cmdletarna `Test-PAMTrust`, `Test-PAMDomainConfiguration`, `Remove-PAMTrust` och `Remove-PAMDomainConfiguration` användas till att uppdatera förtroenderelationer.
 
-### Upprätta förtroende för varje skog
+## Upprätta förtroende för varje skog
 
 `New-PAMTrust`-cmdleten måste köras en gång per befintlig skog. Den anropas på MIM-tjänstdatorn i administrationsdomänen. Parametrarna för det här kommandot är domännamnet för den översta domänen i den befintliga skogen och autentiseringsuppgifterna för en administratör i domänen.
 
@@ -159,11 +159,11 @@ New-PAMTrust -SourceForest "contoso.local" -Credentials (get-credential)
 
 När du har upprättat förtroendet konfigurerar du varje domän för att aktivera hantering från skyddsmiljön enligt beskrivningen i nästa avsnitt.
 
-### Aktivera hantering av varje domän
+## Aktivera hantering av varje domän
 
 Det finns sju krav för att aktivera hantering för en befintlig domän.
 
-#### 1. En säkerhetsgrupp i den lokala domänen
+### 1. En säkerhetsgrupp i den lokala domänen
 
 Det måste finnas en grupp i den befintliga domänen, vars namn är NetBIOS-domännamnet följt av tre dollartecken, t.ex. *CONTOSO$$$*. Gruppomfånget måste vara *domänlokal* och grupptypen måste vara *säkerhet*. Det krävs för att grupper ska kunna skapas i den dedikerade administrativa skogen med samma säkerhetsidentifierare som grupper i domänen. Skapa den här gruppen med följande PowerShell-kommando, som utförs av en administratör för den befintliga domänen och körs på en arbetsstation som är ansluten till den befintliga domänen:
 
@@ -171,7 +171,7 @@ Det måste finnas en grupp i den befintliga domänen, vars namn är NetBIOS-dom�
 New-ADGroup -name 'CONTOSO$$$' -GroupCategory Security -GroupScope DomainLocal -SamAccountName 'CONTOSO$$$'
 ```
 
-#### 2. Granskning av lyckade och misslyckade åtgärder
+### 2. Granskning av lyckade och misslyckade åtgärder
 
 Grupprincipinställningarna på domänkontrollanten för granskning måste innehålla granskning av både misslyckade och lyckade åtgärder för Granska kontohantering och Granska katalogtjänståtkomst. Det kan göras av en administratör för den befintliga domänen med konsolen Grupprinciphantering och sedan köras på en arbetsstation som är ansluten till den befintliga domänen:
 
@@ -201,7 +201,7 @@ Grupprincipinställningarna på domänkontrollanten för granskning måste inneh
 
 Meddelandet ”Uppdatering av grupprincip har slutförts”. bör visas efter några minuter.
 
-#### 3. Tillåt anslutningar till den lokala säkerhetskontrollen
+### 3. Tillåt anslutningar till den lokala säkerhetskontrollen
 
 Domänkontrollanterna måste tillåta RPC över TCP/IP-anslutningar för lokal säkerhetskontroll (LSA) från skyddsmiljön. TCP/IP-stöd i LSA måste aktiveras i registret på äldre versioner av Windows Server:
 
@@ -209,7 +209,7 @@ Domänkontrollanterna måste tillåta RPC över TCP/IP-anslutningar för lokal s
 New-ItemProperty -Path HKLM:SYSTEM\\CurrentControlSet\\Control\\Lsa -Name TcpipClientSupport -PropertyType DWORD -Value 1
 ```
 
-#### 4. Skapa PAM-domänens konfiguration
+### 4. Skapa PAM-domänens konfiguration
 
 `New-PAMDomainConfiguration`-cmdleten måste köras på MIM-tjänstdatorn i administrationsdomänen. Parametrarna för det här kommandot är domännamnet för den befintliga domänen och autentiseringsuppgifterna för en administratör i domänen.
 
@@ -217,7 +217,7 @@ New-ItemProperty -Path HKLM:SYSTEM\\CurrentControlSet\\Control\\Lsa -Name TcpipC
  New-PAMDomainConfiguration -SourceDomain "contoso" -Credentials (get-credential)
 ```
 
-#### 5. Bevilja läsbehörighet för konton
+### 5. Bevilja läsbehörighet för konton
 
 De konton i skyddsskogen som används till att skapa roller (administratörer som använder cmdletarna `New-PAMUser` och `New-PAMGroup`), samt det konto som används av MIM-övervakningstjänsten måste ha läsbehörighet i domänen.
 
@@ -239,11 +239,11 @@ Följande steg ger läsbehörighet för användaren *PRIV\Administratör* till d
 
 18. Stäng Active Directory – användare och datorer.
 
-#### 6. Ett nödkonto
+### 6. Ett nödkonto
 
 Om målet med hanteringen av privilegierad åtkomst är att minska antalet konton med domänadministratörsbehörighet som är permanent tilldelade för domänen måste det också finnas ett *nödkonto* i domänen om det senare skulle uppstå problem i förtroenderelationen. Konton för nödåtkomst till produktionsskogen ska finnas i varje domän och ska bara kunna logga in på domänkontrollanter. För organisationer med flera platser, kan det krävas ytterligare konton för redundans.
 
-#### 7. Uppdatera behörigheter i skyddsmiljön
+### 7. Uppdatera behörigheter i skyddsmiljön
 
 Granska behörigheterna i objektet *AdminSDHolder* i systembehållaren i den domänen. Objektet *AdminSDHolder* har en unik åtkomstkontrollista (ACL) som används till att kontrollera behörigheterna för säkerhetsobjekt som är medlemmar i inbyggda privilegierade Active Directory-grupper. Observera om det har gjorts ändringar i standardbehörigheterna som påverkar användare med administratörsbehörighet i domänen, eftersom de behörigheterna inte gäller för användare vars konton finns i skyddsmiljön.
 
@@ -253,6 +253,6 @@ Nästa steg är att definiera PAM-rollerna och associera de användare och grupp
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Sep16_HO3-->
 
 
