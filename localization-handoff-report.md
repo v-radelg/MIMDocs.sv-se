@@ -6,22 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [MIMDocs\pam\step-7-elevate-user-access.md](https://github.com/Microsoft/MIMDocs-pr/blob/2247e05242dedf23a59e41f75d2acbfd5f59d1e7/MIMDocs/pam/step-7-elevate-user-access.md) | OutofSyncHandedBackSuccess | [Details](#1f4627bfd1616c2fd5b6a6115ea892801c381dc0236)
+ [MIMDocs\index.md](https://github.com/Microsoft/MIMDocs-pr/blob/6b59ef1891f00c57956070b0cd0193c26431d00a/MIMDocs/index.md) | OutofSyncHandedBackSuccess | [Details](#479e4d5a1b21ea51b871257458618aca2407d35d80)
 
 ## Item Details
-##### <a name='1f4627bfd1616c2fd5b6a6115ea892801c381dc0236'></a> Source: [MIMDocs\pam\step-7-elevate-user-access.md](https://github.com/Microsoft/MIMDocs-pr/blob/2247e05242dedf23a59e41f75d2acbfd5f59d1e7/MIMDocs/pam/step-7-elevate-user-access.md)
+##### <a name='479e4d5a1b21ea51b871257458618aca2407d35d80'></a> Source: [MIMDocs\index.md](https://github.com/Microsoft/MIMDocs-pr/blob/6b59ef1891f00c57956070b0cd0193c26431d00a/MIMDocs/index.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [step-7-elevate-user-access.7eb7ad35ff66c63dde2e6574342e5904acd2fc99.sv-se.xlf](https://github.com/Microsoft/EM.handoff/blob/0416a2cb0caa33e81980db052e719814460e99c3/ol-handoff/Microsoft/MIMDocs-pr.sv-se/master/step-7-elevate-user-access.7eb7ad35ff66c63dde2e6574342e5904acd2fc99.sv-se.xlf)
-* Handoff Datetime: 2016-07-16 00:32:16
+* Handoff File: [index.a54b2324d63a6d513b6900195023b9a8089553b4.sv-se.xlf](https://github.com/Microsoft/EM.handoff/blob/45cfa9df8c247d76738b7aa45d06d7be55127a96/ol-handoff/Microsoft/MIMDocs-pr.sv-se/master/index.a54b2324d63a6d513b6900195023b9a8089553b4.sv-se.xlf)
+* Handoff Datetime: 2016-07-16 01:07:19
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [MIMDocs\pam\step-7-elevate-user-access.md](https://github.com/Microsoft/MIMDocs-pr.sv-se/blob/7601bf356adeb23a7d0a0fcd9b52f89544a9e8f1/MIMDocs/pam/step-7-elevate-user-access.md)
-* Current Handback File: [step-7-elevate-user-access.7eb7ad35ff66c63dde2e6574342e5904acd2fc99.sv-se.xlf](https://github.com/Microsoft/EM.handback/blob/e28a7eae38b2fac86b73d0fb0fd53fbdba005138/ol-handback/Microsoft/MIMDocs-pr.sv-se/master/step-7-elevate-user-access.7eb7ad35ff66c63dde2e6574342e5904acd2fc99.sv-se.xlf)
-* Current Handback Datetime: 2016-07-15 01:07:21
+* Current Target File: [MIMDocs\index.md](https://github.com/Microsoft/MIMDocs-pr.sv-se/blob/5ad43a2e50cdd4838e24d58d1356f8d4cbf37cc3/MIMDocs/index.md)
+* Current Handback File: [index.a54b2324d63a6d513b6900195023b9a8089553b4.sv-se.xlf](https://github.com/Microsoft/EM.handback/blob/bd8d96749d81387c963b9945cf85c7e82c6225a5/ol-handback/Microsoft/MIMDocs-pr.sv-se/master/index.a54b2324d63a6d513b6900195023b9a8089553b4.sv-se.xlf)
+* Current Handback Datetime: 2016-07-13 08:53:33
 * [Back to Top](#report-top)
 
 
