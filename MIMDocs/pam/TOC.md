@@ -20,9 +20,19 @@
 ### [Steg 6 – skapa privilegierade konton](step-6-transition-group-to-pam.md)
 ### [Steg 7 – utöka en användares behörighet](step-7-elevate-user-access.md)
 ### [Konfigurera Azure MFA](use-azure-mfa-for-activation.md)
+## [Konfigurera PAM med hjälp av skript](sp1-pam-configure-using-scripts.md)
+### [Steg 1 Konfigurera Priv-domänen](sp1-step1-configuring-priv-domain.md)
+### [Steg 2 Konfigurera CORP-domänen](sp1-step2-configuring-corp-domain.md)
+### [Steg 3 Konfigurera SQL](sp1-step3-installing-configuring-sql.md)
+### [Steg 4 Konfigurera SharePoint](sp1-step4-configuring-sharepoiint.md)
+### [Steg 5 Installera/konfigurera PAM](sp1-step5-configuring-pam.md)
+### [Steg 6 Konfigurera PAM-förtroendet](sp1-step6-setup-pam-trust.md)
+### [Steg 7 Konfigurera SID-historik/SID-filtrering](sp1-step7-setup-sidhistory-sidfiltering.md)
+### [Steg 8 Verifiera PAM-distributionen](sp1-step8-pam-deployment-verification.md)
+### [Tillägg](sp1-pam-deployment-addendum.md)
 # [För utvecklare](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-developer-reference)
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 
