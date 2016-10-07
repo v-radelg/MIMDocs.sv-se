@@ -69,7 +69,8 @@ Uppdaterad information om plattformsstöd finns i dokumentet [Plattformar som st
 
 Kunder som uppgraderar till Microsoft Identity Manager 2016 Service Pack 1 bör följa stegen nedan för alla tjänster som är relevanta för deras distribution.
 
->[!Note] Kunder som kör Forefront Identity Manager 2010 R2 SP1 eller tidigare måste först uppgradera sin miljö till Microsoft Identity Manager 2016-versionen från augusti 2015 och sedan följa stegen nedan.
+>[!Note]
+>Kunder som kör Forefront Identity Manager 2010 R2 SP1 eller tidigare måste först uppgradera sin miljö till Microsoft Identity Manager 2016-versionen från augusti 2015 och sedan följa stegen nedan.
 
 Innan du börjar
 
