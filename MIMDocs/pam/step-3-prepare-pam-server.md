@@ -51,7 +51,7 @@ Lägg till roller för webbserver (IIS) och programserver, .NET Framework 3.5-fu
 
 1.  Logga in som PRIV-domänadministratör (PRIV\Administratör) och starta PowerShell.
 
-2.  Skriv in följande kommandon: Observera att du kan behöva ange en annan plats för källfilerna för .NET Framework 3.5-funktionerna. De här funktionerna finns vanligtvis inte när du installerar Windows Server, men är tillgängliga i mappen sida-vid-sida (SxS) i mappen Sources på OS-installationsdisken, till exempel d:\Sources\SxS\\.
+2.  Skriv in följande kommandon: Observera att du kan behöva ange en annan plats för källfilerna för .NET Framework 3.5-funktionerna. De här funktionerna finns vanligtvis inte när du installerar Windows Server, men är tillgängliga i mappen sida-vid-sida (SxS) i mappen Sources på OS-installationsdisken, t.ex. ”* d:\Sources\SxS\”.
 
     ```
     import-module ServerManager
@@ -212,6 +212,6 @@ I steg 4 börjar du installera MIM-komponenterna på PAM-servern.
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Oct16_HO2-->
 
 
