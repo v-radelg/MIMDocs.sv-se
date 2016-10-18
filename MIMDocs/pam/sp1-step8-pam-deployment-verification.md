@@ -4,7 +4,7 @@ description: "Förbered CORP-domänen med befintliga eller nya identiteter som s
 keywords: 
 author: barclayn
 manager: MBaldwin
-ms.date: 09/27/2016
+ms.date: 10/04/2016
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.service: microsoft-identity-manager
@@ -13,8 +13,8 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 689c2ef0e4e4a681a398ba7e94fb3def525937ea
-ms.openlocfilehash: 743ba586374ccc04e9ddafff759a00574e13f6ac
+ms.sourcegitcommit: 99b1ff9f622ddd357866b2a3f9f4cc8e0fc88005
+ms.openlocfilehash: 9a617d8a5fbe8bcdac40cdf3250e5efedb7a0b84
 
 
 ---
@@ -24,7 +24,8 @@ ms.openlocfilehash: 743ba586374ccc04e9ddafff759a00574e13f6ac
 Distributionspaketet innehåller verifieringsskript som kan köra ett PAM-scenario för att bekräfta att PAM-distributionen fungerar som förväntat.
 Om du vill använda distributionsverifieringen redigerar du avsnittet <PamValidation/> i PAMDeploymentConfig.xml.
 
->[!Note] Verifieringen kräver en klientdator som är domänansluten till CORP-domänen där PAM-komponenterna på klientsidan är installerade. Skript för klientinstallationer finns i tillägget.
+>[!NOTE]
+>Verifieringen kräver en klientdator som är domänansluten till CORP-domänen där PAM-komponenterna på klientsidan är installerade. Skript för klientinstallationer finns i tillägget.
 
 Klientdatorns namn måste uppdateras i <PAMValidationClient/>-taggen i PAMDeploymentConfig.xml. Resten av informationen i <PAMValidation/>-noden behöver bara ändras om den är i konflikt med befintliga användare/grupper eftersom verifieringen försöker skapa dem.
 Utför verifieringen genom att följa dessa steg:
@@ -72,8 +73,12 @@ Skriv följande i PowerShell-fönstret:
   Till en början har användaren inte åtkomst till resursen. När användaren har lagts till i rollen med Just-In-Time beviljas användaren åtkomst. När varaktigheten för begäran går ut har användaren återigen ingen åtkomst.
   Skriptet använder standardvärdet (11 minuter) som varaktighet för begäran.
 
+>[!div class="step-by-step"]
+[« Steg 7](sp1-step7-setup-sidhistory-sidfiltering.md)
+[Tillägg »](sp1-pam-deployment-addendum.md)
 
 
-<!--HONumber=Sep16_HO4-->
+
+<!--HONumber=Oct16_HO1-->
 
 
