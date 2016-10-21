@@ -13,13 +13,13 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 689c2ef0e4e4a681a398ba7e94fb3def525937ea
-ms.openlocfilehash: 4c5cfa92f3111a6d298f586ba547a1eca2502853
+ms.sourcegitcommit: bc56b57a06592527bab13aad879ca13466e968b3
+ms.openlocfilehash: 4ad5d755de100ad598c6cebd209296edd361e8c5
 
 
 ---
 
-# Konfigurera SID-historik/SID-filtrering
+# Steg 7 Konfigurera SID-historik/SID-filtrering
 
 **Detta krävs inte för en miljö med endast PRIV** Logga in på PAMServer med MIMAdmin-kontot.
 
@@ -35,8 +35,12 @@ För SID-filtrering: <br/></br>
 För SID-historik: </br></br>
 ”SID-historik aktiveras för förtroendet” eller ”SD-historik har redan aktiverats för förtroendet”.
 
+>[!div class="step-by-step"]
+[« Steg 6](sp1-step6-setup-pam-trust.md)
+[Steg 8 »](sp1-step8-pam-deployment-verification.md)
 
 
-<!--HONumber=Sep16_HO4-->
+
+<!--HONumber=Oct16_HO1-->
 
 
