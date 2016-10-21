@@ -13,8 +13,8 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: c7c5266f3d1c51e933855031f4128cbcb967d6e2
-ms.openlocfilehash: 43a176ed2f1375eb98851064c460515ec09de132
+ms.sourcegitcommit: 99b1ff9f622ddd357866b2a3f9f4cc8e0fc88005
+ms.openlocfilehash: 82500ff42e24f5b155bfdd336566a2cd3d87fe7e
 
 
 ---
@@ -30,10 +30,13 @@ Viktiga antaganden:
 4. Miljön har tre dedikerade (fysiska eller virtuella) datorer som kör CORPDC, PRIVDC och PAMSERVER oberoende av varandra.
 5. För verifieringsalternativet förutsätts det att det finns en dedikerad klientdator som kan användas för att köra det här steget.
 
->[!NOTE] Om du får problem med skriptkörningen kan du behöva granska loggarna. Alla skriptloggar sparas i %AppData%\MIMPAMInstall. Komprimera mappen till en ZIP-fil och skicka den till mim2016@microsoft.com tillsammans med information om åtgärden och felet.
+>[!NOTE]
+>Om du får problem med skriptkörningen kan du behöva granska loggarna. Alla skriptloggar sparas i %AppData%\MIMPAMInstall. Komprimera mappen till en ZIP-fil och skicka den till mim2016@microsoft.com tillsammans med information om åtgärden och felet.
+
+Redo att sätta igång med PAM-distributionsskript? Börja med att [konfigurera PAM med skript](/microsoft-identity-manager/pam/sp1-pam-configure-using-scripts).
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

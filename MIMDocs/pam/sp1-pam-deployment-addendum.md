@@ -13,12 +13,12 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 689c2ef0e4e4a681a398ba7e94fb3def525937ea
-ms.openlocfilehash: 482cfbbac3ea668ca4bf9d8a4a45469e61634f98
+ms.sourcegitcommit: bc56b57a06592527bab13aad879ca13466e968b3
+ms.openlocfilehash: cdd859ceb13d187af3303235c0fe1e496f2bfb6e
 
 
 ---
-# Tillägg:
+# Tillägg för PAM-distributionsskript:
 
 ## Tillägg 1 Konfigurera PRIV-domänen
 
@@ -70,10 +70,10 @@ Fortsätt med steg 8 (se ovan).
 
 ## Tillägg 4 Om det uppstår problem
 
-Alla skriptloggar sparas i %AppData%\MIMPAMInstall. Komprimera mappen till en ZIP-fil och skicka den till [mim2016@microsoft.com](mim2016@microsoft.com) tillsammans med information om åtgärden och felet.
+Alla skriptloggar sparas i %AppData%\MIMPAMInstall. Komprimera mappen till en ZIP-fil och skicka den till [mim2016@microsoft.com](mailto:mim2016@microsoft.com) tillsammans med information om åtgärden och felet.
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 
