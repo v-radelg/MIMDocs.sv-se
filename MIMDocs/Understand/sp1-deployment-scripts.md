@@ -6,7 +6,6 @@ author: barclayn
 manager: MBaldwin
 ms.date: 09/26/2016
 ms.topic: article
-ms.prod: microsoft-identity-manager
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
@@ -19,7 +18,7 @@ ms.openlocfilehash: 82500ff42e24f5b155bfdd336566a2cd3d87fe7e
 
 ---
 
-# Distributionsskript för MIM2016 SP1 PAM
+# <a name="mim2016-sp1-pam-deployment-scripts"></a>Distributionsskript för MIM2016 SP1 PAM
 
 Detta Service Pack innehåller en uppsättning distributionsskript som gör det lättare att distribuera PAM. Dessa skript är tillgänglig på Download Center. Innan du försöker använda skripten är det viktigt att du ser till att antagandena nedan gäller för din miljö.
 
