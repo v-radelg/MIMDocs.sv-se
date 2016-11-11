@@ -3,22 +3,26 @@ title: Steg 3 Konfigurera SQL
 description: "Förbered CORP-domänen med befintliga eller nya identiteter som ska hanteras av Privileged Identity Manager med hjälp av skript"
 keywords: 
 author: barclayn
+ms.author: barclayn
 manager: MBaldwin
-ms.date: 09/27/2016
+ms.date: 10/25/2016
 ms.topic: article
-ms.prod: microsoft-identity-manager
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 689c2ef0e4e4a681a398ba7e94fb3def525937ea
-ms.openlocfilehash: a7d456b1c2baf31ef2d7ca801a567cf42eaef52e
+ms.sourcegitcommit: 365989693f844f117f76ee2b69db85df82f06f35
+ms.openlocfilehash: 375a34e5255c90559fc0ffb3a80fc7c92ebd27a2
 
 
 ---
-# Steg 3 Konfigurera SQL
+# <a name="step-3-configuring-sql"></a>Steg 3 Konfigurera SQL
+
+>[!div class="step-by-step"]
+[« Steg 2](sp1-step2-configuring-corp-domain.md)
+[Steg 4 »](sp1-step4-configuring-sharepoint.md)
 
 Innan du fortsätter med stegen nedan kontrollerar du att du använder SQL Server 2012 SP1 eller senare, eller SQL Server 2014. För domänanslutna servrar loggar du in med MIMAdmin-kontot. Annars loggar du in som lokal administratör.
 1. Kör PowerShell som administratör
@@ -36,8 +40,12 @@ Innan du fortsätter med stegen nedan kontrollerar du att du använder SQL Serve
 
 När du uppmanas att göra det anger du lösenordet för MIMAdmin-tjänstkontot och låter installationen fortsätta. När installationen är klar går du vidare till steg 4.
 
+>[!div class="step-by-step"]
+[« Steg 2](sp1-step2-configuring-corp-domain.md)
+[Steg 4 »](sp1-step4-configuring-sharepoint.md)
 
 
-<!--HONumber=Sep16_HO4-->
+
+<!--HONumber=Nov16_HO2-->
 
 
