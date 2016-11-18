@@ -1,25 +1,25 @@
 ---
-title: Konfigurera Windows Server | Microsoft Identity Manager
+title: Konfigurera Windows Server | Microsoft Docs
 description: "Hämta stegen och minimikraven för att förbereda Windows Server 2012 RS för att arbeta med MIM 2016."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 08/11/2016
 ms.topic: get-started-article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 739797502e09c2b92e35767e2c943308cd1de5c9
-ms.openlocfilehash: bdf1f4b7c5762095f4986506f9e17369dadea011
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 06d2365808858dc09d04ab37eafa9d6e3212cbcf
 
 
 ---
 
-# Konfigurera en server för identitetshantering: Windows Server 2012 R2
+# <a name="set-up-an-identity-management-server-windows-server-2012-r2"></a>Konfigurera en server för identitetshantering: Windows Server 2012 R2
 
 >[!div class="step-by-step"]
 [« Förbereda en domän](preparing-domain.md)
@@ -31,7 +31,7 @@ ms.openlocfilehash: bdf1f4b7c5762095f4986506f9e17369dadea011
 > - Domännamn – **contoso**
 > - Lösenord – **Pass@word1**
 
-## Ansluta Windows Server 2012 R2 till din domän
+## <a name="join-windows-server-2012-r2-to-your-domain"></a>Ansluta Windows Server 2012 R2 till din domän
 
 Börja med en dator med Windows Server 2012 R2, med minst 8 GB RAM-minne. Vid installationen anger du version ”Windows Server 2012 R2 Standard (Server med GUI) x 64”.
 
@@ -62,7 +62,7 @@ Börja med en dator med Windows Server 2012 R2, med minst 8 GB RAM-minne. Vid i
     Install-WindowsFeature Web-WebServer, Net-Framework-Features,rsat-ad-powershell,Web-Mgmt-Tools,Application-Server,Windows-Identity-Foundation,Server-Media-Foundation,Xps-Viewer –includeallsubfeature -restart -source d:\sources\SxS
     ```
 
-## Konfigurera säkerhetsprinciper för servern
+## <a name="configure-the-server-security-policy"></a>Konfigurera säkerhetsprinciper för servern
 
 Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapats kan köras som tjänster.
 
@@ -93,7 +93,7 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 12. Stäng fönstret för lokala säkerhetsprinicper.
 
 
-## Ändra Windows-autentiseringsläget för IIS
+## <a name="change-the-iis-windows-authentication-mode"></a>Ändra Windows-autentiseringsläget för IIS
 
 1.  Öppna ett PowerShell-fönster.
 
@@ -111,6 +111,6 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 
 
 
-<!--HONumber=Aug16_HO2-->
+<!--HONumber=Nov16_HO2-->
 
 

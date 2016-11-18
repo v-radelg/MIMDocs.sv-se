@@ -1,25 +1,25 @@
 ---
-title: "Distribuera PAM steg 6 – Flytta grupp | Microsoft Identity Manager"
+title: "Distribuera PAM steg 6 – Flytta grupp | Microsoft Docs"
 description: "Migrera en grupp i PRIV-skogen så att den kan hanteras med Privileged Access Management."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/15/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 7b689eff-3a10-4f51-97b2-cb1b4827b63c
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
-ms.openlocfilehash: 603e5e28f0eee0f648ef7e00ef137f5a08b2ba34
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 9e70bdd3c586a16a9a55c91bd0e099a500950a64
 
 
 ---
 
-# Steg 6 – Överföra en grupp till Privileged Access Management
+# <a name="step-6-transition-a-group-to-privileged-access-management"></a>Steg 6 – Överföra en grupp till Privileged Access Management
 
 >[!div class="step-by-step"]
 [«Steg 5 ](step-5-establish-trust-between-priv-corp-forests.md)
@@ -90,6 +90,6 @@ Om du vill visa att åtkomstbehörigheter mellan skogar gäller för användaren
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

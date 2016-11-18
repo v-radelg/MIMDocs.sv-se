@@ -1,25 +1,25 @@
 ---
-title: "Förstå PAM-komponenterna | Microsoft Identity Manager"
+title: "Förstå PAM-komponenterna | Microsoft Docs"
 description: "Privileged Access Management delar vissa komponenter med MIM och har även några egna komponenter. Lär dig hur dessa fungerar tillsammans."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/15/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 6498f68f-36d3-448c-8fe6-649ad5a7f97d
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
-ms.openlocfilehash: d17feb5d78b864bef8f0b96bfbf92a18c3c91694
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 043d617bcd2addf7c6dc7ecd210790fc55f12c28
 
 
 ---
 
-# Förstå komponenterna i PAM
+# <a name="understand-the-components-of-pam"></a>Förstå komponenterna i PAM
 
 Med Privileged Access Management separeras administrativ åtkomst från löpande användarkonton. Den här lösningen är beroende av parallella skogar:
 
@@ -43,6 +43,6 @@ Dessutom är dessa medlemskap tidsbegränsade. Det gör att användarens adminis
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

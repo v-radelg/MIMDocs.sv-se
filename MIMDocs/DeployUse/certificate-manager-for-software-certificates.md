@@ -1,28 +1,28 @@
 ---
-title: Skapa programcertifikat | Microsoft Identity Manager
+title: Skapa programcertifikat | Microsoft Docs
 description: "Lär dig att använda Certifikathanteraren för att skapa och förnya programcertifikat med profilmallar."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/21/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: fed5ada9-d80f-4825-aad7-4172ac5d71d3
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
-ms.openlocfilehash: d5c8fc4f9a3eaab95441f7a915f7e02d55042ae9
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 31385a18c0b93e5ceaf78a2b6b8d5bed5aac224a
 
 
 ---
 
-# Skapa programcertifikat med Certifikathanteraren
+# <a name="create-software-certificates-with-certificate-manager"></a>Skapa programcertifikat med Certifikathanteraren
 För att registrera och förnya programcertifikat behöver du inte vara administratör och du behöver inte heller ha ett virtuellt smartkort. Det bör påpekas att du vid en viss tidpunkt kommer att uppmanas tillåta en certifikatåtgärd, vilket är normalt.
 
-## Skapa en profilmall för programcertifikat i Certifikathanteraren i MIM 2016
+## <a name="create-a-software-certificate-profile-template-in-mim-2016-certificate-manager"></a>Skapa en profilmall för programcertifikat i Certifikathanteraren i MIM 2016
 
 1.  Skapa en mall för det certifikat du ska begära för det virtuella smartkortet. Öppna MMC.
 
@@ -72,7 +72,7 @@ För att registrera och förnya programcertifikat behöver du inte vara administ
 
     10. I listan väljer du den nya mall du just skapat (**Arkiverad certifikatmall**) och klickar sedan på **OK**.
 
-## Skapa profilmallen
+## <a name="create-the-profile-template"></a>Skapa profilmallen
 
 1.  Logga in på CM-portalen som en användare med administratörsbehörighet.
 
@@ -98,6 +98,6 @@ För att registrera och förnya programcertifikat behöver du inte vara administ
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 
