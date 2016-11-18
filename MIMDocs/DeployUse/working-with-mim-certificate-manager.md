@@ -1,25 +1,25 @@
 ---
-title: MIM Certificate Manager| Microsoft Identity Manager
+title: MIM Certificate Manager| Microsoft Identity Docs
 description: "Läs mer om hur du distribuerar Certificate Manager-appen, så att  användarna kan hantera sina egna åtkomsträttigheter."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/21/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 66060045-d0be-4874-914b-5926fd924ede
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
-ms.openlocfilehash: 1aea9543af4dd7f3eab4f01eab52d8c11b36191d
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: a2be6b5640dde5e2908dce36ea13d920a6643874
 
 
 ---
 
-# Arbeta med MIM Certificate Manager
+# <a name="working-with-the-mim-certificate-manager"></a>Arbeta med MIM Certificate Manager
 När du har börjat köra MIM 2016 och Certificate Manager kan du distribuera Windows Store-appen för MIM Certificate Manager så att användarna kan hantera sina fysiska smartkort, virtuella smartkort och programcertifikat. Distribution av MIM CM-appen genomförs i följande steg:
 
 1.  Skapa en certifikatmall.
@@ -30,7 +30,7 @@ När du har börjat köra MIM 2016 och Certificate Manager kan du distribuera Wi
 
 4.  Distribuera appen via SCCM eller Intune.
 
-## Skapa en certifikatmall
+## <a name="create-a-certificate-template"></a>Skapa en certifikatmall
 Du skapar en certifikatmall för CM-appen på samma sätt som du normalt skapar en certifikatmall, förutom att du måste se till att certifikatmallen är av version 3 eller senare.
 
 1.  Logga in på den server som kör AD CS (certifikatservern).
@@ -69,7 +69,7 @@ Du skapar en certifikatmall för CM-appen på samma sätt som du normalt skapar 
 
 16. Välj den nya mallen du har skapat i listan och klicka på **OK**.
 
-## Skapa en profilmall
+## <a name="create-a-profile-template"></a>Skapa en profilmall
 När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta bort det virtuella smartkortet och att ta bort insamlade data. CM-appen kan inte hantera insamlade data, så det är viktigt att inaktivera den. Det gör du så här:
 
 1.  Logga in på CM-portalen som en användare med administratörsbehörighet.
@@ -94,7 +94,7 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
 11. Du måste inaktivera datainsamlingsobjekt för varje princip genom att klicka på principen i den vänstra rutan, markera kryssrutan bredvid **Exempeldataobjekt** och sedan klicka på **Ta bort datainsamlingsobjekt**. Klicka sedan på **OK**.
 
-## Förbereda CM-appen för distribution
+## <a name="prepare-the-cm-app-for-deployment"></a>Förbereda CM-appen för distribution
 
 1.  Kör följande kommando i kommandotolken för att packa upp appen och extrahera innehållet i en ny undermapp med namnet appx och skapa en kopia så att du inte ändrar den ursprungliga filen.
 
@@ -251,11 +251,11 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
     -   För att få hjälp med skriptet **ConfigureMIimCMClientAndRelyingParty.ps1** kör `get-help  -detailed ConfigureMimCMClientAndRelyingParty.ps1`
 
-## Distribuera appen
+## <a name="deploy-the-app"></a>Distribuera appen
 När du konfigurerar CM-appen hämtar du filen MIMDMModernApp_&lt;version&gt;_AnyCPU_Test.zip i Download Center och extraherar allt dess innehåll. .appx-filen är installationsprogrammet. Du kan distribuera den på samma sätt du normalt distribuerar appar från Windows Store, genom att använda [System Center Configuration Manager](https://technet.microsoft.com/library/dn613840.aspx) eller [Intune](https://technet.microsoft.com/library/dn613839.aspx) för att läsa in appen separat så att användare kan få åtkomst till den genom företagsportalen eller genom att den överförs direkt till deras datorer.
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

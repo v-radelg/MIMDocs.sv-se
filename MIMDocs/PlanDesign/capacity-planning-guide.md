@@ -1,25 +1,25 @@
 ---
-title: "Guide för kapacitetsplanering | Microsoft Identity Manager"
+title: "Guide för kapacitetsplanering | Microsoft Docs"
 description: "Den här guiden hjälper dig att förstå de variabler du bör tänka på innan du distribuerar MIM 2016, inklusive belastningsnivåer och policybeslut."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/21/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 3ac5b990-1678-4996-996d-cbd84b8426b4
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
-ms.openlocfilehash: 2aeca4630f0d6f64d012e000e5dbabec618e7b1e
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 33e7d901dcd9d8cf1bcaddcfa521625060bb3dbc
 
 
 ---
 
-# Guide för kapacitetsplanering
+# <a name="capacity-planning-guide"></a>Guide för kapacitetsplanering
 
 Med Microsoft Identity Manager (MIM) kan du skapa, uppdatera och ta bort användarkonton i hela organisationen. Det ger även slutanvändare möjligheten att hantera sina egna konton med självbetjäningsfunktioner. Även i en liten miljö kan alla dessa åtgärder bli en stor arbetsbörda på kort tid.
 
@@ -27,7 +27,7 @@ Innan du börjar med MIM använder du den här guiden, tillsammans med testmilj�
 
 Om du ännu inte har bekantat dig med MIM 2016 och dess komponenter bör du läsa mer om  [Microsoft Identity Manager 2016](/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016) innan du fortsätter.
 
-## Översikt
+## <a name="overview"></a>Översikt
 Det finns ett antal variabler som kan påverka den totala kapaciteten och prestandan vid distributionen av Microsoft Identity Manager. De olika sätt på vilka du rent fysiskt distribuerar MIM-komponenterna (topologin) och den maskinvara som komponenterna körs på är avgörande för vilken prestanda och kapacitet du kan förvänta dig av MIM-distributionen. Antalet konfigurationsobjekt för MIM-policyn och deras komplexitet kanske inte är lika självklara, men de är ändå viktiga faktorer som måste tas med i beräkningen vid planeringen av kapacitet. Slutligen, både distributionens  förväntade skala och den belastning som du räknar med att den utsätts för påverkar prestandan och kapaciteten på ett mer påtagligt sätt.
 
 De faktorer som främst påverkar den kapacitet och prestanda som du kan förvänta vid en distribution av MIM 2016 diskuteras i följande tabell.
@@ -41,7 +41,7 @@ De faktorer som främst påverkar den kapacitet och prestanda som du kan förvä
 | Läs in | Användningsfrekvens. Till exempel hur ofta du förväntar dig att nya grupper eller användare skapas, lösenord återställs eller hur ofta portalen besöks under en viss tidsperiod. Observera att arbetsbelastningen kan variera under loppet av en timme, dag, vecka eller ett år. Beroende på vilken komponent det rör sig om kan du välja att utforma för hög belastning eller genomsnittlig belastning. |
 
 
-## Vara värd för Microsoft Identity Manager-komponenter
+## <a name="hosting-microsoft-identity-manager-components"></a>Vara värd för Microsoft Identity Manager-komponenter
 
 Komponenterna i Microsoft Identity Manager behöver inte finnas på samma dator. Beaktande av de här komponenterna och de fysiska eller virtuella värdmaskinerna är en viktig del av kapacitetsplaneringen.
 
@@ -52,7 +52,7 @@ Tänk också på de externa faktorerna för konfigurationen. Exempel:
 - Om du använder ett datalagringsnätverk (SAN) som konfiguration för MIM 2016-tjänstens databas, vilka andra program delar detta SAN? De här programmen kan påverka databasens prestanda om de måste konkurrera om de delade diskresurserna för SAN.
 
 
-## Användare och grupper
+## <a name="users-and-groups"></a>Användare och grupper
 Antalet användare och grupper i miljön är en av de viktigaste faktorerna när du funderar på skalan för en distribution. Det finns emellertid flera andra relaterade faktorer du bör ta med i beräkningen inför planeringen.
 
 - Kan användare skapa grupper? Om så är fallet bör du beräkna hur det faktum att användare skapar nya grupper påverkar tillväxttakten för nya grupper i miljön.
@@ -60,7 +60,7 @@ Antalet användare och grupper i miljön är en av de viktigaste faktorerna när
 - Ska dynamiska grupper distribueras? Räkna ut hur många och vilka typer av dynamiska grupper du kan förvänta dig i miljön.
 
 
-## Förväntade belastningsnivåer
+## <a name="expected-load-levels"></a>Förväntade belastningsnivåer
 Du bör också fundera på vilken typ av belastning som MIM-komponenterna kommer att utsättas för. Du kan förmodligen få en ungefärlig uppskattning av de här uppgifterna genom att titta på de befintliga programmen i din miljö. Här följer ett antal relevanta frågor du bör tänka på:
 
 - Hur ofta förväntar du dig en begäran att gå med i eller lämna en grupp?
@@ -74,7 +74,7 @@ Du bör också fundera på vilken typ av belastning som MIM-komponenterna kommer
 - Förväntar du dig stora variationer i belastningsnivåerna, från normal till hög belastning? Efter semesterperioder brukar det till exempel ske ett stort antal återställningar av lösenord. Se till att köra systemunderhåll och synkroniseringsscheman vid andra tider än under de förväntade användningstopparna. Ta med höga belastningsperioder i beräkningen när du överväger kapacitetsplaneringen.
 
 
-## Konfigurationsobjekt för policy
+## <a name="policy-configuration-objects"></a>Konfigurationsobjekt för policy
 
 Konfigurationsobjekt för Microsoft Identity Manager-policyn inkluderar hanteringsprincipregler (MPR), uppsättningar, arbetsflöden och synkroniseringsregler för en viss distribution. MIM-distributioner är unika för varje kund eftersom policykonfigurationerna varierar efter varje distributions behov. Viktiga prestandafaktorer som har att göra med konfigurationsobjekten för MIM-policyn är till exempel:
 
@@ -89,12 +89,12 @@ Konfiguration av MIM-policyn omfattar också beslut om etablering i din miljö. 
 - Ska du använda kodlös etablering? Om du gör det påverkar det både antalet poster för förväntade regler och kopplade begäranden och arbetsflöden i systemet.
 
 
-## Se även
+## <a name="see-also"></a>Se även
 - [Topologiska överväganden när du ska distribuera MIM](topology-considerations.md)
-- Du kan hämta [Kapacitetsplaneringsguiden för Forefront Identity Manager (FIM) 2010](http://go.microsoft.com/fwlink/?LinkId=200180) som innehåller mer information om en testversion och resultaten av prestandatest.
+- Du kan hämta [Kapacitetsplaneringsguiden för Forefront Identity Manager (FIM) 2010](http://go.microsoft.com/fwlink/?LinkId=200180) som innehåller mer information om en testversion och resultat av prestandatest.
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 
