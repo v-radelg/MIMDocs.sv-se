@@ -1,25 +1,25 @@
 ---
-title: "Programvaruplattformar som stöds | Microsoft Identity Manager"
+title: "Programvaruplattformar som stöds | Microsoft Docs"
 description: "Sök efter produkter och versioner som är kompatibla med respektive MIM 2016-komponent."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 09/29/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 4978f60d-044d-4e84-8d93-65801fce1144
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 69e2c327cf897dea450c43618a9b4ce3ab555cc0
-ms.openlocfilehash: 522e9321d7709a7967cfea3eb1cea809dfe8202e
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 55b7dc3c76c5e95153b5839ce1eb6bf4a7997889
 
 
 ---
 
-# Plattformar som stöds för MIM 2016
+# <a name="supported-platforms-for-mim-2016"></a>Plattformar som stöds för MIM 2016
 
 I den här tabellen beskrivs de plattformar som stöds och versionen för respektive komponent i Microsoft Identity Manager 2016. Versioner som är märkta med * stöds endast i MIM 2016 Service Pack 1.
 
@@ -62,6 +62,6 @@ I den här tabellen beskrivs de plattformar som stöds och versionen för respek
 
 
 
-<!--HONumber=Sep16_HO5-->
+<!--HONumber=Nov16_HO2-->
 
 

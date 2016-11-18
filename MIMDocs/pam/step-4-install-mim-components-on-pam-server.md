@@ -1,12 +1,12 @@
 ---
-title: "Distribuera PAM steg 4 – Installera MIM | Microsoft Identity Manager"
+title: "Distribuera PAM steg 4 – Installera MIM | Microsoft Docs"
 description: "Installera och konfigurera MIM-tjänsten och -portalen på Privileged Access Management-servern och arbetsstationer."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/15/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: ef605496-7ed7-40f4-9475-5e4db4857b4f
@@ -14,13 +14,13 @@ ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
-ms.openlocfilehash: 92939d32da25896d07bec61e4633f58230a78181
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 5b9653cb8de9e9fc788685ba027f84a795467cf6
 
 
 ---
 
-# Steg 4 – installera MIM-komponenter på PAM-servern och arbetsstationen
+# <a name="step-4-install-mim-components-on-pam-server-and-workstation"></a>Steg 4 – installera MIM-komponenter på PAM-servern och arbetsstationen
 
 >[!div class="step-by-step"]
 [« Steg 3](step-3-prepare-pam-server.md)
@@ -34,7 +34,7 @@ På PAMSRV loggar du in som PRIV\Administratör för att kunna installera MIM-tj
 
 Om du har laddat ned MIM packar du upp MIM-installationsarkivet till en ny mapp.
 
-##  Kör installationsprogrammet för tjänsten och portalen.  
+##  <a name="run-the-service-and-portal-install-program"></a>Kör installationsprogrammet för tjänsten och portalen.  
 
 Följ riktlinjerna i installationsprogrammet och slutför installationen.
 
@@ -55,7 +55,7 @@ Följ riktlinjerna i installationsprogrammet och slutför installationen.
     - Namn på tjänstkonto: *MIMService*  
     - Lösenord för tjänstkonto: *Pass@word1* (eller lösenordet du skapade i steg 2)  
     - Domän för tjänstkonto: *PRIV*  
-    - E-postkonto för tjänst: *MIMService@priv.contoso.local*  
+    - E-postkonto för tjänsten: *MIMService@priv.contoso.local*  
 
 6.  Godkänn standardinställningarna för synkroniseringsserverns värdnamn och ange *PRIV\MIMMA* som konto för MIM-hanteringsagenten. En varning visas om att synkroniseringstjänsten för MIM inte finns. Det är OK, eftersom synkroniseringstjänsten för MIM inte används i det här scenariot.
 
@@ -98,7 +98,7 @@ Följ riktlinjerna i installationsprogrammet och slutför installationen.
 
 När installationen är klar startas servern om. Kontrollera att MIM-portalen är aktiv och tillåt att användarna att visa sina egna objektresurser i MIM.
 
-## Konfigurera MIM-portalens hanteringsprincipregler
+## <a name="set-up-mim-portal-management-policy-rules"></a>Konfigurera MIM-portalens hanteringsprincipregler
 
 1. När PAMSRV startat om loggar du in som PRIV\Administratör.
 
@@ -114,7 +114,7 @@ När installationen är klar startas servern om. Kontrollera att MIM-portalen ä
 
 7. Välj den här hanteringsprincipregeln och avmarkera **Principen är inaktiverad**. Klicka på **OK** och **Skicka**.
 
-## Kontrollera brandväggens anslutningar
+## <a name="verify-the-firewall-connections"></a>Kontrollera brandväggens anslutningar
 
 Brandväggen ska tillåta inkommande anslutningar till TCP-portarna 5725, 5726, 8086 och 8090.
 
@@ -131,7 +131,7 @@ Brandväggen ska tillåta inkommande anslutningar till TCP-portarna 5725, 5726, 
 8.  Verifiera att det finns ett aktivt nätverk listat som priv.contoso.local och ett domännätverk.  
 9. Stäng **kontrollpanelen**.
 
-## Ställ in exempelwebbappen
+## <a name="set-up-the-sample-web-application"></a>Ställ in exempelwebbappen
 
 I det här avsnittet ska du installera och konfigurera exempelwebbappen för REST-API:t för MIM PAM.
 
@@ -167,7 +167,7 @@ I det här avsnittet ska du installera och konfigurera exempelwebbappen för RES
 
 7.  (Valfritt) Kontrollera att användaren kan autentiseras för REST-API:t. Öppna en webbläsare som administratör på PAMSRV.  Gå till webbplatsens URL http://pamsrv.priv.contoso.local:8086/api/pamresources/pamroles/, autentisera om det behövs och kontrollera att en nedladdning sker.
 
-## Installera MIM PAM-cmdletarna för begärande
+## <a name="install-the-mim-pam-requestor-cmdlets"></a>Installera MIM PAM-cmdletarna för begärande
 
 Installera MIM PAM-cmdletarna för begärande på arbetsstationen du konfigurerade i steg 1.
 
@@ -193,6 +193,6 @@ I nästa steg ska du upprätta förtroende mellan PRIV- och CORP-skogar.
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

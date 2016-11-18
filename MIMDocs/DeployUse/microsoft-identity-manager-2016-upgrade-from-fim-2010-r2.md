@@ -1,25 +1,25 @@
 ---
-title: "Uppgradera från FIM 2010 R2 | Microsoft Identity Manager"
+title: "Uppgradera från FIM 2010 R2 | Microsoft Docs"
 description: "Lär dig hur du uppgraderar FIM 2010 R 2-komponenterna och sedan installerar de komponenter som är nya i MIM 2016."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/21/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 9471ccc1-bafe-46ee-b169-1464262380e1
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
-ms.openlocfilehash: c77a41b47baa81f003e52f79d338a7810fa817b5
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: ef272ffe665aa5753fa2bf02d26f2ce73efa025b
 
 
 ---
 
-# Uppgradera från Forefront Identity Manager 2010 R2
+# <a name="upgrade-from-forefront-identity-manager-2010-r2"></a>Uppgradera från Forefront Identity Manager 2010 R2
 
 Använd den här artikeln som vägledning om du har en Forefront Identity Manager (FIM) 2010 R2-miljö och vill prova Microsoft Identity Manager (MIM) 2016. Det finns tre faser i uppgraderingen:
 
@@ -36,7 +36,7 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 - Lokala och miljörelaterade krav (SQL Server, Exchange Server, SharePoint Services osv.) som har konfigurerats för FIM 2010 R2.
 
 
-## Förberedelse
+## <a name="preparation"></a>Förberedelse
 
 1.  Säkerhetskopiera FIM-tjänstdatabasen, FIM-synkroniseringsdatabasen, FIM-synkronisering och tjänstkonfiguration och programvara.
 
@@ -44,7 +44,7 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 
 3.  Hämta eller packa upp MIM-programvaran.
 
-## Uppgradera synkroniseringstjänsten
+## <a name="upgrade-the-synchronization-service"></a>Uppgradera synkroniseringstjänsten
 
 1.  Logga in som administratör på en server där FIM 2010 R2-synkroniseringstjänsten (”Sync”) har distribuerats.
 
@@ -82,7 +82,7 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 
 13. Observera att **Synkroniseringstjänsten** har startats om.
 
-## Uppgradera tjänsten och portalen
+## <a name="upgrade-the-service-and-portal"></a>Uppgradera tjänsten och portalen
 
 1.  Logga in som administratör på en server där FIM 2010 R2-tjänsten och -portalen har distribuerats.
 
@@ -138,7 +138,7 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 
 14. När du installerar MIM-portalen ska du ange webbadressen för den SharePoint-webbplatssamling som för närvarande är värd för FIM-portalen. Klicka på **Nästa**.
 
-## Installera MIM-portalen för lösenordsregistrering
+## <a name="install-the-mim-password-registration-portal"></a>Installera MIM-portalen för lösenordsregistrering
 
 1. Om du installerar MIM-portalen för lösenordsregistrering ska du ange den webbadress som krävs för portalen för lösenordsregistrering. Klicka på **Nästa**.
 
@@ -168,7 +168,7 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 
     2.  Ange om den här portalen ska kunna nås av både extranät- och intranätanvändare, eller endast av intranätanvändare, enligt den tidigare konfigurationen för återställning av lösenord i FIM.
 
-## Installera MIM-portalen för återställning av lösenord
+## <a name="install-the-mim-password-reset-portal"></a>Installera MIM-portalen för återställning av lösenord
 
 1. Om du installerar MIM-portalen för återställning av lösenord ska du ange åtkomstuppgifter och autentiseringsuppgifter för återställning av lösenord i MIM.
 
@@ -188,7 +188,7 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 
     2.  Ange om den här portalen ska kunna nås av både extranät- och intranetanvändare, eller endast av intranetanvändare.
 
-## Slutför installationen och uppgraderingen
+## <a name="finish-installation-and-upgrade"></a>Slutför installationen och uppgraderingen
 
 1. När alla definitioner för konfiguration är klara visas en installationssida. Klicka på **Installera** för att påbörja installationen och uppgraderingen av MIM-tjänsten och -portalen.
 
@@ -202,6 +202,6 @@ Obs: Om FIM-tilläggen för närvarande finns distribuerade på användarens dat
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

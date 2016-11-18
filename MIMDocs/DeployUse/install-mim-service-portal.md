@@ -1,25 +1,25 @@
 ---
-title: "Installera MIM-tjänst och -portal | Microsoft Identity Manager"
+title: "Installera MIM-tjänst och -portal | Microsoft Docs"
 description: "Hämta anvisningarna för att konfigurera och installera MIM-tjänsten och -portalen för Microsoft Identity Manager 2016"
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 08/11/2016
 ms.topic: get-started-article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 739797502e09c2b92e35767e2c943308cd1de5c9
-ms.openlocfilehash: 438754773057043b8560562bab0ae260fb3a4bc2
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 4d0f08d84c39c982d43b2a0e0ba2f694aed508da
 
 
 ---
 
-# Installera MIM 2016: MIM-tjänst och -portal
+# <a name="install-mim-2016-mim-service-and-portal"></a>Installera MIM 2016: MIM-tjänst och -portal
 
 >[!div class="step-by-step"]
 [«Synkroniseringstjänst för MIM](install-mim-sync.md)
@@ -35,7 +35,7 @@ ms.openlocfilehash: 438754773057043b8560562bab0ae260fb3a4bc2
 Om du inte installerade MIM-installationspaketet under det föregående steget ska du gå tillbaka och installera Microsoft Identity Manager 2016-komponenterna innan du fortsätter.
 
 
-## Konfigurera MIM-tjänsten och -portalen för installation
+## <a name="configure-mim-service-and-portal-for-installation"></a>Konfigurera MIM-tjänsten och -portalen för installation
 
 1. Kör **installationsprogrammet för MIM-tjänsten och -portalen** från den uppackade undermappen **Tjänst och portal**.
 
@@ -77,7 +77,7 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 16. Markera kryssrutan för att öppna portarna 5725 och 5726 i brandväggen, och kryssrutan för att bevilja alla autentiserade användare åtkomst till MIM-portalen.
 
-## Konfigurera MIM-portalen för registrering av lösenord
+## <a name="configure-mim-password-registration-portal"></a>Konfigurera MIM-portalen för registrering av lösenord
 
 1.  Ange namnet på tjänstkontot för SSPR-registrering som *contoso\MIMSSPR* och lösenordet som *Pass@word1*.
 
@@ -89,9 +89,9 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 4. På nästa skärm för konfiguration av MIM-portalen för registrering av lösenord anger du *http://CorpIDM.contoso.local* som MIM-tjänstens serveradress till portalen för registrering av lösenord.
 
-## Konfigurera MIM-portalen för återställning av lösenord
+## <a name="configure-mim-password-reset-portal"></a>Konfigurera MIM-portalen för återställning av lösenord
 
-1.  Ange *Contoso\MIMSSPRService* som namn på tjänstkontot för SSPR-registrering och *Pass@word1* som lösenord.
+1.  Ange namnet på tjänstkontot för SSPR-registrering som *Contoso\MIMSSPRService* och lösenordet som *Pass@word1*.
 
 2.  Ange *CORPIDM* som värdnamn på portalen för återställning av lösenord i MIM och ange porten som **8088**. Aktivera alternativet **Öppna port i brandväggen**.
 
@@ -101,7 +101,7 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 4. På nästa skärm för konfiguration av MIM-portalen för registrering av lösenord anger du *CorpIDname http://CorpIDname.domain.local* som MIM-tjänstens serveradress till portalen för att återställa lösenord.
 
-## Installera MIM-tjänsten och -portalen
+## <a name="install-mim-service-and-portal"></a>Installera MIM-tjänsten och -portalen
 
 När alla förberedande definitioner för installationen är klara klickar du på **Installera** för att starta installationen av de valda komponenterna i **Tjänsten och portalen**.
 
@@ -152,6 +152,6 @@ Verifiera att MIM-portalen är aktiv när installationen är klar.
 
 
 
-<!--HONumber=Aug16_HO2-->
+<!--HONumber=Nov16_HO2-->
 
 

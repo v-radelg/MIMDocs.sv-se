@@ -1,31 +1,31 @@
 ---
-title: PAM-programvarukrav | Microsoft Identity Manager
+title: PAM-programvarukrav | Microsoft Docs
 description: "Hitta kraven för maskinvara och programvara för distribution av Privileged Access Management"
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/15/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 82a9085c-9667-4b3b-8079-657eab1d1e58
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: ae4c40c73dd9d5860f42e00765a7e34e8ca397a9
-ms.openlocfilehash: 75a748f7035cfb10e833e4fdbfdc208b5245d3ea
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 2f696738d21ad4b221d7adce5f83753c6f126f86
 
 
 ---
 
-# Maskin- och programvarukrav
+# <a name="hardware-and-software-requirements"></a>Maskin- och programvarukrav
 
 Privileged Access Management har inga maskinvarukrav förutom för de underliggande programvaruplattformarna. Kontrollera att du har tillräckligt med minne och diskutrymme, och är ansluten till nätverket.
 
 Den här artikeln innehåller minimikraven för en grundläggande distribution. Den har inte som syfte att illustrera prestanda, skalbarhet och hög tillgänglighet och ska inte ses som en rekommenderad distributionstopologi för stora företag och produktionsmiljöer.
 
-## Installera från programvarupaket
+## <a name="installing-from-software-packages"></a>Installera från programvarupaket
 
 Följande programvara kan laddas ned från TechNet Evaluation Center eller MSDN:  
 - Microsoft Identity Manager 2016
@@ -35,28 +35,28 @@ Följande programvara kan laddas ned från TechNet Evaluation Center eller MSDN:
 Följande programvara kan laddas ned från GitHub:  
 - PAMSamplePortal: innehåller exempelwebbapp för REST-API:t
 
-## Programvara som krävs
+## <a name="required-software"></a>Programvara som krävs
 
 - Windows Server 2012 R2  
 - Windows 8.1 Enterprise eller Windows 10 Enterprise  
 - SQL Server 2012 Service Pack 1 eller SQL Server 2014  
 
-## Utvärderingsprogramvara
+## <a name="evaluation-software"></a>Utvärderingsprogramvara
 
 Om du inte har licenser för Windows, SQL Server eller Windows Server kan du ladda ned utvärderingsversioner.
 
-### TechNet Evaluation Center
+### <a name="technet-evaluation-center"></a>TechNet Evaluation Center
 
 - [Windows Server 2012 R2](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2)  
-- [Windows 8,1 Enterprise](https://www.microsoft.com/evalcenter/evaluate-windows-8-1-enterprise)  
-- [Windows 10 Enterprise](https://www.microsoft.com/evalcenter/evaluate-windows-10-enterprise)  
+- [Windows 8.1 Enterprise](https://www.microsoft.com/evalcenter/evaluate-windows-8-1-enterprise)  
+- [Windows 10 Enterprise](https://www.microsoft.com/evalcenter/evaluate-windows-10-enterprise)  
 
-### Microsoft Download Center
+### <a name="microsoft-download-center"></a>Microsoft Download Center
 
-- [SQL Server](https://www.microsoft.com/download/details.aspx?id=29066)  
+- [SQLServer](https://www.microsoft.com/download/details.aspx?id=29066)  
 - [SharePoint Foundation 2013 SP1 och dess krav](https://www.microsoft.com/download/details.aspx?id=42039)
 
-## Maskinvarukrav
+## <a name="hardware-requirements"></a>Maskinvarukrav
 
 För PAM-komponenter hänvisas du till systemkraven för programvaruprodukterna.
 
@@ -64,7 +64,7 @@ För CORPDC:
 - [Windows Server 2012 R2](https://technet.microsoft.com/library/dn303418.aspx) eller tidigare
 
 For CORPWKSTN:  
-- [Windows 8,1](http://windows.microsoft.com/windows-8/system-requirements)
+- [Windows 8.1](http://windows.microsoft.com/windows-8/system-requirements)
 
 För PRIVDC:  
 - [Windows Server 2012 R2](https://technet.microsoft.com/library/dn303418.aspx)
@@ -75,6 +75,6 @@ För PAMSRV:
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

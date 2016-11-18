@@ -1,38 +1,38 @@
 ---
-title: Konfigurera SharePoint | Microsoft Identity Manager
+title: Konfigurera SharePoint | Microsoft Docs
 description: "Installera och konfigurera SharePoint Foundation så att den kan vara värd för MIM-portalsidan."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 07/21/2016
 ms.topic: get-started-article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b3ab1b9376c9b613739d87c812f4b16a4e17e6de
-ms.openlocfilehash: 9885579d9fb72dd4e73ec5a8a359b35c49d10440
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: f67bb8260f0f1e6ef491a5de7e7ef95009651cf2
 
 
 ---
 
-# Konfigurera en server för identitetshantering: SharePoint
+# <a name="set-up-an-identity-management-server-sharepoint"></a>Konfigurera en server för identitetshantering: SharePoint
 
 >[!div class="step-by-step"]
 [«SQL Server 2014](prepare-server-sql2014.md)
 [Exchange Server»](prepare-server-exchange.md)
 
 > [!NOTE]
-> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
+> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
 > - Namn på domänkontrollant – **mimservername**
 > - Domännamn – **contoso**
 > - Lösenord – **Pass@word1**
 
 
-## Installera **SharePoint Foundation 2013 med SP1**
+## <a name="install-sharepoint-foundation-2013-with-sp1"></a>Installera **SharePoint Foundation 2013 med SP1**
 
 > [!NOTE]
 > Internetanslutning krävs för att installationsprogrammet ska kunna hämta allt som behövs. Om datorn finns i ett virtuellt nätverk utan internetanslutning kan du lägga till ytterligare ett nätverksgränssnitt på den dator som har anslutning till Internet. Detta kan inaktiveras när installationen är klar.
@@ -59,7 +59,7 @@ Följ dessa steg om du vill installera SharePoint Foundation 2013 SP1. När du h
 
 4.  Kör guiden när installationen har slutförts.
 
-## Kör guiden för att konfigurera SharePoint
+## <a name="run-the-wizard-to-configure-sharepoint"></a>Kör guiden för att konfigurera SharePoint
 
 Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfigurera SharePoint att arbeta med MIM.
 
@@ -79,7 +79,7 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
 
 8. I fönstret **Skapa en webbplatssamling** klickar du på **Hoppa över**.  Klicka sedan på **Slutför**.
 
-## Förbereda SharePoint som värd för MIM-portalen
+## <a name="prepare-sharepoint-to-host-the-mim-portal"></a>Förbereda SharePoint som värd för MIM-portalen
 
 > [!NOTE]
 > SSL konfigureras inte första gången. Se till att konfigurera SSL eller motsvarande innan du aktiverar åtkomst till portalen.
@@ -137,6 +137,6 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

@@ -1,25 +1,25 @@
 ---
-title: Distribuera MIM 2016 | Microsoft Identity Manager
+title: Distribuera MIM 2016 | Microsoft Docs
 description: "Hämta hela listan med stegvisa instruktioner för att distribuera Microsoft Identity Manager 2016, från att förbereda miljön till att konfigurera portalerna."
 keywords: 
 author: kgremban
+ms.author: kgremban
 manager: femila
 ms.date: 09/07/2016
 ms.topic: article
-ms.prod: identity-manager-2015
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: fa0af422-b5e9-4599-9d9b-cb6c18ea07f9
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 40dbec941eb2f0b1a01de0f47d44e01717aaca21
-ms.openlocfilehash: 77dae279f9078c55abf342a8956aaf77c62773d5
+ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
+ms.openlocfilehash: 7fdad09650af245157264778d2732ac4327f25b5
 
 
 ---
 
-# Distribuera MIM 2016
+# <a name="deploy-mim-2016"></a>Distribuera MIM 2016
 Artiklarna i det här avsnittet ger stegvisa instruktioner för att distribuera Microsoft Identity Manager (MIM) 2016 vid självbetjäning för slutanvändare som använder en ny server där FIM eller MIM inte tidigare har distribuerats.
 
 > [!NOTE]
@@ -29,18 +29,18 @@ Scenariot med privilegierad åtkomsthantering distribueras på ett annorlunda s�
 
 Distributionsprocessen för MIM 2016 påminner i mycket om samma process i föregångaren FIM 2010 R2. Om du vill läsa FIM-dokumentationen kan du söka rätt på [distributionsguiden för Forefront Identity Manager 2010 R2](https://technet.microsoft.com/library/jj134310).
 
-## Steg ett: Förbered en domän
+## <a name="first-prepare-a-domain"></a>Steg ett: Förbered en domän
 MIM fungerar med Active Directory (AD), så följ de här stegen för att konfigurera din AD-domänkontrollant.
 - [Domänkonfiguration](preparing-domain.md)
 
-## Nästa steg: Förbered en server för identitetshantering
+## <a name="next-prepare-an-identity-management-server"></a>Nästa steg: Förbered en server för identitetshantering
 När din domän är på plats och har konfigurerats ska du förbereda din server för hantering av företagsidentiteter. Detta omfattar att konfigurera:
 - [Windows Server 2012 R2](prepare-server-ws2012r2.md)
-- [SQL Server 2014](prepare-server-sql2014.md)
+- [SQLServer 2014](prepare-server-sql2014.md)
 - [SharePoint](prepare-server-sharepoint.md)
 - [Exchange Server](prepare-server-exchange.md) (tillval)
 
-## Slutligen: Installera komponenter för Microsoft Identity Manager 2016
+## <a name="finally-install-microsoft-identity-manager-2016-components"></a>Slutligen: Installera komponenter för Microsoft Identity Manager 2016
 När du har konfigurerat domänen och servern är du redo att installera MIM-komponenterna och konfigurera dem så att de synkroniseras med AD.
 - [Synkroniseringstjänst för MIM](install-mim-sync.md)
 - [MIM-tjänst och portal](install-mim-service-portal.md)
@@ -48,6 +48,6 @@ När du har konfigurerat domänen och servern är du redo att installera MIM-kom
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO2-->
 
 

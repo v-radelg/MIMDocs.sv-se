@@ -3,23 +3,23 @@ title: "Konfigurera PAM med hjälp av skript"
 description: "Förbered CORP-domänen med befintliga eller nya identiteter som ska hanteras av Privileged Identity Manager med hjälp av skript"
 keywords: 
 author: barclayn
+ms.author: barclayn
 manager: MBaldwin
-ms.date: 09/26/2016
+ms.date: 10/04/2016
 ms.topic: article
-ms.prod: microsoft-identity-manager
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 96c734ade75f5c206858387cf45106761bc0a881
-ms.openlocfilehash: a1e4e5561bf8d38c56c3d27249d94f4bf7103b8c
+ms.sourcegitcommit: 365989693f844f117f76ee2b69db85df82f06f35
+ms.openlocfilehash: 3aca2fb513280f118e760bdbc2ba471151c41b17
 
 
 ---
 
-# Konfigurera PAM med hjälp av skript
+# <a name="configure-pam-using-scripts"></a>Konfigurera PAM med hjälp av skript
 
 Om du väljer att installera SQL och SharePoint på separata servrar måste de konfigureras med hjälp av anvisningarna nedan. Om SQL, SharePoint och PAM-komponenterna installeras på samma dator måste du utföra stegen nedan från den datorn.
 
@@ -39,11 +39,11 @@ Steg:
 5. Kopiera samma PAMDeploymentConfig.xml till mappen %SYSTEMDRIVE%\PAM på alla datorer, CORPDC, PRIVDC, PAM Server, SQL Server och SharePoint-servrar.
 
 
-## Kalkylblad för distribution
+## <a name="deployment-worksheet"></a>Kalkylblad för distribution
 
 Innan du fortsätter uppdaterar du PAMDeploymentConfig.xml och placerar den uppdaterade kopian på alla datorer.
 
-### Setup
+### <a name="setup"></a>Setup
 
 |Machine   | Vem du ska köra som   |Kommandon   |
 |---|---|---|
@@ -55,7 +55,7 @@ Innan du fortsätter uppdaterar du PAMDeploymentConfig.xml och placerar den uppd
 | PAMServer  | Lokal administratör (MIM-administratör efter domänanslutning)  | .\PAMDeployment.ps1 Välj menyalternativ 5 (MIM PAM-konfiguration)   |
 |  PAMServer |MIMAdmin   | .\PAMDeployment.ps1 Välj menyalternativ 6 (PAM-förtroendekonfiguration) .\PAMDeployment.ps1 Välj menyalternativ 6 (PAM-förtroendekonfiguration) |
 
-### Validering
+### <a name="validation"></a>Validering
 
 |  Machine | Vem du ska köra som   | Kommandon   |
 |---|---|---|
@@ -66,7 +66,11 @@ Innan du fortsätter uppdaterar du PAMDeploymentConfig.xml och placerar den uppd
 |  CORPClient | <PRIV>\PRIV.pamRequestor-användare och för PRIVOnly: <CORP>\pamrequestor   | Import-module .\PAMValidation.psm1 ; Test-PAMValidationScenarioNoApprovalRequest  |
 
 
+>[!div class="step-by-step"]
+[Start »](sp1-step1-configuring-priv-domain.md)
 
-<!--HONumber=Sep16_HO4-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 
