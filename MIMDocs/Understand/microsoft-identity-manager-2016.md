@@ -1,6 +1,6 @@
 ---
 title: Microsoft Identity Manager 2016 | Microsoft Docs
-description: "Förstå hur MIM 2016 fungerar och gör identitetshanteringen säkrare och enklare både lokalt och i molnet."
+description: "MIM innehåller åtkomsthanteringsfunktioner för FIM 2010 och hjälper dig att hantera användare, autentiseringsuppgifter, principer och åtkomst i din organisation."
 keywords: 
 author: kgremban
 ms.author: kgremban
@@ -13,8 +13,8 @@ ms.assetid: ccdd8a9f-02da-440a-81a8-354800dcd2a8
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: 74d93047ad30d81546940fc4ece3d892fe6df2f8
+ms.sourcegitcommit: f08b0197341351bd5f33552f26b96132b1356239
+ms.openlocfilehash: d38a3613b92c0bce0b27a4bd147177a1cccf47d8
 
 
 ---
@@ -37,6 +37,6 @@ Microsoft Identity Manager har fortfarande mycket gemensamt med föregångaren F
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO2-->
 
 
