@@ -1,11 +1,11 @@
 ---
 title: "Tillägg"
-description: "Förbered CORP-domänen med befintliga eller nya identiteter som ska hanteras av Privileged Identity Manager med hjälp av skript"
+description: "Detta är ett tillägg till de dokument som handlar om skriptbaserad PAM-distribution. Den beskriver hur du konfigurerar PRIV- och CORP-domänerna och hur du konfigurerar en klient så att den hanterar verifiering och information om hur du ber om hjälp."
 keywords: 
 author: barclayn
 ms.author: barclayn
 manager: MBaldwin
-ms.date: 09/27/2016
+ms.date: 01/10/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,8 +13,8 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: bc56b57a06592527bab13aad879ca13466e968b3
-ms.openlocfilehash: cdd859ceb13d187af3303235c0fe1e496f2bfb6e
+ms.sourcegitcommit: f08b0197341351bd5f33552f26b96132b1356239
+ms.openlocfilehash: f69fe68dc63323c0945a4902e34ea8153f938c02
 
 
 ---
@@ -74,6 +74,6 @@ Alla skriptloggar sparas i %AppData%\MIMPAMInstall. Komprimera mappen till en ZI
 
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Jan17_HO2-->
 
 

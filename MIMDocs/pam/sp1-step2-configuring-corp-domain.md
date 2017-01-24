@@ -1,11 +1,11 @@
 ---
 title: "Steg 2 Konfigurera CORP-domänen"
-description: "Förbered CORP-domänen med befintliga eller nya identiteter som ska hanteras av Privileged Identity Manager med hjälp av skript"
+description: "I den här artikeln beskrivs det andra steg som krävs för att du ska kunna konfigurera CORP-domänen, vilket involverar körning av ett skript efter det att sids.txt har kopierats CORPDC"
 keywords: 
 author: barclayn
 ms.author: barclayn
 manager: MBaldwin
-ms.date: 10/25/2016
+ms.date: 01/10/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,8 +13,8 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 365989693f844f117f76ee2b69db85df82f06f35
-ms.openlocfilehash: b7acc475c505b29559c510fd3fa350fed1c3157b
+ms.sourcegitcommit: f08b0197341351bd5f33552f26b96132b1356239
+ms.openlocfilehash: 8480350f85b3543a32d4db3dbc6a388afcb16352
 
 
 ---
@@ -39,6 +39,6 @@ När SIDs.txt har kopierats till CORPDC **krävs inte för PRIVOnly-distribution
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO2-->
 
 
