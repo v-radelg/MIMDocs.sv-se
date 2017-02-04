@@ -96,6 +96,6 @@ Om en användare inte är lokal administratör på sin dator kan denne normalt i
 
 
 
-<!--HONumber=Jan17_HO4-->
+<!--HONumber=Feb17_HO1-->
 
 
