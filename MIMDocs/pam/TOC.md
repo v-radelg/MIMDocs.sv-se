@@ -19,6 +19,7 @@
 ### [Steg 5 – upprätta förtroende mellan PRIV och CORP](step-5-establish-trust-between-priv-corp-forests.md)
 ### [Steg 6 – skapa privilegierade konton](step-6-transition-group-to-pam.md)
 ### [Steg 7 – Utöka en användares behörighet](step-7-elevate-user-access.md)
+### [Distribuera MIM PAM med Windows Server 2016](deploy-pam-with-windows-server-2016.md)
 ### [Konfigurera Azure MFA](use-azure-mfa-for-activation.md)
 ## [Konfigurera PAM med hjälp av skript](sp1-pam-configure-using-scripts.md)
 ### [Steg 1 Konfigurera Priv-domänen](sp1-step1-configuring-priv-domain.md)
@@ -33,6 +34,6 @@
 # [För utvecklare](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-developer-reference)
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 
