@@ -1,11 +1,11 @@
 ---
-title: "Lösenordsåterställning via självbetjäning | Microsoft Docs"
+title: "Arbeta med självbetjäning i portalen för återställning av lösenord | Microsoft Docs"
 description: "Se vad som är nytt med självbetjäning för återställning av lösenord i MIM 2016, inklusive hur SSPR fungerar med multifaktorautentisering."
 keywords: 
 author: kgremban
 ms.author: kgremban
 manager: femila
-ms.date: 07/21/2016
+ms.date: 01/23/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
@@ -13,13 +13,13 @@ ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: 7d53579b8f0b069880aac256654506eb38060fe5
+ms.sourcegitcommit: 3623bffb099a83d0eba47ba25e9777c3d590e529
+ms.openlocfilehash: 72c773601cd722290b6e7a9d5d13458f0409cfdc
 
 
 ---
 
-# <a name="working-with-selfservice-password-reset"></a>Arbeta med självbetjäning för återställning av lösenord
+# <a name="working-with-self-service-password-reset"></a>Arbeta med självbetjäning för återställning av lösenord
 Microsoft Identity Manager 2016 innehåller ytterligare funktioner för återställning av lösenord via självbetjäning. Den här funktionen har förbättrats med flera viktiga funktioner:
 
 -   Portalen för självbetjäning för återställning av lösenord och Windows inloggningssida ger nu användarna möjlighet att låsa upp sina konton utan att ändra lösenord eller kontakta support. Det finns många legitima orsaker till att användare spärras, som att de anger ett gammalt lösenord, använder en dator eller ett tangentbord med fel språk inställt eller att de försöker logga in på en delad arbetsstation där någon annan redan är inloggad.
@@ -28,14 +28,14 @@ Microsoft Identity Manager 2016 innehåller ytterligare funktioner för återst�
 
 -   Det finns numera även stöd för tjänsten Microsoft Azure Multi-Factor Authentication (MFA) Den kan användas antingen för den befintliga SMS-gaten för engångslösenord eller den nya telefonporten.
 
-## <a name="azure-for-multifactor-authentication"></a>Azure för multifaktorautentisering
+## <a name="azure-for-multi-factor-authentication"></a>Azure för multifaktorautentisering
 Microsoft Azure Multi-Factor Authentication är en autentiseringstjänst där användare måste bekräfta sina inloggningsförsök via en mobilapp, ett telefonsamtal eller SMS. Den är tillgänglig för användning med Microsoft Azure Active Directory och som en tjänst för molnprogram och lokala företagsprogram.
 
 Azure MFA ger en extra autentiseringsmetod som kan förstärka befintliga autentiseringsprocesser, t.ex. den som utförs av MIM för hjälp vid inloggning via självbetjäning.
 
 När Azure MFA används autentiseras användare i systemet för att verifiera deras identitet när de försöker att komma åt sina konton och sina resurser. Autentisering kan genomföras via SMS eller telefon.   Ju starkare autentisering, desto troligare är det att den som begär åtkomst verkligen är den användare som äger identiteten. Användaren kan välja ett nytt lösenord för att ersätta det gamla när autentiseringen är klar.
 
-## <a name="prerequisites-to-set-up-selfservice-account-unlock-and-password-reset-using-mfa"></a>Krav för att konfigurera upplåsning och lösenordsåterställning för självbetjäningskonton med MFA
+## <a name="prerequisites-to-set-up-self-service-account-unlock-and-password-reset-using-mfa"></a>Krav för att konfigurera upplåsning och lösenordsåterställning för självbetjäningskonton med MFA
 Det här avsnittet förutsätter att du har hämtat och slutfört distributionen av Microsoft Identity Manager 2016, inklusive följande komponenter och tjänster:
 
 -   En Windows Server 2008 R2 eller senare som har konfigurerats som en Active Directory-server med AD-domäntjänster och domänkontrollant som har en angiven domän (en företagsdomän)
@@ -56,12 +56,12 @@ Det här avsnittet förutsätter att du har hämtat och slutfört distributionen
 
 -   MIM 2016-tillägg och förlängningar, inklusive den klient som är integrerad med SSPR för Windows-inloggning, distribueras på servern eller på en separat klientdator.
 
-## <a name="prepare-mim-to-work-with-multifactor-authentication"></a>Förbereda MIM för integrering med multifaktorautentisering
+## <a name="prepare-mim-to-work-with-multi-factor-authentication"></a>Förbereda MIM för integrering med multifaktorautentisering
 Konfigurera MIM-synkronisering för att ge stöd för funktionerna lösenordsåterställning och kontoupplåsning. Mer information finns i [Installera FIM-tillägg och förlängningar](https://technet.microsoft.com/library/ff512688%28v=ws.10%29.aspx), [ Installera FIM SSPR](https://technet.microsoft.com/library/hh322891%28v=ws.10%29.aspx), [SSPR-autentiseringsgater](https://technet.microsoft.com/library/jj134288%28v=ws.10%29.aspx) och [SSPR Test Lab-guide](https://technet.microsoft.com/library/hh826057%28v=ws.10%29.aspx)
 
 I nästa avsnitt ställer du in Azure MFA-leverantören i Microsoft Azure Active Directory. Som en del av detta genererar du en fil som innehåller de autentiseringsuppgifter MFA kräver för att kunna kontakta Azure MFA.  För att kunna fortsätta behöver du ett Azure-abonnemang.
 
-### <a name="register-your-multifactor-authentication-provider-in-azure"></a>Registrera din leverantör av multifaktorautentiseringstjänsten i Azure
+### <a name="register-your-multi-factor-authentication-provider-in-azure"></a>Registrera din leverantör av multifaktorautentiseringstjänsten i Azure
 
 1.  Gå till [Azures klassiska portal](http://manage.windowsazure.com) och logga in som administratör för ett Azure-abonnemang.
 
@@ -119,7 +119,7 @@ I nästa avsnitt ställer du in Azure MFA-leverantören i Microsoft Azure Active
 
 11. Spara filen MfaSettings.xml med samma namn och på samma plats.
 
-#### <a name="configure-the-phone-gate-or-the-onetime-password-sms-gate"></a>Konfigurera telefonporten eller SMS-gaten för engångslösenord
+#### <a name="configure-the-phone-gate-or-the-one-time-password-sms-gate"></a>Konfigurera telefonporten eller SMS-gaten för engångslösenord
 
 1.  Starta Internet Explorer och navigera till MIM-portalen, autentisera dig som MIM-administratör och klicka sedan på **Arbetsflöden** i det vänstra navigeringsfältet.
 
@@ -179,7 +179,7 @@ Genom att installera MIM-tillägg och -förlängningar på en domänansluten dat
 
 6.  Användaren får sedan ange sitt nya lösenord två gånger och lösenordet återställs.
 
-#### <a name="access-from-the-selfservice-portal"></a>Åtkomst från självbetjäningsportalen
+#### <a name="access-from-the-self-service-portal"></a>Åtkomst från självbetjäningsportalen
 
 1.  Användaren kan öppna en webbläsare, navigera till **portalen för återställning av lösenord**, ange sitt lösenord och klicka på **Nästa**.
 
@@ -206,6 +206,6 @@ Genom att installera MIM-tillägg och -förlängningar på en domänansluten dat
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO4-->
 
 
