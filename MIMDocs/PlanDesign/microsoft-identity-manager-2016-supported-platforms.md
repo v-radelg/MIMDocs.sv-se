@@ -15,6 +15,7 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 2f2ae09ab8bc28b83b66073985b3574517a220b7
 ms.openlocfilehash: bed26316673d777f3d1934011668686b3e9def1d
+ms.lasthandoff: 01/13/2017
 
 
 ---
@@ -34,13 +35,13 @@ I den här tabellen beskrivs de plattformar som stöds och versionen för respek
 | | Ytterligare anslutna system (valfritt) | Active Directory Domain Services<br/>Active Directory<br/>Lightweight Directory Services<br/>SQL Server 2000 eller senare<br/>SharePoint Server 2013<br/> SharePoint Server 2016 * <br/> Andra produkter från tredje part |
 | **MIM-tjänsten** (förutom PAM-scenario) | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 <br/> Windows Server 2016 * |
 | | MIM-tjänstdatabas | SQL Server 2008 R2 SP3<br/>SQL Server 2012 SP2<br/>SQL Server 2014 SP1 <br/> SQL Server 2016 * |
-| | Exchange för MIM-tjänstgodkännande och hantering av grupp-e-post (valfritt) | Exchange Server 2007 SP3 (där Exchange management console installerats)<br/>Exchange Server 2010 SP3<br/>Exchange Server 2013 SP1 <br/> Exchange Server 2016 * <br/> Exchange Online * |
+| | Exchange för MIM-tjänstgodkännande och hantering av grupp-e-post (valfritt) | Exchange Server 2007 SP3 (där Exchange management console installerats)<br/>Exchange Server 2010 SP3<br/>Exchange Server 2013 SP1 <br/> Exchange Server 2016 *<br/> Exchange Online* |
 | **MIM-tjänst och -portal** (endast PAM-scenario)| Windows Server | Windows Server 2012<br/>Windows Server 2012 R2 <br/> Windows Server 2016 * |
 | | Active Directory för PAM-skog i bastionmiljö | Windows Server 2012 R2 <br/> Windows Server 2016 * |
-| | Active Directory för befintliga skogar | Windows Server 2008 <br/> Windows Server 2008 R2 * <br/> Windows Server 2012 * <br/> Windows Server 2012 R2 * <br/> Windows Server 2016 * |
+| | Active Directory för befintliga skogar | Windows Server 2008 <br/> Windows Server 2008 R2 *<br/> Windows Server 2012* <br/> Windows Server 2012 R2 *<br/> Windows Server 2016* |
 | | MIM-tjänstdatabas | SQL Server 2008 R2 SP3<br/>SQL Server 2012 SP2<br/>SQL Server 2014 SP1 <br/> SQL Server 2016 * |
 | | SharePoint | SharePoint Foundation 2010<br/>SharePoint Foundation 2013 SP1 <br/> SharePoint 2016 * |
-| | E-postserver för MIM-tjänstgodkännande och hantering av grupp-e-post (valfritt) | Exchange Server 2007 SP3 (där Exchange management console installerats)<br/>Exchange Server 2010 SP3<br/>Exchange Server 2013 SP1 <br/> Exchange Server 2016 * <br/> Exchange Online * |
+| | E-postserver för MIM-tjänstgodkännande och hantering av grupp-e-post (valfritt) | Exchange Server 2007 SP3 (där Exchange management console installerats)<br/>Exchange Server 2010 SP3<br/>Exchange Server 2013 SP1 <br/> Exchange Server 2016 *<br/> Exchange Online* |
 | | Webbläsare | Alla större webbläsare |
 | **MIM-tjänstrapportering** | Windows Server | Windows Server 2012 <br/> Windows Server 2016 * |
 | | Informationslager | System Center 2012 Service Manager SP1 |
@@ -59,9 +60,4 @@ I den här tabellen beskrivs de plattformar som stöds och versionen för respek
 | | BHOLD-databas | SQL Server 2008 R2 SP3<br/>SQL Server 2012 SP2 <br/> SQL Server 2014 * |
 | | E-postserver (valfritt) | Exchange Server 2007 SP3<br/>Exchange Server 2010 SP3<br/>Exchange Server 2013 SP1 |
 | | Webbläsare | Internet Explorer 7, 8, 9, 10 eller 11 med Silverlight |
-
-
-
-<!--HONumber=Jan17_HO2-->
-
 
