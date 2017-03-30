@@ -15,6 +15,7 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 3623bffb099a83d0eba47ba25e9777c3d590e529
 ms.openlocfilehash: d714a58796d3a86fc82ed1eb6dc29bdc45920933
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -86,7 +87,7 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
 7.  Bläddra ned till slutet av sidan och klicka på **Ändra inställningar**.
 
-8.  Markera kryssrutorna bredvid **Skapa/ta bort virtuellt smartkort** och ** Distribuera admin-nyckel**.
+8.  Markera kryssrutorna bredvid **Skapa/ta bort virtuellt smartkort** och **Distribuera admin-nyckel**.
 
 9. Under **Princip för användar-PIN** väljer du **Anges av användaren**.
 
@@ -253,9 +254,4 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
 ## <a name="deploy-the-app"></a>Distribuera appen
 När du konfigurerar CM-appen hämtar du filen MIMDMModernApp_&lt;version&gt;_AnyCPU_Test.zip i Download Center och extraherar allt dess innehåll. .appx-filen är installationsprogrammet. Du kan distribuera den på samma sätt du normalt distribuerar appar från Windows Store, genom att använda [System Center Configuration Manager](https://technet.microsoft.com/library/dn613840.aspx) eller [Intune](https://technet.microsoft.com/library/dn613839.aspx) för att läsa in appen separat så att användare kan få åtkomst till den genom företagsportalen eller genom att den överförs direkt till deras datorer.
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 
