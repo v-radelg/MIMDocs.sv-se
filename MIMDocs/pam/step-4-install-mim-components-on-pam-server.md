@@ -16,11 +16,12 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
 ms.openlocfilehash: 5b9653cb8de9e9fc788685ba027f84a795467cf6
+ms.lasthandoff: 11/10/2016
 
 
 ---
 
-# <a name="step-4-install-mim-components-on-pam-server-and-workstation"></a>Steg 4 – installera MIM-komponenter på PAM-servern och arbetsstationen
+# <a name="step-4--install-mim-components-on-pam-server-and-workstation"></a>Steg 4 – installera MIM-komponenter på PAM-servern och arbetsstationen
 
 >[!div class="step-by-step"]
 [« Steg 3](step-3-prepare-pam-server.md)
@@ -175,7 +176,7 @@ Installera MIM PAM-cmdletarna för begärande på arbetsstationen du konfigurera
 
 2.  Ladda ned **-tilläggen** till CORPWKSTN-datorn, om de inte redan finns där.
 
-3.  Packa upp mappen **Tillägg ** från arkivet till en ny mapp.
+3.  Packa upp mappen **Tillägg** från arkivet till en ny mapp.
 
 4.  Kör installationsprogrammet **setup.exe**.
 
@@ -190,9 +191,4 @@ I nästa steg ska du upprätta förtroende mellan PRIV- och CORP-skogar.
 >[!div class="step-by-step"]
 [« Steg 3](step-3-prepare-pam-server.md)
 [Steg 5 »](step-5-establish-trust-between-priv-corp-forests.md)
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 
