@@ -15,6 +15,7 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 3623bffb099a83d0eba47ba25e9777c3d590e529
 ms.openlocfilehash: 1cb0d6cd310372ecaeff47c9cc4461ebc43b3390
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -108,9 +109,4 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 >[!div class="step-by-step"]  
 [« Förbereda en domän](preparing-domain.md)
 [SQL Server 2014 »](prepare-server-sql2014.md)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 
