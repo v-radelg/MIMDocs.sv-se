@@ -15,6 +15,7 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 54d03fbd03f6c44298139324ea2dc7d945f008bc
 ms.openlocfilehash: f84fbbdc8de5cfffc8570c52f8298cc69273c3ee
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -191,7 +192,7 @@ Active Directory-hanteringsagenten är en anslutning för AD-domäntjänster. An
 
 5. På sidan **Konfigurera etableringshierarki** klickar du på **Nästa**.
 
-6. På sidan **Välj objekttyper ** anger du följande inställningar och klickar sedan på **Nästa**
+6. På sidan **Välj objekttyper** anger du följande inställningar och klickar sedan på **Nästa**
 
     - I listan **Objekttyper** väljer du **användare** och **grupp**.
 
@@ -432,9 +433,4 @@ Följ dessa steg för att köra var och en av de tre körningsprofilerna.
 
 >[!div class="step-by-step"]
 [« MIM-tjänst och portal](install-mim-service-portal.md)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

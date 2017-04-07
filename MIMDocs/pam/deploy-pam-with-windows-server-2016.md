@@ -5,14 +5,15 @@ keywords:
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
-ms.date: 02/15/2017
+ms.date: 03/24/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 
 translationtype: Human Translation
-ms.sourcegitcommit: 18accbf24fc7af1a27e2e88059a9a8371dfd2c4d
-ms.openlocfilehash: 49be7f3bd364e9202b177ead1fbe2607be91a323
+ms.sourcegitcommit: 77ecdb91ccfdb1afec830e9662163ab9a7ef250c
+ms.openlocfilehash: dc68c4dcf2ae2d347e10930613bd32ca02031f8b
+ms.lasthandoff: 03/24/2017
 
 
 ---
@@ -73,7 +74,7 @@ Genomför installationen enligt beskrivningen i guiden [för att komma igång](/
 
     ```
     $of = get-ADOptionalFeature -filter "name -eq 'privileged access management feature'"
-    Enable-ADOptionalFeature \$of -scope ForestOrConfigurationSet -target "priv.contoso.local"
+    Enable-ADOptionalFeature $of -scope ForestOrConfigurationSet -target "priv.contoso.local"
     ```
 
   -   När du har konfigurerat delegering och innan du startar om servern bör du ge behörighet till MIM-administratörer och MIM-tjänstkontot för att skapa och uppdatera skuggprinciper.
@@ -94,7 +95,7 @@ Genomför installationen enligt beskrivningen i guiden [för att komma igång](/
 
  -   När du har konfigurerat delegering och innan du startar om servern bör du ge behörighet till MIM-administratörer för att skapa och uppdatera behörighetsprinciper.
 
-     a.  Starta powershell-fönstret, skriv följande kommandon och ersätt namnet på ditt MIM-administratörskonto med ”mimadmin” i var och en av de fyra raderna:
+     a.  Starta en upphöjd **kommandotolk**, skriv följande kommandon och ersätt namnet på ditt MIM-administratörskonto med ”mimadmin” på var och en av de fyra raderna:
     ```
        dsacls "CN=AuthN Policies,CN=AuthN Policy
        Configuration,CN=Services,CN=configuration,DC=priv,DC=contoso,DC=local" /g
@@ -149,9 +150,4 @@ Genomför installationen enligt beskrivningen i guiden [för att komma igång](/
 - [Privileged Access Management för Active Directory Domain Services](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services.md)
 - [Konfigurera MIM-miljö för Privileged Access Management](/microsoft-identity-manager/pam/configuring-mim-environment-for-pam.md)
 - [Konfigurera PAM med hjälp av skript](/microsoft-identity-manager/pam/sp1-pam-configure-using-scripts.md)
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

@@ -3,8 +3,9 @@ layout: LandingPage
 title: Dokumentation om Microsoft Identity Manager | Microsoft Docs
 description: "Lär dig hur du använder Microsoft Identity Manager."
 translationtype: Human Translation
-ms.sourcegitcommit: 6e171f09720503eedf43fe292d0f251a29671112
-ms.openlocfilehash: 3596e474912d1b56b01a2659886de0baa4cb5f1e
+ms.sourcegitcommit: 1ff73d0bdfcbcb4ab79d0d81feca9abdc33f9213
+ms.openlocfilehash: 244b4e1ba3c51edfcbc78e2dfe9472792184b472
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="microsoft-identity-manager-documentation"></a>Dokumentation om Microsoft Identity Manager
@@ -71,7 +72,7 @@ Microsoft Identity Manager 2016 binder samman Microsofts identitets- och åtkoms
 ---
 <br>
 >[!Warning]
-Mainstream-support för FIM (Forefront Identity Manager) upphör 2017/10/10. [Uppgradera](/deploy-use/microsoft-identity-manager-2016-upgrade-from-fim-2010-r2.md) till Microsoft Identity Manager 2016. Mer information: </br>  - Information om FIM-livscykeln finns [här](https://support.microsoft.com/lifecycle/search?alpha=Microsoft%20Forefront%20Identity%20Manager%202010%20R2%20Service%20Pack%201,Microsoft%20Identity%20Manager%202016,Microsoft%20Forefront%20Identity%20Manager%202010) </br> - Information om offentliga versioner av identitetsprodukter finns i inlägget [Microsoft Identity Software: Public Release Build Versions](https://blogs.technet.microsoft.com/iamsupport/idmbuildversions/)
+Mainstream-support för FIM (Forefront Identity Manager) upphör 2017/10/10. [Uppgradera](deploy-use/microsoft-identity-manager-2016-upgrade-from-fim-2010-r2.md) till Microsoft Identity Manager 2016. Mer information: </br>  - Information om FIM-livscykeln finns [här](https://support.microsoft.com/lifecycle/search?alpha=Microsoft%20Forefront%20Identity%20Manager%202010%20R2%20Service%20Pack%201,Microsoft%20Identity%20Manager%202016,Microsoft%20Forefront%20Identity%20Manager%202010) </br> - Information om offentliga versioner av identitetsprodukter finns i inlägget [Microsoft Identity Software: Public Release Build Versions](https://blogs.technet.microsoft.com/iamsupport/idmbuildversions/)
 
 <h2>Referens</h2>
 <ul class="panelContent cardsFTitle">
@@ -127,9 +128,4 @@ Mainstream-support för FIM (Forefront Identity Manager) upphör 2017/10/10. [Up
         </div>
     </li>
 </ul>
-
-
-
-<!--HONumber=Feb17_HO4-->
-
 

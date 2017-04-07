@@ -11,7 +11,7 @@
 ### [Installera MIM: Tjänst och portal](install-mim-service-portal.md)
 ### [Installera MIM: Synkronisera databaser](install-mim-sync-ad-service.md)
 ## [Uppgradera från Forefront Identity Manager 2010 R2](microsoft-identity-manager-2016-upgrade-from-fim-2010-R2.md)
-## [Installera tjänsten för meddelanden om lösenordsändring](deploying-mim-password-change-notification-service-on-domain-controller.md)
+## [Tjänsten för meddelanden om lösenordsändring](deploying-mim-password-change-notification-service-on-domain-controller.md)
 ## [Identity Manager Hybrid Reporting](working-with-identity-manager-hybrid-reporting.md)
 ## [Lösenordsåterställning via självbetjäning](working-with-self-service-password-reset.md)
 ## [MIM Certifikathanterare](working-with-mim-certificate-manager.md)
@@ -19,8 +19,3 @@
 ### [Skapa programcertifikat](certificate-manager-for-software-certificates.md)
 # [Använda Privileged Access Management](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)
 # [För utvecklare](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-developer-reference)
-
-
-<!--HONumber=Jul16_HO3-->
-
-
