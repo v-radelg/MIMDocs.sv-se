@@ -11,9 +11,9 @@ ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 
 translationtype: Human Translation
-ms.sourcegitcommit: f5dd28dbcc312364c2a4e37a75e5549ebfae4b1b
-ms.openlocfilehash: ddd707210d5cd6b618709a477d40e7771d73cfa1
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: 1ff73d0bdfcbcb4ab79d0d81feca9abdc33f9213
+ms.openlocfilehash: 1e2fb9a9ae508ab601ebad1dec7acc21dc44d13e
+ms.lasthandoff: 04/04/2017
 
 
 
@@ -27,7 +27,7 @@ När installationen är klar visas följande nya rad i Microsoft.ResourceManagem
 *    Rad 8:  ``<dynamicLogging mode="true" loggingLevel="Verbose" />``
 *    Rad 266 ``</system.diagnostics> ``
 
-![Markerade avsnitt som visar de nya posterna med dynamisk loggning](/media/mim-service-dynamic-logging/screen01.png)
+![Markerade avsnitt som visar de nya posterna med dynamisk loggning](media/mim-service-dynamic-logging/screen01.png)
 
 Nivåerna för dynamisk loggning finns [här](https://msdn.microsoft.com/library/ms733025(v=vs.110).aspx#Anchor_3)
 
@@ -36,11 +36,11 @@ Nivåerna för dynamisk loggning finns [här](https://msdn.microsoft.com/library
 
 Konfigurationsfilen med dynamisk loggning finns på rad 266 : Microsoft.ResourceManagement.Service.exe.config
 
-![Markerade avsnitt visar rader med de olika tillgängliga loggningsområdena](/media/mim-service-dynamic-logging/screen02.png)
+![Markerade avsnitt visar rader med de olika tillgängliga loggningsområdena](media/mim-service-dynamic-logging/screen02.png)
 
 Som standard finns loggningsplatsen på **C:\Program Files\Microsoft Forefront Identity Manager\2010\Service**. FIM-tjänstkontot måste skriva behörighet till den här platsen för att skapa den dynamiska loggen.
 
-![Mapplats för loggarna](/media/mim-service-dynamic-logging/screen03.png)
+![Mapplats för loggarna](media/mim-service-dynamic-logging/screen03.png)
 
  >[!NOTE]
  I händelse av oväntade fel (syntaxfel i konfigurationsfilen Microsoft.ResourceManagement.Service.exe.config eller andra misstag) skrivs motsvarande felmeddelande i filen Microsoft.ResourceManagement.Service.exe_Emergency.log under följande sökväg %TMP% eller %TEMP% eller %USERPROFILE% (den första som finns).  
@@ -50,5 +50,5 @@ Som standard finns loggningsplatsen på **C:\Program Files\Microsoft Forefront I
 
 Om du vill visa spårningen kan du använda [visningsverktyget för tjänstspårning](https://msdn.microsoft.com//library/aa751795(v=vs.110).aspx)
 
- ![Skärmbild av visningsverktyget för tjänstspårning](/media/mim-service-dynamic-logging/screen04.png)
+ ![Skärmbild av visningsverktyget för tjänstspårning](media/mim-service-dynamic-logging/screen04.png)
 
