@@ -15,6 +15,7 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 3623bffb099a83d0eba47ba25e9777c3d590e529
 ms.openlocfilehash: 1cb0d6cd310372ecaeff47c9cc4461ebc43b3390
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -55,7 +56,7 @@ Börja med en dator med Windows Server 2012 R2, med minst 8 GB RAM-minne. Vid i
 
     ![Bild av PowerShell-funktioner](media/MIM-DeployWS2.png)
 
-7. Skriv följande kommandon i PowerShell. Observera att det kan vara nödvändigt att ange en annan plats för källfilerna för **.NET Framework** 3.5-funktionerna. De här funktionerna finns vanligtvis inte när du installerar Windows Server, men är tillgängliga i mappen sida-vid-sida (SxS) i mappen Sources på OS-installationsdisken, t.ex. ”* d:\Sources\SxS\\*”.
+7. Skriv följande kommandon i PowerShell. Observera att det kan vara nödvändigt att ange en annan plats för källfilerna för **.NET Framework** 3.5-funktionerna. De här funktionerna finns vanligtvis inte när du installerar Windows Server, men är tillgängliga i mappen sida-vid-sida (SxS) i mappen Sources på OS-installationsdisken, t.ex. ” *d:\Sources\SxS\* ”.
 
     ```
     import-module ServerManager
@@ -108,9 +109,4 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 >[!div class="step-by-step"]  
 [« Förbereda en domän](preparing-domain.md)
 [SQL Server 2014 »](prepare-server-sql2014.md)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

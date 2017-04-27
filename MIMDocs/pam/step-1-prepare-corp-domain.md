@@ -15,11 +15,12 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
 ms.openlocfilehash: 127d368c15cce125ba7f69302cfa329b600d9498
+ms.lasthandoff: 11/10/2016
 
 
 ---
 
-# <a name="step-1-prepare-the-host-and-the-corp-domain"></a>Steg 1 – förbereda värden och CORP-domänen
+# <a name="step-1---prepare-the-host-and-the-corp-domain"></a>Steg 1 – förbereda värden och CORP-domänen
 
 >[!div class="step-by-step"]
 [Steg 2 »](step-2-prepare-priv-domain-controller.md)
@@ -125,7 +126,7 @@ Du måste aktivera granskning i befintliga skogar för att upprätta PAM-konfigu
 
 Logga in på en domänkontrollant som domänadministratör för varje domän och utför följande steg:
 
-1. Gå till **Start** > **Administrationsverktyg** (på Windows Server 2016 **Administrationsverktyg för Windows **) och starta **Grupprinciphantering**.
+1. Gå till **Start** > **Administrationsverktyg** (på Windows Server 2016 **Administrationsverktyg för Windows**) och starta **Grupprinciphantering**.
 
 2. Gå till domänens princip för domänkontrollanter.  Om du har skapat en ny domän för contoso.local går du till **Skog: contoso.local** > **Domäner** > **contoso.local** > **Domänkontrollanter** > **Standardprincip för domänkontrollanter**. Ett informationsmeddelande visas.
 
@@ -212,9 +213,4 @@ I nästa steg förbereder du PRIV-domänkontrollanten.
 
 >[!div class="step-by-step"]
 [Steg 2 »](step-2-prepare-priv-domain-controller.md)
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 

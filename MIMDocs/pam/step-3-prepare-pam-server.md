@@ -16,11 +16,12 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
 ms.openlocfilehash: 618b834452aa07a9f31582994fe32129a49f4249
+ms.lasthandoff: 11/10/2016
 
 
 ---
 
-# <a name="step-3-prepare-a-pam-server"></a>Steg 3 – Förbereda en PAM-server
+# <a name="step-3--prepare-a-pam-server"></a>Steg 3 – Förbereda en PAM-server
 
 >[!div class="step-by-step"]
 [« Steg 2](step-2-prepare-priv-domain-controller.md)
@@ -209,9 +210,4 @@ I steg 4 börjar du installera MIM-komponenterna på PAM-servern.
 >[!div class="step-by-step"]
 [« Steg 2](step-2-prepare-priv-domain-controller.md)
 [Steg 4 »](step-4-install-mim-components-on-pam-server.md)
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 
