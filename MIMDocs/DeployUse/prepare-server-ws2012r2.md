@@ -56,7 +56,7 @@ Börja med en dator med Windows Server 2012 R2, med minst 8 GB RAM-minne. Vid i
 
     ![Bild av PowerShell-funktioner](media/MIM-DeployWS2.png)
 
-7. Skriv följande kommandon i PowerShell. Observera att det kan vara nödvändigt att ange en annan plats för källfilerna för **.NET Framework** 3.5-funktionerna. De här funktionerna finns vanligtvis inte när du installerar Windows Server, men är tillgängliga i mappen sida-vid-sida (SxS) i mappen Sources på OS-installationsdisken, t.ex. ”* d:\Sources\SxS\\*”.
+7. Skriv följande kommandon i PowerShell. Observera att det kan vara nödvändigt att ange en annan plats för källfilerna för **.NET Framework** 3.5-funktionerna. De här funktionerna finns vanligtvis inte när du installerar Windows Server, men är tillgängliga i mappen sida-vid-sida (SxS) i mappen Sources på OS-installationsdisken, t.ex. ” *d:\Sources\SxS\* ”.
 
     ```
     import-module ServerManager
