@@ -1,11 +1,11 @@
 ---
 title: "Vad är hybridrapportering | Microsoft Docs"
-description: "Med hybridrapportering i Azure Active Directory kan du skapa anpassade rapporter som omfattar både lokala händelser och händelser i molnet."
+description: "Med aktivitetsrapporter för hybridgranskning i Azure Active Directory kan du se händelser som granskats såväl i molnet som lokalt."
 keywords: 
 author: kgremban
-ms.author: kgremban
+ms.author: fimguy
 manager: femila
-ms.date: 07/21/2016
+ms.date: 04/27/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
@@ -13,17 +13,18 @@ ms.assetid: 7320f014-8b60-4866-92de-cfbd3e6edc48
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: f21c15fdaa5fba9176cfc60a3c49017fa97fa935
+ms.sourcegitcommit: 3144ee195675df5dc120896cc801a7124ee12214
+ms.openlocfilehash: 8ca0af93f2d72ccf2e314b20d13323b631eb02bc
+ms.lasthandoff: 04/27/2017
 
 
 ---
 
-# <a name="hybrid-identity-management-reports-in-azure"></a>Rapporter för hybrididentitetshantering i Azure
-Med Azure Active Directory (AD) kan du skapa en enstaka rapport för att övervaka aktivitet om identitetshantering som sker antingen lokalt eller i molnet. Med den här funktionen kan du hantera alla identitets- och åtkomstdata på en plats, vilket sparar tid och minskar totalkostnaderna.
+# <a name="hybrid-identity-management-audit-reports-in-azure-active-directory"></a>Granskningsrapporter för hybrididentitetshantering i Azure Active Directory
+Med granskningsaktivitetsrapporter i Azure Active Directory (AD) kan du visa en enstaka rapport för att övervaka aktivitet om identitetshantering som sker antingen lokalt eller i molnet. Med den här funktionen kan du hantera alla identitets- och åtkomstdata på en plats, vilket sparar tid och minskar totalkostnaderna.
 
-## <a name="what-is-azure-ad-hybrid-reporting"></a>Vad är Azure AD-hybridrapportering?
-Hybridrapporteringen hjälper IT-proffs att hantera vanliga problem vad gäller rapportering av identitetshantering.
+## <a name="what-is-azure-active-directory-hybrid-reporting"></a>Vad är hybridrapportering i Azure Active Directory?
+Hybridgranskningsrapporteringen hjälper IT-proffs att hantera vanliga problem som gäller rapportering av identitetshantering.
 
 1. **Samla in aktiviteter om identitetshantering från olika system.** Hybridrapporter visar aktivitet om identitetshantering från Azure AD och Identity Manager.
 
@@ -33,20 +34,16 @@ Hybridrapporteringen hjälper IT-proffs att hantera vanliga problem vad gäller 
 
 ## <a name="how-does-it-work"></a>Hur fungerar det?
 
-För att samla in lokala data installerar du först en rapporteringsagent på Identity Manager-servern. Rapporteringsagenten hämtas från konfigurationssidan i din katalog i den [klassiska Azure-portalen](https://manage.windowsazure.com/).
+För att samla in lokala data installerar du först en rapporteringsagent på Identity Manager 2016-servern. Rapporteringsagenten laddas ned från Microsofts nedladdningssida [här](https://www.microsoft.com/en-us/download/details.aspx?id=####/).
 
 Hybridrapporteringen följer de här stegen:
 1. När rapporteringsagenten har installerats skickas aktivitetsdata i Identity Manager till händelseloggen i Windows.
-2. Rapporteringsagenten bearbetar händelserna i händelseloggen i Windows och överför dem till Azure.
+2. Rapporteringsagenten bearbetar händelserna i händelseloggen i Windows och överför dem till Azure Portal.
 3. Alla aktivitetsdata lagras i Azure i en månad.
 4. När du begär en rapport parsas och filtreras aktivitetshändelserna för den rapport du har begärt.
-5. Den klassiska Azure-portalen hämtar rapporteringsdata och återger dem i form av en aktivitetsrapport.
+5. Azure Portal hämtar dina granskningsrapporteringsdata och återger dem i form av granskningen i aktivitetsrapporten.
 
 ## <a name="see-also"></a>Se även
 - Läs mer om [Arbeta med hybridrapportering i Identity Manager](/microsoft-identity-manager/deploy-use/working-with-identity-manager-hybrid-reporting)
-
-
-
-<!--HONumber=Nov16_HO2-->
-
+- Läs mer om [granskningsaktivitetsrapporter i Azure Active Directory-portalen](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-reporting-activity-audit-logs)
 
