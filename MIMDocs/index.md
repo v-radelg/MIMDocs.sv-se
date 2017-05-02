@@ -3,9 +3,9 @@ layout: LandingPage
 title: Dokumentation om Microsoft Identity Manager | Microsoft Docs
 description: "Lär dig hur du använder Microsoft Identity Manager."
 translationtype: Human Translation
-ms.sourcegitcommit: 89c49c8d979247b3b888570eabfb57398038934c
-ms.openlocfilehash: 090dd1377ba5afe5162d327569f4af6163e72a18
-ms.lasthandoff: 04/21/2017
+ms.sourcegitcommit: 2b336fead118a1517287a50e6d300bb09f535bf0
+ms.openlocfilehash: 96a5ae76e5e44ae1bed16e96b22d4efc6bfdc305
+ms.lasthandoff: 05/01/2017
 
 ---
 # <a name="microsoft-identity-manager-documentation"></a>Dokumentation om Microsoft Identity Manager
@@ -32,7 +32,7 @@ Microsoft Identity Manager 2016 binder samman Microsofts identitets- och åtkoms
         </a>
     </li>
     <li>
--        <a href="/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016">
+        <a href="/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -71,7 +71,7 @@ Microsoft Identity Manager 2016 binder samman Microsofts identitets- och åtkoms
 ---
 <br>
 >[!Warning]
-Mainstream-support för FIM (Forefront Identity Manager) upphör 2017/10/10. [Uppgradera](deploy-use/microsoft-identity-manager-2016-upgrade-from-fim-2010-r2.md) till Microsoft Identity Manager 2016. Mer information: </br>  - Information om FIM-livscykeln finns [här](https://support.microsoft.com/lifecycle/search?alpha=Microsoft%20Forefront%20Identity%20Manager%202010%20R2%20Service%20Pack%201,Microsoft%20Identity%20Manager%202016,Microsoft%20Forefront%20Identity%20Manager%202010) </br> - Information om offentliga versioner av identitetsprodukter finns i inlägget [Microsoft Identity Software: Public Release Build Versions](https://blogs.technet.microsoft.com/iamsupport/idmbuildversions/)
+Mainstream-support för FIM (Forefront Identity Manager) upphör 2017/10/10. [Uppgradera](DeployUse/microsoft-identity-manager-2016-upgrade-from-fim-2010-r2.md) till Microsoft Identity Manager 2016. Mer information: </br>  - Information om FIM-livscykeln finns [här](https://support.microsoft.com/lifecycle/search?alpha=Microsoft%20Forefront%20Identity%20Manager%202010%20R2%20Service%20Pack%201,Microsoft%20Identity%20Manager%202016,Microsoft%20Forefront%20Identity%20Manager%202010) </br> - Information om offentliga versioner av identitetsprodukter finns i inlägget [Microsoft Identity Software: Public Release Build Versions](https://blogs.technet.microsoft.com/iamsupport/idmbuildversions/)
 
 <h2>Referens</h2>
 <ul class="panelContent cardsFTitle">
