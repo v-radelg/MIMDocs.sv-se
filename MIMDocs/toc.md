@@ -112,3 +112,5 @@
 #### [Hämta väntande PAM-begäranden](/microsoft-identity-manager/reference/privileged-access-management-get-pending-requests)
 #### [Godkänn eller avvisa en väntande PAM-begäran](/microsoft-identity-manager/reference/privileged-access-management-approve-reject-pending-request)
 #### [Hämta PAM-sessionsinformation](/microsoft-identity-manager/reference/privileged-access-management-get-session-info)
+## [Teknisk referens]
+### [XML-referens för RCDC (Resource Control Display Configuration)](/microsoft-identity-manager/reference/rcd-configuration-xml-reference)
