@@ -2,10 +2,10 @@
 title: "Vad är PAM för ADDS? | Microsoft Docs"
 description: "Privileged Access Management (PAM) hjälper organisationer att begränsa privilegierad åtkomst i befintliga Active Directory-miljöer."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 01/10/2017
+ms.date: 03/10/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -16,6 +16,7 @@ experiment_id: kgremban_images
 translationtype: Human Translation
 ms.sourcegitcommit: f0947f186b5206d06a67140706ada33a5bc0e016
 ms.openlocfilehash: 9a047644d07e3ee3c2d1abfde7753849b5ddc63b
+ms.lasthandoff: 01/11/2017
 
 ---
 
@@ -93,9 +94,4 @@ Förutsatt att begäran godkänns kommunicerar åtgärdsarbetsflödet direkt med
 > Som kontrast utvärderas utgångna länkar i realtid av Security Accounts Manager (SAM). Även om tillägg av medlemmar måste replikeras av domänkontrollanten som tar emot åtkomstbegäran, utvärderas borttagning av medlemmar omedelbart på vilken domänkontrollant som helst.
 
 Det här arbetsflödet är speciellt avsett för dessa administratörskonton. Administratörer (och skript) som bara behöver tillfällig åtkomst för privilegierade grupper kan begära precis den åtkomsten. MIM loggar begäran och ändringarna i Active Directory, och du kan visa dem i loggboken eller skicka data till företagets övervakningslösningar, till exempel System Center 2012 – gransknings- och insamlingstjänsten för Operations Manager och andra verktyg från tredje part.
-
-
-
-<!--HONumber=Jan17_HO2-->
-
 

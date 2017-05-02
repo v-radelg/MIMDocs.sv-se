@@ -2,10 +2,10 @@
 title: "Installera Microsoft Identity Manager-tjänst och -portal | Microsoft Docs"
 description: "Hämta anvisningarna för att konfigurera och installera MIM-tjänsten och -portalen för Microsoft Identity Manager 2016"
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 01/23/2017
+ms.date: 03/23/2017
 ms.topic: get-started-article
 ms.service: microsoft-identity-manager
 ms.technology: security
@@ -15,6 +15,7 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 54d03fbd03f6c44298139324ea2dc7d945f008bc
 ms.openlocfilehash: eb572bc3f062763265a9f24910a82be0cac77a5e
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -149,9 +150,4 @@ Verifiera att MIM-portalen är aktiv när installationen är klar.
 >[!div class="step-by-step"]  
 [«Synkroniseringstjänst för MIM](install-mim-sync.md)
 [Synkronisera databaser»](install-mim-sync-ad-service.md)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

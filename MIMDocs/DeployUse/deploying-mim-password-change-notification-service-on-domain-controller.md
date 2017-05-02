@@ -2,10 +2,10 @@
 title: "Distribuera tjänsten för meddelanden om lösenordsändring | Microsoft Docs"
 description: "Hämta anvisningarna för att installera och konfigurera MIM:s tjänst för meddelanden om lösenordsändring på domänkontrollanten."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 01/23/2017
+ms.date: 03/23/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
@@ -15,6 +15,7 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 54d03fbd03f6c44298139324ea2dc7d945f008bc
 ms.openlocfilehash: 1929703baffad4177ea7ea058cb07f44a9c71667
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -58,9 +59,4 @@ Tjänsten för meddelanden om lösenordsändring (PCNS) är en tjänst som du in
 
 ## <a name="configuring-the-password-change-notification-service"></a>Konfigurera Tjänsten för meddelanden om lösenordsändring
 När du är återansluten till DC-servern som domänadministratör går du till *C:\Programfiler\Microsofts meddelanden om lösenordsändring.* Kör *pcnscfg.exe*.
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

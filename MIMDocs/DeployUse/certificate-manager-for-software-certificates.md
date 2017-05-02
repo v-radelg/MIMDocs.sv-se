@@ -2,10 +2,10 @@
 title: "Begära certifikat i Certifikathanteraren med mallar | Microsoft Docs"
 description: "Lär dig att använda Certifikathanteraren för att skapa och förnya programcertifikat med profilmallar."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 01/23/2017
+ms.date: 03/23/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
@@ -15,6 +15,7 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 54d03fbd03f6c44298139324ea2dc7d945f008bc
 ms.openlocfilehash: 23cfb1134d1cbf2cf838354cb7d915084803cd41
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -38,7 +39,7 @@ För att registrera och förnya programcertifikat behöver du inte vara administ
 
     1.  På fliken **Allmänt** i fältet Visa namn anger du **Arkiverad certifikatmall**.
 
-    2.  b.  På fliken **Hantering av begäranden**
+    2.  b.    På fliken **Hantering av begäranden**
 
         1.  anger du **Syfte** som Signatur och kryptering.
 
@@ -95,9 +96,4 @@ För att registrera och förnya programcertifikat behöver du inte vara administ
 10. Om du vill återutfärda arkiverade certifikat markerar du kryssrutorna till vänster om **Återutfärda arkiverade certifikat** och klickar på **OK**.
 
 11. Om du använder Certifikathanteraren för virtuella smartkort måste du inaktivera datainsamlingsobjekt eftersom det inte fungerar när datainsamling har aktiverats. Inaktivera datainsamling för varje policy genom att klicka på respektive policy i den vänstra rutan och avmarkera sedan kryssrutan bredvid **Exempeldataobjekt** och klicka sedan på **Ta bort datainsamlingsobjekt**. Klicka sedan på **OK**.
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

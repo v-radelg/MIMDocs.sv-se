@@ -2,10 +2,10 @@
 title: "Konfigurera SharePoint för Microsoft Identity Manager 2016 | Microsoft Docs"
 description: "Installera och konfigurera SharePoint Foundation så att den kan vara värd för MIM-portalsidan."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 01/23/2017
+ms.date: 03/23/2017
 ms.topic: get-started-article
 ms.service: microsoft-identity-manager
 ms.technology: security
@@ -15,6 +15,7 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 3623bffb099a83d0eba47ba25e9777c3d590e529
 ms.openlocfilehash: 2af432036033f8914d00228cd3d2d1af84f13054
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -133,9 +134,4 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
 >[!div class="step-by-step"]  
 [«SQL Server 2014](prepare-server-sql2014.md)
 [Exchange Server»](prepare-server-exchange.md)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 
