@@ -2,10 +2,10 @@
 title: "Använda Microsoft Identity Manager Synchronize med AD | Microsoft Docs"
 description: "Använd hanteringsagenter och MIM-synkroniseringstjänsten för att synkronisera Active Directory och MIM-databaser."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 01/23/2017
+ms.date: 03/23/2017
 ms.topic: get-started-article
 ms.service: microsoft-identity-manager
 ms.technology: security

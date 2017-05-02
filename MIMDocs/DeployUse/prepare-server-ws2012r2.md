@@ -2,10 +2,10 @@
 title: "Konfigurera Windows Server 2012 R2 för MIM 2016 | Microsoft Docs"
 description: "Hämta stegen och minimikraven för att förbereda Windows Server 2012 RS för att arbeta med MIM 2016."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 01/23/2017
+ms.date: 03/23/2017
 ms.topic: get-started-article
 ms.service: microsoft-identity-manager
 ms.technology: security

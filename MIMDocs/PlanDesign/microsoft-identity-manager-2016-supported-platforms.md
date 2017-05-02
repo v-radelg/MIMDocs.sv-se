@@ -2,8 +2,8 @@
 title: "Programvaruplattformar som stöds | Microsoft Docs"
 description: "Sök efter produkter och versioner som är kompatibla med respektive MIM 2016-komponent."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
 ms.date: 03/28/2017
 ms.topic: article

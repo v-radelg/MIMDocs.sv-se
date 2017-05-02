@@ -2,10 +2,10 @@
 title: "Distribueringssteg för Microsoft Identity Manager 2016 | Microsoft Docs"
 description: "Hämta hela listan med stegvisa instruktioner för att distribuera Microsoft Identity Manager 2016, från att förbereda miljön till att konfigurera portalerna."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 01/27/2017
+ms.date: 03/27/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
@@ -15,6 +15,7 @@ ms.suite: ems
 translationtype: Human Translation
 ms.sourcegitcommit: 3623bffb099a83d0eba47ba25e9777c3d590e529
 ms.openlocfilehash: 804f957d5cf9f5fb09efa65944983b1d5013fff3
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -45,9 +46,4 @@ När du har konfigurerat domänen och servern är du redo att installera MIM-kom
 - [Synkroniseringstjänst för MIM](install-mim-sync.md)
 - [MIM-tjänst och portal](install-mim-service-portal.md)
 - [Synkronisera Active Directory och MIM-tjänstens databaser](install-mim-sync-ad-service.md)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 
