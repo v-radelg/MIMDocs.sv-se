@@ -2,10 +2,10 @@
 title: "Distribuera PAM steg 2 – PRIV DC | Microsoft Docs"
 description: "Förbered PRIV-domänkontrollanten, som kommer att tillhandahålla skyddsmiljön där Privileged Access Management är isolerat."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 07/15/2016
+ms.date: 03/15/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,13 +13,14 @@ ms.assetid: 0e9993a0-b8ae-40e2-8228-040256adb7e2
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: f84229908f31242b6d2f7636a7c67ca669de45b3
+ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
+ms.openlocfilehash: edc15b41d4248887f4a93217f68d8125f6500585
+ms.lasthandoff: 05/02/2017
 
 
 ---
 
-# <a name="step-2-prepare-the-first-priv-domain-controller"></a>Steg 2 – Förbereda den första PRIV-domänkontrollanten
+# <a name="step-2---prepare-the-first-priv-domain-controller"></a>Steg 2 – Förbereda den första PRIV-domänkontrollanten
 
 >[!div class="step-by-step"]
 [« Steg 1](step-1-prepare-corp-domain.md)
@@ -34,7 +35,7 @@ I det här avsnittet konfigurerar du en virtuell dator som ska fungera som en do
 ### <a name="install-windows-server-2012-r2"></a>Installera Windows Server 2012 R2
 Installera Windows Server 2012 R2 för att göra en dator "PRIVDC" på en annan ny virtuell dator utan någon programvara installerad.
 
-1. Välj att utföra en anpassad (inte uppgraderad) installation av Windows Server. Vid installationen anger du **Windows Server 2012 R2 Standard (server med GUI) x64**. _Välj inte _ **Datacenter eller Server Core**.
+1. Välj att utföra en anpassad (inte uppgraderad) installation av Windows Server. Vid installationen anger du **Windows Server 2012 R2 Standard (server med GUI) x64**. _Välj inte_  **Datacenter eller Server Core**.
 
 2. Granska och godkänn licensvillkoren.
 
@@ -269,12 +270,12 @@ Utför följande steg på PRIVDC som domänadministratör.
 15. I listan med behörigheter väljer du **Ändra lösenord** och **Återställ lösenord**. Klicka sedan på **Nästa** och på **Slutför**.  
 16. Stäng Active Directory – användare och datorer.
 
-17. Öppna en kommandotolk.  
-18. Granska åtkomstkontrollistan i objektet AdminSDHolder i PRIV-domänerna. Om domänen till exempel är "priv.contoso.local" skriver du kommandot  
+17.    Öppna en kommandotolk.  
+18.    Granska åtkomstkontrollistan i objektet AdminSDHolder i PRIV-domänerna. Om domänen till exempel är "priv.contoso.local" skriver du kommandot  
   ```
   dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local"
   ```
-19. Uppdatera åtkomstkontrollistan vid behov för att säkerställa att MIM-tjänsten och MIM-komponenttjänsten kan uppdatera medlemskap i grupper som skyddas av denna ACL.  Skriv kommandot:  
+19.    Uppdatera åtkomstkontrollistan vid behov för att säkerställa att MIM-tjänsten och MIM-komponenttjänsten kan uppdatera medlemskap i grupper som skyddas av denna ACL.  Skriv kommandot:  
   ```
   dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local" /G priv\mimservice:WP;"member"  
   dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local" /G priv\mimcomponent:WP;"member"
@@ -304,9 +305,4 @@ I nästa steg ska du förbereda en PAM-server.
 >[!div class="step-by-step"]
 [« Steg 1](step-1-prepare-corp-domain.md)
 [Steg 3 »](step-3-prepare-pam-server.md)
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 

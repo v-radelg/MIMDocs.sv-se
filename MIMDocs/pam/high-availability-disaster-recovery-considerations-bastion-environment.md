@@ -2,10 +2,10 @@
 title: "PAM-katastrofåterställning | Microsoft Docs"
 description: "Lär dig hur du konfigurerar Privileged Access Management för hög tillgänglighet och katastrofåterställning."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 07/15/2016
+ms.date: 03/15/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,8 +13,9 @@ ms.assetid: 03e521cd-cbf0-49f8-9797-dbc284c63018
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: a61d0bf5aaa263aff28a253e54e721f168ce337c
+ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
+ms.openlocfilehash: 2fab9af837ed11b1f2f7f32c9ced6d79c8cc9d00
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -221,9 +222,4 @@ Komponenterna i Privileged Access Management ska installeras på varje dator i s
 Se till att MIM-tjänsten körs på minst en server efter återställning efter ett avbrott.  Se till att MIM PAM-övervakningstjänsten körs även på den servern med hjälp av `net start "PAM Monitoring service"`.
 
 Om funktionsnivån för skyddsmiljöns skog är Windows Server 2012 R2, använder du kommandot `net start "PAM Component service"` till att kontrollera att MIM PAM-komponenttjänsten också körs på den servern.
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 
