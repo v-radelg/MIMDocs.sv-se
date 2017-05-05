@@ -2,10 +2,10 @@
 title: "PAM-miljööversikt | Microsoft Docs"
 description: "Hitta antalet av virtuella datorer och konfigurationen av virtuella datorer som krävs för att distribuera Privileged Access Management"
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 07/15/2016
+ms.date: 03/15/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,8 +13,9 @@ ms.assetid: 479db14c-1bfb-4d7c-a344-cd718a01f328
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: 750ba152813b4c03c913453c42e0e503e90b883b
+ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
+ms.openlocfilehash: 3e6c5a70c6b9ed140a56135676bbd14a84504317
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -31,9 +32,4 @@ De enheter där de virtuella datorernas diskavbildningar ska sparas måste ha mi
 
 > [!NOTE]
 > Nuvarande CTP-version (customer technical preview) av MIM-CTP är inte kompatibel med innehållet i den föregående CTP-versionens databaser och kataloger. Om du har tidigare har testat MIM för PAM och andra scenarier bör du säkerhetskopiera och arkivera de virtuella datorer du använde i de testen och starta distributionen med nya avbildningar av virtuella datorer som inte använts tidigare i MIM-scenarier.
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 

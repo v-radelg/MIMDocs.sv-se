@@ -2,10 +2,10 @@
 title: "Använd Azure MFA för att aktivera PAM | Microsoft Docs"
 description: "Ställ in Azure MFA som ett andra säkerhetslager när dina användare aktiverar roller i Privileged Access Management."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 07/15/2016
+ms.date: 03/15/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,8 +13,9 @@ ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: fa6d69038e5b2f0b933773381661929159198242
+ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
+ms.openlocfilehash: b937b30da2dff9bbfeabf7dceb43fcaca99a1b63
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -56,7 +57,7 @@ Nu genererar du en fil som innehåller de autentiseringsuppgifter som krävs fö
 
 1. Öppna en webbläsare och anslut till den [klassiska Azure-portalen](https://manage.windowsazure.com) som administratör för ett Azure-abonnemang.
 
-2.  Klicka på **Active Directory** på menyn Azure Portal och klicka sedan på fliken **Leverantör av multifaktorautent.**.
+2.  Klicka på **Active Directory** på menyn Azure Portal och klicka sedan på fliken **Leverantör av multifaktorautent**.
 
 3.  Klicka på Azure MFA-leverantören du ska använda för PAM och klicka på **Hantera**.
 
@@ -139,7 +140,7 @@ Du kan också visa eller ladda ned en rapport från Azure MFA om du vill veta me
 
 1.  Öppna en webbläsare och anslut till den [klassiska Azure-portalen](https://manage.windowsazure.com) som global administratör för Azure AD.
 
-2.  Välj **Active Directory** på menyn Azure Portal och klicka sedan på fliken **Leverantör av multifaktorautent.**.
+2.  Välj **Active Directory** på menyn Azure Portal och klicka sedan på fliken **Leverantör av multifaktorautent**.
 
 3.  Välj Azure MFA-leverantören du använder för PAM och klicka på **Hantera**.
 
@@ -148,9 +149,4 @@ Du kan också visa eller ladda ned en rapport från Azure MFA om du vill veta me
 5.  Ange tidsintervall och markera kryssrutan bredvid **Namn** i den extra rapportkolumnen. Klicka på **Exportera till CSV**.
 
 6.  När rapporten har skapats kan du visa den i portalen. Om MFA-rapporten är omfattande kan du ladda ned den som en CSV-fil. **SDK**-värdena i kolumnen **AUTENTISERINGSTYP** visar rader som är relevanta som PAM-aktiveringsbegäranden: de är händelser från MIM och annan lokal programvara. Fältet **ANVÄNDARNAMN** är GUID för användarobjektet i MIM-tjänstens databas. Om ett samtal misslyckades är värdet i kolumnen **AUTHD** **Nej** och värdet i kolumnen **SAMTALSRESULTAT** innehåller information om felorsaken.
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 

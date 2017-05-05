@@ -2,10 +2,10 @@
 title: "Förstå PAM-komponenterna | Microsoft Docs"
 description: "Privileged Access Management delar vissa komponenter med MIM och har även några egna komponenter. Lär dig hur dessa fungerar tillsammans."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 07/15/2016
+ms.date: 03/15/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,8 +13,9 @@ ms.assetid: 6498f68f-36d3-448c-8fe6-649ad5a7f97d
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: 043d617bcd2addf7c6dc7ecd210790fc55f12c28
+ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
+ms.openlocfilehash: 53fe79f251c3b18426f16b4007cda49e67d7b028
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -40,9 +41,4 @@ Efter installation och konfiguration är de grupper som skapats i migreringsproc
 Det gör att när en användare begär utökning med PowerShell-cmdletarna och begäran har godkänts, lägger MIM-tjänsten till deras konton i PRIV-skogen i en grupp i PRIV-skogen. När användaren loggar in med sitt privilegierade konto innehåller användarens Kerberos-token en säkerhetsidentifierare (SID) som är identisk med SID för gruppen i CORP-skogen. Eftersom CORP-skogen har konfigurerats att lita på PRIV-skogen, visas det utökade kontot som används för att komma åt en resurs i CORP-skogen som en medlem av resursens säkerhetsgrupper för en resurs som kontrollerar Kerberos gruppmedlemskap. Detta tillhandahålls via Kerberos-autentisering mellan skogar.
 
 Dessutom är dessa medlemskap tidsbegränsade. Det gör att användarens administratörskonto inte längre tillhör gruppen i PRIV-skogen efter en förinställd tidsperiod. Sedan kan kontot inte längre användas för att komma åt ytterligare resurser.
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 

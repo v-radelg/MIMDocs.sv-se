@@ -2,10 +2,10 @@
 title: "Definiera privilegierade roller för PAM | Microsoft Docs"
 description: "Bestäm vilka privilegierade roller som ska hanteras och ange hanteringsprincipen för varje roll."
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 07/15/2016
+ms.date: 03/15/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,8 +13,9 @@ ms.assetid: 1a368e8e-68e1-4f40-a279-916e605581bc
 ms.reviewer: mwahl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: ae582e6aff2449aeee8b68ebe90b22b18e5a67d2
+ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
+ms.openlocfilehash: 807ee44c23f367c33b820251012008324bb2c005
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -144,7 +145,7 @@ Vilka rolldefinitioner som väljs beror på den servernivå som hanteras av de p
 
 Följande avsnitt innehåller exempel för vanliga företagsscenarier.
 
-### <a name="tier-0-administrative-forest"></a>Nivå 0 – Administrativ skog
+### <a name="tier-0---administrative-forest"></a>Nivå 0 – Administrativ skog
 
 Roller som är lämpliga för konton i skyddsmiljön kan vara:
 
@@ -153,7 +154,7 @@ Roller som är lämpliga för konton i skyddsmiljön kan vara:
 - Användare som är administratörer för produktionsskogen
 - Användare som är tilldelade begränsad administrativ behörighet till program i produktionsskogen
 
-### <a name="tier-0-enterprise-production-forest"></a>Nivå 0 – Företagsproduktionsskog
+### <a name="tier-0---enterprise-production-forest"></a>Nivå 0 – Företagsproduktionsskog
 
 Roller som är lämpliga för att hantera produktionsskogskonton och -resurser på nivå 0 kan vara:
 
@@ -200,9 +201,4 @@ Roller för hantering av icke-administrativa användare och datorer kan vara:
 - Supportavdelningen
 - Administratörer för säkerhetsgrupper
 - Kontorssupport för arbetsstationer
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 
