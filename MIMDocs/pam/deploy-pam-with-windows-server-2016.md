@@ -5,15 +5,16 @@ keywords:
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
-ms.date: 03/24/2017
+ms.date: 05/08/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 
-translationtype: Human Translation
-ms.sourcegitcommit: 77ecdb91ccfdb1afec830e9662163ab9a7ef250c
-ms.openlocfilehash: dc68c4dcf2ae2d347e10930613bd32ca02031f8b
-ms.lasthandoff: 03/24/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 3797f5789bb4e48836eb21776dafd5a2e0e11613
+ms.openlocfilehash: fbdebd59249667a0e60d3a248f183bcb6a75085a
+ms.contentlocale: sv-se
+ms.lasthandoff: 05/09/2017
 
 
 ---
@@ -40,9 +41,9 @@ Det krävs minst två virtuella datorer för laboratoriemiljön:
 Om du inte redan har en ”CORP”-domän i laboratoriemiljön krävs ytterligare en domänkontrollant i domänen. ”CORP”-domänkontrollanten kan antingen köra Windows Server 2016 eller Windows Server 2012 R2.
 
 
-Genomför installationen enligt beskrivningen i guiden [för att komma igång](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services.md), **med undantag av vad som anges nedan**:
+Genomför installationen enligt beskrivningen i guiden [för att komma igång](privileged-identity-management-for-active-directory-domain-services.md), **med undantag av vad som anges nedan**:
 
--   Om du skapar en ny domän i CORP när du följer instruktionerna i [Steg 1 - Förbereda CORP-domänkontrollanten](/microsoft-identity-manager/pam/step-1-prepare-corp-domain.md) kan du också konfigurera CORP- domänens funktionsnivå för Windows Server 2016. **Om du väljer det här alternativet kan du göra följande justeringar**:
+-   Om du skapar en ny domän i CORP när du följer instruktionerna i [Steg 1 - Förbereda CORP-domänkontrollanten](step-1-prepare-corp-domain.md) kan du också konfigurera CORP- domänens funktionsnivå för Windows Server 2016. **Om du väljer det här alternativet kan du göra följande justeringar**:
 
     -   Om du använder Windows Server 2016 media kallas installationsalternativet Windows Server 2016 (Server med skrivbordsmiljö).
 
@@ -56,7 +57,7 @@ Genomför installationen enligt beskrivningen i guiden [för att komma igång](/
 
 -   Om du väljer att använda Windows Server 2012 R2 som operativsystem för CORPDC, måste du installera snabbkorrigeringar 2919442, 2919355, [och uppdatera 3155495](http://support.microsoft.com/kb/3156418) på CORPDC.
 
--   Följ instruktionerna i [Steg 2 - Förbereda PRIV-domänkontrollant](/microsoft-identity-manager/pam/step-2-prepare-priv-domain-controller.md) med undantag av dessa justeringar:
+-   Följ instruktionerna i [Steg 2 - Förbereda PRIV-domänkontrollant](step-2-prepare-priv-domain-controller.md) med undantag av dessa justeringar:
 
     -   Installera med hjälp av Windows Server 2016 media. Installationsalternativet kallas Windows Server 2016 (Server med skrivbordsmiljö).
 
@@ -115,19 +116,19 @@ Genomför installationen enligt beskrivningen i guiden [för att komma igång](/
     ```
 
 
--   Följ instruktionerna i [Steg 3 - Förbered en PAM-server](/microsoft-identity-manager/pam/step-3-prepare-pam-server.md) med dessa ändringar.
+-   Följ instruktionerna i [Steg 3 - Förbered en PAM-server](step-3-prepare-pam-server.md) med dessa ändringar.
 
     -   Om du installerar på Windows Server 2016 är rollen ”ApplicationServer” inte tillgänglig.
 
     -   Om du installerar MIM på Windows Server 2016 **går det inte att installera SharePoint 2013**.
 
--   Följ instruktionerna i [Steg 4 – Installera MIM-komponenter på PAM-server och -arbetsstation](/microsoft-identity-manager/pam/step-4-install-mim-components-on-pam-server.md) med dessa ändringar.
+-   Följ instruktionerna i [Steg 4 – Installera MIM-komponenter på PAM-server och -arbetsstation](step-4-install-mim-components-on-pam-server.md) med dessa ändringar.
 
     -   Användaren som installerar MIM-tjänsten och PAM-komponenter **måste ha skrivbehörighet till PRIV-domänen i AD** eftersom MIM-installationen skapar en ny AD-organisationsenhet: ”PAM objects”.
 
     -   Installera inte MIM-portalen om SharePoint inte har installerats.
 
--   Följ instruktionerna i [Steg 5 - Upprätta förtroende](/microsoft-identity-manager/pam/step-5-establish-trust-between-priv-corp-forests.md) med dessa ändringar:
+-   Följ instruktionerna i [Steg 5 - Upprätta förtroende](step-5-establish-trust-between-priv-corp-forests.md) med dessa ändringar:
 
     -   När du etablerar envägsförtroenden ska du endast utföra de första två PowerShell-kommandona (get-credential och New-PAMTrust) **och inte kommandot New-PAMDomainConfiguration**.
 
@@ -147,7 +148,7 @@ Genomför installationen enligt beskrivningen i guiden [för att komma igång](/
 
 ## <a name="more-information"></a>Mer information
 
-- [Privileged Access Management för Active Directory Domain Services](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services.md)
-- [Konfigurera MIM-miljö för Privileged Access Management](/microsoft-identity-manager/pam/configuring-mim-environment-for-pam.md)
-- [Konfigurera PAM med hjälp av skript](/microsoft-identity-manager/pam/sp1-pam-configure-using-scripts.md)
+- [Privileged Access Management för Active Directory Domain Services](privileged-identity-management-for-active-directory-domain-services.md)
+- [Konfigurera MIM-miljö för Privileged Access Management](configuring-mim-environment-for-pam.md)
+- [Konfigurera PAM med hjälp av skript](sp1-pam-configure-using-scripts.md)
 
