@@ -2,20 +2,21 @@
 title: "Distribuera PAM steg 1 – CORP-domän | Microsoft Docs"
 description: "Förbered CORP-domänen med befintliga eller nya identiteter som ska hanteras av Privileged Identity Manager"
 keywords: 
-author: kgremban
-ms.author: kgremban
+author: billmath
+ms.author: billmath
 manager: femila
-ms.date: 07/15/2016
+ms.date: 03/15/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: 1f545bfb2da0f65c335e37fb9de9c9522bf57f25
-ms.openlocfilehash: 127d368c15cce125ba7f69302cfa329b600d9498
-ms.lasthandoff: 11/10/2016
+ms.translationtype: Human Translation
+ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
+ms.openlocfilehash: 1164e7efb70d911497b08248b68f8d929bc6d3fb
+ms.contentlocale: sv-se
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -102,7 +103,7 @@ Vi ska skapa en säkerhetsgrupp med namnet *CorpAdmins* och en användare med na
 
 1. Starta PowerShell.
 
-2. Skriv in följande kommandon: Ersätt lösenordet 'Pass@word1' med ett annat lösenord.
+2. Skriv in följande kommandon: Ersätt lösenordet ”Pass@word1” med ett annat lösenord.
 
   ```
   import-module activedirectory
@@ -126,7 +127,7 @@ Du måste aktivera granskning i befintliga skogar för att upprätta PAM-konfigu
 
 Logga in på en domänkontrollant som domänadministratör för varje domän och utför följande steg:
 
-1. Gå till **Start** > **Administrationsverktyg** (på Windows Server 2016 **Administrationsverktyg för Windows**) och starta **Grupprinciphantering**.
+1. Gå till **Start** > **Administrationsverktyg** (på Windows Server 2016 **Administrationsverktyg för Windows** ) och starta **Grupprinciphantering**.
 
 2. Gå till domänens princip för domänkontrollanter.  Om du har skapat en ny domän för contoso.local går du till **Skog: contoso.local** > **Domäner** > **contoso.local** > **Domänkontrollanter** > **Standardprincip för domänkontrollanter**. Ett informationsmeddelande visas.
 
