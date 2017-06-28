@@ -34,7 +34,7 @@ Vi vill också veta vad du tycker! Om du har feedback, kommentarer eller frågor
 
 ### <a name="mim"></a>MIM
 
-- **Kompatibilitet för flera webbläsare på MIM-portalen för självbetjäning av slutanvändare:** I detta Service Pack har vi lagt till stöd för de flesta större webbläsare. Nu kan användarna komma åt och interagera med MIM-portalen för grupp- och profilhantering via självbetjäning från Edge, Chrome och Safari.
+- **Kompatibilitet för flera webbläsare på MIM-portalen för självbetjäning av slutanvändare:** I detta Service Pack har vi lagt till stöd för de flesta större webbläsare. Nu kan användarna komma åt och interagera med MIM-portalen för grupp- och profilhantering via självbetjäning från Microsoft Edge, Chrome och Safari.
 
 - **Stöd för Exchange Online i MIM-tjänsten:** MIM-tjänsten har länge haft stöd för att skicka och ta emot e-postmeddelanden för godkännanden och meddelanden. Före SP1 hade MIM endast stöd för Exchange Server eller SMTP. I och med Service Pack 1 kan MIM-tjänsten skicka och ta emot förfrågningar och e-postmeddelanden med hjälp av ett Office365 Exchange Online-konto.
 
