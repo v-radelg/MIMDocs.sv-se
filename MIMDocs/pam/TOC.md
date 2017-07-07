@@ -32,8 +32,3 @@
 ### [Steg 8 Verifiera PAM-distributionen](sp1-step8-pam-deployment-verification.md)
 ### [Tillägg](sp1-pam-deployment-addendum.md)
 # [För utvecklare](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-developer-reference)
-
-
-<!--HONumber=Feb17_HO3-->
-
-

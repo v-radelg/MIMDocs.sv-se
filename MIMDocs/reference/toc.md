@@ -40,8 +40,3 @@
 #### [Hämta väntande PAM-begäranden](privileged-access-management-get-pending-requests.md)
 #### [Godkänn eller avvisa en väntande PAM-begäran](privileged-access-management-approve-reject-pending-request.md)
 #### [Hämta PAM-sessionsinformation](privileged-access-management-get-session-info.md)
-
-
-<!--HONumber=Jan17_HO3-->
-
-
