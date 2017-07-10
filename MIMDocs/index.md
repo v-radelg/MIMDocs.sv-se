@@ -6,10 +6,11 @@ ms.translationtype: Human Translation
 ms.sourcegitcommit: 3797f5789bb4e48836eb21776dafd5a2e0e11613
 ms.openlocfilehash: c49fbae1892bfa0207a1615d11e600fe21d638c8
 ms.contentlocale: sv-se
-ms.lasthandoff: 07/07/2017
+ms.lasthandoff: 07/10/2017
 
 ---
-# <a name="microsoft-identity-manager-documentation"></a>Dokumentation om Microsoft Identity Manager
+<a id="microsoft-identity-manager-documentation" class="xliff"></a>
+# Dokumentation om Microsoft Identity Manager
 
 Microsoft Identity Manager 2016 binder samman Microsofts identitets- och åtkomsthanteringslösningar genom att smidigt förena flera lokala autentiseringslager som Active Directory, LDAP, Oracle och andra program med Azure Active Directory. Detta ger en enhetlig upplevelse av alla lokala LOB-program och SaaS-lösningar.
 

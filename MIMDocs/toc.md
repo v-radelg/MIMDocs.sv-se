@@ -1,116 +1,232 @@
+
 # [Förstå och utforska](microsoft-identity-manager-2016.md)
+
 ## [Vad är MIM 2016?](microsoft-identity-manager-2016.md)
+
 ## [Nyheter i Service Pack 1](Microsoft-identity-manager-2016-sp1-release-notes.md)
+
 ### [Distributionsskript för MIM2016 SP1 PAM](sp1-deployment-scripts.md)
+
 ## [Hybridrapportering i Azure](identity-manager-hybrid-reporting-azure.md)
+
 # [Planera och utforma](microsoft-identity-manager-2016-supported-platforms.md)
+
 ## [Plattformar som stöds](microsoft-identity-manager-2016-supported-platforms.md)
+
 ## [Ansluta till kataloger](supported-management-agents.md)
+
 ## [Kapacitetsplanering](capacity-planning-guide.md)
+
 ## [Distributionstopologi](topology-considerations.md)
+
 # [Distribuera och använda](microsoft-identity-manager-deploy.md)
+
 ## [Första distributionen](microsoft-identity-manager-deploy.md)
+
 ### [Domänkonfiguration](preparing-domain.md)
+
 ### [Serverinstallation: Windows Server](prepare-server-ws2012r2.md)
+
 ### [Serverinstallation: SQL](prepare-server-sql2014.md)
+
 ### [Serverinstallation: SharePoint](prepare-server-sharepoint.md)
+
 ### [Serverinstallation: Exchange](prepare-server-exchange.md)
+
 ### [Installera MIM: Synkronisering](install-mim-sync.md)
+
 ### [Installera MIM: Tjänst och portal](install-mim-service-portal.md)
+
 ### [Installera MIM: Synkronisera databaser](install-mim-sync-ad-service.md)
+
 ## [Uppgradera från Forefront Identity Manager 2010 R2](microsoft-identity-manager-2016-upgrade-from-fim-2010-R2.md)
+
 ## [Tjänsten för meddelanden om lösenordsändring](deploying-mim-password-change-notification-service-on-domain-controller.md)
+
 ## [Identity Manager Hybrid Reporting](working-with-identity-manager-hybrid-reporting.md)
+
 ## [Lösenordsåterställning via självbetjäning](working-with-self-service-password-reset.md)
+
 ## [MIM Certifikathanterare](working-with-mim-certificate-manager.md)
+
 ### [Registrera smartkort](certificate-manager-for-non-administrators.md)
+
 ### [Skapa programcertifikat](certificate-manager-for-software-certificates.md)
+
 # [Använda Privileged Access Management](./pam/privileged-identity-management-for-active-directory-domain-services.md)
+
 ## [Lär dig mer om PAM](./pam/privileged-identity-management-for-active-directory-domain-services.md)
+
 ### [Förstå komponenterna](./pam/principles-of-operation.md)
+
 ## [Planera PAM-distributionen](./pam/environment-overview.md)
+
 ### [Översikt över miljön](./pam/environment-overview.md)
+
 ### [Nivå-modellen](./pam/tier-model-for-partitioning-administrative-privileges.md)
+
 ### [Planera en skyddsmiljö](./pam/planning-bastion-environment.md)
+
 ### [Definiera roller](./pam/defining-roles-for-pam.md)
+
 ### [Hög tillgänglighet och haveriberedskap](./pam/high-availability-disaster-recovery-considerations-bastion-environment.md)
+
 ### [Maskin- och programvarukrav](./pam/hardware-software-requirements.md)
+
 ## [Konfigurera MIM för Privileged Access Management](./pam/configuring-mim-environment-for-pam.md)
+
 ### [Steg 1 – CORP-domän](./pam/step-1-prepare-corp-domain.md)
+
 ### [Steg 2 – PRIV-domänkontrollant](./pam/step-2-prepare-priv-domain-controller.md)
+
 ### [Steg 3 – PAM-server](./pam/step-3-prepare-pam-server.md)
+
 ### [Steg 4 – installera MIM på PAM-server](./pam/step-4-install-mim-components-on-pam-server.md)
+
 ### [Steg 5 – upprätta förtroende mellan PRIV och CORP](./pam/step-5-establish-trust-between-priv-corp-forests.md)
+
 ### [Steg 6 – skapa privilegierade konton](./pam/step-6-transition-group-to-pam.md)
+
 ### [Steg 7 – Utöka en användares behörighet](./pam/step-7-elevate-user-access.md)
+
 ### [Distribuera MIM PAM med Windows Server 2016](./pam/deploy-pam-with-windows-server-2016.md)
+
 ### [Konfigurera Azure MFA](./pam/use-azure-mfa-for-activation.md)
+
 ## [Konfigurera PAM med hjälp av skript](./pam/sp1-pam-configure-using-scripts.md)
+
 ### [Steg 1 Konfigurera Priv-domänen](./pam/sp1-step1-configuring-priv-domain.md)
+
 ### [Steg 2 Konfigurera CORP-domänen](./pam/sp1-step2-configuring-corp-domain.md)
+
 ### [Steg 3 Konfigurera SQL](./pam/sp1-step3-installing-configuring-sql.md)
+
 ### [Steg 4 Konfigurera SharePoint](./pam/sp1-step4-configuring-sharepoint.md)
+
 ### [Steg 5 Installera/konfigurera PAM](./pam/sp1-step5-configuring-pam.md)
+
 ### [Steg 6 Konfigurera PAM-förtroendet](./pam/sp1-step6-setup-pam-trust.md)
+
 ### [Steg 7 Konfigurera SID-historik/SID-filtrering](./pam/sp1-step7-setup-sidhistory-sidfiltering.md)
+
 ### [Steg 8 Verifiera PAM-distributionen](./pam/sp1-step8-pam-deployment-verification.md)
+
 ### [Tillägg](./pam/sp1-pam-deployment-addendum.md)
+
 # Hantera infrastruktur
+
 ## [Best Practices Analyzer för Identity Manager](https://technet.microsoft.com/library/jj203402)
+
 ## [Tjänsten för meddelanden om lösenordsändring](https://technet.microsoft.com/library/e27c0bc6-c808-4fdb-9e59-58feeb419308)
+
 ## Certifikathantering
+
 ### [Kommandoradsverktyg för CLMUtil](https://technet.microsoft.com/library/cc720647)
+
 ### [Konfigurationsprofilmallar](https://technet.microsoft.com/library/cc708656)
+
 ### [Använd webbsidan för hantering av certifikat](https://technet.microsoft.com/library/cc720560)
+
 ### [Hantera program för smartkort](https://technet.microsoft.com/library/cc708681)
+
 ### [Säkerhetskopiering och återställning](https://technet.microsoft.com/library/dd883245)
+
 ## Lösenordsåterställning via självbetjäning
+
 ### [Programmässig användarregistrering](https://technet.microsoft.com/library/jj134294)
+
 ### [Anpassningar](https://technet.microsoft.com/library/jj134312)
+
 ## Tjänst och portal
+
 ### [Kerberos](https://technet.microsoft.com/library/jj134299)
+
 ### [Dynamisk loggning](./infrastructure/mim-service-dynamic-logging.md)
+
 ### [Exportera prestandaguide](https://technet.microsoft.com/library/hh322883)
+
 ## Rapportering
+
 ### [Rapportera anpassade rapporter och utökningsbarhet](https://technet.microsoft.com/library/jj133861)
+
 ## [Microsoft Identity Software: Offentliga versioner](https://blogs.technet.microsoft.com/iamsupport/idmbuildversions/)
+
 # [För utvecklare](./reference/microsoft-identity-manager-2016-developer-reference.md)
+
 ## [Microsoft Identity Manager 2016 utvecklarreferens](./reference/microsoft-identity-manager-2016-developer-reference.md)
+
 ### [Referens för certifikathanterings-REST API](./reference/certificate-management-rest-api-reference.md)
+
 #### [Tjänstinformation för CM REST API](./reference/certificate-management-rest-api-service-details.md)
+
 #### [Genomgång av exempelregistrering](./reference/sample-enrollment-walkthrough.md)
+
 #### [Hämta profilmallar](./reference/get-profile-templates.md)
+
 #### [Principåtgärder](./reference/policy-operations.md)
+
 ##### [Hämta arbetsflödesprincipen](./reference/get-workflow-policy.md)
+
 ##### [Hämta smartkortsprincipen](./reference/get-smartcard-policy.md)
+
 #### [Begär åtgärder](./reference/request-operations.md)
+
 ##### [Skapa begäran](./reference/create-request.md)
+
 ##### [Hämta begäran](./reference/get-request.md)
+
 ##### [Avbryt, lämna eller slutför en begäran](./reference/cancel-abandon-complete-request.md)
+
 #### [Åtgärder för certifikatbegäran](./reference/certificate-request-operations.md)
+
 ##### [Hämta alternativ för skapande av certifikatbegäran](./reference/get-certificate-request-generation-options.md)
+
 ##### [Hämta certifikatsvar](./reference/get-certificate-responses.md)
+
 #### [Smartkortsåtgärder](./reference/smartcard-operations.md)
+
 ##### [Tilldela ett smartkort till en begäran](./reference/assign-smartcard-to-request.md)
+
 ##### [Hämta smartkortsdata](./reference/get-smartcard-data.md)
+
 ##### [Hämta svar för smartkortsautentisering](./reference/get-smartcard-authentication-response.md)
+
 ##### [Hämta smartkortsdiversifierad admin-nyckel](./reference/get-smartcard-diversified-admin-key.md)
+
 ##### [Hämta smartkortsföreslagen PIN-kod](./reference/get-smartcard-proposed-pin.md)
+
 ##### [Uppdatera smartkortsstatus](./reference/update-smartcard-status.md)
+
 #### [Profilåtgärder](./reference/profile-operations.md)
+
 ##### [Hämta profildata](./reference/get-profile-data.md)
+
 ##### [Hämta åtgärder för profiltillstånd](./reference/get-profile-state-operations.md)
+
 #### [Certifikatåtgärder](./reference/certificate-operations.md)
+
 ##### [Hämta smartkorts- eller profilcertifikat](./reference/get-smartcard-profile-certificates.md)
+
 ##### [Hämta användarcertifikat](./reference/get-user-certificates.md)
+
 ### [Privilegierad åtkomsthantering REST API-referens](./reference/privileged-access-management-rest-api-reference.md)
+
 #### [Tjänstinformation för PAM REST API](./reference/privileged-access-management-rest-api-service-details.md)
+
 #### [Hämta PAM-roller](./reference/privileged-access-management-get-roles.md)
+
 #### [Skapa PAM-begäran](./reference/privileged-access-management-create-request.md)
+
 #### [Hämta PAM-begäranden](./reference/privileged-access-management-get-requests.md)
+
 #### [Stäng PAM-begäran](./reference/privileged-access-management-close-request.md)
+
 #### [Hämta väntande PAM-begäranden](./reference/privileged-access-management-get-pending-requests.md)
+
 #### [Godkänn eller avvisa en väntande PAM-begäran](./reference/privileged-access-management-approve-reject-pending-request.md)
+
 #### [Hämta PAM-sessionsinformation](./reference/privileged-access-management-get-session-info.md)
+
 ## [Teknisk referens]
+
 ### [XML-referens för RCDC (Resource Control Display Configuration)](./reference/rcd-configuration-xml-reference.md)
