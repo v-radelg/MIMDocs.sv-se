@@ -1,34 +1,68 @@
+
 # [Förstå och utforska](/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016)
+
 # [Planera och utforma](/microsoft-identity-manager/plan-design/microsoft-identity-manager-2016-supported-platforms)
+
 # [Distribuera och använda](/microsoft-identity-manager/deploy-use/microsoft-identity-manager-deploy)
+
 # [Använda Privileged Access Management](privileged-identity-management-for-active-directory-domain-services.md)
+
 ## [Lär dig mer om PAM](privileged-identity-management-for-active-directory-domain-services.md)
+
 ### [Förstå komponenterna](principles-of-operation.md)
+
 ## [Planera PAM-distributionen](environment-overview.md)
+
 ### [Översikt över miljön](environment-overview.md)
+
 ### [Nivå-modellen](tier-model-for-partitioning-administrative-privileges.md)
+
 ### [Planera en skyddsmiljö](planning-bastion-environment.md)
+
 ### [Definiera roller](defining-roles-for-pam.md)
+
 ### [Hög tillgänglighet och haveriberedskap](high-availability-disaster-recovery-considerations-bastion-environment.md)
+
 ### [Maskin- och programvarukrav](hardware-software-requirements.md)
+
 ## [Konfigurera MIM för Privileged Access Management](configuring-mim-environment-for-pam.md)
+
 ### [Steg 1 – CORP-domän](step-1-prepare-corp-domain.md)
+
 ### [Steg 2 – PRIV-domänkontrollant](step-2-prepare-priv-domain-controller.md)
+
 ### [Steg 3 – PAM-server](step-3-prepare-pam-server.md)
+
 ### [Steg 4 – installera MIM på PAM-server](step-4-install-mim-components-on-pam-server.md)
+
 ### [Steg 5 – upprätta förtroende mellan PRIV och CORP](step-5-establish-trust-between-priv-corp-forests.md)
+
 ### [Steg 6 – skapa privilegierade konton](step-6-transition-group-to-pam.md)
+
 ### [Steg 7 – Utöka en användares behörighet](step-7-elevate-user-access.md)
+
 ### [Distribuera MIM PAM med Windows Server 2016](deploy-pam-with-windows-server-2016.md)
+
 ### [Konfigurera Azure MFA](use-azure-mfa-for-activation.md)
+
 ## [Konfigurera PAM med hjälp av skript](sp1-pam-configure-using-scripts.md)
+
 ### [Steg 1 Konfigurera Priv-domänen](sp1-step1-configuring-priv-domain.md)
+
 ### [Steg 2 Konfigurera CORP-domänen](sp1-step2-configuring-corp-domain.md)
+
 ### [Steg 3 Konfigurera SQL](sp1-step3-installing-configuring-sql.md)
+
 ### [Steg 4 Konfigurera SharePoint](sp1-step4-configuring-sharepoint.md)
+
 ### [Steg 5 Installera/konfigurera PAM](sp1-step5-configuring-pam.md)
+
 ### [Steg 6 Konfigurera PAM-förtroendet](sp1-step6-setup-pam-trust.md)
+
 ### [Steg 7 Konfigurera SID-historik/SID-filtrering](sp1-step7-setup-sidhistory-sidfiltering.md)
+
 ### [Steg 8 Verifiera PAM-distributionen](sp1-step8-pam-deployment-verification.md)
+
 ### [Tillägg](sp1-pam-deployment-addendum.md)
+
 # [För utvecklare](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-developer-reference)
