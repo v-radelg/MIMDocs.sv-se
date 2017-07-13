@@ -1,84 +1,42 @@
-
 # [Förstå och utforska](/microsoft-identity-manager/understand-explore/microsoft-identity-manager-2016)
-
 # [Planera och utforma](/microsoft-identity-manager/plan-design/microsoft-identity-manager-2016-supported-platforms)
-
 # [Distribuera och använda](/microsoft-identity-manager/deploy-use/microsoft-identity-manager-deploy)
-
 # [Använda Privileged Access Management](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)
-
 # [För utvecklare](microsoft-identity-manager-2016-developer-reference.md)
-
 ## [Microsoft Identity Manager 2016 utvecklarreferens](microsoft-identity-manager-2016-developer-reference.md)
-
 ### [Referens för certifikathanterings-REST API](certificate-management-rest-api-reference.md)
-
 #### [Tjänstinformation för CM REST API](certificate-management-rest-api-service-details.md)
-
 #### [Genomgång av exempelregistrering](sample-enrollment-walkthrough.md)
-
 #### [Hämta profilmallar](get-profile-templates.md)
-
 #### [Principåtgärder](policy-operations.md)
-
 ##### [Hämta arbetsflödesprincipen](get-workflow-policy.md)
-
 ##### [Hämta smartkortsprincipen](get-smartcard-policy.md)
-
 #### [Begär åtgärder](request-operations.md)
-
 ##### [Skapa begäran](create-request.md)
-
 ##### [Hämta begäran](get-request.md)
-
 ##### [Avbryt, lämna eller slutför en begäran](cancel-abandon-complete-request.md)
-
 #### [Åtgärder för certifikatbegäran](certificate-request-operations.md)
-
 ##### [Hämta alternativ för skapande av certifikatbegäran](get-certificate-request-generation-options.md)
-
 ##### [Hämta certifikatsvar](get-certificate-responses.md)
-
 #### [Smartkortsåtgärder](smartcard-operations.md)
-
 ##### [Tilldela ett smartkort till en begäran](assign-smartcard-to-request.md)
-
 ##### [Hämta smartkortsdata](get-smartcard-data.md)
-
 ##### [Hämta svar för smartkortsautentisering](get-smartcard-authentication-response.md)
-
 ##### [Hämta smartkortsdiversifierad admin-nyckel](get-smartcard-diversified-admin-key.md)
-
 ##### [Hämta smartkortsföreslagen PIN-kod](get-smartcard-proposed-pin.md)
-
 ##### [Uppdatera smartkortsstatus](update-smartcard-status.md)
-
 #### [Profilåtgärder](profile-operations.md)
-
 ##### [Hämta profildata](get-profile-data.md)
-
 ##### [Hämta åtgärder för profiltillstånd](get-profile-state-operations.md)
-
 #### [Certifikatåtgärder](certificate-operations.md)
-
 ##### [Hämta smartkorts- eller profilcertifikat](get-smartcard-profile-certificates.md)
-
 ##### [Hämta användarcertifikat](get-user-certificates.md)
-
 ### [Privilegierad åtkomsthantering REST API-referens](privileged-access-management-rest-api-reference.md)
-
 #### [Tjänstinformation för PAM REST API](privileged-access-management-rest-api-service-details.md)
-
 #### [Hämta PAM-roller](privileged-access-management-get-roles.md)
-
 #### [Skapa PAM-begäran](privileged-access-management-create-request.md)
-
 #### [Hämta PAM-begäranden](privileged-access-management-get-requests.md)
-
 #### [Stäng PAM-begäran](privileged-access-management-close-request.md)
-
 #### [Hämta väntande PAM-begäranden](privileged-access-management-get-pending-requests.md)
-
 #### [Godkänn eller avvisa en väntande PAM-begäran](privileged-access-management-approve-reject-pending-request.md)
-
 #### [Hämta PAM-sessionsinformation](privileged-access-management-get-session-info.md)
