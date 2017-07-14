@@ -12,15 +12,17 @@ ms.technology: security
 ms.assetid: 8bc2f6d2-9f53-4db6-aee6-a937ae468163
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
+ms.translationtype: MT
+ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
 ms.openlocfilehash: b26fe7bc56ab8229054afb1409c3652e81464a3d
-ms.lasthandoff: 05/02/2017
+ms.contentlocale: sv-se
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="connect-to-your-directories"></a>Anslut till katalogerna
+# Anslut till katalogerna
+<a id="connect-to-your-directories" class="xliff"></a>
 
 Länk till anslutningsprogram för speciellt anslutna datakällor till Microsoft Identity Manager (MIM). Ett anslutningsprogram flyttar data från en ansluten datakälla till MIM. När data i MIM ändras kan anslutningsprogrammet även exportera data till den anslutna datakällan för att hålla den synkroniserad med MIM. I allmänhet finns det mist ett anslutningsprogram för varje ansluten katalog.
 
@@ -28,7 +30,8 @@ I Forefront Identity Manager kallades anslutningsprogram för hanteringsagenter.
 
 Den här artikeln omfattar anslutningsprogrammen som ingår i MIM, men anslutningsprogrammet för Extensible Connectivity 2.0 gör det möjligt att ansluta med ännu fler datakällor. Vissa partner har skapat sina egna anslutningsprogram på det här sättet. En fullständig lista finns i wikin [FIM 2010: Management Agents from Partners](http://social.technet.microsoft.com/wiki/contents/articles/1589.fim-2010-management-agents-from-partners.aspx) (FIM 2010: Hanteringsagenter från partner.)
 
-## <a name="supported-connectors-in-mim-2016"></a>Anslutningsprogram som stöds i MIM 2016
+## Anslutningsprogram som stöds i MIM 2016
+<a id="supported-connectors-in-mim-2016" class="xliff"></a>
 
 | Namn | Versioner som stöds av den anslutna datakällan |
 | ---- | ----------------------------------------------- |
@@ -55,7 +58,8 @@ Den här artikeln omfattar anslutningsprogrammen som ingår i MIM, men anslutnin
 | Textfil med fast bredd | Textfiler med fast bredd |
 | LDAP Data Interchange Format (LDIF) | LDAP Data Interchange Format (LDIF) |
 
-## <a name="related-topics"></a>Närliggande information
+## Närliggande information
+<a id="related-topics" class="xliff"></a>
 
 [Hanteringsagenter i FIM 2010 R2](https://technet.microsoft.com/library/jj133885.aspx)
 

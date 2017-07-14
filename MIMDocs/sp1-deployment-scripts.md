@@ -12,16 +12,17 @@ ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
-ms.translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: 3797f5789bb4e48836eb21776dafd5a2e0e11613
 ms.openlocfilehash: 12c60e12dc5662ff0313e21bb9180b3709969af6
 ms.contentlocale: sv-se
-ms.lasthandoff: 05/09/2017
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="mim2016-sp1-pam-deployment-scripts"></a>Distributionsskript för MIM2016 SP1 PAM
+# Distributionsskript för MIM2016 SP1 PAM
+<a id="mim2016-sp1-pam-deployment-scripts" class="xliff"></a>
 
 Detta Service Pack innehåller en uppsättning distributionsskript som gör det lättare att distribuera PAM. Dessa skript är tillgänglig på Download Center. Innan du försöker använda skripten är det viktigt att du ser till att antagandena nedan gäller för din miljö.
 

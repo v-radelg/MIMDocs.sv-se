@@ -12,15 +12,17 @@ ms.technology: security
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: 54d03fbd03f6c44298139324ea2dc7d945f008bc
-ms.openlocfilehash: eb572bc3f062763265a9f24910a82be0cac77a5e
-ms.lasthandoff: 01/24/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
+ms.openlocfilehash: 974015bbba3a36e1107da33655eedf94e2938582
+ms.contentlocale: sv-se
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="install-mim-2016-mim-service-and-portal"></a>Installera MIM 2016: MIM-tjänst och -portal
+# Installera MIM 2016: MIM-tjänst och -portal
+<a id="install-mim-2016-mim-service-and-portal" class="xliff"></a>
 
 >[!div class="step-by-step"]
 [«Synkroniseringstjänst för MIM](install-mim-sync.md)
@@ -36,7 +38,8 @@ ms.lasthandoff: 01/24/2017
 Om du inte installerade MIM-installationspaketet under det föregående steget ska du gå tillbaka och installera Microsoft Identity Manager 2016-komponenterna innan du fortsätter.
 
 
-## <a name="configure-mim-service-and-portal-for-installation"></a>Konfigurera MIM-tjänsten och -portalen för installation
+## Konfigurera MIM-tjänsten och -portalen för installation
+<a id="configure-mim-service-and-portal-for-installation" class="xliff"></a>
 
 1. Kör **installationsprogrammet för MIM-tjänsten och -portalen** från den uppackade undermappen **Tjänst och portal**.
 
@@ -78,7 +81,8 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 16. Markera kryssrutan för att öppna portarna 5725 och 5726 i brandväggen, och kryssrutan för att bevilja alla autentiserade användare åtkomst till MIM-portalen.
 
-## <a name="configure-mim-password-registration-portal"></a>Konfigurera MIM-portalen för registrering av lösenord
+## Konfigurera MIM-portalen för registrering av lösenord
+<a id="configure-mim-password-registration-portal" class="xliff"></a>
 
 1.  Ange namnet på tjänstkontot för SSPR-registrering som *contoso\MIMSSPR* och lösenordet som *Pass@word1*.
 
@@ -90,7 +94,8 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 4. På nästa skärm för konfiguration av MIM-portalen för registrering av lösenord anger du *http://CorpIDM.contoso.local* som MIM-tjänstens serveradress till portalen för registrering av lösenord.
 
-## <a name="configure-mim-password-reset-portal"></a>Konfigurera MIM-portalen för återställning av lösenord
+## Konfigurera MIM-portalen för återställning av lösenord
+<a id="configure-mim-password-reset-portal" class="xliff"></a>
 
 1.  Ange namnet på tjänstkontot för SSPR-registrering som *Contoso\MIMSSPRService* och lösenordet som *Pass@word1*.
 
@@ -102,7 +107,8 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 4. På nästa skärm för konfiguration av MIM-portalen för registrering av lösenord anger du *CorpIDname http://CorpIDname.domain.local* som MIM-tjänstens serveradress till portalen för att återställa lösenord.
 
-## <a name="install-mim-service-and-portal"></a>Installera MIM-tjänsten och -portalen
+## Installera MIM-tjänsten och -portalen
+<a id="install-mim-service-and-portal" class="xliff"></a>
 
 När alla förberedande definitioner för installationen är klara klickar du på **Installera** för att starta installationen av de valda komponenterna i **Tjänsten och portalen**.
 

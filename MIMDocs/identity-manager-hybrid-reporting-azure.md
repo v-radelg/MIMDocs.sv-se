@@ -12,19 +12,21 @@ ms.technology: security
 ms.assetid: 7320f014-8b60-4866-92de-cfbd3e6edc48
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: 3797f5789bb4e48836eb21776dafd5a2e0e11613
 ms.openlocfilehash: 678626e7c32659570de88d8178c16821cceaf7ee
 ms.contentlocale: sv-se
-ms.lasthandoff: 05/09/2017
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="hybrid-identity-management-audit-reports-in-azure-active-directory---public-previewrefresh"></a>Granskningsrapporter för hybrididentitetshantering i Azure Active Directory - öppen förhandsversion (uppdatera)
+# Granskningsrapporter för hybrididentitetshantering i Azure Active Directory - öppen förhandsversion (uppdatera)
+<a id="hybrid-identity-management-audit-reports-in-azure-active-directory---public-previewrefresh" class="xliff"></a>
 Med granskningsaktivitetsrapporter i Azure Active Directory (AD) kan du visa en enstaka rapport för att övervaka aktivitet om identitetshantering som sker antingen lokalt eller i molnet. Med den här funktionen kan du hantera alla identitets- och åtkomstdata på en plats, vilket sparar tid och minskar totalkostnaderna.
 
-## <a name="what-is-azure-active-directory-hybrid-reporting"></a>Vad är hybridrapportering i Azure Active Directory?
+## Vad är hybridrapportering i Azure Active Directory?
+<a id="what-is-azure-active-directory-hybrid-reporting" class="xliff"></a>
 Hybridgranskningsrapporteringen hjälper IT-proffs att hantera vanliga problem som gäller rapportering av identitetshantering.
 
 1. **Samla in aktiviteter om identitetshantering från olika system.** Hybridrapporter visar aktivitet om identitetshantering från Azure AD och Identity Manager.
@@ -33,7 +35,8 @@ Hybridgranskningsrapporteringen hjälper IT-proffs att hantera vanliga problem s
 
 3. **Minska rapportsystemets infrastrukturkostnader.** Hybridrapportering i molnet gör att du kan du eliminera infrastrukturen för datalager för lokal rapportering.
 
-## <a name="how-does-it-work"></a>Hur fungerar det?
+## Hur fungerar det?
+<a id="how-does-it-work" class="xliff"></a>
 
 För att samla in lokala data installerar du först en rapporteringsagent på Identity Manager 2016-servern. Rapporteringsagenten laddas ned från Microsofts nedladdningssida [här](https://www.microsoft.com/en-us/download/details.aspx?id=55112).
 
@@ -44,6 +47,7 @@ Hybridrapporteringen följer de här stegen:
 4. Alla aktivitetsdata lagras i Azure i en månad.
 5. Azure Portal hämtar dina granskningsrapporteringsdata och återger dem i form av granskningen i granskningsrapportbladet i Azure.
 
-## <a name="see-also"></a>Se även
+## Se även
+<a id="see-also" class="xliff"></a>
 - Läs mer om [Arbeta med hybridrapportering i Identity Manager](working-with-identity-manager-hybrid-reporting.md)
 - Läs mer om [granskningsaktivitetsrapporter i Azure Active Directory-portalen](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-reporting-activity-audit-logs)

@@ -12,25 +12,29 @@ ms.technology: active-directory-domain-services
 ms.assetid: c6e3cd02-1e32-4194-a8ed-3a0b3d022a43
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: 4c3b43e50403890572e77773191a821cf247269c
-ms.lasthandoff: 05/02/2017
+ms.contentlocale: sv-se
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="tier-model-for-partitioning-administrative-privileges"></a>Nivåmodell för partitionering av administratörsbehörighet
+# Nivåmodell för partitionering av administratörsbehörighet
+<a id="tier-model-for-partitioning-administrative-privileges" class="xliff"></a>
 
 I dagens hotmiljö är det inte en fråga om ifall en angripare kan få tillgång till systemet, utan när. Det innebär att den interna säkerheten är precis lika viktig som ett starkt perimeterskydd. I den här artikeln beskrivs en säkerhetsmodell som är avsedd att skydda mot rättighetsutökning genom att skilja uppgifter med hög behörighetsnivå från riskzoner. Den här modellen ger en bra användarupplevelse och följer metodtips och säkerhetsprinciper.
 
-## <a name="elevation-of-privilege-in-active-directory-forests"></a>Utöka privilegier i Active Directory-skogar
+## Utöka privilegier i Active Directory-skogar
+<a id="elevation-of-privilege-in-active-directory-forests" class="xliff"></a>
 
 Användare, tjänster och programkonton som beviljas permanent administratörsbehörighet för skogar i Windows Server Active Directory (AD) medför betydande risker för organisationens mål och verksamhet. Dessa konton är ofta mål för angrepp i och med att ett lyckat angrepp ger angriparen behörighet att ansluta till andra servrar och program i domänen.
 
 Med nivåmodellen delas administratörer upp utifrån vilka resurser de hanterar. Administratörer med kontroll över användararbetsstationer separeras från de som styr program eller hanterar företagsidentiteter. Läs mer om den här modellen i [referensmaterialet för att skydda privilegierad åtkomst](http://aka.ms/tiermodel).
 
-## <a name="restricting-credential-exposure-with-logon-restrictions"></a>Begränsa exponeringen av autentiseringsuppgifter med inloggningsbegränsningar
+## Begränsa exponeringen av autentiseringsuppgifter med inloggningsbegränsningar
+<a id="restricting-credential-exposure-with-logon-restrictions" class="xliff"></a>
 
 Vanligen måste man omforma de administrativa metoderna för att minska risken för attacker och minska risken för stöld av autentiseringsuppgifter för administratörskonton. Som ett första steg bör organisationer:
 

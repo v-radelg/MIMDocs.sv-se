@@ -12,21 +12,24 @@ ms.technology: security
 ms.assetid: 34a8c16e-3bed-4e16-939b-b9fe17dd834b
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: 3623bffb099a83d0eba47ba25e9777c3d590e529
-ms.openlocfilehash: 01ccb55d200bfd1615ae62ccd30298117c0d6275
-ms.lasthandoff: 01/24/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
+ms.openlocfilehash: ac787f2ff76b19aab815d55018d1b6f0de1f4adb
+ms.contentlocale: sv-se
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="set-up-an-identity-management-server-exchange"></a>Konfigurera en server för identitetshantering: Exchange
+# Konfigurera en server för identitetshantering: Exchange
+<a id="set-up-an-identity-management-server-exchange" class="xliff"></a>
 
 >[!div class="step-by-step"]
 [« SharePoint](prepare-server-sharepoint.md)
 [Synkroniseringstjänst för MIM »](install-mim-sync.md)
 
-## <a name="deploy-microsoft-exchange-server"></a>Distribuera Microsoft Exchange Server
+## Distribuera Microsoft Exchange Server
+<a id="deploy-microsoft-exchange-server" class="xliff"></a>
 Om du vill konfigurera MIM för att skicka och ta emot e-post eller skapa postlådor måste Exchange finnas i miljön. Om du inte redan har distribuerat Exchange kan du installera en utvärderingsversion för att prova:
 
 1. Hämta och installera Microsoft Office 2010 Filter Pack, Version 2.0 + Microsoft Office 2010 Filter Pack, Version 2.0 SP1

@@ -12,15 +12,17 @@ ms.technology: active-directory-domain-services
 ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: b937b30da2dff9bbfeabf7dceb43fcaca99a1b63
-ms.lasthandoff: 05/02/2017
+ms.contentlocale: sv-se
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="using-azure-mfa-for-activation"></a>Aktivera med hjälp av Azure MFA
+# Aktivera med hjälp av Azure MFA
+<a id="using-azure-mfa-for-activation" class="xliff"></a>
 När du konfigurerar en PAM-roll kan du välja hur du ger behörighet till användare som ber att få aktivera rollen. De alternativ som implementeras med PAM-auktoriseringsuppgiften är:
 
 - Godkännande av rollägare
@@ -30,7 +32,8 @@ Om ingen kontroll är aktiverad aktiveras kandidatanvändare automatiskt för si
 
 Microsoft Azure Multi-Factor Authentication (MFA) är en autentiseringstjänst med vilken användare måste bekräfta sina inloggningsförsök via mobilapp, telefonsamtal eller SMS. Den kan användas med Microsoft Azure Active Directory och som en tjänst för molnbaserade och lokala företagsprogram. I PAM-scenariot ger Azure MFA en ytterligare autentiseringsmekanism som kan användas vid auktorisering, oavsett hur en kandidatanvändare tidigare har autentiserats för Windows PRIV-domän.
 
-## <a name="prerequisites"></a>Förutsättningar
+## Förutsättningar
+<a id="prerequisites" class="xliff"></a>
 
 Om du ska kunna använda Azure MFA med MIM behöver du:
 
@@ -39,7 +42,8 @@ Om du ska kunna använda Azure MFA med MIM behöver du:
 - Azure Active Directory Premium-licenser för kandidatanvändare eller ett annat sätt att licensiera Azure MFA
 - telefonnummer till alla kandidatanvändare
 
-## <a name="creating-an-azure-mfa-provider"></a>Skapa en Azure MFA-leverantör
+## Skapa en Azure MFA-leverantör
+<a id="creating-an-azure-mfa-provider" class="xliff"></a>
 
 I det här avsnittet ska du konfigurera en Azure MFA-leverantör i Microsoft Azure Active Directory.  Om du använder redan Azure MFA, antingen fristående eller konfigurerat med Azure Active Directory Premium, kan du gå vidare till nästa avsnitt.
 
@@ -51,7 +55,8 @@ I det här avsnittet ska du konfigurera en Azure MFA-leverantör i Microsoft Azu
 
 4.  I fältet **Namn** skriver du **PAM**, och i fältet Användningsmodell väljer du Per aktiverad användare. Om du redan har en Azure AD-katalog väljer du den katalogen. Klicka på **Skapa**.
 
-## <a name="downloading-the-azure-mfa-service-credentials"></a>Ladda ned autentiseringsuppgifter för Azure MFA-tjänsten
+## Ladda ned autentiseringsuppgifter för Azure MFA-tjänsten
+<a id="downloading-the-azure-mfa-service-credentials" class="xliff"></a>
 
 Nu genererar du en fil som innehåller de autentiseringsuppgifter som krävs för att PAM ska kunna kontakta Azure MFA.
 
@@ -74,7 +79,8 @@ Nu genererar du en fil som innehåller de autentiseringsuppgifter som krävs fö
 >[!NOTE]
 > ZIP-filen innehåller nyckeluppgifter som används vid autentisering via Azure MFA-tjänsten.
 
-## <a name="configuring-the-mim-service-for-azure-mfa"></a>Konfigurera MIM-tjänsten för Azure MFA
+## Konfigurera MIM-tjänsten för Azure MFA
+<a id="configuring-the-mim-service-for-azure-mfa" class="xliff"></a>
 
 1.  Logga in på datorn där MIM-tjänsten är installerad som administratör eller användaren som installerade MIM.
 
@@ -103,7 +109,8 @@ Nu genererar du en fil som innehåller de autentiseringsuppgifter som krävs fö
 > [!NOTE]
 > I slutet av processen kontrollerar du att filen **MfaSettings.xml**, eventuella kopior av den och ZIP-filen inte kan läsas offentligt.
 
-## <a name="configure-pam-users-for-azure-mfa"></a>Konfigurera PAM-användare för Azure MFA
+## Konfigurera PAM-användare för Azure MFA
+<a id="configure-pam-users-for-azure-mfa" class="xliff"></a>
 
 En användarens telefonnummer måste lagras i MIM om användaren ska kunna aktivera en roll som kräver Azure MFA. Du kan ange det här attributet på två sätt.
 
@@ -116,7 +123,8 @@ Set-PAMUser (Get-PAMUser -SourceDisplayName Jen) -SourcePhoneNumber 12135551212
 ```
 
 
-## <a name="configure-pam-roles-for-azure-mfa"></a>Konfigurera PAM-roller för Azure MFA
+## Konfigurera PAM-roller för Azure MFA
+<a id="configure-pam-roles-for-azure-mfa" class="xliff"></a>
 
 När alla telefonnummer till kandidatanvändare för en PAM-roll finns lagrade i MIM-tjänstens databas kan rollen konfigureras att kräva MFA Azure. Det här gör du med kommandot `New-PAMRole` eller `Set-PAMRole`. Exempel:
 
@@ -126,7 +134,8 @@ Set-PAMRole (Get-PAMRole -DisplayName "R") -MFAEnabled 1
 
 Azure MFA kan inaktiveras för en roll genom att parametern "-MFAEnabled 0" anges i kommandot `Set-PAMRole`.
 
-## <a name="troubleshooting"></a>Felsökning
+## Felsökning
+<a id="troubleshooting" class="xliff"></a>
 
 Följande händelser kan du hitta i händelseloggen för Privileged Access Management:
 

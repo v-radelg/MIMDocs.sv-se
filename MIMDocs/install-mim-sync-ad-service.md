@@ -12,15 +12,17 @@ ms.technology: security
 ms.assetid: 5e532b67-64a6-4af6-a806-980a6c11a82d
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: 54d03fbd03f6c44298139324ea2dc7d945f008bc
-ms.openlocfilehash: f84fbbdc8de5cfffc8570c52f8298cc69273c3ee
-ms.lasthandoff: 01/24/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
+ms.openlocfilehash: 4ad41fc9679be702ab17fb5bef5d3efab5ff5adc
+ms.contentlocale: sv-se
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="install-mim-2016-synchronize-active-directory-and-mim-service"></a>Installera MIM 2016: synkronisera Active Directory och MIM-tjänsten
+# Installera MIM 2016: synkronisera Active Directory och MIM-tjänsten
+<a id="install-mim-2016-synchronize-active-directory-and-mim-service" class="xliff"></a>
 
 >[!div class="step-by-step"]
 [« MIM-tjänst och portal](install-mim-service-portal.md)
@@ -33,7 +35,8 @@ ms.lasthandoff: 01/24/2017
 
 MIM-synkroniseringstjänsten (Sync) har som standard inga anslutningar konfigurerade.  Normalt är första steget att använda MIM Sync för att lägg till befintliga Active Directory-konton i MIM-tjänstdatabasen. För att göra detta använder du MIM Sync-tjänstprogrammet.
 
-## <a name="create-the-mim-management-agent"></a>Skapa MIM-hanteringsagenten
+## Skapa MIM-hanteringsagenten
+<a id="create-the-mim-management-agent" class="xliff"></a>
 MIM-hanteringsagenten (MA) används för anslutning av MIM Sync till MIM-tjänsten. Använd guiden Skapa hanteringsagent för att skapa den här anslutningen.
 
 När du ska konfigurera en MIM-hanteringsagent måste du ange ett användarkonto. I det här dokumentet används **MIMMA** som namn på det här kontot.
@@ -41,7 +44,8 @@ När du ska konfigurera en MIM-hanteringsagent måste du ange ett användarkonto
 > [!NOTE]
 > Kontot du använder för MIM-hanteringsagenten måste vara samma konto som du angav vid installationen av MIM-tjänsten.
 
-###<a name="to-create-the-mim-ma"></a>Skapa MIMMA
+###Skapa MIMMA
+<a id="to-create-the-mim-ma" class="xliff"></a>
 
 1.  genom att öppna Hanteraren för synkroniseringstjänsten.
 
@@ -163,7 +167,8 @@ När du ska konfigurera en MIM-hanteringsagent måste du ange ett användarkonto
 
 11.  Skapa hanteringsagenten på sidan **Konfigurera tillägg** genom att klicka på **Slutför**.
 
-## <a name="create-the-ad-management-agent"></a>Skapa AD-hanteringsagenten
+## Skapa AD-hanteringsagenten
+<a id="create-the-ad-management-agent" class="xliff"></a>
 Active Directory-hanteringsagenten är en anslutning för AD-domäntjänster. Använd guiden Skapa hanteringsagent för att skapa den här anslutningen.
 
 1. Så här öppnar du guiden Skapa hanteringsagenten: på menyn **Åtgärder** klickar du på **Skapa**.
@@ -192,7 +197,7 @@ Active Directory-hanteringsagenten är en anslutning för AD-domäntjänster. An
 
 5. På sidan **Konfigurera etableringshierarki** klickar du på **Nästa**.
 
-6. På sidan **Välj objekttyper** anger du följande inställningar och klickar sedan på **Nästa**
+6. På sidan **Välj objekttyper**  anger du följande inställningar och klickar sedan på **Nästa**
 
     - I listan **Objekttyper** väljer du **användare** och **grupp**.
 
@@ -225,11 +230,13 @@ Active Directory-hanteringsagenten är en anslutning för AD-domäntjänster. An
 12. På sidan **Konfigurera tillägg** klickar du på **Slutför**.
 
 
-## <a name="create-run-profiles"></a>Skapa körningsprofiler
+## Skapa körningsprofiler
+<a id="create-run-profiles" class="xliff"></a>
 
 Skapa körningsprofiler för ADMA- och MIMMA-kopplingarna.
 
-### <a name="create-run-profiles-for-the-adma-connector"></a>Skapa körningsprofiler för ADMA-anslutningen
+### Skapa körningsprofiler för ADMA-anslutningen
+<a id="create-run-profiles-for-the-adma-connector" class="xliff"></a>
 
 Den här tabellen visar de fem körningsprofiler du ska skapa för ADMA-anslutningen:
 
@@ -261,7 +268,8 @@ För att skapa körningsprofiler för ADMA-anslutningen:
 
 5. Stäng dialogrutan Konfigurera körningsprofiler genom att klicka på **OK**.
 
-### <a name="create-run-profiles-for-the-mimma-connector"></a>Skapa körningsprofiler för MIMMA-anslutningen
+### Skapa körningsprofiler för MIMMA-anslutningen
+<a id="create-run-profiles-for-the-mimma-connector" class="xliff"></a>
 
 I den här tabellen visas de fem matchande körningsprofilerna för MIMMA-anslutningen:
 
@@ -293,7 +301,8 @@ Skapa körningsprofiler för MIMMA-anslutningen genom att:
 
 5. Stäng dialogrutan Konfigurera körningsprofiler genom att klicka på **OK**.
 
-## <a name="configure-the-mim-service"></a>Konfigurera MIM-tjänsten
+## Konfigurera MIM-tjänsten
+<a id="configure-the-mim-service" class="xliff"></a>
 
 Med hjälp av MIM-portalen skapar du regeln för inkommande synkronisering av AD-användare för MIM-tjänsten.
 
@@ -347,10 +356,12 @@ Så här skapar du regeln för inkommande synkronisering av AD-användare:
 
 8. På fliken **Sammanfattning** klickar du på **Skicka**.
 
-## <a name="initialize-the-testing-environment"></a>Initiera testmiljön
+## Initiera testmiljön
+<a id="initialize-the-testing-environment" class="xliff"></a>
 Det finns fyra steg du måste utföra innan du kan testa MIM-konfigurationen med AD-data:
 
-### <a name="enable-provisioning"></a>Aktivera etablering
+### Aktivera etablering
+<a id="enable-provisioning" class="xliff"></a>
 
 1. genom att öppna Hanteraren för synkroniseringstjänsten.
 
@@ -360,7 +371,8 @@ Det finns fyra steg du måste utföra innan du kan testa MIM-konfigurationen med
 
 4. Stäng dialogrutan Alternativ genom att klicka på **OK**.
 
-### <a name="initialize-the-mimma"></a>Initiera MIMMA
+### Initiera MIMMA
+<a id="initialize-the-mimma" class="xliff"></a>
 
 Kör en fullständig synkroniseringscykel på den här anslutningen. Den fullständiga cykeln består av följande körningsprofiler:
 
@@ -385,13 +397,15 @@ Följ dessa steg för att köra var och en av de fyra körningsprofilerna.
 
     - Starta körningsprofilen genom att klicka på **OK**.
 
-#### <a name="configure-attribute-flow-precedence"></a>Konfigurera prioritet för attributflöde
+#### Konfigurera prioritet för attributflöde
+<a id="configure-attribute-flow-precedence" class="xliff"></a>
 
 Under initieringen av MIM-anslutningen har de konfigurerade synkroniseringsreglerna förts in i metaversumet.
 
 Justera prioriteten för attributflödet för de attribut som den här anslutningen har medfört för att säkerställa att attribut som redan finns i AD kan flöda till metaversumet och senare även till MIM-tjänstdatabasen.
 
-### <a name="initialize-the-adma"></a>Initiera ADMA
+### Initiera ADMA
+<a id="initialize-the-adma" class="xliff"></a>
 
 För att initiera Active Directory-anslutningen måste du köra en fullständig import och en fullständig synkronisering av den. Den fullständiga importen för de befintliga objekten från AD till anslutningsplatsen. Vid en fullständig synkronisering uppdateras synkroniseringsreglerna så att de stämmer överens med MIM-anslutningens regler.
 
@@ -409,7 +423,8 @@ För att initiera Active Directory-anslutningen måste du köra en fullständig 
 
     - Starta körningsprofilen genom att klicka på **OK**.
 
-### <a name="populate-the-mim-service-database"></a>Lägg till i MIM-tjänstdatabasen
+### Lägg till i MIM-tjänstdatabasen
+<a id="populate-the-mim-service-database" class="xliff"></a>
 
 För att fylla MIM-tjänstdatabasen med objekten måste du köra en synkroniseringscykel på MIMMA-anslutningen. Cykeln består av:
 

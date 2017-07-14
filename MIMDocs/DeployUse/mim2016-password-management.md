@@ -11,17 +11,18 @@ ms.prod: identity-manager-2016
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
-ms.translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: 1ef7b9816d265d17ef68fc54e010e655535dcdc8
 ms.openlocfilehash: 0a5a3f28af58dd59ab805f2836ffeb88f3508ae0
 ms.contentlocale: sv-se
-ms.lasthandoff: 05/11/2017
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
 
-# <a name="microsoft-identity-manager-2016-password-management"></a>Lösenordshantering i Microsoft Identity Manager 2016
+# Lösenordshantering i Microsoft Identity Manager 2016
+<a id="microsoft-identity-manager-2016-password-management" class="xliff"></a>
 
 Att hantera lösenord för flera användarkonton är en komplicerad del i en företagsmiljö med flera datakällor. Microsoft Identity Manager 2016 (MIM) har två lösningar för lösenordshantering:
 
@@ -43,7 +44,8 @@ Med hjälp av lösenordssynkronisering och användarbaserad hantering av löseno
 
 -   Utföra åtgärder för lösenordshantering i realtid, oberoende av MIM-åtgärder.
 
-## <a name="password-extensions"></a>Lösenordstillägg
+## Lösenordstillägg
+<a id="password-extensions" class="xliff"></a>
 
 Hanteringsagenter för katalogservrar stöder åtgärder för lösenordsändring och lösenordsinställning som standard. För filbaserade, databasanslutna och utökningsbara hanteringsagenter, som inte har stöd för åtgärder för lösenordsändring och lösenordsinställning som standard, kan du skapa ett dynamiskt länkat .NET-bibliotek (DLL) för lösenordstillägg.
 .NET DLL för lösenordstillägg anropas varje gång ett anrop görs för ändring eller inställning av lösenord för någon av dessa hanteringsagenter. Inställningar för lösenordstillägg konfigureras för dessa hanteringsagenter i Hanteraren för synkroniseringstjänsten. Mer information om hur du konfigurerar lösenordstillägg finns i FIM för utvecklare.
@@ -60,7 +62,8 @@ Hanteringsagenter för katalogservrar stöder åtgärder för lösenordsändring
 |                                                                           | Microsoft SQL Server                                                                               |
 |                                                                           | Oracle Database                                                                                    |
 
-## <a name="password-synchronization"></a>Lösenordssynkronisering
+## Lösenordssynkronisering
+<a id="password-synchronization" class="xliff"></a>
 
 
 Lösenordssynkronisering fungerar med tjänsten om meddelanden för lösenordsändring (PCNS) på en Active Directory-domän, och tillåter att lösenordsändringar som kommer från Active Directory sprids automatiskt till andra anslutna datakällor. MIM åstadkommer detta genom att köras som en RPC-server (Remote Procedure Call) som lyssnar efter en avisering om lösenordsändring från en Active Directory-domänkontrollant. När begäran om lösenordsändring tas emot och autentiseras bearbetas den av MIM och sprids till lämpliga hanteringsagenter.
@@ -86,7 +89,8 @@ Komponenterna som ingår i processen för lösenordssynkronisering är:
 -   **DLL för lösenordstillägg** – DLL för lösenordstillägg ger ett sätt att implementera åtgärder för lösenordsändring eller lösenordsinställning med hjälp av ett regeltillägg för valfri databas, Extensible Connectivity eller filbaserad hanteringsagent.
     Det går att uppnå genom att skapa ett krypterat attributnamn endast för export med namnet "export_password" som inte finns rent faktiskt i den anslutna katalogen men som går att komma åt och ange i tillägg för etableringsregler eller som kan användas under exportattributflödet. Mer information om hur du konfigurerar lösenordstillägg finns i [FIM för utvecklare](https://msdn.microsoft.com/library/windows/desktop/ee652263(v=vs.100).aspx).
 
-## <a name="preparing-for-password-synchronization"></a>Förbereda för lösenordssynkronisering
+## Förbereda för lösenordssynkronisering
+<a id="preparing-for-password-synchronization" class="xliff"></a>
 
 Kontrollera följande innan du konfigurerar lösenordssynkronisering för MIM- och Active Directory-miljön:
 
@@ -110,7 +114,8 @@ Konfigurera lösenordssynkronisering:
 
 Mer information om att konfigurera lösenordssynkronisering finns i Using Password Synchronization (Använda lösenordssynkronisering).
 
-## <a name="password-synchronization-process"></a>Processen för lösenordssynkronisering
+## Processen för lösenordssynkronisering
+<a id="password-synchronization-process" class="xliff"></a>
 
 Processen för synkronisering av en begäran om lösenordsändring från en Active Directory-domänkontrollant till andra anslutna datakällor visas i följande diagram:
 
@@ -126,7 +131,8 @@ Processen för synkronisering av en begäran om lösenordsändring från en Acti
 
 6.  MIM använder informationen om kopplingstabell för att fastställa de hanteringsagenter som tar emot lösenordsändringen och skickar ut lösenordsändringen till dem.
 
-## <a name="password-synchronization-security"></a>Säkerhet för lösenordssynkronisering
+## Säkerhet för lösenordssynkronisering
+<a id="password-synchronization-security" class="xliff"></a>
 
 Följande säkerhetsproblem med lösenordssynkronisering har åtgärdats:
 
@@ -140,7 +146,8 @@ Följande säkerhetsproblem med lösenordssynkronisering har åtgärdats:
 
 -   Säkra lösenordsköer – lösenord som lagras i PCNS-lösenordsköer krypteras tills de levereras.
 
-## <a name="password-synchronization-error-recovery-scenarios"></a>Återställningsscenarier vid fel med lösenordssynkronisering
+## Återställningsscenarier vid fel med lösenordssynkronisering
+<a id="password-synchronization-error-recovery-scenarios" class="xliff"></a>
 
 Helst synkroniseras ändringen utan fel när en användare ändrar ett lösenord. Följande scenarier beskriver hur MIM återställer efter vanliga synkroniseringsfel:
 
@@ -162,7 +169,8 @@ En del fel är så allvarliga att det inte är sannolikt att åtgärden lyckas o
 | 6927  | Fel       | Åtgärden för synkronisering av lösenord misslyckades eftersom lösenordet inte uppfyller målsystemets lösenordsprincip.                                      |
 | 6928  | Fel       | Åtgärden för synkronisering av lösenord misslyckades eftersom lösenordstillägget för målhanteringsagenten inte är konfigurerad för att ha stöd för åtgärder för lösenordsinställning. |
 
-## <a name="user-based-password-change-management"></a>Användarbaserad hantering av lösenordsändring
+## Användarbaserad hantering av lösenordsändring
+<a id="user-based-password-change-management" class="xliff"></a>
 
 MIM tillhandahåller två webbprogram som använder Windows Management Instrumentation (WMI) för att återställa lösenord. Liksom med lösenordssynkronisering aktiverar du lösenordshantering när du konfigurerar hanteringsagenten i hanteringsagentens designer. Information om lösenordshantering och WMI finns i MIM för utvecklare.
 

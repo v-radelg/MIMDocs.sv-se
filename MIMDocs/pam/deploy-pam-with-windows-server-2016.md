@@ -10,18 +10,19 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 
-ms.translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: 3797f5789bb4e48836eb21776dafd5a2e0e11613
 ms.openlocfilehash: fbdebd59249667a0e60d3a248f183bcb6a75085a
 ms.contentlocale: sv-se
-ms.lasthandoff: 05/09/2017
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
 
 
-# <a name="deploy-mim-pam-with-windows-server-2016"></a>Distribuera MIM PAM med Windows Server 2016
+# Distribuera MIM PAM med Windows Server 2016
+<a id="deploy-mim-pam-with-windows-server-2016" class="xliff"></a>
 
 
 I det här scenariot kan MIM 2016 SP1 använda funktioner i Windows Server 2016 som domänkontrollant ”PRIV”-skogen.  När scenariot har konfigurerats tidsbegränsas en användares Kerberos-biljett till den återstående tiden för användarens rollaktivering. 
@@ -29,7 +30,8 @@ I det här scenariot kan MIM 2016 SP1 använda funktioner i Windows Server 2016 
 >[!Note]
 Tidigare tekniska förhandsvisningar av Windows Server 2016 före teknisk förhandsvisning 5 inte kan användas med den här versionen av MIM.
 
-## <a name="preparation"></a>Förberedelse
+## Förberedelse
+<a id="preparation" class="xliff"></a>
 
 Det krävs minst två virtuella datorer för laboratoriemiljön:
 
@@ -146,7 +148,8 @@ Genomför installationen enligt beskrivningen i guiden [för att komma igång](p
 
 -   Objekt #5 (verifiering av förtroende) **behövs inte när både CORP- och PRIV-domänernas funktionsnivå är konfigurerade för Windows Server 2016**.
 
-## <a name="more-information"></a>Mer information
+## Mer information
+<a id="more-information" class="xliff"></a>
 
 - [Privileged Access Management för Active Directory Domain Services](privileged-identity-management-for-active-directory-domain-services.md)
 - [Konfigurera MIM-miljö för Privileged Access Management](configuring-mim-environment-for-pam.md)

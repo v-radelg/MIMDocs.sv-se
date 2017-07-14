@@ -12,14 +12,17 @@ ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
-translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: f08b0197341351bd5f33552f26b96132b1356239
 ms.openlocfilehash: 12eb9a00584f72b9c628e870562a743fb603d4a3
+ms.contentlocale: sv-se
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="step-4-configuring-sharepoint"></a>Steg 4 Konfigurera SharePoint
+# Steg 4 Konfigurera SharePoint
+<a id="step-4-configuring-sharepoint" class="xliff"></a>
 
 >[!div class="step-by-step"]
 [« Steg 3](sp1-step3-installing-configuring-sql.md)
@@ -55,9 +58,4 @@ Mer information finns i avsnittet **Konfigurera SharePoint** i [Steg 3 – Förb
 >[!div class="step-by-step"]
 [« Steg 3](sp1-step3-installing-configuring-sql.md)
 [Steg 5 »](sp1-step5-configuring-pam.md)
-
-
-
-<!--HONumber=Jan17_HO2-->
-
 
