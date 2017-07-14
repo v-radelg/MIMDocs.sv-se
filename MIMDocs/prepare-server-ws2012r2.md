@@ -12,15 +12,17 @@ ms.technology: security
 ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: 3623bffb099a83d0eba47ba25e9777c3d590e529
-ms.openlocfilehash: 1cb0d6cd310372ecaeff47c9cc4461ebc43b3390
-ms.lasthandoff: 01/24/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
+ms.openlocfilehash: a0241964edb21ca4bf938ae84693b9947f6e2efb
+ms.contentlocale: sv-se
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="set-up-an-identity-management-server-windows-server-2012-r2"></a>Konfigurera en server för identitetshantering: Windows Server 2012 R2
+# Konfigurera en server för identitetshantering: Windows Server 2012 R2
+<a id="set-up-an-identity-management-server-windows-server-2012-r2" class="xliff"></a>
 
 >[!div class="step-by-step"]
 [« Förbereda en domän](preparing-domain.md)
@@ -32,7 +34,8 @@ ms.lasthandoff: 01/24/2017
 > - Domännamn – **contoso**
 > - Lösenord – **Pass@word1**
 
-## <a name="join-windows-server-2012-r2-to-your-domain"></a>Ansluta Windows Server 2012 R2 till din domän
+## Ansluta Windows Server 2012 R2 till din domän
+<a id="join-windows-server-2012-r2-to-your-domain" class="xliff"></a>
 
 Börja med en dator med Windows Server 2012 R2, med minst 8 GB RAM-minne. Vid installationen anger du version ”Windows Server 2012 R2 Standard (Server med GUI) x 64”.
 
@@ -63,7 +66,8 @@ Börja med en dator med Windows Server 2012 R2, med minst 8 GB RAM-minne. Vid i
     Install-WindowsFeature Web-WebServer, Net-Framework-Features,rsat-ad-powershell,Web-Mgmt-Tools,Application-Server,Windows-Identity-Foundation,Server-Media-Foundation,Xps-Viewer –includeallsubfeature -restart -source d:\sources\SxS
     ```
 
-## <a name="configure-the-server-security-policy"></a>Konfigurera säkerhetsprinciper för servern
+## Konfigurera säkerhetsprinciper för servern
+<a id="configure-the-server-security-policy" class="xliff"></a>
 
 Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapats kan köras som tjänster.
 
@@ -94,7 +98,8 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 12. Stäng fönstret för lokala säkerhetsprinicper.
 
 
-## <a name="change-the-iis-windows-authentication-mode"></a>Ändra Windows-autentiseringsläget för IIS
+## Ändra Windows-autentiseringsläget för IIS
+<a id="change-the-iis-windows-authentication-mode" class="xliff"></a>
 
 1.  Öppna ett PowerShell-fönster.
 

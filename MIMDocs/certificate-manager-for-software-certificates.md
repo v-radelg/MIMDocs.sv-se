@@ -12,18 +12,21 @@ ms.technology: security
 ms.assetid: fed5ada9-d80f-4825-aad7-4172ac5d71d3
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: 54d03fbd03f6c44298139324ea2dc7d945f008bc
-ms.openlocfilehash: 23cfb1134d1cbf2cf838354cb7d915084803cd41
-ms.lasthandoff: 01/24/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
+ms.openlocfilehash: 274039a6866c5c0fda807e4326220ecf785ca3bb
+ms.contentlocale: sv-se
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="create-software-certificates-with-certificate-manager"></a>Skapa programcertifikat med Certifikathanteraren
+# Skapa programcertifikat med Certifikathanteraren
+<a id="create-software-certificates-with-certificate-manager" class="xliff"></a>
 För att registrera och förnya programcertifikat behöver du inte vara administratör och du behöver inte heller ha ett virtuellt smartkort. Det bör påpekas att du vid en viss tidpunkt kommer att uppmanas tillåta en certifikatåtgärd, vilket är normalt.
 
-## <a name="create-a-software-certificate-profile-template-in-mim-2016-certificate-manager"></a>Skapa en profilmall för programcertifikat i Certifikathanteraren i MIM 2016
+## Skapa en profilmall för programcertifikat i Certifikathanteraren i MIM 2016
+<a id="create-a-software-certificate-profile-template-in-mim-2016-certificate-manager" class="xliff"></a>
 
 1.  Skapa en mall för det certifikat du ska begära för det virtuella smartkortet. Öppna MMC.
 
@@ -39,7 +42,7 @@ För att registrera och förnya programcertifikat behöver du inte vara administ
 
     1.  På fliken **Allmänt** i fältet Visa namn anger du **Arkiverad certifikatmall**.
 
-    2.  b.    På fliken **Hantering av begäranden**
+    2.  b.  På fliken **Hantering av begäranden**
 
         1.  anger du **Syfte** som Signatur och kryptering.
 
@@ -73,7 +76,8 @@ För att registrera och förnya programcertifikat behöver du inte vara administ
 
     10. I listan väljer du den nya mall du just skapat (**Arkiverad certifikatmall**) och klickar sedan på **OK**.
 
-## <a name="create-the-profile-template"></a>Skapa profilmallen
+## Skapa profilmallen
+<a id="create-the-profile-template" class="xliff"></a>
 
 1.  Logga in på CM-portalen som en användare med administratörsbehörighet.
 

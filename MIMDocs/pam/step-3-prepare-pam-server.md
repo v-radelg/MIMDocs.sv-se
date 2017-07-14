@@ -13,21 +13,24 @@ ms.assetid: 68ec2145-6faa-485e-b79f-2b0c4ce9eff7
 ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: 9a262a256062688542040827653a7df8d82e1044
-ms.lasthandoff: 05/02/2017
+ms.contentlocale: sv-se
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="step-3--prepare-a-pam-server"></a>Steg 3 – Förbereda en PAM-server
+# Steg 3 – Förbereda en PAM-server
+<a id="step-3--prepare-a-pam-server" class="xliff"></a>
 
 >[!div class="step-by-step"]
 [« Steg 2](step-2-prepare-priv-domain-controller.md)
 [Steg 4 »](step-4-install-mim-components-on-pam-server.md)
 
-## <a name="install-windows-server-2012-r2"></a>Installera Windows Server 2012 R2
+## Installera Windows Server 2012 R2
+<a id="install-windows-server-2012-r2" class="xliff"></a>
 På en tredje virtuell dator installerar du Windows Server 2012 R2, mer specifikt Windows Server 2012 R2 Standard (server med GUI) x64, för att skapa *PAMSRV*. Eftersom SQL Server och SharePoint 2013 kommer att installeras på den här datorn, krävs det minst 8 GB RAM-minne.
 
 1. Välj **Windows Server 2012 R2 Standard (server med GUI) x64**.
@@ -47,7 +50,8 @@ På en tredje virtuell dator installerar du Windows Server 2012 R2, mer specifik
 7.  När servern startas om loggar du in som administratör, öppnar kontrollpanelen och ansluter PAMSRV till PRIV-domänen (priv.contoso.local).  När du gör det måste du ange användarnamnet och autentiseringsuppgifterna för en PRIV-domänadministratör, (PRIV\Administratör). Efter att välkomstmeddelandet har visats kan du stänga dialogrutan och starta om servern.
 
 
-### <a name="add-the-web-server-iis-and-application-server-roles"></a>Lägg till rollerna för webbserver (IIS) och programserver
+### Lägg till rollerna för webbserver (IIS) och programserver
+<a id="add-the-web-server-iis-and-application-server-roles" class="xliff"></a>
 Lägg till roller för webbserver (IIS) och programserver, .NET Framework 3.5-funktioner, Active Directory-modulen för Windows PowerShell och andra funktioner som krävs för SharePoint.
 
 1.  Logga in som PRIV-domänadministratör (PRIV\Administratör) och starta PowerShell.
@@ -62,7 +66,8 @@ Lägg till roller för webbserver (IIS) och programserver, .NET Framework 3.5-fu
     Xps-Viewer –includeallsubfeature -restart -source d:\sources\SxS
     ```
 
-### <a name="configure-the-server-security-policy"></a>Konfigurera säkerhetsprinciper för servern
+### Konfigurera säkerhetsprinciper för servern
+<a id="configure-the-server-security-policy" class="xliff"></a>
 Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapats kan köras som tjänster.
 
 1.  Starta programmet för **lokal säkerhetsprincip**.   
@@ -86,7 +91,8 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 16. Klicka på **Lägg till** och ange användaren *SharePoint* i domänen *PRIV*. På nästa skärm i guiden klickar du på **Lägg till användaren som administratör**.  
 17. Stäng kontrollpanelen.  
 
-### <a name="change-the-iis-configuration"></a>Ändra IIS-konfigurationen
+### Ändra IIS-konfigurationen
+<a id="change-the-iis-configuration" class="xliff"></a>
 Det finns två sätt att ändra IIS-konfigurationen så att program kan använda läget för Windows-autentisering. Kontrollera att du är inloggad som MIMAdmin och följ sedan något av följande alternativ.
 
 Om du vill använda PowerShell:
@@ -104,7 +110,8 @@ Om du vill använda en textredigerare, t.ex. Notepad:
 3. Ändra värdet för **overrideModeDefault** till *Tillåt*  
 4. Spara filen och starta om IIS med PowerShell-kommandot `iisreset /START`
 
-## <a name="install-sql-server"></a>Installera SQL Server
+## Installera SQL Server
+<a id="install-sql-server" class="xliff"></a>
 Om SQL Server inte är i skyddsmiljön, installerar du antingen SQL Server 2012 (Service Pack 1 eller senare) eller SQL Server 2014. Följande steg gäller för SQL 2014.
 
 1. Kontrollera att du är inloggad som MIMAdmin.
@@ -115,7 +122,8 @@ Om SQL Server inte är i skyddsmiljön, installerar du antingen SQL Server 2012 
     .\setup.exe /Q /IACCEPTSQLSERVERLICENSETERMS /ACTION=install /FEATURES=SQL,SSMS /INSTANCENAME=MSSQLSERVER /SQLSVCACCOUNT="PRIV\SqlServer" /SQLSVCPASSWORD="Pass@word1" /AGTSVCSTARTUPTYPE=Automatic /AGTSVCACCOUNT="NT AUTHORITY\Network Service" /SQLSYSADMINACCOUNTS="PRIV\MIMAdmin"
     ```
 
-## <a name="install-sharepoint-foundation-2013"></a>Installera SharePoint Foundation 2013
+## Installera SharePoint Foundation 2013
+<a id="install-sharepoint-foundation-2013" class="xliff"></a>
 
 Med SharePoint Foundation 2013 med SP1-installationsprogrammet installerar du SharePoints programvarukrav på PAMSRV.
 
@@ -134,7 +142,8 @@ När alla nödvändiga SharePoint-komponenter har installerats installerar du Sh
 4.  Välj typen **fullständig server**.  
 5.  När installationen har slutförts väljer du att köra guiden.  
 
-### <a name="configure-sharepoint"></a>Konfigurera SharePoint
+### Konfigurera SharePoint
+<a id="configure-sharepoint" class="xliff"></a>
 Konfigurera SharePoint genom att köra Konfigurationsguiden för SharePoint-produkter.
 
 1.  På fliken Anslut till en servergrupp ändrar du till **Skapa en ny servergrupp**.  
@@ -147,7 +156,8 @@ Konfigurera SharePoint genom att köra Konfigurationsguiden för SharePoint-prod
 8.  Välj att använda det befintliga hanterade kontot (PRIV\SharePoint), avmarkera kryssrutan för att inaktivera alla valfria tjänster och klicka på **Nästa**.  
 9. När fönstret Skapa en webbplatssamling visas klickar du på **Hoppa över** och **Slutför**.  
 
-## <a name="create-a-sharepoint-foundation-2013-web-application"></a>Skapa en SharePoint Foundation 2013-webbapp
+## Skapa en SharePoint Foundation 2013-webbapp
+<a id="create-a-sharepoint-foundation-2013-web-application" class="xliff"></a>
 När guiden har slutförts använder du PowerShell till att skapa en SharePoint Foundation 2013-webbapp som värd för MIM-portalen. Eftersom den här genomgången bara är ett exempel aktiveras inte SSL.
 
 1.  Högerklicka på SharePoint 2013 Management Shell, välj **Kör som administratör** och kör följande PowerShell-skript:
@@ -162,7 +172,8 @@ När guiden har slutförts använder du PowerShell till att skapa en SharePoint 
 > [!NOTE]
 > Lämna fönstret SharePoint 2013 Management Shell öppet. Det ska användas i nästa steg.
 
-## <a name="create-a-sharepoint-site-collection"></a>Skapa en SharePoint-webbplatssamling
+## Skapa en SharePoint-webbplatssamling
+<a id="create-a-sharepoint-site-collection" class="xliff"></a>
 Sedan skapar du en SharePoint-webbplatssamling som är kopplade till den webbappen som värd för MIM-portalen.
 
 1.  Öppna fönstret **SharePoint 2013 Management Shell** om det inte redan är öppet och kör följande PowerShell-skript
@@ -187,13 +198,15 @@ Sedan skapar du en SharePoint-webbplatssamling som är kopplade till den webbapp
     Get-SPTimerJob hourly-all-sptimerservice-health-analysis-job | disable-SPTimerJob
     ```
 
-## <a name="change-update-settings"></a>Ändra uppdateringsinställningar
+## Ändra uppdateringsinställningar
+<a id="change-update-settings" class="xliff"></a>
 
 1. Öppna kontrollpanelen, gå till **Windows Update** och klicka på att **ändra inställningar**.  
 2. Ändra inställningarna för att ta emot uppdateringar via Windows Update och andra produkter från Microsoft Updates.  
 3. Sök efter nya uppdateringar och se till att alla väntande viktiga uppdateringar har installerats innan du fortsätter.
 
-## <a name="set-the-website-as-the-local-intranet"></a>Ange webbplatsen som lokalt intranät
+## Ange webbplatsen som lokalt intranät
+<a id="set-the-website-as-the-local-intranet" class="xliff"></a>
 
 1. Starta Internet Explorer och öppna en ny webbläsarflik
 2. Gå till http://pamsrv.priv.contoso.local:82/ och logga in som PRIV\MIMAdmin.  En tom SharePoint-webbplats med namnet MIM-portal visas.  
@@ -201,7 +214,8 @@ Sedan skapar du en SharePoint-webbplatssamling som är kopplade till den webbapp
 
 Om inloggningen misslyckas kan du behöva uppdatera de Kerberos SPN du skapade i [steg 2](step-2-prepare-priv-domain-controller.md).
 
-## <a name="start-the-sharepoint-administration-service"></a>Starta SharePoints administrationstjänst
+## Starta SharePoints administrationstjänst
+<a id="start-the-sharepoint-administration-service" class="xliff"></a>
 
 Gå till **Tjänster** (i Administrationsverktyg) och starta **SharePoints administrationstjänst** om den inte redan körs.
 

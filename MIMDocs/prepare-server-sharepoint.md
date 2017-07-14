@@ -12,15 +12,17 @@ ms.technology: security
 ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: 3623bffb099a83d0eba47ba25e9777c3d590e529
-ms.openlocfilehash: 2af432036033f8914d00228cd3d2d1af84f13054
-ms.lasthandoff: 01/24/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
+ms.openlocfilehash: 1114be2ce13ca012582676803eb1dc29cadae596
+ms.contentlocale: sv-se
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="set-up-an-identity-management-server-sharepoint"></a>Konfigurera en server för identitetshantering: SharePoint
+# Konfigurera en server för identitetshantering: SharePoint
+<a id="set-up-an-identity-management-server-sharepoint" class="xliff"></a>
 
 >[!div class="step-by-step"]
 [«SQL Server 2014](prepare-server-sql2014.md)
@@ -33,7 +35,8 @@ ms.lasthandoff: 01/24/2017
 > - Lösenord – **Pass@word1**
 
 
-## <a name="install-sharepoint-foundation-2013-with-sp1"></a>Installera **SharePoint Foundation 2013 med SP1**
+## Installera **SharePoint Foundation 2013 med SP1**
+<a id="install-sharepoint-foundation-2013-with-sp1" class="xliff"></a>
 
 > [!NOTE]
 > Internetanslutning krävs för att installationsprogrammet ska kunna hämta allt som behövs. Om datorn finns i ett virtuellt nätverk utan internetanslutning kan du lägga till ytterligare ett nätverksgränssnitt på den dator som har anslutning till Internet. Detta kan inaktiveras när installationen är klar.
@@ -60,7 +63,8 @@ Följ dessa steg om du vill installera SharePoint Foundation 2013 SP1. När du h
 
 4.  Kör guiden när installationen har slutförts.
 
-## <a name="run-the-wizard-to-configure-sharepoint"></a>Kör guiden för att konfigurera SharePoint
+## Kör guiden för att konfigurera SharePoint
+<a id="run-the-wizard-to-configure-sharepoint" class="xliff"></a>
 
 Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfigurera SharePoint att arbeta med MIM.
 
@@ -80,7 +84,8 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
 
 8. I fönstret **Skapa en webbplatssamling** klickar du på **Hoppa över**.  Klicka sedan på **Slutför**.
 
-## <a name="prepare-sharepoint-to-host-the-mim-portal"></a>Förbereda SharePoint som värd för MIM-portalen
+## Förbereda SharePoint som värd för MIM-portalen
+<a id="prepare-sharepoint-to-host-the-mim-portal" class="xliff"></a>
 
 > [!NOTE]
 > SSL konfigureras inte första gången. Se till att konfigurera SSL eller motsvarande innan du aktiverar åtkomst till portalen.

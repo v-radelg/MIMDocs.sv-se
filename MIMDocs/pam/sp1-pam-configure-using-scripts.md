@@ -12,14 +12,17 @@ ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
-translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: f08b0197341351bd5f33552f26b96132b1356239
 ms.openlocfilehash: bd73f43a096d58e1f7250e28b59e33f4411e88a3
+ms.contentlocale: sv-se
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="configure-pam-using-scripts"></a>Konfigurera PAM med hjälp av skript
+# Konfigurera PAM med hjälp av skript
+<a id="configure-pam-using-scripts" class="xliff"></a>
 
 Om du väljer att installera SQL och SharePoint på separata servrar måste du konfigurera dem enligt anvisningarna nedan. Om SQL, SharePoint och PAM-komponenterna installeras på samma dator måste du utföra stegen nedan från den datorn.
 
@@ -39,11 +42,13 @@ Steg:
 5. Kopiera samma PAMDeploymentConfig.xml till mappen %SYSTEMDRIVE%\PAM på alla datorer, CORPDC, PRIVDC, PAM Server, SQL Server och SharePoint-servrar.
 
 
-## <a name="deployment-worksheet"></a>Kalkylblad för distribution
+## Kalkylblad för distribution
+<a id="deployment-worksheet" class="xliff"></a>
 
 Innan du fortsätter uppdaterar du PAMDeploymentConfig.xml och placerar den uppdaterade kopian på alla datorer.
 
-### <a name="setup"></a>Setup
+### Setup
+<a id="setup" class="xliff"></a>
 
 |Machine   | Vem du ska köra som   |Kommandon   |
 |---|---|---|
@@ -55,7 +60,8 @@ Innan du fortsätter uppdaterar du PAMDeploymentConfig.xml och placerar den uppd
 | PAMServer  | Lokal administratör (MIM-administratör efter domänanslutning)  | .\PAMDeployment.ps1 Välj menyalternativ 5 (MIM PAM-konfiguration)   |
 |  PAMServer |MIMAdmin   | .\PAMDeployment.ps1 Välj menyalternativ 6 (PAM-förtroendekonfiguration) .\PAMDeployment.ps1 Välj menyalternativ 6 (PAM-förtroendekonfiguration) |
 
-### <a name="validation"></a>Validering
+### Validering
+<a id="validation" class="xliff"></a>
 
 |  Machine | Vem du ska köra som   | Kommandon   |
 |---|---|---|
@@ -68,9 +74,4 @@ Innan du fortsätter uppdaterar du PAMDeploymentConfig.xml och placerar den uppd
 
 >[!div class="step-by-step"]
 [Start »](sp1-step1-configuring-priv-domain.md)
-
-
-
-<!--HONumber=Jan17_HO2-->
-
 

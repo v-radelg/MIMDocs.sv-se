@@ -12,15 +12,17 @@ ms.technology: active-directory-domain-services
 ms.assetid: eef248c4-b3b6-4b28-9dd0-ae2f0b552425
 ms.reviewer: mwahl
 ms.suite: ems
-translationtype: Human Translation
+ms.translationtype: MT
 ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: 1239ca2c0c6d376420723da01d7aa42821f5980f
-ms.lasthandoff: 05/02/2017
+ms.contentlocale: sv-se
+ms.lasthandoff: 07/10/2017
 
 
 ---
 
-# <a name="step-5--establish-trust-between-priv-and-corp-forests"></a>Steg 5 – upprätta förtroende mellan PRIV- och CORP-skogar
+# Steg 5 – upprätta förtroende mellan PRIV- och CORP-skogar
+<a id="step-5--establish-trust-between-priv-and-corp-forests" class="xliff"></a>
 
 >[!div class="step-by-step"]
 [« Steg 4](step-4-install-mim-components-on-pam-server.md)
@@ -29,7 +31,8 @@ ms.lasthandoff: 05/02/2017
 
 För varje CORP-domän, till exempel contoso.local, måste domänkontrollanterna PRIV och CONTOSO vara bundna av ett förtroende. Det gör att användarna i PRIV-domänen kan komma åt resurser i CORP-domänen.
 
-## <a name="connect-each-domain-controller-to-its-counterpart"></a>Koppla domänkontrollanterna till varandra
+## Koppla domänkontrollanterna till varandra
+<a id="connect-each-domain-controller-to-its-counterpart" class="xliff"></a>
 
 Innan du upprättar förtroende måste domänkontrollanterna konfigureras för DNS-namnmatchning för motparten, utifrån på den andra domänkontrollantens/DNS-serverns IP-adress.
 
@@ -47,7 +50,8 @@ Innan du upprättar förtroende måste domänkontrollanterna konfigureras för D
 
     ![filstruktur för priv-nyckeln – skärmbild](./media/PAM_GS_DNS_Manager.png)
 
-## <a name="establish-trust-on-pamsrv"></a>Upprätta förtroende på PAMSRV
+## Upprätta förtroende på PAMSRV
+<a id="establish-trust-on-pamsrv" class="xliff"></a>
 
 Upprätta enkelriktat förtroende med varje domän på PAMSRV, till exempel CORPDC, så att CORP-domänkontrollanterna har förtroende för PRIV-skogen.
 
@@ -69,7 +73,8 @@ Upprätta enkelriktat förtroende med varje domän på PAMSRV, till exempel CORP
     New-PAMDomainConfiguration -SourceDomain "contoso" -Credentials $ca
     ```
 
-## <a name="give-forests-read-access-to-active-directory"></a>Ge skogar läsbehörighet till Active Directory
+## Ge skogar läsbehörighet till Active Directory
+<a id="give-forests-read-access-to-active-directory" class="xliff"></a>
 
 Aktivera läsbehörighet till AD för PRIV-administratörer och övervakningstjänsten för varje befintlig skog.
 
@@ -92,7 +97,8 @@ Aktivera läsbehörighet till AD för PRIV-administratörer och övervakningstj�
 
     Resultatet bör också ange **SID-filtrering har inte aktiverats för förtroendet**. Mer information finns i [Inaktivera SID-filterkarantän](http://technet.microsoft.com/library/cc772816.aspx).
 
-## <a name="start-the-monitoring-and-component-services"></a>Starta övervaknings- och komponenttjänsterna
+## Starta övervaknings- och komponenttjänsterna
+<a id="start-the-monitoring-and-component-services" class="xliff"></a>
 
 1.  Logga in på PAMSRV som PRIV-domänadministratör (PRIV\Administratör).
 
