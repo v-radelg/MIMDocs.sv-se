@@ -5,7 +5,7 @@ keywords:
 author: fimguy
 ms.author: fimguy
 manager: femila
-ms.date: 06/06/2017
+ms.date: 07/13/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
@@ -13,17 +13,13 @@ ms.assetid: 4978f60d-044d-4e84-8d93-65801fce1144
 ms.reviewer: mwahl
 ms.suite: ems
 ms.custom: mim
+ms.openlocfilehash: f2b2bb2c9144e8624bf2a7780093f3d4e553747f
+ms.sourcegitcommit: 0cb8269f07a5f419d2d1cd760d9cc78b8a1c8aa9
 ms.translationtype: MT
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
-ms.openlocfilehash: e8f1d72930cd5998b5d9957e8b8f5dbd958f8342
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
-
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/14/2017
 ---
-
-# Plattformar som stöds för MIM 2016
-<a id="supported-platforms-for-mim-2016" class="xliff"></a>
+# <a name="supported-platforms-for-mim-2016"></a>Plattformar som stöds för MIM 2016
 
 I den här tabellen beskrivs de plattformar som stöds och versionen för respektive komponent i Microsoft Identity Manager 2016. Versioner som är märkta med * stöds endast i MIM 2016 Service Pack 1.
 
@@ -35,10 +31,10 @@ I den här tabellen beskrivs de plattformar som stöds och versionen för respek
 | | Active Directory för användaretablering, PCNS och GAL Sync (valfritt)|Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 <br/> Windows Server 2016 * |
 | | Exchange för etablering av postlådor och GAL Sync (valfritt)|Exchange Server 2010 SP3<br/>Exchange Server 2013 SP1<br/>Exchange Server 2016* |
 | | Utvecklingsmiljö (valfritt) | Visual Studio 2012<br/>Visual Studio 2013 <br/> Visual Studio 2015 <br/> Visual Studio 2017* |
-| | Ytterligare anslutna system (valfritt) | Active Directory Domain Services<br/>Active Directory<br/>Lightweight Directory Services<br/>SQL Server 2000 eller senare<br/>SharePoint Server 2013<br/> SharePoint Server 2016 * <br/> Andra produkter från tredje part |
+| | Ytterligare anslutna system (valfritt) | Active Directory Domain Services<br/>Active Directory<br/>Lightweight Directory Services<br/>SQL Server 2008 eller senare<br/>SharePoint Server 2013<br/> SharePoint Server 2016 * <br/> Andra produkter från tredje part |
 | **MIM-tjänst och portal** | Windows Server | Windows Server 2012<br/>Windows Server 2012 R2 <br/> Windows Server 2016 * |
 | | Active Directory för PAM-skog i bastionmiljö | Windows Server 2012 R2 <br/> Windows Server 2016 * |
-| | Active Directory för befintliga skogar | Windows Server 2008 <br/> Windows Server 2008 R2 * <br/> Windows Server 2012 * <br/> Windows Server 2012 R2 * <br/> Windows Server 2016 * |
+| | Active Directory för PAM-scenario, befintliga skogar | Windows Server 2008 <br/> Windows Server 2008 R2 * <br/> Windows Server 2012 * <br/> Windows Server 2012 R2 * <br/> Windows Server 2016 * |
 | | MIM-tjänstdatabas | SQL Server 2008 R2 SP3<br/>SQL Server 2012 SP2<br/>SQL Server 2014 SP1 <br/> SQL Server 2016 * |
 | | SharePoint | SharePoint Foundation 2010<br/>SharePoint Foundation 2013 SP1 <br/> SharePoint 2016 * |
 | | E-postserver för MIM-tjänstgodkännande och hantering av grupp-e-post (valfritt) | Exchange Server 2010 SP3<br/>Exchange Server 2013 SP1 <br/> Exchange Server 2016 * <br/> Exchange Online * (endast meddelande) |
@@ -49,7 +45,7 @@ I den här tabellen beskrivs de plattformar som stöds och versionen för respek
 | **MIM-portalerna för återställning och registrering av lösenord** | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 <br/> Windows Server 2016 * |
 | | Webbläsare | Alla större webbläsare |
 | **MIM-tillägg** | Windows | Windows 7<br/>Windows 8<br/>Windows 8,1<br/>Windows 10 |
-| | Outlook-integrering (valfritt) | Outlook 2007 SP2<br/>Outlook 2010<br/>Outlook 2013 <br/> Outlook 2016 (i Windows 10) * |
+| | Outlook-integrering (valfritt) | Outlook 2010<br/>Outlook 2013 <br/> Outlook 2016 (i Windows 10) * |
 | | PAM PowerShells begärande-cmdlet:ar (valfritt) | Windows 8,1<br/>Windows 10 |
 | **Certifikathantering i MIM** (server och integrering med certifikatutfärdare (CA)) | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012 R2 <br/> Windows Server 2016 * |
 | | Certifikatutfärdare | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 <br/> Windows Server 2016 * |
@@ -60,4 +56,3 @@ I den här tabellen beskrivs de plattformar som stöds och versionen för respek
 | | BHOLD-databas | SQL Server 2008 R2 SP3<br/>SQL Server 2012 SP2 <br/> SQL Server 2014 * <br/> SQL Server 2016 * |
 | | E-postserver (valfritt) | Exchange Server 2010 SP3<br/>Exchange Server 2013 SP1 <br/> Exchange Server 2016 * |
 | | Webbläsare | Internet Explorer 7, 8, 9, 10 eller 11 med Silverlight |
-
