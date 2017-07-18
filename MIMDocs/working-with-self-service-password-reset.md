@@ -12,15 +12,12 @@ ms.technology: security
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
 ms.openlocfilehash: bbcfee70c71bc2f1a637327721d015434600c5e0
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/13/2017
 ---
-
 # Arbeta med självbetjäning för återställning av lösenord
 <a id="working-with-self-service-password-reset" class="xliff"></a>
 Microsoft Identity Manager 2016 innehåller ytterligare funktioner för återställning av lösenord via självbetjäning. Den här funktionen har förbättrats med flera viktiga funktioner:
@@ -216,4 +213,3 @@ Genom att installera MIM-tillägg och -förlängningar på en domänansluten dat
 6.  Om användare väljer att återställa sitt lösenord måste de skriva in sitt nya lösenord två gånger och klicka på **Nästa** för att ändra lösenordet.
 
     ![Bild av MIM inloggningsassistent för lösenordsåterställning](media/MIM-SSPR-PR1.JPG)
-

@@ -12,15 +12,12 @@ ms.technology: security
 ms.assetid: bfabc562-a2f0-4cff-ac31-36927f41e102
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
 ms.openlocfilehash: f8de75a0027371b7ff88b90d3097adc63c02d933
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/13/2017
 ---
-
 # Registrera smartkort för icke-administratörer
 <a id="enroll-smart-cards-for-non-administrators" class="xliff"></a>
 Om en användare inte är lokal administratör på sin dator kan denne normalt inte registrera ett smartkort på sin egen dator. Genom att följa proceduren som beskrivs nedan kan dock du kringgå den här begränsningen.
@@ -97,4 +94,3 @@ Om en användare inte är lokal administratör på sin dator kan denne normalt i
 7.  **Installera CM-appen på icke-administratörskontot**
 
 8.  **Starta CM-appen och registrera uppgifterna för ett virtuellt smartkort**
-

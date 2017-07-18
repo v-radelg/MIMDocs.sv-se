@@ -11,16 +11,12 @@ ms.prod: identity-manager-2016
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
-ms.translationtype: MT
-ms.sourcegitcommit: 3bb89e2c86724e6f6d32e4043fa37da74e2b7b24
 ms.openlocfilehash: a0d00c7e5d99e43d3fb0b3011a3851f7194bfdf2
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/13/2017
 ---
-
-
 # Rekommenderade metoder för Microsoft Identity Manager 2016
 <a id="microsoft-identity-manager-2016-best-practices" class="xliff"></a>
 
@@ -733,4 +729,3 @@ Undvik att använda aktiviteter som ändrar MIM-resurserna, t.ex. funktionsutvä
 <a id="understanding-fim-service-partitions" class="xliff"></a>
 
 Målet med FIM är att bearbeta begäranden som kan initieras av olika FIM-klienter, till exempel FIM-synkroniseringstjänsten och självbetjäningskomponenterna, enligt konfigurerade affärsregler. Varje FIM-tjänstinstans har skapats så att den tillhör en logisk grupp som består av en eller flera FIM-tjänstinstanser, som också kallas FIM-tjänstpartition. Om du endast har en FIM-tjänstinstans distribuerad för att hantera alla begäranden kan det hända att det uppstår fördröjningar i bearbetningen. En del åtgärder kan även överskrida de standardtidsgränsvärden som gäller för självbetjäningsåtgärder. FIM-tjänstpartitioner kan hjälpa dig att lösa detta problem. Mer information finns i Förstå FIM-tjänstpartitioner.
-

@@ -12,15 +12,12 @@ ms.technology: security
 ms.assetid: 2585e9c5-ce34-46c7-bdcf-8c08773901dc
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
 ms.openlocfilehash: 396c7066275db6123f15312cb8f0bc50d544275e
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/13/2017
 ---
-
 # Installera MIM 2016: MIM-synkroniseringstjänsten
 <a id="install-mim-2016-mim-synchronization-service" class="xliff"></a>
 
@@ -108,4 +105,3 @@ För att kunna installera Microsoft Identity Manager 2016-komponenterna måste d
 >[!div class="step-by-step"]  
 [«Exchange Server](prepare-server-exchange.md)
 [MIM-tjänst och portal»](install-mim-service-portal.md)
-

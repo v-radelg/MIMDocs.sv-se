@@ -10,14 +10,11 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 1ff73d0bdfcbcb4ab79d0d81feca9abdc33f9213
 ms.openlocfilehash: 1e2fb9a9ae508ab601ebad1dec7acc21dc44d13e
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/13/2017
 ---
 # Tjänsten MIM SP1 (4.4.1436.0) –  dynamisk loggning
 <a id="mim-sp1-4414360--service-dynamic-logging" class="xliff"></a>
@@ -25,9 +22,9 @@ Vi har introducerat en ny loggningsfunktion i 4.4.1436.0. Detta gör det möjlig
 
 När installationen är klar visas följande nya rad i Microsoft.ResourceManagement.Service.exe.config som heter
 
-*    Rad 6: ``<section name="dynamicLogging" type="Microsoft.ResourceManagement.Utilities.DynamicLoggingSection, Microsoft.ResourceManagement.Service" />``
-*    Rad 8:  ``<dynamicLogging mode="true" loggingLevel="Verbose" />``
-*    Rad 266 ``</system.diagnostics> ``
+*   Rad 6: ``<section name="dynamicLogging" type="Microsoft.ResourceManagement.Utilities.DynamicLoggingSection, Microsoft.ResourceManagement.Service" />``
+*   Rad 8:  ``<dynamicLogging mode="true" loggingLevel="Verbose" />``
+*   Rad 266 ``</system.diagnostics> ``
 
 ![Markerade avsnitt som visar de nya posterna med dynamisk loggning](media/mim-service-dynamic-logging/screen01.png)
 
@@ -53,4 +50,3 @@ Som standard finns loggningsplatsen på **C:\Program Files\Microsoft Forefront I
 Om du vill visa spårningen kan du använda [visningsverktyget för tjänstspårning](https://msdn.microsoft.com//library/aa751795(v=vs.110).aspx)
 
  ![Skärmbild av visningsverktyget för tjänstspårning](media/mim-service-dynamic-logging/screen04.png)
-

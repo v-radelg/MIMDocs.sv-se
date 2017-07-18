@@ -12,14 +12,12 @@ ms.technology: active-directory-domain-services
 ms.assetid: cf3796f7-bc68-4cf7-b887-c5b14e855297
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: 1034db2b33ffd680e673f975af17145e9cf4c312
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/13/2017
 ---
-
 # Privileged Access Management för Active Directory Domain Services
 <a id="privileged-access-management-for-active-directory-domain-services" class="xliff"></a>
 Privileged Access Management (PAM) är en lösning som hjälper organisationer att begränsa privilegierad åtkomst i befintliga Active Directory-miljöer.
@@ -101,4 +99,3 @@ Förutsatt att begäran godkänns kommunicerar åtgärdsarbetsflödet direkt med
 > Som kontrast utvärderas utgångna länkar i realtid av Security Accounts Manager (SAM). Även om tillägg av medlemmar måste replikeras av domänkontrollanten som tar emot åtkomstbegäran, utvärderas borttagning av medlemmar omedelbart på vilken domänkontrollant som helst.
 
 Det här arbetsflödet är speciellt avsett för dessa administratörskonton. Administratörer (och skript) som bara behöver tillfällig åtkomst för privilegierade grupper kan begära precis den åtkomsten. MIM loggar begäran och ändringarna i Active Directory, och du kan visa dem i loggboken eller skicka data till företagets övervakningslösningar, till exempel System Center 2012 – gransknings- och insamlingstjänsten för Operations Manager och andra verktyg från tredje part.
-

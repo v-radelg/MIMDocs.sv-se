@@ -10,19 +10,12 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
+ms.openlocfilehash: 60b28497f6abba14bd186cf2e2f2ce69b08693bc
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
 ms.translationtype: MT
-ms.sourcegitcommit: 1ef7b9816d265d17ef68fc54e010e655535dcdc8
-ms.openlocfilehash: 5ab70bac8cbd874153fa56cf7b181144c394ec04
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
-
-
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/13/2017
 ---
-
-
-
-
 # Hur etablerar jag användare i AD DS
 <a id="how-do-i-provision-users-to-ad-ds" class="xliff"></a>
 
@@ -581,4 +574,3 @@ Andra resurser
 [Om prioritet för attributflöde](http://go.microsoft.com/FWLink/p/?LinkId=189675)
 
 [Om exporter](http://go.microsoft.com/FWLink/p/?LinkId=189676)
-

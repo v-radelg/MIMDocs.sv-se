@@ -12,15 +12,12 @@ ms.technology: security
 ms.assetid: fa0af422-b5e9-4599-9d9b-cb6c18ea07f9
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: 3797f5789bb4e48836eb21776dafd5a2e0e11613
 ms.openlocfilehash: fa200bb18871387420743af64ca196565397e5d5
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/13/2017
 ---
-
 # Distribuera MIM 2016
 <a id="deploy-mim-2016" class="xliff"></a>
 Artiklarna i det här avsnittet ger stegvisa instruktioner för att distribuera Microsoft Identity Manager (MIM) 2016 vid självbetjäning för slutanvändare som använder en ny server där FIM eller MIM inte tidigare har distribuerats.
@@ -51,4 +48,3 @@ När du har konfigurerat domänen och servern är du redo att installera MIM-kom
 - [Synkroniseringstjänst för MIM](install-mim-sync.md)
 - [MIM-tjänst och portal](install-mim-service-portal.md)
 - [Synkronisera Active Directory och MIM-tjänstens databaser](install-mim-sync-ad-service.md)
-
