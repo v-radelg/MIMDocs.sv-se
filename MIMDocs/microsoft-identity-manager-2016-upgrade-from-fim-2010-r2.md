@@ -12,15 +12,12 @@ ms.technology: security
 ms.assetid: 9471ccc1-bafe-46ee-b169-1464262380e1
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
 ms.openlocfilehash: 20e733f17d6ed590844c526888b649eb6bf5f322
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/13/2017
 ---
-
 # Uppgradera från Forefront Identity Manager 2010 R2
 <a id="upgrade-from-forefront-identity-manager-2010-r2" class="xliff"></a>
 
@@ -210,4 +207,3 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 Obs: Om FIM-tilläggen för närvarande finns distribuerade på användarens dator för SSPR ska du inte konfigurera de nya MFA-telefongrindarna för återställning av lösenord förrän alla FIM-tillägg har uppgraderats till MIM 2016.  Eftersom FIM 2010- och FIM 2010 R2-tilläggen inte kan identifiera de nya grindarna orsakar de ett fel och användaren kan inte slutföra  återställningen av lösenordet.
 
 Riktlinjer för uppdatering av Microsoft Identity Manager 2016 SP1 finns i [Uppdateringspaketet för Microsoft Identity Manager 2016 Service Pack 1](https://blogs.technet.microsoft.com/iamsupport/2016/11/08/microsoft-identity-manager-2016-service-pack-1-update-package/)
-

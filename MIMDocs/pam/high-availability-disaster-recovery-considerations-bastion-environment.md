@@ -12,15 +12,12 @@ ms.technology: active-directory-domain-services
 ms.assetid: 03e521cd-cbf0-49f8-9797-dbc284c63018
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: 2fab9af837ed11b1f2f7f32c9ced6d79c8cc9d00
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/13/2017
 ---
-
 # Överväganden för hög tillgänglighet och haveriberedskap i skyddsmiljön
 <a id="high-availability-and-disaster-recovery-considerations-for-the-bastion-environment" class="xliff"></a>
 I den här artikeln beskrivs överväganden för hög tillgänglighet och haveriberedskap när du distribuerar Active Directory Domain Services (AD DS) och Microsoft Identity Manager 2016 (MIM) för Privileged Access Management PAM.
@@ -251,4 +248,3 @@ Komponenterna i Privileged Access Management ska installeras på varje dator i s
 Se till att MIM-tjänsten körs på minst en server efter återställning efter ett avbrott.  Se till att MIM PAM-övervakningstjänsten körs även på den servern med hjälp av `net start "PAM Monitoring service"`.
 
 Om funktionsnivån för skyddsmiljöns skog är Windows Server 2012 R2, använder du kommandot `net start "PAM Component service"` till att kontrollera att MIM PAM-komponenttjänsten också körs på den servern.
-

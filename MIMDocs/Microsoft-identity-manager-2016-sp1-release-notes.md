@@ -12,13 +12,11 @@ ms.technology: security
 ms.assetid: ccdd8a9f-02da-440a-81a8-354800dcd2a8
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: 3797f5789bb4e48836eb21776dafd5a2e0e11613
 ms.openlocfilehash: 69d44af5eaef3665f3a55ea91f48d3658cd5e65c
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/13/2017
 ---
 # Nyheter i Microsoft Identity Manager 2016 Service Pack 1
 <a id="whats-new-for-microsoft-identity-manager-2016-service-pack-1" class="xliff"></a> #
@@ -92,4 +90,3 @@ Du måste säkerhetskopiera MIM-tjänstdatabasen och MIM-synkroniseringsdatabase
   3. Välj den MIM-komponent som du vill uppgradera
   4. Fortsätt med installationen genom att följa anvisningarna
     * Installation av MIM-tjänsten och MIM-portalen: Om du väljer Exchange Online som e-postkonto anger du e-postadressen och autentiseringsuppgifterna för Exchange Online-kontot på nästa skärm.
-

@@ -12,13 +12,11 @@ ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: 
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: f08b0197341351bd5f33552f26b96132b1356239
 ms.openlocfilehash: f69fe68dc63323c0945a4902e34ea8153f938c02
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/13/2017
 ---
 # Tillägg för PAM-distributionsskript:
 <a id="pam-deployment-scripts-addendum" class="xliff"></a>
@@ -78,4 +76,3 @@ Fortsätt med steg 8 (se ovan).
 <a id="addendum-4-if-something-goes-wrong" class="xliff"></a>
 
 Alla skriptloggar sparas i %AppData%\MIMPAMInstall. Komprimera mappen till en ZIP-fil och skicka den till [mim2016@microsoft.com](mailto:mim2016@microsoft.com) tillsammans med information om åtgärden och felet.
-

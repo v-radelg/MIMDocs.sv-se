@@ -12,15 +12,12 @@ ms.technology: security
 ms.assetid: fed5ada9-d80f-4825-aad7-4172ac5d71d3
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
 ms.openlocfilehash: 274039a6866c5c0fda807e4326220ecf785ca3bb
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/13/2017
 ---
-
 # Skapa programcertifikat med Certifikathanteraren
 <a id="create-software-certificates-with-certificate-manager" class="xliff"></a>
 För att registrera och förnya programcertifikat behöver du inte vara administratör och du behöver inte heller ha ett virtuellt smartkort. Det bör påpekas att du vid en viss tidpunkt kommer att uppmanas tillåta en certifikatåtgärd, vilket är normalt.
@@ -100,4 +97,3 @@ För att registrera och förnya programcertifikat behöver du inte vara administ
 10. Om du vill återutfärda arkiverade certifikat markerar du kryssrutorna till vänster om **Återutfärda arkiverade certifikat** och klickar på **OK**.
 
 11. Om du använder Certifikathanteraren för virtuella smartkort måste du inaktivera datainsamlingsobjekt eftersom det inte fungerar när datainsamling har aktiverats. Inaktivera datainsamling för varje policy genom att klicka på respektive policy i den vänstra rutan och avmarkera sedan kryssrutan bredvid **Exempeldataobjekt** och klicka sedan på **Ta bort datainsamlingsobjekt**. Klicka sedan på **OK**.
-

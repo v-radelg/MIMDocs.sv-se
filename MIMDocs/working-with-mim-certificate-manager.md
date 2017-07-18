@@ -12,15 +12,12 @@ ms.technology: security
 ms.assetid: 66060045-d0be-4874-914b-5926fd924ede
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
 ms.openlocfilehash: 8a4582695d41ea605f2de4e336c3a780b2b2559f
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/13/2017
 ---
-
 # Arbeta med MIM Certificate Manager
 <a id="working-with-the-mim-certificate-manager" class="xliff"></a>
 När du har börjat köra MIM 2016 och Certificate Manager kan du distribuera Windows Store-appen för MIM Certificate Manager så att användarna kan hantera sina fysiska smartkort, virtuella smartkort och programcertifikat. Distribution av MIM CM-appen genomförs i följande steg:
@@ -260,4 +257,3 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 ## Distribuera appen
 <a id="deploy-the-app" class="xliff"></a>
 När du konfigurerar CM-appen hämtar du filen MIMDMModernApp_&lt;version&gt;_AnyCPU_Test.zip i Download Center och extraherar allt dess innehåll. .appx-filen är installationsprogrammet. Du kan distribuera den på samma sätt du normalt distribuerar appar från Windows Store, genom att använda [System Center Configuration Manager](https://technet.microsoft.com/library/dn613840.aspx) eller [Intune](https://technet.microsoft.com/library/dn613839.aspx) för att läsa in appen separat så att användare kan få åtkomst till den genom företagsportalen eller genom att den överförs direkt till deras datorer.
-

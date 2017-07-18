@@ -12,15 +12,12 @@ ms.technology: active-directory-domain-services
 ms.assetid: c4ca5b58-ad0c-48af-a9eb-b71b22d0c67c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: bfc73723bdd3a49529522f78ac056939bb8025a3
 ms.openlocfilehash: ce1ce0c67dfd39433ff01dabd542e862c557c787
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/13/2017
 ---
-
 # Konfigurera MIM-miljö för Privileged Access Management
 <a id="configure-the-mim-environment-for-privileged-access-management" class="xliff"></a>
 Det finns sju steg att slutföra när du konfigurerar miljön för åtkomst mellan skogar, installerar och konfigurerar Active Directory och Microsoft Identity Manager och demonstrerar en just-in-time-åtkomstbegäran.
@@ -43,4 +40,3 @@ De här stegen är uppbyggda så att du kan skapa en testmiljö från grunden. O
 
 >[!div class="step-by-step"]
 [Start »](step-1-prepare-corp-domain.md)
-

@@ -12,15 +12,12 @@ ms.technology: security
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
 ms.openlocfilehash: 974015bbba3a36e1107da33655eedf94e2938582
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/13/2017
 ---
-
 # Installera MIM 2016: MIM-tjänst och -portal
 <a id="install-mim-2016-mim-service-and-portal" class="xliff"></a>
 
@@ -156,4 +153,3 @@ Verifiera att MIM-portalen är aktiv när installationen är klar.
 >[!div class="step-by-step"]  
 [«Synkroniseringstjänst för MIM](install-mim-sync.md)
 [Synkronisera databaser»](install-mim-sync-ad-service.md)
-

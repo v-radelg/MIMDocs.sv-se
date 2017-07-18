@@ -12,15 +12,12 @@ ms.technology: security
 ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.translationtype: MT
-ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
 ms.openlocfilehash: 1114be2ce13ca012582676803eb1dc29cadae596
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
-
+ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/13/2017
 ---
-
 # Konfigurera en server för identitetshantering: SharePoint
 <a id="set-up-an-identity-management-server-sharepoint" class="xliff"></a>
 
@@ -139,4 +136,3 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
 >[!div class="step-by-step"]  
 [«SQL Server 2014](prepare-server-sql2014.md)
 [Exchange Server»](prepare-server-exchange.md)
-
