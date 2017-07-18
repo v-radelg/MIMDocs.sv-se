@@ -5,33 +5,31 @@ keywords:
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 03/21/2017
+ms.date: 07/13/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 735dc357-dfba-4f68-a5b3-d66d6c018803
 ms.reviewer: mwahl
 ms.suite: ems
+ms.openlocfilehash: 1695cc2df766df3c38a0e1393f6f974102f9fd36
+ms.sourcegitcommit: 0cb8269f07a5f419d2d1cd760d9cc78b8a1c8aa9
 ms.translationtype: MT
-ms.sourcegitcommit: 7f16c3a054f0a2c59f118ba33bf64fca10034690
-ms.openlocfilehash: f7e4dc737444df70de3a8a78eb518e9e6f26aadc
-ms.contentlocale: sv-se
-ms.lasthandoff: 07/10/2017
-
-
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/14/2017
 ---
-
-
-# Topologiöverväganden
-<a id="topology-considerations" class="xliff"></a>
+# <a name="topology-considerations"></a>Topologiöverväganden
 Du kan distribuera Microsoft Identity Manager (MIM)-komponenter på en och samma server eller på flera servrar i flera olika konfigurationer. Vilken topologi du väljer för din distribution påverkar vilken prestanda du kan få ut från MIM. Denna artikel presenterar flera olika topologier som du kan överväga att implementera.
 
-## MIM-komponenter
-<a id="mim-components" class="xliff"></a>
+
+>[!NOTE]
+De här alternativen är tillämpliga för distributioner som endast använder MIM-synkronisering, MIM-tjänst och MIM-portal för identitetshantering.  För distributioner med MIM CM, MIM BHOLD-programsvit eller för privilegierad åtkomsthantering gäller andra distributionsalternativ.
+
+
+## <a name="mim-components"></a>MIM-komponenter
 När du utformar din distributionstopologi är det viktigt att känna till vad varje komponent gör och hur de alla samverkar.
 
-- **MIM-portal** – ett gränssnitt för lösenordsåterställning, grupphantering och administrativa åtgärder.
-<a id="mim-portal---an-interface-for-password-resets-group-management-and-administrative-operations" class="xliff"></a>
+- <a name="mim-portal---an-interface-for-password-resets-group-management-and-administrative-operations"></a>**MIM-portal** – ett gränssnitt för lösenordsåterställning, grupphantering och administrativa åtgärder.
     -
 - **MIM-tjänst** – en webbtjänst som implementerar funktionerna för identitetshantering i MIM 2016.
 - **MIM-synkroniseringstjänst** – synkroniserar data med andra system för identitetshantering.
@@ -47,8 +45,7 @@ I nedanstående tabell visas värdalternativen för varje enskild MIM-komponent.
 | Serverkluster | | | | Ja |
 
 
-## Topologi i flera skikt
-<a id="multitier-topology" class="xliff"></a>
+## <a name="multitier-topology"></a>Topologi i flera skikt
 Topologin i flera skikt är den mest tillämpade topologitypen. Den erbjuder störst flexibilitet. MIM-portalen, MIM-tjänsten och databaserna är indelade i separata skikt och distribueras på flera olika datorer. Denna topologi gör skalningen av de olika MIM-komponenterna mer flexibel. Du kan exempelvis skala MIM-portalen horisontellt genom att lägga till ytterligare servrar i ett kluster för utjämning av nätverksbelastning (NLB). På liknande sätt kan du skala MIM-tjänsten genom att använda ett NLB-kluster och genom att öka antalet datorer (noder) i klustret efter behov.
 
 När topologi i flera skikt används utses en särskild dator som värd för varje SQL-databas (en för varje MIM-tjänst och en annan för MIM-synkroniseringstjänsten). Skalbarheten för prestandan hos datorer som är värdar för SQL-databaser kan utökas genom att lägga till eller uppgradera hårdvara, t.ex. genom att uppgradera processorer, lägga till extra processorer, öka eller uppgradera RAM-minnet eller uppgradera hårddiskkonfigurationerna för att öka läs- och skrivbehörigheter samt minska svarstiden.
@@ -58,8 +55,7 @@ När topologi i flera skikt används utses en särskild dator som värd för var
 I denna konfiguration är samma dator värd för MIM-synkroniseringstjänsten och dess databas. Samma prestanda ska dock vara möjlig att uppnå om det finns en dedikerad nätverksanslutning på 1 Gigabit mellan MIM-synkroniseringstjänsten och dess databas när olika datorer är värdar för dem.
 
 
-## Diagram över topologi i flera skikt med flera MIM-tjänster
-<a id="multitier-topology-with-multiple-mim-services" class="xliff"></a>
+## <a name="multitier-topology-with-multiple-mim-services"></a>Diagram över topologi i flera skikt med flera MIM-tjänster
 Det kan ta lång tid att synkronisera data med externa system och processen kan utgöra en stor belastning på systemet under tiden den pågår. Om synkroniseringskonfigurationen resulterar i utlösandet av principer med arbetsflöden, delar dessa principer resurser med slutanvändarens arbetsflöden. Sådana problem förstärkas med arbetsflöden för autentisering, som lösenordsåterställningar, som genomförs i realtid och där slutanvändaren väntar på att processen ska slutföras. Genom att tillhandahålla en instans av MIM-tjänsten för slutanvändaråtgärder och en separat portal för synkronisering av administrationsinformation kan du erbjuda bättre svarstider för slutanvändaråtgärder.
 
 ![Diagram över topologi i flera skikt med flera MIM-tjänster](media/MIM-topo-multitier-multiservice.png)
@@ -68,7 +64,5 @@ Precis som för standardversionen av topologi i flera skikt kan du höja MIM-por
 
 Datorerna som kör SQL Server och som är värdar för MIM-synkroniseringstjänsten och MIM-tjänstdatabasen påverkar avsevärt den övergripande prestandan för din MIM-distribution. Därför ska du följa rekommendationerna i dokumentationen för SQL Server för att optimera databasprestandan. Mer information finns i följande dokument:
 
-## Se även
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Se även
 - Du kan hämta [Kapacitetsplaneringsguiden för Forefront Identity Manager (FIM) 2010](http://go.microsoft.com/fwlink/?LinkId=200180) som innehåller mer information om en testversion och resultat av prestandatest.
-
