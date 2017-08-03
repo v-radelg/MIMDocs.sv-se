@@ -19,6 +19,5 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Viktig information om MIM 2016
-<a id="release-notes-for-mim-2016" class="xliff"></a>
+# <a name="release-notes-for-mim-2016"></a>Viktig information om MIM 2016
 Det finns för tillfället ingen information.

@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Uppgradera från Forefront Identity Manager 2010 R2
-<a id="upgrade-from-forefront-identity-manager-2010-r2" class="xliff"></a>
+# <a name="upgrade-from-forefront-identity-manager-2010-r2"></a>Uppgradera från Forefront Identity Manager 2010 R2
 
 Använd den här artikeln som vägledning om du har en Forefront Identity Manager (FIM) 2010 R2-miljö och vill prova Microsoft Identity Manager (MIM) 2016. Det finns tre faser i uppgraderingen:
 
@@ -36,8 +35,7 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 - Lokala och miljörelaterade krav (SQL Server, Exchange Server, SharePoint Services osv.) som har konfigurerats för FIM 2010 R2.
 
 
-## Förberedelse
-<a id="preparation" class="xliff"></a>
+## <a name="preparation"></a>Förberedelse
 
 1.  Säkerhetskopiera FIM-tjänstdatabasen, FIM-synkroniseringsdatabasen, FIM-synkronisering och tjänstkonfiguration och programvara.
 
@@ -45,8 +43,7 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 
 3.  Hämta eller packa upp MIM-programvaran.
 
-## Uppgradera synkroniseringstjänsten
-<a id="upgrade-the-synchronization-service" class="xliff"></a>
+## <a name="upgrade-the-synchronization-service"></a>Uppgradera synkroniseringstjänsten
 
 1.  Logga in som administratör på en server där FIM 2010 R2-synkroniseringstjänsten (”Sync”) har distribuerats.
 
@@ -84,8 +81,7 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 
 13. Observera att **Synkroniseringstjänsten** har startats om.
 
-## Uppgradera tjänsten och portalen
-<a id="upgrade-the-service-and-portal" class="xliff"></a>
+## <a name="upgrade-the-service-and-portal"></a>Uppgradera tjänsten och portalen
 
 1.  Logga in som administratör på en server där FIM 2010 R2-tjänsten och -portalen har distribuerats.
 
@@ -141,8 +137,7 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 
 14. När du installerar MIM-portalen ska du ange webbadressen för den SharePoint-webbplatssamling som för närvarande är värd för FIM-portalen. Klicka på **Nästa**.
 
-## Installera MIM-portalen för lösenordsregistrering
-<a id="install-the-mim-password-registration-portal" class="xliff"></a>
+## <a name="install-the-mim-password-registration-portal"></a>Installera MIM-portalen för lösenordsregistrering
 
 1. Om du installerar MIM-portalen för lösenordsregistrering ska du ange den webbadress som krävs för portalen för lösenordsregistrering. Klicka på **Nästa**.
 
@@ -172,8 +167,7 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 
     2.  Ange om den här portalen ska kunna nås av både extranät- och intranätanvändare, eller endast av intranätanvändare, enligt den tidigare konfigurationen för återställning av lösenord i FIM.
 
-## Installera MIM-portalen för återställning av lösenord
-<a id="install-the-mim-password-reset-portal" class="xliff"></a>
+## <a name="install-the-mim-password-reset-portal"></a>Installera MIM-portalen för återställning av lösenord
 
 1. Om du installerar MIM-portalen för återställning av lösenord ska du ange åtkomstuppgifter och autentiseringsuppgifter för återställning av lösenord i MIM.
 
@@ -193,8 +187,7 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 
     2.  Ange om den här portalen ska kunna nås av både extranät- och intranetanvändare, eller endast av intranetanvändare.
 
-## Slutför installationen och uppgraderingen
-<a id="finish-installation-and-upgrade" class="xliff"></a>
+## <a name="finish-installation-and-upgrade"></a>Slutför installationen och uppgraderingen
 
 1. När alla definitioner för konfiguration är klara visas en installationssida. Klicka på **Installera** för att påbörja installationen och uppgraderingen av MIM-tjänsten och -portalen.
 

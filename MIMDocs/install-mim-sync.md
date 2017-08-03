@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Installera MIM 2016: MIM-synkroniseringstjänsten
-<a id="install-mim-2016-mim-synchronization-service" class="xliff"></a>
+# <a name="install-mim-2016-mim-synchronization-service"></a>Installera MIM 2016: MIM-synkroniseringstjänsten
 
 >[!div class="step-by-step"]
 [«Exchange Server](prepare-server-exchange.md)
@@ -37,8 +36,7 @@ För att kunna installera Microsoft Identity Manager 2016-komponenterna måste d
 
 2. Packa upp installationspaketet MIM eller starta MIM-DVD:n.
 
-## Installera MIM 2016-synkroniseringstjänsten
-<a id="install-mim-2016-synchronization-service" class="xliff"></a>
+## <a name="install-mim-2016-synchronization-service"></a>Installera MIM 2016-synkroniseringstjänsten
 
 1. Packa upp MIM-installationsmappen och navigera till mappen **Synkroniseringstjänst**.
 

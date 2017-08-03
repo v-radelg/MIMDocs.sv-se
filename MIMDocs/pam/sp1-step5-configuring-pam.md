@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Steg 5 Installera/konfigurera PAM
-<a id="step-5-installingconfiguring-pam" class="xliff"></a>
+# <a name="step-5-installingconfiguring-pam"></a>Steg 5 Installera/konfigurera PAM
 
 >[!div class="step-by-step"]
 [« Steg 4](sp1-step4-configuring-sharepoint.md)

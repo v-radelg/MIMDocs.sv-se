@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Steg 5 – upprätta förtroende mellan PRIV- och CORP-skogar
-<a id="step-5--establish-trust-between-priv-and-corp-forests" class="xliff"></a>
+# <a name="step-5--establish-trust-between-priv-and-corp-forests"></a>Steg 5 – upprätta förtroende mellan PRIV- och CORP-skogar
 
 >[!div class="step-by-step"]
 [« Steg 4](step-4-install-mim-components-on-pam-server.md)
@@ -28,8 +27,7 @@ ms.lasthandoff: 07/13/2017
 
 För varje CORP-domän, till exempel contoso.local, måste domänkontrollanterna PRIV och CONTOSO vara bundna av ett förtroende. Det gör att användarna i PRIV-domänen kan komma åt resurser i CORP-domänen.
 
-## Koppla domänkontrollanterna till varandra
-<a id="connect-each-domain-controller-to-its-counterpart" class="xliff"></a>
+## <a name="connect-each-domain-controller-to-its-counterpart"></a>Koppla domänkontrollanterna till varandra
 
 Innan du upprättar förtroende måste domänkontrollanterna konfigureras för DNS-namnmatchning för motparten, utifrån på den andra domänkontrollantens/DNS-serverns IP-adress.
 
@@ -47,8 +45,7 @@ Innan du upprättar förtroende måste domänkontrollanterna konfigureras för D
 
     ![filstruktur för priv-nyckeln – skärmbild](./media/PAM_GS_DNS_Manager.png)
 
-## Upprätta förtroende på PAMSRV
-<a id="establish-trust-on-pamsrv" class="xliff"></a>
+## <a name="establish-trust-on-pamsrv"></a>Upprätta förtroende på PAMSRV
 
 Upprätta enkelriktat förtroende med varje domän på PAMSRV, till exempel CORPDC, så att CORP-domänkontrollanterna har förtroende för PRIV-skogen.
 
@@ -70,8 +67,7 @@ Upprätta enkelriktat förtroende med varje domän på PAMSRV, till exempel CORP
     New-PAMDomainConfiguration -SourceDomain "contoso" -Credentials $ca
     ```
 
-## Ge skogar läsbehörighet till Active Directory
-<a id="give-forests-read-access-to-active-directory" class="xliff"></a>
+## <a name="give-forests-read-access-to-active-directory"></a>Ge skogar läsbehörighet till Active Directory
 
 Aktivera läsbehörighet till AD för PRIV-administratörer och övervakningstjänsten för varje befintlig skog.
 
@@ -94,8 +90,7 @@ Aktivera läsbehörighet till AD för PRIV-administratörer och övervakningstj�
 
     Resultatet bör också ange **SID-filtrering har inte aktiverats för förtroendet**. Mer information finns i [Inaktivera SID-filterkarantän](http://technet.microsoft.com/library/cc772816.aspx).
 
-## Starta övervaknings- och komponenttjänsterna
-<a id="start-the-monitoring-and-component-services" class="xliff"></a>
+## <a name="start-the-monitoring-and-component-services"></a>Starta övervaknings- och komponenttjänsterna
 
 1.  Logga in på PAMSRV som PRIV-domänadministratör (PRIV\Administratör).
 

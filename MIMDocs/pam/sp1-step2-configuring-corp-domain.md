@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Steg 2 Konfigurera CORP-domänen
-<a id="step-2-configuring-the-corp-domain" class="xliff"></a>
+# <a name="step-2-configuring-the-corp-domain"></a>Steg 2 Konfigurera CORP-domänen
 
 >[!div class="step-by-step"]
 [« Steg 1](sp1-step1-configuring-priv-domain.md)

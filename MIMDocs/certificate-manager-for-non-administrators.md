@@ -18,12 +18,10 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Registrera smartkort för icke-administratörer
-<a id="enroll-smart-cards-for-non-administrators" class="xliff"></a>
+# <a name="enroll-smart-cards-for-non-administrators"></a>Registrera smartkort för icke-administratörer
 Om en användare inte är lokal administratör på sin dator kan denne normalt inte registrera ett smartkort på sin egen dator. Genom att följa proceduren som beskrivs nedan kan dock du kringgå den här begränsningen.
 
-## Aktivera förnyelse av smartkort för icke-administratörer i Certifikathanteraren i MIM 2016 
-<a id="enabling-smart-card-renewal-for-non-admins-in-mim-2016-certificate-manager" class="xliff"></a>
+## <a name="enabling-smart-card-renewal-for-non-admins-in-mim-2016-certificate-manager"></a>Aktivera förnyelse av smartkort för icke-administratörer i Certifikathanteraren i MIM 2016 
 
 1.  **Packa upp appx-filen**
 

@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Privileged Access Management för Active Directory Domain Services
-<a id="privileged-access-management-for-active-directory-domain-services" class="xliff"></a>
+# <a name="privileged-access-management-for-active-directory-domain-services"></a>Privileged Access Management för Active Directory Domain Services
 Privileged Access Management (PAM) är en lösning som hjälper organisationer att begränsa privilegierad åtkomst i befintliga Active Directory-miljöer.
 
 Med Privileged Access Management uppnår du två saker:
@@ -30,16 +29,14 @@ Med Privileged Access Management uppnår du två saker:
 > [!NOTE]
 > PAM är en instans av [Privileged Identity Management](https://azure.microsoft.com/documentation/articles/active-directory-privileged-identity-management-configure/) (PIM) som implementeras med hjälp av Microsoft Identity Manager (MIM).
 
-## Vilka problem löser PAM?
-<a id="what-problems-does-pam-help-solve" class="xliff"></a>
+## <a name="what-problems-does-pam-help-solve"></a>Vilka problem löser PAM?
 Idag är åtkomsten till resurser i en Active Directory-miljö är ett betydande problem för företag. Särskilt oroande är nyheter om sårbarheter, obehöriga privilegieutökningar och andra typer av obehörig åtkomst, som pass-the-hash, pass-the-ticket, spjutfiske och Kerberos-angrepp.
 
 Idag är det alldeles för enkelt för angripare att få tag i domänadministratörers autentiseringsuppgifter och alldeles för svårt att upptäcka angreppen efteråt. Målet med PAM är att minska angriparnas tillfällen att ta sig in och att öka din kontroll och kunskap om miljön.
 
 PAM gör det svårare för angripare att ta sig in i ett nätverk och få åtkomst till privilegierade konton. PAM lägger till skydd till privilegierade grupper som kontrollerar åtkomsten på många olika domänanslutna datorer och program på dessa datorer. Det ger också ökad övervakning, mer synlighet och mer detaljerade kontroller så att organisationer kan se vilka deras privilegierade administratörer är och vad de gör. Med PAM får organisationer större insyn i hur administratörskonton används i miljön.
 
-## Hur konfigureras PAM?
-<a id="how-is-pam-set-up" class="xliff"></a>
+## <a name="how-is-pam-set-up"></a>Hur konfigureras PAM?
 PAM bygger på principen för just-in-time-administration, som är relaterat till [JEA (just enough administration)](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DCIM-B362). JEA är ett Windows PowerShell-verktyg som definierar en uppsättning kommandon för att utföra privilegierade aktiviteter och en slutpunkt där administratörer kan få behörighet att köra dessa kommandon. I JEA beslutar administratör att användare med en viss behörighet kan utföra en viss uppgift. Varje gång en behörig användare behöver utföra aktiviteten aktiveras behörigheten. Behörigheten upphör efter en angiven tidsperiod, så att obehöriga användare inte kan få åtkomst.
 
 PAM-installationen och -driften består av fyra steg.
@@ -54,8 +51,7 @@ PAM-installationen och -driften består av fyra steg.
 
 4.  **Övervaka**: PAM lägger till granskningar, aviseringar och rapporter för begäran om privilegierad åtkomst. Du kan granska historiken för privilegierad åtkomst och se vem som utfört uppgiften. Du kan bestämma om aktiviteten är giltig eller inte och enkelt identifiera obehörig aktivitet, som försök att lägga till användare direkt i en privilegierad grupp i den ursprungliga skogen. Den här åtgärden är inte bara viktig för att upptäcka skadliga program utan också för att spåra interna angrepp.
 
-## Hur fungerar PAM?
-<a id="how-does-pam-work" class="xliff"></a>
+## <a name="how-does-pam-work"></a>Hur fungerar PAM?
 PAM är baserat på nya funktionerna i AD DS, särskilt de för domänautentisering och -auktorisering, och nya funktioner i Microsoft Identity Manager. Med PAM separeras behöriga konton från en befintlig Active Directory-miljö. När ett privilegierat konto behöver användas, måste det först begäras och sedan godkännas. När det godkänts ges det privilegierade kontot behörighet via en extern huvudgrupp i en ny skyddsskog i stället för i användarens eller programmets aktuella skog. Genom att använda en skyddsskog får organisationen större kontroll, till exempel över när en användare kan vara medlem i en privilegierad grupp och hur användaren måste autentiseras.
 
 Active Directory, MIM-tjänsten och andra delar av den här lösningen kan också distribueras i en konfiguration med hög tillgänglighet.
@@ -78,8 +74,7 @@ PAM ger följande fördelar:
 
 -   **Anpassningsbart arbetsflöde**: MIM-arbetsflöden kan konfigureras för olika scenarier och flera olika arbetsflöden kan användas baserat på parametrarna för användaren eller begärda roller.
 
-## Hur begär användare privilegierad åtkomst?
-<a id="how-do-users-request-privileged-access" class="xliff"></a>
+## <a name="how-do-users-request-privileged-access"></a>Hur begär användare privilegierad åtkomst?
 Det finns några olika sätt en användare kan skicka en begäran på, bland annat via:  
 - API:t för MIM-tjänsternas webbtjänster  
 - En REST-slutpunkt  
@@ -87,8 +82,7 @@ Det finns några olika sätt en användare kan skicka en begäran på, bland ann
 
 Få information om [cmdlets för privilegierad åtkomsthantering](https://technet.microsoft.com/library/mt604080.aspx).
 
-## Vilka arbetsflöden och övervakningsalternativ finns?
-<a id="what-workflows-and-monitoring-options-are-available" class="xliff"></a>
+## <a name="what-workflows-and-monitoring-options-are-available"></a>Vilka arbetsflöden och övervakningsalternativ finns?
 Om vi till exempel antar att en användare var medlem av en administrativ grupp innan PIM konfigurerades. Som en del av PIM-konfigurationen tas användaren bort från den administrativa gruppen och en princip skapas i MIM. Principen anger att om användaren begär administratörsbehörighet och autentiseras av MFA godkänns begäran och ett särskilt konto för användaren läggs till i den privilegierade gruppen i skyddsskogen.
 
 Förutsatt att begäran godkänns kommunicerar åtgärdsarbetsflödet direkt med skyddsskogens Active Directory för att placera användaren i en grupp. När Lisa till exempel begär att administrera HR-databasen, läggs Lisas administratörskonto till i den privilegierade gruppens skyddsskog inom några sekunder. Hennes administratörskontos medlemskap i gruppen går ut efter en begränsad tid. Med Windows Server Technical Preview associeras medlemskapet med en tidsgräns i Active Directory. Med Windows Server 2012 R2 i skyddsskogen tvingas tidsgränsen av MIM.

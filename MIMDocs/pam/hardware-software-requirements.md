@@ -18,15 +18,13 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Maskin- och programvarukrav
-<a id="hardware-and-software-requirements" class="xliff"></a>
+# <a name="hardware-and-software-requirements"></a>Maskin- och programvarukrav
 
 Privileged Access Management har inga maskinvarukrav förutom för de underliggande programvaruplattformarna. Kontrollera att du har tillräckligt med minne och diskutrymme, och är ansluten till nätverket.
 
 Den här artikeln innehåller minimikraven för en grundläggande distribution. Den har inte som syfte att illustrera prestanda, skalbarhet och hög tillgänglighet och ska inte ses som en rekommenderad distributionstopologi för stora företag och produktionsmiljöer.
 
-## Installera från programvarupaket
-<a id="installing-from-software-packages" class="xliff"></a>
+## <a name="installing-from-software-packages"></a>Installera från programvarupaket
 
 Följande programvara kan laddas ned från TechNet Evaluation Center eller MSDN:  
 - Microsoft Identity Manager 2016
@@ -36,33 +34,28 @@ Följande programvara kan laddas ned från TechNet Evaluation Center eller MSDN:
 Följande programvara kan laddas ned från GitHub:  
 - PAMSamplePortal: innehåller exempelwebbapp för REST-API:t
 
-## Programvara som krävs
-<a id="required-software" class="xliff"></a>
+## <a name="required-software"></a>Programvara som krävs
 
 - Windows Server 2012 R2  
 - Windows 8.1 Enterprise eller Windows 10 Enterprise  
 - SQL Server 2012 Service Pack 1 eller SQL Server 2014  
 
-## Utvärderingsprogramvara
-<a id="evaluation-software" class="xliff"></a>
+## <a name="evaluation-software"></a>Utvärderingsprogramvara
 
 Om du inte har licenser för Windows, SQL Server eller Windows Server kan du ladda ned utvärderingsversioner.
 
-### TechNet Evaluation Center
-<a id="technet-evaluation-center" class="xliff"></a>
+### <a name="technet-evaluation-center"></a>TechNet Evaluation Center
 
 - [Windows Server 2012 R2](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2)  
 - [Windows 8.1 Enterprise](https://www.microsoft.com/evalcenter/evaluate-windows-8-1-enterprise)  
 - [Windows 10 Enterprise](https://www.microsoft.com/evalcenter/evaluate-windows-10-enterprise)  
 
-### Microsoft Download Center
-<a id="microsoft-download-center" class="xliff"></a>
+### <a name="microsoft-download-center"></a>Microsoft Download Center
 
 - [SQLServer](https://www.microsoft.com/download/details.aspx?id=29066)  
 - [SharePoint Foundation 2013 SP1 och dess krav](https://www.microsoft.com/download/details.aspx?id=42039)
 
-## Maskinvarukrav
-<a id="hardware-requirements" class="xliff"></a>
+## <a name="hardware-requirements"></a>Maskinvarukrav
 
 För PAM-komponenter hänvisas du till systemkraven för programvaruprodukterna.
 

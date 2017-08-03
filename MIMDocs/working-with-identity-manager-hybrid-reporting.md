@@ -18,11 +18,9 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Arbeta med Identity Manager Hybrid Reporting - öppen förhandsversion (uppdatera)
-<a id="working-with-identity-manager-hybrid-reporting---public-preview-refresh" class="xliff"></a>
+# <a name="working-with-identity-manager-hybrid-reporting---public-preview-refresh"></a>Arbeta med Identity Manager Hybrid Reporting - öppen förhandsversion (uppdatera)
 
-## Tillgängliga hybridrapporter
-<a id="available-hybrid-reports" class="xliff"></a>
+## <a name="available-hybrid-reports"></a>Tillgängliga hybridrapporter
 De första tre Microsoft Identity Manager (MIM)-rapporterna i Azure AD är **Återställningsaktivitet för lösenord**, **Registrering för lösenordsåterställning** och **Aktiviteter för självbetjäningsgrupper**.
 
 -   Återställningsaktiviteten för lösenord visar alla tillfällen någon användare har genomfört en lösenordåterställningsaktivitet via SSPR och anger de portaler eller **metoder** som användes vid autentiseringen.
@@ -39,8 +37,7 @@ De första tre Microsoft Identity Manager (MIM)-rapporterna i Azure AD är **Åt
 > Du måste avinstallera den tidigare hybridagenten</br>
 > Om du vill avinstallera hybridrapporter ska du avinstallera agenten MIMreportingAgent.msi.
 
-## Förutsättningar
-<a id="prerequisites" class="xliff"></a>
+## <a name="prerequisites"></a>Förutsättningar
 
 1.  Installera Microsoft Identity Manager 2016 RTM- eller SP1 MIM-tjänsten.
 
@@ -48,8 +45,7 @@ De första tre Microsoft Identity Manager (MIM)-rapporterna i Azure AD är **Åt
 
 3.  Se till att du har en utgående internetanslutning från Microsoft Identity Manager-servern till Azure.
 
-## Krav
-<a id="requirements" class="xliff"></a>
+## <a name="requirements"></a>Krav
 Följande tabell innehåller en lista över kraven för att använda Microsoft Identity Manager Hybrid Reporting.
 
 | Krav | Beskrivning |
@@ -64,8 +60,7 @@ Följande tabell innehåller en lista över kraven för att använda Microsoft I
 | Tillåt följande webbplatser om Förbättrad säkerhetskonfiguration i Internet Explorer är aktiverat |Om Förbättrad säkerhetskonfiguration i Internet Explorer är aktiverat, måste följande webbplatser tillåtas på den server där agenten ska installeras.</br></br><li>https://login.microsoftonline.com</li><li>https://secure.aadcdn.microsoftonline-p.com</li><li>https://login.windows.net</li><li>Federationsservern i din organisation som är betrodd av Azure Active Directory. Exempel: https://sts.contoso.com</li> |
 </BR>
 
-## Installera Microsoft Identity Manager Reporting Agent i Azure AD
-<a id="install-microsoft-identity-manager-reporting-agent-in-azure-ad" class="xliff"></a>
+## <a name="install-microsoft-identity-manager-reporting-agent-in-azure-ad"></a>Installera Microsoft Identity Manager Reporting Agent i Azure AD
 Efter att rapportagenten har installerats exporteras data från aktiviteten i Microsoft Identity Manager från MIM till Windows händelselogg. MIM-rapportagenten bearbetar händelserna och överför dem till Azure. I Azure parsas, dekrypteras och filtreras händelser för de begärda rapporterna.
 
 1.  Installera Microsoft Identity Manager 2016.
@@ -92,8 +87,7 @@ Efter att rapportagenten har installerats exporteras data från aktiviteten i Mi
 
     Du kan generera rapportdata genom att använda portalen för Lösenordsåterställning via självbetjäning för Microsoft Identity Manager för att återställa en användares lösenord. Kontrollera att lösenordsåterställningen lyckades och kontrollera sedan att dessa data visas i hanteringsportalen för Azure AD.
 
-## Visa hybridrapporter i Azure Portal
-<a id="view-hybrid-reports-in-the-azure-portal" class="xliff"></a>
+## <a name="view-hybrid-reports-in-the-azure-portal"></a>Visa hybridrapporter i Azure Portal
 
 1.  Logga in på [Azure Portal](https://portal.azure.com/) med ditt globala administratörskonto för klienten.
 
@@ -108,12 +102,10 @@ Efter att rapportagenten har installerats exporteras data från aktiviteten i Mi
 > [!WARNING]
 > Det kan ta lite tid innan Microsoft Identity Manager-granskningsdata visas i Azure Portal.
 
-## Avbryta generering av hybridrapporter
-<a id="stop-creating-hybrid-reports" class="xliff"></a>
+## <a name="stop-creating-hybrid-reports"></a>Avbryta generering av hybridrapporter
 Om du vill avbryta uppladdningen av rapportgranskningsdata från Microsoft Identity Manager till Azure Active Directory ska du avinstallera hybridrapporteringsagenten. Använd Windows-verktyget **Lägg till eller ta bort program** för att avinstallera Microsoft Identity Manager Hybrid Reporting.
 
-## Windows-händelser som används för hybridrapportering
-<a id="windows-events-used-for-hybrid-reporting" class="xliff"></a>
+## <a name="windows-events-used-for-hybrid-reporting"></a>Windows-händelser som används för hybridrapportering
 Händelser som genererats av Microsoft Identity Manager loggas i Windows händelselogg och visas i Loggboken under Program- och tjänstloggar &gt; **Begärandelogg för Identity Manager**. Varje MIM-begäran exporteras som en händelse i Windows händelselogg i JSON-strukturen. Denna kan exporteras till din SIEM.
 
 |Händelsetyp|ID|Händelseinformation|

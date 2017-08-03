@@ -18,20 +18,17 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Nivåmodell för partitionering av administratörsbehörighet
-<a id="tier-model-for-partitioning-administrative-privileges" class="xliff"></a>
+# <a name="tier-model-for-partitioning-administrative-privileges"></a>Nivåmodell för partitionering av administratörsbehörighet
 
 I dagens hotmiljö är det inte en fråga om ifall en angripare kan få tillgång till systemet, utan när. Det innebär att den interna säkerheten är precis lika viktig som ett starkt perimeterskydd. I den här artikeln beskrivs en säkerhetsmodell som är avsedd att skydda mot rättighetsutökning genom att skilja uppgifter med hög behörighetsnivå från riskzoner. Den här modellen ger en bra användarupplevelse och följer metodtips och säkerhetsprinciper.
 
-## Utöka privilegier i Active Directory-skogar
-<a id="elevation-of-privilege-in-active-directory-forests" class="xliff"></a>
+## <a name="elevation-of-privilege-in-active-directory-forests"></a>Utöka privilegier i Active Directory-skogar
 
 Användare, tjänster och programkonton som beviljas permanent administratörsbehörighet för skogar i Windows Server Active Directory (AD) medför betydande risker för organisationens mål och verksamhet. Dessa konton är ofta mål för angrepp i och med att ett lyckat angrepp ger angriparen behörighet att ansluta till andra servrar och program i domänen.
 
 Med nivåmodellen delas administratörer upp utifrån vilka resurser de hanterar. Administratörer med kontroll över användararbetsstationer separeras från de som styr program eller hanterar företagsidentiteter. Läs mer om den här modellen i [referensmaterialet för att skydda privilegierad åtkomst](http://aka.ms/tiermodel).
 
-## Begränsa exponeringen av autentiseringsuppgifter med inloggningsbegränsningar
-<a id="restricting-credential-exposure-with-logon-restrictions" class="xliff"></a>
+## <a name="restricting-credential-exposure-with-logon-restrictions"></a>Begränsa exponeringen av autentiseringsuppgifter med inloggningsbegränsningar
 
 Vanligen måste man omforma de administrativa metoderna för att minska risken för attacker och minska risken för stöld av autentiseringsuppgifter för administratörskonton. Som ett första steg bör organisationer:
 

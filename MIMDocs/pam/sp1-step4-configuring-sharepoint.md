@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Steg 4 Konfigurera SharePoint
-<a id="step-4-configuring-sharepoint" class="xliff"></a>
+# <a name="step-4-configuring-sharepoint"></a>Steg 4 Konfigurera SharePoint
 
 >[!div class="step-by-step"]
 [« Steg 3](sp1-step3-installing-configuring-sql.md)

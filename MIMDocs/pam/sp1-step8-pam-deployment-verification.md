@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Steg 8 Verifiera PAM-distributionen
-<a id="step-8-pam-deployment-verification" class="xliff"></a>
+# <a name="step-8-pam-deployment-verification"></a>Steg 8 Verifiera PAM-distributionen
 
 >[!div class="step-by-step"]
 [« Steg 7](sp1-step7-setup-sidhistory-sidfiltering.md)

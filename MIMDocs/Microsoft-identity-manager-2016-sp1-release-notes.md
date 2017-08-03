@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Nyheter i Microsoft Identity Manager 2016 Service Pack 1
-<a id="whats-new-for-microsoft-identity-manager-2016-service-pack-1" class="xliff"></a> #
+# <a name="whats-new-for-microsoft-identity-manager-2016-service-pack-1"></a>Nyheter i Microsoft Identity Manager 2016 Service Pack 1 #
 
 Som en del av den regelbundna publiceringscykeln med korrigeringar och uppdateringar för Microsoft Identity Manager kan vi nu tillkännage [Microsoft Identity Manager 2016 (MIM) Service Pack 1 (SP1)](https://msdn.microsoft.com/subscriptions/downloads/?fileid=70212#searchTerm=&Languages=en&PageSize=10&PageIndex=0&FileId=70212). Det här dokumentet beskriver uppdateringarna, förbättringarna, funktionerna och ändringarna som ingår i den här versionen.
 
@@ -29,11 +28,9 @@ Vi vill också veta vad du tycker! Om du har feedback, kommentarer eller frågor
 
 
 
-## Uppdateringar i detta Service Pack
-<a id="updates-in-this-service-pack" class="xliff"></a> #
+## <a name="updates-in-this-service-pack"></a>Uppdateringar i detta Service Pack #
 
-### MIM
-<a id="mim" class="xliff"></a>
+### <a name="mim"></a>MIM
 
 - **Kompatibilitet för flera webbläsare på MIM-portalen för självbetjäning av slutanvändare:** I detta Service Pack har vi lagt till stöd för de flesta större webbläsare. Nu kan användarna komma åt och interagera med MIM-portalen för grupp- och profilhantering via självbetjäning från Microsoft Edge, Chrome och Safari.
 
@@ -41,8 +38,7 @@ Vi vill också veta vad du tycker! Om du har feedback, kommentarer eller frågor
 
 - **Verifiering av bildfilformat vid överföringar:** Nu kan MIM verifiera filformatet för bilder när de laddas upp till portalen.
 
-### Privileged Access Management (PAM)
-<a id="privileged-access-managementpam" class="xliff"></a>
+### <a name="privileged-access-managementpam"></a>Privileged Access Management (PAM)
 
 - **PAM ”PRIV” stöder (skyddade) skogar på Windows Server 2016-funktionsnivån:** MIM PAM-tjänsten kan konfigureras i en miljö med domänkontrollanter som körs på funktionsnivån för Active Directory Domain Services-skogar för Windows Server 2016. När den konfigurerats tidsbegränsas en användares Kerberos-biljett till den återstående tiden för användarens rollaktivering.
 
@@ -59,21 +55,17 @@ Vi vill också veta vad du tycker! Om du har feedback, kommentarer eller frågor
     Dessa cmdlets körs automatiskt som en del av distributionsskripten.
 
 
-## Plattformsstöd
-<a id="platform-support" class="xliff"></a>
+## <a name="platform-support"></a>Plattformsstöd
 Uppdaterad information om plattformsstöd finns i dokumentet [Plattformar som stöds för MIM 2016](microsoft-identity-manager-2016-supported-platforms.md).  Nya plattformar som stöds i detta Service Pack är SQL Server 2016 och SharePoint 2016
 
-## Problem som åtgärdas i den här versionen från den allmänt tillgängliga versionen av MIM 2016
-<a id="issues-fixed-in-this-release-from-mim-2016-general-availability" class="xliff"></a>
+## <a name="issues-fixed-in-this-release-from-mim-2016-general-availability"></a>Problem som åtgärdas i den här versionen från den allmänt tillgängliga versionen av MIM 2016
 
-### PAM
-<a id="pam" class="xliff"></a>
+### <a name="pam"></a>PAM
 - New-PAMGroup skapade inte MIM-objekt för lokala domängrupper i PRIV-skogen
 - New-PAMDomainConfiguration misslyckades med felmeddelandet ”netdom”
 - PAM-övervakningstjänsten loggade varningar för grupper i PRIV-skogen
 
-## Uppgradera till Service Pack 1
-<a id="how-to-upgrade-to-service-pack-1" class="xliff"></a>
+## <a name="how-to-upgrade-to-service-pack-1"></a>Uppgradera till Service Pack 1
 
 Kunder som uppgraderar till Microsoft Identity Manager 2016 Service Pack 1 bör följa stegen nedan för alla tjänster som är relevanta för deras distribution.
 

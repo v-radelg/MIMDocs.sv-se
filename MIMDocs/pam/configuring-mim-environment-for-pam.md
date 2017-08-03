@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Konfigurera MIM-miljö för Privileged Access Management
-<a id="configure-the-mim-environment-for-privileged-access-management" class="xliff"></a>
+# <a name="configure-the-mim-environment-for-privileged-access-management"></a>Konfigurera MIM-miljö för Privileged Access Management
 Det finns sju steg att slutföra när du konfigurerar miljön för åtkomst mellan skogar, installerar och konfigurerar Active Directory och Microsoft Identity Manager och demonstrerar en just-in-time-åtkomstbegäran.
 
 De här stegen är uppbyggda så att du kan skapa en testmiljö från grunden. Om du vill tillämpa PAM på en befintlig miljö kan du använda dina egna domänkontrollanter eller användarkonton i stället för att skapa nya som matchar exemplen.

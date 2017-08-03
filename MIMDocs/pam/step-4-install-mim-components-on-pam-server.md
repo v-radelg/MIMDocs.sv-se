@@ -19,8 +19,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Steg 4 – installera MIM-komponenter på PAM-servern och arbetsstationen
-<a id="step-4--install-mim-components-on-pam-server-and-workstation" class="xliff"></a>
+# <a name="step-4--install-mim-components-on-pam-server-and-workstation"></a>Steg 4 – installera MIM-komponenter på PAM-servern och arbetsstationen
 
 >[!div class="step-by-step"]
 [« Steg 3](step-3-prepare-pam-server.md)
@@ -34,8 +33,7 @@ På PAMSRV loggar du in som PRIV\Administratör för att kunna installera MIM-tj
 
 Om du har laddat ned MIM packar du upp MIM-installationsarkivet till en ny mapp.
 
-##  Kör installationsprogrammet för tjänsten och portalen.
-<a id="run-the-service-and-portal-install-program" class="xliff"></a>  
+##  <a name="run-the-service-and-portal-install-program"></a>Kör installationsprogrammet för tjänsten och portalen.  
 
 Följ riktlinjerna i installationsprogrammet och slutför installationen.
 
@@ -99,8 +97,7 @@ Följ riktlinjerna i installationsprogrammet och slutför installationen.
 
 När installationen är klar startas servern om. Kontrollera att MIM-portalen är aktiv och tillåt att användarna att visa sina egna objektresurser i MIM.
 
-## Konfigurera MIM-portalens hanteringsprincipregler
-<a id="set-up-mim-portal-management-policy-rules" class="xliff"></a>
+## <a name="set-up-mim-portal-management-policy-rules"></a>Konfigurera MIM-portalens hanteringsprincipregler
 
 1. När PAMSRV startat om loggar du in som PRIV\Administratör.
 
@@ -116,8 +113,7 @@ När installationen är klar startas servern om. Kontrollera att MIM-portalen ä
 
 7. Välj den här hanteringsprincipregeln och avmarkera **Principen är inaktiverad**. Klicka på **OK** och **Skicka**.
 
-## Kontrollera brandväggens anslutningar
-<a id="verify-the-firewall-connections" class="xliff"></a>
+## <a name="verify-the-firewall-connections"></a>Kontrollera brandväggens anslutningar
 
 Brandväggen ska tillåta inkommande anslutningar till TCP-portarna 5725, 5726, 8086 och 8090.
 
@@ -134,8 +130,7 @@ Brandväggen ska tillåta inkommande anslutningar till TCP-portarna 5725, 5726, 
 8.  Verifiera att det finns ett aktivt nätverk listat som priv.contoso.local och ett domännätverk.  
 9. Stäng **kontrollpanelen**.
 
-## Ställ in exempelwebbappen
-<a id="set-up-the-sample-web-application" class="xliff"></a>
+## <a name="set-up-the-sample-web-application"></a>Ställ in exempelwebbappen
 
 I det här avsnittet ska du installera och konfigurera exempelwebbappen för REST-API:t för MIM PAM.
 
@@ -171,8 +166,7 @@ I det här avsnittet ska du installera och konfigurera exempelwebbappen för RES
 
 7.  (Valfritt) Kontrollera att användaren kan autentiseras för REST-API:t. Öppna en webbläsare som administratör på PAMSRV.  Gå till webbplatsens URL http://pamsrv.priv.contoso.local:8086/api/pamresources/pamroles/, autentisera om det behövs och kontrollera att en nedladdning sker.
 
-## Installera MIM PAM-cmdletarna för begärande
-<a id="install-the-mim-pam-requestor-cmdlets" class="xliff"></a>
+## <a name="install-the-mim-pam-requestor-cmdlets"></a>Installera MIM PAM-cmdletarna för begärande
 
 Installera MIM PAM-cmdletarna för begärande på arbetsstationen du konfigurerade i steg 1.
 
