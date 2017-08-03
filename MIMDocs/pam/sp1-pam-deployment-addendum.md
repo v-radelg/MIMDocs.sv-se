@@ -18,11 +18,9 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Tillägg för PAM-distributionsskript:
-<a id="pam-deployment-scripts-addendum" class="xliff"></a>
+# <a name="pam-deployment-scripts-addendum"></a>Tillägg för PAM-distributionsskript:
 
-## Tillägg 1 Konfigurera PRIV-domänen
-<a id="addendum-1-setting-up-the-priv-domain" class="xliff"></a>
+## <a name="addendum-1-setting-up-the-priv-domain"></a>Tillägg 1 Konfigurera PRIV-domänen
 
 När du har packat upp den komprimerade filen till mappen $env:SYSTEMDRIVE\PAM redigerar du PAMDeploymentConfig.xml genom att lägga till informationen om PRIV-skogen. Uppdatera DNSName, NetbiosName, DC-namnet, sökvägen till databasen/loggarna och sökvägen till Sysvol. Uppdatera också DomainMode och ForestMode. Om du testar Windows Server Technical Preview 5 anger du DomainMode och ForestMode till WinThreshold.
 
@@ -40,8 +38,7 @@ Domänkontrollanten startas om automatiskt när åtgärden har slutförts. Admin
   * Lösenordet måste innehålla minst en versal
   * Lösenordet måste innehålla minst en siffra eller ett specialtecken
 
-## Tillägg 2 Konfigurera CORP-domänen
-<a id="addendum-2-setting-up-the-corp-domain" class="xliff"></a>
+## <a name="addendum-2-setting-up-the-corp-domain"></a>Tillägg 2 Konfigurera CORP-domänen
 
 Om du nyss har börjat med PAM och vill konfigurera en testmiljö kan du även konfigurera en CORP-domän med hjälp av skriptet. När du har packat upp den komprimerade filen till mappen $env:SYSTEMDRIVE\PAM redigerar du PAMDeploymentConfig.xml genom att lägga till informationen om CORP-skogen. Uppdatera DNSName, NetbiosName, DC-namnet, sökvägen till databasen/loggarna och sökvägen till Sysvol. Funktionsnivån bör vara minst Windows Server 2012 R2.
 
@@ -53,8 +50,7 @@ Om du nyss har börjat med PAM och vill konfigurera en testmiljö kan du även k
 
 Domänkontrollanten startas om automatiskt när åtgärden har slutförts
 
-## Tillägg 3 Konfigurera CORP-klienten att utföra verifieringen
-<a id="addendum-3-setting-up-a-corp-client-to-do-the-validation" class="xliff"></a>
+## <a name="addendum-3-setting-up-a-corp-client-to-do-the-validation"></a>Tillägg 3 Konfigurera CORP-klienten att utföra verifieringen
 
 ClientBinaryLocation i konfigurationsfilen måste peka på platsen där setup.exe finns.
 Logga in på klienten som lokal administratör och kör följande kommandon i en upphöjd PowerShell-kommandotolk:
@@ -72,7 +68,6 @@ Om datorn inte är domänansluten uppmanas du att ange autentiseringsuppgifterna
 
 Fortsätt med steg 8 (se ovan).
 
-## Tillägg 4 Om det uppstår problem
-<a id="addendum-4-if-something-goes-wrong" class="xliff"></a>
+## <a name="addendum-4-if-something-goes-wrong"></a>Tillägg 4 Om det uppstår problem
 
 Alla skriptloggar sparas i %AppData%\MIMPAMInstall. Komprimera mappen till en ZIP-fil och skicka den till [mim2016@microsoft.com](mailto:mim2016@microsoft.com) tillsammans med information om åtgärden och felet.

@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Steg 7 Konfigurera SID-historik/SID-filtrering
-<a id="step-7-set-up-sid-historysid-filtering" class="xliff"></a>
+# <a name="step-7-set-up-sid-historysid-filtering"></a>Steg 7 Konfigurera SID-historik/SID-filtrering
 
 >[!div class="step-by-step"]
 [« Steg 6](sp1-step6-setup-pam-trust.md)

@@ -16,8 +16,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Tjänsten MIM SP1 (4.4.1436.0) –  dynamisk loggning
-<a id="mim-sp1-4414360--service-dynamic-logging" class="xliff"></a>
+# <a name="mim-sp1-4414360--service-dynamic-logging"></a>Tjänsten MIM SP1 (4.4.1436.0) –  dynamisk loggning
 Vi har introducerat en ny loggningsfunktion i 4.4.1436.0. Detta gör det möjligt för administratörer och supporttekniker att aktivera loggning utan att behöva starta om hanteringstjänsten.
 
 När installationen är klar visas följande nya rad i Microsoft.ResourceManagement.Service.exe.config som heter

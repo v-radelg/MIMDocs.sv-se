@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Definiera roller för Privileged Access Management
-<a id="define-roles-for-privileged-access-management" class="xliff"></a>
+# <a name="define-roles-for-privileged-access-management"></a>Definiera roller för Privileged Access Management
 
 Med Privileged Access Management kan du tilldela användare privilegierade roller som de kan aktivera vid behov för just-in-time-åtkomst. Rollerna definieras manuellt och upprättas i skyddsmiljön. I den här artikeln får du vägledning genom processen att avgöra vilka roller som ska hanteras via PAM och hur du definierar dem med rätt behörighet och begränsningar.
 
@@ -33,8 +32,7 @@ Rollbehörigheterna beror på de program som hanteras. I den här artikeln anvä
 
 - De som krävs för att hantera data som lagras i Active Directory (t.ex. skapa användare och grupper)
 
-## Identifiera roller
-<a id="identify-roles" class="xliff"></a>
+## <a name="identify-roles"></a>Identifiera roller
 
 Börja med att identifiera alla de roller som du kanske vill hantera med PAM. På kalkylbladet har varje potentiell roll en egen rad.
 
@@ -58,8 +56,7 @@ Några andra saker du ska överväga när du anger behörighetsomfånget för en
 
 - Går det att separera administration och granskning, så att en användare i en administrativ roll inte kan radera granskningsposter för sina åtgärder?
 
-## Upprätta krav för rollstyrning
-<a id="establish-role-governance-requirements" class="xliff"></a>
+## <a name="establish-role-governance-requirements"></a>Upprätta krav för rollstyrning
 
 När du identifierar kandidatroller börjar du med att fylla i kalkylbladet. Skapa kolumner för de krav som är relevanta för organisationen. Några krav du måste överväga är:
 
@@ -81,8 +78,7 @@ När du identifierar kandidatroller börjar du med att fylla i kalkylbladet. Ska
 
 - Vilka programbehörigheter (se listan med exempel för AD nedan) är associerade med rollen?
 
-## Välj en åtkomstmetod
-<a id="select-an-access-method" class="xliff"></a>
+## <a name="select-an-access-method"></a>Välj en åtkomstmetod
 
 Om olika användargrupper har olika krav för åtkomststyrning kan det finnas flera roller som har tilldelats samma behörigheter i ett system för hantering av privilegierade roller. En organisation kan till exempel använda olika principer för sina heltidsanställda och för IT-anställda i en annan organisation.
 
@@ -98,8 +94,7 @@ I vissa fall kan en användare vara permanent tilldelade till en roll . I så fa
 
 I guiden [Aktivera med hjälp av Azure MFA](use-azure-mfa-for-activation.md) hittar organisationer som är oroliga för stöld och missbruk av autentiseringsuppgifter anvisningar om hur de konfigurerar MIM till att kräva ytterligare out-of-band-kontroller vid rollaktivering.
 
-## Tilldela Active Directory-behörigheter
-<a id="delegate-active-directory-permissions" class="xliff"></a>
+## <a name="delegate-active-directory-permissions"></a>Tilldela Active Directory-behörigheter
 
 Windows Server skapar automatiskt standardgrupper som "Domänadministratörer" när nya domäner skapas. Med de här grupperna blir det enklare att komma igång och de kan vara lämpliga för mindre organisationer. Större organisationer och organisationer som behöver avgränsa administrativa privilegier bättre bör dock tömma grupper som Domänadministratörer och ersätta dem med grupper som ger detaljerade behörigheter.
 
@@ -110,8 +105,7 @@ En begränsning med gruppen Domänadministratörer är att den inte kan ha medle
 
 I stället för standardgrupper som Domänadministratörer skapar du nya säkerhetsgrupper som bara ger de behörigheter som krävs och tilldelar dynamiskt administratörskonton med dessa gruppmedlemskap med hjälp av MIM.
 
-### Behörighet för tjänsthantering
-<a id="service-management-permissions" class="xliff"></a>
+### <a name="service-management-permissions"></a>Behörighet för tjänsthantering
 
 Följande tabell innehåller exempel på behörigheter som är relevanta att inkludera i roller för att hantera AD.
 
@@ -127,8 +121,7 @@ Följande tabell innehåller exempel på behörigheter som är relevanta att ink
 | Hantera zoner | Skapa, ta bort och ändra DNS-zoner och objekt i Active Directory |
 | Ändra organisationsenheter på nivå 0 | Ändra organisationsenheter på nivå 0 och ingående objekt i Active Directory |
 
-### behörighet för datahantering
-<a id="data-management-permissions" class="xliff"></a>
+### <a name="data-management-permissions"></a>behörighet för datahantering
 
 Följande tabell innehåller exempel på behörigheter som är relevanta att inkludera i roller för att hantera och använda data i AD.
 
@@ -144,15 +137,13 @@ Följande tabell innehåller exempel på behörigheter som är relevanta att ink
 | Ansluta till dator/lokal administration                    | Lokala administrativa rättigheter för alla arbetsstationer                               |
 | Ansluta till server/lokal administration                   | Lokala administrativa rättigheter för alla servrar                                    |
 
-## Exempel på rolldefinitioner
-<a id="example-role-definitions" class="xliff"></a>
+## <a name="example-role-definitions"></a>Exempel på rolldefinitioner
 
 Vilka rolldefinitioner som väljs beror på den servernivå som hanteras av de privilegierade kontona. Det beror också på vilka program som hanteras eftersom program som Exchange och tredjepartsprodukter som SAP ofta har egna ytterligare rolldefinitioner för delegerad administration.
 
 Följande avsnitt innehåller exempel för vanliga företagsscenarier.
 
-### Nivå 0 – Administrativ skog
-<a id="tier-0---administrative-forest" class="xliff"></a>
+### <a name="tier-0---administrative-forest"></a>Nivå 0 – Administrativ skog
 
 Roller som är lämpliga för konton i skyddsmiljön kan vara:
 
@@ -161,8 +152,7 @@ Roller som är lämpliga för konton i skyddsmiljön kan vara:
 - Användare som är administratörer för produktionsskogen
 - Användare som är tilldelade begränsad administrativ behörighet till program i produktionsskogen
 
-### Nivå 0 – Företagsproduktionsskog
-<a id="tier-0---enterprise-production-forest" class="xliff"></a>
+### <a name="tier-0---enterprise-production-forest"></a>Nivå 0 – Företagsproduktionsskog
 
 Roller som är lämpliga för att hantera produktionsskogskonton och -resurser på nivå 0 kan vara:
 
@@ -179,8 +169,7 @@ Roller som är lämpliga för att hantera produktionsskogskonton och -resurser p
 - Reservadministratörer för nivå 0
 - Användare av out-of-band-styrenheter och styrenheter för huvudkortshantering (för KVM eller lights-out-hantering) som är anslutna till värdar på nivå 0
 
-### Nivå 1
-<a id="tier-1" class="xliff"></a>
+### <a name="tier-1"></a>Nivå 1
 
 Roller för hantering och säkerhetskopiering av servrar på nivå 1 kan vara:
 
@@ -202,8 +191,7 @@ Rollerna för att hantera företagsprogram på nivå 1 kan också omfatta:
 - Administratörer för en molntjänst, t.ex. ett företags webbplats eller ett offentligt DNS
 - Administratörer för HCM-system, finansiella och juridiska system
 
-### Nivå 2
-<a id="tier-2" class="xliff"></a>
+### <a name="tier-2"></a>Nivå 2
 
 Roller för hantering av icke-administrativa användare och datorer kan vara:
 

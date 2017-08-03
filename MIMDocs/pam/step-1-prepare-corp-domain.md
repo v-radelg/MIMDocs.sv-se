@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Steg 1 – förbereda värden och CORP-domänen
-<a id="step-1---prepare-the-host-and-the-corp-domain" class="xliff"></a>
+# <a name="step-1---prepare-the-host-and-the-corp-domain"></a>Steg 1 – förbereda värden och CORP-domänen
 
 >[!div class="step-by-step"]
 [Steg 2 »](step-2-prepare-priv-domain-controller.md)
@@ -29,13 +28,11 @@ I det här steget förbereder du hanteringen av skyddsmiljön. Vid behov kan du 
 
 Om du redan har en befintlig Active Directory-domän (AD) med en domänkontrollant som kör Windows Server 2012 R2 eller senare, i vilken du är domänadministratör, kan du använda den domänen i stället.  
 
-## Förbereda CORP-domänkontrollanten
-<a id="prepare-the-corp-domain-controller" class="xliff"></a>
+## <a name="prepare-the-corp-domain-controller"></a>Förbereda CORP-domänkontrollanten
 
 I det här avsnittet beskrivs hur du konfigurerar en domänkontrollant för en CORP-domän. I CORP-domänen hanteras de administrativa användare av skyddsmiljön. I det här exemplet används *contoso.local* som DNS-namn (Domain Name System) för CORP-domänen.
 
-### Installera Windows Server
-<a id="install-windows-server" class="xliff"></a>
+### <a name="install-windows-server"></a>Installera Windows Server
 
 Installera Windows Server 2012 R2 eller Windows Server 2016 Technical Preview 4 eller senare på en virtuell dator för att skapa en dator som kallas *CORPDC*.
 
@@ -49,8 +46,7 @@ Installera Windows Server 2012 R2 eller Windows Server 2016 Technical Preview 4 
 
 5. När servern har startats om loggar du in som administratör. Gå till Kontrollpanelen. Konfigurera datorn att söka efter uppdateringar och installera de uppdateringar som krävs. Starta om servern.
 
-### Lägga till roller för att upprätta en domänkontrollant
-<a id="add-roles-to-establish-a-domain-controller" class="xliff"></a>
+### <a name="add-roles-to-establish-a-domain-controller"></a>Lägga till roller för att upprätta en domänkontrollant
 
 I det här avsnittet lägger du till roller för Active Directory Domain Services (AD DS), DNS-server och filserver (i avsnittet fil- och lagringstjänster) och befordrar servern till en domänkontrollant för en ny contoso.local-skog.
 
@@ -75,8 +71,7 @@ I det här avsnittet lägger du till roller för Active Directory Domain Service
 
 4. När servern har startats om logga du in på CORPDC som administratör för domänen. Det är vanligtvis användaren CONTOSO\\Administratör som har lösenordet som skapades när du installerade Windows på CORPDC.
 
-### Skapa en grupp
-<a id="create-a-group" class="xliff"></a>
+### <a name="create-a-group"></a>Skapa en grupp
 
 Skapa en grupp för granskning av Active Directory om gruppen inte redan finns. Namnet på gruppen måste vara NetBIOS-domännamnet följt av tre dollartecken, till exempel *CONTOSO$$$*.
 
@@ -94,8 +89,7 @@ Logga in på en domänkontrollant som domänadministratör för varje domän och
 
 I vissa fall kan gruppen redan finnas. Det är normalt om domänen också har använts i AD-migreringsscenarier.
 
-### Skapa ytterligare användare och grupper i exempelsyfte
-<a id="create-additional-users-and-groups-for-demonstration-purposes" class="xliff"></a>
+### <a name="create-additional-users-and-groups-for-demonstration-purposes"></a>Skapa ytterligare användare och grupper i exempelsyfte
 
 Om du har skapat en ny CORP-domän bör du skapa ytterligare användare och grupper för att visa PAM-scenariot. De användare och grupper du skapar i exempelsyfte bör inte vara domänadministratörer eller styras av inställningarna för adminSDHolder i AD.
 
@@ -124,8 +118,7 @@ Vi ska skapa en säkerhetsgrupp med namnet *CorpAdmins* och en användare med na
   Set-ADUser –identity Jen –Enabled 1 -DisplayName "Jen"
   ```
 
-### Konfigurera granskning
-<a id="configure-auditing" class="xliff"></a>
+### <a name="configure-auditing"></a>Konfigurera granskning
 
 Du måste aktivera granskning i befintliga skogar för att upprätta PAM-konfigurationen på de skogarna.  
 
@@ -153,8 +146,7 @@ Logga in på en domänkontrollant som domänadministratör för varje domän och
 
 Meddelandet **Uppdatering av grupprincip har slutförts** visas efter några minuter.
 
-### Konfigurera registerinställningar
-<a id="configure-registry-settings" class="xliff"></a>
+### <a name="configure-registry-settings"></a>Konfigurera registerinställningar
 
 I det här avsnittet ska du konfigurera de registerinställningar som krävs för migrering av SID-historik och som används till att skapa Privileged Access Management-grupper.
 
@@ -170,16 +162,14 @@ I det här avsnittet ska du konfigurera de registerinställningar som krävs fö
 
 Domänkontrollanten CORPDC startas om. Mer information om den här registerinställningen finns i [Felsöka sIDHistory-migrering mellan skogar med ADMTv2](http://support.microsoft.com/kb/322970).
 
-## Förbereda en CORP-arbetsstation och -resurs
-<a id="prepare-a-corp-workstation-and-resource" class="xliff"></a>
+## <a name="prepare-a-corp-workstation-and-resource"></a>Förbereda en CORP-arbetsstation och -resurs
 
 Om du inte redan har kopplat en arbetsstationsdator till domänen följer du de här anvisningarna för hur du förbereder en.  
 
 > [!NOTE]
 > Om du redan har en arbetsstation kopplad till domänen går du vidare till [Skapa en resurs i exempelsyfte](#create-a-resource-for-demonstration-purposes).
 
-### Installera Windows 8.1 eller Windows 10 Enterprise som en virtuell dator
-<a id="install-windows-81-or-windows-10-enterprise-as-a-vm" class="xliff"></a>
+### <a name="install-windows-81-or-windows-10-enterprise-as-a-vm"></a>Installera Windows 8.1 eller Windows 10 Enterprise som en virtuell dator
 
 På en annan virtuell dator utan installerad programvara installerar du Windows 8.1 Enterprise eller Windows 10 Enterprise om du vill göra en dator till *CORPWKSTN*.
 
@@ -191,8 +181,7 @@ På en annan virtuell dator utan installerad programvara installerar du Windows 
 
 4. Använd kontrollpanelen och domänanslut CORPWKSTN-datorn till domänen contoso.local. Du måste ange autentiseringsuppgifterna för Contoso-domänens administratör. När det är klart startar du om datorn CORPWKSTN.
 
-### Skapa en resurs i exempelsyfte
-<a id="create-a-resource-for-demonstration-purposes" class="xliff"></a>
+### <a name="create-a-resource-for-demonstration-purposes"></a>Skapa en resurs i exempelsyfte
 
 Du behöver en resurs för att visa säkerhetsgruppsbaserad åtkomst med PAM.  Om du inte redan har en resurs kan du använda en filmapp i exempelsyfte.  Här används AD-objekten "Lisa" och "CorpAdmins" som du skapade i domänen contoso.local.
 

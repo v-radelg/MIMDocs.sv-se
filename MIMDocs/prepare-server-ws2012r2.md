@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Konfigurera en server för identitetshantering: Windows Server 2012 R2
-<a id="set-up-an-identity-management-server-windows-server-2012-r2" class="xliff"></a>
+# <a name="set-up-an-identity-management-server-windows-server-2012-r2"></a>Konfigurera en server för identitetshantering: Windows Server 2012 R2
 
 >[!div class="step-by-step"]
 [« Förbereda en domän](preparing-domain.md)
@@ -31,8 +30,7 @@ ms.lasthandoff: 07/13/2017
 > - Domännamn – **contoso**
 > - Lösenord – **Pass@word1**
 
-## Ansluta Windows Server 2012 R2 till din domän
-<a id="join-windows-server-2012-r2-to-your-domain" class="xliff"></a>
+## <a name="join-windows-server-2012-r2-to-your-domain"></a>Ansluta Windows Server 2012 R2 till din domän
 
 Börja med en dator med Windows Server 2012 R2, med minst 8 GB RAM-minne. Vid installationen anger du version ”Windows Server 2012 R2 Standard (Server med GUI) x 64”.
 
@@ -63,8 +61,7 @@ Börja med en dator med Windows Server 2012 R2, med minst 8 GB RAM-minne. Vid i
     Install-WindowsFeature Web-WebServer, Net-Framework-Features,rsat-ad-powershell,Web-Mgmt-Tools,Application-Server,Windows-Identity-Foundation,Server-Media-Foundation,Xps-Viewer –includeallsubfeature -restart -source d:\sources\SxS
     ```
 
-## Konfigurera säkerhetsprinciper för servern
-<a id="configure-the-server-security-policy" class="xliff"></a>
+## <a name="configure-the-server-security-policy"></a>Konfigurera säkerhetsprinciper för servern
 
 Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapats kan köras som tjänster.
 
@@ -95,8 +92,7 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 12. Stäng fönstret för lokala säkerhetsprinicper.
 
 
-## Ändra Windows-autentiseringsläget för IIS
-<a id="change-the-iis-windows-authentication-mode" class="xliff"></a>
+## <a name="change-the-iis-windows-authentication-mode"></a>Ändra Windows-autentiseringsläget för IIS
 
 1.  Öppna ett PowerShell-fönster.
 

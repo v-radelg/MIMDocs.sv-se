@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Anslut till katalogerna
-<a id="connect-to-your-directories" class="xliff"></a>
+# <a name="connect-to-your-directories"></a>Anslut till katalogerna
 
 Länk till anslutningsprogram för speciellt anslutna datakällor till Microsoft Identity Manager (MIM). Ett anslutningsprogram flyttar data från en ansluten datakälla till MIM. När data i MIM ändras kan anslutningsprogrammet även exportera data till den anslutna datakällan för att hålla den synkroniserad med MIM. I allmänhet finns det mist ett anslutningsprogram för varje ansluten katalog.
 
@@ -27,8 +26,7 @@ I Forefront Identity Manager kallades anslutningsprogram för hanteringsagenter.
 
 Den här artikeln omfattar anslutningsprogrammen som ingår i MIM, men anslutningsprogrammet för Extensible Connectivity 2.0 gör det möjligt att ansluta med ännu fler datakällor. Vissa partner har skapat sina egna anslutningsprogram på det här sättet. En fullständig lista finns i wikin [FIM 2010: Management Agents from Partners](http://social.technet.microsoft.com/wiki/contents/articles/1589.fim-2010-management-agents-from-partners.aspx) (FIM 2010: Hanteringsagenter från partner.)
 
-## Anslutningsprogram som stöds i MIM 2016
-<a id="supported-connectors-in-mim-2016" class="xliff"></a>
+## <a name="supported-connectors-in-mim-2016"></a>Anslutningsprogram som stöds i MIM 2016
 
 | Namn | Versioner som stöds av den anslutna datakällan |
 | ---- | ----------------------------------------------- |
@@ -55,7 +53,6 @@ Den här artikeln omfattar anslutningsprogrammen som ingår i MIM, men anslutnin
 | Textfil med fast bredd | Textfiler med fast bredd |
 | LDAP Data Interchange Format (LDIF) | LDAP Data Interchange Format (LDIF) |
 
-## Närliggande information
-<a id="related-topics" class="xliff"></a>
+## <a name="related-topics"></a>Närliggande information
 
 [Hanteringsagenter i FIM 2010 R2](https://technet.microsoft.com/library/jj133885.aspx)

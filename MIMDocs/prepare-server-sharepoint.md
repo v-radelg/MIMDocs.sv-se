@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Konfigurera en server för identitetshantering: SharePoint
-<a id="set-up-an-identity-management-server-sharepoint" class="xliff"></a>
+# <a name="set-up-an-identity-management-server-sharepoint"></a>Konfigurera en server för identitetshantering: SharePoint
 
 >[!div class="step-by-step"]
 [«SQL Server 2014](prepare-server-sql2014.md)
@@ -32,8 +31,7 @@ ms.lasthandoff: 07/13/2017
 > - Lösenord – **Pass@word1**
 
 
-## Installera **SharePoint Foundation 2013 med SP1**
-<a id="install-sharepoint-foundation-2013-with-sp1" class="xliff"></a>
+## <a name="install-sharepoint-foundation-2013-with-sp1"></a>Installera **SharePoint Foundation 2013 med SP1**
 
 > [!NOTE]
 > Internetanslutning krävs för att installationsprogrammet ska kunna hämta allt som behövs. Om datorn finns i ett virtuellt nätverk utan internetanslutning kan du lägga till ytterligare ett nätverksgränssnitt på den dator som har anslutning till Internet. Detta kan inaktiveras när installationen är klar.
@@ -60,8 +58,7 @@ Följ dessa steg om du vill installera SharePoint Foundation 2013 SP1. När du h
 
 4.  Kör guiden när installationen har slutförts.
 
-## Kör guiden för att konfigurera SharePoint
-<a id="run-the-wizard-to-configure-sharepoint" class="xliff"></a>
+## <a name="run-the-wizard-to-configure-sharepoint"></a>Kör guiden för att konfigurera SharePoint
 
 Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfigurera SharePoint att arbeta med MIM.
 
@@ -81,8 +78,7 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
 
 8. I fönstret **Skapa en webbplatssamling** klickar du på **Hoppa över**.  Klicka sedan på **Slutför**.
 
-## Förbereda SharePoint som värd för MIM-portalen
-<a id="prepare-sharepoint-to-host-the-mim-portal" class="xliff"></a>
+## <a name="prepare-sharepoint-to-host-the-mim-portal"></a>Förbereda SharePoint som värd för MIM-portalen
 
 > [!NOTE]
 > SSL konfigureras inte första gången. Se till att konfigurera SSL eller motsvarande innan du aktiverar åtkomst till portalen.

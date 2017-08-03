@@ -18,12 +18,10 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Skapa programcertifikat med Certifikathanteraren
-<a id="create-software-certificates-with-certificate-manager" class="xliff"></a>
+# <a name="create-software-certificates-with-certificate-manager"></a>Skapa programcertifikat med Certifikathanteraren
 För att registrera och förnya programcertifikat behöver du inte vara administratör och du behöver inte heller ha ett virtuellt smartkort. Det bör påpekas att du vid en viss tidpunkt kommer att uppmanas tillåta en certifikatåtgärd, vilket är normalt.
 
-## Skapa en profilmall för programcertifikat i Certifikathanteraren i MIM 2016
-<a id="create-a-software-certificate-profile-template-in-mim-2016-certificate-manager" class="xliff"></a>
+## <a name="create-a-software-certificate-profile-template-in-mim-2016-certificate-manager"></a>Skapa en profilmall för programcertifikat i Certifikathanteraren i MIM 2016
 
 1.  Skapa en mall för det certifikat du ska begära för det virtuella smartkortet. Öppna MMC.
 
@@ -73,8 +71,7 @@ För att registrera och förnya programcertifikat behöver du inte vara administ
 
     10. I listan väljer du den nya mall du just skapat (**Arkiverad certifikatmall**) och klickar sedan på **OK**.
 
-## Skapa profilmallen
-<a id="create-the-profile-template" class="xliff"></a>
+## <a name="create-the-profile-template"></a>Skapa profilmallen
 
 1.  Logga in på CM-portalen som en användare med administratörsbehörighet.
 

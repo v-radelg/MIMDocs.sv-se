@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Steg 3 Konfigurera SQL
-<a id="step-3-configuring-sql" class="xliff"></a>
+# <a name="step-3-configuring-sql"></a>Steg 3 Konfigurera SQL
 
 >[!div class="step-by-step"]
 [« Steg 2](sp1-step2-configuring-corp-domain.md)

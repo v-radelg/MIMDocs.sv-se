@@ -5,24 +5,22 @@ keywords:
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 03/23/2017
+ms.date: 08/01/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 97edae12-6f86-4f9f-8620-a95a096e482a
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: d7f054d8d82dcc0ac71a94f6e44407b0c41a75af
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: e0179d21752f31e55b132268e9429009e68ba89d
+ms.sourcegitcommit: 5ba5d916c0ca1e5aa501592af0cef714bfdc8afe
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 08/02/2017
 ---
-# Distribuera MIM:s tjänst för meddelanden om lösenordsändring till en domänkontrollant
-<a id="deploy-the-mim-password-change-notification-service-on-a-domain-controller" class="xliff"></a>
+# <a name="deploy-the-mim-password-change-notification-service-on-a-domain-controller"></a>Distribuera MIM:s tjänst för meddelanden om lösenordsändring till en domänkontrollant
 
-## Installera Tjänsten för meddelanden om lösenordsändring
-<a id="install-the-password-change-notification-service" class="xliff"></a>
+## <a name="install-the-password-change-notification-service"></a>Installera Tjänsten för meddelanden om lösenordsändring
 Tjänsten för meddelanden om lösenordsändring (PCNS) är en tjänst som du installerar på domänkontrollanterna och som gör det möjligt för MIM att synkronisera lösenord med andra system, t.ex. en annan leverantörs katalogserver. Vid synkronisering av lösenord installerar du PCNS på alla domänkontrollantservrar.
 
 1.  Logga in som domänadministratör på en server som körs på Windows Server med rollen Domäntjänster för Active Directory.
@@ -57,6 +55,5 @@ Tjänsten för meddelanden om lösenordsändring (PCNS) är en tjänst som du in
 
 14. För att de konfigurationsändringar som gjorts i MIM:s Tjänst för meddelanden om lösenordsändring ska börja gälla måste du starta om datorn. Du kan göra det genom att klicka på **Ja** i popup-fönstret som visas. Du kan också starta om senare.
 
-## Konfigurera Tjänsten för meddelanden om lösenordsändring
-<a id="configuring-the-password-change-notification-service" class="xliff"></a>
+## <a name="configuring-the-password-change-notification-service"></a>Konfigurera Tjänsten för meddelanden om lösenordsändring
 När du är återansluten till DC-servern som domänadministratör går du till *C:\Programfiler\Microsofts meddelanden om lösenordsändring.* Kör *pcnscfg.exe*.

@@ -16,8 +16,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Hur etablerar jag användare i AD DS
-<a id="how-do-i-provision-users-to-ad-ds" class="xliff"></a>
+# <a name="how-do-i-provision-users-to-ad-ds"></a>Hur etablerar jag användare i AD DS
 
 Gäller för: Microsoft Identity Manager 2016 SP1 (MIM)
 
@@ -25,20 +24,17 @@ Ett grundläggande krav för ett identitetshanteringssystem är möjligheten att
 
 Den här guiden leder dig igenom de viktigaste byggstenarna som ingår i processen för att etablera användare från Microsoft® Identity Manager (MIM) 2016 till Active Directory® Domain Services (AD DS), förklarar hur du kan verifiera att scenariot fungerar som förväntat, tillhandahåller förslag för att hantera Active Directory-användare med hjälp av MIM 2016 och beskriver ytterligare informationsresurser.
 
-## Innan du börjar
-<a id="before-you-begin" class="xliff"></a>
+## <a name="before-you-begin"></a>Innan du börjar
 
 
 I det här avsnittet hittar du information om det här dokumentets omfattning. Vägledningar är normalt riktade mot användare som redan har grundläggande kunskaper om processen för att synkronisera objekt med MIM enligt beskrivningen i de relaterade [guiderna för att komma igång](http://go.microsoft.com/FWLink/p/?LinkId=190486).
 
-### Målgrupp
-<a id="audience" class="xliff"></a>
+### <a name="audience"></a>Målgrupp
 
 
 Den här guiden är avsedd för IT-experter som redan har grundläggande kunskaper om hur MIM-synkroniseringsprocessen fungerar och är intresserade av att få praktiska erfarenheter och mer konceptuell information om specifika scenarier.
 
-### Förhandskunskaper
-<a id="prerequisite-knowledge" class="xliff"></a>
+### <a name="prerequisite-knowledge"></a>Förhandskunskaper
 
 
 Det här dokumentet förutsätter att du har tillgång till en instans av MIM som körs och att du har erfarenhet av att konfigurera enkla synkroniseringsscenarier enligt beskrivning i följande dokument:
@@ -49,37 +45,32 @@ Det här dokumentet förutsätter att du har tillgång till en instans av MIM so
 
 Innehållet i det här dokumentet är avsett att fungera som ett tillägg till dessa grundläggande dokument.
 
-### Omfång
-<a id="scope" class="xliff"></a>
+### <a name="scope"></a>Omfång
 
 
 Det scenario som beskrivs i det här dokumentet har förenklats för att bemöta kraven i en grundläggande laboratoriemiljö. Fokus ligger på att lära dig att de förstå begrepp och tekniker som beskrivs.
 
 Det här dokumentet hjälper dig att utveckla en lösning som omfattar hantering av grupper i AD DS med hjälp av MIM.
 
-### Tidskrav
-<a id="time-requirements" class="xliff"></a>
+### <a name="time-requirements"></a>Tidskrav
 
 
 Processerna i det här dokumentet tar 90 till 120 minuter att slutföra.
 
 Denna tidsberäkning förutsätter att testmiljön redan är konfigurerad och omfattar inte den tid som krävs för att konfigurera testmiljön.
 
-### Få support
-<a id="getting-support" class="xliff"></a>
+### <a name="getting-support"></a>Få support
 
 
 Om du har frågor om innehållet i detta dokument eller om du har allmänna kommentarer som du vill diskutera kan du lägga upp ett meddelande i [forumet för Forefront Identity Manager 2010](http://go.microsoft.com/FWLink/p/?LinkId=189654).
 
-## Scenario-beskrivning
-<a id="scenario-description" class="xliff"></a>
+## <a name="scenario-description"></a>Scenario-beskrivning
 
 
 Fabrikam, ett fiktivt företag, planerar att använda MIM för att hantera användarkonton i företagets AD DS med hjälp av MIM. Som en del av den här processen måste Fabrikam etablera användare i AD DS. För att starta den första testningen har Fabrikam installerat en grundläggande laboratoriemiljö som består av MIM och AD DS.
 I den här laboratoriemiljön testar Fabrikam ett scenario som består av en användare som skapades manuellt i MIM-portalen. Målet med det här scenariot är att etablera användaren som en aktiverad användare med ett fördefinierat lösenord i AD DS.
 
-## Utformning av scenario
-<a id="scenario-design" class="xliff"></a>
+## <a name="scenario-design"></a>Utformning av scenario
 
 
 Om du vill använda den här guiden behöver du tre strukturella komponenter:
@@ -99,8 +90,7 @@ Du kan köra alla komponenter på en dator.
 >[!NOTE]
 Mer information om hur du konfigurerar MIM finns i [FIM-installationsguiden](http://go.microsoft.com/FWLink/p/?LinkId=165845).
 
-## Lista över scenariokomponenter
-<a id="scenario-components-list" class="xliff"></a>
+## <a name="scenario-components-list"></a>Lista över scenariokomponenter
 
 
 Följande tabell visar de komponenter som är en del av scenariot i denna guide.
@@ -118,8 +108,7 @@ Följande tabell visar de komponenter som är en del av scenariot i denna guide.
 
 
 
-## Scenarioanvisningar
-<a id="scenario-steps" class="xliff"></a>
+## <a name="scenario-steps"></a>Scenarioanvisningar
 
 
 Scenariot som beskrivs i den här handledningen består av de byggstenar som visas i följande bild.
@@ -127,22 +116,19 @@ Scenariot som beskrivs i den här handledningen består av de byggstenar som vis
 ![Scenarioanvisningar](media/how-provision-users-adds/image013.png)
 
 
-## Konfigurera de externa systemen
-<a id="configuring-the-external-systems" class="xliff"></a>
+## <a name="configuring-the-external-systems"></a>Konfigurera de externa systemen
 
 
 I det här avsnittet finns anvisningar för de resurser som du behöver skapa som ligger utanför MIM-miljön.
 
-### Steg 1: Skapa organisationsenheten
-<a id="step-1-create-the-ou" class="xliff"></a>
+### <a name="step-1-create-the-ou"></a>Steg 1: Skapa organisationsenheten
 
 
 Du behöver organisationsenheten som en behållare för den etablerade exempelanvändaren. Mer information om hur du skapar organisationsenheter finns i [Skapa en ny organisationsenhet](http://go.microsoft.com/FWLink/p/?LinkId=189655).
 
 Skapa en organisationsenhet som heter MIMObjects i AD DS.
 
-### Steg 2: Skapa Active Directory-användarkonton
-<a id="step-2-create-the-active-directory-user-accounts" class="xliff"></a>
+### <a name="step-2-create-the-active-directory-user-accounts"></a>Steg 2: Skapa Active Directory-användarkonton
 
 För scenariot i den här handledningen behöver du två Active Directory-användarkonton:
 
@@ -153,14 +139,12 @@ För scenariot i den här handledningen behöver du två Active Directory-använ
 I båda fallen räcker det att skapa vanliga användarkonton. Mer information om de specifika kraven för båda kontona finns senare i det här dokumentet. Mer information om hur du skapar organisationsenheter finns i [Skapa ett nytt användarkonto](http://go.microsoft.com/FWLink/p/?LinkId=189656).
 
 
-## Konfigurera FIM-synkroniseringstjänsten
-<a id="configuring-the-fim-synchronization-service" class="xliff"></a>
+## <a name="configuring-the-fim-synchronization-service"></a>Konfigurera FIM-synkroniseringstjänsten
 
 
 För konfigurationsstegen i det här avsnittet måste du starta hanteraren för FIM-synkroniseringstjänsten.
 
-### Skapa hanteringsagenterna
-<a id="creating-the-management-agents" class="xliff"></a>
+### <a name="creating-the-management-agents"></a>Skapa hanteringsagenterna
 
 För scenariot i den här handledningen måste du skapa två hanteringsagenter:
 
@@ -168,8 +152,7 @@ För scenariot i den här handledningen måste du skapa två hanteringsagenter:
 
 -   **Fabrikam FIMMA** – hanteringsagent för FIM-tjänstens hanteringsagent.
 
-### Steg 3: Skapa Fabrikam ADMA-hanteringsagenten
-<a id="step-3-create-the-fabrikam-adma-management-agent" class="xliff"></a>
+### <a name="step-3-create-the-fabrikam-adma-management-agent"></a>Steg 3: Skapa Fabrikam ADMA-hanteringsagenten
 
 När du konfigurerar en hanteringsagent för AD DS måste du ange ett konto som används av hanteringsagenten i datautbytet med AD DS. Du bör använda ett vanligt användarkonto. För att importera data från AD DS måste dock kontot har behörighet att avsöka ändringar från DirSync-kontrollen. Om du vill att hanteringsagenten ska exportera data till AD DS måste du ge kontot tillräcklig behörighet i målets organisationsenheter. Mer information om det här ämnet finns i [Konfigurera ADMA-kontot](http://go.microsoft.com/FWLink/p/?LinkId=189657).
 
@@ -200,8 +183,7 @@ Mer information finns i följande avsnitt i hjälpen:
 >[!Note]
 Kontrollera att du har en attributflödesregel för import konfigurerad för ExpectedRulesList-attributet.
 
-### Steg 4: Skapa Fabrikam FIMMA-hanteringsagenten
-<a id="step-4-create-the-fabrikam-fimma-management-agent" class="xliff"></a>
+### <a name="step-4-create-the-fabrikam-fimma-management-agent"></a>Steg 4: Skapa Fabrikam FIMMA-hanteringsagenten
 
 När du konfigurerar en hanteringsagent för FIM-tjänsten måste du ange ett konto som används av hanteringsagenten i datautbytet med FIM-tjänsten.
 
@@ -232,8 +214,7 @@ Mer information finns i följande avsnitt i hjälpen:
 >[!NOTE]
  Kontrollera att du har en attributflödesregel för import konfigurerad för ExpectedRulesList-attributet.
 
-### Steg 5: Skapa körningsprofilerna
-<a id="step-5-create-the-run-profiles" class="xliff"></a>
+### <a name="step-5-create-the-run-profiles"></a>Steg 5: Skapa körningsprofilerna
 
 I följande tabell visas de körningsprofiler som du måste skapa för scenariot i den här handledningen.
 
@@ -253,8 +234,7 @@ Mer information finns i Skapa en körningsprofil för hanteringsagenten i MIM-hj
  Kontrollera att etablering är aktiverad i miljön. Det kan du köra genom att köra skriptet, Använda Windows PowerShell för att aktivera etablering (http://go.microsoft.com/FWLink/p/?LinkId=189660).
 
 
-## Konfigurera FIM-tjänsten
-<a id="configuring-the-fim-service" class="xliff"></a>
+## <a name="configuring-the-fim-service"></a>Konfigurera FIM-tjänsten
 
 
 För scenariot i den här handledningen måste du konfigurera en etableringsprincip på det sätt som visas i följande bild.
@@ -265,8 +245,7 @@ Målet med den här etableringsprincipen är att föra in grupper i omfattningen
 
 Om du vill konfigurera FIM-tjänsten använder du Windows Internet Explorer® för att gå till http://localhost/identitymanagement. På sidan för MIM-portalen skapar du etableringsprincipen genom att gå till de relaterade sidorna från avsnittet Administration. Du kan kontrollera konfigurationen genom att köra skriptet i [Using Windows PowerShell to document your provisioning policy configuration](http://go.microsoft.com/FWLink/p/?LinkId=189661) (Använda Windows PowerShell för att dokumentera konfiguration av etableringsprincipen).
 
-### Steg 6: Skapa synkroniseringsregeln
-<a id="step-6-create-the-synchronization-rule" class="xliff"></a>
+### <a name="step-6-create-the-synchronization-rule"></a>Steg 6: Skapa synkroniseringsregeln
 
 Följande tabeller visar konfiguration av synkroniseringsregeln för etablering som krävs för Fabrikam. Skapa synkroniseringsregeln enligt data i följande tabeller.
 
@@ -317,8 +296,7 @@ Följande tabeller visar konfiguration av synkroniseringsregeln för etablering 
  >[!NOTE]
  Viktigt. Kontrollera att du har valt Endast initialflöde för attributflödet som har DN som mål.                                                                          
 
-### Steg 7: Skapa arbetsflödet
-<a id="step-7-create-the-workflow" class="xliff"></a>
+### <a name="step-7-create-the-workflow"></a>Steg 7: Skapa arbetsflödet
 
 Målet med AD-etableringsarbetsflödet är att lägga till synkroniseringsregeln för Fabrikam-etablering i en resurs. Följande tabeller visar konfigurationen.  Skapa ett arbetsflöde enligt data i tabellerna nedan.
 
@@ -337,8 +315,7 @@ Målet med AD-etableringsarbetsflödet är att lägga till synkroniseringsregeln
 
 
 
-### Steg 8: Skapa hanteringsprincipregel
-<a id="step-8-create-the-mpr" class="xliff"></a>
+### <a name="step-8-create-the-mpr"></a>Steg 8: Skapa hanteringsprincipregel
 
 Den hanteringsprincipregel (MPR) som krävs har typen Uppsättningsövergång och utlöses när en resurs blir medlem i uppsättningen Alla leverantörer. Följande tabeller visar konfigurationen.  Skapa MPR enligt data i tabellerna nedan.
 
@@ -363,8 +340,7 @@ Den hanteringsprincipregel (MPR) som krävs har typen Uppsättningsövergång oc
 
 
 
-## Initiera miljön
-<a id="initializing-your-environment" class="xliff"></a>
+## <a name="initializing-your-environment"></a>Initiera miljön
 
 
 Målen för initieringsfasen är följande:
@@ -373,8 +349,7 @@ Målen för initieringsfasen är följande:
 
 -   Föra in Active Directory-strukturen i Active Directory-anslutarplatsen.
 
-### Steg 9: Kör körningsprofilerna
-<a id="step-9-run-the-run-profiles" class="xliff"></a>
+### <a name="step-9-run-the-run-profiles"></a>Steg 9: Kör körningsprofilerna
 
 Följande tabell visar de körningsprofiler som ingår i initieringsfasen.  Kör körningsprofilerna enligt tabellen nedan.
 
@@ -393,8 +368,7 @@ Följande tabell visar de körningsprofiler som ingår i initieringsfasen.  Kör
 >[!NOTE]
 Du bör kontrollera att den utgående synkroniseringsregeln har projicerats till metaversum.
 
-## Testa konfigurationen
-<a id="testing-the-configuration" class="xliff"></a>
+## <a name="testing-the-configuration"></a>Testa konfigurationen
 
 
 Målet med det här avsnittet är att testa den faktiska konfigurationen. För att testa konfigurationen ska du:
@@ -407,8 +381,7 @@ Målet med det här avsnittet är att testa den faktiska konfigurationen. För a
 
 4.  Kontrollera att användaren finns i AD DS.
 
-### Steg 10: Skapa en exempelanvändare i MIM
-<a id="step-10-create-a-sample-user-in-mim" class="xliff"></a>
+### <a name="step-10-create-a-sample-user-in-mim"></a>Steg 10: Skapa en exempelanvändare i MIM
 
 
 I följande tabell visas egenskaperna för exempelanvändaren. Skapa en exempelanvändare enligt data i tabellen nedan.
@@ -424,8 +397,7 @@ I följande tabell visas egenskaperna för exempelanvändaren. Skapa en exempela
 
 
 
-### Kontrollera etableringskraven för exempelanvändaren
-<a id="verify-the-provisioning-requisites-of-the-sample-user" class="xliff"></a>
+### <a name="verify-the-provisioning-requisites-of-the-sample-user"></a>Kontrollera etableringskraven för exempelanvändaren
 
 
 Två krav måste uppfyllas för att etablera exempelanvändaren i AD DS:
@@ -434,16 +406,14 @@ Två krav måste uppfyllas för att etablera exempelanvändaren i AD DS:
 
 2.  Uppsättningsanvändaren måste finnas i omfattningen för den utgående synkroniseringsregeln.
 
-### Steg 11: Kontrollera att användaren är medlem i Alla leverantörer
-<a id="step-11-verify-the-user-is-a-member-of-all-contractors" class="xliff"></a>
+### <a name="step-11-verify-the-user-is-a-member-of-all-contractors"></a>Steg 11: Kontrollera att användaren är medlem i Alla leverantörer
 
 Kontrollera om användaren är medlem i uppsättningen Alla leverantörer genom att öppna uppsättningen och sedan klicka på Visa medlemmar.
 
 ![Kontrollera att användaren är medlem i alla leverantörer](media/how-provision-users-adds/image022.jpg)
 
 
-### Steg 12: Kontrollera att användaren finns i omfattningen för den utgående synkroniseringsregeln
-<a id="step-12-verify-the-user-is-in-the-scope-of-the-outbound-synchronization-rule" class="xliff"></a>
+### <a name="step-12-verify-the-user-is-in-the-scope-of-the-outbound-synchronization-rule"></a>Steg 12: Kontrollera att användaren finns i omfattningen för den utgående synkroniseringsregeln
 
 Kontrollera om användaren finns i omfattningen för synkroniseringsregeln genom att öppna användarens egenskapssida och granska attributet Expected Rules List på fliken Etablering. Attributet Lista över förväntade regler ska innehålla AD-användaren
 
@@ -455,8 +425,7 @@ Vid denna tidpunkt i processen är synkroniseringsregelns status Väntar. Det in
 
 
 
-### Steg 13: Synkronisera exempelgruppen
-<a id="step-13-synchronize-the-sample-group" class="xliff"></a>
+### <a name="step-13-synchronize-the-sample-group"></a>Steg 13: Synkronisera exempelgruppen
 
 
 Innan du startar den första synkroniseringscykeln för ett testobjekt ska du spåra förväntat tillstånd för objektet efter varje körningsprofil som du kör i en testplan. Intill allmänt tillstånd för objektet (skapad, uppdaterad eller raderad) bör testplanen även innehålla de attributvärden du förväntar dig.
@@ -528,15 +497,13 @@ Kör körningsprofilerna enligt anvisningarna i det här avsnittet.
 >[!IMPORTANT]
 Varje körning av körningsprofil måste slutföras utan fel.
 
-### Steg 14: Verifiera den etablerade användaren i AD DS
-<a id="step-14-verify-the-provisioned-user-in-ad-ds" class="xliff"></a>
+### <a name="step-14-verify-the-provisioned-user-in-ad-ds"></a>Steg 14: Verifiera den etablerade användaren i AD DS
 
 Kontrollera att exempelanvändaren har etablerats i AD DS genom att öppna organisationsenheten FIMObjects. Britta Simon bör finnas i organisationsenheten FIMObjects.
 
 ![verifiera att användaren finns i organisationsobjektet FIMObjects](media/how-provision-users-adds/image033.jpg)
 
-Sammanfattning
-<a id="summary" class="xliff"></a>
+<a name="summary"></a>Sammanfattning
 =======
 
 Syftet med det här dokumentet är att presentera de viktigaste byggstenarna för att synkronisera en användare i MIM med AD DS. Under det första testet bör du börja med det lägsta antalet attribut som krävs för att slutföra en uppgift och lägga till fler attribut i scenariot när de allmänna stegen fungerar som förväntat. Genom att se till att komplexiteten är så låg som möjligt förenklas felsökningsprocessen.
@@ -549,12 +516,10 @@ En beskrivning av hur du kan ta bort dessa objekt från testmiljön finns i [En 
 I ett normalt synkroniseringsscenario som omfattar AD DS som synkroniseringsmål är MIM inte auktoritativt för alla attribut för ett objekt. När du exempelvis hanterar användarobjekt i AD DS med hjälp av FIM måste domänen och objectSID-attributen som minst bidras till av AD DS-hanteringsagenten.
 Kontonamn, domän och objectSID-attribut krävs om du vill göra det möjligt för en användare att logga in på FIM-portalen. En ytterligare ingående synkroniseringsregel krävs för AD DS-anslutarplatsen för att fylla i dessa attribut från AD DS. När du hanterar objekt med flera källor för attributvärden måste du se till att du konfigurerar attributflödets prioritet korrekt. Om attributflödets prioritet inte är korrekt konfigurerad blockerar synkroniseringsmotorn attribut från att fyllas i. Mer information om prioritet för attributflödet finns i artikeln [Om prioritet för attributflöde](http://go.microsoft.com/FWLink/p/?LinkId=189675).
 
-Se även
-<a id="see-also" class="xliff"></a>
+<a name="see-also"></a>Se även
 =========
 
-Andra resurser
-<a id="other-resources" class="xliff"></a>
+<a name="other-resources"></a>Andra resurser
 ---------------
 
 [Använda FIM för att aktivera eller inaktivera konton i Active Directory](http://go.microsoft.com/FWLink/p/?LinkId=189670)

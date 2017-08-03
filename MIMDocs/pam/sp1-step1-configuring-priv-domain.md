@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Steg 1 Konfigurera Priv-domänen
-<a id="step-1-configuring-the-priv-domain" class="xliff"></a>
+# <a name="step-1-configuring-the-priv-domain"></a>Steg 1 Konfigurera Priv-domänen
 
 >[!div class="step-by-step"]
 [Steg 2 »](sp1-step2-configuring-corp-domain.md)

@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Steg 6 – Överföra en grupp till Privileged Access Management
-<a id="step-6--transition-a-group-to-privileged-access-management" class="xliff"></a>
+# <a name="step-6--transition-a-group-to-privileged-access-management"></a>Steg 6 – Överföra en grupp till Privileged Access Management
 
 >[!div class="step-by-step"]
 [«Steg 5 ](step-5-establish-trust-between-priv-corp-forests.md)

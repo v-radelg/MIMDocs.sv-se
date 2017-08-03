@@ -18,8 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 07/13/2017
 ---
-# Förstå komponenterna i PAM
-<a id="understand-the-components-of-pam" class="xliff"></a>
+# <a name="understand-the-components-of-pam"></a>Förstå komponenterna i PAM
 
 Med Privileged Access Management separeras administrativ åtkomst från löpande användarkonton. Den här lösningen är beroende av parallella skogar:
 
