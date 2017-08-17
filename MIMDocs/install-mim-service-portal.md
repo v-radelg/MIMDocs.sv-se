@@ -5,18 +5,18 @@ keywords:
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 03/23/2017
+ms.date: 08/16/2017
 ms.topic: get-started-article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 974015bbba3a36e1107da33655eedf94e2938582
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: 03a0e6e90c1d0059872c4d37c88cb6f4f4095bac
+ms.sourcegitcommit: 451c3ddda84758c87b8eb0359dac4043af52865f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 08/16/2017
 ---
 # <a name="install-mim-2016-mim-service-and-portal"></a>Installera MIM 2016: MIM-tjänst och -portal
 
@@ -62,13 +62,13 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 10. Observera att en varning kan komma att visas om att tjänstkontots nuvarande konfiguration inte är säker.
 
-11. Godkänn standardinställningarna för synkroniseringsserverns plats och ange kontot för MIM-hanteringsagenten som *contoso\MIMsync*.
+11. Godkänn standardinställningarna för Synkroniseringsserverns plats och ange kontot för MIM-hanteringsagenten som *contoso\MIMMA*.
 
     ![Bild på Konfigurera MIM-tjänsten och -portalen](media/MIM-Install13.png)
 
 12. Ange *CORPIDM* (den här datorns namn) som MIM-tjänstens serveradress för MIM-portalen.
 
-13. Ange *http://CorpIDM.contoso.local:82* som webbadress för SharePoint-webbplatssamlingen.
+13. Ange *http://CorpIDM.contoso.local* som SharePoint-webbplatssamlingen.
 
 14. Ange *http://CorpIDM.contoso.local:8080* som webbadress för Registrering av lösenord.
 
@@ -106,7 +106,7 @@ När alla förberedande definitioner för installationen är klara klickar du p�
 
 Verifiera att MIM-portalen är aktiv när installationen är klar.
 
-1. Starta Internet Explorer och anslut till MIM-portalen på  *http://corpidm.contoso.local:82/identitymanagement*. Observera att det kan bli en kort fördröjning när du besöker sidan för första gången.
+1. Starta Internet Explorer och Anslut till MIM-portalen på *http://corpidm.contoso.local/identitymanagement*. Observera att det kan bli en kort fördröjning när du besöker sidan för första gången.
 
     - Om det blir nödvändigt autentiserar du som *contoso\Administrator* i Internet Explorer.
 
