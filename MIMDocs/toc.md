@@ -21,6 +21,15 @@
 ### [Installera MIM: Tjänst och portal](install-mim-service-portal.md)
 ### [Installera MIM: Synkronisera databaser](install-mim-sync-ad-service.md)
 ## [Uppgradera från Forefront Identity Manager 2010 R2](microsoft-identity-manager-2016-upgrade-from-fim-2010-R2.md)
+## [Installera MIM-certifikathantering](./deploy-use/mim-cm-deploy.md)
+## [Avsnitt om BHOLD-installation](./deploy-use/bhold-installation-guide.md)
+### [Installation av BHOLD-kärna](./deploy-use/bhold-core-installation.md)
+### [Installation av BHOLD-integrering](./deploy-use/bhold-integration-installation.md)
+### [Installation av BHOLD-attestering](./deploy-use/bhold-attestation-installation.md)
+### [Installation av BHOLD-modellgenerator](./deploy-use/bhold-model-generator-installation.md)
+### [Installation av BHOLD-rapportering](./deploy-use/bhold-reporting-installation.md)
+### [Installation av BHOLD-analys](./deploy-use/bhold-analytics-installation.md)
+### [Installation av BHOLD-anslutningsapp för åtkomsthantering](./deploy-use/bhold-access-management-connector-install.md)
 ## [Tjänsten för meddelanden om lösenordsändring](deploying-mim-password-change-notification-service-on-domain-controller.md)
 ## [Identity Manager Hybrid Reporting](working-with-identity-manager-hybrid-reporting.md)
 ## [Lösenordsåterställning via självbetjäning](working-with-self-service-password-reset.md)
@@ -75,7 +84,10 @@
 ### [Rapportera anpassade rapporter och utökningsbarhet](https://technet.microsoft.com/library/jj133861)
 ## [Microsoft Identity Software: Offentliga versioner](https://blogs.technet.microsoft.com/iamsupport/idmbuildversions/)
 # [Referens](./reference/microsoft-identity-manager-2016-developer-reference.md)
-## [Microsoft Identity Manager 2016 utvecklarreferens](./reference/microsoft-identity-manager-2016-developer-reference.md)
+## För utvecklare
+### [Referens för MIM 2016-utvecklare](./reference/microsoft-identity-manager-2016-developer-reference.md)
+### BHOLD
+#### [Referens för BHOLD-utvecklare](./reference/mim2016-bhold-developer-reference.md) 
 ### [Referens för certifikathanterings-REST API](./reference/certificate-management-rest-api-reference.md)
 #### [Tjänstinformation för CM REST API](./reference/certificate-management-rest-api-service-details.md)
 #### [Genomgång av exempelregistrering](./reference/sample-enrollment-walkthrough.md)
@@ -117,4 +129,8 @@
 ### [Körningsfelkoder för hanteringsagenten](./reference/maerrorcodes.md)
 ### [Funktionsreferens för Microsoft Identity Manager 2016](./reference/mim2016-functions-reference.md)
 ### [Referens för lösendordshantering för Microsoft Identity Manager 2016](./infrastructure/mim2016-password-management.md)
-## [Versionshistorik](./reference/version-history.md)
+### BHOLD
+#### [BHOLD-begreppsguide](./understand-explore/bhold-concepts-guide.md)
+## Versionshistorik
+### [MIM-versionshistorik](./reference/version-history.md)
+### [BHOLD-versionshistorik](./reference/version-bhold-history.md)
