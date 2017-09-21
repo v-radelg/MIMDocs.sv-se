@@ -2,21 +2,21 @@
 title: "Planera en skyddsmiljö | Microsoft Docs"
 description: 
 keywords: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 03/16/2017
+author: barclayn
+ms.author: barclayn
+manager: mbaldwin
+ms.date: 09/13/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: bfc7cb64-60c7-4e35-b36a-bbe73b99444b
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 402c690b514dce62024f13014c1491433fbd8816
-ms.sourcegitcommit: a0e206fd67245f02d94d5f6c9d606970117dd8ed
+ms.openlocfilehash: 16ad83ab9a0fbe2b93428cf318b5ef138e2f3783
+ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/02/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="planning-a-bastion-environment"></a>Planera en skyddsmiljö
 
@@ -166,7 +166,7 @@ Det finns sju krav för att aktivera hantering för en befintlig domän.
 
 Det måste finnas en grupp i den befintliga domänen, vars namn är NetBIOS-domännamnet följt av tre dollartecken, t.ex. *CONTOSO$$$*. Gruppomfånget måste vara *domänlokal* och grupptypen måste vara *säkerhet*. Det krävs för att grupper ska kunna skapas i den dedikerade administrativa skogen med samma säkerhetsidentifierare som grupper i domänen. Skapa den här gruppen med följande PowerShell-kommando, som utförs av en administratör för den befintliga domänen och körs på en arbetsstation som är ansluten till den befintliga domänen:
 
-```
+```PowerShell
 New-ADGroup -name 'CONTOSO$$$' -GroupCategory Security -GroupScope DomainLocal -SamAccountName 'CONTOSO$$$'
 ```
 
@@ -194,7 +194,7 @@ Grupprincipinställningarna på domänkontrollanten för granskning måste inneh
 
 7. Stäng fönstren Redigeraren Grupprinciphantering och Grupprinciphantering. Tillämpa granskningsinställningarna genom att öppna ett PowerShell-fönster och skriva:
 
-    ```
+    ```cmd
     gpupdate /force /target:computer
     ```
 
@@ -204,7 +204,7 @@ Meddelandet ”Uppdatering av grupprincip har slutförts”. bör visas efter n�
 
 Domänkontrollanterna måste tillåta RPC över TCP/IP-anslutningar för lokal säkerhetskontroll (LSA) från skyddsmiljön. TCP/IP-stöd i LSA måste aktiveras i registret på äldre versioner av Windows Server:
 
-```
+```PowerShell
 New-ItemProperty -Path HKLM:SYSTEM\\CurrentControlSet\\Control\\Lsa -Name TcpipClientSupport -PropertyType DWORD -Value 1
 ```
 
@@ -212,7 +212,7 @@ New-ItemProperty -Path HKLM:SYSTEM\\CurrentControlSet\\Control\\Lsa -Name TcpipC
 
 `New-PAMDomainConfiguration`-cmdleten måste köras på MIM-tjänstdatorn i administrationsdomänen. Parametrarna för det här kommandot är domännamnet för den befintliga domänen och autentiseringsuppgifterna för en administratör i domänen.
 
-```
+```PowerShell
  New-PAMDomainConfiguration -SourceDomain "contoso" -Credentials (get-credential)
 ```
 

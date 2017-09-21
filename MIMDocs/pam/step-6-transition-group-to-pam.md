@@ -2,21 +2,21 @@
 title: "Distribuera PAM steg 6 – Flytta grupp | Microsoft Docs"
 description: "Migrera en grupp i PRIV-skogen så att den kan hanteras med Privileged Access Management."
 keywords: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 03/15/2017
+author: barclayn
+ms.author: barclayn
+manager: mbaldwin
+ms.date: 09/13/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 7b689eff-3a10-4f51-97b2-cb1b4827b63c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: aeffca2c4e5467ec039c2077a88f36a652493e90
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: 550ad1e68ed8464dc7361e7a35ef35ee97753a9a
+ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="step-6--transition-a-group-to-privileged-access-management"></a>Steg 6 – Överföra en grupp till Privileged Access Management
 
@@ -37,38 +37,38 @@ Du måste köra cmdletarna en gång för varje grupp och en gång för varje med
 
 2.  Starta PowerShell och skriv följande kommandon.
 
-    ```
-    Import-Module MIMPAM
-    Import-Module ActiveDirectory
-    ```
+```PowerShell
+   Import-Module MIMPAM
+   Import-Module ActiveDirectory
+```
 
 3.  Skapa ett motsvarande användarkonto i PRIV för ett användarkonto i en befintlig skog i exempelsyfte.
 
     Skriv följande kommandon i PowerShell.  Om du inte använde namnet *Lisa* när du skapade användaren contoso.local tidigare, ändrar du parametrarna för kommandot efter behov. Lösenordet 'Pass@word1' är bara ett exempel och bör ändras till ett unikt lösenord.
 
-    ```
-    $sj = New-PAMUser –SourceDomain CONTOSO.local –SourceAccountName Jen
-    $jp = ConvertTo-SecureString "Pass@word1" –asplaintext –force
-    Set-ADAccountPassword –identity priv.Jen –NewPassword $jp
-    Set-ADUser –identity priv.Jen –Enabled 1
-    ```
+ ```PowerShell
+        $sj = New-PAMUser –SourceDomain CONTOSO.local –SourceAccountName Jen
+        $jp = ConvertTo-SecureString "Pass@word1" –asplaintext –force
+        Set-ADAccountPassword –identity priv.Jen –NewPassword $jp
+        Set-ADUser –identity priv.Jen –Enabled 1
+  ```
 
 4. Kopiera en grupp och dess medlem, Lisa, från CONTOSO till PRIV-domänen, i exempelsyfte.
 
     Kör följande kommandon och ange lösenordet för CORP-domänens administratör (CONTOSO\Administratör) när du uppmanas till det:
 
-        ```
+ ```PowerShell
         $ca = get-credential –UserName CONTOSO\Administrator –Message "CORP forest domain admin credentials"
         $pg = New-PAMGroup –SourceGroupName "CorpAdmins" –SourceDomain CONTOSO.local                 –SourceDC CORPDC.contoso.local –Credentials $ca
         $pr = New-PAMRole –DisplayName "CorpAdmins" –Privileges $pg –Candidates $sj
-        ```
+ ```
 
     Kommandot **New-PAMGroup** innehåller följande parametrar:
 
-        -   The CORP forest domain name in NetBIOS form  
-        -   The name of the group to copy from that domain  
-        -   The CORP forest Domain Controller NetBIOS name  
-        -   The credentials of an domain admin user in the CORP forest  
+     -   Domännamn för CORP-skogens i form av NetBIOS  
+     -   Namnet på gruppen för att kopiera från domänen  
+     -   CORP skogens Domain Controller NetBIOS-namn  
+     -   Autentiseringsuppgifterna för ett domain admin-användare i CORP-skogen  
 
 5.  (Valfritt) Ta bort Lisas konto på CORPDC från gruppen **CONTOSO CorpAdmins** om det fortfarande finns kvar.  Det här krävs bara för att visa hur behörigheter kan associeras med konton som skapats i PRIV-skogen.
 
@@ -76,7 +76,7 @@ Du måste köra cmdletarna en gång för varje grupp och en gång för varje med
 
     2.  Starta PowerShell, kör följande kommando och bekräfta ändringen.
 
-        ```
+        ```PowerShell
         Remove-ADGroupMember -identity "CorpAdmins" -Members "Jen"
         ```
 

@@ -2,21 +2,21 @@
 title: "Distribuera PAM steg 2 – PRIV DC | Microsoft Docs"
 description: "Förbered PRIV-domänkontrollanten, som kommer att tillhandahålla skyddsmiljön där Privileged Access Management är isolerat."
 keywords: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 03/15/2017
+author: barclayn
+ms.author: barclayn
+manager: mbaldwin
+ms.date: 09/14/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 0e9993a0-b8ae-40e2-8228-040256adb7e2
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: edc15b41d4248887f4a93217f68d8125f6500585
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: de3392648f187ce6007bba332c0f191d32980c94
+ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="step-2---prepare-the-first-priv-domain-controller"></a>Steg 2 – Förbereda den första PRIV-domänkontrollanten
 
@@ -31,9 +31,10 @@ I det här steget ska du skapa en ny domän som tillhandahåller skyddsmiljön f
 I det här avsnittet konfigurerar du en virtuell dator som ska fungera som en domänkontrollant för en ny skog
 
 ### <a name="install-windows-server-2012-r2"></a>Installera Windows Server 2012 R2
+
 Installera Windows Server 2012 R2 för att göra en dator "PRIVDC" på en annan ny virtuell dator utan någon programvara installerad.
 
-1. Välj att utföra en anpassad (inte uppgraderad) installation av Windows Server. Vid installationen anger du **Windows Server 2012 R2 Standard (server med GUI) x64**. _Välj inte_  **Datacenter eller Server Core**.
+1. Välj att utföra en anpassad (inte uppgraderad) installation av Windows Server. Vid installationen anger du **Windows Server 2012 R2 Standard (server med GUI) x64**. _Välj inte _ **Datacenter eller Server Core**.
 
 2. Granska och godkänn licensvillkoren.
 
@@ -44,13 +45,14 @@ Installera Windows Server 2012 R2 för att göra en dator "PRIVDC" på en annan 
 5. När servern har startats om loggar du in som administratör. Använd kontrollpanelen till att konfigurera datorn att söka efter uppdateringar och installera de uppdateringar som krävs. Du kan behöva starta om servern.
 
 ### <a name="add-roles"></a>Lägga till roller
+
 Lägg till roller för Active Directory Domain Services (AD DS) och DNS-server.
 
 1. Starta PowerShell som administratör.
 
 2. Skriv följande kommandon för att förbereda installationen av Windows Server Active Directory.
 
-  ```
+  ```PowerShell
   import-module ServerManager
 
   Install-WindowsFeature AD-Domain-Services,DNS –restart –IncludeAllSubFeature -IncludeManagementTools
@@ -60,7 +62,7 @@ Lägg till roller för Active Directory Domain Services (AD DS) och DNS-server.
 
 Starta PowerShell och skriv följande kommandon för att konfigurera källdomänen att tillåta RPC-åtkomst (Remote Procedure Call) till databasen för hanteraren för kontosäkerhet (SAM).
 
-```
+```PowerShell
 New-ItemProperty –Path HKLM:SYSTEM\CurrentControlSet\Control\Lsa –Name TcpipClientSupport –PropertyType DWORD –Value 1
 ```
 
@@ -74,9 +76,8 @@ I det här dokumentet används namnet priv.contoso.local som domännamn för den
 
 1. Skapa den nya domänen genom att skriva följande kommandon i ett PowerShell-fönster.  När du gör det skapas också en DNS-delegering i den överordnade domän (contoso.local) som skapades i föregående steg.  Om du vill konfigurera DNS senare kan du utelämna parametrarna `CreateDNSDelegation -DNSDelegationCredential $ca`.
 
-  ```
+  ```PowerShell
   $ca= get-credential
-
   Install-ADDSForest –DomainMode 6 –ForestMode 6 –DomainName priv.contoso.local –DomainNetbiosName priv –Force –CreateDNSDelegation –DNSDelegationCredential $ca
   ```
 
@@ -87,13 +88,14 @@ I det här dokumentet används namnet priv.contoso.local som domännamn för den
 När skogen har skapats startas servern om automatiskt.
 
 ### <a name="create-user-and-service-accounts"></a>Skapa användar- och tjänstkonton
+
 Skapa användar- och tjänstkonton för konfiguration av MIM-tjänsten och -portalen. Dessa konton hamnar i behållaren Användare i domänen priv.contoso.local.
 
 1. När servern har startats om loggar du in på PRIVDC som domänadministratör (PRIV\\Administrator).
 
 2. Starta PowerShell och skriv följande kommandon. Lösenordet 'Pass@word1' är bara ett exempel och du bör använda ett annat lösenord för konton.
 
-  ```
+  ```PowerShell
   import-module activedirectory
 
   $sp = ConvertTo-SecureString "Pass@word1" –asplaintext –force
@@ -159,7 +161,7 @@ Skapa användar- och tjänstkonton för konfiguration av MIM-tjänsten och -port
 
 ### <a name="configure-auditing-and-logon-rights"></a>Konfigurera rättigheter för granskning och inloggning
 
-Du måste ställa in granskning för att PAM-konfigurationen ska upprättas mellan skogar.  
+Du måste ställa in granskning för att PAM-konfigurationen ska upprättas mellan skogar.
 
 1. Kontrollera att du är inloggad som domänadministratör (PRIV\\Administrator).
 
@@ -199,7 +201,7 @@ Du måste ställa in granskning för att PAM-konfigurationen ska upprättas mell
 
 19. Öppna ett PowerShell-fönster som administratör och skriv följande kommando för att uppdatera domänkontrollanten i inställningarna för grupprincipen.
 
-  ```
+  ```cmd
   gpupdate /force /target:computer
   ```
 
@@ -216,7 +218,7 @@ Med PowerShell på PRIVDC konfigurerar du vidarebefordran av DNS-namn så att PR
 
   Om du har skapat en contoso.local-domän i det föregående steget, anger du *10.1.1.31* som IP-adress för CORPDC-datorns virtuella nätverk.
 
-  ```
+  ```PowerShell
   Add-DnsServerConditionalForwarderZone –name "contoso.local" –masterservers 10.1.1.31
   ```
 
@@ -227,7 +229,7 @@ Med PowerShell på PRIVDC konfigurerar du vidarebefordran av DNS-namn så att PR
 
 1. Med PowerShell lägger du till SPN-namn så att SharePoint, PAM REST-API:t och MIM-tjänsten kan använda Kerberos-autentisering.
 
-  ```
+  ```cmd
   setspn -S http/pamsrv.priv.contoso.local PRIV\SharePoint
   setspn -S http/pamsrv PRIV\SharePoint
   setspn -S FIMService/pamsrv.priv.contoso.local PRIV\MIMService
@@ -241,25 +243,24 @@ Med PowerShell på PRIVDC konfigurerar du vidarebefordran av DNS-namn så att PR
 
 Utför följande steg på PRIVDC som domänadministratör.
 
-1. Starta **Active Directory – användare och datorer**.  
-2. Högerklicka på domänen **priv.contoso.local** och välj **Delegera kontroll**.  
-3. På fliken Valda användare och grupper klickar du på **Lägg till**.  
-4. I fönstret Välj användare, datorer eller grupper skriver du *mimcomponent; mimmonitor; mimservice* och klickar på **Kontrollera namn**. När namnen är understrukna klickar du på **OK** och sedan på **Nästa**.  
+1. Starta **Active Directory – användare och datorer**.
+2. Högerklicka på domänen **priv.contoso.local** och välj **Delegera kontroll**.
+3. På fliken Valda användare och grupper klickar du på **Lägg till**.
+4. I fönstret Välj användare, datorer eller grupper skriver du *mimcomponent; mimmonitor; mimservice* och klickar på **Kontrollera namn**. När namnen är understrukna klickar du på **OK** och sedan på **Nästa**.
 5. I listan med vanliga aktiviteter väljer du **Skapa, ta bort och hantera användarkonton** och **Ändra medlemskap för en grupp** och klickar på **Nästa** och **Slutför**.
 
-6. Högerklicka på domänen **priv.contoso.local** och välj **Delegera kontroll**.  
+6. Högerklicka på domänen **priv.contoso.local** och välj **Delegera kontroll**.
 7. På fliken Valda användare och grupper klickar du på **Lägg till**.  
-8. I fönstret Välj användare, datorer eller grupper anger du *MIMAdmin* och klickar på **Kontrollera namn**. När namnen är understrukna klickar du på **OK** och sedan på **Nästa**.  
-9. Välj **anpassad aktivitet**, tillämpa på **den här mappen** med **allmänna behörigheter**.    
-10. I listan med behörigheter väljer du följande:  
-  - **Läsa**  
-  - **Skriva**  
-  - **Skapa alla underordnade objekt**  
-  - **Ta bort alla underordnade objekt**  
-  - **Läsa alla egenskaper**  
-  - **Skriva alla egenskaper**  
-  - **Migrera SID-historik**  
-  Klicka på **Nästa** och sedan på **Slutför**.
+8. I fönstret Välj användare, datorer eller grupper anger du *MIMAdmin* och klickar på **Kontrollera namn**. När namnen är understrukna klickar du på **OK** och sedan på **Nästa**.
+9. Välj **anpassad aktivitet**, tillämpa på **den här mappen** med **allmänna behörigheter**.
+10. I listan med behörigheter väljer du följande:
+  - **Läsa**
+  - **Skriva**
+  - **Skapa alla underordnade objekt**
+  - **Ta bort alla underordnade objekt**
+  - **Läsa alla egenskaper**
+  - **Skriva alla egenskaper**
+  - **Migrera SID-historik** klickar du på **nästa** sedan **Slutför**.
 
 11. Högerklicka på domänen **priv.contoso.local** och välj **Delegera kontroll**.  
 12. På fliken Valda användare och grupper klickar du på **Lägg till**.  
@@ -269,15 +270,17 @@ Utför följande steg på PRIVDC som domänadministratör.
 16. Stäng Active Directory – användare och datorer.
 
 17. Öppna en kommandotolk.  
-18. Granska åtkomstkontrollistan i objektet AdminSDHolder i PRIV-domänerna. Om domänen till exempel är "priv.contoso.local" skriver du kommandot  
-  ```
+18. Granska åtkomstkontrollistan i objektet AdminSDHolder i PRIV-domänerna. Om domänen till exempel är "priv.contoso.local" skriver du kommandot
+  ```cmd
   dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local"
   ```
-19. Uppdatera åtkomstkontrollistan vid behov för att säkerställa att MIM-tjänsten och MIM-komponenttjänsten kan uppdatera medlemskap i grupper som skyddas av denna ACL.  Skriv kommandot:  
-  ```
-  dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local" /G priv\mimservice:WP;"member"  
-  dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local" /G priv\mimcomponent:WP;"member"
-  ```
+19. Uppdatera åtkomstkontrollistan vid behov för att säkerställa att MIM-tjänsten och MIM-komponenttjänsten kan uppdatera medlemskap i grupper som skyddas av denna ACL.  Skriv kommandot:
+
+```cmd
+dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local" /G priv\mimservice:WP;"member"
+dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local" /G priv\mimcomponent:WP;"member"
+```
+
 20. Starta om PRIVDC-servern så att ändringarna träder ikraft.
 
 ## <a name="prepare-a-priv-workstation"></a>Förbereda en PRIV arbetsstation

@@ -2,10 +2,10 @@
 title: "Distribuera PAM steg 3 – PAM-server | Microsoft Docs"
 description: "Förbered en PAM-server som ska vara värd för både SQL och SharePoint för distribution av Privileged Access Management."
 keywords: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 03/15/2017
+author: barclayn
+ms.author: barclayn
+manager: mbaldwin
+ms.date: 09/13/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,11 +13,11 @@ ms.assetid: 68ec2145-6faa-485e-b79f-2b0c4ce9eff7
 ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 9a262a256062688542040827653a7df8d82e1044
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: fd52a191a0592441131249451011c4e2f026ea48
+ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="step-3--prepare-a-pam-server"></a>Steg 3 – Förbereda en PAM-server
 
@@ -26,6 +26,7 @@ ms.lasthandoff: 07/13/2017
 [Steg 4 »](step-4-install-mim-components-on-pam-server.md)
 
 ## <a name="install-windows-server-2012-r2"></a>Installera Windows Server 2012 R2
+
 På en tredje virtuell dator installerar du Windows Server 2012 R2, mer specifikt Windows Server 2012 R2 Standard (server med GUI) x64, för att skapa *PAMSRV*. Eftersom SQL Server och SharePoint 2013 kommer att installeras på den här datorn, krävs det minst 8 GB RAM-minne.
 
 1. Välj **Windows Server 2012 R2 Standard (server med GUI) x64**.
@@ -46,13 +47,14 @@ På en tredje virtuell dator installerar du Windows Server 2012 R2, mer specifik
 
 
 ### <a name="add-the-web-server-iis-and-application-server-roles"></a>Lägg till rollerna för webbserver (IIS) och programserver
+
 Lägg till roller för webbserver (IIS) och programserver, .NET Framework 3.5-funktioner, Active Directory-modulen för Windows PowerShell och andra funktioner som krävs för SharePoint.
 
 1.  Logga in som PRIV-domänadministratör (PRIV\Administratör) och starta PowerShell.
 
 2.  Skriv in följande kommandon: Observera att du kan behöva ange en annan plats för källfilerna för .NET Framework 3.5-funktionerna. De här funktionerna finns vanligtvis inte när du installerar Windows Server, men är tillgängliga i mappen sida-vid-sida (SxS) i mappen Sources på OS-installationsdisken, t.ex. ”d:\Sources\SxS\”.
 
-    ```
+    ```PowerShell
     import-module ServerManager
     Install-WindowsFeature Web-WebServer, Net-Framework-Features,
     rsat-ad-powershell,Web-Mgmt-Tools,Application-Server,
@@ -61,6 +63,7 @@ Lägg till roller för webbserver (IIS) och programserver, .NET Framework 3.5-fu
     ```
 
 ### <a name="configure-the-server-security-policy"></a>Konfigurera säkerhetsprinciper för servern
+
 Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapats kan köras som tjänster.
 
 1.  Starta programmet för **lokal säkerhetsprincip**.   
@@ -68,45 +71,49 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 3.  Högerklicka på **Logga in som en tjänst** i informationsfönstret och välj **Egenskaper**.  
 4.  Klicka på **Lägg till användare eller grupp** och skriv *priv\mimmonitor; priv\MIMService; priv\SharePoint; priv\mimcomponent; priv\SqlServer* i Användar- och gruppnamn. Klicka på **Kontrollera namn** och klicka på **OK**.  
 
-5.  Klicka på **OK** för att stänga fönstret Egenskaper.  
+5.  Klicka på **OK** för att stänga fönstret Egenskaper.
 6.  Högerklicka på **Neka åtkomst till den här datorn från nätverket** i informationsfönstret och välj **Egenskaper**.  
 7.  Klicka på **Lägg till användare eller grupp** och skriv*priv\mimmonitor; priv\MIMService; priv\mimcomponent* i Användar- och gruppnamn. Klicka på **OK**.  
-8.  Klicka på **OK** för att stänga fönstret Egenskaper.  
+8.  Klicka på **OK** för att stänga fönstret Egenskaper.
 
 9. Högerklicka på **Neka inloggning lokalt** i informationsfönstret och välj **Egenskaper**.  
 10. Klicka på **Lägg till användare eller grupp** och skriv*priv\mimmonitor; priv\MIMService; priv\mimcomponent* i Användar- och gruppnamn. Klicka på **OK**.  
 11. Klicka på **OK** för att stänga fönstret Egenskaper.  
 12. Stäng fönstret för lokala säkerhetsprinicper.  
 
-13. Öppna kontrollpanelen och växla till **Användarkonton**.  
-14. Klicka på **Ge andra användare åtkomst till den här datorn**.  
+13. Öppna kontrollpanelen och växla till **Användarkonton**.
+14. Klicka på **Ge andra användare åtkomst till den här datorn**.
 15. Klicka på **Lägg till** och ange användaren *MIMADMIN* i domänen *PRIV*. På nästa skärm i guiden klickar du på **Lägg till användaren som administratör**.  
 16. Klicka på **Lägg till** och ange användaren *SharePoint* i domänen *PRIV*. På nästa skärm i guiden klickar du på **Lägg till användaren som administratör**.  
-17. Stäng kontrollpanelen.  
+17. Stäng kontrollpanelen.
 
 ### <a name="change-the-iis-configuration"></a>Ändra IIS-konfigurationen
+
 Det finns två sätt att ändra IIS-konfigurationen så att program kan använda läget för Windows-autentisering. Kontrollera att du är inloggad som MIMAdmin och följ sedan något av följande alternativ.
 
 Om du vill använda PowerShell:
-1.  Högerklicka på PowerShell och välj **Kör som administratör**.  
-2.  Stoppa IIS och lås upp programvärdinställningarna med dessa kommandon  
-    ```
+
+1.  Högerklicka på PowerShell och välj **Kör som administratör**.
+2.  Stoppa IIS och lås upp programvärdinställningarna med dessa kommandon
+    ```CMD
     iisreset /STOP
     C:\Windows\System32\inetsrv\appcmd.exe unlock config /section:windowsAuthentication -commit:apphost
     iisreset /START
     ```
 
-Om du vill använda en textredigerare, t.ex. Notepad:   
-1. Öppna filen **C:\Windows\System32\inetsrv\config\applicationHost.config**   
+Om du vill använda en textredigerare, t.ex. Notepad:
+
+1. Öppna filen **C:\Windows\System32\inetsrv\config\applicationHost.config**
 2. Bläddra ner till rad 82 i filen. Taggvärdet för **overrideModeDefault** ska vara **<section name="windowsAuthentication" overrideModeDefault="Deny" />**  
 3. Ändra värdet för **overrideModeDefault** till *Tillåt*  
 4. Spara filen och starta om IIS med PowerShell-kommandot `iisreset /START`
 
 ## <a name="install-sql-server"></a>Installera SQL Server
+
 Om SQL Server inte är i skyddsmiljön, installerar du antingen SQL Server 2012 (Service Pack 1 eller senare) eller SQL Server 2014. Följande steg gäller för SQL 2014.
 
 1. Kontrollera att du är inloggad som MIMAdmin.
-2. Högerklicka på PowerShell och välj **Kör som administratör**.   
+2. Högerklicka på PowerShell och välj **Kör som administratör**.
 3. Gå till den katalog där installationsprogrammet för SQL Server finns.  
 4. Skriv in följande kommando:  
     ```
@@ -133,6 +140,7 @@ När alla nödvändiga SharePoint-komponenter har installerats installerar du Sh
 5.  När installationen har slutförts väljer du att köra guiden.  
 
 ### <a name="configure-sharepoint"></a>Konfigurera SharePoint
+
 Konfigurera SharePoint genom att köra Konfigurationsguiden för SharePoint-produkter.
 
 1.  På fliken Anslut till en servergrupp ändrar du till **Skapa en ny servergrupp**.  
@@ -146,13 +154,14 @@ Konfigurera SharePoint genom att köra Konfigurationsguiden för SharePoint-prod
 9. När fönstret Skapa en webbplatssamling visas klickar du på **Hoppa över** och **Slutför**.  
 
 ## <a name="create-a-sharepoint-foundation-2013-web-application"></a>Skapa en SharePoint Foundation 2013-webbapp
+
 När guiden har slutförts använder du PowerShell till att skapa en SharePoint Foundation 2013-webbapp som värd för MIM-portalen. Eftersom den här genomgången bara är ett exempel aktiveras inte SSL.
 
 1.  Högerklicka på SharePoint 2013 Management Shell, välj **Kör som administratör** och kör följande PowerShell-skript:
 
-    ```
+    ```PowerShell
     $dbManagedAccount = Get-SPManagedAccount -Identity PRIV\SharePoint
-    New-SpWebApplication -Name "MIM Portal" -ApplicationPool "MIMAppPool"            -ApplicationPoolAccount $dbManagedAccount -AuthenticationMethod "Kerberos" -Port 82 -URL http://PAMSRV.priv.contoso.local
+    New-SpWebApplication -Name "MIM Portal" -ApplicationPool "MIMAppPool" -ApplicationPoolAccount $dbManagedAccount -AuthenticationMethod "Kerberos" -Port 82 -URL http://PAMSRV.priv.contoso.local
     ```
 
 2. Ett varningsmeddelande visas med information om att Windows Classic-autentiseringsmetoden används och att det kan ta flera minuter för kommandot att returneras.  När det är klart klar visas den nya portalens URL som utdata.
@@ -161,11 +170,12 @@ När guiden har slutförts använder du PowerShell till att skapa en SharePoint 
 > Lämna fönstret SharePoint 2013 Management Shell öppet. Det ska användas i nästa steg.
 
 ## <a name="create-a-sharepoint-site-collection"></a>Skapa en SharePoint-webbplatssamling
+
 Sedan skapar du en SharePoint-webbplatssamling som är kopplade till den webbappen som värd för MIM-portalen.
 
 1.  Öppna fönstret **SharePoint 2013 Management Shell** om det inte redan är öppet och kör följande PowerShell-skript
 
-    ```
+    ```PowerShell
     $t = Get-SPWebTemplate -compatibilityLevel 14 -Identity "STS#1"
     $w = Get-SPWebApplication http://pamsrv.priv.contoso.local:82
     New-SPSite -Url $w.Url -Template $t -OwnerAlias PRIV\MIMAdmin                -CompatibilityLevel 14 -Name "MIM Portal" -SecondaryOwnerAlias PRIV\BackupAdmin
@@ -178,7 +188,7 @@ Sedan skapar du en SharePoint-webbplatssamling som är kopplade till den webbapp
 
 2.  Kör följande PowerShell-kommandon i **SharePoint 2013 Management Shell**. Det inaktiverar vytillståndet på SharePoint Server-sidan och SharePoint-uppgiften **Hälsoanalysjobb (Varje timme, Microsoft SharePoint Foundation-timer, alla servrar)**.
 
-    ```
+    ```PowerShell
     $contentService = [Microsoft.SharePoint.Administration.SPWebService]::ContentService;
     $contentService.ViewStateOnServer = $false;
     $contentService.Update();

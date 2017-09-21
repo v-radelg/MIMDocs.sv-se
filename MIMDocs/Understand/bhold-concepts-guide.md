@@ -5,15 +5,15 @@ keywords:
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
-ms.date: 09/06/2017
+ms.date: 09/14/2017
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
-ms.openlocfilehash: 0db8c2ebaee204c929dc7345ac6858fff6b0993b
-ms.sourcegitcommit: f29f02fa8437fa55e86afd7b0b99a36d2306b96b
+ms.openlocfilehash: 45054799cdc8bbe6d39fa2beb28e69d13cace031
+ms.sourcegitcommit: ed8dd5563e77ef4a3345b2a52a1426859c95576a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="microsoft-bhold-suite-concepts-guide"></a>Guide för Microsoft BHOLD Suite-begrepp
 
@@ -341,3 +341,7 @@ Ett viktigt och kraftfull funktion i Forefront Identity Manager 2010 och Forefro
 Det är viktigt att notera att BHOLD-tillägg till MIM-portalen stöder självbetjäning roll och Arbetsflödeshantering och rapportering. Andra funktioner för administration av BHOLD, samt attestering, som tillhandahålls av webbportaler av BHOLD-moduler som hanteras separat från MIM-portalen.
 
 ## <a name="next-steps"></a>Nästa steg
+
+- [BHOLD-installationsguiden](../deploy-use/bhold-installation-guide.md)
+- [Referens för BHOLD-utvecklare](../reference/mim2016-bhold-developer-reference.md)
+- [BHOLD-versionshistorik](../reference/version-bhold-history.md)
