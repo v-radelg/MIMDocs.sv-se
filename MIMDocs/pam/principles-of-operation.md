@@ -2,21 +2,21 @@
 title: "Förstå PAM-komponenterna | Microsoft Docs"
 description: "Privileged Access Management delar vissa komponenter med MIM och har även några egna komponenter. Lär dig hur dessa fungerar tillsammans."
 keywords: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 03/15/2017
+author: barclayn
+ms.author: barclayn
+manager: mbaldwin
+ms.date: 09/13/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 6498f68f-36d3-448c-8fe6-649ad5a7f97d
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 53fe79f251c3b18426f16b4007cda49e67d7b028
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: a129088989bb977c191e9dc372fed07044314403
+ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="understand-the-components-of-pam"></a>Förstå komponenterna i PAM
 
@@ -27,7 +27,7 @@ Med Privileged Access Management separeras administrativ åtkomst från löpande
 
 MIM-lösningen som konfigurerats för PAM innehåller följande komponenter:  
 
-- **MIM-tjänsten**: implementerar affärslogiken för att utföra identitets- och åtkomsthantering, inklusive hantering av privilegierade konton och utökningsbegäran.   
+- **MIM-tjänsten**: implementerar affärslogiken för att utföra identitets- och åtkomsthantering, inklusive hantering av privilegierade konton och utökningsbegäran.
 - **MIM-portalen**: en SharePoint-baserad portal med SharePoint 2013 som värd, som tillhandahåller administratörer med ett användargränssnitt för hantering och konfiguration.
 - **MIM-tjänstens databas**: lagras i SQL Server 2012 eller 2014 och innehåller identitetsdata och metadata som krävs för MIM-tjänsten.
 - **PAM-övervakningstjänsten** och **PAM-komponenttjänsten**: två tjänster som hanterar livscykeln för privilegierade konton och stöder PRIV AD i gruppmedlemskapets livscykel.

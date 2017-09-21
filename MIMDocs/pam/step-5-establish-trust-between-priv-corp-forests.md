@@ -2,28 +2,27 @@
 title: "Distribuera PAM steg 5 – Forest Link | Microsoft Docs"
 description: "Upprätta förtroende mellan skogarna PRIV och CORP så att privilegierade användare i PRIV fortfarande kan komma åt resurser i CORP."
 keywords: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 03/15/2017
+author: barclayn
+ms.author: barclayn
+manager: mbaldwin
+ms.date: 09/13/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: eef248c4-b3b6-4b28-9dd0-ae2f0b552425
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 1239ca2c0c6d376420723da01d7aa42821f5980f
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: 6d57b09508d4c0834619be0281fb373d9d3d361e
+ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="step-5--establish-trust-between-priv-and-corp-forests"></a>Steg 5 – upprätta förtroende mellan PRIV- och CORP-skogar
 
 >[!div class="step-by-step"]
 [« Steg 4](step-4-install-mim-components-on-pam-server.md)
 [Steg 6 »](step-6-transition-group-to-pam.md)
-
 
 För varje CORP-domän, till exempel contoso.local, måste domänkontrollanterna PRIV och CONTOSO vara bundna av ett förtroende. Det gör att användarna i PRIV-domänen kan komma åt resurser i CORP-domänen.
 
@@ -36,7 +35,7 @@ Innan du upprättar förtroende måste domänkontrollanterna konfigureras för D
 
 2.  Kontrollera att alla befintliga CORP-domänkontrollanter kan vidarebefordra namn till PRIV-skogen. Starta PowerShell på varje domänkontrollant utanför PRIV-skogen, till exempel CORPDC, och skriv följande kommando:
 
-    ```
+    ```cmd
     nslookup -qt=ns priv.contoso.local.
     ```
     Kontrollera att utdata visar en namnserverpost för PRIV-domänen med rätt IP-adress.
@@ -55,14 +54,14 @@ Upprätta enkelriktat förtroende med varje domän på PAMSRV, till exempel CORP
 
 3.  Skriv följande PowerShell-kommandon för varje befintlig skog. Ange autentiseringsuppgifter för CORP-domänadministratören (CONTOSO\Administratör) när du uppmanas till det.
 
-    ```
+    ```PowerShell
     $ca = get-credential
     New-PAMTrust -SourceForest "contoso.local" -Credentials $ca
     ```
 
 4.  Skriv följande PowerShell-kommandon för varje domän i de befintliga skogarna. Ange autentiseringsuppgifter för CORP-domänadministratören (CONTOSO\Administratör) när du uppmanas till det.
 
-    ```
+    ```PowerShell
     $ca = get-credential
     New-PAMDomainConfiguration -SourceDomain "contoso" -Credentials $ca
     ```
@@ -80,9 +79,9 @@ Aktivera läsbehörighet till AD för PRIV-administratörer och övervakningstj�
 7.  I listan med vanliga uppgifter väljer du **Läsa all användarinformation** och klickar på **Nästa** och **Slutför**.  
 8.  Stäng Active Directory – användare och datorer.
 
-9.  Öppna ett PowerShell-fönster.  
-10.  Se till att SID-historik är aktiverat och SID-filtrering är inaktiverat med hjälp av `netdom`. Typ:  
-    ```
+9.  Öppna ett PowerShell-fönster.
+10.  Se till att SID-historik är aktiverat och SID-filtrering är inaktiverat med hjälp av `netdom`. Typ:
+    ```cmd
     netdom trust contoso.local /quarantine /domain priv.contoso.local
     netdom trust /enablesidhistory:yes /domain priv.contoso.local
     ```
@@ -98,7 +97,7 @@ Aktivera läsbehörighet till AD för PRIV-administratörer och övervakningstj�
 
 3.  Skriv följande PowerShell-kommandon.
 
-    ```
+    ```cmd
     net start "PAM Component service"
     net start "PAM Monitoring service"
     ```

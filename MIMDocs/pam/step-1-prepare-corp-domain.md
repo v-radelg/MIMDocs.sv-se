@@ -2,27 +2,26 @@
 title: "Distribuera PAM steg 1 – CORP-domän | Microsoft Docs"
 description: "Förbered CORP-domänen med befintliga eller nya identiteter som ska hanteras av Privileged Identity Manager"
 keywords: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 03/15/2017
+author: barclayn
+ms.author: barclayn
+manager: mbaldwin
+ms.date: 09/13/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 1164e7efb70d911497b08248b68f8d929bc6d3fb
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: d14d2f40972686305abea2426e20f4c13e3e267b
+ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="step-1---prepare-the-host-and-the-corp-domain"></a>Steg 1 – förbereda värden och CORP-domänen
 
 >[!div class="step-by-step"]
 [Steg 2 »](step-2-prepare-priv-domain-controller.md)
-
 
 I det här steget förbereder du hanteringen av skyddsmiljön. Vid behov kan du också skapa en domänkontrollant och en medlemsarbetsstation i en ny domän och skog (*CORP*-skogen) med identiteter som ska hanteras av skyddsmiljön. Den här CORP-skogen simulerar en befintlig skog som har resurser som ska hanteras. I det här dokumentet finns en exempelresurs som ska skyddas, en filresurs.
 
@@ -57,7 +56,7 @@ I det här avsnittet lägger du till roller för Active Directory Domain Service
 
 2. Skriv in följande kommandon:
 
-  ```
+  ```PowoerShell
   import-module ServerManager
 
   Add-WindowsFeature AD-Domain-Services,DNS,FS-FileServer –restart –IncludeAllSubFeature -IncludeManagementTools
@@ -81,7 +80,7 @@ Logga in på en domänkontrollant som domänadministratör för varje domän och
 
 2. Skriv följande kommandon, men ersätt "CONTOSO" med NetBIOS-namnet på din domän.
 
-  ```
+  ```PowerShell
   import-module activedirectory
 
   New-ADGroup –name 'CONTOSO$$$' –GroupCategory Security –GroupScope DomainLocal –SamAccountName 'CONTOSO$$$'
@@ -102,7 +101,7 @@ Vi ska skapa en säkerhetsgrupp med namnet *CorpAdmins* och en användare med na
 
 2. Skriv in följande kommandon: Ersätt lösenordet ”Pass@word1” med ett annat lösenord.
 
-  ```
+  ```PowerShell
   import-module activedirectory
 
   New-ADGroup –name CorpAdmins –GroupCategory Security –GroupScope Global –SamAccountName CorpAdmins
@@ -124,7 +123,7 @@ Du måste aktivera granskning i befintliga skogar för att upprätta PAM-konfigu
 
 Logga in på en domänkontrollant som domänadministratör för varje domän och utför följande steg:
 
-1. Gå till **Start** > **Administrationsverktyg** (på Windows Server 2016 **Administrationsverktyg för Windows** ) och starta **Grupprinciphantering**.
+1. Gå till **Start** > **Administrationsverktyg** (på Windows Server 2016 **Administrationsverktyg för Windows **) och starta **Grupprinciphantering**.
 
 2. Gå till domänens princip för domänkontrollanter.  Om du har skapat en ny domän för contoso.local går du till **Skog: contoso.local** > **Domäner** > **contoso.local** > **Domänkontrollanter** > **Standardprincip för domänkontrollanter**. Ett informationsmeddelande visas.
 
@@ -140,7 +139,7 @@ Logga in på en domänkontrollant som domänadministratör för varje domän och
 
 8. Tillämpa granskningsinställningarna genom att öppna ett PowerShell-fönster och skriva:
 
-  ```
+  ```cmd
   gpupdate /force /target:computer
   ```
 
@@ -154,7 +153,7 @@ I det här avsnittet ska du konfigurera de registerinställningar som krävs fö
 
 2. Skriv följande kommandon för att konfigurera källdomänen att tillåta RPC-åtkomst (Remote Procedure Call) till databasen för hanteraren för kontosäkerhet (SAM).
 
-  ```
+  ```PowerShell
   New-ItemProperty –Path HKLM:SYSTEM\CurrentControlSet\Control\Lsa –Name TcpipClientSupport –PropertyType DWORD –Value 1
 
   Restart-Computer
@@ -193,7 +192,7 @@ Du behöver en resurs för att visa säkerhetsgruppsbaserad åtkomst med PAM.  O
 
 4. Skriv in följande kommandon:
 
-  ```
+  ```PowerShell
   mkdir c:\corpfs
 
   New-SMBShare –Name corpfs –Path c:\corpfs –ChangeAccess CorpAdmins

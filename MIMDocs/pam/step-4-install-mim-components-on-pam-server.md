@@ -2,10 +2,10 @@
 title: "Distribuera PAM steg 4 – Installera MIM | Microsoft Docs"
 description: "Installera och konfigurera MIM-tjänsten och -portalen på Privileged Access Management-servern och arbetsstationer."
 keywords: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 03/15/2017
+author: barclayn
+ms.author: barclayn
+manager: barclayn
+ms.date: 09/13/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
@@ -13,18 +13,17 @@ ms.assetid: ef605496-7ed7-40f4-9475-5e4db4857b4f
 ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 3a1ec9db6da0a77f963dde76a3efe8d92f89078d
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: b69dfc39da63ec523fb09a58661b5f8367e6042c
+ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="step-4--install-mim-components-on-pam-server-and-workstation"></a>Steg 4 – installera MIM-komponenter på PAM-servern och arbetsstationen
 
 >[!div class="step-by-step"]
 [« Steg 3](step-3-prepare-pam-server.md)
 [Steg 5 »](step-5-establish-trust-between-priv-corp-forests.md)
-
 
 På PAMSRV loggar du in som PRIV\Administratör för att kunna installera MIM-tjänsten och portalen och exempelwebbappen för portalen.
 
@@ -33,7 +32,7 @@ På PAMSRV loggar du in som PRIV\Administratör för att kunna installera MIM-tj
 
 Om du har laddat ned MIM packar du upp MIM-installationsarkivet till en ny mapp.
 
-##  <a name="run-the-service-and-portal-install-program"></a>Kör installationsprogrammet för tjänsten och portalen.  
+## <a name="run-the-service-and-portal-install-program"></a>Kör installationsprogrammet för tjänsten och portalen.
 
 Följ riktlinjerna i installationsprogrammet och slutför installationen.
 
@@ -140,13 +139,13 @@ I det här avsnittet ska du installera och konfigurera exempelwebbappen för RES
 
 3.  Skapa den nya webbplatsen i IIS med ett webbplatsnamn för exempelportalen för MIM Privileged Access Management, fysisk sökväg C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management-portal och port 8090.  Det kan du göra med följande PowerShell-kommando:
 
-  ```
+  ```PowerShell
   New-WebSite -Name "MIM Privileged Access Management Example Portal" -Port 8090   -PhysicalPath "C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Portal\"
   ```
 
 4.  Konfigurera exempelwebbappen att kunna vidarebefordra användare till REST-API:t för MIM PAM. Med en textredigerare, till exempel Anteckningar, redigerar du filen **C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management REST API\web.config**. I avsnittet **<system.webServer>** lägger du till följande rader:
 
-  ```
+  ```XML
   <httpProtocol>
     <customHeaders>
       <add name="Access-Control-Allow-Credentials" value="true"  />
@@ -160,7 +159,7 @@ I det här avsnittet ska du installera och konfigurera exempelwebbappen för RES
 
 6.  Starta om IIS med följande kommando för att ändringarna ska börja gälla.
 
-  ```
+  ```cmd
   iisreset
   ```
 
@@ -174,7 +173,7 @@ Installera MIM PAM-cmdletarna för begärande på arbetsstationen du konfigurera
 
 2.  Ladda ned **-tilläggen** till CORPWKSTN-datorn, om de inte redan finns där.
 
-3.  Packa upp mappen **Tillägg**  från arkivet till en ny mapp.
+3.  Packa upp mappen **Tillägg ** från arkivet till en ny mapp.
 
 4.  Kör installationsprogrammet **setup.exe**.
 
