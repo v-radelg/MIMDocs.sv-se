@@ -125,6 +125,7 @@
 #### [Godkänn eller avvisa en väntande PAM-begäran](./reference/privileged-access-management-approve-reject-pending-request.md)
 #### [Hämta PAM-sessionsinformation](./reference/privileged-access-management-get-session-info.md)
 ## Teknisk referens
+### [Terminologi för Microsoft Identity Manager 2016 SP1](./reference/mim-2016-sp1-terms.md)
 ### [XML-referens för RCDC (Resource Control Display Configuration)](./reference/rcd-configuration-xml-reference.md)
 ### [Körningsfelkoder för hanteringsagenten](./reference/maerrorcodes.md)
 ### [Funktionsreferens för Microsoft Identity Manager 2016](./reference/mim2016-functions-reference.md)
