@@ -5,18 +5,18 @@ keywords:
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
-ms.date: 08/18/2017
+ms.date: 10/17/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ccdd8a9f-02da-440a-81a8-354800dcd2a8
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 21bb12a70850a5f835ca6715d9683558ac6fad1d
-ms.sourcegitcommit: f2778c5fa5f0cd04e8a74fc15fa340cd118dded5
+ms.openlocfilehash: cd8191e3fdf571f4140bcdd51c54aa25bd663215
+ms.sourcegitcommit: 06add1a636720f74bc0c0f25b4100b19f1bd31da
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 10/17/2017
 ---
 # <a name="microsoft-identity-manager-2016"></a>Microsoft Identity Manager 2016
 
@@ -28,9 +28,9 @@ Förutom befintliga identity management-funktioner som ingår i [FIM](https://te
 - Nya funktioner i Certifikathanteraren
   - [Referens för certifikathanterings-REST API](./reference/certificate-management-rest-api-reference.md)
   - Stöd för topologier med flera skogar.
-  - En Windows-app för virtuella smartkort
+  - [En Windows-app för virtuella smartkort](working-with-mim-certificate-manager.md)
   - Uppdaterade händelser samt funktioner för felsökning. 
-- Självbetjäningsscenarier omfattar nu kontoupplåsning och Azure MFA-gate (multifaktorautentisering) för återställning av lösenord.
+- [Självbetjäningsscenarierna](working-with-self-service-password-reset.md) innehåller nu Account Unlock och Azure MFA () flerfaktorautentiseringsgate för återställning av lösenord.
 
 ## <a name="hybrid-experience"></a>Hybridupplevelse
 
