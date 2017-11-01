@@ -3,50 +3,54 @@ title: "Distribuera MIM Certificate Manager-appen för Windows | Microsoft Docs"
 description: "Läs mer om hur du distribuerar Certificate Manager-appen, så att  användarna kan hantera sina egna åtkomsträttigheter."
 keywords: 
 author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 03/23/2017
+ms.author: barclayn
+manager: mbaldwin
+ms.date: 10/16/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 66060045-d0be-4874-914b-5926fd924ede
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 8a4582695d41ea605f2de4e336c3a780b2b2559f
-ms.sourcegitcommit: 02fb1274ae0dc11288f8bd9cd4799af144b8feae
+ms.openlocfilehash: e472d7cdc07aa19464aa1f18447d8c5dc7d0f0ba
+ms.sourcegitcommit: 1e0626a366a41d610e6a117cdf684241eb65ec63
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 10/17/2017
 ---
-# <a name="working-with-the-mim-certificate-manager"></a>Arbeta med MIM Certificate Manager
-När du har börjat köra MIM 2016 och Certificate Manager kan du distribuera Windows Store-appen för MIM Certificate Manager så att användarna kan hantera sina fysiska smartkort, virtuella smartkort och programcertifikat. Distribution av MIM CM-appen genomförs i följande steg:
+# <a name="mim-certificate-manager-windows-store-application-deployment"></a>MIM Certificate Manager Windows store-programdistribution
 
-1.  Skapa en certifikatmall.
+När du har MIM 2016 och Certificate Manager igång kan distribuera du MIM Certificate Manager Windows store-programmet. Windows store-programmet kan användarna hantera sina fysiska smartkort, virtuella smartkort och programcertifikat. Distribution av MIM CM-appen genomförs i följande steg:
 
-2.  Skapa en profilmall.
+1. Skapa en certifikatmall.
 
-3.  Förbered appen.
+2. Skapa en profilmall.
 
-4.  Distribuera appen via SCCM eller Intune.
+3. Förbered appen.
+
+4. Distribuera appen via SCCM eller Intune.
 
 ## <a name="create-a-certificate-template"></a>Skapa en certifikatmall
+
 Du skapar en certifikatmall för CM-appen på samma sätt som du normalt skapar en certifikatmall, förutom att du måste se till att certifikatmallen är av version 3 eller senare.
 
-1.  Logga in på den server som kör AD CS (certifikatservern).
+1. Logga in på den server som kör AD CS (certifikatservern).
 
-2.  Öppna MMC.
+2. Öppna MMC.
 
-3.  Klicka på **Arkiv &gt; Lägg till/ta bort snapin-modul**.
+3. Klicka på **filen &gt; Lägg till/ta bort snapin-modulen**.
 
-4.  I listan Tillgängliga snapin-moduler klickar du på **Certifikatmallar** och sedan på **Lägg till**.
+4. I listan Tillgängliga snapin-moduler klickar du på **Certifikatmallar** och sedan på **Lägg till**.
 
-5.  Du ser nu **Certifikatmallar** under **Konsolrot** i MMC. Dubbelklicka på den för att se alla tillgängliga certifikatmallar.
+5. Du ser nu **Certifikatmallar** under **Konsolrot** i MMC. Dubbelklicka på den för att se alla tillgängliga certifikatmallar.
 
-6.  Högerklicka på mallen **Smartkortsinloggning** och klicka på **Kopiera mall**.
+6. Högerklicka på mallen **Smartkortsinloggning** och klicka på **Kopiera mall**.
 
-7.  Välj Windows Server 2008 på fliken Kompatibilitet under certifikatutfärdare, och välj Windows 8.1/Windows Server 2012 R2 under certifikatmottagare.
-    Det här steget är mycket viktigt eftersom det säkerställer att du har en certifikatmall av version 3 (eller senare), och det är endast version 3 som fungerar med appen för certifikathantering. Om du inte skapade certifikatmallen på detta sätt går det, på grund av att versionen konfigureras första gången du skapar och sparar certifikatmallen, inte att ändra den till korrekt version och du måste skapa en ny innan du fortsätter.
+7. På fliken kompatibilitet under certifikatutfärdare väljer du Windows Server 2008. Välj Windows 8.1 / Windows Server 2012 R2 under certifikatmottagare. Versionen av principmallen version anges första gången du skapar och sparar certifikatmallen. Om du inte skapade certifikatmallen sätt går det inte att ändra den till rätt version.
 
+    >[!NOTE]
+    Det här steget är viktigt eftersom det gör att du har en version 3 (eller högre) certifikatmall. Endast version 3 mallar fungerar med appen för certifikathantering.
+    
 8.  På fliken **Allmänt** i fältet **Visningsnamn** anger du det namn du vill ska visas i appens användargränssnitt, till exempel **Inloggning för virtuellt smartkort**.
 
 9. På fliken **Hantering av begäranden** ska **Syfte** ställas in på **Signatur och kryptering** under **Gör följande...** väljer du **Ställ frågor till användaren när registrering sker**.
@@ -69,11 +73,12 @@ Du skapar en certifikatmall för CM-appen på samma sätt som du normalt skapar 
 16. Välj den nya mallen du har skapat i listan och klicka på **OK**.
 
 ## <a name="create-a-profile-template"></a>Skapa en profilmall
+
 När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta bort det virtuella smartkortet och att ta bort insamlade data. CM-appen kan inte hantera insamlade data, så det är viktigt att inaktivera den. Det gör du så här:
 
 1.  Logga in på CM-portalen som en användare med administratörsbehörighet.
 
-2.  Gå till Administration &gt; Hantera profilmallar och markera rutan bredvid MIM CM Exempelprofilmall för smartkort och klicka sedan på Kopiera en markerad profilmall.
+2.  Gå till Administration &gt; hantera profilmallar. Kontrollera att kryssrutan är markerad bredvid **MIM CM exempel smartkortsinloggning Profilmall** och klicka sedan på Kopiera en markerad Profilmall.
 
 3.  Skriv in profilmallens namn och klicka på **OK**.
 
@@ -85,38 +90,39 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
 7.  Bläddra ned till slutet av sidan och klicka på **Ändra inställningar**.
 
-8.  Markera kryssrutorna bredvid **Skapa/ta bort virtuellt smartkort** och  **Distribuera admin-nyckel**.
+8.  Markera kryssrutorna bredvid **Skapa/ta bort virtuellt smartkort** och ** Distribuera admin-nyckel**.
 
 9. Under **Princip för användar-PIN** väljer du **Anges av användaren**.
 
 10. I den vänstra rutan klickar du på **Förnya princip &gt; Ändra allmänna inställningar**. Välj **Återanvänd kort vid förnyelse** och klicka på **OK**.
 
-11. Du måste inaktivera datainsamlingsobjekt för varje princip genom att klicka på principen i den vänstra rutan, markera kryssrutan bredvid **Exempeldataobjekt** och sedan klicka på **Ta bort datainsamlingsobjekt**. Klicka sedan på **OK**.
+11. Du måste inaktivera datainsamlingsobjekt för varje princip genom att klicka på principen i den vänstra rutan. Sedan måste du markera kryssrutan bredvid **exempeldataobjekt** klickar du på **ta bort datainsamlingsobjekt** och klicka sedan på **OK**.
 
 ## <a name="prepare-the-cm-app-for-deployment"></a>Förbereda CM-appen för distribution
 
-1.  Kör följande kommando i kommandotolken för att packa upp appen och extrahera innehållet i en ny undermapp med namnet appx och skapa en kopia så att du inte ändrar den ursprungliga filen.
+1. Kör följande kommando för att packa upp appen i Kommandotolken. Kommandot kommer extrahera innehållet i en ny undermapp med namnet appx och skapa en kopia så att du inte ändrar den ursprungliga filen.
 
-    ```
+    ```cmd
     makeappx unpack /l /p <app package name>.appx /d ./appx
     ren <app package name>.appx <app package name>.appx.original
     cd appx
     ```
 
-2.  Ändra namnet på den fil som heter CustomDataExample.xml till Custom.data i mappen appx
+2. Ändra namnet på den fil som heter CustomDataExample.xml till Custom.data i mappen appx
 
-3.  Öppna Custom.data-filen och ändra parametrarna efter behov.
+3. Öppna Custom.data-filen och ändra parametrarna efter behov.
 
     |||
     |-|-|
     |URL för MIMCM|FQDN för portalen som du använde för att konfigurera CM. Till exempel https://mimcmServerAddress/certificatemanagement|
-    |URL för ADFS|Ange URL:en för din AD FS om du tänker använda AD FS. Till exempel https://adfsServerSame/adfs|
+    |URL för ADFS|Ange URL:en för din AD FS om du tänker använda AD FS. Till exempel https://adfsServerSame/adfs </br> Om AD FS inte används kan du konfigurera den här inställningen med en tom sträng.  Till exempel```<ADFS URL=""/>``` |
     |PrivacyUrl|Du kan inkludera en webbadress till en sida som förklarar hanteringen av användarinformation som samlas in för certifikatregistrering.|
     |SupportMail|Du kan ange en e-postadress för supportfrågor.|
     |LobComplianceEnable|Du kan ställa in den här variabeln på sant eller falskt. Som standard är den inställd på sant.|
     |MinimumPinLength|Som standard är den inställd på 6.|
     |NonAdmin|Du kan ställa in den här variabeln på sant eller falskt. Som standard är den inställd på falskt. Ändra bara det här om du vill att användare som inte är administratörer på sina datorer ska kunna registrera och förnya certifikat.|
-
+>[!IMPORTANT]
+Ett värde måste anges för AD FS-URL. Om inget värde har angetts för Modern App kommer fel ut på första användningen.
 4.  Spara filen och avsluta redigeraren.
 
 5.  Vid signeringen av paketet skapas en signeringsfil, så du måste ta bort den ursprungliga signeringsfilen med namnet AppxSignature.p7x.
@@ -131,13 +137,13 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
 10. I Kommandotolken kör du följande kommando för att packa och signera .appx-filen på nytt,
 
-    ```
+    ```cmd
     cd ..
     makeappx pack /l /d .\appx /p <app package name>.appx
     ```
     där appaketets namn är samma namn du använde när du skapade kopian.
 
-    ```
+    ```cmd
     signtool sign /f <path\>mysign.pfx /p <pfx password> /fd "sha256" <app package name>.ap
     px
     ```
@@ -145,13 +151,13 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
 11. Arbeta med AD FS-autentisering:
 
-    -   Starta appen för det virtuella smartkortet. På så sätt blir det lättare att hitta de värden som behövs för nästa steg.
+    -  Starta appen för det virtuella smartkortet. På så sätt blir det lättare att hitta de värden som behövs för nästa steg.
 
-    -   För att lägga till appen som en klient på AD FS-servern och konfigurera CM på servern öppnar du Windows PowerShell på AD FS-servern och kör kommandot `ConfigureMimCMClientAndRelyingParty.ps1 –redirectUri <redirectUriString> -serverFQDN <MimCmServerFQDN>`
+    -  För att lägga till appen som en klient på AD FS-servern och konfigurera CM på servern öppnar du Windows PowerShell på AD FS-servern och kör kommandot `ConfigureMimCMClientAndRelyingParty.ps1 –redirectUri <redirectUriString> -serverFQDN <MimCmServerFQDN>`
 
         Följande är ConfigureMimCMClientAndRelyingParty.ps1-skriptet:
 
-        ```
+       ```PowerShell
         # HELP
 
         <#
@@ -242,13 +248,22 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
         Write-Host "RP Trust for MIM CM Service has been created"
         ```
 
-    -   Uppdatera värdena för redirectUri och serverFQDN.
+    - Uppdatera värdena för redirectUri och serverFQDN.
 
-    -   Öppna den virtuella smartkortappens inställningssida för att hitta redirectUri genom att klicka på **Inställningar** och hitta omdirigerings-URI i listan under AD FS-serveradressfältet. URI:n visas endast om en adress för AD FS-servern har konfigurerats.
+    - Öppna den virtuella smartkortappens inställningssida för att hitta redirectUri genom att klicka på **Inställningar** och hitta omdirigerings-URI i listan under AD FS-serveradressfältet. URI:n visas endast om en adress för AD FS-servern har konfigurerats.
 
-    -   serverFQDN kan endast vara MIMCM-serverns fullständiga datornamn.
+    - serverFQDN kan endast vara MIMCM-serverns fullständiga datornamn.
 
-    -   För att få hjälp med skriptet **ConfigureMIimCMClientAndRelyingParty.ps1** kör `get-help  -detailed ConfigureMimCMClientAndRelyingParty.ps1`
+    - Hjälp med den **ConfigureMIimCMClientAndRelyingParty.ps1** skript, kör: </br> 
+    ```Powershell
+     get-help  -detailed ConfigureMimCMClientAndRelyingParty.ps1
+    ```
 
 ## <a name="deploy-the-app"></a>Distribuera appen
+
 När du konfigurerar CM-appen hämtar du filen MIMDMModernApp_&lt;version&gt;_AnyCPU_Test.zip i Download Center och extraherar allt dess innehåll. .appx-filen är installationsprogrammet. Du kan distribuera den på samma sätt du normalt distribuerar appar från Windows Store, genom att använda [System Center Configuration Manager](https://technet.microsoft.com/library/dn613840.aspx) eller [Intune](https://technet.microsoft.com/library/dn613839.aspx) för att läsa in appen separat så att användare kan få åtkomst till den genom företagsportalen eller genom att den överförs direkt till deras datorer.
+
+## <a name="next-steps"></a>Nästa steg
+
+- [Konfigurera Profilmallar](https://technet.microsoft.com/library/cc708656)
+- [Hantera program för smartkort](https://technet.microsoft.com/library/cc708681)

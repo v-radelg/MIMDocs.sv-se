@@ -3,20 +3,20 @@ title: "Distribuera tjänsten för meddelanden om lösenordsändring | Microsoft
 description: "Hämta anvisningarna för att installera och konfigurera MIM:s tjänst för meddelanden om lösenordsändring på domänkontrollanten."
 keywords: 
 author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 08/01/2017
+ms.author: barclayn
+manager: mbaldwin
+ms.date: 10/12/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 97edae12-6f86-4f9f-8620-a95a096e482a
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: e0179d21752f31e55b132268e9429009e68ba89d
-ms.sourcegitcommit: 5ba5d916c0ca1e5aa501592af0cef714bfdc8afe
+ms.openlocfilehash: 6ce6f8b78d7ea3518bd5d4beeada51cbc3fdc5a3
+ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/02/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="deploy-the-mim-password-change-notification-service-on-a-domain-controller"></a>Distribuera MIM:s tjänst för meddelanden om lösenordsändring till en domänkontrollant
 
