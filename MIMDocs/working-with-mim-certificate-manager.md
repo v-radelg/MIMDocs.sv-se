@@ -90,7 +90,7 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
 7.  Bläddra ned till slutet av sidan och klicka på **Ändra inställningar**.
 
-8.  Markera kryssrutorna bredvid **Skapa/ta bort virtuellt smartkort** och ** Distribuera admin-nyckel**.
+8.  Markera kryssrutorna bredvid **Skapa/ta bort virtuellt smartkort** och  **Distribuera admin-nyckel**.
 
 9. Under **Princip för användar-PIN** väljer du **Anges av användaren**.
 
