@@ -10,11 +10,11 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
-ms.openlocfilehash: 0e039c0b05cc9088a6934c07ead09fb5250f8a81
-ms.sourcegitcommit: 81ad3ede52c3a4308b806c0c8a3fd42b5f5965b0
+ms.openlocfilehash: 171aa1a2e19ea9f78f9fadbc7368404702095d71
+ms.sourcegitcommit: e8a68039dab03d24778c6b9b583ca717db931772
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="how-do-i-provision-users-to-ad-ds"></a>Hur etablerar jag användare i AD DS
 
@@ -294,7 +294,7 @@ Följande tabeller visar konfiguration av synkroniseringsregeln för etablering 
 
 
  >[!NOTE]
-Kontrollera att du har valt endast inledande flödet för attributflöde som har det unika namnet som mål.                                                                          
+ Viktigt. Kontrollera att du har valt Endast initialflöde för attributflödet som har DN som mål.                                                                          
 
 ### <a name="step-7-create-the-workflow"></a>Steg 7: Skapa arbetsflödet
 
@@ -459,11 +459,7 @@ Kör följande körningsprofiler för att utföra dessa uppgifter.
 | Fabrikam FIMMA   | 1. Exportera <br/> 2. Deltaimport       |
 
 
-Efter importen från FIM-tjänstens databas mellanlagras Britta Simon och objektet ExpectedRuleEntry som länkar Britta till
-
-den utgående synkroniseringsregeln för AD-användaren i Fabrikam FIMMA-anslutningsplatsen. När du granskar
-
-Brittas egenskaper i anslutningsplatsen ser du också en giltig referens till objektet Expected Rule Entry bredvid de attributvärden du har konfigurerat i FIM-portalen. Följande skärm visar ett exempel på detta.
+Efter importen från FIM-tjänstdatabasen, Britta Simon och objektet ExpectedRuleEntry mellanlagras som länkar Britta för utgående synkroniseringsregeln AD-användare i Fabrikam FIMMA anslutningsplatsen. När du granskar Brittas egenskaper i anslutningsplatsen bredvid de attributvärden som du har konfigurerat i FIM-portalen hitta du också en giltig referens till objektet post förväntad regel. Följande skärm visar ett exempel på detta.
 
 ![Objektegenskaper för anslutarplats](media/how-provision-users-adds/image025.jpg)
 
