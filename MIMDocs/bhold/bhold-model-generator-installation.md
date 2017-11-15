@@ -11,10 +11,10 @@ ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
 ms.openlocfilehash: 96363fb3b0067ff5c8f8c2f32e9a855464038653
-ms.sourcegitcommit: ed8dd5563e77ef4a3345b2a52a1426859c95576a
+ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="bhold-model-generator-installation"></a>BHOLD modellen Generator Installation
 
@@ -39,7 +39,7 @@ Microsoft Access Database Engine 2010 Redistributable
 
  
 
-*Från \< * <http://daipvstf:8080/tfs/ActiveDirectory/IAM/_workitems>*\>*
+*Från \<*  <http://daipvstf:8080/tfs/ActiveDirectory/IAM/_workitems>*\>*
 
  
 
@@ -60,15 +60,15 @@ Microsoft Access Database Engine 2010 Redistributable
 |---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Använda integrerad säkerhet**                 | Anger att Windows-autentisering används för att få åtkomst till databasen.                                                                                                                                                                                                                                                                                                                                                        | Markera kryssrutan om Windows-autentisering används för att ansluta till SQL Server. Avmarkera kryssrutan om SQL Server-autentisering används. Databasen måste ha skapats innan du kör BHOLD Core installation om SQL Server-autentisering används. **Obs:** om Windows-autentisering används, du måste vara inloggad med ett konto som har serverrollen sysadmin på databasservern. **Viktigt:** används SQL Server-autentisering bara i testmiljöer. Microsoft att rekommenderar du använder Windows-autentisering för produktionsdistributioner. |
 | **Databasanvändare** och **lösenord för databas** | Anger användarnamn och lösenord för en användare med serverrollen sysadmin på databasservern. Dessa värden anges endast när SQL Server-autentisering används.                                                                                                                                                                                                                                                  | Skriv namnet här på SQL Server-användare: skriva SQL Server användarens lösenord här: </br></br> **Viktigt:** se till att det här lösenordet i en dold, säker plats.                                                                                                                                                                                                                                                                                                                                                                                                           |
-| **Databasserver** och **databasnamn**   | Anger namnet på säkerhetskopian av databasen som skapas av installationsprogrammet för BHOLD modellen Generator och NetBIOS-namnet på databasservern. Om du inte använder standard-databasserverinstans, anger du databasserverinstansen i formatet * \<server\>*\\*\<instans\> *.  Microsoft rekommenderar att du namnger säkerhetskopierade databasen med namnet på databasen BHOLD Core följt av \_säkerhetskopiering, till exempel B1_BACKUP. | Skriv namnet här server (eller server och instans): </br> Skriv namnet på databasen här:
+| **Databasserver** och **databasnamn**   | Anger namnet på säkerhetskopian av databasen som skapas av installationsprogrammet för BHOLD modellen Generator och NetBIOS-namnet på databasservern. Om du inte använder standard-databasserverinstans, anger du databasserverinstansen i formatet  *\<server\>*\\*\<instans\>* .  Microsoft rekommenderar att du namnger säkerhetskopierade databasen med namnet på databasen BHOLD Core följt av \_säkerhetskopiering, till exempel B1_BACKUP. | Skriv namnet här server (eller server och instans): </br> Skriv namnet på databasen här:
 
 ## <a name="bhold-model-generator-setup"></a>BHOLD modellen Generator installationen
 
 Logga in som medlem i gruppen Domänadministratörer om du vill installera modulen BHOLD modellen Generator, hämta följande fil och kör det som administratör på den server som du tänker installera modulen BHOLD kärnor på:
 
-- BholdModelGenerator * \<Version\>*\_Release.msi
+- BholdModelGenerator  *\<Version\>*\_Release.msi
 
-Ersätt * \<Version\> * med versionsnumret för den BHOLD modellen Generator-versionen som du installerar.
+Ersätt  *\<Version\>*  med versionsnumret för den BHOLD modellen Generator-versionen som du installerar.
 
 För att köra programfilen som administratör, högerklicka på filen och klicka sedan på **kör som administratör**.
 
