@@ -11,10 +11,10 @@ ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
 ms.openlocfilehash: aa6a263daadc4abdcad0eaaba554b6bc739fbd5f
-ms.sourcegitcommit: ed8dd5563e77ef4a3345b2a52a1426859c95576a
+ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="bhold-reporting-installation"></a>BHOLD reporting Installation
 
@@ -44,7 +44,7 @@ Logga in som medlem i gruppen Domänadministratörer för att installera rapport
 
 - BholdReporting*\<Version\>*\_Release.msi
 
-Ersätt * \<Version\> * med versionsnumret för rapportering av BHOLD-versionen som du installerar.
+Ersätt  *\<Version\>*  med versionsnumret för rapportering av BHOLD-versionen som du installerar.
 
 För att köra programfilen som administratör, högerklicka på filen och klicka sedan på **kör som administratör**.
 

@@ -11,10 +11,10 @@ ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
 ms.openlocfilehash: ef68de19bd0eabd6d9203469ecc991d496f05846
-ms.sourcegitcommit: ed8dd5563e77ef4a3345b2a52a1426859c95576a
+ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="bhold-fimmim-integration-installation"></a>BHOLD FIM/MIM integrering Installation
 
@@ -75,7 +75,7 @@ Logga in som medlem i gruppen Domänadministratörer om du vill installera modul
 
 - BholdFIMIntegration*\<Version\>*\_Release.msi
 
-Ersätt * \<Version\> * med versionsnumret för integrering av BHOLD FIM-versionen som du installerar.
+Ersätt  *\<Version\>*  med versionsnumret för integrering av BHOLD FIM-versionen som du installerar.
 
 För att köra programfilen som administratör, högerklicka på filen och klicka sedan på **kör som administratör**.
 
@@ -125,17 +125,17 @@ I följande tabell visas filerna och de ursprungliga och de ändrade versionerna
 
 Där:
 
--   *\<BHOLD_Server\> * anger namnet på BHOLD-server som hittades i den ursprungliga versionen av filen
+-   *\<BHOLD_Server\>*  anger namnet på BHOLD-server som hittades i den ursprungliga versionen av filen
 
--   *\<MIM_Server\> * anger namnet på FIM-server som hittades i den ursprungliga versionen av filen
+-   *\<MIM_Server\>*  anger namnet på FIM-server som hittades i den ursprungliga versionen av filen
 
--   *\<BHOLD_Server_FQDN\> * anger fullständigt kvalificerade domännamnet (FQDN) för BHOLD-servern
+-   *\<BHOLD_Server_FQDN\>*  anger fullständigt kvalificerade domännamnet (FQDN) för BHOLD-servern
 
--   *\<MIM_Port\> * anger du portnumret för FIM-server som hittades i den ursprungliga versionen av filen
+-   *\<MIM_Port\>*  anger du portnumret för FIM-server som hittades i den ursprungliga versionen av filen
 
--   *\<MIM_Server_FQDN\> * Anger FQDN för FIM-server
+-   *\<MIM_Server_FQDN\>*  Anger FQDN för FIM-server
 
--   *\<MIM_SSL_Port\> * anger en annan port för användning med SSL på FIM-servern
+-   *\<MIM_SSL_Port\>*  anger en annan port för användning med SSL på FIM-servern
 
 ### <a name="enable-approval-workflows-in-bhold-core"></a>Aktivera godkännandearbetsflöden i BHOLD kärnor
 
@@ -189,7 +189,7 @@ Om godkännare för en begäran för självbetjäning roll inte anges med en av 
 
 18. På den **organisatorisk enhet/root** klickar du på **ändra**.
 
-19. På den **ändra organisationsenhet attribut/root** sidan **godkännare**, typnamn domänen och användarnamnet för användaren som ska godkänna rolltilldelning förfrågningar, i formatet * \<domän\>*\\*\<användare\>*, där * \<domän\> * är den Domännamn för NetBIOS (korta) och * \<användare\> * är användarens inloggningsnamn.
+19. På den **ändra organisationsenhet attribut/root** sidan **godkännare**, typnamn domänen och användarnamnet för användaren som ska godkänna rolltilldelning förfrågningar, i formatet  *\<domän\>*\\*\<användare\>*, där  *\<domän\>*  är den Domännamn för NetBIOS (korta) och  *\<användare\>*  är användarens inloggningsnamn.
 20. Klicka på **OK**.
 
 >[!IMPORTANT]
@@ -207,7 +207,7 @@ För att ge bättre säkerhet för arbetsflödet, utöver godkännare, ska du an
 
 - meddelande*\<n\>*
 
-där * \< n \> * anger ett numeriskt suffix för att tillhandahålla flera attribut av samma typ som valfria.
+där  *\< n \>*  anger ett numeriskt suffix för att tillhandahålla flera attribut av samma typ som valfria.
 
 ### <a name="verify-approval-workflows-configured-in-the-fim-service"></a>Kontrollera godkännandearbetsflöden som konfigurerats i FIM-tjänsten
 

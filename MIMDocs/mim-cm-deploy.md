@@ -11,10 +11,10 @@ ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
 ms.openlocfilehash: 2473ef1c3d6fc5350d60d81bd508296a33343f01
-ms.sourcegitcommit: 58d6c628d3bb770669348b987cf8f52ec0576132
+ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="deploying-microsoft-identity-manager-certificate-manager-2016-mim-cm"></a>Distribuera Microsoft Identity Manager Certificate Manager 2016 (MIM CM)
 
@@ -221,7 +221,7 @@ Alla tre av ovanstående konton kan ha utökade rättigheter i din organisation 
 
 På den **ämnesnamn** avmarkerar den **Inkludera e-postnamnet i ämnesnamnet** och **e-postnamn** kryssrutorna.
 
-På den **tillägg** fliken den **tillägg som ingår i den här mallen** lista, se till att **användningsprinciper** är markerad och klicka sedan på **redigera **.
+På den **tillägg** fliken den **tillägg som ingår i den här mallen** lista, se till att **användningsprinciper** är markerad och klicka sedan på **redigera** .
 
 I den **Redigera tillägg för användningsprinciper** dialogrutan, Välj den **Krypterande filsystem** och **säker e-post** principer för program. Klicka på **ta bort**, och klicka sedan på **OK**.
 
@@ -253,7 +253,7 @@ I den **egenskaper för ny mall** dialogrutan den **allmänna** fliken den **Mal
 
 På den **hantering av begäranden** fliken, aktivera **Tillåt att den privata nyckeln exporteras**, och klicka sedan på **kryptografiproviders eller fliken kryptografi.**
 
-I den **val av Kryptografiprovider** dialogrutan inaktivera **Microsoft grundläggande kryptografiprovider v1.0**, inaktivera **Microsoft Enhanced kryptografiprovider v1.0**, aktivera ** Microsoft Enhanced RSA och AES Cryptographic Provider**, och klicka sedan på **OK**.
+I den **val av Kryptografiprovider** dialogrutan inaktivera **Microsoft grundläggande kryptografiprovider v1.0**, inaktivera **Microsoft Enhanced kryptografiprovider v1.0**, aktivera  **Microsoft Enhanced RSA och AES Cryptographic Provider**, och klicka sedan på **OK**.
 
 På den **säkerhet** fliken utför följande:
 
@@ -495,7 +495,7 @@ I det här steget ska vi installera och konfigurera Certifikatutfärdaren för F
 
 1. Konfigurera FIM CM om du vill bara kontrollera användarbehörigheterna för hanteringsåtgärder
 
-2. I den **C:\\programfiler\\Microsoft Forefront Identity Manager\\2010\\certifikathantering\\web** och gör en kopia av ** Web.config** naming kopian **web.1.config**.
+2. I den **C:\\programfiler\\Microsoft Forefront Identity Manager\\2010\\certifikathantering\\web** och gör en kopia av  **Web.config** naming kopian **web.1.config**.
 
 3. I den **Web** fönstret, högerklicka på **Web.config**, och klicka sedan på **öppna**.
 
@@ -508,7 +508,7 @@ I det här steget ska vi installera och konfigurera Certifikatutfärdaren för F
 
 6. Stäng den **Sök och Ersätt** dialogrutan.
 
-7. Du bör vara på raden ** \<lägga till key="Clm.RequestSecurity.Flags” value = ”UseUser UseGroups” /\>**. Ändra raden till ** \<lägga till key="Clm.RequestSecurity.Flags” value = ”UseUser” /\>**.
+7. Du bör vara på raden  **\<lägga till key="Clm.RequestSecurity.Flags” value = ”UseUser UseGroups” /\>**. Ändra raden till  **\<lägga till key="Clm.RequestSecurity.Flags” value = ”UseUser” /\>**.
 
 8. Stäng filen, spara alla ändringar.
 
@@ -756,7 +756,7 @@ I det här steget ska vi installera och konfigurera Certifikatutfärdaren för F
      2. I den **OID egenskaper** dialogrutan den **säkerhet** klickar du på **Avancerat**.
      3. I den **avancerade säkerhetsinställningar för OID** dialogrutan klickar du på **Lägg till**.
      4. I den **Välj användare, dator, tjänstkonto eller grupp** i dialogrutan den **ange objektnamn att välja** skriver **mimcm chefer**, och klicka sedan på **OK**.
-     5. I den **Behörighetspost för OID** dialogrutan ser du till att behörigheterna som gäller för **objektet och alla underordnade objekt**, klickar du på **fullständig kontroll**, och klicka sedan på ** OK**.
+     5. I den **Behörighetspost för OID** dialogrutan ser du till att behörigheterna som gäller för **objektet och alla underordnade objekt**, klickar du på **fullständig kontroll**, och klicka sedan på  **OK**.
      6. I den **avancerade säkerhetsinställningar för OID** dialogrutan klickar du på **OK**.
      7. I den **OID egenskaper** dialogrutan klickar du på **OK**.
      8. Stäng **Active Directory-platser och tjänster**.

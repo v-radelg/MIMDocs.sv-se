@@ -11,10 +11,10 @@ ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
 ms.openlocfilehash: 33fbe63528d5d7c543ae286f934654538782b4d5
-ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
+ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="bhold-core-installation"></a>BHOLD-Core-installation
 
@@ -109,7 +109,7 @@ Innan du börjar installera modulen BHOLD Core, måste förberedas för att ange
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Använda integrerad säkerhet**                    | Anger att Windows-autentisering används för att få åtkomst till databasen.                                                                                                                                                                                                     | Markera kryssrutan om Windows-autentisering används för att ansluta till SQL Server. Avmarkera kryssrutan om SQL Server-autentisering används. Databasen måste ha skapats innan du kör BHOLD Core installation om SQL Server-autentisering används. **Obs:** om Windows-autentisering används, du måste vara inloggad med ett konto som har serverrollen sysadmin på databasservern. |
 | **Databasanvändare** och **lösenord för databas** | Anger användarnamn och lösenord för en användare med serverrollen sysadmin på databasservern. Dessa värden anges endast när SQL Server-autentisering används.                                                                                               | Skriv namnet här på SQL Server-användare: skriva SQL Server användarens lösenord här: **Obs:** se till att det här lösenordet i en dold, säker plats.                                                                                                                                                                                                                                                  |
-| **Databasserver** och **databasnamn**   | Anger namnet på databasen och NetBIOS-namnet på databasservern (standard: b1) som skapas av installationsprogrammet för BHOLD-kärnor. Om du inte använder standard-databasserverinstans, anger du databasserverinstansen i formatet * \<server\>*\\*\<instans\> *. | Skriv namnet här server (eller server och instans): skriva namnet på databasen här:                                                                                                                                                                                                                                                                                                                   |
+| **Databasserver** och **databasnamn**   | Anger namnet på databasen och NetBIOS-namnet på databasservern (standard: b1) som skapas av installationsprogrammet för BHOLD-kärnor. Om du inte använder standard-databasserverinstans, anger du databasserverinstansen i formatet  *\<server\>*\\*\<instans\>* . | Skriv namnet här server (eller server och instans): skriva namnet på databasen här:                                                                                                                                                                                                                                                                                                                   |
 | **Kontrollera begränsningar för databasanvändare**    | Föråldrad.                                                                                                                                                                                                                                                                 | Ändra inte standardvärdet                                                                                                                                                                                                                                                                                                                                                                       |
 |                                                |                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                       |
 |                                                |                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -118,9 +118,9 @@ Innan du börjar installera modulen BHOLD Core, måste förberedas för att ange
 
 Logga in som medlem i gruppen Domänadministratörer om du vill installera modulen BHOLD kärnor, hämta följande fil och kör det som administratör på den server som du tänker installera modulen BHOLD kärnor på: 
 
-- BholdCore * \<Version\>*\_Release.msi
+- BholdCore  *\<Version\>*\_Release.msi
 
-Ersätt * \<Version\> * med versionsnumret för BHOLD Core-versionen som du installerar.
+Ersätt  *\<Version\>*  med versionsnumret för BHOLD Core-versionen som du installerar.
 
 För att köra programfilen som administratör, högerklicka på filen och klicka sedan på **kör som administratör**.
 
@@ -142,7 +142,7 @@ Om du vill utföra den här proceduren måste du vara medlem i gruppen Administr
 
 3.  I guiden Ny inkommande regel klickar du på **Port**, och klicka sedan på **nästa**.
 
-4.  Se till att **TCP** är markerad i **specifika lokala portar**, Skriv portnumret standard BHOLD kärnor (5151) eller portnumret som du angav när du installerade BHOLD kärnor och klicka sedan på ** Nästa**.
+4.  Se till att **TCP** är markerad i **specifika lokala portar**, Skriv portnumret standard BHOLD kärnor (5151) eller portnumret som du angav när du installerade BHOLD kärnor och klicka sedan på  **Nästa**.
 
 5.  Se till att **tillåter anslutningen** är markerad och klicka sedan på **nästa**.
 
@@ -175,13 +175,13 @@ Medlemskap i **Domänadministratörer**, eller motsvarande krävs för att slutf
 
 #### <a name="to-establish-the-spn-of-the-bhold-website"></a>Att fastställa SPN för BHOLD-webbplats
 
-1.  Klicka på domänkontrollanten för Active Directory Domain Services **starta**, klickar du på **alla program**, klickar du på **tillbehör**, högerklicka på **kommandotolk **, och klicka sedan på **kör som administratör**.
+1.  Klicka på domänkontrollanten för Active Directory Domain Services **starta**, klickar du på **alla program**, klickar du på **tillbehör**, högerklicka på **kommandotolk** , och klicka sedan på **kör som administratör**.
 
-2.  Skriv följande kommando vid kommandotolken och tryck sedan på RETUR: setspn – S HTTP / * \<networkalias\> \<domän\> * \\ * \<accountname\> * där:
+2.  Skriv följande kommando vid kommandotolken och tryck sedan på RETUR: setspn – S HTTP /  *\<networkalias\> \<domän\>*  \\  *\<accountname\>*  där:
 
-    -   *\<networkalias\> * är den adress som klienter använder för att kontakta BHOLD-webbplats
+    -   *\<networkalias\>*  är den adress som klienter använder för att kontakta BHOLD-webbplats
 
-    -   *\<domän\>*\\*\<accountname\> * heter domänen och användarnamnet BHOLD Core kontot som du skapade när du installerade BHOLD kärnor.
+    -   *\<domän\>*\\*\<accountname\>*  heter domänen och användarnamnet BHOLD Core kontot som du skapade när du installerade BHOLD kärnor.
 
 3.  Upprepa det föregående steget för alla andra namn som klienter använder för att kontakta BHOLD-webbplats till exempel CNAME-alias, namn som innehåller ett fullständigt kvalificerat domännamn eller namn som innehåller ett NetBIOS-domännamn (korta).
 
@@ -205,7 +205,7 @@ Du måste vara inloggad som medlem i gruppen Domänadministratörer utföra den 
 
 1.  Klicka på **starta**, klickar du på **alla program**, och klicka sedan på **Internet Explorer**.
 
-2.  Ange i adressfältet, där * \<server\> * är namnet på webbplatsservern BHOLD och * \<port\> * binds portnummer till webbplatsen.
+2.  Ange i adressfältet, där  *\<server\>*  är namnet på webbplatsservern BHOLD och  *\<port\>*  binds portnummer till webbplatsen.
 
 3.  Klicka på **Start**, klickar du på **värden**, och klicka sedan på **ändra**.
 

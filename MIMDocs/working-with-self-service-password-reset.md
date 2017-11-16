@@ -12,12 +12,15 @@ ms.technology: security
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: c6786ea653f178b25ea3da4fbd3b01d21b79c622
-ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
+ms.openlocfilehash: 90c773c30b0ab23ad29ca1a215745bf59b188764
+ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/14/2017
 ---
+>[!IMPORTANT]
+På grund av ett meddelande om utfasning av Azure Multi-Factor Authentication SDK. Azure MFA SDK ska ha stöd för befintliga kunder fram till datumet för tillbakadragandet av 01 oktober 2018. Nya kunder och aktuella kunder kommer inte att hämta SDK längre via den klassiska Azure-portalen. Om du vill hämta du behöver nå ut till Azure kundsupport för att ta emot dina autentiseringsuppgifter för MFA-paketet. <br> Utvecklingsgruppen Microsoft arbetar på Planering av MFA ändringar genom att integrera med MFA-serverns SDK. Detta tas med i kommande snabbkorrigeringen i tidig 2018.
+
 # <a name="working-with-self-service-password-reset"></a>Arbeta med självbetjäning för återställning av lösenord
 Microsoft Identity Manager 2016 innehåller ytterligare funktioner för återställning av lösenord via självbetjäning. Den här funktionen har förbättrats med flera viktiga funktioner:
 
@@ -68,7 +71,7 @@ I nästa avsnitt ställer du in Azure MFA-leverantören i Microsoft Azure Active
 
 3.  Klicka på **Apptjänster &gt; Active Directory &gt; Leverantör av multifaktorautent. &gt; Snabbregistrering**.
 
-![Bild av  snabbregistrering av MFA i Azure-portalen](media/MIM-SSPR-Azureportal.png)
+![Azure portaler snabbt skapa bild av MFA](media/MIM-SSPR-Azureportal.png)
 
 4.  I fältet **Namn** anger du **SSPRMFA** och klickar sedan på **Skapa**.
 
@@ -82,7 +85,7 @@ I nästa avsnitt ställer du in Azure MFA-leverantören i Microsoft Azure Active
 
 7.  I vänsterpanelen i det nya fönstret, under **Konfigurera** klickar du på **Inställningar**.
 
-8.  Gå till **Bedrägerivarning** och avmarkera **Blockera användare när bedrägeri rapporteras**. Syftet med detta är att förhindra att hela tjänsten spärras.
+8.  Under **bedrägeriförsök**, avmarkera ** Blockera användare när bedrägeri rapporteras. Syftet med detta är att förhindra att hela tjänsten spärras.
 
 9. I det **Azure Multi-Factor Authentication**-fönster som öppnas klickar du på **SDK** under **Hämtade filer** på menyn till vänster.
 
@@ -136,7 +139,7 @@ Användare i din organisation kan nu registrera sig för att få sina lösenord 
 
 #### <a name="register-users-for-password-reset"></a>Registrera användare för lösenordsåterställning
 
-1.  Användare öppnar en webbläsare och navigerar till portalen för registrering av återställning av MIM-lösenordet.  (Normalt konfigureras den här portalen med Windows-autentisering).  I portalen får de uppge sitt användarnamn och lösenord igen för att bekräfta sin identitet.
+1.  En användare kommer att starta en webbläsare och navigera till MIM återställa Lösenordsregistreringsportal.  (Normalt konfigureras den här portalen med Windows-autentisering).  I portalen får de uppge sitt användarnamn och lösenord igen för att bekräfta sin identitet.
 
     De måste gå till portalen för lösenordsregistrering och autentiseras med sitt användarnamn och lösenord
 
@@ -165,7 +168,7 @@ Genom att installera MIM-tillägg och -förlängningar på en domänansluten dat
 
 2.  Användaren styrs till att autentiseras. Om MFA har konfigurerats får användaren ett telefonsamtal.
 
-3.  Det som händer i bakgrunden är att Azure MFA ringer upp det nummer användaren angav vid registreringen för tjänsten.
+3.  I bakgrunden är vad som händer att Azure MFA platser ett telefonsamtal till det nummer användaren gav när de registrerat dig för tjänsten.
 
 4.  Användare som svarar i telefonen blir ombedda att trycka på fyrkant, #, på telefonen. Användaren klickar sedan på **Nästa** i portalen.
 
@@ -182,7 +185,7 @@ Genom att installera MIM-tillägg och -förlängningar på en domänansluten dat
 
 1.  Användaren kan öppna en webbläsare, navigera till **portalen för återställning av lösenord**, ange sitt lösenord och klicka på **Nästa**.
 
-    Om MFA har konfigurerats får användaren ett telefonsamtal. Det som händer i bakgrunden är att Azure MFA ringer upp det nummer användaren angav vid registreringen för tjänsten.
+    Om MFA har konfigurerats får användaren ett telefonsamtal. I bakgrunden är vad som händer att Azure MFA platser ett telefonsamtal till det nummer användaren gav när de registrerat dig för tjänsten.
 
     Användare som svarar i telefonen uppmanas att trycka på fyrkant, #, på telefonen. Användaren klickar sedan på **Nästa** i portalen.
 

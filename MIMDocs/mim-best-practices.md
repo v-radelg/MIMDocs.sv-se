@@ -11,11 +11,11 @@ ms.prod: identity-manager-2016
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
-ms.openlocfilehash: 694ec1e0d6577c4335fd75ab0984aed9a0e4f220
-ms.sourcegitcommit: 8edd380f54c3e9e83cfabe8adfa31587612e5773
+ms.openlocfilehash: fe361c3f6dd85a478d655a910f0f3ec9802128b0
+ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/19/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="microsoft-identity-manager-2016-best-practices"></a>Rekommenderade metoder för Microsoft Identity Manager 2016
 
@@ -189,8 +189,7 @@ MANUAL
 ALTER FULLTEXT INDEX ON [fim].[ObjectValueXml] SET CHANGE_TRACKING = MANUAL
 ```
 
-Det är viktigt att du förstår diskkraven för SQL Server-återställningsmodellen. Beroende på schemat för säkerhetskopiering kan du överväga att använda enkelt återställningsläge under den inledande systeminläsningen för att begränsa diskutrymmesanvändningen, men du måste förstå vad detta innebär ur dataförlustperspektiv.
-När du använder fullständigt återställningsläge måste du hantera diskanvändningen via säkerhetskopieringar, som omfattar täta säkerhetskopieringar av transaktionsloggen för att förhindra hög diskutrymmesanvändning.
+Det är viktigt att du förstår diskkraven för SQL Server-återställningsmodellen. Beroende på schemat för säkerhetskopiering kan du överväga att använda enkelt återställningsläge under den inledande systeminläsningen för att begränsa diskutrymmesanvändningen, men du måste förstå vad detta innebär ur dataförlustperspektiv. När du använder fullständigt återställningsläge måste du hantera diskanvändningen via säkerhetskopieringar, som omfattar täta säkerhetskopieringar av transaktionsloggen för att förhindra hög diskutrymmesanvändning.
 
 >[!IMPORTANT]
 Om du inte implementerar dessa metoder kan det leda till hög diskutrymmesanvändning, som eventuellt kan leda till att diskutrymmet tar slut. Du hittar mer information om det här avsnittet i [Recovery Model Overview](http://go.microsoft.com/fwlink/?LinkID=185370) (Översikt över återställningsmodell). [Guide för säkerhetskopiering och återställning av FIM](http://go.microsoft.com/fwlink/?LinkID=165864) innehåller ytterligare information.
@@ -200,7 +199,6 @@ Om du inte implementerar dessa metoder kan det leda till hög diskutrymmesanvän
 Under den inledande inläsningen bör du bara använda den lägsta konfiguration som krävs av FIM-konfigurationen för hanteringsprincipreglerna (MPR) och uppsättningsdefinitionerna. När inläsningen är klar kan du skapa ytterligare uppsättningar som krävs för distributionen. Använd inställningen Kör vid principuppdatering på åtgärdsarbetsflöden för att verkställa dessa principer retroaktivt på inlästa data.
 
 ### <a name="step-3-configure-and-populate-the-fim-service-with-external-identity-data"></a>Steg 3: Konfigurera och fylla i FIM-tjänsten med externa identitetsdata
-
 
 Du bör nu följa de metoder som beskrivs i Hur synkroniserar jag användare från Active Directory
 
@@ -224,13 +222,11 @@ Utför följande steg för varje källhanteringsagent som är en del av initieri
 
 ### <a name="step-4-apply-your-full-mim-configuration"></a>Steg 4: Verkställa den fullständiga MIM-konfigurationen
 
-
 När den första datainläsningen har slutförts bör du verkställa den fullständiga MIM-konfigurationen för distributionen.
 
 Beroende på dina scenarier kan detta omfatta att skapa ytterligare uppsättningar, MPR och arbetsflöden. Vid eventuella principer som du måste verkställa retroaktivt på alla befintliga objekt i systemet använder du inställningen Kör vid principuppdatering på åtgärdsarbetsflöden för att verkställa dessa principer retroaktivt på inlästa data.
 
 ### <a name="step-5-reconfigure-sql-to-previous-settings"></a>Steg 5: Konfigurera om SQL till tidigare inställningar
-
 
 Kom ihåg att ändra SQL-inställningen till dess normala inställningar. Du måste bland annat:
 
@@ -267,8 +263,7 @@ ActivityInformationConfiguration versionsnumret för att exakt kunna hänvisa ti
 
 ### <a name="avoid-cyclic-references"></a>Undvik cykliska referenser
 
-Normal rekommenderas inte cykliska referenser i en MIM-konfiguration.
-Cykler uppstår dock ibland när uppsättning A hänvisar till uppsättning B och uppsättning B också hänvisar till uppsättning A. För att undvika problem med cykliska referenser bör du ändra definitionen i uppsättning A eller uppsättning B så att de båda inte hänvisar till varandra. Starta sedan om migreringsprocessen. Om du har cykliska referenser och cmdlet:en Compare-FIMConfig ger ett fel som resultat måste du bryta cykeln manuellt. Eftersom cmdlet:en Compare-FIMConfig skapar en lista med ändringar i prioritetsordning får det inte finnas några cykler bland referenserna för konfigurationsobjekt.
+Normal rekommenderas inte cykliska referenser i en MIM-konfiguration. Cykler uppstår dock ibland när uppsättning A hänvisar till uppsättning B och uppsättning B också hänvisar till uppsättning A. För att undvika problem med cykliska referenser bör du ändra definitionen i uppsättning A eller uppsättning B så att de båda inte hänvisar till varandra. Starta sedan om migreringsprocessen. Om du har cykliska referenser och cmdlet:en Compare-FIMConfig ger ett fel som resultat måste du bryta cykeln manuellt. Eftersom cmdlet:en Compare-FIMConfig skapar en lista med ändringar i prioritetsordning får det inte finnas några cykler bland referenserna för konfigurationsobjekt.
 
 ## <a name="security"></a>Säkerhet
 
@@ -394,17 +389,16 @@ MIM 2016 rensar som standard förfallna systemobjekt, vilket omfattar slutförda
 
 MIM erbjuder två typer av MPR, Begäran och Uppsättningsövergång:
 
--   MPR för begäran (RMPR)
+-  MPR för begäran (RMPR)
 
- - Används för att definiera åtkomstkontrollprincipen (autentisering, auktorisering och åtgärd) för åtgärderna Skapa, Läsa, Uppdatera eller Ta bort (Create, Read, Update eller Delete, CRUD) mot resurser.
- - Tillämpas när en CRUD-åtgärd utfärdas mot en målresurs i FIM.
-   - Omfattar de matchande kriterier som definieras i regeln, d.v.s. de CRUD-begäranden som regeln gäller för.
+  - Används för att definiera åtkomstkontrollprincipen (autentisering, auktorisering och åtgärd) för åtgärderna Skapa, Läsa, Uppdatera eller Ta bort (Create, Read, Update eller Delete, CRUD) mot resurser.
+  - Tillämpas när en CRUD-åtgärd utfärdas mot en målresurs i FIM.
+  - Omfattar de matchande kriterier som definieras i regeln, d.v.s. de CRUD-begäranden som regeln gäller för.
 
-
--   MPR för uppsättningsövergång (TMPR)
- - Används för att definiera principer oavsett hur objektet har fått aktuellt tillstånd som representeras av övergångsuppsättningen. Använd TMPR för modellera rättighetsprinciper.
- - Tillämpas när en resurs går in i eller lämnar en associerad uppsättning.
- - Omfattar medlemmarna i uppsättningen.
+- MPR för uppsättningsövergång (TMPR)
+  - Används för att definiera principer oavsett hur objektet har fått aktuellt tillstånd som representeras av övergångsuppsättningen. Använd TMPR för modellera rättighetsprinciper.
+  - Tillämpas när en resurs går in i eller lämnar en associerad uppsättning.
+  - Omfattar medlemmarna i uppsättningen.
 
 >[ANMÄRKNING] Mer information finns i [Utforma regler för affärsprinciper](http://go.microsoft.com/fwlink/?LinkID=183691).
 
@@ -413,18 +407,14 @@ MIM erbjuder två typer av MPR, Begäran och Uppsättningsövergång:
 Använd principen om lägsta behörighet när konfigurationen verkställs. MPR styr åtkomstprincipen för FIM-distributionen. Aktivera endast de funktioner som används av de flesta användare. Det är till exempel inte alla användare som använder FIM för hantering av grupper, så kopplade grupphanterings-MPR ska inaktiveras. FIM levereras med de flesta icke-administratörsbehörigheterna inaktiverade som standard.
 
 #### <a name="duplicate-built-in-mprs-instead-of-directly-modifying"></a>Duplicera inbyggda MPR i stället för att ändra direkt
-
 Om du behöver ändra inbyggda MPR bör du skapa en ny MPR med den konfiguration som krävs och inaktivera inbyggd MPR. Detta säkerställer att eventuella framtida ändringar i inbyggda MPR som införs genom uppgraderingsprocessen inte påverkar systemkonfigurationen negativt.
 
 #### <a name="end-user-permissions-should-use-explicit-attribute-lists-scoped-to-users-business-needs"></a>Behörighet för slutanvändare bör använda explicita attributlistor som omfattar användarnas affärsbehov
-
-Om explicita attributlistor används hjälper det till att förhindra att behörighet beviljas av misstag till obehöriga användare när attribut läggs till i objekt.
-Administratörer bör behöva bevilja åtkomst explicit till nya attribut istället för att försöka ta bort åtkomsten.
+Om explicita attributlistor används hjälper det till att förhindra att behörighet beviljas av misstag till obehöriga användare när attribut läggs till i objekt. Administratörer bör behöva bevilja åtkomst explicit till nya attribut istället för att försöka ta bort åtkomsten.
 
 Åtkomst till data bör begränsas till användarnas affärsbehov. Gruppmedlemmar bör till exempel inte ha åtkomst till filterattributet för den grupp de är medlemmar i. Filtret kan oavsiktligt avslöja organisationsdata som användaren normalt inte ska ha åtkomst till.
 
 #### <a name="mprs-should-reflect-effective-permissions-in-the-system"></a>MPR bör återspegla gällande behörigheter i systemet
-
 Undvik att bevilja behörighet till attribut som användaren aldrig kan använda. Du bör till exempel inte bevilja behörighet till att ändra grundläggande resursattribut som objectType. Trots MPR nekar systemet till alla försök att ändra en resurstyp efter att den har skapats.
 
 #### <a name="read-permissions-should-be-separate-from-modify-and-create-permissions-when-using-explicit-attributes-in-mprs"></a>Läsbehörighet ska vara separat från behörigheter för att ändra och skapa när du använder explicita attribut i MPR
@@ -443,12 +433,9 @@ För attribut med samma åtkomstkrav som inte förväntas att ändras kan du fö
 
 Behörigheter definieras som en positiv försäkran i FIM. Eftersom FIM inte stöder nekande behörigheter blir det svårt att ange undantag i behörigheterna om man ger obegränsad åtkomst till en resurs. Rekommenderad metod är att endast bevilja de behörigheter som behövs.
 
->[!NOTE]
-Avsnittet om rättigheter följer nedan. Jag undrar hur man sammanfogar dem för att undvika att skapa 5 nivårubriker
 #### <a name="use-tmprs-to-define-custom-entitlements"></a>Använd TMPR för att definiera anpassade rättigheter
 
-Använd MPR för uppsättningsövergång (TMPR) i stället för RMPR för att definiera anpassade rättigheter.
-TMPR utgör en tillståndsbaserad modell för att tilldela eller ta bort rättigheter baserat på medlemskap i definierade övergångsuppsättningar, eller roller, och medföljande arbetsflödesaktiviteter. TMPR ska alltid definieras i par, ett för resurser som går in och ett för resurser som går ut. Dessutom bör varje övergångs-MPR innehålla separata arbetsflöden för etablerings- och borttagningsaktiviteter.
+Använd MPR för uppsättningsövergång (TMPR) i stället för RMPR för att definiera anpassade rättigheter. TMPR utgör en tillståndsbaserad modell för att tilldela eller ta bort rättigheter baserat på medlemskap i definierade övergångsuppsättningar, eller roller, och medföljande arbetsflödesaktiviteter. TMPR ska alltid definieras i par, ett för resurser som går in och ett för resurser som går ut. Dessutom bör varje övergångs-MPR innehålla separata arbetsflöden för etablerings- och borttagningsaktiviteter.
 
 >[!NOTE]
 Eventuella borttagningsarbetsflöden bör säkerställa att attributet Kör vid principuppdatering är inställt på sant.
@@ -461,8 +448,7 @@ När du skapar ett TMPR-par aktiverar du Uppsättningsövergång i MPR sist. Den
 
 Etableringsarbetsflöden bör först kontrollera för att fastställa om målresursen redan har etablerats i enlighet med rättigheten. Om den har det ska den inte göra någonting.
 
-Borttagningsarbetsflöden bör först kontrollera för att fastställa om målresursen har etablerats. Om den har det ska målresursen tas bort.
-Annars ska den inte göra någonting.
+Borttagningsarbetsflöden bör först kontrollera för att fastställa om målresursen har etablerats. Om den har det ska målresursen tas bort. Annars ska den inte göra någonting.
 
 #### <a name="select-run-on-policy-update-for-tmprs"></a>Välj Kör vid principuppdatering för TMPR
 
@@ -494,19 +480,17 @@ Ta bort en rättighet men låta de aktuella medlemmarna vara (t.ex. sluta använ
 
 ### <a name="sets"></a>Uppsättningar
 
-När du använder de rekommenderade metoderna för uppsättningar måste du överväga effekten av optimeringen på hanterbarheten och hur enkel framtida administration blir.
-Lämplig testning med förväntad produktionsskala ska utföras för att identifiera den rätta balansen mellan prestanda och hanterbarhet innan dessa rekommendationer verkställs.
+När du använder de rekommenderade metoderna för uppsättningar måste du överväga effekten av optimeringen på hanterbarheten och hur enkel framtida administration blir. Lämplig testning med förväntad produktionsskala ska utföras för att identifiera den rätta balansen mellan prestanda och hanterbarhet innan dessa rekommendationer verkställs.
 
 >[!NOTE]
-Alla följande riktlinjer gäller dynamiska uppsättningar och dynamiska grupper.
+> Alla följande riktlinjer gäller dynamiska uppsättningar och dynamiska grupper.
 
 
 #### <a name="minimize-the-use-of-dynamic-nesting"></a>Minska användningen av dynamisk kapsling
 
 Det här gäller filtret i en uppsättning som hänvisar till attributet ComputedMember i en annan uppsättning. En vanlig orsak till kapslade uppsättningar är att undvika att duplicera ett medlemskapsvillkor över flera uppsättningar. Även om den här metoden kan ge bättre hanterbarhet för uppsättningarna försämras prestanda. Du kan förbättra prestandan genom att duplicera medlemskapsvillkoren för en kapslad uppsättning i stället för att kapsla själva uppsättningen.
 
-Det kan hända att du påträffar fall då du inte kan undvika kapsling av uppsättningar för att tillfredsställa ett funktionskrav. Det här är de huvudsakliga situationer då du bör kapsla uppsättningar. Kapsling av uppsättningar måste till exempel användas på följande sätt för att definiera uppsättningen för alla grupper utan ägare som är heltidsmedarbetare: `/Group[not(Owner =
-/Set[ObjectID = ‘X’]/ComputedMember]`, där ”X” är uppsättningens ObjectID för alla heltidsmedarbetare.
+Det kan hända att du påträffar fall då du inte kan undvika kapsling av uppsättningar för att tillfredsställa ett funktionskrav. Det här är de huvudsakliga situationer då du bör kapsla uppsättningar. Kapsling av uppsättningar måste till exempel användas på följande sätt för att definiera uppsättningen för alla grupper utan ägare som är heltidsmedarbetare: `/Group[not(Owner = /Set[ObjectID = ‘X’]/ComputedMember]`, där ”X” är uppsättningens ObjectID för alla heltidsmedarbetare.
 
 #### <a name="minimize-the-use-of-negative-conditions"></a>Minska användningen av negativa villkor
 
@@ -540,8 +524,7 @@ Communication Foundation (WCF). Det här alternativet är inaktiverat som standa
 
 #### <a name="do-not-map-an-authorization-workflow-to-the-password-reset-process"></a>Mappa inte ett auktoriseringsarbetsflöde till processen för lösenordsåterställning
 
-Du bör inte koppla ett auktoriseringsarbetsflöde till en åtgärd för lösenordsåterställning.
-Lösenordsåterställning kräver ett synkront svar, och auktoriseringsarbetsflöden som innehåller aktiviteter som exempelvis godkännandeaktiviteten är asynkrona.
+Du bör inte koppla ett auktoriseringsarbetsflöde till en åtgärd för lösenordsåterställning. Lösenordsåterställning kräver ett synkront svar, och auktoriseringsarbetsflöden som innehåller aktiviteter som exempelvis godkännandeaktiviteten är asynkrona.
 
 #### <a name="do-not-map-multiple-action-activities-to-password-reset"></a>Mappa inte flera åtgärdsaktiviteter till lösenordsåterställning
 

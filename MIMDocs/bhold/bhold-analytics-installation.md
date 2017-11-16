@@ -11,10 +11,10 @@ ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
 ms.openlocfilehash: 631e08667e5d1535d8f63cc297aad360080f8b20
-ms.sourcegitcommit: ed8dd5563e77ef4a3345b2a52a1426859c95576a
+ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="bhold-analytics-installation"></a>BHOLD Analytics Installation
 
@@ -41,7 +41,7 @@ Logga in som medlem i gruppen Domänadministratörer om du vill installera modul
 
 - BholdAnalytics*\<Version\>*\_Release.msi
 
-Ersätt * \<Version\> * med versionsnumret för BHOLD Analytics-versionen som du installerar.
+Ersätt  *\<Version\>*  med versionsnumret för BHOLD Analytics-versionen som du installerar.
 
 För att köra programfilen som administratör, högerklicka på filen och klicka sedan på **kör som administratör**.
 
