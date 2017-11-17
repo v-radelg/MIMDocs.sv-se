@@ -5,17 +5,17 @@ keywords:
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
-ms.date: 08/18/2017
+ms.date: 11/15/2017
 ms.topic: reference
 ms.prod: identity-manager-2016
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
-ms.openlocfilehash: fe361c3f6dd85a478d655a910f0f3ec9802128b0
-ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
+ms.openlocfilehash: 7f56882bf005de6c888997c1bf6a9e2feaea410c
+ms.sourcegitcommit: 42253562ac2f9ed689e9db9d0c470213b7926883
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="microsoft-identity-manager-2016-best-practices"></a>Rekommenderade metoder för Microsoft Identity Manager 2016
 
@@ -90,7 +90,7 @@ Beroende på hur mycket minne som finns på SQL Server och om du delar SQL Serve
   WITH OVERRIDE
   ```
 
-  Det här exemplet konfigurerar om SQL Server så att den inte använder mer än 12 gigabyte (GB) minne.
+  Det här exemplet konfigurerar SQLServer för att använda mer än 12 gigabyte (GB) minne.
 
 4.  Verifiera inställningen med hjälp av följande fråga:
 
@@ -108,13 +108,16 @@ Beroende på hur mycket minne som finns på SQL Server och om du delar SQL Serve
 
 ### <a name="backup-and-recovery-configuration"></a>Konfiguration av säkerhetskopiering och återställning
 
-Normalt bör du säkerhetskopiera databasen enligt organisationens säkerhetskopieringsprinciper. Om inkrementella säkerhetskopior inte är planerade bör databasen ställas in på enkelt återställningsläge. Se till att du förstår innebörden av de olika återställningsmodellerna innan du implementerar en säkerhetskopieringsstrategi, samt diskutrymmeskraven för dessa modeller. Den fullständiga återställningsmodellen kräver täta loggsäkerhetskopior för att undvika hög diskutrymmesanvändning. Mer information finns i [Recovery Model Overview](http://go.microsoft.com/fwlink/?LinkID=185370) (Översikt över återställningsmodell) och [Guide för säkerhetskopiering och återställning av FIM 2010](http://go.microsoft.com/fwlink/?LinkID=165864).
+I allmänhet bör du arbeta med databasadministratören för att utforma en strategi för säkerhetskopiering och återställning. Vissa rekommendationerna omfattar:
+- Säkerhetskopiera databasen enligt organisationens princip för säkerhetskopiering. 
+- Om inkrementella säkerhetskopior inte är planerade bör databasen ställas in på enkelt återställningsläge. 
+- Se till att du förstår följderna av olika återställningsmodeller innan du implementerar din strategi för säkerhetskopiering. Läs om kraven på diskutrymme för dessa modeller. Den fullständiga återställningsmodellen kräver täta loggsäkerhetskopior för att undvika hög diskutrymmesanvändning. 
 
-## <a name="create-a-backup-administrator-account-for-the-fimservice-after-installation"></a>Skapa ett administratörskonto för säkerhetskopiering för FIM-tjänsten efter installation
+Mer information finns i [Recovery Model Overview](http://go.microsoft.com/fwlink/?LinkID=185370) (Översikt över återställningsmodell) och [Guide för säkerhetskopiering och återställning av FIM 2010](http://go.microsoft.com/fwlink/?LinkID=165864).
 
+## <a name="create-a-backup-administrator-account-for-the-fim-service-after-installation"></a>Skapa ett administratörskonto för säkerhetskopiering för FIM-tjänsten efter installationen
 
->[!IMPORTANT]
-Medlemmar i FIM-tjänstens administratörsuppsättning har unika behörigheter som är viktiga för FIM-distributionen. Om du inte kan logga in som en del i administratörsuppsättningen är den enda lösningen att återgå till en tidigare säkerhetskopia av systemet. Vi rekommenderar att du åtgärdar denna situation genom att lägga till andra användare i den administrativa uppsättningen för FIM som en del av konfigurationen efter installation.
+Medlemmar i uppsättningen av FIM-tjänst-administratörer har unika behörigheter som är nödvändiga för att fungera i MIM-distributionen. Om du inte logga in som en del av uppsättningen administratörer är den enda lösningen att återställa en tidigare säkerhetskopia av systemet. Vi rekommenderar att du åtgärdar denna situation genom att lägga till andra användare i den administrativa uppsättningen för FIM som en del av konfigurationen efter installation.
 
 ## <a name="fim-service"></a>FIM-tjänst
 
@@ -144,7 +147,7 @@ Mer information finns i [Configure Message Delivery Restrictions](http://go.micr
 
 ### <a name="disable-sharepoint-indexing"></a>Inaktivera SharePoint-indexering
 
-Vi rekommenderar att du inaktiverar Microsoft Office SharePoint®-indexering. Det finns inga dokument som måste vara indexerade och indexering orsakar många poster i felloggen och utgör en risk för prestandaproblem med FIM 2010. Inaktivera SharePoint-indexering
+Vi rekommenderar att du inaktiverar Microsoft Office SharePoint®-indexering. Det finns inga dokument som behöver indexeras. Indexering gör att många poster och eventuella prestandaproblem i MIM. Om du vill inaktivera SharePoint-indexering utför stegen nedan:
 
 1.  Klicka på Start på den server som är värd för 2016 MIM-portalen.
 
@@ -164,16 +167,16 @@ Vi rekommenderar att du inaktiverar Microsoft Office SharePoint®-indexering. De
 
 ## <a name="mim-2016-initial-data-load"></a>Inledande datainläsning för MIM 2016
 
-Det här avsnittet innehåller ett antal åtgärder för att förbättra prestanda för den inledande datainläsningen från ett externt system till FIM 2010. Det är viktigt att förstå att ett antal av dessa steg är tillfälliga under den första populationen av systemet och ska återställas när den har slutförts. Detta är en engångsåtgärd och är inte en kontinuerlig synkronisering.
+Det här avsnittet innehåller ett antal steg för att öka prestandan för den ursprungliga data från externa systemet till MIM. Det är viktigt att förstå att ett antal här utförs endast under den inledande ifyllning av systemet. De ska återställas när belastningen. Detta är en engångsåtgärd och är inte en kontinuerlig synkronisering.
 
 >[!NOTE]
-Mer information om hur du synkroniserar användare mellan FIM 2010 och Active Directory Domain Services (AD DS) finns i [Hur synkroniserar jag användare från Active Directory till FIM](http://go.microsoft.com/fwlink/?LinkID=188277) i FIM-dokumentationen.
+Mer information om hur du synkroniserar användare mellan MIM och Active Directory Domain Services (AD DS) finns [hur gör jag synkronisera användare från Active Directory till FIM](http://go.microsoft.com/fwlink/?LinkID=188277) i FIM-dokumentationen.
 
 >[!IMPORTANT]
-Se till att du har följt de rekommenderade metoder som beskrivs i avsnittet om SQL-konfiguration i den här handledningen.                                                                                                                                                      |
+Se till att du har följt de rekommenderade metoder som beskrivs i avsnittet om SQL-konfiguration i den här handledningen. 
 
 ### <a name="step-1-configure-the-sql-server-for-initial-data-load"></a>Steg 1: Konfigurera SQL Server för inledande datainläsning
-När du planerar att läsa in stora mängder data för första gången kan du förkorta den tid det tar att fylla databasen genom att tillfälligt stänga av fulltextsökningen och sedan sätta på den igen när exporten i MIM 2016-hanteringsagenten (FIM MA) har slutförts.
+Den inledande inläsningen av data kan vara en tidskrävande process. När du planerar att först läsa in stora mängder data kan minska du den tid det tar att fylla i databasen genom att tillfälligt inaktivera fulltextsökning och aktivera det igen efter exporten på MIM 2016-hanteringsagenten (FIM MA) har slutförts.
 
 Stänga av fulltextsökning tillfälligt:
 
@@ -184,12 +187,9 @@ Stänga av fulltextsökning tillfälligt:
 3.  Kör följande SQL-uttryck:
 
 ```SQL
-ALTER FULLTEXT INDEX ON [fim].[ObjectValueString] SET CHANGE_TRACKING =
-MANUAL
+ALTER FULLTEXT INDEX ON [fim].[ObjectValueString] SET CHANGE_TRACKING = MANUAL
 ALTER FULLTEXT INDEX ON [fim].[ObjectValueXml] SET CHANGE_TRACKING = MANUAL
 ```
-
-Det är viktigt att du förstår diskkraven för SQL Server-återställningsmodellen. Beroende på schemat för säkerhetskopiering kan du överväga att använda enkelt återställningsläge under den inledande systeminläsningen för att begränsa diskutrymmesanvändningen, men du måste förstå vad detta innebär ur dataförlustperspektiv. När du använder fullständigt återställningsläge måste du hantera diskanvändningen via säkerhetskopieringar, som omfattar täta säkerhetskopieringar av transaktionsloggen för att förhindra hög diskutrymmesanvändning.
 
 >[!IMPORTANT]
 Om du inte implementerar dessa metoder kan det leda till hög diskutrymmesanvändning, som eventuellt kan leda till att diskutrymmet tar slut. Du hittar mer information om det här avsnittet i [Recovery Model Overview](http://go.microsoft.com/fwlink/?LinkID=185370) (Översikt över återställningsmodell). [Guide för säkerhetskopiering och återställning av FIM](http://go.microsoft.com/fwlink/?LinkID=165864) innehåller ytterligare information.
@@ -200,16 +200,11 @@ Under den inledande inläsningen bör du bara använda den lägsta konfiguration
 
 ### <a name="step-3-configure-and-populate-the-fim-service-with-external-identity-data"></a>Steg 3: Konfigurera och fylla i FIM-tjänsten med externa identitetsdata
 
-Du bör nu följa de metoder som beskrivs i Hur synkroniserar jag användare från Active Directory
-
-Domain Services för FIM för att konfigurera och synkronisera systemet med användare från Active Directory. Om du behöver synkronisera gruppinformationen beskrivs metoderna för den processen i Hur synkroniserar jag grupper från Active Directory Domain Services till FIM.
+Nu ska du följa beskrivs procedurerna hur gör jag synkronisera användare från Active Directory Domain Services till FIM-guide för att konfigurera och synkronisera datorn med användare från Active Directory. Om du behöver synkronisera information om procedurer för den här processen beskrivs i den [hur gör jag synkronisera grupper från Active Directory Domain Services till FIM](https://technet.microsoft.com/library/ff686936(v=ws.10).aspx) guide.
 
 #### <a name="synchronization-and-export-sequences"></a>Synkroniserings- och exportsekvenser
 
-Optimera prestanda genom att köra en export efter en synkroniseringskörning som ger ett stort antal väntande exportåtgärder i en anslutarplats.
-
-Kör sedan en bekräftande importkörning på hanteringsagenten som är kopplad till berörd anslutarplats. Om du till exempel behöver köra körningsprofiler för synkronisering på flera hanteringsagenter som en del av en inledande databelastning bör du köra en export följt av en deltaimport efter varje enskild synkroniseringskörning.
-
+Optimera prestanda genom att köra en export efter en synkroniseringskörning som ger ett stort antal väntande exportåtgärder i en anslutarplats. Kör sedan en bekräftande importkörning på hanteringsagenten som är kopplad till berörd anslutarplats. Om du till exempel behöver köra körningsprofiler för synkronisering på flera hanteringsagenter som en del av en inledande databelastning bör du köra en export följt av en deltaimport efter varje enskild synkroniseringskörning.
 Utför följande steg för varje källhanteringsagent som är en del av initieringscykeln:
 
 1.  Fullständig import på en källhanteringsagent.
@@ -320,7 +315,7 @@ Implementera SSL:
 
 7.  Spara filen var som helst. Du behöver ha åtkomst till denna plats under följande steg.
 
-8.  I Windows Internet Explorer® bläddrar du till https://servernamn/certsrv. Ersätt servernamn med namnet på den server som utfärdar certifikat.
+8.  Bläddra till https://servername/certsrv. Ersätt servernamn med namnet på den server som utfärdar certifikat.
 
 9.  Klicka på Begär ett nytt certifikat.
 
@@ -374,7 +369,7 @@ För optimal prestandakonfiguration:
 
 -   Använd de rekommenderade metoder för SQL-konfiguration som beskrivs i avsnittet om konfiguration av SQL i detta dokument.
 
--   Inaktivera SharePoint-indexering på FIM 2010 R2-portalplatsen. Mer information finns i avsnittet Inaktivera SharePoint-indexering i det här dokumentet.
+-   Inaktivera SharePoint-indexering på MIM-portalwebbplatsen. Mer information finns i avsnittet Inaktivera SharePoint-indexering i det här dokumentet.
 
 ## <a name="feature-specific-best-practices--i-want-to-remove-this-and-collapse-this-section-and-just-have-the-specific-features-at-header-2-level-versus-3"></a>Specifika rekommenderade metoder (jag vill ta bort det här och komprimera det här avsnittet så att bara funktionerna finns vid rubrik 2-nivå i stället för 3)
 
@@ -392,7 +387,7 @@ MIM erbjuder två typer av MPR, Begäran och Uppsättningsövergång:
 -  MPR för begäran (RMPR)
 
   - Används för att definiera åtkomstkontrollprincipen (autentisering, auktorisering och åtgärd) för åtgärderna Skapa, Läsa, Uppdatera eller Ta bort (Create, Read, Update eller Delete, CRUD) mot resurser.
-  - Tillämpas när en CRUD-åtgärd utfärdas mot en målresurs i FIM.
+  - Tillämpas när utfärdas en CRUD-åtgärd mot en målresurs i MIM.
   - Omfattar de matchande kriterier som definieras i regeln, d.v.s. de CRUD-begäranden som regeln gäller för.
 
 - MPR för uppsättningsövergång (TMPR)
@@ -404,7 +399,7 @@ MIM erbjuder två typer av MPR, Begäran och Uppsättningsövergång:
 
 #### <a name="only-enable-mprs-as-necessary"></a>Aktivera MPR endast efter behov
 
-Använd principen om lägsta behörighet när konfigurationen verkställs. MPR styr åtkomstprincipen för FIM-distributionen. Aktivera endast de funktioner som används av de flesta användare. Det är till exempel inte alla användare som använder FIM för hantering av grupper, så kopplade grupphanterings-MPR ska inaktiveras. FIM levereras med de flesta icke-administratörsbehörigheterna inaktiverade som standard.
+Använd principen om lägsta behörighet när konfigurationen verkställs. MPR styra åtkomstprincipen till MIM-distributionen. Aktivera endast de funktioner som används av de flesta användare. Inte alla användare använda MIM för grupphantering, så associerade grupphantering MPR ska inaktiveras. MIM levereras med de flesta icke-administratörsbehörighet inaktiverad som standard.
 
 #### <a name="duplicate-built-in-mprs-instead-of-directly-modifying"></a>Duplicera inbyggda MPR i stället för att ändra direkt
 Om du behöver ändra inbyggda MPR bör du skapa en ny MPR med den konfiguration som krävs och inaktivera inbyggd MPR. Detta säkerställer att eventuella framtida ändringar i inbyggda MPR som införs genom uppgraderingsprocessen inte påverkar systemkonfigurationen negativt.
@@ -431,7 +426,7 @@ För attribut med samma åtkomstkrav som inte förväntas att ändras kan du fö
 
 #### <a name="avoid-giving-unrestricted-access-even-to-selected-principal-groups"></a>Undvik att ge obegränsad åtkomst till valda huvudgrupper
 
-Behörigheter definieras som en positiv försäkran i FIM. Eftersom FIM inte stöder nekande behörigheter blir det svårt att ange undantag i behörigheterna om man ger obegränsad åtkomst till en resurs. Rekommenderad metod är att endast bevilja de behörigheter som behövs.
+I MIM, har behörigheter definierats som en positiv kontrollen. Eftersom MIM inte stöder neka behörigheter, leder ger obegränsad åtkomst till en resurs till att tillhandahålla eventuella undantag i området behörigheter. Rekommenderad metod är att endast bevilja de behörigheter som behövs.
 
 #### <a name="use-tmprs-to-define-custom-entitlements"></a>Använd TMPR för att definiera anpassade rättigheter
 
@@ -470,7 +465,7 @@ Ta bort en rättighet från systemet (och återkalla den från alla medlemmar so
 
 3.  Inaktivera T-Out MPR.
 
-Ta bort en rättighet men låta de aktuella medlemmarna vara (t.ex. sluta använda FIM för att hantera rättigheten):
+Ta bort rätt men lämna de aktuella medlemmarna fristående (till exempel att sluta använda MIM för att hantera berättigandet):
 
 1.  Inaktivera T-In MPR. På så sätt undviker du nya beviljanden.
 
@@ -504,11 +499,11 @@ Användning av villkor baserat på referensattribut med flera värden ska minime
 
 #### <a name="kiosk-like-computers-that-are-used-for-password-reset-should-set-local-security-to-clear-the-virtual-memory-pagefile"></a>Kioskliknande datorer som används för lösenordsåterställning bör ange lokal säkerhet för att rensa den virtuella minnesväxlingsfilen
 
-Vid distribution av FIM 2010-lösenordsåterställning på en dator som är avsedd att vara en kiosk rekommenderar vi att den lokala säkerhetsprincipinställningen Avstängning: Rensa den virtuella växlingsfilen aktiveras för att säkerställa att känslig information från processminnet inte är tillgänglig för obehöriga användare.
+När du distribuerar MIM lösenordsåterställning på en arbetsstation som är avsedd att vara en kiosk rekommenderar vi att avstängningen: Rensa virtuellt minne växlingsfilens storlek med lokala säkerhetsprincipen aktiveras för att kontrollera att känslig information från processminnet som inte är tillgänglig för obehöriga användare.
 
 #### <a name="users-should-always-register-for-a-password-reset-on-a-computer-that-they-are-logged-on-to"></a>Användare bör alltid registrera sig för lösenordsåterställning på en dator som de är inloggade på
 
-När en användare försöker registrera sig för lösenordsåterställning via en webbportal initierar FIM 2010 alltid registrering för den inloggade användarens räkning, oavsett vem som är inloggad på webbplatsen. Användare bör alltid registrera sig för lösenordsåterställning på en dator som de är inloggade på.
+När en användare försöker registrera dig för lösenordsåterställning via en webbportal, initierar MIM alltid registrering för den inloggade användaren, oavsett vem som är inloggad på webbplatsen. Användare bör alltid registrera sig för lösenordsåterställning på en dator som de är inloggade på.
 
 #### <a name="do-not-set-the-avoidpdconwan-registry-key-to-true"></a>Ställ inte in registernyckeln AvoidPdcOnWan på true
 
@@ -580,7 +575,7 @@ Du bör inte ta bort schemaresurserna medan du fortfarande har granskningskrav f
 
 #### <a name="making-regular-expressions-case-insensitive"></a>Göra reguljära uttryck skiftlägesokänsliga
 
-I FIM kan det vara bra att göra vissa reguljära uttryck skiftlägesokänsliga. Du kan ignorera skiftläge i en grupp genom att använda ?!:. För Typ av anställd kan du till exempel använda
+I MIM, kan det vara bra att göra vissa reguljära uttryck skiftlägeskänsligt. Du kan ignorera skiftläge i en grupp genom att använda ?!:. För Typ av anställd kan du till exempel använda
 
 `\^(?!:contractor\|full time employee)%.`
 
@@ -590,17 +585,17 @@ Medlemsattributet som är exponerat för synkroniseringsmotorn mappas faktiskt t
 
 #### <a name="leading-and-trailing-spaces-in-strings-are-ignored"></a>Inledande och avslutande blanksteg i strängar ignoreras
 
-I FIM kan du ange strängar med inledande och avslutande blanksteg, men FIM-systemet ignorerar dessa blanksteg. Om du skickar en sträng med ett ledande och avslutande blanksteg ignorerar synkroniseringsmotorn och webbtjänster dessa blanksteg.
+Du kan ange strängar med inledande och avslutande blanksteg i MIM, men MIM ignoreras dessa utrymmen. Om du skickar en sträng med ett ledande och avslutande blanksteg ignorerar synkroniseringsmotorn och webbtjänster dessa blanksteg.
 
 #### <a name="empty-strings-do-not-equal-null"></a>Tomma strängar är inte lika med null
 
-Tomma strängar är inte lika med null i den här versionen av FIM. Tomma strängindata betraktas som ett giltigt värde. Ej tillgängligt betraktas som ett null-värde.
+Tomma strängar är inte lika med null i den här versionen av MIM. Tomma strängindata betraktas som ett giltigt värde. Ej tillgängligt betraktas som ett null-värde.
 
 ### <a name="workflow-and-request-processing"></a>Arbetsflöde och bearbetning av begäran
 
 #### <a name="do-not-delete-default-workflows-that-are-shipped-with-mim-2016"></a>Ta inte bort standardarbetsflöden som medföljer MIM 2016
 
-Följande arbetsflöden medföljer FIM 2010 och ska inte tas bort:
+Följande arbetsflöden levereras med MIM och ska inte tas bort:
 
 -   Förfalloarbetsflöde
 
@@ -634,4 +629,11 @@ Undvik att använda aktiviteter som ändrar MIM-resurserna, t.ex. funktionsutvä
 
 ### <a name="understanding-fim-service-partitions"></a>Förstå FIM-tjänstpartitioner
 
-Målet med FIM är att bearbeta begäranden som kan initieras av olika FIM-klienter, till exempel FIM-synkroniseringstjänsten och självbetjäningskomponenterna, enligt konfigurerade affärsregler. Varje FIM-tjänstinstans har skapats så att den tillhör en logisk grupp som består av en eller flera FIM-tjänstinstanser, som också kallas FIM-tjänstpartition. Om du endast har en FIM-tjänstinstans distribuerad för att hantera alla begäranden kan det hända att det uppstår fördröjningar i bearbetningen. En del åtgärder kan även överskrida de standardtidsgränsvärden som gäller för självbetjäningsåtgärder. FIM-tjänstpartitioner kan hjälpa dig att lösa detta problem. Mer information finns i Förstå FIM-tjänstpartitioner.
+Syftet med MIM är att bearbeta förfrågningar som kan startas av olika MIM-klienter, till exempel FIM-synkroniseringstjänsten och självbetjäning komponenterna enligt konfigurerade affärsregler. Varje FIM-tjänstinstans har skapats så att den tillhör en logisk grupp som består av en eller flera FIM-tjänstinstanser, som också kallas FIM-tjänstpartition. Om du endast har en FIM-tjänstinstans distribuerad för att hantera alla begäranden kan det hända att det uppstår fördröjningar i bearbetningen. En del åtgärder kan även överskrida de standardtidsgränsvärden som gäller för självbetjäningsåtgärder. FIM-tjänstpartitioner kan hjälpa dig att lösa detta problem.
+
+Mer information finns i [förstå FIM-tjänsten partitioner](https://social.technet.microsoft.com/wiki/contents/articles/2363.understanding-fim-service-partitions.aspx).
+
+## <a name="next-steps"></a>Nästa steg
+- [FIM-säkerhetskopiering och återställning Guide](http://go.microsoft.com/fwlink/?LinkID=165864)
+- [Hur gör jag synkronisera användare från Active Directory till FIM](http://go.microsoft.com/fwlink/?LinkID=188277) 
+- [Översikt över säkerhetsmodell Recovery](http://go.microsoft.com/fwlink/?LinkID=185370).
