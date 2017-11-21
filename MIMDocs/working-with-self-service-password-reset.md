@@ -12,14 +12,14 @@ ms.technology: security
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 90c773c30b0ab23ad29ca1a215745bf59b188764
-ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
+ms.openlocfilehash: 0463a91275f3e181a66eb460c167bb9a2008f444
+ms.sourcegitcommit: 27a23142393bbb0f66a3d533d89a5a8366a29e41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 11/20/2017
 ---
 >[!IMPORTANT]
-På grund av ett meddelande om utfasning av Azure Multi-Factor Authentication SDK. Azure MFA SDK ska ha stöd för befintliga kunder fram till datumet för tillbakadragandet av 01 oktober 2018. Nya kunder och aktuella kunder kommer inte att hämta SDK längre via den klassiska Azure-portalen. Om du vill hämta du behöver nå ut till Azure kundsupport för att ta emot dina autentiseringsuppgifter för MFA-paketet. <br> Utvecklingsgruppen Microsoft arbetar på Planering av MFA ändringar genom att integrera med MFA-serverns SDK. Detta tas med i kommande snabbkorrigeringen i tidig 2018.
+På grund av ett meddelande om utfasning av Azure Multi-Factor Authentication SDK. Azure MFA SDK ska ha stöd för befintliga kunder fram till datumet för tillbakadragandet av 14 November 2018. Nya kunder och aktuella kunder kommer inte att hämta SDK längre via den klassiska Azure-portalen. Om du vill hämta du behöver nå ut till Azure kundsupport för att ta emot dina autentiseringsuppgifter för MFA-paketet. <br> Utvecklingsgruppen Microsoft arbetar på Planering av MFA ändringar genom att integrera med MFA-serverns SDK. Detta tas med i kommande snabbkorrigeringen i tidig 2018.
 
 # <a name="working-with-self-service-password-reset"></a>Arbeta med självbetjäning för återställning av lösenord
 Microsoft Identity Manager 2016 innehåller ytterligare funktioner för återställning av lösenord via självbetjäning. Den här funktionen har förbättrats med flera viktiga funktioner:
