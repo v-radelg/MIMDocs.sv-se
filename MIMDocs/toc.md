@@ -86,6 +86,13 @@
 # [Referens](./reference/microsoft-identity-manager-2016-developer-reference.md)
 ## För utvecklare
 ### [Referens för MIM 2016-utvecklare](./reference/microsoft-identity-manager-2016-developer-reference.md)
+### Anslutningsappen för webbtjänster
+#### [Översikt över den allmänna anslutningsappen för webbtjänster](./reference/microsoft-identity-manager-2016-ma-ws.md)
+#### [Installationssteg för webbkonfigurationsverktyget](./reference/microsoft-identity-manager-2016-ma-ws-install.md)
+#### [Arbetsflödesguide för anslutningsappen för webbtjänster för SOAP](./reference/microsoft-identity-manager-2016-ma-ws-soap.md)
+#### [Arbetsflödesguide för anslutningsappen för webbtjänster för Rest-exempel](./reference/microsoft-identity-manager-2016-ma-ws-restgeneric.md)
+#### [Rest-exempel i App Service för anslutningsappen för webbtjänster](./reference/microsoft-identity-manager-2016-ma-ws-restsample.md)
+#### [Konfigurationsalternativ för anslutningsappen för webbtjänster](./reference/microsoft-identity-manager-2016-ma-ws-maconfig.md)
 ### BHOLD
 #### [Referens för BHOLD-utvecklare](./reference/mim2016-bhold-developer-reference.md) 
 ### [Referens för certifikathanterings-REST API](./reference/certificate-management-rest-api-reference.md)
