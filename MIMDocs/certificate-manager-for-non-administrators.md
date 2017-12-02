@@ -12,11 +12,11 @@ ms.technology: security
 ms.assetid: bfabc562-a2f0-4cff-ac31-36927f41e102
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 263752678e75267d6f58fe3fcb28975984f62f70
-ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
+ms.openlocfilehash: 39becb555d2efe17e60789453dbaf448c90a8b60
+ms.sourcegitcommit: 362475d4018e74e5a17ba574ccaec47a2caebaff
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="enroll-smart-cards-for-non-administrators"></a>Registrera smartkort för icke-administratörer
 Om en användare inte är lokal administratör på sin dator kan denne normalt inte registrera ett smartkort på sin egen dator. Genom att följa proceduren som beskrivs nedan kan dock du kringgå den här begränsningen.
@@ -63,7 +63,7 @@ Om en användare inte är lokal administratör på sin dator kan denne normalt i
 
     `makeappx pack /l /d .\appx /p <app package name>.appx`
 
-    s`igntool sign /f <path\>mysign.pfx /p <pfx password> /fd "sha256" <app package name>.appx`
+    `signtool sign /f <path\>mysign.pfx /p <pfx password> /fd "sha256" <app package name>.appx`
 
 4.  Duplicera profilmallen och lägg till den ursprungliga administratörsnyckeln för att konfigurera MIM-servern:
 
