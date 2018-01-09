@@ -5,17 +5,17 @@ keywords:
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
-ms.date: 11/15/2017
+ms.date: 01/05/2018
 ms.topic: reference
 ms.prod: identity-manager-2016
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 
-ms.openlocfilehash: 7f56882bf005de6c888997c1bf6a9e2feaea410c
-ms.sourcegitcommit: 42253562ac2f9ed689e9db9d0c470213b7926883
+ms.openlocfilehash: bb967bfb43218384044e324c270d3d6b35d33afe
+ms.sourcegitcommit: b4513f0f72ac6efd5c2610863f4e3e8c8e65c860
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 01/08/2018
 ---
 # <a name="microsoft-identity-manager-2016-best-practices"></a>Rekommenderade metoder för Microsoft Identity Manager 2016
 
@@ -371,7 +371,7 @@ För optimal prestandakonfiguration:
 
 -   Inaktivera SharePoint-indexering på MIM-portalwebbplatsen. Mer information finns i avsnittet Inaktivera SharePoint-indexering i det här dokumentet.
 
-## <a name="feature-specific-best-practices--i-want-to-remove-this-and-collapse-this-section-and-just-have-the-specific-features-at-header-2-level-versus-3"></a>Specifika rekommenderade metoder (jag vill ta bort det här och komprimera det här avsnittet så att bara funktionerna finns vid rubrik 2-nivå i stället för 3)
+## <a name="feature-specific-best-practices"></a>Funktionen specifika Metodtips 
 
 
 ### <a name="request-management"></a>Hantering av begäran
@@ -551,7 +551,7 @@ Det finns 13 huvudattribut som tilldelas till alla resurstyper. Du bör inte på
 
 -   DeletedTime
 
--   Beskrivning
+-   Description
 
 -   DetectedRulesList • DisplayName
 
