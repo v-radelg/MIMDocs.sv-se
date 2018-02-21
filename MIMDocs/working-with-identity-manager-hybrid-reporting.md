@@ -3,22 +3,21 @@ title: "Arbeta med hybridrapportering i Azure med hjälp av Identity Manager 201
 description: "Lär dig hur du sammanför lokala data och molndata i hybridrapporter i Azure och hur du hanterar och visar dessa rapporter."
 keywords: 
 author: fimguy
-ms.author: barclayn
+ms.author: davidste
 manager: mbaldwin
-ms.date: 10/12/2017
+ms.date: 2/20/2018
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 68df2817-2040-407d-b6d2-f46b9a9a3dbb
-ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: a96d79d6773a72c813d0cd76de26ea40d28769e1
-ms.sourcegitcommit: 3d8a2493eae1218bfdb75a399ffa4adc8c2a8fdf
+ms.openlocfilehash: e135cc5066220765d97568b3a1e1b984a876b2a2
+ms.sourcegitcommit: b4a39928c5fa1d7718046563c0809bcbf11d833d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 02/20/2018
 ---
-# <a name="work-with-hybrid-reporting-in-identity-manager-public-preview-refresh"></a>Arbeta med hybridrapportering i Identity Manager Public Preview uppdatering
+# <a name="work-with-hybrid-reporting-in-identity-manager"></a>Arbeta med hybridrapportering i Identity Manager
 
 Den här artikeln beskrivs hur du sammanför lokala data och molndata i hybridrapporter i Azure och hur du hanterar och visar dessa rapporter.
 
@@ -42,7 +41,7 @@ De första tre Microsoft Identity Manager-rapporterna i Azure Active Directory (
 
 ## <a name="prerequisites"></a>Krav
 
-* Identity Manager 2016 RTM eller SP1 Identity Manager-tjänsten.
+* Identity Manager 2016 SP1 Identity Manager-tjänsten, rekommenderas build [4.4.1749.0](https://support.microsoft.com/en-us/help/4050936/hotfix-rollup-package-build-4-4-1749-0-for-microsoft-identity-manager) .
 
 * En Azure AD Premium-klient med en behörig administratör i din katalog.
 
