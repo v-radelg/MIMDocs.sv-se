@@ -173,7 +173,7 @@ Installera MIM PAM-cmdletarna för begärande på arbetsstationen du konfigurera
 
 2.  Ladda ned **-tilläggen** till CORPWKSTN-datorn, om de inte redan finns där.
 
-3.  Packa upp mappen **Tillägg ** från arkivet till en ny mapp.
+3.  Packa upp mappen **Tillägg** från arkivet till en ny mapp.
 
 4.  Kör installationsprogrammet **setup.exe**.
 
