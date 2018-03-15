@@ -123,7 +123,7 @@ Du måste aktivera granskning i befintliga skogar för att upprätta PAM-konfigu
 
 Logga in på en domänkontrollant som domänadministratör för varje domän och utför följande steg:
 
-1. Gå till **Start** > **Administrationsverktyg** (på Windows Server 2016 **Administrationsverktyg för Windows **) och starta **Grupprinciphantering**.
+1. Gå till **Start** > **Administrationsverktyg** (på Windows Server 2016 **Administrationsverktyg för Windows**) och starta **Grupprinciphantering**.
 
 2. Gå till domänens princip för domänkontrollanter.  Om du har skapat en ny domän för contoso.local går du till **Skog: contoso.local** > **Domäner** > **contoso.local** > **Domänkontrollanter** > **Standardprincip för domänkontrollanter**. Ett informationsmeddelande visas.
 
