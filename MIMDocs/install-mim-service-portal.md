@@ -1,7 +1,7 @@
 ---
-title: "Installera Microsoft Identity Manager-tjänst och -portal | Microsoft Docs"
-description: "Hämta anvisningarna för att konfigurera och installera MIM-tjänsten och -portalen för Microsoft Identity Manager 2016"
-keywords: 
+title: Installera Microsoft Identity Manager-tjänst och -portal | Microsoft Docs
+description: Hämta anvisningarna för att konfigurera och installera MIM-tjänsten och -portalen för Microsoft Identity Manager 2016
+keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldiwn
@@ -12,11 +12,11 @@ ms.technology: security
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 77ceaf1b2152a6fa6e1047656bedda31ce383871
-ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
+ms.openlocfilehash: 204aa33cb21ed3998d9085fc56f0c7bea7afec58
+ms.sourcegitcommit: 32d9a963a4487a8649210745c97a3254645e8744
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="install-mim-2016-mim-service-and-portal"></a>Installera MIM 2016: MIM-tjänst och -portal
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 10/12/2017
 [Synkronisera databaser»](install-mim-sync-ad-service.md)
 
 > [!NOTE]
-> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
+> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
 > - Namn på domänkontrollant – **mimservername**
 > - Domännamn – **contoso**
 > - Lösenord – **Pass@word1**
@@ -50,7 +50,7 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
     ![Bild på Konfigurera MIM-databasanslutningen](media/MIM-Install10.png)
 
-7. På sidan **Konfigurera anslutningen till e-postservern** anger du namnet på Exchange-servern som **e-postserver**. Om du inte har konfigurerat en e-postserver använder du **localhost** som namn på e-postservern och avmarkerar de två översta kryssrutorna. Klicka på **Nästa**.
+7. På den **Konfigurera e-serveranslutningen**, ange namnet på Exchange-servern som **e-postserver** eller så kan du använda O365-postlåda. Om du inte har konfigurerat en e-postserver använder du **localhost** som namn på e-postservern och avmarkerar de två översta kryssrutorna. Klicka på **Nästa**.
 
     ![Bild på Konfigurera e-postserveranslutning](media/MIM-Install11.png)
 
@@ -68,11 +68,11 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 12. Ange *CORPIDM* (den här datorns namn) som MIM-tjänstens serveradress för MIM-portalen.
 
-13. Ange *http://CorpIDM.contoso.local* som SharePoint-webbplatssamlingen.
+13. Ange *http://mim.contoso.com* som SharePoint-webbplatssamlingen.
 
-14. Ange *http://CorpIDM.contoso.local:8080* som webbadress för Registrering av lösenord.
+14. Ange *http://passwordregistration.contoso.com* rekommenderar uppdatera senare med SSL-certifikat på 443 som URL: en för registrering av lösenord-port 80.
 
-15. Ange *http://CorpIDM.contoso.local:8080* som webbadress för Återställning av lösenord.
+15. Ange *http://passwordreset.contoso.com* rekommenderar uppdatera senare med SSL-certifikat på 443 som lösenord återställa URL-port 80.
 
 16. Markera kryssrutan för att öppna portarna 5725 och 5726 i brandväggen, och kryssrutan för att bevilja alla autentiserade användare åtkomst till MIM-portalen.
 
@@ -80,25 +80,25 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 1.  Ange namnet på tjänstkontot för SSPR-registrering som *contoso\MIMSSPR* och lösenordet som *Pass@word1*.
 
-2.  Ange *CORPIDM* som värdnamn för registrering av lösenord i MIM och ange porten som **8080**. Aktivera alternativet **Öppna port i brandväggen**.
+2.  Ange *passwordregistration.contoso.com* som värdnamn för registrering av lösenord i MIM och ange porten som **80**. Aktivera alternativet **Öppna port i brandväggen**.
 
     ![Bild på Ange konfigurationsinformation som används av IIS](media/MIM-Install14.png)
 
 3.  En varning visas. Läs den och klicka på **Nästa**.
 
-4. På nästa skärm för konfiguration av MIM-portalen för registrering av lösenord anger du *http://CorpIDM.contoso.local* som MIM-tjänstens serveradress till portalen för registrering av lösenord.
+4. I nästa konfigurationsskärm för MIM-portalen för registrering av lösenord anger *mim.contoso.com* som MIM-tjänstens serveradress för för portalen för registrering av lösenord.
 
 ## <a name="configure-mim-password-reset-portal"></a>Konfigurera MIM-portalen för återställning av lösenord
 
-1.  Ange namnet på tjänstkontot för SSPR-registrering som *Contoso\MIMSSPRService* och lösenordet som *Pass@word1*.
+1.  Ange namnet på tjänstkontot för SSPR-registrering *Contoso\MIMSSPR* och lösenordet som *Pass@word1*.
 
-2.  Ange *CORPIDM* som värdnamn på portalen för återställning av lösenord i MIM och ange porten som **8088**. Aktivera alternativet **Öppna port i brandväggen**.
+2.  Ange *passwordreset.contoso.com* som värdnamn för MIM lösenord portalen för återställning, och ange porten som **80**. Aktivera alternativet **Öppna port i brandväggen**.
 
     ![Bild på Ange konfigurationsinformation som används av IIS](media/MIM-Install15.png)
 
 3.  En varning visas. Läs den och klicka på **Nästa**.
 
-4. På nästa skärm för konfiguration av MIM-portalen för registrering av lösenord anger du *CorpIDname http://CorpIDname.domain.local* som MIM-tjänstens serveradress till portalen för att återställa lösenord.
+4. I nästa konfigurationsskärm för MIM-portalen för registrering av lösenord anger *mim.contoso.com* som MIM-tjänstens serveradress för för portalen för återställning av lösenord.
 
 ## <a name="install-mim-service-and-portal"></a>Installera MIM-tjänsten och -portalen
 
@@ -106,9 +106,9 @@ När alla förberedande definitioner för installationen är klara klickar du p�
 
 Verifiera att MIM-portalen är aktiv när installationen är klar.
 
-1. Starta Internet Explorer och Anslut till MIM-portalen på *http://corpidm.contoso.local/identitymanagement*. Observera att det kan bli en kort fördröjning när du besöker sidan för första gången.
+1. Starta Internet Explorer och Anslut till MIM-portalen på *http://mim.contoso.com/identitymanagement*. Observera att det kan bli en kort fördröjning när du besöker sidan för första gången.
 
-    - Om det blir nödvändigt autentiserar du som *contoso\Administrator* i Internet Explorer.
+    - Om det behövs kan autentisera sig som *contoso\miminstall* till Internet Explorer.
 
 2. I Internet Explorer går du till **Internetalternativ**, sedan till fliken **Säkerhet** och lägger till webbplatsen i zonen **Lokalt nätverk** om den inte redan finns där.  Stäng dialogrutan **Internetalternativ**.
 

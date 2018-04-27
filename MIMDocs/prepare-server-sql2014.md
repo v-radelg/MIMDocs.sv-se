@@ -1,7 +1,7 @@
 ---
-title: "Konfigurera SQL Server för Microsoft Identity Manager 2016 | Microsoft Docs"
-description: "Installera SQL Server 2014 inför installationen av MIM 2016."
-keywords: 
+title: Konfigurera SQL Server för Microsoft Identity Manager 2016 | Microsoft Docs
+description: Installera SQL Server 2014 inför installationen av MIM 2016.
+keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldwin
@@ -13,10 +13,10 @@ ms.assetid: 297df3b3-192e-4ed9-82ed-c95eb5297c84
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 8a33e09719b8c806de43531d12ea4b65b5cb443a
-ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
+ms.sourcegitcommit: 637988684768c994398b5725eb142e16e4b03bb3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="set-up-an-identity-management-server-sql-server-2014"></a>Konfigurera en server för identitetshantering: SQL Server 2014
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 10/12/2017
 [SharePoint »](prepare-server-sharepoint.md)
 
 > [!NOTE]
-> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
+> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
 > - Namn på domänkontrollant – **mimservername**
 > - Domännamn – **contoso**
 > - Lösenord – **Pass@word1**

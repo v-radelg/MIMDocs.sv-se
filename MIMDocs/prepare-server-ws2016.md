@@ -1,46 +1,50 @@
 ---
-title: Konfigurera Windows Server 2012 R2 för MIM 2016 | Microsoft Docs
-description: Hämta stegen och minimikraven för att förbereda Windows Server 2012 RS för att arbeta med MIM 2016.
+title: Konfigurera Windows Server 2016 för MIM 2016 SP1 | Microsoft Docs
+description: Hämta stegen och minimikraven för att förbereda Windows Server 2016 att arbeta med MIM 2016 SP1.
 keywords: ''
-author: billmath
-ms.author: barclayn
+author: fimguy
+ms.author: davidste
 manager: mbaldwin
-ms.date: 10/12/2017
+ms.date: 04/26/2018
 ms.topic: get-started-article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 76a59292da97583887020c89025add77c7a64c80
-ms.sourcegitcommit: 637988684768c994398b5725eb142e16e4b03bb3
+ms.openlocfilehash: 7c77ed0ceb541b9b00ebb9954ce65a53f0f44442
+ms.sourcegitcommit: 32d9a963a4487a8649210745c97a3254645e8744
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/27/2018
 ---
-# <a name="set-up-an-identity-management-server-windows-server-2012-r2"></a>Konfigurera en server för identitetshantering: Windows Server 2012 R2
+# <a name="set-up-an-identity-management-servers-windows-server-2016"></a>Konfigurera en identity management-servrar: Windows Server 2016
 
 >[!div class="step-by-step"]
-[« Förbereda en domän](preparing-domain.md)
-[SQL Server 2014 »](prepare-server-sql2014.md)
+[«Förbereda en domän](preparing-domain.md)
+[SQL Server 2016»](prepare-server-sql2016.md)
 
 > [!NOTE]
 > I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
-> - Namn på domänkontrollant – **mimservername**
+> - Domänkontrollantens namn - **corpdc**
 > - Domännamn – **contoso**
+> - MIM-tjänsten Server name - **corpservice**
+> - Servernamnet för MIM Sync - **corpsync**
+> - Namnet på SQL Server - **corpsql**
 > - Lösenord – **Pass@word1**
 
-## <a name="join-windows-server-2012-r2-to-your-domain"></a>Ansluta Windows Server 2012 R2 till din domän
+## <a name="join-windows-server-2016-to-your-domain"></a>Windows Server 2016 Anslut till domänen
 
-Börja med en dator med Windows Server 2012 R2, med minst 8 GB RAM-minne. Vid installationen anger du version ”Windows Server 2012 R2 Standard (Server med GUI) x 64”.
+Börja med en Windows Server 2016-dator med minst 8 – 12GB RAM-minne. Vid installationen anger du ”Windows Server 2016 Standard/Datacenter (Server med GUI) x 64” edition.
 
 1. Logga in på den nya datorn som administratör.
 
-2. Ge datorn en statisk IP-adress i nätverket med hjälp av Kontrollpanelen. Konfigurera nätverksgränssnittet så att DNS-frågor skickas till domänkontrollantens IP-adress i föregående steg och ange datornamnet **CORPIDM**.  Detta kräver en omstart av servern.
+2. Ge datorn en statisk IP-adress i nätverket med hjälp av Kontrollpanelen. Konfigurera nätverksgränssnittet att skicka DNS-frågor till IP-adressen för domänkontrollanten i föregående steg och ange datornamnet **CORPSERVICE**.  Detta kräver en omstart av servern.
 
-3. Öppna Kontrollpanelen och anslut datorn till domänen du konfigurerade i det sista steget, *contoso.local*.  Detta omfattar att ange användarnamnet och autentiseringsuppgifterna för en domänadministratör, t.ex. *Contoso\Administratör*.  Efter att välkomstmeddelandet har visats kan du stänga dialogrutan och starta om servern igen.
+3. Öppna Kontrollpanelen och Anslut datorn till domänen som du konfigurerade i det sista steget, *contoso.com*.  Detta omfattar att ange användarnamnet och autentiseringsuppgifterna för en domänadministratör, t.ex. *Contoso\Administratör*.  Efter att välkomstmeddelandet har visats kan du stänga dialogrutan och starta om servern igen.
 
-4. Logga in på datorn *CorpIDM* som domänadministratör, t.ex. *Contoso\Administratör*.
+4. Logga in på datorn *CORPSERVICE* som ett domänkonto med administratören för lokala datorer som *Contoso\MIMINSTALL*.
+
 
 5. Öppna ett PowerShell-fönster som administratör och skriv följande kommando för att uppdatera datorn med inställningarna för grupprincipen.
 
@@ -64,6 +68,8 @@ Börja med en dator med Windows Server 2012 R2, med minst 8 GB RAM-minne. Vid i
 ## <a name="configure-the-server-security-policy"></a>Konfigurera säkerhetsprinciper för servern
 
 Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapats kan köras som tjänster.
+> [!NOTE] 
+> Beroende på konfigurationen baserat enkel server(all-in-one) eller server för distribuerad behöver du bara lägga till på datorn som synkroniseringsserver medlem. 
 
 1. Starta programmet för lokala säkerhetsprinciper
 
@@ -73,11 +79,13 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 
     ![Bild för Lokal säkerhetsprincip](media/MIM-DeployWS3.png)
 
-4. Klicka på **Lägg till användare eller grupp** och skriv `contoso\MIMSync; contoso\MIMMA; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\MIMSSPR` i textrutan, klicka på **Kontrollera namn** och klicka på **OK**.
+4. Klicka på **Lägg till användare eller grupp**, och i textrutan typen följande baserat på rollen `contoso\MIMSync; contoso\MIMMA; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\MIMSSPR`, klickar du på **Kontrollera namn**, och klicka på **OK**.
 
 5. Klicka på **OK** för att stänga fönstret **Logga in som en tjänst Egenskaper**.
 
-6.  Högerklicka på **Neka åtkomst till den här datorn från nätverket** i informationsfönstret och välj **Egenskaper**.
+6.  I informationsfönstret högerklickar du på **neka åtkomst till den här datorn från nätverket**, och välj **egenskaper**. >
+
+[!NOTE] Om separat rollen servrar i det här steget bryts vissa funktionerna som SSPR-funktionen.
 
 7. Klicka på **Lägg till användare eller grupp**, skriv `contoso\MIMSync; contoso\MIMService` i textrutan och klicka på **OK**.
 
@@ -92,7 +100,7 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 12. Stäng fönstret för lokala säkerhetsprinicper.
 
 
-## <a name="change-the-iis-windows-authentication-mode"></a>Ändra Windows-autentiseringsläget för IIS
+## <a name="change-the-iis-windows-authentication-mode-if-needed"></a>Ändra IIS Windows-autentiseringsläge vid behov
 
 1.  Öppna ett PowerShell-fönster.
 
@@ -105,5 +113,5 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
     ```
 
 >[!div class="step-by-step"]  
-[« Förbereda en domän](preparing-domain.md)
-[SQL Server 2014 »](prepare-server-sql2014.md)
+[«Förbereda en domän](preparing-domain.md)
+[SQL Server 2016»](prepare-server-sql2016.md)

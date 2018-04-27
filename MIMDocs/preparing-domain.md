@@ -1,7 +1,7 @@
 ---
-title: "Konfigurera en domän för Microsoft Identity Manager 2016 | Microsoft Docs"
-description: "Skapa en Active Directory-domänkontrollant innan du installerar MIM 2016"
-keywords: 
+title: Konfigurera en domän för Microsoft Identity Manager 2016 | Microsoft Docs
+description: Skapa en Active Directory-domänkontrollant innan du installerar MIM 2016
+keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldwin
@@ -12,16 +12,16 @@ ms.technology: security
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 816e816111b27d1cc7dd4f7da2c5a810e7aa22fd
-ms.sourcegitcommit: 9e854a39128a5f81cdbb1379e1fa95ef3a88cdd2
+ms.openlocfilehash: ff8d8a6f66212b006e2c17186dc299a5bcf3f68b
+ms.sourcegitcommit: 32d9a963a4487a8649210745c97a3254645e8744
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/26/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="set-up-a-domain"></a>Konfigurera en domän
 
 >[!div class="step-by-step"]
-[Windows Server 2012 R2 »](prepare-server-ws2012r2.md)
+[Windows Server 2016»](prepare-server-ws2016.md)
 
 Microsoft Identity Manager (MIM) fungerar med Active Directory-domänen (AD). Du bör redan ha en AD installerad och se till att du har en domänkontrollant i miljön för en domän du har administratörsbehörighet för.
 
@@ -32,9 +32,12 @@ Den här artikeln vägleder dig igenom stegen för att förbereda domänen så a
 Alla komponenter i MIM-distributionen behöver ha egna identiteter i domänen. Detta omfattar MIM-komponenter som Service och Sync, samt SharePoint och SQL.
 
 > [!NOTE]
-> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
-> - Namn på domänkontrollant – **mimservername**
+> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
+> - Domänkontrollantens namn - **corpdc**
 > - Domännamn – **contoso**
+> - MIM-tjänsten Server name - **corpservice**
+> - Servernamnet för MIM Sync - **corpsync**
+> - Namnet på SQL Server - **corpsql**
 > - Lösenord – **Pass@word1**
 
 1. Logga in på domänkontrollanten som domänadministratör (*t.ex. Contoso\Administratör*).
@@ -44,6 +47,9 @@ Alla komponenter i MIM-distributionen behöver ha egna identiteter i domänen. D
     ```PowerShell
     import-module activedirectory
     $sp = ConvertTo-SecureString "Pass@word1" –asplaintext –force
+    New-ADUser –SamAccountName MIMINSTALL –name MIMMA
+    Set-ADAccountPassword –identity MIMINSTALL –NewPassword $sp
+    Set-ADUser –identity MIMINSTALL –Enabled 1 –PasswordNeverExpires 1
     New-ADUser –SamAccountName MIMMA –name MIMMA
     Set-ADAccountPassword –identity MIMMA –NewPassword $sp
     Set-ADUser –identity MIMMA –Enabled 1 –PasswordNeverExpires 1
@@ -65,6 +71,9 @@ Alla komponenter i MIM-distributionen behöver ha egna identiteter i domänen. D
     New-ADUser –SamAccountName BackupAdmin –name BackupAdmin
     Set-ADAccountPassword –identity BackupAdmin –NewPassword $sp
     Set-ADUser –identity BackupAdmin –Enabled 1 -PasswordNeverExpires 1
+    New-ADUser –SamAccountName MIMpool –name BackupAdmin
+    Set-ADAccountPassword –identity MIMPool –NewPassword $sp
+    Set-ADUser –identity MIMPool –Enabled 1 -PasswordNeverExpires 1
     ```
 
 3.  Skapa säkerhetsgrupper för alla grupper.
@@ -77,15 +86,24 @@ Alla komponenter i MIM-distributionen behöver ha egna identiteter i domänen. D
     New-ADGroup –name MIMSyncPasswordReset –GroupCategory Security –GroupScope Global –SamAccountName MIMSyncPasswordReset
     Add-ADGroupMember -identity MIMSyncAdmins -Members Administrator
     Add-ADGroupmember -identity MIMSyncAdmins -Members MIMService
+    Add-ADGroupmember -identity MIMSyncAdmins -Members MIMInstall
     ```
 
 4.  Lägg till SPN-namn om du vill aktivera Kerberos-autentisering för tjänstkonton
 
     ```CMD
-    setspn -S http/mimservername.contoso.local Contoso\SharePoint
-    setspn -S http/mimservername Contoso\SharePoint
-    setspn -S FIMService/mimservername.contoso.local Contoso\MIMService    
+    setspn -S http/mim.contoso.com Contoso\mimpool
+    setspn -S http/mim Contoso\mimpool
+    setspn -S http/passwordreset.contoso.com Contoso\mimsspr
+    setspn -S http/passwordregistration.contoso.com Contoso\mimsspr
+    setspn -S FIMService/mim.contoso.com Contoso\MIMService
+    setspn -S FIMService/corpservice.contoso.com Contoso\MIMService
     ```
+5.  Vi behöver lägga till följande DNS ”A”-posterna för namnmatchningen under installationen
+
+- mim.contoso.com punkt till corpservice fysiska ip-adress
+- passwordreset.contoso.com punkt till corpservice fysiska ip-adress
+- passwordregistration.contoso.com punkt till corpservice fysiska ip-adress
 
 >[!div class="step-by-step"]
-[Windows Server 2012 R2 »](prepare-server-ws2012r2.md)
+[Windows Server 2016»](prepare-server-ws2016.md)
