@@ -1,7 +1,7 @@
 ---
-title: "Använda Microsoft Identity Manager Synchronize med AD | Microsoft Docs"
-description: "Använd hanteringsagenter och MIM-synkroniseringstjänsten för att synkronisera Active Directory och MIM-databaser."
-keywords: 
+title: Använda Microsoft Identity Manager Synchronize med AD | Microsoft Docs
+description: Använd hanteringsagenter och MIM-synkroniseringstjänsten för att synkronisera Active Directory och MIM-databaser.
+keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldwin
@@ -12,11 +12,11 @@ ms.technology: security
 ms.assetid: 5e532b67-64a6-4af6-a806-980a6c11a82d
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 31cc9a61bbcb309dae4ee4d09654432d08bf1e28
-ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
+ms.openlocfilehash: 736d933f2c62d440abafdab27f82b3b1ba0f9a06
+ms.sourcegitcommit: 48f89d555c0ac7caa97d149ee42e0b9ef6ccc5f5
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/23/2018
 ---
 # <a name="install-mim-2016-synchronize-active-directory-and-mim-service"></a>Installera MIM 2016: synkronisera Active Directory och MIM-tjänsten
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 10/12/2017
 [« MIM-tjänst och portal](install-mim-service-portal.md)
 
 > [!NOTE]
-> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
+> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
 > - Namn på domänkontrollant – **mimservername**
 > - Domännamn – **contoso**
 > - Lösenord – **Pass@word1**
@@ -43,7 +43,7 @@ När du ska konfigurera en MIM-hanteringsagent måste du ange ett användarkonto
 
 1.  genom att öppna Hanteraren för synkroniseringstjänsten.
 
-2.  Om du vill öppna guiden för att skapa hanteringsagenten ändrar du till sidan **Hanteringsåtgärder** och på menyn **Åtgärder** klickar du sedan på **Skapa**.
+2.  Öppna guiden Skapa hanteringsagent ändra till den **Hanteringsagenter** sidan, klicka sedan på den **åtgärder** -menyn klickar du på **skapa**.
 
 3.  På sidan **Skapa hanteringsagent** anger du följande inställningar och klickar sedan på **Nästa**.
 
