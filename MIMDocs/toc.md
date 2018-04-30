@@ -14,8 +14,8 @@
 ## [Föråldrade funktioner](microsoft-identity-manager-2016-deprecated-features.md)
 ## [Första distributionen](microsoft-identity-manager-deploy.md)
 ### [Domänkonfiguration](preparing-domain.md)
-### [Serverinstallation: Windows Server](prepare-server-ws2012r2.md)
-### [Serverinstallation: SQL](prepare-server-sql2014.md)
+### [Serverinstallation: Windows Server](prepare-server-ws2016.md)
+### [Serverinstallation: SQL](prepare-server-sql2016.md)
 ### [Serverinstallation: SharePoint](prepare-server-sharepoint.md)
 ### [Serverinstallation: Exchange](prepare-server-exchange.md)
 ### [Installera MIM: Synkronisering](install-mim-sync.md)
@@ -144,4 +144,12 @@
 ## Versionshistorik
 ### [MIM-versionshistorik](./reference/version-history.md)
 ### [BHOLD-versionshistorik](./reference/version-bhold-history.md)
+### [Versionshistorik för anslutningsappen](./reference/microsoft-identity-manager-2016-connector-version-history.md)
+## Kopplingar
+### [Graph](microsoft-identity-manager-2016-connector-graph.md)
+### [Lotus Notes](./reference/microsoft-identity-manager-2016-connector-domino.md)
+### [Generisk LDAP](./reference/microsoft-identity-manager-2016-connector-genericldap.md)
+### [Generisk SQL](./reference/microsoft-identity-manager-2016-connector-genericsql.md)
+### [Webbtjänster](./reference/microsoft-identity-manager-2016-ma-ws.md)
+### [PowerShell](./reference/microsoft-identity-manager-2016-connector-powershell.md)
 ### [Versionshistorik för anslutningsappen](./reference/microsoft-identity-manager-2016-connector-version-history.md)
