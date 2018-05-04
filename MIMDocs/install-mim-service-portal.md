@@ -5,18 +5,18 @@ keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldiwn
-ms.date: 10/12/2017
+ms.date: 04/30/2018
 ms.topic: get-started-article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 204aa33cb21ed3998d9085fc56f0c7bea7afec58
-ms.sourcegitcommit: 32d9a963a4487a8649210745c97a3254645e8744
+ms.openlocfilehash: fcc137527d8326c82bf3b201039926699bd4e342
+ms.sourcegitcommit: a98a4c1aee12016d480c400f4ff2c6aadb6518ee
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="install-mim-2016-mim-service-and-portal"></a>Installera MIM 2016: MIM-tjänst och -portal
 
@@ -48,23 +48,23 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 6. På sidan **Konfigurera MIM-databasanslutningen** väljer du **Skapa en ny databas**.
 
-    ![Bild på Konfigurera MIM-databasanslutningen](media/MIM-Install10.png)
+    ![Bild på Konfigurera MIM-databasanslutningen](media/install-mim-service-portal/MIM_Install10.png)
 
-7. På den **Konfigurera e-serveranslutningen**, ange namnet på Exchange-servern som **e-postserver** eller så kan du använda O365-postlåda. Om du inte har konfigurerat en e-postserver använder du **localhost** som namn på e-postservern och avmarkerar de två översta kryssrutorna. Klicka på **Nästa**.
+7. På den **Konfigurera e-serveranslutningen**, ange namnet på Exchange-servern som **e-postserver** eller så kan du använda **O365 postlåda**. Om du inte har konfigurerat en e-postserver använder du **localhost** som namn på e-postservern och avmarkerar de två översta kryssrutorna. Klicka på **Nästa**.
 
-    ![Bild på Konfigurera e-postserveranslutning](media/MIM-Install11.png)
+    ![Bild på Konfigurera e-postserveranslutning](media/install-mim-service-portal/MIM_Install11.png)
 
 8. Ange att du vill generera ett nytt självsignerat certifikat eller välj relevant certifikat.
 
 9. Ange namnet på det tjänstkonto du ska använda, till exempel *MIMService*, lösenordet till tjänstkontot, till exempel *Pass@word1*, din tjänstkontodomän, till exempel *contoso*, samt tjänst-e-postkontot, till exempel *contoso*.
 
-    ![Bild av Konfigurera MIM-tjänstkontot](media/MIM-Install12.png)
+    ![Bild av Konfigurera MIM-tjänstkontot](media/install-mim-service-portal/MIM_Install12.png)
 
 10. Observera att en varning kan komma att visas om att tjänstkontots nuvarande konfiguration inte är säker.
 
 11. Godkänn standardinställningarna för Synkroniseringsserverns plats och ange kontot för MIM-hanteringsagenten som *contoso\MIMMA*.
 
-    ![Bild på Konfigurera MIM-tjänsten och -portalen](media/MIM-Install13.png)
+    ![Bild på Konfigurera MIM-tjänsten och -portalen](media/install-mim-service-portal/MIM_Install13.png)
 
 12. Ange *CORPIDM* (den här datorns namn) som MIM-tjänstens serveradress för MIM-portalen.
 
@@ -82,7 +82,7 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 2.  Ange *passwordregistration.contoso.com* som värdnamn för registrering av lösenord i MIM och ange porten som **80**. Aktivera alternativet **Öppna port i brandväggen**.
 
-    ![Bild på Ange konfigurationsinformation som används av IIS](media/MIM-Install14.png)
+    ![Bild på Ange konfigurationsinformation som används av IIS](media/install-mim-service-portal/MIM_Install14.png)
 
 3.  En varning visas. Läs den och klicka på **Nästa**.
 
@@ -94,7 +94,7 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 2.  Ange *passwordreset.contoso.com* som värdnamn för MIM lösenord portalen för återställning, och ange porten som **80**. Aktivera alternativet **Öppna port i brandväggen**.
 
-    ![Bild på Ange konfigurationsinformation som används av IIS](media/MIM-Install15.png)
+    ![Bild på Ange konfigurationsinformation som används av IIS](media/install-mim-service-portal/MIM_Install15.png)
 
 3.  En varning visas. Läs den och klicka på **Nästa**.
 

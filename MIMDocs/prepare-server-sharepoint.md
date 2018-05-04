@@ -12,11 +12,11 @@ ms.technology: security
 ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: eceb1ed31b0212970d5cf0eae0bc8d96aa087ff5
-ms.sourcegitcommit: 32d9a963a4487a8649210745c97a3254645e8744
+ms.openlocfilehash: 6922c3c2f66b6dbb0b0751420be9dd778206a3cf
+ms.sourcegitcommit: 8316fa41f06f137dba0739a8700910116b5575d8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="set-up-an-identity-management-server-sharepoint"></a>Konfigurera en server för identitetshantering: SharePoint
 
@@ -68,14 +68,15 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
 1. Ändra till att skapa en ny servergrupp på fliken **Anslut till en servergrupp**.
 
 2. Ange den här servern som databasserver som **corpsql** för konfigurationsdatabasen och *Contoso\SharePoint* som kontot för SharePoint ska använda databasåtkomst.
-    a. Vi rekommenderar att du väljer i konfigurationsguiden [MinRole](https://docs.microsoft.com/en-us/sharepoint/install/overview-of-minrole-server-roles-in-sharepoint-server-2016) typ av **frontend**
 3. Skapa ett lösenord för gruppens säkerhetslösenfras.
 
-4. När konfigurationsguiden har slutfört konfigurationsåtgärd 10 av 10 klickar du på Slutför och en webbläsare öppnas.
+4. Vi rekommenderar att du väljer i konfigurationsguiden [MinRole](https://docs.microsoft.com/en-us/sharepoint/install/overview-of-minrole-server-roles-in-sharepoint-server-2016) typ av **frontend**
 
-5. I Internet Explorer-popup autentisera sig som *Contoso\miminstall* (eller motsvarande administratörskonto) att gå vidare.
+5. När konfigurationsguiden har slutfört konfigurationsåtgärd 10 av 10, klickar du på Slutför och en webbläsare öppnas...
 
-6. I guiden (från webbappen) klickar du på **Avbryt/hoppa över**.
+6. Om du uppmanas att göra det popup-fönstret i Internet Explorer autentiserar du som *Contoso\miminstall* (eller motsvarande administratörskonto) att gå vidare.
+
+7. I guiden (från webbappen) klickar du på **Avbryt/hoppa över**.
 
 
 ## <a name="prepare-sharepoint-to-host-the-mim-portal"></a>Förbereda SharePoint som värd för MIM-portalen
@@ -94,14 +95,13 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
     > [!NOTE]
     > Ett varningsmeddelande visas med information om att Windows Classic-autentiseringsmetoden används och att det kan ta flera minuter för kommandot att returneras. När du är klar visas den nya portalens URL som utdata. Behåll den **hanteringsgränssnittet för SharePoint 2016** fönstret öppet för senare referens.
 
-2. Starta SharePoint 2013 Management Shell och kör följande PowerShell-skript för att skapa en **SharePoint-webbplatssamling** som är associerad med det webbprogrammet.
+2. Starta SharePoint 2016 Management Shell och kör följande PowerShell-skript för att skapa en **SharePoint-webbplatssamling** som är associerade med det webbprogrammet.
 
   ```
     $t = Get-SPWebTemplate -compatibilityLevel 15 -Identity "STS#1"
     $w = Get-SPWebApplication http://mim.contoso.com/
     New-SPSite -Url $w.Url -Template $t -OwnerAlias contoso\miminstall -CompatibilityLevel 15 -Name "MIM Portal"
     $s = SpSite($w.Url)
-    $s.AllowSelfServiceUpgrade = $false
     $s.CompatibilityLevel
   ```
 
@@ -119,7 +119,7 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
 
 4. Öppna en ny webbläsarflik på din server för Identitetshantering, gå till http://mim.contoso.com/ och logga in som *contoso\miminstall*.  En tom SharePoint-sida med namnet *MIM-portal* visas.
 
-    ![MIM-portalen på http://mim.contoso.com/ bild](media/MIM-DeploySP1.png)
+    ![MIM-portalen på http://mim.contoso.com/ bild](media/prepare-server-sharepoint/MIM_DeploySP1new.png)
 
 5. Kopiera webbadressen och öppna sedan **Internetalternativ** i Internet Explorer, byt till fliken **Säkerhet**, välj **Lokalt intranät** och klicka på **Platser**.
 
