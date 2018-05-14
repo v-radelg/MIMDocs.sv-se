@@ -10,19 +10,15 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: 3c2246ec21ad73cf025daec5c56295ec57838bb2
-ms.sourcegitcommit: 3502d636687e442f7d436ee56218b9b95f5056cf
+ms.openlocfilehash: 241ad68d3f4a692c87d0d2a0069781ad042453c7
+ms.sourcegitcommit: 39f34a38967baa9c0da6ae5b57734b222f5771a5
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="deploying-microsoft-identity-manager-certificate-manager-2016-mim-cm"></a>Distribuera Microsoft Identity Manager Certificate Manager 2016 (MIM CM)
 
-Installationen av Microsoft Identity Manager Certificate Manager 2016 (MIM CM) omfattar ett antal steg. Som ett sätt att förenkla processen vi dela saker upp. Det finns förberedande steg som måste vidtas innan eventuella faktiska MIM CM-åtgärder. Utan den inledande kommer installationen troligen att misslyckas. 
-
-1. Distributionsöversikt
-2. Fördistributionssteg
-3. Vad?
+Installationen av Microsoft Identity Manager Certificate Manager 2016 (MIM CM) omfattar ett antal steg. Som ett sätt att förenkla processen vi dela saker upp. Det finns förberedande steg som måste vidtas innan eventuella faktiska MIM CM-åtgärder. Utan den inledande kommer installationen troligen att misslyckas.
 
 Diagrammet nedan visar ett exempel på typ av miljö som kan användas. System med siffror ingår i listan nedan i diagram och krävs för att slutföra stegen som beskrivs i den här artikeln. Slutligen används Windows 2016 Datacenter-servrar:
 
@@ -38,65 +34,75 @@ Diagrammet nedan visar ett exempel på typ av miljö som kan användas. System m
 ## <a name="deployment-overview"></a>Distributionsöversikt
 
 - Installation av grundläggande operativsystem
-  - Labbet består av windows 2016 Datacenter.
-       >[!NOTE]
-För mer information om plattformar som stöds för MIM 2016 ta en titt på i artikeln [plattformar som stöds för MIM 2016](/microsoft-identity-manager/microsoft-identity-manager-2016-supported-platforms.md)
-- Fördistributionssteg
-  - [Utökning av schemat](https://msdn.microsoft.com/library/ms676929(v=vs.85).aspx)
-  - Skapa tjänstkonton
-  - [Skapa certifikatmallar](https://technet.microsoft.com/library/cc753370(v=ws.11).aspx)
-  - IIS
-  - Konfigurera Kerberos
-  - Databasrelaterade steg
-    - Krav för SQL-konfiguration
-    - Databasbehörighet
-- distribution
+
+    Labbet består av windows 2016 Datacenter.
+
+    >[!NOTE]
+    >För mer information om plattformar som stöds för MIM 2016 ta en titt på i artikeln [plattformar som stöds för MIM 2016](/microsoft-identity-manager/microsoft-identity-manager-2016-supported-platforms.md)
+
+1. Fördistributionssteg
+
+    - [Utökning av schemat](https://msdn.microsoft.com/library/ms676929(v=vs.85).aspx)
+
+    - Skapa tjänstkonton
+
+    - [Skapa certifikatmallar](https://technet.microsoft.com/library/cc753370(v=ws.11).aspx)
+
+    - IIS
+
+    - Konfigurera Kerberos
+
+    - Databasrelaterade steg
+
+        - Krav för SQL-konfiguration
+
+        - Databasbehörighet
+
+2. distribution
 
 ## <a name="pre-deployment-steps"></a>Fördistributionssteg
 
-Guiden för konfiguration av MIM CM kräver information ska tillhandahållas på vägen för att den ska slutföras. 
-![](media/mim-cm-deploy/image003.png)
+Guiden för konfiguration av MIM CM kräver information ska tillhandahållas på vägen för att den ska slutföras.
+
+![diagram](media/mim-cm-deploy/image003.png)
 
 ### <a name="extending-the-schema"></a>Utökning av schemat
 
 Processen med att utöka schemat är enkla men måste vara närmat sig med försiktighet på grund av dess oåterkallelig karaktär.
 
 >[!NOTE]
-Det här steget kräver att det konto som används har administratörsrättigheter för schemat.
+>Det här steget kräver att det konto som används har administratörsrättigheter för schemat.
 
-- Bläddra till platsen för MIM-media och gå till \\certifikathantering\\x64 mapp.
+1. Bläddra till platsen för MIM-media och gå till \\certifikathantering\\x64 mapp.
 
-- Kopiera mappen schemat på CORPDC sedan navigera till den.
+2. Kopiera mappen schemat på CORPDC sedan navigera till den.
 
-    ![](media/mim-cm-deploy/image005.png)
+    ![diagram](media/mim-cm-deploy/image005.png)
 
-- Kör skriptet resourceForestModifySchema.vbs enda skog scenario
+3. Kör skriptet resourceForestModifySchema.vbs enda skog scenario. Kör skripten för resursen skog scenariot:
+    - DomänA – användare finns (userForestModifySchema.vbs)
+    - ResourceForestB – platsen för CM-installationen (resourceForestModifySchema.vbs).
 
-- Kör skripten för resursen skog scenariot:
-  - DomänA – användare finns (userForestModifySchema.vbs)
-  - ResourceForestB – platsen för CM-installationen (resourceForestModifySchema.vbs)
+    >[!NOTE]
+    >Schemaändringar är en enkelriktad åtgärd och kräver en skog återställning för att återställa så se till att du har nödvändiga säkerhetskopior. För information om ändringar som görs i schemat genom att utföra den här åtgärden granska artikeln [schemaändringar för Forefront Identity Manager 2010 certifikat Management](https://technet.microsoft.com/library/jj159298(v=ws.10).aspx)
 
->[!NOTE]
-Schemaändringar är en enkelriktad åtgärd och kräver en skog återställning för att återställa så se till att du har nödvändiga säkerhetskopior. För information om ändringar som görs i schemat genom att utföra den här åtgärden granska artikeln [schemaändringar för Forefront Identity Manager 2010 certifikat Management](https://technet.microsoft.com/library/jj159298(v=ws.10).aspx)
+    ![diagram](media/mim-cm-deploy/image007.png)
 
-![](media/mim-cm-deploy/image007.png)
+4. Kör skriptet, och du bör få lyckas visas en gång att skriptet har slutförts.
 
-Kör skriptet, och du bör få lyckas visas en gång att skriptet har slutförts.
-
-![Meddelande](media/mim-cm-deploy/image009.png)
+    ![Meddelande](media/mim-cm-deploy/image009.png)
 
 I AD-schemat utökas nu för att stödja MIM CM.
 
 ### <a name="creating-service-accounts-and-groups"></a>Skapa tjänstkonton och grupper
 
-I följande tabell sammanfattas de konton och behörigheter som krävs av MIM CM.
-Du kan tillåta MIM CM skapa följande konton automatiskt eller så kan du skapa dem före installationen. De faktiska kontonamn kan ändras. Om du skapar konton själv, bör du namnge användarkonton så att det är enkelt att matcha namnet på användarkontot till sitt arbete.
+I följande tabell sammanfattas de konton och behörigheter som krävs av MIM CM. Du kan tillåta MIM CM skapa följande konton automatiskt eller så kan du skapa dem före installationen. De faktiska kontonamn kan ändras. Om du skapar konton själv, bör du namnge användarkonton i ett sådant direkt att det är enkelt att matcha namnet på användarkontot till sitt arbete.
 
 Användare:
 
-![](media/mim-cm-deploy/image010.png)
+![Diagram](media/mim-cm-deploy/image010.png)
 
-![](media/mim-cm-deploy/image012.png)
+![Diagram](media/mim-cm-deploy/image012.png)
 
 | **Roll**                   | **Användaren loggar in namn** |
 |----------------------------|---------------------|
@@ -120,9 +126,9 @@ Grupper:
 | CM-Manager-medlemmar     | MIMCM-hanterare    |
 | CM-prenumeranter medlemmar | MIMCM-prenumeranter |
 
-PowerShell: Agentkonton
+PowerShell: Agentkonton:
 
-```
+```powershell
 import-module activedirectory
 ## Agent accounts used during setup
 $cmagents = @{
@@ -203,15 +209,19 @@ Alla tre av ovanstående konton kan ha utökade rättigheter i din organisation 
 #### <a name="create-the-mim-cm-signing-certificate-template"></a>Skapa certifikatmall MIM CM-signering
 
 1. Från **Administrationsverktyg**öppnar **certifikatutfärdare**.
+
 2. I den **certifikatutfärdare** konsolen i konsolträdet, expandera **Contoso CorpCA**, och klicka sedan på **certifikatmallar**.
+
 3. Högerklicka på **certifikatmallar**, och klicka sedan på **hantera**.
+
 4. I den **konsol för certifikatmallar**i den **information** rutan, markera och högerklicka på **användare**, och klicka sedan på **duplicera mall** .
+
 5. I den **kopiera mallen** dialogrutan **Windows Server 2003 Enterprise**, och klicka sedan på **OK**.
 
-![Visa resulterande ändringar](media/mim-cm-deploy/image014.png)
+    ![Visa resulterande ändringar](media/mim-cm-deploy/image014.png)
 
     >[!NOTE]
-    MIM CM does not work with certificates based on version 3 certificate templates. You must create a Windows Server® 2003 Enterprise (version 2)certificate template. See the following link for V3 details https://blogs.msdn.microsoft.com/ms-identity-support/2016/07/14/faq-for-fim-2010-to-support-sha2-kspcng-and-v3-certificate-templates-for-issuing-user-and-agent-certificates-and-mim-2016-upgrade
+    >MIM CM fungerar inte med certifikat som baseras på certifikatmallar i version 3. Du måste skapa en certifikatmall för Windows Server® 2003 Enterprise (version 2). Se [V3 information](https://blogs.msdn.microsoft.com/ms-identity-support/2016/07/14/faq-for-fim-2010-to-support-sha2-kspcng-and-v3-certificate-templates-for-issuing-user-and-agent-certificates-and-mim-2016-upgrade) för mer information.
 
 6. I den **egenskaper för ny mall** dialogrutan den **allmänna** fliken den **Mallens visningsnamn** skriver **MIM CM signering**. Ändra den **giltighetsperioden** till **2 år**, och avmarkera sedan den **Publicera certifikatet i Active Directory** kryssrutan.
 
@@ -219,57 +229,57 @@ Alla tre av ovanstående konton kan ha utökade rättigheter i din organisation 
 
 8. I den **val av kryptografiska** dialogrutan inaktivera **Microsoft Enhanced kryptografiprovider v1.0**, aktivera **Microsoft Enhanced RSA och AES Cryptographic Provider**, och klicka sedan på **OK**.
 
-På den **ämnesnamn** avmarkerar den **Inkludera e-postnamnet i ämnesnamnet** och **e-postnamn** kryssrutorna.
+9. På den **ämnesnamn** avmarkerar den **Inkludera e-postnamnet i ämnesnamnet** och **e-postnamn** kryssrutorna.
 
-På den **tillägg** fliken den **tillägg som ingår i den här mallen** lista, se till att **användningsprinciper** är markerad och klicka sedan på **redigera** .
+10. På den **tillägg** fliken den **tillägg som ingår i den här mallen** lista, se till att **användningsprinciper** är markerad och klicka sedan på **redigera** .
 
-I den **Redigera tillägg för användningsprinciper** dialogrutan, Välj den **Krypterande filsystem** och **säker e-post** principer för program. Klicka på **ta bort**, och klicka sedan på **OK**.
+11. I den **Redigera tillägg för användningsprinciper** dialogrutan, Välj den **Krypterande filsystem** och **säker e-post** principer för program. Klicka på **ta bort**, och klicka sedan på **OK**.
 
-På den **säkerhet** fliken utför följande steg:
+12. På den **säkerhet** fliken utför följande steg:
 
-- Ta bort **administratör**.
+    - Ta bort **administratör**.
 
-- Ta bort **Domänadministratörer**.
+    - Ta bort **Domänadministratörer**.
 
-- Ta bort **domänanvändare**.
+    - Ta bort **domänanvändare**.
 
-- Tilldela bara **Läs** och **skriva** behörighet att **Företagsadministratörer**.
+    - Tilldela bara **Läs** och **skriva** behörighet att **Företagsadministratörer**.
 
-- Lägg till **MIMCMAgent.**
+    - Lägg till **MIMCMAgent.**
 
-- Tilldela **Läs** och **registrera** behörighet att **MIMCMAgent**.
+    - Tilldela **Läs** och **registrera** behörighet att **MIMCMAgent**.
 
-I den **egenskaper för ny mall** dialogrutan klickar du på **OK**.
+13. I den **egenskaper för ny mall** dialogrutan klickar du på **OK**.
 
-Lämna den **konsol för certifikatmallar** öppna.
+14. Lämna den **konsol för certifikatmallar** öppna.
 
 #### <a name="create-the-mim-cm-enrollment-agent-certificate-template"></a>Skapa MIM CM registreringsagent certifikatmall
 
--   I den **konsol för certifikatmallar**i den **information** rutan, markera och högerklicka på **registreringsagent**, och klicka sedan på **duplicera mall**.
+1. I den **konsol för certifikatmallar**i den **information** rutan, markera och högerklicka på **registreringsagent**, och klicka sedan på **duplicera mall**.
 
-I den **kopiera mallen** dialogrutan **Windows Server 2003 Enterprise**, och klicka sedan på **OK**.
+2. I den **kopiera mallen** dialogrutan **Windows Server 2003 Enterprise**, och klicka sedan på **OK**.
 
-I den **egenskaper för ny mall** dialogrutan den **allmänna** fliken den **Mallens visningsnamn** skriver **MIM CM-registreringsagent**. Se till att den **giltighetsperioden** är **2 år**.
+3. I den **egenskaper för ny mall** dialogrutan den **allmänna** fliken den **Mallens visningsnamn** skriver **MIM CM-registreringsagent**. Se till att den **giltighetsperioden** är **2 år**.
 
-På den **hantering av begäranden** fliken, aktivera **Tillåt att den privata nyckeln exporteras**, och klicka sedan på **kryptografiproviders eller fliken kryptografi.**
+4. På den **hantering av begäranden** fliken, aktivera **Tillåt att den privata nyckeln exporteras**, och klicka sedan på **kryptografiproviders eller fliken kryptografi.**
 
-I den **val av Kryptografiprovider** dialogrutan inaktivera **Microsoft grundläggande kryptografiprovider v1.0**, inaktivera **Microsoft Enhanced kryptografiprovider v1.0**, aktivera  **Microsoft Enhanced RSA och AES Cryptographic Provider**, och klicka sedan på **OK**.
+5. I den **val av Kryptografiprovider** dialogrutan inaktivera **Microsoft grundläggande kryptografiprovider v1.0**, inaktivera **Microsoft Enhanced kryptografiprovider v1.0**, aktivera  **Microsoft Enhanced RSA och AES Cryptographic Provider**, och klicka sedan på **OK**.
 
-På den **säkerhet** fliken utför följande:
+6. På den **säkerhet** fliken utför följande:
 
-- Ta bort **administratör**.
+    - Ta bort **administratör**.
 
-- Ta bort **Domänadministratörer**.
+    - Ta bort **Domänadministratörer**.
 
-- Tilldela bara **Läs** och **skriva** behörighet att **Företagsadministratörer**.
+    - Tilldela bara **Läs** och **skriva** behörighet att **Företagsadministratörer**.
 
-- Lägg till **MIMCMEnrollAgent**.
+    - Lägg till **MIMCMEnrollAgent**.
 
-- Tilldela **Läs** och **registrera** behörighet att **MIMCMEnrollAgent**.
+    - Tilldela **Läs** och **registrera** behörighet att **MIMCMEnrollAgent**.
 
-I den **egenskaper för ny mall** dialogrutan klickar du på **OK**.
+7. I den **egenskaper för ny mall** dialogrutan klickar du på **OK**.
 
-Lämna den **konsol för certifikatmallar** öppna.
+8. Lämna den **konsol för certifikatmallar** öppna.
 
 #### <a name="create-the-mim-cm-key-recovery-agent-certificate-template"></a>Skapa MIM CM nyckelåterställningsagenten certifikatmall
 
@@ -304,37 +314,42 @@ Lämna den **konsol för certifikatmallar** öppna.
 1. Återställ den **certifikatutfärdare** konsolen.
 
 2. I den **certifikatutfärdare** konsolen i konsolträdet, högerklicka på **certifikatmallar**, peka på **ny**, och klicka sedan på **certifikat Mallen ska utfärdas**.
+
 3. I den **Aktivera certifikatmallar** dialogrutan **MIM CM registreringsagent**, **MIM CM nyckelåterställningsagenten**, och **MIM CM signering**. Klicka på **OK**.
+
 4. I konsolträdet klickar du på **certifikatmallar**.
+
 5. Kontrollera att de tre nya mallarna visas i den **information** rutan och Stäng **certifikatutfärdare**.
+
     ![MIM CM-signering](media/mim-cm-deploy/image016.png)
+
 6. Stäng alla öppna fönster och logga ut.
 
-### <a name="iis-configuration"></a>IIS-konfiguration 
+### <a name="iis-configuration"></a>IIS-konfiguration
 
-För att hoIn ordning för att vara värd för webbplatsen för CM stopp och konfigurera IIS
+För att kunna vara värd för webbplatsen för CM, installera och konfigurera IIS.
 
 #### <a name="install-and-configure-iis"></a>Installera och konfigurera IIS
 
-1. Logga in på ** CORLog i som **MIMINSTALL** konto
+1. Logga in på **CORLog i** som **MIMINSTALL** konto
 
->[!IMPORTANT]
-Kontot för installation av MIM ska vara en lokal administratör
+    >[!IMPORTANT]
+    >Kontot för installation av MIM ska vara en lokal administratör
 
-2. Öppna powershell och kör följande kommando
+2. Öppna PowerShell och kör följande kommando
 
-   - ```Install-WindowsFeature –ConfigurationFilePath```
+    `Install-WindowsFeature –ConfigurationFilePath`
 
 >[!NOTE]
- En webbplats med namnet Default Web Site installeras som standard i IIS 7. Om platsen har bytt namn eller ta bort en webbplats med namnet måste Default Web Site finnas innan du kan installera MIM CM.
+>En webbplats med namnet Default Web Site installeras som standard i IIS 7. Om platsen har bytt namn eller ta bort en webbplats med namnet måste Default Web Site finnas innan du kan installera MIM CM.
 
 #### <a name="configuring-kerberos"></a>Konfigurera Kerberos
 
 Kontot MIMCMWebAgent ska köras på MIM CM-portalen. Som standard i IIS och konfigurera kernel används-autentisering i IIS som standard. Du ska inaktivera Kerberos-autentisering för kernelläge och konfigurerar SPN för kontot MIMCMWebAgent i stället. Vissa kommandot kräver förhöjd behörighet i active directory och CORPCM server.
 
-![](media/mim-cm-deploy/image020.png)
+![Diagram](media/mim-cm-deploy/image020.png)
 
-```
+```powershell
 #Kerberos settings
 #SPN
 SETSPN -S http/cm.contoso.com contoso\MIMCMWebAgent
@@ -343,12 +358,11 @@ Get-ADUser CONTOSO\MIMCMWebAgent | Set-ADObject -Add @{"msDS-AllowedToDelegateTo
 
 ```
 
-** Uppdaterar IIS på **CORPCM**
+**Uppdatera IIS på CORPCM**
 
+![diagram](media/mim-cm-deploy/image022.png)
 
-![](media/mim-cm-deploy/image022.png)
-
-```
+```powershell
 add-pssnapin WebAdministration
 
 Set-WebConfigurationProperty -Filter System.webServer/security/authentication/WindowsAuthentication -Location 'Default Web Site' -Name enabled -Value $true
@@ -357,9 +371,8 @@ Set-WebConfigurationProperty -Filter System.webServer/security/authentication/Wi
 
 ```
 
-
 >[!NOTE]
-Du behöver lägga till en DNS A Record för ”cm.contoso.com” och peka på CORPCM IP
+>Du behöver lägga till en DNS A Record för ”cm.contoso.com” och peka på CORPCM IP
 
 #### <a name="requiring-ssl-on-the-mim-cm-portal"></a>Kräver SSL på MIM CM-portalen
 
@@ -379,18 +392,18 @@ Vi rekommenderar starkt att du kräva SSL på MIM CM-portalen. Om du ännu inte 
 
 1. Se till att du är ansluten till CORPSQL01-servern.
 
-2. Se till att du är inloggad som SQL DBA
+2. Se till att du är inloggad som SQL DBA.
 
 3. Kör följande T-SQL-skript för att tillåta CONTOSOS\\MIMINSTALL-konto för att skapa databasen när vi går du till konfigurationssteg
 
->[!NOTE]
-Vi kommer att behöva gå tillbaka till SQL när vi är klara för modulen Avsluta & princip
+    >[!NOTE]
+    >Vi kommer att behöva gå tillbaka till SQL när vi är klara för modulen Avsluta & princip
 
-```
-create login [CONTOSO\\MIMINSTALL] from windows;
-exec sp_addsrvrolemember 'CONTOSO\\MIMINSTALL', 'dbcreator';
-exec sp_addsrvrolemember 'CONTOSO\\MIMINSTALL', 'securityadmin';  
-```
+    ```sql
+    create login [CONTOSO\\MIMINSTALL] from windows;
+    exec sp_addsrvrolemember 'CONTOSO\\MIMINSTALL', 'dbcreator';
+    exec sp_addsrvrolemember 'CONTOSO\\MIMINSTALL', 'securityadmin';  
+    ```
 
 ![MIM CM-konfiguration guiden felmeddelande](media/mim-cm-deploy/image024.png)
 
@@ -412,7 +425,7 @@ exec sp_addsrvrolemember 'CONTOSO\\MIMINSTALL', 'securityadmin';
 
 8. Kontrollera på sidan anpassad installation av **MIM CM-portalen** och **MIM CM-uppdateringstjänst komponenter** är inställda på att installeras, och sedan **Klicka på nästa**.
 
-9. Kontrollera att namnet på virtuella mappen är på sidan virtuella webbmapp ** CertificateManagement, och sedan **Klicka på nästa**.
+9. Kontrollera att namnet på virtuella mappen är på sidan virtuella webbmapp **CertificateManagement**, och sedan **Klicka på nästa**.
 
 10. På sidan Installera Microsoft Identity Manager Certificate Management **klickar du på Installera**.
 
@@ -422,14 +435,18 @@ exec sp_addsrvrolemember 'CONTOSO\\MIMINSTALL', 'securityadmin';
 
 ### <a name="configuration-wizard-of-microsoft-identity-manager-2016-certificate-management"></a>Guiden för konfiguration av Microsoft Identity Manager 2016 certifikathantering
 
-Innan du loggar in i CORPCM Lägg till MIMINSTALL till **domain Admins, Schema-administratörer och lokala administratörer** för konfigurationsguiden. Detta kan tas bort senare när konfigurationen är klar.      
-    
+Innan du loggar in i CORPCM Lägg till MIMINSTALL till **domain Admins, Schema-administratörer och lokala administratörer** för konfigurationsguiden. Detta kan tas bort senare när konfigurationen är klar.
+
 ![Felmeddelande](media/mim-cm-deploy/image028.png)
 
 1. Från den **starta** -menyn klickar du på **certifikat Management konfigurationsguiden**. Och köra som **administratör**
+
 2. På den **Välkommen till guiden för konfiguration av** klickar du på **nästa**.
+
 3. På den **certifikatutfärdarkonfiguration** , se till att den markerade Certifikatutfärdaren är **Contoso-CORPCA-CA**, se till att den valda servern är **CORPCA. CONTOSO.COM**, och klicka sedan på **nästa**.
+
 4. På den **ställa in Microsoft® SQL Server®-databas** sidan den **SQL Server** skriver **CORPSQL1** , aktivera den **använda mina autentiseringsuppgifter för att skapa den databasen** kryssrutan och klicka sedan på **nästa**.
+
 5. På den **databasinställningar** godkänner standardnamnet på databasen för **FIMCertificateManagement**, se till att **SQL-integrerad autentisering** väljs, och sedan Klicka på **nästa**.
 
 6. På den **konfigurera Active Directory** , acceptera standardnamnet för tjänstanslutningspunkten och klicka sedan på **nästa**.
@@ -439,35 +456,48 @@ Innan du loggar in i CORPCM Lägg till MIMINSTALL till **domain Admins, Schema-a
 8. På den **agenter – FIM CM** avmarkerar den **använder standardinställningarna för FIM CM** kryssrutan och klicka sedan på **anpassad konton**.
 
 9. I den **agenter – FIM CM** flera flikar i dialogrutan på varje flik, anger du följande information:
-   - Användarnamn: **uppdatering** 
-   - Lösenord: **skicka\@word1**
-   - Bekräfta lösenord: **skicka\@word1**
-   - Använd en befintlig användare: **aktiverad**
->[!NOTE]
-Dessa konton som vi skapade tidigare. Kontrollera att procedurerna i steg 8 upprepas för alla sex agent konto flikar.
 
-![MIM CM-konton](media/mim-cm-deploy/image030.png)
+   - Användarnamn: **uppdatering**
+
+   - Lösenord: **skicka\@word1**
+
+   - Bekräfta lösenord: **skicka\@word1**
+
+   - Använd en befintlig användare: **aktiverad**
+
+    >[!NOTE]
+    >Dessa konton som vi skapade tidigare. Kontrollera att procedurerna i steg 8 upprepas för alla sex agent konto flikar.
+
+    ![MIM CM-konton](media/mim-cm-deploy/image030.png)
 
 10. När alla kontoinformation för agent är klar klickar du på **OK**.
 
 11. På den **agenter – MIM CM** klickar du på **nästa**.
 
 12. På den **konfigurera servercertifikat** sidan måste du aktivera följande certifikatmallar:
+
     - Certifikatmall som ska användas för certifikat för dataåterställning agent nyckelåterställningsagenten: **MIMCMKeyRecoveryAgent**.
+
     - Certifikatmall som ska användas för FIM CM-Agent certifikatet: **MIMCMSigning**.
+
     - Certifikatmall som ska användas för det registreringsagent-certifikatet: **FIMCMEnrollmentAgent**.
+
 13. På den **ställa in servercertifikat** klickar du på **nästa**.
+
 14. På den **installationsprogrammet e-postservern, skriva ut dokumentet** sidan den **ange namnet på SMTP-servern som du vill använda i e-registrering meddelanden** rutan och klicka på **nästa.**
+
 15. På den **redo att konfigurera** klickar du på **konfigurera**.
+
 16. I den **konfigurationsguiden – Microsoft Forefront Identity Manager 2010 R2** varning i dialogrutan klickar du på **OK** bekräftar att SSL inte är aktiverat på den virtuella IIS-katalogen.
 
     ![Media/image17.png](media/mim-cm-deploy/image032.png)
 
     >[!NOTE] 
-    Klicka inte på knappen Slutför tills körningen av guiden är klar. Loggning för guiden hittar du här:**% programfiles %\\Microsoft Forefront Identity Management\\2010\\certifikathantering\\config.log**
+    >Klicka inte på knappen Slutför tills körningen av guiden är klar. Loggning för guiden hittar du här: **% programfiles %\\Microsoft Forefront Identity Management\\2010\\certifikathantering\\config.log**
+
 17. Klicka på **Slutför**.
 
-![MIM CM guiden har slutförts](media/mim-cm-deploy/image033.png)
+    ![MIM CM guiden har slutförts](media/mim-cm-deploy/image033.png)
 
 18. Stäng alla öppna fönster.
 
@@ -475,7 +505,7 @@ Dessa konton som vi skapade tidigare. Kontrollera att procedurerna i steg 8 uppr
 
 20. Webbplats från servern CORPCM https://cm.contoso.com/certificatemanagement  
 
-    ![](media/mim-cm-deploy/image035.png)
+    ![diagram](media/mim-cm-deploy/image035.png)
 
 ### <a name="verify-the-cng-key-isolation-service"></a>Kontrollera CNG Key Isolation-tjänst
 
@@ -500,7 +530,7 @@ I det här steget ska vi installera och konfigurera Certifikatutfärdaren för F
 3. I den **Web** fönstret, högerklicka på **Web.config**, och klicka sedan på **öppna**.
 
     >[!Note]
-    Web.config-filen öppnas i anteckningar
+    >Web.config-filen öppnas i anteckningar
 
 4. Tryck på CTRL + F när filen öppnas.
 
@@ -549,7 +579,7 @@ I det här steget ska vi installera och konfigurera Certifikatutfärdaren för F
 6. På den **anpassad installation** väljer **MIM CM-uppdateringstjänst**, och klicka sedan på **den här funktionen kommer inte att vara tillgänglig**.
 
     >[!Note]
-    Detta lämnar MIM CM CA-filer som funktionen endast aktiverad för installationen.
+    >Detta lämnar MIM CM CA-filer som funktionen endast aktiverad för installationen.
 
 7. På den **anpassad installation** klickar du på **nästa**.
 
@@ -585,7 +615,7 @@ I det här steget ska vi installera och konfigurera Certifikatutfärdaren för F
 12. Kontrollera att göra de senaste händelserna i listan över händelser, *inte* innehålla **varning** eller **fel** händelser sedan den senaste omstarten av Certifikattjänster.
 
     >[!NOTE] 
-    Den sista händelsen bör ange att avsluta modulen lästes in med hjälp av inställningarna från ```SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\ContosoRootCA\ExitModules\Clm.Exit```
+    >Den sista händelsen bör ange att avsluta modulen lästes in med hjälp av inställningarna från: `SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\ContosoRootCA\ExitModules\Clm.Exit`
 
 13. Minimera den **Loggboken**.
 
@@ -602,7 +632,7 @@ I det här steget ska vi installera och konfigurera Certifikatutfärdaren för F
 5. Välj tumavtrycket och tryck på CTRL + C.
 
     >[!NOTE]
-    Gör **inte** innehåller inledande blanksteg i listan över tumavtryck tecken.
+    >Gör **inte** innehåller inledande blanksteg i listan över tumavtryck tecken.
 
 6. I den **certifikat** dialogrutan klickar du på **OK**.
 
@@ -615,8 +645,8 @@ I det här steget ska vi installera och konfigurera Certifikatutfärdaren för F
 10. I den **Sök efter** rutan, skriver du ett blanksteg och klicka sedan på **Ersätt alla**.
 
     >[!Note]
-    Detta tar bort alla blanksteg mellan tecken i certifikatets tumavtryck.
-    
+    >Detta tar bort alla blanksteg mellan tecken i certifikatets tumavtryck.
+
 11. I den **ersätta** dialogrutan klickar du på **Avbryt**.
 
 12. Välj den konverterade *thumbprintstring*, och tryck på CTRL + C.
@@ -629,143 +659,239 @@ I det här steget ska vi installera och konfigurera Certifikatutfärdaren för F
 
 2. Högerklicka på **contoso-CORPCA-CA**, och klicka sedan på **egenskaper**.
 
-3.  I den **contoso-CORPCA-certifikatutfärdaregenskaper** dialogrutan den **principmodulen** klickar du på **egenskaper**.
+3. I den **contoso-CORPCA-certifikatutfärdaregenskaper** dialogrutan den **principmodulen** klickar du på **egenskaper**.
 
-- På den **allmänna** kontrollerar du att **skicka FIM CM-begäran till standardprincipmodulen för bearbetning** är markerad.
-- På den **signeringscertifikat** klickar du på **Lägg till**.
-- I dialogrutan certifikat högerklickar du på den **ange hex-kodat certifikat-hash** rutan och klicka på **klistra in**.
-- I den **certifikat** dialogrutan klickar du på **OK**.
-    >[!Note]
-    Om den **OK** knappen inte är aktiverad kan du av misstag ingår ett dolt tecken i strängen tumavtrycket när du kopierade tumavtrycket från clmAgent certifikatet. Upprepa alla steg från **uppgift 4: kopiera MIMCMAgent tumavtrycket till Urklipp** i den här övningen.
+    - På den **allmänna** kontrollerar du att **skicka FIM CM-begäran till standardprincipmodulen för bearbetning** är markerad.
 
-- I den **konfigurationsegenskaper** dialogrutan ser du till att tumavtrycket visas i den **giltigt signeringscertifikat** listan och klicka sedan på **OK**.
+    - På den **signeringscertifikat** klickar du på **Lägg till**.
 
-- I den **FIM certifikathantering** meddelanderutan klickar du på **OK**.
+    - I dialogrutan certifikat högerklickar du på den **ange hex-kodat certifikat-hash** rutan och klicka på **klistra in**.
 
-- I den **contoso-CORPCA-certifikatutfärdaregenskaper** dialogrutan klickar du på **OK**.
+    - I den **certifikat** dialogrutan klickar du på **OK**.
+    
+        >[!Note]
+        >Om den **OK** knappen inte är aktiverad kan du av misstag ingår ett dolt tecken i strängen tumavtrycket när du kopierade tumavtrycket från clmAgent certifikatet. Upprepa alla steg från **uppgift 4: kopiera MIMCMAgent tumavtrycket till Urklipp** i den här övningen.
 
-- Högerklicka på **contoso-CORPCA-CA **** peka **alla aktiviteter**, och klicka sedan på **stoppa tjänsten**.
+4. I den **konfigurationsegenskaper** dialogrutan ser du till att tumavtrycket visas i den **giltigt signeringscertifikat** listan och klicka sedan på **OK**.
 
-- Vänta tills Active Directory Certificate Services stoppar.
+5. I den **FIM certifikathantering** meddelanderutan klickar du på **OK**.
 
-- Högerklicka på **contoso-CORPCA-CA **** peka **alla aktiviteter**, och klicka sedan på **starta tjänsten**.
+6. I den **contoso-CORPCA-certifikatutfärdaregenskaper** dialogrutan klickar du på **OK**.
 
-- Stäng den **certifikatutfärdare** konsolen.
+7. Högerklicka på **contoso-CORPCA-CA **** peka **alla aktiviteter**, och klicka sedan på **stoppa tjänsten**.
 
-- Stäng alla öppna fönster och sedan loggar ut.
+8. Vänta tills Active Directory Certificate Services stoppar.
 
-- **Sista steget i distributionen** är vi vill försäkra att CONTOSO\\MIMCM chefer kan distribuera och skapa mallar och konfigurera systemet utan att schemat och Domänadministratörer. Nästa skriptet kommer ACL behörigheter till certifikatmallar med dsacls. Kör med ett konto som har fullständig behörighet för att ändra säkerhet Läs- och skrivbehörighet till varje certifikatmall i skogen.
+9. Högerklicka på **contoso-CORPCA-CA **** peka **alla aktiviteter**, och klicka sedan på **starta tjänsten**.
 
-- Första stegen: **hur du konfigurerar tjänstanslutningspunkten och målgruppen behörigheter & delegera mallen profilhantering**
-  - Konfigurera behörigheter för tjänstanslutningspunkten (SCP).
+10. Stäng den **certifikatutfärdare** konsolen.
 
-  - Konfigurera delegerade profilhantering för mallen.
+11. Stäng alla öppna fönster och sedan loggar ut.
 
-  - Konfigurera behörigheter för tjänstanslutningspunkten (SCP). **\<Inget skript\>**
+**Sista steget i distributionen** är vi vill försäkra att CONTOSO\\MIMCM chefer kan distribuera och skapa mallar och konfigurera systemet utan att schemat och Domänadministratörer. Nästa skriptet kommer ACL behörigheter till certifikatmallar med dsacls. Kör med ett konto som har fullständig behörighet för att ändra säkerhet Läs- och skrivbehörighet till varje certifikatmall i skogen.
 
-     -   Kontrollera att du är ansluten till den **CORPDC** virtuell server.
+Första stegen: **hur du konfigurerar tjänstanslutningspunkten och målgruppen behörigheter & delegera mallen profilhantering**
 
-     -   Logga in som **contoso\\corpadmin**
+1. Konfigurera behörigheter för tjänstanslutningspunkten (SCP).
 
-     -   Från **Administrationsverktyg**öppnar **Active Directory-användare och datorer**.
+2. Konfigurera delegerade profilhantering för mallen.
 
-     -   I **Active Directory-användare och datorer**på den **visa** -menyn, se till att **avancerade funktioner** är aktiverad.
+3. Konfigurera behörigheter för tjänstanslutningspunkten (SCP). **\<Inget skript\>**
 
-     -   I konsolträdet expanderar **Contoso.com** \| **System** \| **Microsoft** \| **certifikatets livscykel Manager**, och klicka sedan på **CORPCM**.    
+4.   Kontrollera att du är ansluten till den **CORPDC** virtuell server.
 
-     -   Högerklicka på **CORPCM**, och klicka sedan på **egenskaper**.
+5. Logga in som **contoso\\corpadmin**
 
-     -   I den **CORPCM egenskaper** dialogrutan den **säkerhet** lägger du till följande grupper med motsvarande behörigheter:
+6. Från **Administrationsverktyg**öppnar **Active Directory-användare och datorer**.
 
-    | Grupp          | Behörigheter                                                                                                                                                         |
-    |----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+7. I **Active Directory-användare och datorer**på den **visa** -menyn, se till att **avancerade funktioner** är aktiverad.
+
+8. I konsolträdet expanderar **Contoso.com** \| **System** \| **Microsoft** \| **certifikatets livscykel Manager**, och klicka sedan på **CORPCM**.
+
+9. Högerklicka på **CORPCM**, och klicka sedan på **egenskaper**.
+
+10. I den **CORPCM egenskaper** dialogrutan den **säkerhet** lägger du till följande grupper med motsvarande behörigheter:
+
+    | Grupp          | Behörigheter      |
+    |----------------|------------------|
     | mimcm-hanterare | Läs </br> FIM CM-granskning</br> FIM CM-registreringsagent</br> Registrera FIM CM-begäran</br> FIM CM-begäran Återställ</br> Förnya FIM CM-begäran</br> FIM CM-begäran att återkalla </br> FIM CM-begäran Avblockera smartkort |
-    | MIMCM supportavdelningen | Läs</br> FIM CM-registreringsagent</br> FIM CM-begäran att återkalla</br> FIM CM-begäran Avblockera smartkort                                                                                |
-- I den **CORPDC egenskaper** dialogrutan klickar du på **OK**.
+    | MIMCM supportavdelningen | Läs</br> FIM CM-registreringsagent</br> FIM CM-begäran att återkalla</br> FIM CM-begäran Avblockera smartkort |
 
-- Lämna **Active Directory-användare och datorer** öppna.
+11. I den **CORPDC egenskaper** dialogrutan klickar du på **OK**.
 
-- **Konfigurera behörigheter för de underordnade objekt**
-    - Kontrollera att du är fortfarande i den **Active Directory-användare och datorer** konsolen.
-    - I konsolträdet högerklickar du på **Contoso.com**, och klicka sedan på **egenskaper**.
-    - På den **säkerhet** klickar du på **Avancerat**.
-    - I den **avancerade säkerhetsinställningar för Contoso** dialogrutan klickar du på **Lägg till**.
-    - I den **Välj användare, dator, tjänstkonto eller grupp** i dialogrutan den **ange objektnamn att välja** skriver **mimcm chefer**, och klicka sedan på **OK**.
-    - I den **Behörighetspost för Contoso** i dialogrutan den **gäller** väljer **underordnad användarobjekt** och sedan aktivera den **Tillåt**kryssrutan för följande **behörigheter**:
-        - **Läsa alla egenskaper**
-        - **Läsbehörighet**
-        - **FIM CM-granskning**
-        - **FIM CM-registreringsagent**
-        - **Registrera FIM CM-begäran**
-        - **FIM CM-begäran Återställ**
-        - **Förnya FIM CM-begäran**
-        - **FIM CM-begäran att återkalla**
-        - **FIM CM-begäran Avblockera smartkort**
-    - I den **Behörighetspost för Contoso** dialogrutan klickar du på **OK**.
-    - I den **avancerade säkerhetsinställningar för Contoso** dialogrutan klickar du på **Lägg till**.
-    - I den **Välj användare, dator, tjänstkonto eller grupp** i dialogrutan den **ange objektnamn att välja** skriver **mimcm supportavdelningen**, och klicka sedan på **OK**.
-    - I den **Behörighetspost för Contoso** i dialogrutan den **gäller** väljer **underordnad användarobjekt** och välj sedan den **Tillåt**kryssrutan för följande **behörigheter**: - **läsa alla egenskaper** - **läsbehörighet** - **FIM CM-registreringsagent** - **FIM CM-begäran att återkalla** - **FIM CM-begäran Avblockera smartkort**
-    - I den **Behörighetspost för Contoso** dialogrutan klickar du på **OK**.
-    – I den **avancerade säkerhetsinställningar för Contoso** dialogrutan klickar du på **OK**.
-    - I den **contoso.com egenskaper** dialogrutan klickar du på **OK**.
-    - Lämna **Active Directory-användare och datorer** öppna.
+12. Lämna **Active Directory-användare och datorer** öppna.
 
-    - **Konfigurera behörigheter för de underordnade användarobjekt \<skript\>**
-        - Kontrollera att du är fortfarande i den **Active Directory-användare och datorer** konsolen.
-        - I konsolträdet högerklickar du på **Contoso.com**, och klicka sedan på **egenskaper**.
-        - På den **säkerhet** klickar du på **Avancerat**.
-        - I den **avancerade säkerhetsinställningar för Contoso** dialogrutan klickar du på **Lägg till**.
-        - I den **Välj användare, dator, tjänstkonto eller grupp** i dialogrutan den **ange objektnamn att välja** skriver **mimcm chefer**, och klicka sedan på **OK**.
-        - I den **Behörighetspost för CONTOSO** i dialogrutan den **gäller** väljer **underordnad användarobjekt** och sedan aktivera den **Tillåt**kryssrutan för följande **behörigheter**:
-            - **Läsa alla egenskaper**
-            - **Läsbehörighet**
-            - **FIM CM-granskning**
-            - **FIM CM-registreringsagent**
-            - **Registrera FIM CM-begäran**
-            - **FIM CM-begäran Återställ**
-            - **Förnya FIM CM-begäran**
-            - **FIM CM-begäran att återkalla**
-            - **FIM CM-begäran Avblockera smartkort**
-    - I den **Behörighetspost för CONTOSO** dialogrutan klickar du på **OK**.
-    - I den **avancerade säkerhetsinställningar för CONTOSO** dialogrutan klickar du på **Lägg till**.
-    - I den **Välj användare, dator, tjänstkonto eller grupp** i dialogrutan den **ange objektnamn att välja** skriver **mimcm supportavdelningen**, och klicka sedan på **OK**.
-    - I den **Behörighetspost för CONTOSO** i dialogrutan den **gäller** väljer **underordnad användarobjekt** och välj sedan den **Tillåt**kryssrutan för följande **behörigheter**: - **läsa alla egenskaper** - **läsbehörighet** - **FIM CM-registreringsagent** - **FIM CM-begäran att återkalla** - **FIM CM-begäran Avblockera smartkort**
-    - I den **Behörighetspost för contoso** dialogrutan klickar du på **OK**.
-    - I den **avancerade säkerhetsinställningar för Contoso** dialogrutan klickar du på **OK**.
-    - I den **contoso.com egenskaper** dialogrutan klickar du på **OK**.
-    - Lämna **Active Directory-användare och datorer** öppna.
-- Andra steg: **delegera hantering Certifikatmallsbehörighet \<skript\>**
-    - Delegera behörighet till behållaren för certifikatmallar.
-    - Delegera behörigheter för behållaren OID.
-    - Delegera behörigheter för befintliga certifikatmallarna.
-- Definiera behörigheter i behållare för certifikatmallar
-     1. Återställ den **Active Directory-platser och tjänster** konsolen.
-     2. I konsolträdet expanderar **Services**, expandera **Public Key Services**, och klicka sedan på **certifikatmallar**.
-     3. I konsolträdet högerklickar du på **certifikatmallar**, och klicka sedan på **delegera kontroll**.
-     4. I den **delegera kontroll** klickar du på **nästa**.
-     5. På den **användare eller grupper** klickar du på **Lägg till**.
-     6. I den **Välj användare, datorer eller grupper** i dialogrutan den **ange objektnamn att välja** skriver **mimcm chefer**, och klicka sedan på **OK**.
-     7. På den **användare eller grupper** klickar du på **nästa**.
-     8. På den **aktiviteter som ska delegeras** klickar du på **skapa en anpassad aktivitet och delegera**, och klicka sedan på **nästa**.
-     9.  På den **Active Directory-objekttyp** ser du till att **den här mappen, befintliga objekt i den här mappen och skapa nya objekt i den här mappen** är markerad och klicka sedan på **nästa**.
-     10. På den **behörigheter** sidan den **behörigheter** väljer den **fullständig kontroll** kryssrutan och klicka sedan på **nästa**.
-     11. På den **Slutför guiden Delegera kontroll** klickar du på **Slutför**.
+**Konfigurera behörigheter för de underordnade objekt**
 
-- Definiera behörigheter för behållaren OID
-     1. I konsolträdet högerklickar du på **OID**, och klicka sedan på **egenskaper**.
-     2. I den **OID egenskaper** dialogrutan den **säkerhet** klickar du på **Avancerat**.
-     3. I den **avancerade säkerhetsinställningar för OID** dialogrutan klickar du på **Lägg till**.
-     4. I den **Välj användare, dator, tjänstkonto eller grupp** i dialogrutan den **ange objektnamn att välja** skriver **mimcm chefer**, och klicka sedan på **OK**.
-     5. I den **Behörighetspost för OID** dialogrutan ser du till att behörigheterna som gäller för **objektet och alla underordnade objekt**, klickar du på **fullständig kontroll**, och klicka sedan på  **OK**.
-     6. I den **avancerade säkerhetsinställningar för OID** dialogrutan klickar du på **OK**.
-     7. I den **OID egenskaper** dialogrutan klickar du på **OK**.
-     8. Stäng **Active Directory-platser och tjänster**.
+1. Kontrollera att du är fortfarande i den **Active Directory-användare och datorer** konsolen.
+
+2. I konsolträdet högerklickar du på **Contoso.com**, och klicka sedan på **egenskaper**.
+
+3. På den **säkerhet** klickar du på **Avancerat**.
+
+4. I den **avancerade säkerhetsinställningar för Contoso** dialogrutan klickar du på **Lägg till**.
+
+5. I den **Välj användare, dator, tjänstkonto eller grupp** i dialogrutan den **ange objektnamn att välja** skriver **mimcm chefer**, och klicka sedan på **OK**.
+
+6. I den **Behörighetspost för Contoso** i dialogrutan den **gäller** väljer **underordnad användarobjekt** och sedan aktivera den **Tillåt**kryssrutan för följande **behörigheter**:
+
+    - **Läsa alla egenskaper**
+    
+    - **Läsbehörighet**
+
+    - **FIM CM-granskning**
+
+    - **FIM CM-registreringsagent**
+
+    - **Registrera FIM CM-begäran**
+
+    - **FIM CM-begäran Återställ**
+
+    - **Förnya FIM CM-begäran**
+
+    - **FIM CM-begäran att återkalla**
+
+    - **FIM CM-begäran Avblockera smartkort**
+
+7. I den **Behörighetspost för Contoso** dialogrutan klickar du på **OK**.
+
+8. I den **avancerade säkerhetsinställningar för Contoso** dialogrutan klickar du på **Lägg till**.
+
+9. I den **Välj användare, dator, tjänstkonto eller grupp** i dialogrutan den **ange objektnamn att välja** skriver **mimcm supportavdelningen**, och klicka sedan på **OK**.
+
+10. I den **Behörighetspost för Contoso** i dialogrutan den **gäller** väljer **underordnad användarobjekt** och välj sedan den **Tillåt**kryssrutan för följande **behörigheter**:
+
+    - **Läsa alla egenskaper**
+
+    - **Läsbehörighet**
+
+    - **FIM CM-registreringsagent**
+
+    - **FIM CM-begäran att återkalla**
+
+    - **FIM CM-begäran Avblockera smartkort**
+
+11. I den **Behörighetspost för Contoso** dialogrutan klickar du på **OK**.
+
+12. I den **avancerade säkerhetsinställningar för Contoso** dialogrutan klickar du på **OK**.
+
+13. I den **contoso.com egenskaper** dialogrutan klickar du på **OK**.
+
+14. Lämna **Active Directory-användare och datorer** öppna.
+
+**Konfigurera behörigheter för de underordnade användarobjekt \<skript\>**
+
+1. Kontrollera att du är fortfarande i den **Active Directory-användare och datorer** konsolen.
+
+2. I konsolträdet högerklickar du på **Contoso.com**, och klicka sedan på **egenskaper**.
+
+3. På den **säkerhet** klickar du på **Avancerat**.
+
+4. I den **avancerade säkerhetsinställningar för Contoso** dialogrutan klickar du på **Lägg till**.
+
+5. I den **Välj användare, dator, tjänstkonto eller grupp** i dialogrutan den **ange objektnamn att välja** skriver **mimcm chefer**, och klicka sedan på **OK**.
+
+6. I den **Behörighetspost för CONTOSO** i dialogrutan den **gäller** väljer **underordnad användarobjekt** och sedan aktivera den **Tillåt**kryssrutan för följande **behörigheter**:
+
+    - **Läsa alla egenskaper**
+
+    - **Läsbehörighet**
+
+    - **FIM CM-granskning**
+
+    - **FIM CM-registreringsagent**
+
+    - **Registrera FIM CM-begäran**
+
+    - **FIM CM-begäran Återställ**
+
+    - **Förnya FIM CM-begäran**
+
+    - **FIM CM-begäran att återkalla**
+
+    - **FIM CM-begäran Avblockera smartkort**
+
+7. I den **Behörighetspost för CONTOSO** dialogrutan klickar du på **OK**.
+
+8. I den **avancerade säkerhetsinställningar för CONTOSO** dialogrutan klickar du på **Lägg till**.
+
+9. I den **Välj användare, dator, tjänstkonto eller grupp** i dialogrutan den **ange objektnamn att välja** skriver **mimcm supportavdelningen**, och klicka sedan på **OK**.
+
+10. I den **Behörighetspost för CONTOSO** i dialogrutan den **gäller** väljer **underordnad användarobjekt** och välj sedan den **Tillåt**kryssrutan för följande **behörigheter**:
+
+    - **Läsa alla egenskaper**
+
+    - **Läsbehörighet**
+
+    - **FIM CM-registreringsagent**
+
+    - **FIM CM-begäran att återkalla**
+
+    - **FIM CM-begäran Avblockera smartkort**
+
+11. I den **Behörighetspost för contoso** dialogrutan klickar du på **OK**.
+
+12. I den **avancerade säkerhetsinställningar för Contoso** dialogrutan klickar du på **OK**.
+
+13. I den **contoso.com egenskaper** dialogrutan klickar du på **OK**.
+
+14. Lämna **Active Directory-användare och datorer** öppna.
+
+Andra steg: **delegera hantering Certifikatmallsbehörighet \<skript\>**
+
+- Delegera behörighet till behållaren för certifikatmallar.
+
+- Delegera behörigheter för behållaren OID.
+
+- Delegera behörigheter för befintliga certifikatmallarna.
+
+Definiera behörigheter i behållare för certifikatmallar:
+
+1. Återställ den **Active Directory-platser och tjänster** konsolen.
+
+2. I konsolträdet expanderar **Services**, expandera **Public Key Services**, och klicka sedan på **certifikatmallar**.
+
+3. I konsolträdet högerklickar du på **certifikatmallar**, och klicka sedan på **delegera kontroll**.
+
+4. I den **delegera kontroll** klickar du på **nästa**.
+
+5. På den **användare eller grupper** klickar du på **Lägg till**.
+
+6. I den **Välj användare, datorer eller grupper** i dialogrutan den **ange objektnamn att välja** skriver **mimcm chefer**, och klicka sedan på **OK**.
+
+7. På den **användare eller grupper** klickar du på **nästa**.
+
+8. På den **aktiviteter som ska delegeras** klickar du på **skapa en anpassad aktivitet och delegera**, och klicka sedan på **nästa**.
+
+9.  På den **Active Directory-objekttyp** ser du till att **den här mappen, befintliga objekt i den här mappen och skapa nya objekt i den här mappen** är markerad och klicka sedan på **nästa**.
+
+10. På den **behörigheter** sidan den **behörigheter** väljer den **fullständig kontroll** kryssrutan och klicka sedan på **nästa**.
+
+11. På den **Slutför guiden Delegera kontroll** klickar du på **Slutför**.
+
+Definiera behörigheter för behållaren OID:
+
+1. I konsolträdet högerklickar du på **OID**, och klicka sedan på **egenskaper**.
+
+2. I den **OID egenskaper** dialogrutan den **säkerhet** klickar du på **Avancerat**.
+
+3. I den **avancerade säkerhetsinställningar för OID** dialogrutan klickar du på **Lägg till**.
+
+4. I den **Välj användare, dator, tjänstkonto eller grupp** i dialogrutan den **ange objektnamn att välja** skriver **mimcm chefer**, och klicka sedan på **OK**.
+
+5. I den **Behörighetspost för OID** dialogrutan ser du till att behörigheterna som gäller för **objektet och alla underordnade objekt**, klickar du på **fullständig kontroll**, och klicka sedan på  **OK**.
+
+6. I den **avancerade säkerhetsinställningar för OID** dialogrutan klickar du på **OK**.
+
+7. I den **OID egenskaper** dialogrutan klickar du på **OK**.
+
+8. Stäng **Active Directory-platser och tjänster**.
 
 **Skript: Behörighet till behållaren OID, profilmallen och certifikatmallar**
 
-![](media/mim-cm-deploy/image021.png)
+![diagram](media/mim-cm-deploy/image021.png)
 
-```
+```powershell
 import-module activedirectory
 $adace = @{
 "OID" = "AD:\\CN=OID,CN=Public Key Services,CN=Services,CN=Configuration,DC=contoso,DC=com";
@@ -789,76 +915,150 @@ $acl.AddAccessRule($ace)
 
 **Skript: Delegera behörigheter för befintliga certifikatmallarna.**  
 
-![](media/mim-cm-deploy/image039.png)  
+![diagram](media/mim-cm-deploy/image039.png)
 
-dsacls ”CN = administratör, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+```shell
+dsacls "CN=Administrator,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = CA, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=CA,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = CAExchange, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=CAExchange,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = CEPEncryption, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=CEPEncryption,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = ClientAuth, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=ClientAuth,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = databasen med kodsigneringsprincip, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=CodeSigning,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = CrossCA, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=CrossCA,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = CTLSigning, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=CTLSigning,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = DirectoryEmailReplication, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=DirectoryEmailReplication,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = DomainController, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=DomainController,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = DomainControllerAuthentication, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=DomainControllerAuthentication,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = EFS, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=EFS,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = EFSRecovery, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=EFSRecovery,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = EnrollmentAgent, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=EnrollmentAgent,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = EnrollmentAgentOffline, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=EnrollmentAgentOffline,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = ExchangeUser, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=ExchangeUser,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = ExchangeUserSignature, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=ExchangeUserSignature,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = FIMCMSigning, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=FIMCMSigning,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = FIMCMEnrollmentAgent, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=FIMCMEnrollmentAgent,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = FIMCMKeyRecoveryAgent, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=FIMCMKeyRecoveryAgent,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = IPSecIntermediateOffline, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=IPSecIntermediateOffline,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = IPSecIntermediateOnline, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=IPSecIntermediateOnline,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = KerberosAuthentication, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=KerberosAuthentication,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = KeyRecoveryAgent, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=KeyRecoveryAgent,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = dator, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=Machine,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = MachineEnrollmentAgent, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=MachineEnrollmentAgent,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = OCSPResponseSigning, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=OCSPResponseSigning,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = OfflineRouter, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=OfflineRouter,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = RASAndIASServer, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=RASAndIASServer,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = smartkortsinloggning, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=SmartCardLogon,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = SmartCardUser, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=SmartCardUser,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = SubCA, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=SubCA,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = användare, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=User,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = UserSignature, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=UserSignature,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = webbserver, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=WebServer,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
 
-dsacls ”CN = arbetsstation, CN = certifikatmallar, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com” /G Contoso\\MIMCM-hanterare: SDDTRCWDWOLCWPRPCCDCWSLO
+dsacls "CN=Workstation,CN=Certificate Templates,CN=Public Key
+Services,CN=Services,CN=Configuration,DC=Contoso,DC=com" /G
+Contoso\\MIMCM-Managers:SDDTRCWDWOLCWPRPCCDCWSLO
+```
