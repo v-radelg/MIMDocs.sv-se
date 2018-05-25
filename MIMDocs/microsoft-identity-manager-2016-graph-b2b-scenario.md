@@ -10,20 +10,20 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: 77d322f447546897ad18f0981e5faad12efafef1
-ms.sourcegitcommit: 637988684768c994398b5725eb142e16e4b03bb3
+ms.openlocfilehash: ac11a4dfb23944d50dbbcf0b0d70c915f186c159
+ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/25/2018
 ---
 <a name="azure-ad-business-to-business-b2b-collaboration-with-microsoft-identity-managermim-2016-sp1-with-azure-application-proxy-public-preview"></a>Azure AD-business-to-business (B2B) samarbete med Microsoft Identity Manager(MIM) 2016 SP1 med Azure-programproxy (förhandsversion)
 ============================================================================================================================
 
-Det första scenariot i preview för är externa användare Livscykelhantering för AD-kontot.   I det här scenariot en organisation har bjudits in gäster i sina Azure AD-katalog och vill ge dessa gäster tillgång till lokala Windows-integrerad autentisering och Kerberos-baserade program den [Azure AD-program](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-application-proxy-publish)proxy eller andra mekanismer för gateway. Azure AD application proxy måste varje användare ha sina egna AD DS-konto för identifiering och delegering
+Det första scenariot i preview för är externa användare Livscykelhantering för AD-kontot.   I det här scenariot en organisation har bjudits in gäster i sina Azure AD-katalog och vill ge dessa gäster tillgång till lokala Windows-integrerad autentisering och Kerberos-baserade program den [Azure AD-program](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-publish)proxy eller andra mekanismer för gateway. Azure AD application proxy måste varje användare ha sina egna AD DS-konto för identifiering och delegering
 
 ## <a name="scenario-specific-supported-guidance"></a>Scenariot specifika stöds anvisningar
 
-I det här scenariot en organisation har bjudits in gäster i sina Azure AD-katalog och vill ge dessa gäster åtkomst till lokala Windows. Integrerad autentisering eller Kerberos-baserade program den [Azure AD-program](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-application-proxy-publish) proxy eller andra mekanismer för gateway. Azure AD application proxy måste varje användare ha sina egna AD DS-konto för identifiering och delegering
+I det här scenariot en organisation har bjudits in gäster i sina Azure AD-katalog och vill ge dessa gäster åtkomst till lokala Windows. Integrerad autentisering eller Kerberos-baserade program den [Azure AD-program](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-publish) proxy eller andra mekanismer för gateway. Azure AD application proxy måste varje användare ha sina egna AD DS-konto för identifiering och delegering
 
 Några antaganden som gjorts i konfigurationen av B2B med MIM och Azure Application Proxy
 
@@ -33,14 +33,14 @@ Några antaganden som gjorts i konfigurationen av B2B med MIM och Azure Applicat
 
     -   Använda Office-grupper som kontrollerar programmets [Azure AD Connect](http://robsgroupsblog.com/blog/how-to-write-back-an-office-group-in-azure-active-directory-to-a-mail-enabled-security-group-in-an-on-premises-active-directory)
 
--   Om du redan har konfigurerat Application Proxy kopplingar och connector grupper inte så kan du besöka [här](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-application-proxy-enable#install-and-register-a-connector) att installera och konfigurera
+-   Om du redan har konfigurerat Application Proxy kopplingar och connector grupper inte så kan du besöka [här](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-enable#install-and-register-a-connector) att installera och konfigurera
 
 -   Publicerade ett eller flera program som förlitar sig på Windows-integrerad autentisering eller enskilda AD-konton via Azure AD App-Proxy
 
--   Du har bjudits in eller du bjuda in en eller flera gäster som skapats i Azure AD <https://docs.microsoft.com/en-us/azure/active-directory/active-directory-b2b-self-service-portal>
+-   Du har bjudits in eller du bjuda in en eller flera gäster som skapats i Azure AD <https://docs.microsoft.com/azure/active-directory/active-directory-b2b-self-service-portal>
 
 -   Microsoft Identity Manager är installerat och grundläggande konfiguration av tjänsten och portalen och Active Directory Management Agent.
-    <https://docs.microsoft.com/en-us/microsoft-identity-manager/microsoft-identity-manager-deploy>
+    <https://docs.microsoft.com/microsoft-identity-manager/microsoft-identity-manager-deploy>
 
 ## <a name="b2b-end-to-end-deployment"></a>Distribution av B2B-slutpunkt till slutpunkt
 
@@ -188,7 +188,7 @@ Indexerade = **SANT**
 
 Nästa steg kräver minimal konfiguration av FIM-tjänstens hanteringsagent och i Active Directory Domain Services Management Agent.
 
-Mer information hittar du här konfiguration <https://technet.microsoft.com/en-us/library/ff686263(v=ws.10).aspx> -hur gör jag för att etablera användare till AD DS
+Mer information hittar du här konfiguration <https://technet.microsoft.com/library/ff686263(v=ws.10).aspx> -hur gör jag för att etablera användare till AD DS
 
 ### <a name="synchronization-rule-import-guest-user-to-mv-to-synchronization-service-metaverse-from-azure-active-directorybr"></a>Synkroniseringsregeln: Importera gästanvändaren till MV till synkronisering Service metaversum från Azure Active Directory<br>
 
@@ -292,10 +292,10 @@ Slutligen har B2B användarinloggning och se hur programmet
 <a name="next-steps"></a>Nästa steg
 ----------
 
-[Hur etablerar jag användare i AD DS](https://technet.microsoft.com/en-us/library/ff686263(v=ws.10).aspx)
+[Hur etablerar jag användare i AD DS](https://technet.microsoft.com/library/ff686263(v=ws.10).aspx)
 
-[Funktionsreferens för FIM 2010](https://technet.microsoft.com/en-us/library/ff800820(v=ws.10).aspx)
+[Funktionsreferens för FIM 2010](https://technet.microsoft.com/library/ff800820(v=ws.10).aspx)
 
-[Hur du ger säker fjärråtkomst till lokala program](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-application-proxy-get-started)
+[Hur du ger säker fjärråtkomst till lokala program](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)
 
 [Ladda ned Microsoft Identity Manager management agent för Microsoft Graph (förhandsgranskning)](http://go.microsoft.com/fwlink/?LinkId=717495)

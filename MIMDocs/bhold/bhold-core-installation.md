@@ -1,7 +1,7 @@
 ---
-title: "BHOLD kärninstallation | Microsoft Docs"
+title: BHOLD kärninstallation | Microsoft Docs
 description: BHOLD suite installationen core dokumentet
-keywords: 
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -9,12 +9,12 @@ ms.date: 09/07/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
-ms.assetid: 
-ms.openlocfilehash: 33fbe63528d5d7c543ae286f934654538782b4d5
-ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
+ms.assetid: ''
+ms.openlocfilehash: 25825c1472dec44ed0e09519d4bc17809c1b95b1
+ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="bhold-core-installation"></a>BHOLD-Core-installation
 
@@ -30,7 +30,7 @@ BHOLD-kärnmodul utgör grunden för Microsoft BHOLD-programsvit. Innan du insta
 
 |          |        |          |
 |----------|--------|----------|
-|**Komponent** |**Minsta** | **Rekommenderas** |
+|**Komponent** |**minsta** | **Rekommenderas** |
 |Processor | 64-bitars processor | Flera kärnor 64-bitars processor |
 | Minne |3 GB | 6 GB eller mer |
 |Lagring| 30 GB tillgängligt |Beror på storleken för distribution |
@@ -98,8 +98,8 @@ Innan du börjar installera modulen BHOLD Core, måste förberedas för att ange
 |---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Använda Security Provider på domänen/dator** | Anger att Active Directory Domain Services-säkerhet kommer att styra åtkomsten till BHOLD-kärna.                                                                                                                                                                                                  | Markera kryssrutan. **Viktigt:** installationen misslyckas om den här kryssrutan är avmarkerad.                                                                 |
 | **Domän**                                  | Anger den domän som innehåller den BHOLD server-tjänstkontot och programgruppen. **Viktigt:** ange domännamnet genom att använda NetBIOS (korta)-namn, inte det fullständigt kvalificerade domännamnet (FQDN). Till exempel om det fullständiga Domännamnet för domänen är fabrikam.com, ange namnet på en domän som CONTOSO. | Skriva domännamnet här:                                                                                                                                        |
-| **Programgruppen**                       | Anger namnet på säkerhetsgruppen som du skapade tidigare i [krävs användar- och](https://technet.microsoft.com/en-us/library/jj134095(v=ws.10).aspx#rug).                                                                                                                                  | Skriv namnet på här:                                                                                                                                         |
-| **Tjänstanvändaren**                            | Anger inloggningsnamnet på tjänstkontot för användare som du skapade tidigare i [krävs användar- och](https://technet.microsoft.com/en-us/library/jj134095(v=ws.10).aspx#rug).                                                                                                                      | Skriv namnet på användarkontot här:                                                                                                                                  |
+| **Programgruppen**                       | Anger namnet på säkerhetsgruppen som du skapade tidigare i [krävs användar- och](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx#rug).                                                                                                                                  | Skriv namnet på här:                                                                                                                                         |
+| **Tjänstanvändaren**                            | Anger inloggningsnamnet på tjänstkontot för användare som du skapade tidigare i [krävs användar- och](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx#rug).                                                                                                                      | Skriv namnet på användarkontot här:                                                                                                                                  |
 | **Lösenord**                                | Anger lösenordet för användarkontot för BHOLD kärnor.                                                                                                                                                                                                                                              | Skriv lösenordet här: **viktigt:** se till att det här lösenordet i en dold, säker plats.                                                                |
 | **Webbplatsen IP och Port**                         | Anger numret för IP-adress och port för webbplatsen som ska skapas på intranätserver. Ändra standardvärdet (\*) bara om du inte använder samma IP-adress som standardwebbplatsen. Ändra portnumret som en tillgänglig port används endast om standard port (5151) redan.             | Om en icke-IP-adress används av standardwebbplatsen, Skriv det här: om Standardportnumret är redan används, Skriv BHOLD webbplatsens portnummer här: |
 
@@ -120,7 +120,7 @@ Logga in som medlem i gruppen Domänadministratörer om du vill installera modul
 
 - BholdCore  *\<Version\>*\_Release.msi
 
-Ersätt  *\<Version\>*  med versionsnumret för BHOLD Core-versionen som du installerar.
+Ersätt *\<Version\>* med versionsnumret för BHOLD Core-versionen som du installerar.
 
 För att köra programfilen som administratör, högerklicka på filen och klicka sedan på **kör som administratör**.
 
@@ -177,7 +177,7 @@ Medlemskap i **Domänadministratörer**, eller motsvarande krävs för att slutf
 
 1.  Klicka på domänkontrollanten för Active Directory Domain Services **starta**, klickar du på **alla program**, klickar du på **tillbehör**, högerklicka på **kommandotolk** , och klicka sedan på **kör som administratör**.
 
-2.  Skriv följande kommando vid kommandotolken och tryck sedan på RETUR: setspn – S HTTP /  *\<networkalias\> \<domän\>*  \\  *\<accountname\>*  där:
+2.  Skriv följande kommando vid kommandotolken och tryck sedan på RETUR: setspn – S HTTP / *\<networkalias\> \<domän\>* \\ *\<accountname\>* där:
 
     -   *\<networkalias\>*  är den adress som klienter använder för att kontakta BHOLD-webbplats
 
@@ -205,7 +205,7 @@ Du måste vara inloggad som medlem i gruppen Domänadministratörer utföra den 
 
 1.  Klicka på **starta**, klickar du på **alla program**, och klicka sedan på **Internet Explorer**.
 
-2.  Ange i adressfältet, där  *\<server\>*  är namnet på webbplatsservern BHOLD och  *\<port\>*  binds portnummer till webbplatsen.
+2.  Ange i adressfältet, där *\<server\>* är namnet på webbplatsservern BHOLD och *\<port\>* binds portnummer till webbplatsen.
 
 3.  Klicka på **Start**, klickar du på **värden**, och klicka sedan på **ändra**.
 
@@ -213,9 +213,9 @@ Du måste vara inloggad som medlem i gruppen Domänadministratörer utföra den 
 
 ## <a name="next-steps"></a>Nästa steg
 
-När du har installerat BHOLD kärnor och verifiera att installationen har slutförts, kan du installera ytterligare moduler. Nu är BHOLD-databas i stort sett tomt med bara ett användarkonto, rotkontot och en organisationsenhet (orgunit) rot orgunit. Om du vill lägga till fler användare i BHOLD-databasen, kan du antingen installera modulen Access Management-anslutningstjänsten eller modulen BHOLD modellen Generator beroende på dina behov. Du kan använda modulen Access Management-anslutningstjänsten för att importera data från FIM-synkroniseringstjänsten och du kan använda Generator för BHOLD-modellen för att importera data från en uppsättning strukturerade filer. Mer information om hur du använder modulen Access Management-anslutningstjänsten finns [Test Lab-Guide: BHOLD Access Management-anslutningstjänsten](https://technet.microsoft.com/en-us/library/jj853085(v=ws.10).aspx).
+När du har installerat BHOLD kärnor och verifiera att installationen har slutförts, kan du installera ytterligare moduler. Nu är BHOLD-databas i stort sett tomt med bara ett användarkonto, rotkontot och en organisationsenhet (orgunit) rot orgunit. Om du vill lägga till fler användare i BHOLD-databasen, kan du antingen installera modulen Access Management-anslutningstjänsten eller modulen BHOLD modellen Generator beroende på dina behov. Du kan använda modulen Access Management-anslutningstjänsten för att importera data från FIM-synkroniseringstjänsten och du kan använda Generator för BHOLD-modellen för att importera data från en uppsättning strukturerade filer. Mer information om hur du använder modulen Access Management-anslutningstjänsten finns [Test Lab-Guide: BHOLD Access Management-anslutningstjänsten](https://technet.microsoft.com/library/jj853085(v=ws.10).aspx).
 
 Mer information om hur du använder modulen BHOLD modellen Generator finns:
 
-- [Guide för Microsoft BHOLD Suite-begrepp](https://technet.microsoft.com/en-us/library/jj134102(v=ws.10).aspx)
-- [Microsoft BHOLD Suite TechnicalReference](https://technet.microsoft.com/en-us/library/jj134935(v=ws.10).aspx).
+- [Guide för Microsoft BHOLD Suite-begrepp](https://technet.microsoft.com/library/jj134102(v=ws.10).aspx)
+- [Microsoft BHOLD Suite TechnicalReference](https://technet.microsoft.com/library/jj134935(v=ws.10).aspx).

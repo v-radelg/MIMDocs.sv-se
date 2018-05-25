@@ -1,7 +1,7 @@
 ---
-title: "Distribuera PAM steg 2 – PRIV DC | Microsoft Docs"
-description: "Förbered PRIV-domänkontrollanten, som kommer att tillhandahålla skyddsmiljön där Privileged Access Management är isolerat."
-keywords: 
+title: Distribuera PAM steg 2 – PRIV DC | Microsoft Docs
+description: Förbered PRIV-domänkontrollanten, som kommer att tillhandahålla skyddsmiljön där Privileged Access Management är isolerat.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -12,11 +12,11 @@ ms.technology: active-directory-domain-services
 ms.assetid: 0e9993a0-b8ae-40e2-8228-040256adb7e2
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: de3392648f187ce6007bba332c0f191d32980c94
-ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
+ms.openlocfilehash: 9cb36a52525c538d0ac323a3342a9dd6b7f6e42e
+ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="step-2---prepare-the-first-priv-domain-controller"></a>Steg 2 – Förbereda den första PRIV-domänkontrollanten
 
@@ -34,7 +34,7 @@ I det här avsnittet konfigurerar du en virtuell dator som ska fungera som en do
 
 Installera Windows Server 2012 R2 för att göra en dator "PRIVDC" på en annan ny virtuell dator utan någon programvara installerad.
 
-1. Välj att utföra en anpassad (inte uppgraderad) installation av Windows Server. Vid installationen anger du **Windows Server 2012 R2 Standard (server med GUI) x64**. _Välj inte _ **Datacenter eller Server Core**.
+1. Välj att utföra en anpassad (inte uppgraderad) installation av Windows Server. Vid installationen anger du **Windows Server 2012 R2 Standard (server med GUI) x64**. _Välj inte_  **Datacenter eller Server Core**.
 
 2. Granska och godkänn licensvillkoren.
 
@@ -299,7 +299,7 @@ På en annan virtuell dator utan installerad programvara installerar du Windows 
 
 4. Använd kontrollpanelen och domänanslut PRIVWKSTN-datorn till domänen priv.contoso.local. För det måste du tillhandahålla autentiseringsuppgifterna före PRIV-domänens administratör. När det är klart startar du om datorn PRIVWKSTN.
 
-Mer information finns i [Skydda arbetsstationer med privilegierad åtkomst](https://technet.microsoft.com/en-us/library/mt634654.aspx).
+Mer information finns i [Skydda arbetsstationer med privilegierad åtkomst](https://technet.microsoft.com/library/mt634654.aspx).
 
 I nästa steg ska du förbereda en PAM-server.
 

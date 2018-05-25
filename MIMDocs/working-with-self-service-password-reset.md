@@ -12,11 +12,11 @@ ms.technology: security
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 18c3e4ea623b4b092bbd9236c5fa1b2a63af0486
-ms.sourcegitcommit: 637988684768c994398b5725eb142e16e4b03bb3
+ms.openlocfilehash: e2c252771bd114a3c70b900c8c089e09eff8cd23
+ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/25/2018
 ---
 >[!IMPORTANT]
 På grund av ett meddelande om utfasning av Azure Multi-Factor Authentication SDK. Azure MFA SDK ska ha stöd för befintliga kunder fram till datumet för tillbakadragandet av 14 November 2018. Nya kunder och aktuella kunder kommer inte att hämta SDK längre via den klassiska Azure-portalen. Om du vill hämta du behöver nå ut till Azure kundsupport för att ta emot dina autentiseringsuppgifter för MFA-paketet. <br> Utvecklingsgruppen Microsoft arbetar på Planering av MFA ändringar genom att integrera med MFA-serverns SDK. Detta tas med i kommande snabbkorrigeringen i tidig 2018.
@@ -65,7 +65,7 @@ I nästa avsnitt ställer du in Azure MFA-leverantören i Microsoft Azure Active
 
 ### <a name="register-your-multi-factor-authentication-provider-in-azure"></a>Registrera din leverantör av multifaktorautentiseringstjänsten i Azure
 
-1.  Skapa en [MFA-leverantören](https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factor-authentication-get-started-auth-provider).
+1.  Skapa en [MFA-leverantören](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-get-started-auth-provider).
 
 2. Öppna ett supportärende och begära direkt SDK för ASP.net 2.0 C#. SDK endast anges till användare av MIM med MFA eftersom direkt SDK är föråldrad. Nya kunder bör anta nästa version av MIM som kan integreras med MFA-servern.
 

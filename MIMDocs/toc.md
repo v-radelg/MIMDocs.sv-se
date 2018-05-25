@@ -12,6 +12,7 @@
 ## [Planera PAM-distributionen](./pam/environment-overview.md)
 # [Distribuera och använda](microsoft-identity-manager-deploy.md)
 ## [Föråldrade funktioner](microsoft-identity-manager-2016-deprecated-features.md)
+## [Datahantering](mim-privacy-compliance.md)
 ## [Första distributionen](microsoft-identity-manager-deploy.md)
 ### [Domänkonfiguration](preparing-domain.md)
 ### [Serverinstallation: Windows Server](prepare-server-ws2016.md)

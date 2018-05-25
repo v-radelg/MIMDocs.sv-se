@@ -1,7 +1,7 @@
 ---
 title: BHOLD FIM/MIM integrering installation | Microsoft Docs
-description: "BHOLD-integrationsmodul lägga till självbetjäning rollhantering i MIM och FIM"
-keywords: 
+description: BHOLD-integrationsmodul lägga till självbetjäning rollhantering i MIM och FIM
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -9,12 +9,12 @@ ms.date: 09/12/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
-ms.assetid: 
-ms.openlocfilehash: ef68de19bd0eabd6d9203469ecc991d496f05846
-ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
+ms.assetid: ''
+ms.openlocfilehash: 86ab45d1deaac2a7d697bc9860764e598252a0ef
+ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="bhold-fimmim-integration-installation"></a>BHOLD FIM/MIM integrering Installation
 
@@ -30,7 +30,7 @@ Följande är de programvarukomponenter som måste vara installerat på datorn i
 - Internet information Services och ASP.NET
 - Microsoft Silverlight-verktyg
 
-Dessutom modulerna BHOLD kärnor och Access Management-anslutningstjänsten måste redan distribueras på en server i miljön och FIM måste konfigureras med en eller flera BHOLD-hanteringsagenter. Information om installation och konfiguration av BHOLD-kärnmodul finns [BHOLD-kärninstallation](https://technet.microsoft.com/en-us/library/jj134095(v=ws.10).aspx). Information om hur du installerar och använder modulen Access Management-anslutningstjänsten finns [Access Management Kopplingsinstallationen](https://technet.microsoft.com/en-us/library/jj874042(v=ws.10).aspx) och [Test Lab-Guide: BHOLD Access Management-anslutningstjänsten](https://technet.microsoft.com/en-us/library/jj853085(v=ws.10).aspx).
+Dessutom modulerna BHOLD kärnor och Access Management-anslutningstjänsten måste redan distribueras på en server i miljön och FIM måste konfigureras med en eller flera BHOLD-hanteringsagenter. Information om installation och konfiguration av BHOLD-kärnmodul finns [BHOLD-kärninstallation](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). Information om hur du installerar och använder modulen Access Management-anslutningstjänsten finns [Access Management Kopplingsinstallationen](https://technet.microsoft.com/library/jj874042(v=ws.10).aspx) och [Test Lab-Guide: BHOLD Access Management-anslutningstjänsten](https://technet.microsoft.com/library/jj853085(v=ws.10).aspx).
 
 >[!IMPORTANT]
 Namnet på FIM-tjänstdatabasen måste vara FIM-tjänst. BHOLD FIM integrerade installationen misslyckas om FIM inte installerades med FIM-tjänsten standardnamnet på databasen.
@@ -46,7 +46,7 @@ Dessutom måste du vara beredd att ange den information som installationsguiden 
 | **Objektet**                            | **Beskrivning**                                                                                                                                                                                                               | **Värde**                                                                                                                                                                                                                                                                                                            |
 |-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Använda Security Provider på domänen** | Anger att Active Directory Domain Services-säkerhet kommer att styra åtkomsten till BHOLD-kärna.                                                                                                                    | Markera kryssrutan. **Viktigt:** installationen misslyckas om den här kryssrutan är avmarkerad.                                                                                                                                                                                                                   |
-| **Domän**                          | Anger den domän som innehåller den **tjänstkonto** som du skapade när du installerar BHOLD kärnor. Mer information finns i [BHOLD-kärninstallation](https://technet.microsoft.com/en-us/library/jj134095(v=ws.10).aspx). | Domännamnet anges automatiskt av guiden. Ändra namnet endast om den är felaktig. **Viktigt:** ange domännamnet genom att använda NetBIOS (korta)-namn, inte det fullständigt kvalificerade domännamnet (FQDN). Till exempel om FQDN för domänen är fabrikam.com, ange namnet på en domän som FABRIKAM. |
+| **Domän**                          | Anger den domän som innehåller den **tjänstkonto** som du skapade när du installerar BHOLD kärnor. Mer information finns i [BHOLD-kärninstallation](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | Domännamnet anges automatiskt av guiden. Ändra namnet endast om den är felaktig. **Viktigt:** ange domännamnet genom att använda NetBIOS (korta)-namn, inte det fullständigt kvalificerade domännamnet (FQDN). Till exempel om FQDN för domänen är fabrikam.com, ange namnet på en domän som FABRIKAM. |
 | **Användarnamn**                        | Anger användarkontot för BHOLD Core inloggningsnamn.                                                                                                                                                              | Skriv namnet på användarkontot här:                                                                                                                                                                                                                                                                                    |
 | **Lösenord**                        | Anger lösenordet för tjänstkontot för användaren.                                                                                                                                                                           | Skriv lösenordet här: **viktigt:** se till att det här lösenordet i en dold, säker plats.                                                                                                                                                                                                                  |
 
@@ -75,7 +75,7 @@ Logga in som medlem i gruppen Domänadministratörer om du vill installera modul
 
 - BholdFIMIntegration*\<Version\>*\_Release.msi
 
-Ersätt  *\<Version\>*  med versionsnumret för integrering av BHOLD FIM-versionen som du installerar.
+Ersätt *\<Version\>* med versionsnumret för integrering av BHOLD FIM-versionen som du installerar.
 
 För att köra programfilen som administratör, högerklicka på filen och klicka sedan på **kör som administratör**.
 
@@ -157,7 +157,7 @@ Om godkännare för en begäran för självbetjäning roll inte anges med en av 
 
 2.  Klicka på **starta**, och klicka sedan på **Internet Explorer**.
 
-3.  Ange i adressfältet i Internet Explorer <core-http://localhost:5151/bhold>, och tryck på RETUR.
+3.  Ange i adressfältet i Internet Explorer <http://localhost:5151/bhold/core>, och tryck på RETUR.
 
 4.  Om BHOLD startsidan, under **attributet def**, klickar du på **attributet typer**.
 
@@ -189,7 +189,7 @@ Om godkännare för en begäran för självbetjäning roll inte anges med en av 
 
 18. På den **organisatorisk enhet/root** klickar du på **ändra**.
 
-19. På den **ändra organisationsenhet attribut/root** sidan **godkännare**, typnamn domänen och användarnamnet för användaren som ska godkänna rolltilldelning förfrågningar, i formatet  *\<domän\>*\\*\<användare\>*, där  *\<domän\>*  är den Domännamn för NetBIOS (korta) och  *\<användare\>*  är användarens inloggningsnamn.
+19. På den **ändra organisationsenhet attribut/root** sidan **godkännare**, typnamn domänen och användarnamnet för användaren som ska godkänna rolltilldelning förfrågningar, i formatet  *\<domän\>*\\*\<användare\>*, där *\<domän\>* är den Domännamn för NetBIOS (korta) och *\<användare\>* är användarens inloggningsnamn.
 20. Klicka på **OK**.
 
 >[!IMPORTANT]
@@ -207,7 +207,7 @@ För att ge bättre säkerhet för arbetsflödet, utöver godkännare, ska du an
 
 - meddelande*\<n\>*
 
-där  *\< n \>*  anger ett numeriskt suffix för att tillhandahålla flera attribut av samma typ som valfria.
+där *\<n\>* anger ett numeriskt suffix för att tillhandahålla flera attribut av samma typ som valfria.
 
 ### <a name="verify-approval-workflows-configured-in-the-fim-service"></a>Kontrollera godkännandearbetsflöden som konfigurerats i FIM-tjänsten
 

@@ -1,7 +1,7 @@
 ---
-title: "Stöd för anslutningsprogram | Microsoft Docs"
-description: "Använd anslutningsprogram för att hantera dataöverföring mellan MIM och dina anslutna datakällor."
-keywords: 
+title: Stöd för anslutningsprogram | Microsoft Docs
+description: Använd anslutningsprogram för att hantera dataöverföring mellan MIM och dina anslutna datakällor.
+keywords: ''
 author: fimguy
 ms.author: fimguy
 manager: bhu
@@ -10,13 +10,13 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 8bc2f6d2-9f53-4db6-aee6-a937ae468163
-ms.reviewer: 
+ms.reviewer: ''
 ms.suite: ems
-ms.openlocfilehash: 1e100a686f009d1a2290d7965fe36eea819148be
-ms.sourcegitcommit: fab9f21eea15d2024f11a59fc9e43db15bd215c7
+ms.openlocfilehash: 7b685ffb6f2a52bd2782395e4c1f26501ffe3101
+ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="connect-to-your-directories"></a>Anslut till katalogerna
 
@@ -39,20 +39,20 @@ Den här artikeln omfattar anslutningsprogrammen som ingår & stöds i MIM, men 
 | IBM Directory Server | IBM Tivoli Directory Server 6.x |
 | Novell eDirectory | Novell eDirectory version 8.7.3, 8.8.5 och 8.8.6 |
 | Oracle Database | Oracle Database 10 g eller 11 g: 64-bitarsklient |
-| Microsoft SQL Server | SQL Server 2012, 2014, 2016 |
+| Microsoft SQL Server | SQLServer 2012, 2014, 2016 |
 | Oracle (tidigare Sun och Netscape) Directory Servers | Sun Directory Server 6.x, 7.x och Oracle 11 |
-| [Windows PowerShell Connector för FIM 2010 R2](https://msdn.microsoft.com/en-us/library/dn640417.aspx) | Windows PowerShell 2.0 eller bättre |
-| [Microsoft Azure Active Directory Connector för FIM 2010 R2](https://msdn.microsoft.com/en-us/library/dn511001.aspx) | Microsoft Azure Active Directory |
-| [Allmän LDAP Connector för FIM 2010 R2](https://msdn.microsoft.com/en-us/library/dn510997.aspx) | [LDAP v3-server (RFC 4510-kompatibel)](https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnectsync-connector-genericldap) |
-| [Allmän SQL Connector för FIM 2010 R2 / MIM](https://msdn.microsoft.com/en-us/library/dn510997.aspx) | [Anslutningen stöds med alla 64-bitars ODBC-drivrutiner](https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnectsync-connector-genericsql) |
-| [Connector för Lotus Domino](https://msdn.microsoft.com/en-us/library/hh859750.aspx) | Lotus Notes-versionen v8.5.x |
-| [SharePoint Services Connector UPA](https://msdn.microsoft.com/en-us/library/dn511003.aspx) | SharePoint Server 2013 eller 2016 med UPA (User Profile Service Application) |
-| [Connector för Web Services](https://www.microsoft.com/en-us/download/details.aspx?id=51495) | [SAP ECC 5.0 eller 6.0; Oracle PeopleSoft 9.1; Oracle eBusiness 12.1](https://docs.microsoft.com/en-us/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws) |
-| [Textfil med Attributvärdespar](https://technet.microsoft.com/en-us/library/cc708644(v=ws.10).aspx) | Textfiler med attributvärdespar |
-| [Avgränsad textfil](https://technet.microsoft.com/en-us/library/cc720612(v=ws.10).aspx) | Avgränsade textfiler |
-| [Directory Services Mark-up Language DSML)](https://technet.microsoft.com/en-us/library/cc720660(v=ws.10).aspx) | DSML 2.0 (Directory Services Markup Language) |
-| [Textfil med fast bredd](https://technet.microsoft.com/en-us/library/cc720633(v=ws.10).aspx) | Textfiler med fast bredd |
-| [LDAP Data Interchange Format (LDIF)](https://technet.microsoft.com/en-us/library/cc708662(v=ws.10).aspx) | LDAP Data Interchange Format (LDIF) |
+| [Windows PowerShell Connector för FIM 2010 R2](https://msdn.microsoft.com/library/dn640417.aspx) | Windows PowerShell 2.0 eller bättre |
+| [Microsoft Azure Active Directory Connector för FIM 2010 R2](https://msdn.microsoft.com/library/dn511001.aspx) | Microsoft Azure Active Directory |
+| [Allmän LDAP Connector för FIM 2010 R2](https://msdn.microsoft.com/library/dn510997.aspx) | [LDAP v3-server (RFC 4510-kompatibel)](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-connector-genericldap) |
+| [Allmän SQL Connector för FIM 2010 R2 / MIM](https://msdn.microsoft.com/library/dn510997.aspx) | [Anslutningen stöds med alla 64-bitars ODBC-drivrutiner](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-connector-genericsql) |
+| [Connector för Lotus Domino](https://msdn.microsoft.com/library/hh859750.aspx) | Lotus Notes-versionen v8.5.x |
+| [SharePoint Services Connector UPA](https://msdn.microsoft.com/library/dn511003.aspx) | SharePoint Server 2013 eller 2016 med UPA (User Profile Service Application) |
+| [Connector för Web Services](https://www.microsoft.com/en-us/download/details.aspx?id=51495) | [SAP ECC 5.0 eller 6.0; Oracle PeopleSoft 9.1; Oracle eBusiness 12.1](https://docs.microsoft.com/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws) |
+| [Textfil med Attributvärdespar](https://technet.microsoft.com/library/cc708644(v=ws.10).aspx) | Textfiler med attributvärdespar |
+| [Avgränsad textfil](https://technet.microsoft.com/library/cc720612(v=ws.10).aspx) | Avgränsade textfiler |
+| [Directory Services Mark-up Language DSML)](https://technet.microsoft.com/library/cc720660(v=ws.10).aspx) | DSML 2.0 (Directory Services Markup Language) |
+| [Textfil med fast bredd](https://technet.microsoft.com/library/cc720633(v=ws.10).aspx) | Textfiler med fast bredd |
+| [LDAP Data Interchange Format (LDIF)](https://technet.microsoft.com/library/cc708662(v=ws.10).aspx) | LDAP Data Interchange Format (LDIF) |
 
 ## <a name="related-topics"></a>Närliggande information
 

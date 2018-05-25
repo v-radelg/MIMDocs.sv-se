@@ -1,7 +1,7 @@
 ---
 title: BHOLD SP1-installationen | Microsoft Docs
 description: BHOLD SP1 dokumentationen
-keywords: 
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -9,12 +9,12 @@ ms.date: 09/11/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
-ms.assetid: 
-ms.openlocfilehash: c36a9d02e90101b98ade913224e573ed21dc3d5c
-ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
+ms.assetid: ''
+ms.openlocfilehash: e0514530c9bceef18cc8eea7ec8b7060110811c2
+ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="microsoft-bhold-suite-sp1-60-installation-guide"></a>Installationsguiden för Microsoft BHOLD Suite SP1 (6.0)
 
@@ -109,7 +109,7 @@ När du redigerar och sparar filen, kör iisreset-kommando för att återställa
 
 ## <a name="upgrading-bhold-suite"></a>Uppgradera BHOLD-programsvit
 
-Du kan inte uppgradera en befintlig installation av BHOLD-programsvit. I stället måste du avinstallera en befintlig installation av BHOLD-programsvit innan du kan uppdatera BHOLD-moduler. Om du har en befintlig BHOLD roll modell kan du använda den när du installerar uppdaterade BHOLD-kärnmodul uppgradera BHOLD-databas. Mer information finns i [ersätter BHOLD-programsvit med BHOLD-programsvit SP1](https://technet.microsoft.com/en-us/library/jj874043(v=ws.10).aspx).
+Du kan inte uppgradera en befintlig installation av BHOLD-programsvit. I stället måste du avinstallera en befintlig installation av BHOLD-programsvit innan du kan uppdatera BHOLD-moduler. Om du har en befintlig BHOLD roll modell kan du använda den när du installerar uppdaterade BHOLD-kärnmodul uppgradera BHOLD-databas. Mer information finns i [ersätter BHOLD-programsvit med BHOLD-programsvit SP1](https://technet.microsoft.com/library/jj874043(v=ws.10).aspx).
 
 
 ## <a name="next-steps"></a>Nästa steg
