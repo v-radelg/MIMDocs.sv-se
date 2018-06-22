@@ -6,6 +6,7 @@
 ## [Hybridrapportering i Azure](identity-manager-hybrid-reporting-azure.md)
 # [Planera och utforma](microsoft-identity-manager-2016-supported-platforms.md)
 ## [Plattformar som stöds](microsoft-identity-manager-2016-supported-platforms.md)
+## [Språk som stöds](microsoft-identity-manager-2016-language-support.md)
 ## [Ansluta till kataloger](supported-management-agents.md)
 ## [Kapacitetsplanering](capacity-planning-guide.md)
 ## [Distributionstopologi](topology-considerations.md)

@@ -1,7 +1,7 @@
 ---
-title: "Förstå PAM-komponenterna | Microsoft Docs"
-description: "Privileged Access Management delar vissa komponenter med MIM och har även några egna komponenter. Lär dig hur dessa fungerar tillsammans."
-keywords: 
+title: Förstå PAM-komponenterna | Microsoft Docs
+description: Privileged Access Management delar vissa komponenter med MIM och har även några egna komponenter. Lär dig hur dessa fungerar tillsammans.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 09/14/2017
+ms.locfileid: "22052373"
 ---
 # <a name="understand-the-components-of-pam"></a>Förstå komponenterna i PAM
 

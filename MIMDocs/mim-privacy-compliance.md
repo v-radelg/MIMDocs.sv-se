@@ -16,6 +16,7 @@ ms.sourcegitcommit: 66db63fe2813130764e52381f4f9c8e549d77d39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/22/2018
+ms.locfileid: "34449703"
 ---
 # <a name="microsoft-identity-manager-data-handling"></a>Microsoft Identity Manager datahantering 
 

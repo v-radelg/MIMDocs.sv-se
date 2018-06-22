@@ -1,7 +1,7 @@
 ---
-title: "Vad är hybridrapportering i Azure AD? | Microsoft Docs"
-description: "Hybrid aktivitet granskningsrapporter i Azure Active Directory kan du visa granskade händelser från molnet och lokalt."
-keywords: 
+title: Vad är hybridrapportering i Azure AD? | Microsoft Docs
+description: Hybrid aktivitet granskningsrapporter i Azure Active Directory kan du visa granskade händelser från molnet och lokalt.
+keywords: ''
 author: davidste
 ms.author: davidste
 manager: bhu
@@ -16,6 +16,7 @@ ms.sourcegitcommit: b4a39928c5fa1d7718046563c0809bcbf11d833d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 02/20/2018
+ms.locfileid: "29370386"
 ---
 # <a name="hybrid-identity-management-audit-reporting-in-azure-active-directory"></a>Hybrididentitetshantering gransknings-och rapportering i Azure Active Directory
 Med Azure Active Directory (AD Azure) audit aktivitetsrapportering, du kan övervaka aktivitet om Identitetshantering antingen lokalt eller i molnet. Genom att hantera alla identitets- och data i en rapport kan du spara tid och sänka övergripande kostnader.

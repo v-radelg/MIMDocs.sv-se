@@ -1,7 +1,7 @@
 ---
-title: "Versionsanmärkningar för Microsoft Identity Manager 2016 | Microsoft Docs"
+title: Versionsanmärkningar för Microsoft Identity Manager 2016 | Microsoft Docs
 description: Hitta information om de senaste versionerna av MIM.
-keywords: 
+keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldwin
@@ -18,6 +18,7 @@ ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 10/12/2017
+ms.locfileid: "23137582"
 ---
 # <a name="release-notes-for-mim-2016"></a>Viktig information om MIM 2016
 Det finns för tillfället ingen information.

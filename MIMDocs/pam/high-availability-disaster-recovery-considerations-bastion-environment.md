@@ -1,7 +1,7 @@
 ---
-title: "PAM-katastrofåterställning | Microsoft Docs"
-description: "Lär dig hur du konfigurerar Privileged Access Management för hög tillgänglighet och katastrofåterställning."
-keywords: 
+title: PAM-katastrofåterställning | Microsoft Docs
+description: Lär dig hur du konfigurerar Privileged Access Management för hög tillgänglighet och katastrofåterställning.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 09/14/2017
+ms.locfileid: "22052322"
 ---
 # <a name="high-availability-and-disaster-recovery-considerations-for-the-bastion-environment"></a>Överväganden för hög tillgänglighet och haveriberedskap i skyddsmiljön
 

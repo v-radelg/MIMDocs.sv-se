@@ -1,7 +1,7 @@
 ---
 title: Installation av BHOLD access management | Microsoft Docs
-description: "BHOLD-koppling modulen stöder inledande och pågående synkronisering av data"
-keywords: 
+description: BHOLD-koppling modulen stöder inledande och pågående synkronisering av data
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -9,12 +9,13 @@ ms.date: 09/07/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
-ms.assetid: 
+ms.assetid: ''
 ms.openlocfilehash: 6d7f19f470d0c0f82a68652115ab9265a13b3508
 ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 11/14/2017
+ms.locfileid: "24522336"
 ---
 # <a name="access-management-connector-installation"></a>Installation av Access Management
 

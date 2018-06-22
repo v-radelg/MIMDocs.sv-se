@@ -1,7 +1,7 @@
 ---
-title: "Definiera privilegierade roller för PAM | Microsoft Docs"
-description: "Bestäm vilka privilegierade roller som ska hanteras och ange hanteringsprincipen för varje roll."
-keywords: 
+title: Definiera privilegierade roller för PAM | Microsoft Docs
+description: Bestäm vilka privilegierade roller som ska hanteras och ange hanteringsprincipen för varje roll.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 210195369d2ecd610569d57d0f519d683ea6a13b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 09/01/2017
+ms.locfileid: "21943765"
 ---
 # <a name="define-roles-for-privileged-access-management"></a>Definiera roller för Privileged Access Management
 

@@ -1,7 +1,7 @@
 ---
-title: "PAM-miljönivåmodell | Microsoft Docs"
-description: "Läs mer om nivåmodellen som segregerar ditt system baserat på säkerhetsrelaterade risker."
-keywords: 
+title: PAM-miljönivåmodell | Microsoft Docs
+description: Läs mer om nivåmodellen som segregerar ditt system baserat på säkerhetsrelaterade risker.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -17,6 +17,7 @@ ms.sourcegitcommit: c049dceaf02ab8b6008fe440daae4d07b752ca2e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 08/31/2017
+ms.locfileid: "21942739"
 ---
 # <a name="tier-model-for-partitioning-administrative-privileges"></a>Nivåmodell för partitionering av administratörsbehörighet
 
