@@ -1,7 +1,7 @@
 ---
-title: "Lösenordshantering i Microsoft Identity Manager 2016 | Microsoft Docs"
-description: 
-keywords: 
+title: Lösenordshantering i Microsoft Identity Manager 2016 | Microsoft Docs
+description: ''
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -10,12 +10,13 @@ ms.topic: reference
 ms.prod: identity-manager-2016
 ms.service: microsoft-identity-manager
 ms.technology: security
-ms.assetid: 
-ms.openlocfilehash: 156551f4083c71ee7059e817213751393db5833e
-ms.sourcegitcommit: 5ba5d916c0ca1e5aa501592af0cef714bfdc8afe
+ms.assetid: ''
+ms.openlocfilehash: 86b8b9bdf5c6441d0708cd874742fa48b65177fa
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/02/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289371"
 ---
 # <a name="microsoft-identity-manager-2016-password-management"></a>Lösenordshantering i Microsoft Identity Manager 2016
 
@@ -61,8 +62,8 @@ Hanteringsagenter för katalogservrar stöder åtgärder för lösenordsändring
 
 Lösenordssynkronisering fungerar med tjänsten om meddelanden för lösenordsändring (PCNS) på en Active Directory-domän, och tillåter att lösenordsändringar som kommer från Active Directory sprids automatiskt till andra anslutna datakällor. MIM åstadkommer detta genom att köras som en RPC-server (Remote Procedure Call) som lyssnar efter en avisering om lösenordsändring från en Active Directory-domänkontrollant. När begäran om lösenordsändring tas emot och autentiseras bearbetas den av MIM och sprids till lämpliga hanteringsagenter.
 
->[!IMPORTANT]
-Dubbelriktad lösenordssynkronisering stöds inte av MIM. Konfiguration av dubbelriktad lösenordssynkronisering kan skapa en slinga, som förbrukar serverresurser och har en potentiellt negativ effekt på både Active Directory och MIM.
+> [!IMPORTANT]
+> Dubbelriktad lösenordssynkronisering stöds inte av MIM. Konfiguration av dubbelriktad lösenordssynkronisering kan skapa en slinga, som förbrukar serverresurser och har en potentiellt negativ effekt på både Active Directory och MIM.
 
 PCNS körs på varje Active Directory-domänkontrollant. System som tar emot lösenordsaviseringar kallas mål. MIM-servern måste konfigureras som ett PCNS-mål i Active Directory innan lösenordsaviseringar skickas. PCNS-konfigurationen måste definiera en inkluderingsgrupp och eventuellt en undantagsgrupp. Dessa grupper används för att begränsa flödet av känsliga lösenord från domänen. Om du till exempel vill skicka lösenord för alla användare, men inte vill skicka administrativa lösenord, kan du välja att använda Domänanvändare som inkluderingsgrupp och Domänadminstratörer som undantagsgrupp. Mer information om att konfigurera tjänsten för meddelanden om lösenordsändring finns i [Using Password Synchronization](https://technet.microsoft.com/library/jj590288(v=ws.10).aspx) (Använda lösenordssynkronisering)
 
@@ -126,7 +127,7 @@ Processen för synkronisering av en begäran om lösenordsändring från en Acti
 
 Följande säkerhetsproblem med lösenordssynkronisering har åtgärdats:
 
--   Autentisering från lösenordskällan – när meddelandet om lösenordsändring tas emot görs Kerberos-autentisering av både MIM och källdomänkontrollanten för att säkerställa att både mottagare och avsändare är giltiga. När ett meddelande om lösenordsändring tas emot ser MIM till att den som anropar har ett konto i domänkontrollantbehållaren för den domän den tillhör.
+-   Autentisering från lösenordskällan – när meddelandet om lösenordsändring tas emot görs Kerberos-autentisering av både MIM och källdomänkontrollanten för att säkerställa att både mottagare och avsändare är giltiga. När ett meddelande om lösenordsändring tas emot ser MIM till att den som anropar har ett konto i domänkontrollantcontainern för den domän den tillhör.
 
 -   Misslyckad lösenordssynkronisering till en måldatakälla till följd av en osäker anslutning – synkroniseringen misslyckas om hanteringsagenten har konfigurerats för att kräva en säker anslutning men det inte går att hitta en sådan.
     Synkroniseringen sker fortfarande om hanteringsagenten har konfigurerats för att tillåta ej säkra anslutningar. Ej säkra anslutningar bör endast tillåtas efter att riskerna med detta har undersökts och förståtts.
@@ -149,7 +150,7 @@ Helst synkroniseras ändringen utan fel när en användare ändrar ett lösenord
 
 En del fel är så allvarliga att det inte är sannolikt att åtgärden lyckas oavsett hur många återförsök som genomförs. I dessa fall loggas en felhändelse och processen stoppas. Nya försök görs inte för följande händelser:
 
-| Händelse | Allvarlighetsgrad    | Beskrivning                                                                                                                                                            |
+| Händelse | Allvarlighetsgrad    | Description                                                                                                                                                            |
 |-------|-------------|-----------|
 | 6919  | Information | En åtgärd för lösenordssynkronisering utfördes inte på grund av att tidsstämpeln var för gammal.                                                                      |
 | 6921  | Fel       | Åtgärden för lösenordssynkronisering bearbetades inte på grund av att lösenordshantering inte har aktiverats på hanteringsagenten som är mål.                                |

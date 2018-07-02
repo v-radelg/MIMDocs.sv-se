@@ -1,7 +1,7 @@
 ---
-title: "Steg 1 Konfigurera Priv-domänen"
-description: "Förbered CORP-domänen med befintliga eller nya identiteter som ska hanteras av Privileged Identity Manager med hjälp av skript"
-keywords: 
+title: Steg 1 Konfigurera Priv-domänen
+description: Förbered CORP-domänen med befintliga eller nya identiteter som ska hanteras av Privileged Identity Manager med hjälp av skript
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: MBaldwin
@@ -10,21 +10,22 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
-ms.reviewer: 
+ms.reviewer: ''
 ms.suite: ems
-ms.openlocfilehash: 40822bb7702cf3d7ac23ecd6e98ac392f2d3a480
-ms.sourcegitcommit: 8edd380f54c3e9e83cfabe8adfa31587612e5773
+ms.openlocfilehash: e5be140e7ffea7b0c7cacbc1c82d3b2883804203
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/19/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290313"
 ---
 # <a name="step-1-configuring-the-priv-domain"></a>Steg 1 Konfigurera Priv-domänen
 
->[!div class="step-by-step"]
-[Steg 2 »](sp1-step2-configuring-corp-domain.md)
+> [!div class="step-by-step"]
+> [Steg 2 »](sp1-step2-configuring-corp-domain.md)
 
 1. Logga in på PRIVDC som administratör
-  * Om det här är en PRIVOnly-miljö loggar du in på CORPDC
+   * Om det här är en PRIVOnly-miljö loggar du in på CORPDC
 2. Kör PowerShell som administratör
 3. cd $env:SYSTEMDRIVE\PAM
 4. .\PAMDeployment.ps1
@@ -41,5 +42,5 @@ För funktionsnivåer under Windows Server 2016 ignorerar du varningen om att in
 Kopiera SIDs.txt som skapas i $env:SYSTEMDRIVE\PAM till motsvarande mapp på CORPDC. Detta krävs av CORPDC för att konfigurera behörigheter för PRIV-användare så att de kan läsa CORP-användaregenskaper.
 När skriptet har slutförts uppmanas du att starta om datorn för att ändringarna ska börja gälla.
 
->[!div class="step-by-step"]
-[Steg 2 »](sp1-step2-configuring-corp-domain.md)
+> [!div class="step-by-step"]
+> [Steg 2 »](sp1-step2-configuring-corp-domain.md)

@@ -10,11 +10,12 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: 2b8e6935eda6c679b00b5b5b17752a675a257de9
-ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
+ms.openlocfilehash: deb43aeb9133d7eed958730b0eb2cbd22fe3a0ef
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289313"
 ---
 # <a name="bhold-reporting-installation"></a>BHOLD reporting Installation
 
@@ -24,8 +25,8 @@ BHOLD-rapportmodulen ger dig möjlighet att generera rapporter om roller och and
 
 Innan du installerar rapportmodulen BHOLD, måste du installera modulen BHOLD kärnor på den server där du planerar att installera rapportmodulen för BHOLD. Information om hur du installerar BHOLD-kärnmodul finns [BHOLD-kärninstallation](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx).
 
->[!IMPORTANT]
-Om du installerar både BHOLD rapportering och BHOLD attestering, måste du installera Reporting BHOLD för innan du installerar BHOLD attestering.
+> [!IMPORTANT]
+> Om du installerar både BHOLD rapportering och BHOLD attestering, måste du installera Reporting BHOLD för innan du installerar BHOLD attestering.
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
@@ -42,7 +43,7 @@ Innan du börjar installera rapportmodulen BHOLD måste förberedas för att ang
 
 Logga in som medlem i gruppen Domänadministratörer för att installera rapportmodulen BHOLD, hämta följande fil och kör det som administratör på den server som du tänker installera rapportmodulen BHOLD på:
 
-- BholdReporting*\<Version\>*\_Release.msi
+- BholdReporting<em>\<Version\></em>\_Release.msi
 
 Ersätt *\<Version\>* med versionsnumret för rapportering av BHOLD-versionen som du installerar.
 

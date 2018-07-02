@@ -1,7 +1,7 @@
 ---
-title: "Använd Azure MFA för att aktivera PAM | Microsoft Docs"
-description: "Ställ in Azure MFA som ett andra säkerhetslager när dina användare aktiverar roller i Privileged Access Management."
-keywords: 
+title: Använd Azure MFA för att aktivera PAM | Microsoft Docs
+description: Ställ in Azure MFA som ett andra säkerhetslager när dina användare aktiverar roller i Privileged Access Management.
+keywords: ''
 author: barclayn
 ms.author: fimguy
 manager: mbaldwin
@@ -12,15 +12,16 @@ ms.technology: active-directory-domain-services
 ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 1fb012034685257d35ba4f8a79468145187ae5b6
-ms.sourcegitcommit: 27a23142393bbb0f66a3d533d89a5a8366a29e41
+ms.openlocfilehash: 30e683a0bd13d911f73eca19c847a2c9cd10f36d
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289837"
 ---
 # <a name="using-azure-mfa-for-activation"></a>Aktivera med hjälp av Azure MFA
->[!IMPORTANT]
-På grund av ett meddelande om utfasning av Azure Multi-Factor Authentication SDK. Azure MFA SDK ska ha stöd för befintliga kunder fram till datumet för tillbakadragandet av 14 November 2018. Nya kunder och aktuella kunder kommer inte att kunna ladda ned SDK längre via den klassiska Azure-portalen. Om du vill hämta du behöver nå ut till Azure kundsupport för att ta emot dina autentiseringsuppgifter för MFA-paketet. <br> Utvecklingsgruppen Microsoft arbetar på Planering av MFA ändringar genom att integrera med MFA-serverns SDK. Detta tas med i kommande snabbkorrigeringen i tidig 2018.
+> [!IMPORTANT]
+> På grund av ett meddelande om utfasning av Azure Multi-Factor Authentication SDK. Azure MFA SDK ska ha stöd för befintliga kunder fram till datumet för tillbakadragandet av 14 November 2018. Nya kunder och aktuella kunder kommer inte att kunna ladda ned SDK längre via den klassiska Azure-portalen. Om du vill hämta du behöver nå ut till Azure kundsupport för att ta emot dina autentiseringsuppgifter för MFA-paketet. <br> Utvecklingsgruppen Microsoft arbetar på Planering av MFA ändringar genom att integrera med MFA-serverns SDK. Detta tas med i kommande snabbkorrigeringen i tidig 2018.
 
 
 
@@ -33,7 +34,7 @@ Om ingen kontroll är aktiverad aktiveras kandidatanvändare automatiskt för si
 
 Microsoft Azure Multi-Factor Authentication (MFA) är en autentiseringstjänst med vilken användare måste bekräfta sina inloggningsförsök via mobilapp, telefonsamtal eller SMS. Den kan användas med Microsoft Azure Active Directory och som en tjänst för molnbaserade och lokala företagsprogram. PAM-scenariot ger Azure MFA en ytterligare autentiseringsmekanism. Azure MFA kan användas för auktorisering, oavsett hur en användare autentiseras till Windows PRIV-domänen.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 För att kunna använda Azure MFA med MIM behöver du:
 
@@ -50,7 +51,7 @@ I det här avsnittet kan du ställa in Azure MFA-leverantören i Microsoft Azure
 
 2.  Klicka på **Ny** längst ned till vänster.
 
-3.  Klicka på **Apptjänster > Active Directory > Leverantör av multifaktorautent. > Snabbregistrering**.
+3.  Klicka på **App Services &gt; Active Directory &gt; Leverantör av multifaktorautent. &gt; Snabbregistrering**.
 
 4.  I fältet **Namn** skriver du **PAM**, och i fältet Användningsmodell väljer du Per aktiverad användare. Om du redan har en Azure AD-katalog väljer du den katalogen. Klicka på **Skapa**.
 
@@ -132,7 +133,7 @@ Azure MFA kan inaktiveras för en roll genom att parametern "-MFAEnabled 0" ange
 
 Följande händelser kan du hitta i händelseloggen för Privileged Access Management:
 
-| ID  | Allvarlighetsgrad | Genererat av | Beskrivning |
+| ID  | Allvarlighetsgrad | Genererat av | Description |
 |-----|----------|--------------|-------------|
 | 101 | Fel       | MIM-tjänst            | Användaren slutförde inte Azure MFA (t.ex. svarade inte i telefon) |
 | 103 | Information | MIM-tjänst            | Användaren slutförde Azure MFA vid aktivering                       |

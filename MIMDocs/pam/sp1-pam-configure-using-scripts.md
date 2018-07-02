@@ -1,7 +1,7 @@
 ---
-title: "Konfigurera PAM med hjälp av skript"
-description: "Den här artikeln ingår i en serie om att konfigurera PAM med hjälp av skript. Den beskriver hur du ändrar den XML-fil som ska användas av PAM-distributionsskripten."
-keywords: 
+title: Konfigurera PAM med hjälp av skript
+description: Den här artikeln ingår i en serie om att konfigurera PAM med hjälp av skript. Den beskriver hur du ändrar den XML-fil som ska användas av PAM-distributionsskripten.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: MBaldwin
@@ -10,13 +10,14 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
-ms.reviewer: 
+ms.reviewer: ''
 ms.suite: ems
-ms.openlocfilehash: 5718ec64fff049cb8717e4cbb36784c8f4ee4db3
-ms.sourcegitcommit: c13f814ce753e1fdacc7d0814087f59542e5098f
+ms.openlocfilehash: 741d722ce315b7265278997275d05981f44826e8
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289429"
 ---
 # <a name="configure-pam-using-scripts"></a>Konfigurera PAM med hjälp av skript
 
@@ -66,5 +67,5 @@ Innan du fortsätter uppdaterar du PAMDeploymentConfig.xml och placerar den uppd
 |  CORPClient | <PRIV>\PRIV.pamRequestor-användare och för PRIVOnly: <CORP>\pamrequestor   | Import-module .\PAMValidation.psm1 ; Test-PAMValidationScenarioNoApprovalRequest  |
 
 
->[!div class="step-by-step"]
-[Start »](sp1-step1-configuring-priv-domain.md)
+> [!div class="step-by-step"]
+> [Start »](sp1-step1-configuring-priv-domain.md)

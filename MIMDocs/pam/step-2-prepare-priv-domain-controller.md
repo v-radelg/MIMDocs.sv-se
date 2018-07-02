@@ -12,17 +12,18 @@ ms.technology: active-directory-domain-services
 ms.assetid: 0e9993a0-b8ae-40e2-8228-040256adb7e2
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 9cb36a52525c538d0ac323a3342a9dd6b7f6e42e
-ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
+ms.openlocfilehash: 960ec81d822e02a848c3ef9ac1b65f5fa0d9e61a
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289463"
 ---
 # <a name="step-2---prepare-the-first-priv-domain-controller"></a>Steg 2 – Förbereda den första PRIV-domänkontrollanten
 
->[!div class="step-by-step"]
-[« Steg 1](step-1-prepare-corp-domain.md)
-[Steg 3 »](step-3-prepare-pam-server.md)
+> [!div class="step-by-step"]
+> [« Steg 1](step-1-prepare-corp-domain.md)
+> [Steg 3 »](step-3-prepare-pam-server.md)
 
 I det här steget ska du skapa en ny domän som tillhandahåller skyddsmiljön för autentisering av administratörer.  Den här skogen måste ha minst en domänkontrollant och minst en medlemsserver. Medlemsservern konfigureras i nästa steg.
 
@@ -52,11 +53,11 @@ Lägg till roller för Active Directory Domain Services (AD DS) och DNS-server.
 
 2. Skriv följande kommandon för att förbereda installationen av Windows Server Active Directory.
 
-  ```PowerShell
-  import-module ServerManager
+   ```PowerShell
+   import-module ServerManager
 
-  Install-WindowsFeature AD-Domain-Services,DNS –restart –IncludeAllSubFeature -IncludeManagementTools
-  ```
+   Install-WindowsFeature AD-Domain-Services,DNS –restart –IncludeAllSubFeature -IncludeManagementTools
+   ```
 
 ### <a name="configure-registry-settings-for-sid-history-migration"></a>Konfigurera registerinställningar för migrering av SID-historik
 
@@ -76,10 +77,10 @@ I det här dokumentet används namnet priv.contoso.local som domännamn för den
 
 1. Skapa den nya domänen genom att skriva följande kommandon i ett PowerShell-fönster.  När du gör det skapas också en DNS-delegering i den överordnade domän (contoso.local) som skapades i föregående steg.  Om du vill konfigurera DNS senare kan du utelämna parametrarna `CreateDNSDelegation -DNSDelegationCredential $ca`.
 
-  ```PowerShell
-  $ca= get-credential
-  Install-ADDSForest –DomainMode 6 –ForestMode 6 –DomainName priv.contoso.local –DomainNetbiosName priv –Force –CreateDNSDelegation –DNSDelegationCredential $ca
-  ```
+   ```PowerShell
+   $ca= get-credential
+   Install-ADDSForest –DomainMode 6 –ForestMode 6 –DomainName priv.contoso.local –DomainNetbiosName priv –Force –CreateDNSDelegation –DNSDelegationCredential $ca
+   ```
 
 2. När popup-meddelandet visas anger du autentiseringsuppgifterna för CORP-skogens administratör (t.ex. användarnamnet CONTOSO\\Administratör och motsvarande lösenord från steg 1).
 
@@ -89,75 +90,75 @@ När skogen har skapats startas servern om automatiskt.
 
 ### <a name="create-user-and-service-accounts"></a>Skapa användar- och tjänstkonton
 
-Skapa användar- och tjänstkonton för konfiguration av MIM-tjänsten och -portalen. Dessa konton hamnar i behållaren Användare i domänen priv.contoso.local.
+Skapa användar- och tjänstkonton för konfiguration av MIM-tjänsten och -portalen. Dessa konton hamnar i containern Användare i domänen priv.contoso.local.
 
 1. När servern har startats om loggar du in på PRIVDC som domänadministratör (PRIV\\Administrator).
 
 2. Starta PowerShell och skriv följande kommandon. Lösenordet 'Pass@word1' är bara ett exempel och du bör använda ett annat lösenord för konton.
 
-  ```PowerShell
-  import-module activedirectory
+   ```PowerShell
+   import-module activedirectory
 
-  $sp = ConvertTo-SecureString "Pass@word1" –asplaintext –force
+   $sp = ConvertTo-SecureString "Pass@word1" –asplaintext –force
 
-  New-ADUser –SamAccountName MIMMA –name MIMMA
+   New-ADUser –SamAccountName MIMMA –name MIMMA
 
-  Set-ADAccountPassword –identity MIMMA –NewPassword $sp
+   Set-ADAccountPassword –identity MIMMA –NewPassword $sp
 
-  Set-ADUser –identity MIMMA –Enabled 1 –PasswordNeverExpires 1
+   Set-ADUser –identity MIMMA –Enabled 1 –PasswordNeverExpires 1
 
-  New-ADUser –SamAccountName MIMMonitor –name MIMMonitor -DisplayName MIMMonitor
+   New-ADUser –SamAccountName MIMMonitor –name MIMMonitor -DisplayName MIMMonitor
 
-  Set-ADAccountPassword –identity MIMMonitor –NewPassword $sp
+   Set-ADAccountPassword –identity MIMMonitor –NewPassword $sp
 
-  Set-ADUser –identity MIMMonitor –Enabled 1 –PasswordNeverExpires 1
+   Set-ADUser –identity MIMMonitor –Enabled 1 –PasswordNeverExpires 1
 
-  New-ADUser –SamAccountName MIMComponent –name MIMComponent -DisplayName MIMComponent
+   New-ADUser –SamAccountName MIMComponent –name MIMComponent -DisplayName MIMComponent
 
-  Set-ADAccountPassword –identity MIMComponent –NewPassword $sp
+   Set-ADAccountPassword –identity MIMComponent –NewPassword $sp
 
-  Set-ADUser –identity MIMComponent –Enabled 1 –PasswordNeverExpires 1
+   Set-ADUser –identity MIMComponent –Enabled 1 –PasswordNeverExpires 1
 
-  New-ADUser –SamAccountName MIMSync –name MIMSync
+   New-ADUser –SamAccountName MIMSync –name MIMSync
 
-  Set-ADAccountPassword –identity MIMSync –NewPassword $sp
+   Set-ADAccountPassword –identity MIMSync –NewPassword $sp
 
-  Set-ADUser –identity MIMSync –Enabled 1 –PasswordNeverExpires 1
+   Set-ADUser –identity MIMSync –Enabled 1 –PasswordNeverExpires 1
 
-  New-ADUser –SamAccountName MIMService –name MIMService
+   New-ADUser –SamAccountName MIMService –name MIMService
 
-  Set-ADAccountPassword –identity MIMService –NewPassword $sp
+   Set-ADAccountPassword –identity MIMService –NewPassword $sp
 
-  Set-ADUser –identity MIMService –Enabled 1 –PasswordNeverExpires 1
+   Set-ADUser –identity MIMService –Enabled 1 –PasswordNeverExpires 1
 
-  New-ADUser –SamAccountName SharePoint –name SharePoint
+   New-ADUser –SamAccountName SharePoint –name SharePoint
 
-  Set-ADAccountPassword –identity SharePoint –NewPassword $sp
+   Set-ADAccountPassword –identity SharePoint –NewPassword $sp
 
-  Set-ADUser –identity SharePoint –Enabled 1 –PasswordNeverExpires 1
+   Set-ADUser –identity SharePoint –Enabled 1 –PasswordNeverExpires 1
 
-  New-ADUser –SamAccountName SqlServer –name SqlServer
+   New-ADUser –SamAccountName SqlServer –name SqlServer
 
-  Set-ADAccountPassword –identity SqlServer –NewPassword $sp
+   Set-ADAccountPassword –identity SqlServer –NewPassword $sp
 
-  Set-ADUser –identity SqlServer –Enabled 1 –PasswordNeverExpires 1
+   Set-ADUser –identity SqlServer –Enabled 1 –PasswordNeverExpires 1
 
-  New-ADUser –SamAccountName BackupAdmin –name BackupAdmin
+   New-ADUser –SamAccountName BackupAdmin –name BackupAdmin
 
-  Set-ADAccountPassword –identity BackupAdmin –NewPassword $sp
+   Set-ADAccountPassword –identity BackupAdmin –NewPassword $sp
 
-  Set-ADUser –identity BackupAdmin –Enabled 1 -PasswordNeverExpires 1
+   Set-ADUser –identity BackupAdmin –Enabled 1 -PasswordNeverExpires 1
 
-  New-ADUser -SamAccountName MIMAdmin -name MIMAdmin
+   New-ADUser -SamAccountName MIMAdmin -name MIMAdmin
 
-  Set-ADAccountPassword –identity MIMAdmin  -NewPassword $sp
+   Set-ADAccountPassword –identity MIMAdmin  -NewPassword $sp
 
-  Set-ADUser -identity MIMAdmin -Enabled 1 -PasswordNeverExpires 1
+   Set-ADUser -identity MIMAdmin -Enabled 1 -PasswordNeverExpires 1
 
-  Add-ADGroupMember "Domain Admins" SharePoint
+   Add-ADGroupMember "Domain Admins" SharePoint
 
-  Add-ADGroupMember "Domain Admins" MIMService
-  ```
+   Add-ADGroupMember "Domain Admins" MIMService
+   ```
 
 ### <a name="configure-auditing-and-logon-rights"></a>Konfigurera rättigheter för granskning och inloggning
 
@@ -201,11 +202,11 @@ Du måste ställa in granskning för att PAM-konfigurationen ska upprättas mell
 
 19. Öppna ett PowerShell-fönster som administratör och skriv följande kommando för att uppdatera domänkontrollanten i inställningarna för grupprincipen.
 
-  ```cmd
-  gpupdate /force /target:computer
-  ```
+    ```cmd
+    gpupdate /force /target:computer
+    ```
 
-  Efter en minut slutförs uppdateringen med meddelandet ”Uppdatering av grupprincip har slutförts”.
+    Efter en minut slutförs uppdateringen med meddelandet ”Uppdatering av grupprincip har slutförts”.
 
 
 ### <a name="configure-dns-name-forwarding-on-privdc"></a>Konfigurera vidarebefordran av DNS-namn på PRIVDC
@@ -216,11 +217,11 @@ Med PowerShell på PRIVDC konfigurerar du vidarebefordran av DNS-namn så att PR
 
 2. För varje domän som ligger högst upp i varje befintlig skog skriver du följande kommando, anger den befintliga DNS-domänen (t.ex. contoso.local) och IP-adressen för domänens huvudserver.  
 
-  Om du har skapat en contoso.local-domän i det föregående steget, anger du *10.1.1.31* som IP-adress för CORPDC-datorns virtuella nätverk.
+   Om du har skapat en contoso.local-domän i det föregående steget, anger du *10.1.1.31* som IP-adress för CORPDC-datorns virtuella nätverk.
 
-  ```PowerShell
-  Add-DnsServerConditionalForwarderZone –name "contoso.local" –masterservers 10.1.1.31
-  ```
+   ```PowerShell
+   Add-DnsServerConditionalForwarderZone –name "contoso.local" –masterservers 10.1.1.31
+   ```
 
 > [!NOTE]
 > De andra skogarna måste också kunna vidarebefordra DNS-frågor för PRIV-skogen till den här domänkontrollanten.  Om du har flera befintliga Active Directory-skogar måste du också lägga till en villkorlig DNS-vidarebefordrare för var och en av dessa skogar.
@@ -229,12 +230,12 @@ Med PowerShell på PRIVDC konfigurerar du vidarebefordran av DNS-namn så att PR
 
 1. Med PowerShell lägger du till SPN-namn så att SharePoint, PAM REST-API:t och MIM-tjänsten kan använda Kerberos-autentisering.
 
-  ```cmd
-  setspn -S http/pamsrv.priv.contoso.local PRIV\SharePoint
-  setspn -S http/pamsrv PRIV\SharePoint
-  setspn -S FIMService/pamsrv.priv.contoso.local PRIV\MIMService
-  setspn -S FIMService/pamsrv PRIV\MIMService
-  ```
+   ```cmd
+   setspn -S http/pamsrv.priv.contoso.local PRIV\SharePoint
+   setspn -S http/pamsrv PRIV\SharePoint
+   setspn -S FIMService/pamsrv.priv.contoso.local PRIV\MIMService
+   setspn -S FIMService/pamsrv PRIV\MIMService
+   ```
 
 > [!NOTE]
 > I nästa steg i det här dokumentet beskrivs hur du installerar MIM 2016 serverkomponenter på en enskild dator. Om du vill lägga till en annan server för hög tillgänglighet behöver du ytterligare Kerberos-konfigurationen enligt beskrivningen i [FIM 2010: Konfiguration av Kerberos-autentisering](http://social.technet.microsoft.com/wiki/contents/articles/3385.fim-2010-kerberos-authentication-setup.aspx).
@@ -254,13 +255,13 @@ Utför följande steg på PRIVDC som domänadministratör.
 8. I fönstret Välj användare, datorer eller grupper anger du *MIMAdmin* och klickar på **Kontrollera namn**. När namnen är understrukna klickar du på **OK** och sedan på **Nästa**.
 9. Välj **anpassad aktivitet**, tillämpa på **den här mappen** med **allmänna behörigheter**.
 10. I listan med behörigheter väljer du följande:
-  - **Läsa**
-  - **Skriva**
-  - **Skapa alla underordnade objekt**
-  - **Ta bort alla underordnade objekt**
-  - **Läsa alla egenskaper**
-  - **Skriva alla egenskaper**
-  - **Migrera SID-historik** klickar du på **nästa** sedan **Slutför**.
+    - **Läsa**
+    - **Skriva**
+    - **Skapa alla underordnade objekt**
+    - **Ta bort alla underordnade objekt**
+    - **Läsa alla egenskaper**
+    - **Skriva alla egenskaper**
+    - **Migrera SID-historik** klickar du på **nästa** sedan **Slutför**.
 
 11. Högerklicka på domänen **priv.contoso.local** och välj **Delegera kontroll**.  
 12. På fliken Valda användare och grupper klickar du på **Lägg till**.  
@@ -271,9 +272,9 @@ Utför följande steg på PRIVDC som domänadministratör.
 
 17. Öppna en kommandotolk.  
 18. Granska åtkomstkontrollistan i objektet AdminSDHolder i PRIV-domänerna. Om domänen till exempel är "priv.contoso.local" skriver du kommandot
-  ```cmd
-  dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local"
-  ```
+    ```cmd
+    dsacls "cn=adminsdholder,cn=system,dc=priv,dc=contoso,dc=local"
+    ```
 19. Uppdatera åtkomstkontrollistan vid behov för att säkerställa att MIM-tjänsten och MIM-komponenttjänsten kan uppdatera medlemskap i grupper som skyddas av denna ACL.  Skriv kommandot:
 
 ```cmd
@@ -303,6 +304,6 @@ Mer information finns i [Skydda arbetsstationer med privilegierad åtkomst](http
 
 I nästa steg ska du förbereda en PAM-server.
 
->[!div class="step-by-step"]
-[« Steg 1](step-1-prepare-corp-domain.md)
-[Steg 3 »](step-3-prepare-pam-server.md)
+> [!div class="step-by-step"]
+> [« Steg 1](step-1-prepare-corp-domain.md)
+> [Steg 3 »](step-3-prepare-pam-server.md)

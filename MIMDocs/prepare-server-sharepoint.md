@@ -12,18 +12,19 @@ ms.technology: security
 ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 6922c3c2f66b6dbb0b0751420be9dd778206a3cf
-ms.sourcegitcommit: 8316fa41f06f137dba0739a8700910116b5575d8
+ms.openlocfilehash: f69648e7e4229ca7c8de895cdf10ccb2c5f368e2
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289541"
 ---
 # <a name="set-up-an-identity-management-server-sharepoint"></a>Konfigurera en server för identitetshantering: SharePoint
 
->[!div class="step-by-step"]
-[«SQL Server 2016](prepare-server-sql2016.md)
-[Exchange Server»](prepare-server-exchange.md)
-
+> [!div class="step-by-step"]
+> [«SQL Server 2016](prepare-server-sql2016.md)
+> [Exchange Server»](prepare-server-exchange.md)
+> 
 > [!NOTE]
 > I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
 > - Domänkontrollantens namn - **corpdc**
@@ -31,7 +32,7 @@ ms.lasthandoff: 05/04/2018
 > - MIM-tjänsten Server name - **corpservice**
 > - Servernamnet för MIM Sync - **corpsync**
 > - Namnet på SQL Server - **corpsql**
-> - Lösenord – **Pass@word1**
+> - Lösenord – <strong>Pass@word1</strong>
 
 
 ## <a name="install-sharepoint-2016"></a>Installera **SharePoint 2016**
@@ -97,25 +98,25 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
 
 2. Starta SharePoint 2016 Management Shell och kör följande PowerShell-skript för att skapa en **SharePoint-webbplatssamling** som är associerade med det webbprogrammet.
 
-  ```
+   ```
     $t = Get-SPWebTemplate -compatibilityLevel 15 -Identity "STS#1"
     $w = Get-SPWebApplication http://mim.contoso.com/
     New-SPSite -Url $w.Url -Template $t -OwnerAlias contoso\miminstall -CompatibilityLevel 15 -Name "MIM Portal"
     $s = SpSite($w.Url)
     $s.CompatibilityLevel
-  ```
+   ```
 
-  > [!NOTE]
-  > Kontrollera att resultatet av den *CompatibilityLevel* variabeln är ”15”. Om resultatet är än ”15”, sedan skapades webbplatssamlingen inte korrekt experience-version. ta bort webbplatssamlingen och skapa den på nytt.
+   > [!NOTE]
+   > Kontrollera att resultatet av den *CompatibilityLevel* variabeln är ”15”. Om resultatet är än ”15”, sedan skapades webbplatssamlingen inte korrekt experience-version. ta bort webbplatssamlingen och skapa den på nytt.
 
 3. Inaktivera **SharePoint Server-Side Viewstate** och SharePoint-uppgiften ”Hälsoanalysjobb (varje timme, Microsoft SharePoint Foundation-Timer, alla servrar)” genom att köra följande PowerShell-kommandon i den  **Hanteringsgränssnittet för SharePoint 2016**:
 
-  ```
-  $contentService = [Microsoft.SharePoint.Administration.SPWebService]::ContentService;
-  $contentService.ViewStateOnServer = $false;
-  $contentService.Update();
-  Get-SPTimerJob hourly-all-sptimerservice-health-analysis-job | disable-SPTimerJob
-  ```
+   ```
+   $contentService = [Microsoft.SharePoint.Administration.SPWebService]::ContentService;
+   $contentService.ViewStateOnServer = $false;
+   $contentService.Update();
+   Get-SPTimerJob hourly-all-sptimerservice-health-analysis-job | disable-SPTimerJob
+   ```
 
 4. Öppna en ny webbläsarflik på din server för Identitetshantering, gå till http://mim.contoso.com/ och logga in som *contoso\miminstall*.  En tom SharePoint-sida med namnet *MIM-portal* visas.
 
@@ -129,6 +130,6 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
 
 7. Öppna programmet **Administrationsverktyg**, navigera till **Tjänster**, leta upp SharePoints Administrationstjänst och starta den om den inte redan körs.
 
->[!div class="step-by-step"]  
-[«SQL Server 2016](prepare-server-sql2016.md)
-[Exchange Server»](prepare-server-exchange.md)
+> [!div class="step-by-step"]  
+> [«SQL Server 2016](prepare-server-sql2016.md)
+> [Exchange Server»](prepare-server-exchange.md)

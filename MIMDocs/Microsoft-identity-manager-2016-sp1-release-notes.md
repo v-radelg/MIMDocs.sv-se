@@ -12,11 +12,12 @@ ms.technology: security
 ms.assetid: ccdd8a9f-02da-440a-81a8-354800dcd2a8
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 98d21076801bbe60b7a2d2d5b7e1c41d4bce1b4a
-ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
+ms.openlocfilehash: 9b12f8bebf44847d76e94fe083266b1b32b608a9
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290296"
 ---
 # <a name="whats-new-for-microsoft-identity-manager-2016-service-pack-1"></a>Nyheter i Microsoft Identity Manager 2016 Service Pack 1 #
 
@@ -42,8 +43,8 @@ Vi vill också veta vad du tycker! Om du har feedback, kommentarer eller frågor
 
 - **PAM ”PRIV” stöder (skyddade) skogar på Windows Server 2016-funktionsnivån:** MIM PAM-tjänsten kan konfigureras i en miljö med domänkontrollanter som körs på funktionsnivån för Active Directory Domain Services-skogar för Windows Server 2016. När den konfigurerats tidsbegränsas en användares Kerberos-biljett till den återstående tiden för användarens rollaktivering.
 
-    >[!Note]
-    Om du vill behålla skogen på Windows Server 2012 R2-funktionsnivå i CORP-domänen rekommenderar vi att du installerar [KB 2919442](https://support.microsoft.com/en-us/kb/2919442) och [KB 2919355](https://support.microsoft.com/en-us/kb/2919355) på CORP-domänkontrollanten.
+  > [!Note]
+  >   Om du vill behålla skogen på Windows Server 2012 R2-funktionsnivå i CORP-domänen rekommenderar vi att du installerar [KB 2919442](https://support.microsoft.com/en-us/kb/2919442) och [KB 2919355](https://support.microsoft.com/en-us/kb/2919355) på CORP-domänkontrollanten.
 
 - **Privilegierad kontoupphöjning till grupper som är exklusiva för (den skyddade) ”PRIV”-skogen:** Nu kan administratörer informera MIM-tjänsten om grupper och användare som är exklusiva för ”PRIV”-skogen. Detta gör att de här grupperna och användarna kan läggas till i PAM-roller.  De kan sedan aktiveras för en roll och tilldelas medlemskap i grupper i ”PRIV”-skogen.
 
@@ -51,8 +52,8 @@ Vi vill också veta vad du tycker! Om du har feedback, kommentarer eller frågor
 
 - **PAM-cmdlets för konfiguration av silor för autentiseringsprinciper:** Service Pack 1 tillhandahåller nya cmdlets som skärper säkerheten i din skyddsskog. Med dessa cmdlets skapas automatiskt en silo för autentiseringsprinciper, som är bunden till en mall för autentiseringsprinciper.
 
-    >[!Note]
-    Dessa cmdlets körs automatiskt som en del av distributionsskripten.
+  > [!Note]
+  >   Dessa cmdlets körs automatiskt som en del av distributionsskripten.
 
 
 ## <a name="platform-support"></a>Plattformsstöd
@@ -77,8 +78,8 @@ Innan du börjar
 Du måste uppgradera MIM-synkroniseringsmotorn innan du uppgraderar MIM-tjänsten och MIM-portalen.
 Du måste säkerhetskopiera MIM-tjänstdatabasen och MIM-synkroniseringsdatabasen.
 
-  1. Avinstallera Microsoft Identity Manager-komponenten som du uppgraderar
-  2. När avinstallationen är klar öppnar du välkomstsidan som finns i ”FIMSplash.htm” på installationsmediet
-  3. Välj den MIM-komponent som du vill uppgradera
-  4. Fortsätt med installationen genom att följa anvisningarna
-    * Installation av MIM-tjänsten och MIM-portalen: Om du väljer Exchange Online som e-postkonto anger du e-postadressen och autentiseringsuppgifterna för Exchange Online-kontot på nästa skärm.
+1. Avinstallera Microsoft Identity Manager-komponenten som du uppgraderar
+2. När avinstallationen är klar öppnar du välkomstsidan som finns i ”FIMSplash.htm” på installationsmediet
+3. Välj den MIM-komponent som du vill uppgradera
+4. Fortsätt med installationen genom att följa anvisningarna
+   * Installation av MIM-tjänsten och MIM-portalen: Om du väljer Exchange Online som e-postkonto anger du e-postadressen och autentiseringsuppgifterna för Exchange Online-kontot på nästa skärm.

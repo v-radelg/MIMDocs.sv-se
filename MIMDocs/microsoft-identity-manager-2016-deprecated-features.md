@@ -11,19 +11,20 @@ ms.prod: identity-manager-2016
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: 50f7b135ce0d5a46ea08068a7658b229759d2b50
-ms.sourcegitcommit: 24bb3e82f55971696bdefa6c240f1a27f856e110
+ms.openlocfilehash: a4239f1d69d8a43d70dd38af16e9ef8be62bd33c
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36288919"
 ---
 # <a name="deprecated-features"></a>Föråldrade funktioner
 
 Den här artikeln beskriver inaktuella funktioner för Microsoft Identity Manager 2016 SP1. Där funktionen finns kvar i Microsoft Identity Manager fortfarande stöds. Funktioner rekommenderas inte för nya distributioner som kan tas bort i en version av funktionen.  För utvecklare rekommenderar vi inte använder inaktuella funktioner i alla nya program eller -lösningar.
 
->[!NOTE]
-Funktioner och funktionalitet som tas bort i Microsoft Identity Manager SP1 identifieras med **. <br>
-Mer information om support [livscykel för Microsoft Identity Manager](https://support.microsoft.com/en-us/lifecycle/search?alpha=Microsoft%20Forefront%20Identity%20Manager%202010%20R2%20Service%20Pack%201,Microsoft%20Identity%20Manager%202016,Microsoft%20Forefront%20Identity%20Manager%202010)
+> [!NOTE]
+> Funktioner och funktionalitet som tas bort i Microsoft Identity Manager SP1 identifieras med **. <br>
+> Mer information om support [livscykel för Microsoft Identity Manager](https://support.microsoft.com/en-us/lifecycle/search?alpha=Microsoft%20Forefront%20Identity%20Manager%202010%20R2%20Service%20Pack%201,Microsoft%20Identity%20Manager%202016,Microsoft%20Forefront%20Identity%20Manager%202010)
 
 
 ## <a name="bhold"></a>BHOLD 
@@ -31,6 +32,7 @@ Mer information om support [livscykel för Microsoft Identity Manager](https://s
 Microsoft rekommenderar inte kunder starta nya distributioner av Microsoft BHOLD-programsvit-komponenter. Befintliga distributioner av BHOLD fortsätter att stödjas. Azure AD nu innehåller [åtkomst till granskningar](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-azure-ad-controls-access-reviews-overview) som ersätter vissa BHOLD attestering kampanj funktioner.
 
 ## <a name="certificate-management"></a>Certifikathantering 
+
 | **Kategori**                | **Inaktuell funktion**              | **Ersättning och kommentar**           |
 |-----------------------------|-------------------------------------|----------------------------------------------|
 | Hantering av agenter | ** FIM certifikathantering | Hanteringsagent för FIM-certifikatet har tagits bort i MIM 2016.                                                             |
@@ -53,8 +55,8 @@ Microsoft rekommenderar inte kunder starta nya distributioner av Microsoft BHOLD
 | Hantering av agenter           | Konfigurera partition visningsnamn    | Den här funktionen kommer inte att ersättas. Det här alternativet endast används för att ange ett alternativt namn för en partition i WMI-gränssnitt.                                                                                                                                                                       |
 | Körning av profiler                | Kombinerade profiler                   | Kombinerade profiler import/Deltasynkronisering, fullständig import-/ Deltasynkronisering och fullständig import-synkronisering kommer tas bort. Du bör använda körning av profiler med två steg i stället. 
 
->[!NOTE]
-Du bör ha kombinerade körningsprofiler endast i miljöer där prestanda kan påverkas av ett stort antal befintliga disconnectors.
+> [!NOTE]
+> Du bör ha kombinerade körningsprofiler endast i miljöer där prestanda kan påverkas av ett stort antal befintliga disconnectors.
 
 
 | **Kategori**                | **Inaktuell funktion**              | **Ersättning och kommentar**           |

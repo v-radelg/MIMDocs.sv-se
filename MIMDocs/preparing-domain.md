@@ -12,16 +12,17 @@ ms.technology: security
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: ff8d8a6f66212b006e2c17186dc299a5bcf3f68b
-ms.sourcegitcommit: 32d9a963a4487a8649210745c97a3254645e8744
+ms.openlocfilehash: ddab5b1ab57d3d332d5cd36ecc5a29abd83222ec
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289038"
 ---
 # <a name="set-up-a-domain"></a>Konfigurera en domän
 
->[!div class="step-by-step"]
-[Windows Server 2016»](prepare-server-ws2016.md)
+> [!div class="step-by-step"]
+> [Windows Server 2016»](prepare-server-ws2016.md)
 
 Microsoft Identity Manager (MIM) fungerar med Active Directory-domänen (AD). Du bör redan ha en AD installerad och se till att du har en domänkontrollant i miljön för en domän du har administratörsbehörighet för.
 
@@ -38,7 +39,7 @@ Alla komponenter i MIM-distributionen behöver ha egna identiteter i domänen. D
 > - MIM-tjänsten Server name - **corpservice**
 > - Servernamnet för MIM Sync - **corpsync**
 > - Namnet på SQL Server - **corpsql**
-> - Lösenord – **Pass@word1**
+> - Lösenord – <strong>Pass@word1</strong>
 
 1. Logga in på domänkontrollanten som domänadministratör (*t.ex. Contoso\Administratör*).
 
@@ -105,5 +106,5 @@ Alla komponenter i MIM-distributionen behöver ha egna identiteter i domänen. D
 - passwordreset.contoso.com punkt till corpservice fysiska ip-adress
 - passwordregistration.contoso.com punkt till corpservice fysiska ip-adress
 
->[!div class="step-by-step"]
-[Windows Server 2016»](prepare-server-ws2016.md)
+> [!div class="step-by-step"]
+> [Windows Server 2016»](prepare-server-ws2016.md)

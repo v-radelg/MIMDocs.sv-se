@@ -1,7 +1,7 @@
 ---
-title: "Distribuera PAM steg 3 – PAM-server | Microsoft Docs"
-description: "Förbered en PAM-server som ska vara värd för både SQL och SharePoint för distribution av Privileged Access Management."
-keywords: 
+title: Distribuera PAM steg 3 – PAM-server | Microsoft Docs
+description: Förbered en PAM-server som ska vara värd för både SQL och SharePoint för distribution av Privileged Access Management.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -13,17 +13,18 @@ ms.assetid: 68ec2145-6faa-485e-b79f-2b0c4ce9eff7
 ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: fd52a191a0592441131249451011c4e2f026ea48
-ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
+ms.openlocfilehash: 3eb79847baed69ef53a27e09443ff9bf4647b347
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289922"
 ---
 # <a name="step-3--prepare-a-pam-server"></a>Steg 3 – Förbereda en PAM-server
 
->[!div class="step-by-step"]
-[« Steg 2](step-2-prepare-priv-domain-controller.md)
-[Steg 4 »](step-4-install-mim-components-on-pam-server.md)
+> [!div class="step-by-step"]
+> [« Steg 2](step-2-prepare-priv-domain-controller.md)
+> [Steg 4 »](step-4-install-mim-components-on-pam-server.md)
 
 ## <a name="install-windows-server-2012-r2"></a>Installera Windows Server 2012 R2
 
@@ -93,13 +94,13 @@ Det finns två sätt att ändra IIS-konfigurationen så att program kan använda
 
 Om du vill använda PowerShell:
 
-1.  Högerklicka på PowerShell och välj **Kör som administratör**.
-2.  Stoppa IIS och lås upp programvärdinställningarna med dessa kommandon
-    ```CMD
-    iisreset /STOP
-    C:\Windows\System32\inetsrv\appcmd.exe unlock config /section:windowsAuthentication -commit:apphost
-    iisreset /START
-    ```
+1. Högerklicka på PowerShell och välj **Kör som administratör**.
+2. Stoppa IIS och lås upp programvärdinställningarna med dessa kommandon
+   ```CMD
+   iisreset /STOP
+   C:\Windows\System32\inetsrv\appcmd.exe unlock config /section:windowsAuthentication -commit:apphost
+   iisreset /START
+   ```
 
 Om du vill använda en textredigerare, t.ex. Notepad:
 
@@ -215,6 +216,6 @@ Gå till **Tjänster** (i Administrationsverktyg) och starta **SharePoints admin
 
 I steg 4 börjar du installera MIM-komponenterna på PAM-servern.
 
->[!div class="step-by-step"]
-[« Steg 2](step-2-prepare-priv-domain-controller.md)
-[Steg 4 »](step-4-install-mim-components-on-pam-server.md)
+> [!div class="step-by-step"]
+> [« Steg 2](step-2-prepare-priv-domain-controller.md)
+> [Steg 4 »](step-4-install-mim-components-on-pam-server.md)

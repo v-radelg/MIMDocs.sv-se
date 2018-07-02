@@ -10,11 +10,12 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: 3d45d18042ccda83873aa929101222c15f36246a
-ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
+ms.openlocfilehash: 90e7da2a1e39b802723ff0714bd0caccf9649440
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289143"
 ---
 # <a name="bhold-model-generator-installation"></a>BHOLD modellen Generator Installation
 
@@ -28,8 +29,8 @@ Innan du installerar modulen BHOLD modellen Generator, måste du installera föl
 
 2. Microsoft OLE DB Provider för Microsoft Jet måste installeras. Mer information finns i [i den här artikeln](http://support.microsoft.com/kb/271908).
 
->[!WARNING]
-Installera inte BHOLD modellen Generator i produktionsnätverket. BHOLD modellen Generator är avsedd att användas offline i en fristående miljö för att skapa en normaliserade roll-modell som du kan importera till din modell för enterprise-rollen. Kör BHOLD modellen Generator i produktionsnätverket kan resultera i förlust av din befintliga roll-modell.
+> [!WARNING]
+> Installera inte BHOLD modellen Generator i produktionsnätverket. BHOLD modellen Generator är avsedd att användas offline i en fristående miljö för att skapa en normaliserade roll-modell som du kan importera till din modell för enterprise-rollen. Kör BHOLD modellen Generator i produktionsnätverket kan resultera i förlust av din befintliga roll-modell.
 
 ## <a name="before-you-begin"></a>Innan du börjar
 

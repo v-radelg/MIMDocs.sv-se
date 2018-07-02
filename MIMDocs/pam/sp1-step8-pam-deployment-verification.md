@@ -1,7 +1,7 @@
 ---
 title: Steg 8 Verifiera PAM-distributionen
-description: "Skriptdistributionen av PAM inkluderar verifieringsskript som kan köra ett PAM-scenario som verifierar att PAM-distributionen fungerar som förväntat."
-keywords: 
+description: Skriptdistributionen av PAM inkluderar verifieringsskript som kan köra ett PAM-scenario som verifierar att PAM-distributionen fungerar som förväntat.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: MBaldwin
@@ -10,19 +10,20 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
-ms.reviewer: 
+ms.reviewer: ''
 ms.suite: ems
-ms.openlocfilehash: 28fcbe10366df749796be76f83f608561b5f39d3
-ms.sourcegitcommit: 8edd380f54c3e9e83cfabe8adfa31587612e5773
+ms.openlocfilehash: b01980c020b1027c3b40eaf49b4431631ee041be
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/19/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289480"
 ---
 # <a name="step-8-pam-deployment-verification"></a>Steg 8 Verifiera PAM-distributionen
 
->[!div class="step-by-step"]
-[« Steg 7](sp1-step7-setup-sidhistory-sidfiltering.md)
-[Tillägg »](sp1-pam-deployment-addendum.md)
+> [!div class="step-by-step"]
+> [« Steg 7](sp1-step7-setup-sidhistory-sidfiltering.md)
+> [Tillägg »](sp1-pam-deployment-addendum.md)
 
 Distributionspaketet innehåller verifieringsskript som kan köra ett PAM-scenario för att bekräfta att PAM-distributionen fungerar som förväntat.
 Om du vill använda distributionsverifieringen redigerar du avsnittet <PamValidation/> i PAMDeploymentConfig.xml.
@@ -64,7 +65,7 @@ Steg 3:
 
 I det här steget uppmanas du att ange autentiseringsuppgifterna för CORPAdmin. När autentiseringsuppgifterna har angetts läggs nödvändiga användarna till i grupperna ”Användare av fjärrskrivbord” och ”Fjärrhanteringsanvändare”.
 Använd följande kommando på CORP-klienten för att öppna PowerShell som den PRIV-användare som du verifierar. </br></br>
-**Runas /u:<PRIV domain>\PRIV.pamRequestor powershell.exe**  </br></br>
+**Runas/u:<PRIV domain>\PRIV.pamRequestor powershell.exe**  </br></br>
 Skriv följande i PowerShell-fönstret:
 
 1. cd $env:SYSTEMDRIVE\PAM
@@ -76,6 +77,6 @@ Skriv följande i PowerShell-fönstret:
   Till en början har användaren inte åtkomst till resursen. När användaren har lagts till i rollen med Just-In-Time beviljas användaren åtkomst. När varaktigheten för begäran går ut har användaren återigen ingen åtkomst.
   Skriptet använder standardvärdet (11 minuter) som varaktighet för begäran.
 
->[!div class="step-by-step"]
-[« Steg 7](sp1-step7-setup-sidhistory-sidfiltering.md)
-[Tillägg »](sp1-pam-deployment-addendum.md)
+> [!div class="step-by-step"]
+> [« Steg 7](sp1-step7-setup-sidhistory-sidfiltering.md)
+> [Tillägg »](sp1-pam-deployment-addendum.md)

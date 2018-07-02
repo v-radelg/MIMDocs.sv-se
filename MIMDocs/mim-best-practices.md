@@ -1,7 +1,7 @@
 ---
-title: "Rekommenderade metoder för Microsoft Identity Manager 2016 | Microsoft Docs"
-description: 
-keywords: 
+title: Rekommenderade metoder för Microsoft Identity Manager 2016 | Microsoft Docs
+description: ''
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -10,20 +10,21 @@ ms.topic: reference
 ms.prod: identity-manager-2016
 ms.service: microsoft-identity-manager
 ms.technology: security
-ms.assetid: 
-ms.openlocfilehash: bb967bfb43218384044e324c270d3d6b35d33afe
-ms.sourcegitcommit: b4513f0f72ac6efd5c2610863f4e3e8c8e65c860
+ms.assetid: ''
+ms.openlocfilehash: 9ef96b88942fd33107d9021ddddb90d0d80dbed1
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290126"
 ---
 # <a name="microsoft-identity-manager-2016-best-practices"></a>Rekommenderade metoder för Microsoft Identity Manager 2016
 
 Det här avsnittet beskriver rekommenderade metoder för att distribuera och använda Microsoft Identity Manager 2016 (MIM)
 
 ## <a name="sql-setup"></a>Konfiguration av SQL
->[!NOTE]
-Följande rekommendationer för att konfigurera en server som kör SQL förutsätter en SQL-instans som är dedikerad till FIM-tjänsten och en SQL-instans som är dedikerad till FIMSynchronizationService-databasen. Om du kör FIM-tjänsten i en konsoliderad miljö måste du göra de justeringar som krävs för din konfiguration.
+> [!NOTE]
+> Följande rekommendationer för att konfigurera en server som kör SQL förutsätter en SQL-instans som är dedikerad till FIM-tjänsten och en SQL-instans som är dedikerad till FIMSynchronizationService-databasen. Om du kör FIM-tjänsten i en konsoliderad miljö måste du göra de justeringar som krävs för din konfiguration.
 
 Konfiguration av SQL-servern (Structured Query Language) är viktig för optimala systemprestanda. Optimala MIM-prestanda i storskaliga implementeringar beror på användning av rekommenderade metoder för en server som kör SQL. Mer information finns i följande avsnitt om rekommenderade metoder för SQL:
 
@@ -71,40 +72,40 @@ Det är viktigt att förstå återställningsmodellens diskkrav. Enkelt återst�
 
 Beroende på hur mycket minne som finns på SQL Server och om du delar SQL Server med andra tjänster (d.v.s. MIM 2016-tjänsten och MIM 2016-synkroniseringstjänsten) kanske du vill begränsa minnesanvändningen för SQL. Det kan du göra på följande sätt.
 
-1.  Starta SQL Server Enterprise Manager.
+1. Starta SQL Server Enterprise Manager.
 
-2.  Välj Ny fråga.
+2. Välj Ny fråga.
 
-3.  Kör följande fråga:
+3. Kör följande fråga:
 
-  ```SQL
-  USE master
+   ```SQL
+   USE master
 
-  EXEC sp_configure 'show advanced options', 1
+   EXEC sp_configure 'show advanced options', 1
 
-  RECONFIGURE WITH OVERRIDE
+   RECONFIGURE WITH OVERRIDE
 
-  USE master
+   USE master
 
-  EXEC sp_configure 'max server memory (MB)', 12000--- max=12G RECONFIGURE
-  WITH OVERRIDE
-  ```
+   EXEC sp_configure 'max server memory (MB)', 12000--- max=12G RECONFIGURE
+   WITH OVERRIDE
+   ```
 
-  Det här exemplet konfigurerar SQLServer för att använda mer än 12 gigabyte (GB) minne.
+   Det här exemplet konfigurerar SQLServer för att använda mer än 12 gigabyte (GB) minne.
 
-4.  Verifiera inställningen med hjälp av följande fråga:
+4. Verifiera inställningen med hjälp av följande fråga:
 
-  ```SQL
-  USE master
+   ```SQL
+   USE master
 
-  EXEC sp_configure 'max server memory (MB)'--- verify the setting
+   EXEC sp_configure 'max server memory (MB)'--- verify the setting
 
-  USE master
+   USE master
 
-  EXEC sp_configure 'show advanced options', 0
+   EXEC sp_configure 'show advanced options', 0
 
-  RECONFIGURE WITH OVERRIDE
-  ```
+   RECONFIGURE WITH OVERRIDE
+   ```
 
 ### <a name="backup-and-recovery-configuration"></a>Konfiguration av säkerhetskopiering och återställning
 
@@ -169,11 +170,11 @@ Vi rekommenderar att du inaktiverar Microsoft Office SharePoint®-indexering. De
 
 Det här avsnittet innehåller ett antal steg för att öka prestandan för den ursprungliga data från externa systemet till MIM. Det är viktigt att förstå att ett antal här utförs endast under den inledande ifyllning av systemet. De ska återställas när belastningen. Detta är en engångsåtgärd och är inte en kontinuerlig synkronisering.
 
->[!NOTE]
-Mer information om hur du synkroniserar användare mellan MIM och Active Directory Domain Services (AD DS) finns [hur gör jag synkronisera användare från Active Directory till FIM](http://go.microsoft.com/fwlink/?LinkID=188277) i FIM-dokumentationen.
-
->[!IMPORTANT]
-Se till att du har följt de rekommenderade metoder som beskrivs i avsnittet om SQL-konfiguration i den här handledningen. 
+> [!NOTE]
+> Mer information om hur du synkroniserar användare mellan MIM och Active Directory Domain Services (AD DS) finns [hur gör jag synkronisera användare från Active Directory till FIM](http://go.microsoft.com/fwlink/?LinkID=188277) i FIM-dokumentationen.
+> 
+> [!IMPORTANT]
+> Se till att du har följt de rekommenderade metoder som beskrivs i avsnittet om SQL-konfiguration i den här handledningen. 
 
 ### <a name="step-1-configure-the-sql-server-for-initial-data-load"></a>Steg 1: Konfigurera SQL Server för inledande datainläsning
 Den inledande inläsningen av data kan vara en tidskrävande process. När du planerar att först läsa in stora mängder data kan minska du den tid det tar att fylla i databasen genom att tillfälligt inaktivera fulltextsökning och aktivera det igen efter exporten på MIM 2016-hanteringsagenten (FIM MA) har slutförts.
@@ -191,8 +192,8 @@ ALTER FULLTEXT INDEX ON [fim].[ObjectValueString] SET CHANGE_TRACKING = MANUAL
 ALTER FULLTEXT INDEX ON [fim].[ObjectValueXml] SET CHANGE_TRACKING = MANUAL
 ```
 
->[!IMPORTANT]
-Om du inte implementerar dessa metoder kan det leda till hög diskutrymmesanvändning, som eventuellt kan leda till att diskutrymmet tar slut. Du hittar mer information om det här avsnittet i [Recovery Model Overview](http://go.microsoft.com/fwlink/?LinkID=185370) (Översikt över återställningsmodell). [Guide för säkerhetskopiering och återställning av FIM](http://go.microsoft.com/fwlink/?LinkID=165864) innehåller ytterligare information.
+> [!IMPORTANT]
+> Om du inte implementerar dessa metoder kan det leda till hög diskutrymmesanvändning, som eventuellt kan leda till att diskutrymmet tar slut. Du hittar mer information om det här avsnittet i [Recovery Model Overview](http://go.microsoft.com/fwlink/?LinkID=185370) (Översikt över återställningsmodell). [Guide för säkerhetskopiering och återställning av FIM](http://go.microsoft.com/fwlink/?LinkID=165864) innehåller ytterligare information.
 
 ### <a name="step-2-apply-the-minimum-necessary-mim-configuration-during-the-load-process"></a>Steg 2: Använd den minsta nödvändiga MIM-konfigurationen under inläsningen
 
@@ -288,8 +289,8 @@ Tjänstekontona bör inte vara medlem i den lokala administratörsgruppen.
 
 FIM-synkroniseringstjänstens tjänstekonto bör inte vara medlem i de säkerhetsgrupper som används för att styra åtkomst till FIM-synkroniseringstjänsten (grupper som börjar med FIMSync, till exempel FIMSyncAdmins o.s.v.).
 
->[!IMPORTANT]
- Om du väljer alternativen för att använda samma konto för båda tjänstekontona och inte skiljer FIM-tjänsten och FIM-synkroniseringstjänsten åt kan du inte konfigurera Neka tillgång till den här datorn från nätverket på mms-synkroniseringstjänstens server. Om åtkomst nekas förhindrar det att FIM-tjänsten kontaktar FIM-synkroniseringstjänsten för att ändra konfigurationen och hantera lösenord.
+> [!IMPORTANT]
+>  Om du väljer alternativen för att använda samma konto för båda tjänstekontona och inte skiljer FIM-tjänsten och FIM-synkroniseringstjänsten åt kan du inte konfigurera Neka tillgång till den här datorn från nätverket på mms-synkroniseringstjänstens server. Om åtkomst nekas förhindrar det att FIM-tjänsten kontaktar FIM-synkroniseringstjänsten för att ändra konfigurationen och hantera lösenord.
 
 ### <a name="password-reset-deployed-to-kiosk-like-computers-should-set-local-security-to-clear-virtual-memory-pagefile"></a>Lösenordsåterställning som distribueras på kioskliknande datorer bör ange lokal säkerhet för att rensa virtuell minnesväxlingsfil
 
@@ -357,9 +358,9 @@ Implementera SSL:
 
 28. Klicka på Åtgärder och klicka på Alternativa åtkomstmappningar.
 
-29. Klicka på http://servernamn.
+29. Klicka på http://servername.
 
-30. Ändra http://servernamn till https://servernamn och klicka sedan på OK.
+30. Ändra http://servername till https://servername, och klicka sedan på OK.
 
 31. Klicka på Start, klicka på Kör, skriv iisreset och klicka på OK.
 
@@ -384,7 +385,7 @@ MIM 2016 rensar som standard förfallna systemobjekt, vilket omfattar slutförda
 
 MIM erbjuder två typer av MPR, Begäran och Uppsättningsövergång:
 
--  MPR för begäran (RMPR)
+- MPR för begäran (RMPR)
 
   - Används för att definiera åtkomstkontrollprincipen (autentisering, auktorisering och åtgärd) för åtgärderna Skapa, Läsa, Uppdatera eller Ta bort (Create, Read, Update eller Delete, CRUD) mot resurser.
   - Tillämpas när utfärdas en CRUD-åtgärd mot en målresurs i MIM.
@@ -432,8 +433,8 @@ I MIM, har behörigheter definierats som en positiv kontrollen. Eftersom MIM int
 
 Använd MPR för uppsättningsövergång (TMPR) i stället för RMPR för att definiera anpassade rättigheter. TMPR utgör en tillståndsbaserad modell för att tilldela eller ta bort rättigheter baserat på medlemskap i definierade övergångsuppsättningar, eller roller, och medföljande arbetsflödesaktiviteter. TMPR ska alltid definieras i par, ett för resurser som går in och ett för resurser som går ut. Dessutom bör varje övergångs-MPR innehålla separata arbetsflöden för etablerings- och borttagningsaktiviteter.
 
->[!NOTE]
-Eventuella borttagningsarbetsflöden bör säkerställa att attributet Kör vid principuppdatering är inställt på sant.
+> [!NOTE]
+> Eventuella borttagningsarbetsflöden bör säkerställa att attributet Kör vid principuppdatering är inställt på sant.
 
 #### <a name="enable-the-set-transition-in-mpr-last"></a>Aktivera uppsättningsövergången i MPR sist
 

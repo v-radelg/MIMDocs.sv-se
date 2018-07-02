@@ -1,7 +1,7 @@
 ---
-title: "Topologiguide för distribution | Microsoft Docs"
-description: "Förstå komponenterna i MIM 2016 och få förslag på hur du kan distribuera dem i din miljö."
-keywords: 
+title: Topologiguide för distribution | Microsoft Docs
+description: Förstå komponenterna i MIM 2016 och få förslag på hur du kan distribuera dem i din miljö.
+keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldwin
@@ -12,18 +12,19 @@ ms.technology: security
 ms.assetid: 735dc357-dfba-4f68-a5b3-d66d6c018803
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: e257a2e64225a4bc545d8a9384167819412e939b
-ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
+ms.openlocfilehash: f67068709cf9910fa04110fce75623fd2f94ca4a
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289820"
 ---
 # <a name="topology-considerations"></a>Topologiöverväganden
 Du kan distribuera Microsoft Identity Manager (MIM)-komponenter på en och samma server eller på flera servrar i flera olika konfigurationer. Vilken topologi du väljer för din distribution påverkar vilken prestanda du kan få ut från MIM. Denna artikel presenterar flera olika topologier som du kan överväga att implementera.
 
 
->[!NOTE]
-De här alternativen är tillämpliga för distributioner som endast använder MIM-synkronisering, MIM-tjänst och MIM-portal för identitetshantering.  För distributioner med MIM CM, MIM BHOLD-programsvit eller för privilegierad åtkomsthantering gäller andra distributionsalternativ.
+> [!NOTE]
+> De här alternativen är tillämpliga för distributioner som endast använder MIM-synkronisering, MIM-tjänst och MIM-portal för identitetshantering.  För distributioner med MIM CM, MIM BHOLD-programsvit eller för privilegierad åtkomsthantering gäller andra distributionsalternativ.
 
 
 ## <a name="mim-components"></a>MIM-komponenter

@@ -10,11 +10,12 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: e0514530c9bceef18cc8eea7ec8b7060110811c2
-ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
+ms.openlocfilehash: 11cde4e3b2779f9c32d9849a47713acf5f120b3c
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289704"
 ---
 # <a name="microsoft-bhold-suite-sp1-60-installation-guide"></a>Installationsguiden för Microsoft BHOLD Suite SP1 (6.0)
 
@@ -29,8 +30,8 @@ Microsoft® BHOLD Suite Service Pack 1 (SP1) är en uppsättning program som, n�
 - BHOLD Hälsoattestering
 
 
->[!NOTE]
-**Gäller för**: Microsoft Identity Manager 2016 SP1
+> [!NOTE]
+> **Gäller för**: Microsoft Identity Manager 2016 SP1
 
 ## <a name="what-this-document-covers"></a>Det här dokumentet beskriver
 
@@ -52,7 +53,7 @@ Det här avsnittet beskrivs i följande avsnitt:
 
 - Arkitektur för enskild server
 - Dubbla serverarkitektur
-- tvålagers-arkitektur
+- Tvålagers-arkitektur
 - SQL Server-rekommendationer
 
 ### <a name="single-server-architecture"></a>Arkitektur för enskild server
@@ -70,10 +71,10 @@ Installera BHOLD kärnor och FIM på separata servrar ger bättre prestanda och 
 
 ![Dubbla serverarkitektur](media/bhold-installation-guide/dual.png)
 
->[!IMPORTANT]
-Rapporteringsfunktionen för modulen BHOLD FIM-Integration kräver BHOLD och FIM-databaserna installeras på samma SQL Server-instansen och BHOLD-kontot måste ha åtkomsträttigheter till FIM-tjänstdatabasen.
+> [!IMPORTANT]
+> Rapporteringsfunktionen för modulen BHOLD FIM-Integration kräver BHOLD och FIM-databaserna installeras på samma SQL Server-instansen och BHOLD-kontot måste ha åtkomsträttigheter till FIM-tjänstdatabasen.
 
-### <a name="two-tier-architecture"></a>tvålagers-arkitektur
+### <a name="two-tier-architecture"></a>Tvålagers-arkitektur
 
 I de flesta miljöer, särskilt de där prestanda är viktigt, bör du köra BHOLD-programsvit SP1, FIM och SQL Server på separata servrar (tvålagers-arkitektur). Med en tvålagers-arkitektur dedikerat minne och processorresurser för varje nivå. Följande bild visar ett sätt att konfigurera en tvålagers-arkitektur. FIM-synkroniseringstjänsten körs på FIM-servern synkroniserar ändringar mellan FIM och BHOLD-databaser. Observera att om slutanvändaren självbetjäning krävs BHOLD FIM integrationsmodulen måste installeras på samma server som FIM-tjänsten och portalen.
 

@@ -1,7 +1,7 @@
 ---
-title: "Distribuera PAM steg 5 – Forest Link | Microsoft Docs"
-description: "Upprätta förtroende mellan skogarna PRIV och CORP så att privilegierade användare i PRIV fortfarande kan komma åt resurser i CORP."
-keywords: 
+title: Distribuera PAM steg 5 – Forest Link | Microsoft Docs
+description: Upprätta förtroende mellan skogarna PRIV och CORP så att privilegierade användare i PRIV fortfarande kan komma åt resurser i CORP.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -12,17 +12,18 @@ ms.technology: active-directory-domain-services
 ms.assetid: eef248c4-b3b6-4b28-9dd0-ae2f0b552425
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: ba4b94c1f0f0879436e370a7f2f041c720bd1f60
-ms.sourcegitcommit: 362475d4018e74e5a17ba574ccaec47a2caebaff
+ms.openlocfilehash: df4294ca6dbc98ec684e690d3ce66765d27cc359
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289099"
 ---
 # <a name="step-5--establish-trust-between-priv-and-corp-forests"></a>Steg 5 – upprätta förtroende mellan PRIV- och CORP-skogar
 
->[!div class="step-by-step"]
-[« Steg 4](step-4-install-mim-components-on-pam-server.md)
-[Steg 6 »](step-6-transition-group-to-pam.md)
+> [!div class="step-by-step"]
+> [« Steg 4](step-4-install-mim-components-on-pam-server.md)
+> [Steg 6 »](step-6-transition-group-to-pam.md)
 
 För varje CORP-domän, till exempel contoso.local, måste domänkontrollanterna PRIV och CONTOSO vara bundna av ett förtroende. Det gör att användarna i PRIV-domänen kan komma åt resurser i CORP-domänen.
 
@@ -70,17 +71,17 @@ Upprätta enkelriktat förtroende med varje domän på PAMSRV, till exempel CORP
 
 Aktivera läsbehörighet till AD för PRIV-administratörer och övervakningstjänsten för varje befintlig skog.
 
-1.  Logga in på CORP-skogens befintliga domänkontrollant (CORPDC) som domänadministratör på domänen på översta nivå i skogen (Contoso\Administratör).  
-2.  Starta **Active Directory – användare och datorer**.  
-3.  Högerklicka på domänen **contoso.local** och välj **Delegera kontroll**.  
-4.  På fliken Valda användare och grupper klickar du på **Lägg till**.  
-5.  I fönstret Välj användare, datorer eller grupper klickar du på **Platser** och ändrar platsen till *priv.contoso.local*.  På objektnamnet skriver du *Domänadministratörer* och klickar på **Kontrollera namn**. När ett popup-fönster visas anger du användarnamnet *priv\administratör* och lösenordet.  
-6.  Efter Domänadministratörer lägger du till "*; MIMMonitor*". När namnen **Domänadministratörer** och **MIMMonitor** är understrukna klickar du på **OK** och sedan på **Nästa**.  
-7.  I listan med vanliga uppgifter väljer du **Läsa all användarinformation** och klickar på **Nästa** och **Slutför**.  
-8.  Stäng Active Directory – användare och datorer.
+1. Logga in på CORP-skogens befintliga domänkontrollant (CORPDC) som domänadministratör på domänen på översta nivå i skogen (Contoso\Administratör).  
+2. Starta **Active Directory – användare och datorer**.  
+3. Högerklicka på domänen **contoso.local** och välj **Delegera kontroll**.  
+4. På fliken Valda användare och grupper klickar du på **Lägg till**.  
+5. I fönstret Välj användare, datorer eller grupper klickar du på **Platser** och ändrar platsen till *priv.contoso.local*.  På objektnamnet skriver du *Domänadministratörer* och klickar på **Kontrollera namn**. När ett popup-fönster visas anger du användarnamnet *priv\administratör* och lösenordet.  
+6. Efter Domänadministratörer lägger du till "*; MIMMonitor*". När namnen **Domänadministratörer** och **MIMMonitor** är understrukna klickar du på **OK** och sedan på **Nästa**.  
+7. I listan med vanliga uppgifter väljer du **Läsa all användarinformation** och klickar på **Nästa** och **Slutför**.  
+8. Stäng Active Directory – användare och datorer.
 
-9.  Öppna ett PowerShell-fönster.
-10.  Se till att SID-historik är aktiverat och SID-filtrering är inaktiverat med hjälp av `netdom`. Typ:
+9. Öppna ett PowerShell-fönster.
+10. Se till att SID-historik är aktiverat och SID-filtrering är inaktiverat med hjälp av `netdom`. Typ:
     ```cmd
     netdom trust contoso.local /quarantine:no /domain priv.contoso.local
     netdom trust /enablesidhistory:yes /domain priv.contoso.local
@@ -104,6 +105,6 @@ Aktivera läsbehörighet till AD för PRIV-administratörer och övervakningstj�
 
 I nästa steg flyttar du en grupp till PAM.
 
->[!div class="step-by-step"]
-[« Steg 4](step-4-install-mim-components-on-pam-server.md)
-[Steg 6 »](step-6-transition-group-to-pam.md)
+> [!div class="step-by-step"]
+> [« Steg 4](step-4-install-mim-components-on-pam-server.md)
+> [Steg 6 »](step-6-transition-group-to-pam.md)

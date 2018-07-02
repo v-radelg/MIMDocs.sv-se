@@ -1,19 +1,20 @@
 ---
-title: "Guide för Microsoft BHOLD Suite begrepp | Microsoft Docs"
-description: "Kom igång med MIM 2016-komponenterna genom att installera och konfigurera Synkroniseringstjänsten."
-keywords: 
+title: Guide för Microsoft BHOLD Suite begrepp | Microsoft Docs
+description: Kom igång med MIM 2016-komponenterna genom att installera och konfigurera Synkroniseringstjänsten.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
 ms.date: 09/14/2017
 ms.service: microsoft-identity-manager
 ms.technology: security
-ms.assetid: 
-ms.openlocfilehash: 0d814dd27fe53ee7cfc46eac24ec577b05f78e52
-ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
+ms.assetid: ''
+ms.openlocfilehash: 521025de3dc16a9bda02aed8287faeb3449192c1
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290075"
 ---
 # <a name="microsoft-bhold-suite-concepts-guide"></a>Guide för Microsoft BHOLD Suite-begrepp
 
@@ -56,8 +57,8 @@ Du kan använda BHOLD-programsvit för att ange och organisera roller i organisa
 
 Organisationsenheter (OrgUnits) är de viktigaste sätten som användare är uppdelade i modellen för BHOLD-rollen. Varje användare måste ha minst en OrgUnit. (I praktiken när en användare tas bort från den senaste organisationsenheten i BHOLD användarpost data tas bort från BHOLD-databasen.)
 
->[!Important]
-Organisationsenheter i modellen för BHOLD-rollen ska inte förväxlas med organisationsenheter i Active Directory Domain Services (AD DS). Normalt är organisationsenhetsstrukturen i BHOLD baserad på organisation och principer för ditt företag inte kraven i din nätverksinfrastruktur.
+> [!Important]
+> Organisationsenheter i modellen för BHOLD-rollen ska inte förväxlas med organisationsenheter i Active Directory Domain Services (AD DS). Normalt är organisationsenhetsstrukturen i BHOLD baserad på organisation och principer för ditt företag inte kraven i din nätverksinfrastruktur.
 
 Även om det inte krävs, i de flesta fall är organisationsenheter strukturerade i BHOLD som representerar den hierarkiska strukturen för faktiska organisationen som liknar den nedan:
 
@@ -127,8 +128,8 @@ Det första steget i med hjälp av BHOLD modellen Generator är att importera de
 - Föreslagna roller som är kopplade till en organisationsenhet, men måste vara aktiverat för specifika användare
 - Ägarskap roller som ger en användarkontroll över organisationsenheter och roller som ägare inte har angetts i de importerade filerna
 
->[!Important]
-När överföringen av filer, väljer du den **behåller befintliga modellen** kryssrutan bara i testmiljöer. I produktionsmiljöer, måste du använda modellen Generator för att skapa den första rollen modellen. Du kan inte använda den för att ändra en befintlig roll modell i BHOLD-databas.
+> [!Important]
+> När överföringen av filer, väljer du den **behåller befintliga modellen** kryssrutan bara i testmiljöer. I produktionsmiljöer, måste du använda modellen Generator för att skapa den första rollen modellen. Du kan inte använda den för att ändra en befintlig roll modell i BHOLD-databas.
 
 Efter att modellen Generator skapar rollerna i modellen för rollen, kan sedan du exportera rollen modellen till BHOLD-databas i form av en XML-fil.
 
@@ -241,7 +242,7 @@ Regler filter kan tre typer av och använda operatorer som är specifika för ty
 - Attribut
   - < och >
   - = och! =
-  - **Innehåller**
+  - **innehåller**
   - **Innehåller inte**
 - Antal
   - < och >
@@ -252,8 +253,8 @@ Regler filter kan tre typer av och använda operatorer som är specifika för ty
   - **Kan bara har någon och kan bara ha alla**
   - **Exklusivt har någon och uteslutande har alla**
 
->[!Note]
-Restriktiva filter kan använda de angivna operatorerna för att testa en nyckel mot en uppsättning med flera värden.
+> [!Note]
+> Restriktiva filter kan använda de angivna operatorerna för att testa en nyckel mot en uppsättning med flera värden.
 
 Om du vill testa implementering av en uppdelning av uppgifter (Matjord) princip som anger att inga användare som har behörighet för begäran betalning är också att godkänna betalning behörighet kan du skapa en regel som liknar följande:
 

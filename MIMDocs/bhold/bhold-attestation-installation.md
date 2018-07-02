@@ -10,11 +10,12 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: 657c6ee8dd551f91f21636101f248f76977a12bc
-ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
+ms.openlocfilehash: 6838355c05f7c19436d8a83839044ea5f4e2533d
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290347"
 ---
 # <a name="bhold-attestation-installation"></a>BHOLD attestering installation
 
@@ -24,8 +25,8 @@ Attesteringen av BHOLD-modulen kan du ange granskare och utför återkommande gr
 
 Innan du installerar modulen BHOLD attestering, måste du installera modulen BHOLD kärnor på den server som du tänker installera modulen BHOLD attestering. Information om hur du installerar BHOLD-kärnmodul finns [BHOLD-kärninstallation](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). Eftersom e-postmeddelandet BHOLD attestering modulen kontakter skickar meddelanden till användare, måste din miljö ha en SMTP Simple Mail Transfer Protocol () e-postserver, till exempel Microsoft Exchange Server.
 
->[!IMPORTANT]
-Om du installerar både BHOLD rapportering och BHOLD attestering, måste du installera Reporting BHOLD för innan du installerar BHOLD attestering.
+> [!IMPORTANT]
+> Om du installerar både BHOLD rapportering och BHOLD attestering, måste du installera Reporting BHOLD för innan du installerar BHOLD attestering.
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
@@ -42,7 +43,7 @@ Innan du börjar installera modulen BHOLD attestering, måste förberedas för a
 
 Logga in som medlem i gruppen Domänadministratörer om du vill installera modulen BHOLD attestering, hämta följande fil och köra den som administratör på den server som du tänker installera modulen BHOLD attestering på:
 
-- BholdAttestation*\<Version\>*\_Release.msi
+- BholdAttestation<em>\<Version\></em>\_Release.msi
 
 Ersätt *\<Version\>* med versionsnumret för attestering av BHOLD-versionen som du installerar.
 

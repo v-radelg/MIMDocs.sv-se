@@ -1,7 +1,7 @@
 ---
 title: Steg 4 Konfigurera SharePoint
-description: "Det här är steg 4 i beskrivningen av hur du konfigurerar PAM med hjälp av skript. I det här steget konfigurerar du SharePoint så att det kan användas som en del av din PAM-distribution."
-keywords: 
+description: Det här är steg 4 i beskrivningen av hur du konfigurerar PAM med hjälp av skript. I det här steget konfigurerar du SharePoint så att det kan användas som en del av din PAM-distribution.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: MBaldwin
@@ -10,19 +10,20 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
-ms.reviewer: 
+ms.reviewer: ''
 ms.suite: ems
-ms.openlocfilehash: f8d033bec440c6efed26dd959acc713638258dd3
-ms.sourcegitcommit: 8edd380f54c3e9e83cfabe8adfa31587612e5773
+ms.openlocfilehash: e46b7cf75eb60930441e309448773353668ed454
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/19/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289636"
 ---
 # <a name="step-4-configuring-sharepoint"></a>Steg 4 Konfigurera SharePoint
 
->[!div class="step-by-step"]
-[« Steg 3](sp1-step3-installing-configuring-sql.md)
-[Steg 5 »](sp1-step5-configuring-pam.md)
+> [!div class="step-by-step"]
+> [« Steg 3](sp1-step3-installing-configuring-sql.md)
+> [Steg 5 »](sp1-step5-configuring-pam.md)
 
 SharePoint måste vara SharePoint Foundation 2013 med SP1.
 
@@ -51,6 +52,6 @@ Efter installationen öppnas det grafiska användargränssnittet för SharePoint
 
 Mer information finns i avsnittet **Konfigurera SharePoint** i [Steg 3 – Förbereda en PAM-server](/microsoft-identity-manager/pam/step-3-prepare-pam-server). När konfigurationsguiden har slutförts kör du skriptet ”.\PAMDeployment.ps1” igen och väljer alternativ 4 (SharePoint-konfiguration) för att slutföra det här steget.
 
->[!div class="step-by-step"]
-[« Steg 3](sp1-step3-installing-configuring-sql.md)
-[Steg 5 »](sp1-step5-configuring-pam.md)
+> [!div class="step-by-step"]
+> [« Steg 3](sp1-step3-installing-configuring-sql.md)
+> [Steg 5 »](sp1-step5-configuring-pam.md)

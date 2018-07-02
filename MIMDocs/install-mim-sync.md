@@ -12,18 +12,19 @@ ms.technology: security
 ms.assetid: 2585e9c5-ce34-46c7-bdcf-8c08773901dc
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: d2f8c000205aacafaeb4e159ef692e9666b4b965
-ms.sourcegitcommit: a98a4c1aee12016d480c400f4ff2c6aadb6518ee
+ms.openlocfilehash: c68b33b2ff28d75b6f4e63fa8caf0c87727a5927
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289405"
 ---
 # <a name="install-mim-2016-mim-synchronization-service"></a>Installera MIM 2016: MIM-synkroniseringstjänsten
 
->[!div class="step-by-step"]
-[«Exchange Server](prepare-server-exchange.md)
-[MIM-tjänst och portal»](install-mim-service-portal.md)
-
+> [!div class="step-by-step"]
+> [«Exchange Server](prepare-server-exchange.md)
+> [MIM-tjänst och portal»](install-mim-service-portal.md)
+> 
 > [!NOTE]
 > I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
 > - Domänkontrollantens namn - **corpdc**
@@ -31,7 +32,7 @@ ms.lasthandoff: 05/03/2018
 > - MIM-tjänsten Server name - **corpservice**
 > - Servernamnet för MIM Sync - **corpsync**
 > - Namnet på SQL Server - **corpsql**
-> - Lösenord – **Pass@word1**
+> - Lösenord – <strong>Pass@word1</strong>
 
 För att kunna installera Microsoft Identity Manager 2016-komponenterna måste du först installera installationspaketet.
 
@@ -55,37 +56,37 @@ För att kunna installera Microsoft Identity Manager 2016-komponenterna måste d
 
     ![Bild på anpassad installation](media/install-mim-sync/MIM_Install2.png)
 
-6.  På skärmen för konfiguration av synkroniseringstjänstens databas väljer du:
+6. På skärmen för konfiguration av synkroniseringstjänstens databas väljer du:
 
-    1.  SQL Server finns på: **A fjärrdatorn** kallas **corpsql.contoso.com**.
+   1.  SQL Server finns på: **A fjärrdatorn** kallas **corpsql.contoso.com**.
 
-    2.  SQL Server-instansen är: **Standardinstansen**
+   2.  SQL Server-instansen är: **Standardinstansen**
 
-    ![Bild av databasanslutning](media/install-mim-sync/MIM_Install3.png)
+   ![Bild av databasanslutning](media/install-mim-sync/MIM_Install3.png)
 
-7.  Konfigurera synkroniseringstjänstkontot enligt de konton du tidigare skapat:
+7. Konfigurera synkroniseringstjänstkontot enligt de konton du tidigare skapat:
 
-    1.  Tjänstkonto: *MIMSync*
+   1. Tjänstkonto: *MIMSync*
 
-    2.  Lösenord: *Pass@word1*
+   2. Lösenord: <em>Pass@word1</em>
 
-    3.  Tjänstkontodomän eller namnet på den lokala datorn: *contoso*
+   3. Tjänstkontodomän eller namnet på den lokala datorn: *contoso*
 
-    ![Bild av tjänstkonto](media/install-mim-sync/MIM_Install4.png)
+   ![Bild av tjänstkonto](media/install-mim-sync/MIM_Install4.png)
 
-8.  Ange de relevanta säkerhetsgrupperna i installationsprogrammet för MIM-synkroniseringstjänsten:
+8. Ange de relevanta säkerhetsgrupperna i installationsprogrammet för MIM-synkroniseringstjänsten:
 
-    1. Administratör = *contoso\MIMSyncAdmins*
+   1. Administratör = *contoso\MIMSyncAdmins*
 
-    2. Operatör = *contoso\MIMSyncOperators*
+   2. Operatör = *contoso\MIMSyncOperators*
 
-    3. Sammanbindning = *contoso\MIMSyncJoiners*
+   3. Sammanbindning = *contoso\MIMSyncJoiners*
 
-    4. Bläddringsbehörighet för koppling = *contoso\MIMSyncBrowse*
+   4. Bläddringsbehörighet för koppling = *contoso\MIMSyncBrowse*
 
-    5. WMI-lösenordshantering= *contoso\MIMSyncPasswordReset*
+   5. WMI-lösenordshantering= *contoso\MIMSyncPasswordReset*
 
-    ![Bild på säkerhetsgrupper](media/install-mim-sync/MIM_Install5.png)
+   ![Bild på säkerhetsgrupper](media/install-mim-sync/MIM_Install5.png)
 
 9. På skärmen för säkerhetsinställningar markerar du **Aktivera brandväggsregler för inkommande RPC-kommunikation** och klickar på **Nästa**.
 
@@ -103,6 +104,6 @@ För att kunna installera Microsoft Identity Manager 2016-komponenterna måste d
 
     5. Du måste logga ut och sedan logga in igen för att ändringarna av gruppmedlemskap ska börja gälla. Logga ut genom att klicka på **Ja**.
 
->[!div class="step-by-step"]  
-[«Exchange Server](prepare-server-exchange.md)
-[MIM-tjänst och portal»](install-mim-service-portal.md)
+> [!div class="step-by-step"]  
+> [«Exchange Server](prepare-server-exchange.md)
+> [MIM-tjänst och portal»](install-mim-service-portal.md)

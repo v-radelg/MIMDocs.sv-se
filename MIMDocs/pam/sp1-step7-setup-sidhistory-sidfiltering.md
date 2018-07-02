@@ -1,7 +1,7 @@
 ---
 title: Steg 7 Konfigurera SID-historik/SID-filtrering
-description: "Det här är steg 7 i beskrivningen av hur du konfigurerar PIM med hjälp av skript. I det här steget beskrivs hur du konfigurerar SID-historik/SID-filtrering."
-keywords: 
+description: Det här är steg 7 i beskrivningen av hur du konfigurerar PIM med hjälp av skript. I det här steget beskrivs hur du konfigurerar SID-historik/SID-filtrering.
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: MBaldwin
@@ -10,19 +10,20 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
-ms.reviewer: 
+ms.reviewer: ''
 ms.suite: ems
-ms.openlocfilehash: e3d8578e9d58ccc2f3dc3bb4ff437d124bf15291
-ms.sourcegitcommit: 8edd380f54c3e9e83cfabe8adfa31587612e5773
+ms.openlocfilehash: d2512690ce648767157a7417e5b41095c970b8eb
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/19/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289116"
 ---
 # <a name="step-7-set-up-sid-historysid-filtering"></a>Steg 7 Konfigurera SID-historik/SID-filtrering
 
->[!div class="step-by-step"]
-[« Steg 6](sp1-step6-setup-pam-trust.md)
-[Steg 8 »](sp1-step8-pam-deployment-verification.md)
+> [!div class="step-by-step"]
+> [« Steg 6](sp1-step6-setup-pam-trust.md)
+> [Steg 8 »](sp1-step8-pam-deployment-verification.md)
 
 **Detta krävs inte för en miljö med endast PRIV** Logga in på PAMServer med MIMAdmin-kontot.
 
@@ -38,6 +39,6 @@ För SID-filtrering: <br/></br>
 För SID-historik: </br></br>
 ”SID-historik aktiveras för förtroendet” eller ”SD-historik har redan aktiverats för förtroendet”.
 
->[!div class="step-by-step"]
-[« Steg 6](sp1-step6-setup-pam-trust.md)
-[Steg 8 »](sp1-step8-pam-deployment-verification.md)
+> [!div class="step-by-step"]
+> [« Steg 6](sp1-step6-setup-pam-trust.md)
+> [Steg 8 »](sp1-step8-pam-deployment-verification.md)

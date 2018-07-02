@@ -12,23 +12,24 @@ ms.technology: security
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: fcc137527d8326c82bf3b201039926699bd4e342
-ms.sourcegitcommit: a98a4c1aee12016d480c400f4ff2c6aadb6518ee
+ms.openlocfilehash: 562ca6a977509cad7c3423ef42d4b6f6705494d3
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289524"
 ---
 # <a name="install-mim-2016-mim-service-and-portal"></a>Installera MIM 2016: MIM-tjänst och -portal
 
->[!div class="step-by-step"]
-[«Synkroniseringstjänst för MIM](install-mim-sync.md)
-[Synkronisera databaser»](install-mim-sync-ad-service.md)
-
+> [!div class="step-by-step"]
+> [«Synkroniseringstjänst för MIM](install-mim-sync.md)
+> [Synkronisera databaser»](install-mim-sync-ad-service.md)
+> 
 > [!NOTE]
 > I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
 > - Namn på domänkontrollant – **mimservername**
 > - Domännamn – **contoso**
-> - Lösenord – **Pass@word1**
+> - Lösenord – <strong>Pass@word1</strong>
 > - Namn på tjänstkontot – **MIMService**
 
 Om du inte installerade MIM-installationspaketet under det föregående steget ska du gå tillbaka och installera Microsoft Identity Manager 2016-komponenterna innan du fortsätter.
@@ -56,7 +57,7 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 8. Ange att du vill generera ett nytt självsignerat certifikat eller välj relevant certifikat.
 
-9. Ange namnet på det tjänstkonto du ska använda, till exempel *MIMService*, lösenordet till tjänstkontot, till exempel *Pass@word1*, din tjänstkontodomän, till exempel *contoso*, samt tjänst-e-postkontot, till exempel *contoso*.
+9. Ange namnet på det tjänstkonto du ska använda, till exempel *MIMService*, lösenordet till tjänstkontot, till exempel <em>Pass@word1</em>, din tjänstkontodomän, till exempel *contoso*, samt tjänst-e-postkontot, till exempel *contoso*.
 
     ![Bild av Konfigurera MIM-tjänstkontot](media/install-mim-service-portal/MIM_Install12.png)
 
@@ -78,25 +79,25 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 ## <a name="configure-mim-password-registration-portal"></a>Konfigurera MIM-portalen för registrering av lösenord
 
-1.  Ange namnet på tjänstkontot för SSPR-registrering som *contoso\MIMSSPR* och lösenordet som *Pass@word1*.
+1. Ange namnet på tjänstkontot för SSPR-registrering som *contoso\MIMSSPR* och lösenordet som <em>Pass@word1</em>.
 
-2.  Ange *passwordregistration.contoso.com* som värdnamn för registrering av lösenord i MIM och ange porten som **80**. Aktivera alternativet **Öppna port i brandväggen**.
+2. Ange *passwordregistration.contoso.com* som värdnamn för registrering av lösenord i MIM och ange porten som **80**. Aktivera alternativet **Öppna port i brandväggen**.
 
-    ![Bild på Ange konfigurationsinformation som används av IIS](media/install-mim-service-portal/MIM_Install14.png)
+   ![Bild på Ange konfigurationsinformation som används av IIS](media/install-mim-service-portal/MIM_Install14.png)
 
-3.  En varning visas. Läs den och klicka på **Nästa**.
+3. En varning visas. Läs den och klicka på **Nästa**.
 
 4. I nästa konfigurationsskärm för MIM-portalen för registrering av lösenord anger *mim.contoso.com* som MIM-tjänstens serveradress för för portalen för registrering av lösenord.
 
 ## <a name="configure-mim-password-reset-portal"></a>Konfigurera MIM-portalen för återställning av lösenord
 
-1.  Ange namnet på tjänstkontot för SSPR-registrering *Contoso\MIMSSPR* och lösenordet som *Pass@word1*.
+1. Ange namnet på tjänstkontot för SSPR-registrering *Contoso\MIMSSPR* och lösenordet som <em>Pass@word1</em>.
 
-2.  Ange *passwordreset.contoso.com* som värdnamn för MIM lösenord portalen för återställning, och ange porten som **80**. Aktivera alternativet **Öppna port i brandväggen**.
+2. Ange *passwordreset.contoso.com* som värdnamn för MIM lösenord portalen för återställning, och ange porten som **80**. Aktivera alternativet **Öppna port i brandväggen**.
 
-    ![Bild på Ange konfigurationsinformation som används av IIS](media/install-mim-service-portal/MIM_Install15.png)
+   ![Bild på Ange konfigurationsinformation som används av IIS](media/install-mim-service-portal/MIM_Install15.png)
 
-3.  En varning visas. Läs den och klicka på **Nästa**.
+3. En varning visas. Läs den och klicka på **Nästa**.
 
 4. I nästa konfigurationsskärm för MIM-portalen för registrering av lösenord anger *mim.contoso.com* som MIM-tjänstens serveradress för för portalen för återställning av lösenord.
 
@@ -144,7 +145,7 @@ Verifiera att MIM-portalen är aktiv när installationen är klar.
 
 > [!NOTE]
 > Valfritt: nu kan du installera MIM-tillägg.
-
->[!div class="step-by-step"]  
-[«Synkroniseringstjänst för MIM](install-mim-sync.md)
-[Synkronisera databaser»](install-mim-sync-ad-service.md)
+> 
+> [!div class="step-by-step"]  
+> [«Synkroniseringstjänst för MIM](install-mim-sync.md)
+> [Synkronisera databaser»](install-mim-sync-ad-service.md)

@@ -10,11 +10,12 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: 25825c1472dec44ed0e09519d4bc17809c1b95b1
-ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
+ms.openlocfilehash: 752605be1392e514f5b132a654134185b38e2cef
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290143"
 ---
 # <a name="bhold-core-installation"></a>BHOLD-Core-installation
 
@@ -30,7 +31,7 @@ BHOLD-kärnmodul utgör grunden för Microsoft BHOLD-programsvit. Innan du insta
 
 |          |        |          |
 |----------|--------|----------|
-|**Komponent** |**minsta** | **Rekommenderas** |
+|**Komponent** |**Minsta** | **Rekommenderas** |
 |Processor | 64-bitars processor | Flera kärnor 64-bitars processor |
 | Minne |3 GB | 6 GB eller mer |
 |Lagring| 30 GB tillgängligt |Beror på storleken för distribution |
@@ -168,8 +169,8 @@ Om du vill att IIS ska fungera korrekt med BHOLD-kärnmodul, måste du konfigure
 
 Om nätverksnamnet som används för att kontakta BHOLD-webbplatsen inte är samma som värdnamn för server, måste du upprätta en tjänstens huvudnamn (SPN) för HTTP. Till exempel måste om du använder en CNAME-resurspost i DNS för att ange ett alias för servern, eller om du använder Utjämning av nätverksbelastning, du registrera dessa ytterligare nätverksadresser i Active Directory. Om du inte göra det, kan inte Internet Explorer använda Kerberos-protokollet vid kontakt med BHOLD-webbplatsen.
 
->[!IMPORTANT]
-Om modulen BHOLD Core installeras på samma dator som FIM-portalen, måste du skapa DNS-resursposter (CNAME-post eller A) med olika värdnamn för servrar som kör BHOLD kärnor och den server som kör FIM-portalen. Endast ett SPN kan upprättas för en viss service-typen/server-alias-par och BHOLD kärnor och FIM-portalen kräver separat SPN eftersom de vanligtvis körs under olika konton. Kommandot setspn rapporterar ett fel om ett SPN-namn finns redan under ett annat konto.
+> [!IMPORTANT]
+> Om modulen BHOLD Core installeras på samma dator som FIM-portalen, måste du skapa DNS-resursposter (CNAME-post eller A) med olika värdnamn för servrar som kör BHOLD kärnor och den server som kör FIM-portalen. Endast ett SPN kan upprättas för en viss service-typen/server-alias-par och BHOLD kärnor och FIM-portalen kräver separat SPN eftersom de vanligtvis körs under olika konton. Kommandot setspn rapporterar ett fel om ett SPN-namn finns redan under ett annat konto.
 
 Medlemskap i **Domänadministratörer**, eller motsvarande krävs för att slutföra den här proceduren.
 

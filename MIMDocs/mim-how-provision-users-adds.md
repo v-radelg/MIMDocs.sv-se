@@ -1,7 +1,7 @@
 ---
 title: Microsoft Identity Manager 2016 | Microsoft Docs
-description: "Gå igenom processen för att skapa användare i ADDS med Microsoft Identity Manager 2016"
-keywords: 
+description: Gå igenom processen för att skapa användare i ADDS med Microsoft Identity Manager 2016
+keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -9,12 +9,13 @@ ms.date: 08/18/2017
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
-ms.assetid: 
-ms.openlocfilehash: 171aa1a2e19ea9f78f9fadbc7368404702095d71
-ms.sourcegitcommit: 0d8b19c5d4bfd39d9c202a3d2f990144402ca79c
+ms.assetid: ''
+ms.openlocfilehash: a12a8436d70b3ae866df0f615e10a3d76f791168
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290109"
 ---
 # <a name="how-do-i-provision-users-to-ad-ds"></a>Hur etablerar jag användare i AD DS
 
@@ -87,8 +88,8 @@ Följande bild visar den miljö som krävs.
 
 Du kan köra alla komponenter på en dator.
 
->[!NOTE]
-Mer information om hur du konfigurerar MIM finns i [FIM-installationsguiden](http://go.microsoft.com/FWLink/p/?LinkId=165845).
+> [!NOTE]
+> Mer information om hur du konfigurerar MIM finns i [FIM-installationsguiden](http://go.microsoft.com/FWLink/p/?LinkId=165845).
 
 ## <a name="scenario-components-list"></a>Lista över scenariokomponenter
 
@@ -124,7 +125,7 @@ I det här avsnittet finns anvisningar för de resurser som du behöver skapa so
 ### <a name="step-1-create-the-ou"></a>Steg 1: Skapa organisationsenheten
 
 
-Du behöver organisationsenheten som en behållare för den etablerade exempelanvändaren. Mer information om hur du skapar organisationsenheter finns i [Skapa en ny organisationsenhet](http://go.microsoft.com/FWLink/p/?LinkId=189655).
+Du behöver organisationsenheten som en container för den etablerade exempelanvändaren. Mer information om hur du skapar organisationsenheter finns i [Skapa en ny organisationsenhet](http://go.microsoft.com/FWLink/p/?LinkId=189655).
 
 Skapa en organisationsenhet som heter MIMObjects i AD DS.
 
@@ -160,8 +161,8 @@ Om du vill skapa en användare i AD DS måste du flöda ut objektets DN. Utöver
 
 I AD DS är det fortfarande vanligt att användarna använder samma sAMAccountName-attribut för att logga in på katalogtjänsten. Om du inte anger ett värde för det här attributet genererar katalogtjänsten ett slumpmässigt värde för det. Dessa slumpmässiga värden är dock inte användarvänliga, och därför är en användarvänlig version av det här attributet normalt en del av en export till AD DS. För att en användare ska kunna logga in på AD DS måste du även inkludera ett lösenord som skapas med hjälp av unicodePwd-attributet i exportlogiken.
 
->[!Note]                                
-Kontrollera att värdet som du anger som unicodePwd uppfyller lösenordsprinciperna för målets AD DS.
+> [!Note]
+> Kontrollera att värdet som du anger som unicodePwd uppfyller lösenordsprinciperna för målets AD DS.
 
 När du anger ett lösenord för AD DS-konton måste du också skapa ett konto som ett aktiverat konto. Det gör du genom att konfigurera userAccountControl-attributet. Mer information om userAccountControl-attributet finns i [Använda FIM för att aktivera eller inaktivera konton i Active Directory](http://go.microsoft.com/FWLink/p/?LinkId=189658).
 
@@ -170,7 +171,7 @@ I följande tabell visas de viktigaste scenariospecifika inställningarna som du
 | Sida för hanteringsagentens designer                          | Konfiguration                                                  |
 |---------------------------------------------------------|----------------------------------------------------------------|
 | Skapa hanteringsagent                                 | 1. **Hanteringsagent för:** AD DS  <br/> 2.  **Namn:** Fabrikam ADMA |
-| Anslut till Active Directory-skogen                      | 1. **Välj katalogpartitioner:** "DC=Fabrikam, DC=com"   <br/>   2. Klicka på **Behållare** för att öppna dialogrutan **Välj behållare** och se till att **MIMObjects** är den enda organisationsenhet som är markerad.        |
+| Anslut till Active Directory-skogen                      | 1. **Välj katalogpartitioner:** "DC=Fabrikam, DC=com"   <br/>   2. Klicka på **Container** för att öppna dialogrutan **Välj container** och se till att **MIMObjects** är den enda organisationsenhet som är markerad.        |
 | Välj objekttyper                                     | Utöver de objekttyperna som redan har valts väljer du **användare.** |
 | Välj attribut                                       | 1. Klicka på **Visa alla.** <br/>   2. Välj följande attribut: <br/> &nbsp;&nbsp;&nbsp;&#176; **displayName** <br/> &nbsp;&nbsp;&nbsp;&#176; **givenName** <br/> &nbsp;&nbsp;&nbsp;&#176;  **sn** <br/> &nbsp;&nbsp;&nbsp;&#176;  **SamAccountName** <br/> &nbsp;&nbsp;&nbsp;&#176;  **unicodePwd** <br/> &nbsp;&nbsp;&nbsp;&#176;  **userAccountControl**     
 
@@ -180,8 +181,8 @@ Mer information finns i följande avsnitt i hjälpen:
 - Använda hanteringsagenten för Active Directory
 - Konfigurera katalogpartitioner
 
->[!Note]
-Kontrollera att du har en attributflödesregel för import konfigurerad för ExpectedRulesList-attributet.
+> [!Note]
+> Kontrollera att du har en attributflödesregel för import konfigurerad för ExpectedRulesList-attributet.
 
 ### <a name="step-4-create-the-fabrikam-fimma-management-agent"></a>Steg 4: Skapa Fabrikam FIMMA-hanteringsagenten
 
@@ -194,7 +195,7 @@ I följande tabell visas de viktigaste scenariospecifika inställningarna som du
 | Sida för hanteringsagentens designer | Konfiguration |
 |------------|------------------------------------|
 | Skapa hanteringsagent | 1. **Hanteringsagent för:** FIM-tjänstens hanteringsagent <br/> 2. **Namn:** Fabrikam FIMMA |
-| Anslut till databas     | Använd följande inställningar: <br/> &#183; **Server:** localhost <br/> &#183; **Databas:** FIMService <br/> &#183; **FIM-tjänstens basadress:** http://localhost:5725 <br/> <br/> Ange information om kontot som du skapade för den här hanteringsagenten |
+| Anslut till databas     | Använd följande inställningar: <br/> &#183; **Server:** localhost <br/> &#183; **Databas:** FIMService <br/> &#183;**Basadress för FIM-tjänsten:** http://localhost:5725 <br/> <br/> Ange information om kontot som du skapade för den här hanteringsagenten |
 | Välj objekttyper                                     | Utöver de objekttyper som redan har valts väljer du **Person.**   |
 | Konfigurera objekttypsmappningar                          | Utöver de objekttypsmappningar som redan finns lägger du till en mappning för personen **Typ av datakällobjekt** till **Metaversum**-objekttyppersonen. |
 | Konfigurera attributflöde                                | Utöver de mappningar av attributflöde som redan finns lägger du till följande mappningar av attributflöde: <br/><br/> ![Attributflöde](media/how-provision-users-adds/image018.jpg) |
@@ -211,8 +212,8 @@ Mer information finns i följande avsnitt i hjälpen:
 
 -   Konfigurera katalogpartitioner
 
->[!NOTE]
- Kontrollera att du har en attributflödesregel för import konfigurerad för ExpectedRulesList-attributet.
+> [!NOTE]
+>  Kontrollera att du har en attributflödesregel för import konfigurerad för ExpectedRulesList-attributet.
 
 ### <a name="step-5-create-the-run-profiles"></a>Steg 5: Skapa körningsprofilerna
 
@@ -226,12 +227,12 @@ I följande tabell visas de körningsprofiler som du måste skapa för scenariot
 Skapa körningsprofiler för varje hanteringsagent enligt föregående tabell.
 
 
->[!Note]
-Mer information finns i Skapa en körningsprofil för hanteringsagenten i MIM-hjälpen.                                                                                                                  
-
-
->[!Important]
- Kontrollera att etablering är aktiverad i miljön. Det kan du köra genom att köra skriptet, Använda Windows PowerShell för att aktivera etablering (http://go.microsoft.com/FWLink/p/?LinkId=189660).
+> [!Note]
+> Mer information finns i Skapa en körningsprofil för hanteringsagenten i MIM-hjälpen.                                                                                                                  
+> 
+> 
+> [!Important]
+>  Kontrollera att etablering är aktiverad i miljön. Du kan göra detta genom att köra skriptet med hjälp av Windows PowerShell för att aktivera etablering (http://go.microsoft.com/FWLink/p/?LinkId=189660).
 
 
 ## <a name="configuring-the-fim-service"></a>Konfigurera FIM-tjänsten
@@ -243,7 +244,7 @@ För scenariot i den här handledningen måste du konfigurera en etableringsprin
 
 Målet med den här etableringsprincipen är att föra in grupper i omfattningen för den utgående synkroniseringsregeln för AD-användare. Genom att föra in resursen i omfattningen för synkroniseringsregeln aktiverar du synkroniseringsmotorn så att den kan etablera resursen till AD DS i enlighet med din konfiguration.
 
-Om du vill konfigurera FIM-tjänsten använder du Windows Internet Explorer® för att gå till http://localhost/identitymanagement. På sidan för MIM-portalen skapar du etableringsprincipen genom att gå till de relaterade sidorna från avsnittet Administration. Du kan kontrollera konfigurationen genom att köra skriptet i [Using Windows PowerShell to document your provisioning policy configuration](http://go.microsoft.com/FWLink/p/?LinkId=189661) (Använda Windows PowerShell för att dokumentera konfiguration av etableringsprincipen).
+Konfigurera FIM-tjänsten genom att gå Windows Internet Explorer® till http://localhost/identitymanagement. På sidan för MIM-portalen skapar du etableringsprincipen genom att gå till de relaterade sidorna från avsnittet Administration. Du kan kontrollera konfigurationen genom att köra skriptet i [Using Windows PowerShell to document your provisioning policy configuration](http://go.microsoft.com/FWLink/p/?LinkId=189661) (Använda Windows PowerShell för att dokumentera konfiguration av etableringsprincipen).
 
 ### <a name="step-6-create-the-synchronization-rule"></a>Steg 6: Skapa synkroniseringsregeln
 
@@ -252,7 +253,7 @@ Följande tabeller visar konfiguration av synkroniseringsregeln för etablering 
 | Konfiguration av synkroniseringsregel                                                                         |                                                                             |                                                           
 |------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------|
 | Namn                                                                                                       | Utgående synkroniseringsregel för Active Directory-användare                         |                                                          
-| Beskrivning                                                                                               |                                                                             |                                                           
+| Description                                                                                               |                                                                             |                                                           
 | Prioritet                                                                                                | 2                                                                           |                                                           
 | Dataflödesriktning   | Utgående             |       
 | Beroende       |         |                                         
@@ -293,8 +294,8 @@ Följande tabeller visar konfiguration av synkroniseringsregeln för etablering 
 
 
 
- >[!NOTE]
- Viktigt. Kontrollera att du har valt Endast initialflöde för attributflödet som har DN som mål.                                                                          
+> [!NOTE]
+>  Viktigt. Kontrollera att du har valt Endast initialflöde för attributflödet som har DN som mål.                                                                          
 
 ### <a name="step-7-create-the-workflow"></a>Steg 7: Skapa arbetsflödet
 
@@ -303,7 +304,7 @@ Målet med AD-etableringsarbetsflödet är att lägga till synkroniseringsregeln
 | Arbetsflödeskonfiguration               |                                                                 |
 |--------------------------------------|-----------------------------------------------------------------|
 | Namn                                 | Etableringsarbetsflöde för Active Directory-användare                     |
-| Beskrivning                          |                                                                 |
+| Description                          |                                                                 |
 | Arbetsflödestyp                        | Action                                                          |
 | Kör vid principuppdatering                 | Falskt                                                           |
 
@@ -322,7 +323,7 @@ Den hanteringsprincipregel (MPR) som krävs har typen Uppsättningsövergång oc
 | MPR-konfiguration                    |                                                             |
 |--------------------------------------|-------------------------------------------------------------|
 | Namn                                 | Hanteringsprincipregel för etablering av AD-användare                 |
-| Beskrivning                          |                                                             |
+| Description                          |                                                             |
 | Typ                                 | Uppsättningsövergång                                              |
 | Ger behörigheter                   | Falskt                                                       |
 | Inaktiverad                             | Falskt                                                       |
@@ -365,8 +366,8 @@ Följande tabell visar de körningsprofiler som ingår i initieringsfasen.  Kör
 
 
 
->[!NOTE]
-Du bör kontrollera att den utgående synkroniseringsregeln har projicerats till metaversum.
+> [!NOTE]
+> Du bör kontrollera att den utgående synkroniseringsregeln har projicerats till metaversum.
 
 ## <a name="testing-the-configuration"></a>Testa konfigurationen
 
@@ -490,8 +491,8 @@ I FIM kräver varje exportkörning en följande deltaimport att slutföra export
 
 Kör körningsprofilerna enligt anvisningarna i det här avsnittet.
 
->[!IMPORTANT]
-Varje körning av körningsprofil måste slutföras utan fel.
+> [!IMPORTANT]
+> Varje körning av körningsprofil måste slutföras utan fel.
 
 ### <a name="step-14-verify-the-provisioned-user-in-ad-ds"></a>Steg 14: Verifiera den etablerade användaren i AD DS
 

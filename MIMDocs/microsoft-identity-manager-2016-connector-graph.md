@@ -14,7 +14,8 @@ ms.openlocfilehash: a66d424e8388005855ac8e64623f5a00f89682e9
 ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34479374"
 ---
 <a name="the-microsoft-identity-manager-management-agent-for-microsoft-graph-public-preview"></a>Microsoft Identity Manager hanteringsagenten för Microsoft Graph (förhandsversion)
 =======================================================================================

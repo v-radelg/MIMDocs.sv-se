@@ -1,6 +1,6 @@
 ---
-title: "Distribuera PAM steg 7 – användaråtkomst | Microsoft Docs"
-description: "Som ett sista steg kan du ge en privilegierad användare tillfällig åtkomst för att se om distributionen av Privileged Access Management lyckades."
+title: Distribuera PAM steg 7 – användaråtkomst | Microsoft Docs
+description: Som ett sista steg kan du ge en privilegierad användare tillfällig åtkomst för att se om distributionen av Privileged Access Management lyckades.
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
@@ -9,16 +9,17 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 5325fce2-ae35-45b0-9c1a-ad8b592fcd07
-ms.openlocfilehash: 2d92be315547da1c352c0e60732f9aeecf0c2d90
-ms.sourcegitcommit: 3d8a2493eae1218bfdb75a399ffa4adc8c2a8fdf
+ms.openlocfilehash: 9515d17767a75b349b0d3150fb90c136c478baa2
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36289854"
 ---
 # <a name="step-7--elevate-a-users-access"></a>Steg 7 – Utöka en användares behörighet
 
->[!div class="step-by-step"]
-[« Steg 6 ](step-6-transition-group-to-pam.md)
+> [!div class="step-by-step"]
+> [« Steg 6 ](step-6-transition-group-to-pam.md)
 
 
 I det här steget kontrollerar du att en användare kan begära åtkomst till en roll via MIM.
@@ -90,7 +91,7 @@ Aktivera på begäran privilegierad åtkomst via PAM-exempelportalen.
     ```
 
 3. När du uppmanas anger du lösenordet för kontot PRIV.Lisa. Ett nytt webbläsarfönster visas.
-4. Gå till http://pamsrv.priv.contoso.local:8090 och kontrollera att en webbsida från exempelportalen visas.
+4. Gå till http://pamsrv.priv.contoso.local:8090 och se till att en webbsida från exempelportalen visas.
 5. I Internet Explorer väljer du **Verktyg** > **Internetalternativ** och klicka på fliken **Säkerhet**.
 6. Klicka på **Zonen Lokalt nätverk** > **Platser** > **Avancerat** och lägg till webbplatsen i zonen.
 7. Stäng dialogrutan **Internetalternativ**.
@@ -103,5 +104,5 @@ Aktivera på begäran privilegierad åtkomst via PAM-exempelportalen.
 
 När du har slutfört stegen i den här genomgången kommer du att ha genomfört ett scenario för privilegierad åtkomsthantering. I det utökas användarens behörighet under en begränsad tid så att användaren kommer åt skyddade resurser med ett separat privilegierat konto. När den utökade sessionen upphör kommer det privilegierade kontot inte längre åt den skyddade resursen. PAM-administratören koordinerar beslutet om vilka säkerhetsgrupper som representerar privilegierade roller. När åtkomstbehörigheten har migrerats till Privileged Access Management-systemet, blir åtkomst som tidigare var möjlig med det ursprungliga användarkontot endast möjlig genom att logga in med ett särskilt privilegierat konto och görs tillgänglig på begäran. Gruppmedlemskap för mycket privilegierade grupper gäller därför bara under en begränsad tid.
 
->[!div class="step-by-step"]
-[« Steg 6 ](step-6-transition-group-to-pam.md)
+> [!div class="step-by-step"]
+> [« Steg 6 ](step-6-transition-group-to-pam.md)

@@ -3,32 +3,33 @@ title: Arbeta med självbetjäning i portalen för återställning av lösenord 
 description: Se vad som är nytt med självbetjäning för återställning av lösenord i MIM 2016, inklusive hur SSPR fungerar med multifaktorautentisering.
 keywords: ''
 author: billmath
-ms.author: barclayn
-manager: mbaldwin
-ms.date: 10/12/2017
+ms.author: billmath
+manager: mtillman
+ms.reviewer: davidste
+ms.date: 06/26/2018
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.reviewer: mwahl
-ms.suite: ems
-ms.openlocfilehash: e2c252771bd114a3c70b900c8c089e09eff8cd23
-ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
+ms.openlocfilehash: b1b30b744a5f735512f31d98184a561ce3f9b047
+ms.sourcegitcommit: 03617b441135a55b664e0d81cce4d17541bee93b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36963383"
 ---
->[!IMPORTANT]
-På grund av ett meddelande om utfasning av Azure Multi-Factor Authentication SDK. Azure MFA SDK ska ha stöd för befintliga kunder fram till datumet för tillbakadragandet av 14 November 2018. Nya kunder och aktuella kunder kommer inte att hämta SDK längre via den klassiska Azure-portalen. Om du vill hämta du behöver nå ut till Azure kundsupport för att ta emot dina autentiseringsuppgifter för MFA-paketet. <br> Utvecklingsgruppen Microsoft arbetar på Planering av MFA ändringar genom att integrera med MFA-serverns SDK. Detta tas med i kommande snabbkorrigeringen i tidig 2018.
-
 # <a name="working-with-self-service-password-reset"></a>Arbeta med självbetjäning för återställning av lösenord
+
+> [!IMPORTANT]
+> På grund av ett meddelande om utfasning av Azure Multi-Factor Authentication SDK. Azure MFA SDK ska ha stöd för befintliga kunder fram till datumet för tillbakadragandet av 14 November 2018. Nya kunder och aktuella kunder kommer inte att hämta SDK längre via den klassiska Azure-portalen. Om du vill hämta du behöver nå ut till Azure kundsupport för att ta emot dina autentiseringsuppgifter för MFA-paketet. <br> Utvecklingsgruppen Microsoft arbetar på ändringar av MFA genom att integrera med MFA-serverns SDK.  Detta ska ingå i en kommande snabbkorrigeringen finns [versionshistorik](/reference/version-history.md) för meddelanden.
+
 Microsoft Identity Manager 2016 innehåller ytterligare funktioner för återställning av lösenord via självbetjäning. Den här funktionen har förbättrats med flera viktiga funktioner:
 
--   Portalen för självbetjäning för återställning av lösenord och Windows inloggningssida ger nu användarna möjlighet att låsa upp sina konton utan att ändra lösenord eller kontakta support. Det finns många legitima orsaker till att användare spärras, som att de anger ett gammalt lösenord, använder en dator eller ett tangentbord med fel språk inställt eller att de försöker logga in på en delad arbetsstation där någon annan redan är inloggad.
+-   Självbetjäning av återställning av lösenord och Windows-inloggningssidan nu användarna låsa upp sina konton utan att ändra sina lösenord eller kontakta support. Användare spärras sina konton för många legitima orsaker, t.ex. om de anger ett gammalt lösenord, använder en dator och ha tangentbordet inställd på fel språk eller försök att logga in på en delad arbetsstation redan är öppen till någon annans konto.
 
--   En ny autentiseringsgate, telefonporten, har lagts till. Den ger möjlighet till användarautentisering via ett telefonsamtal.
+-   En ny autentiseringsgate, telefonporten, har lagts till. Den här gaten ger möjlighet till användarautentisering via ett telefonsamtal.
 
--   Det finns numera även stöd för tjänsten Microsoft Azure Multi-Factor Authentication (MFA) Den kan användas antingen för den befintliga SMS-gaten för engångslösenord eller den nya telefonporten.
+-   Stöd har lagts till för tjänsten Microsoft Azure Multi-Factor Authentication (MFA). Den här tjänsten kan användas för antingen den befintliga SMS en-Gaten för engångslösenord eller den nya Telefonporten.
 
 ## <a name="azure-for-multi-factor-authentication"></a>Azure för multifaktorautentisering
 Microsoft Azure Multi-Factor Authentication är en autentiseringstjänst där användare måste bekräfta sina inloggningsförsök via en mobilapp, ett telefonsamtal eller SMS. Den är tillgänglig för användning med Microsoft Azure Active Directory och som en tjänst för molnprogram och lokala företagsprogram.
@@ -56,12 +57,12 @@ Det här avsnittet förutsätter att du har hämtat och slutfört distributionen
 
     -   Konfigurering av synkroniseringsregler i MIM-portalen för att tillåta synkronisering av användardata och förenkla synkroniseringsbaserade aktiviteter i MIM-tjänsten.
 
--   MIM 2016-tillägg och förlängningar, inklusive den klient som är integrerad med SSPR för Windows-inloggning, distribueras på servern eller på en separat klientdator.
+-   MIM 2016-tillägg &amp; tillägg inklusive SSPR Windows-inloggning-integrerade klienten distribueras på servern eller på en separat klientdator.
 
 ## <a name="prepare-mim-to-work-with-multi-factor-authentication"></a>Förbereda MIM för integrering med multifaktorautentisering
 Konfigurera MIM-synkronisering för att ge stöd för funktionerna lösenordsåterställning och kontoupplåsning. Mer information finns i [Installera FIM-tillägg och förlängningar](https://technet.microsoft.com/library/ff512688%28v=ws.10%29.aspx), [ Installera FIM SSPR](https://technet.microsoft.com/library/hh322891%28v=ws.10%29.aspx), [SSPR-autentiseringsgater](https://technet.microsoft.com/library/jj134288%28v=ws.10%29.aspx) och [SSPR Test Lab-guide](https://technet.microsoft.com/library/hh826057%28v=ws.10%29.aspx)
 
-I nästa avsnitt ställer du in Azure MFA-leverantören i Microsoft Azure Active Directory. Som en del av detta genererar du en fil som innehåller de autentiseringsuppgifter MFA kräver för att kunna kontakta Azure MFA.  För att kunna fortsätta behöver du ett Azure-abonnemang.
+I nästa avsnitt ställer du in Azure MFA-leverantören i Microsoft Azure Active Directory. Du skapar en fil som innehåller de autentiseringsuppgifter MFA kräver för att kunna kontakta Azure MFA.  För att kunna fortsätta behöver du ett Azure-abonnemang.
 
 ### <a name="register-your-multi-factor-authentication-provider-in-azure"></a>Registrera din leverantör av multifaktorautentiseringstjänsten i Azure
 
@@ -85,7 +86,7 @@ I nästa avsnitt ställer du in Azure MFA-leverantören i Microsoft Azure Active
 
 7.  I vänsterpanelen i det nya fönstret, under **Konfigurera** klickar du på **Inställningar**.
 
-8.  Under **bedrägeriförsök**, avmarkera ** Blockera användare när bedrägeri rapporteras. Syftet med detta är att förhindra att hela tjänsten spärras.
+8.  Under **bedrägeriförsök**, avmarkera ** Blockera användare när bedrägeri rapporteras. Avmarkera kryssrutan är att förhindra att hela tjänsten spärras.
 
 9. I det **Azure Multi-Factor Authentication**-fönster som öppnas klickar du på **SDK** under **Hämtade filer** på menyn till vänster.
 
@@ -117,13 +118,13 @@ I nästa avsnitt ställer du in Azure MFA-leverantören i Microsoft Azure Active
 
 9. Ange ett valfritt användarnamn i elementet `<username>`.
 
-10. Ange din standardlandskod i elementet `<DefaultCountryCode>`. Om telefonnummer registreras för användare utan landskod kommer de tilldelas denna landskod. Om en användare har en internationell landskod ska denna inkluderas i det registrerade telefonnumret.
+10. Ange din standardlandskod i elementet `<DefaultCountryCode>`. I fall där telefonnummer registreras för användare utan landskod kommer användare den här koden. I fall där en användare har en internationell landskod har ska ingå i det registrerade telefonnumret.
 
 11. Spara filen MfaSettings.xml med samma namn och på samma plats.
 
 #### <a name="configure-the-phone-gate-or-the-one-time-password-sms-gate"></a>Konfigurera telefonporten eller SMS-gaten för engångslösenord
 
-1.  Starta Internet Explorer och navigera till MIM-portalen, autentisera dig som MIM-administratör och klicka sedan på **Arbetsflöden** i det vänstra navigeringsfältet.
+1.  Starta Internet Explorer och navigera till MIM-portalen, autentisera dig som MIM-administratör och klicka sedan på **arbetsflöden** i det vänstra navigeringsfältet.
 
     ![Bild av navigering i MIM-portalen](media/MIM-SSPR-workflow.jpg)
 
@@ -156,7 +157,7 @@ Användare kan komma åt funktionerna för lösenordsåterställning och kontoup
 
 Genom att installera MIM-tillägg och -förlängningar på en domänansluten dator som är ansluten till MIM-tjänsten via din organisations nätverk, kan användare återställa ett lösenord de har glömt från platsen för inloggning till skrivbordsmiljön.  Följande steg hjälper dig genom processen.
 
-#### <a name="windows-desktop-login-integrated-password-reset"></a>Windows lösenordsåterställning vid inloggning till skrivbordsmiljön
+#### <a name="windows-desktop-login-integrated-password-reset"></a>Windows skrivbord inloggnings-integrerade lösenordsåterställning
 
 1.  Om användarna anger fel lösenord flera gånger kan de klicka på **Problem att logga in?** .
 

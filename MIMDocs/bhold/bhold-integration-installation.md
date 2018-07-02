@@ -10,11 +10,12 @@ ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: 86ab45d1deaac2a7d697bc9860764e598252a0ef
-ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
+ms.openlocfilehash: 08a0aaa60891727482e80c8998cc075eacf042cf
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290177"
 ---
 # <a name="bhold-fimmim-integration-installation"></a>BHOLD FIM/MIM integrering Installation
 
@@ -32,8 +33,8 @@ Följande är de programvarukomponenter som måste vara installerat på datorn i
 
 Dessutom modulerna BHOLD kärnor och Access Management-anslutningstjänsten måste redan distribueras på en server i miljön och FIM måste konfigureras med en eller flera BHOLD-hanteringsagenter. Information om installation och konfiguration av BHOLD-kärnmodul finns [BHOLD-kärninstallation](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). Information om hur du installerar och använder modulen Access Management-anslutningstjänsten finns [Access Management Kopplingsinstallationen](https://technet.microsoft.com/library/jj874042(v=ws.10).aspx) och [Test Lab-Guide: BHOLD Access Management-anslutningstjänsten](https://technet.microsoft.com/library/jj853085(v=ws.10).aspx).
 
->[!IMPORTANT]
-Namnet på FIM-tjänstdatabasen måste vara FIM-tjänst. BHOLD FIM integrerade installationen misslyckas om FIM inte installerades med FIM-tjänsten standardnamnet på databasen.
+> [!IMPORTANT]
+> Namnet på FIM-tjänstdatabasen måste vara FIM-tjänst. BHOLD FIM integrerade installationen misslyckas om FIM inte installerades med FIM-tjänsten standardnamnet på databasen.
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
@@ -73,7 +74,7 @@ Dessutom måste du vara beredd att ange den information som installationsguiden 
 
 Logga in som medlem i gruppen Domänadministratörer om du vill installera modulen BHOLD FIM-integrering, hämta följande fil och kör det som administratör på den server som du tänker installera modulen BHOLD FIM-integrering på:
 
-- BholdFIMIntegration*\<Version\>*\_Release.msi
+- BholdFIMIntegration<em>\<Version\></em>\_Release.msi
 
 Ersätt *\<Version\>* med versionsnumret för integrering av BHOLD FIM-versionen som du installerar.
 
@@ -192,20 +193,20 @@ Om godkännare för en begäran för självbetjäning roll inte anges med en av 
 19. På den **ändra organisationsenhet attribut/root** sidan **godkännare**, typnamn domänen och användarnamnet för användaren som ska godkänna rolltilldelning förfrågningar, i formatet  *\<domän\>*\\*\<användare\>*, där *\<domän\>* är den Domännamn för NetBIOS (korta) och *\<användare\>* är användarens inloggningsnamn.
 20. Klicka på **OK**.
 
->[!IMPORTANT]
-Namnet på domänen och användarnamnet måste matcha standardalias för en användare i databasen BHOLD kärnor.
+> [!IMPORTANT]
+> Namnet på domänen och användarnamnet måste matcha standardalias för en användare i databasen BHOLD kärnor.
 
 Du kan ange godkännare för föreslagna roller i Core BHOLD-databas som ett alternativ till att ange godkännare för organisationsenheter. Gör du genom skapa attributet approver1, lägger du till på den till ett attribut typeset som är kopplade till objekttypen roll och ändra varje föreslagna roll om du vill ange godkännaren.
 
 För att ge bättre säkerhet för arbetsflödet, utöver godkännare, ska du ange extra godkännande lägen och användare genom att skapa och fylla i följande attribut för OrgUnits och roller:
 
-- rulltrappa*\<n\>*
+- rulltrappa<em>\<n\></em>
 
-- ägare*\<n\>*
+- ägare<em>\<n\></em>
 
-- securityOfficer*\<n\>*
+- securityOfficer<em>\<n\></em>
 
-- meddelande*\<n\>*
+- meddelande<em>\<n\></em>
 
 där *\<n\>* anger ett numeriskt suffix för att tillhandahålla flera attribut av samma typ som valfria.
 
@@ -213,8 +214,8 @@ där *\<n\>* anger ett numeriskt suffix för att tillhandahålla flera attribut 
 
 BHOLD FIM-integrering installationen skapar uppsättningar, arbetsflödesdefinitioner och Hanteringsprincipregler (MPR) till FIM-tjänsten. Om du har anpassat FIM-distribution om du vill ändra uppsättningar av administratörer eller uppsättningar med användare som kan skapa förfrågningar, bör du kontrollera att MPR refererar till rätt användare anger.
 
->[!NOTE]
-Innan användare av FIM-portalen kan använda självbetjäning funktionerna som tillhandahålls av BHOLD, måste de användarkonton synkroniseras till BHOLD-databas från FIM-synkroniseringstjänsten. I synnerhet måste det finnas en användarpost i databasen BHOLD kärnor och FIM-tjänstdatabasen för varje användare som kan göra en självbetjäning begäran eller anges som godkännare eller rulltrappa för självservicebegäranden.
+> [!NOTE]
+> Innan användare av FIM-portalen kan använda självbetjäning funktionerna som tillhandahålls av BHOLD, måste de användarkonton synkroniseras till BHOLD-databas från FIM-synkroniseringstjänsten. I synnerhet måste det finnas en användarpost i databasen BHOLD kärnor och FIM-tjänstdatabasen för varje användare som kan göra en självbetjäning begäran eller anges som godkännare eller rulltrappa för självservicebegäranden.
 
 ## <a name="next-steps"></a>Nästa steg
 

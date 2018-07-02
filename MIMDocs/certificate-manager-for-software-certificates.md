@@ -1,7 +1,7 @@
 ---
-title: "Begära certifikat i Certifikathanteraren med mallar | Microsoft Docs"
-description: "Lär dig att använda Certifikathanteraren för att skapa och förnya programcertifikat med profilmallar."
-keywords: 
+title: Begära certifikat i Certifikathanteraren med mallar | Microsoft Docs
+description: Lär dig att använda Certifikathanteraren för att skapa och förnya programcertifikat med profilmallar.
+keywords: ''
 author: billmath
 ms.author: barclayn
 manager: mbaldwin
@@ -13,10 +13,11 @@ ms.assetid: fed5ada9-d80f-4825-aad7-4172ac5d71d3
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: aebf5af709f4f775ce13be49d8f9075a94e864a2
-ms.sourcegitcommit: f077508b5569e2a96084267879c5b6551e1e0905
+ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36290330"
 ---
 # <a name="create-software-certificates-with-certificate-manager"></a>Skapa programcertifikat med Certifikathanteraren
 För att registrera och förnya programcertifikat behöver du inte vara administratör och du behöver inte heller ha ett virtuellt smartkort. Det bör påpekas att du vid en viss tidpunkt kommer att uppmanas tillåta en certifikatåtgärd, vilket är normalt.
