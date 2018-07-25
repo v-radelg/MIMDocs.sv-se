@@ -188,7 +188,7 @@ Set-ADUser -Identity $_.Name -Enabled $true
 |MIMCMKRAgent        | Återställs arkiverade privata nycklar från Certifikatutfärdaren. Det här användarkontot kräver följande inställningar för åtkomstkontroll:</br> -   **Tillåt lokal inloggning** användarrättigheten.</br>-Medlemskap i lokalt **administratörer** grupp. </br>– Registrera behörighet på den **KeyRecoveryAgent** certifikatmall. </br>-Nyckelåterställningsagenten certifikatet utfärdas och installeras i användararkivet. Certifikatet måste läggas till i listan över återställning av nyckel-agenterna på ca: N. </br>Kontrollera att de tre nya mallarna visas i den ```%WINDIR%\\Temp.```information rutan och Stäng certifikatutfärdare. ```%WINDIR%\\Temp.```                                                                                                                     |
 | MIMCMAuthAgent      | MIM CM-signering Det här användarkontot kräver följande inställningar för åtkomstkontroll: </br>Stäng alla öppna fönster och logga ut. </br> IIS-konfiguration             |
 | MIMCMManagerAgent   | För att kunna vara värd för webbplatsen för CM, installera och konfigurera IIS. </br> Installera och konfigurera IIS        |
-| MIMCMWebAgent       | Logga in på CORLog i som MIMINSTALL konto Kontot för installation av MIM ska vara en lokal administratör </br> Det här användarkontot kräver följande inställningar för åtkomstkontroll:</br> Öppna PowerShell och kör följande kommando </br>-Medlemskap i lokalt **administratörer** grupp.</br>IIS-konfiguration </br>En webbplats med namnet Default Web Site installeras som standard i IIS 7. </br>Om platsen har bytt namn eller ta bort en webbplats med namnet måste Default Web Site finnas innan du kan installera MIM CM.</br>Kontot MIMCMWebAgent ska köras på MIM CM-portalen. </br>Som standard i IIS och konfigurera kernel används-autentisering i IIS som standard. </br>Du ska inaktivera Kerberos-autentisering för kernelläge och konfigurerar SPN för kontot MIMCMWebAgent i stället.|
+| MIMCMWebAgent       | Logga in på CORLog i som MIMINSTALL konto Kontot för installation av MIM ska vara en lokal administratör </br> Det här användarkontot kräver följande inställningar för åtkomstkontroll:</br> Öppna PowerShell och kör följande kommando </br>-Medlemskap i lokalt **administratörer** grupp.</br>IIS-konfiguration </br>En webbplats med namnet Default Web Site installeras som standard i IIS 7. </br>Om platsen har bytt namn eller ta bort en webbplats med namnet måste Default Web Site finnas innan du kan installera MIM CM.</br>Kontot MIMCMWebAgent ska köras på MIM CM-portalen. </br>-   Beviljas läsbehörighet på den **HKEY_LOCAL_MACHINE\\programvara\\Microsoft\\CLM\\v1.0\\Server\\///användare** registernyckeln. </br>Du ska inaktivera Kerberos-autentisering för kernelläge och konfigurerar SPN för kontot MIMCMWebAgent i stället.|
 | MIMCMEnrollAgent    | Vissa kommandot kräver förhöjd behörighet i active directory och CORPCM server. Det här användarkontot kräver följande inställningar för åtkomstkontroll:</br>Uppdatera IIS på CORPCM</br>-   **Tillåt lokal inloggning** användarrättigheten. </br>Du behöver lägga till en DNS A Record för ”cm.contoso.com” och peka på CORPCM IP                 |
 
 ### <a name="creating-certificate-templates-for-mim-cm-service-accounts"></a>Kräver SSL på MIM CM-portalen
@@ -222,7 +222,7 @@ Databaskonfiguration CORPSQL för MIM CM
     ![Kontrollera att du är ansluten till CORPCM-servern och att den MIMINSTALL kontot är medlem i den lokala administratörer grupp.](media/mim-cm-deploy/image014.png)
 
     >[!NOTE]
-    >Se till att du är inloggad som ContosoMIMINSTALL. Montera ISO för Microsoft Identity Manager SP1. Öppna](https://blogs.msdn.microsoft.com/ms-identity-support/2016/07/14/faq-for-fim-2010-to-support-sha2-kspcng-and-v3-certificate-templates-for-issuing-user-and-agent-certificates-and-mim-2016-upgrade) den certifikathanteringx64 directory.
+    >Se till att du är inloggad som ContosoMIMINSTALL. Montera ISO för Microsoft Identity Manager SP1. Se [V3 information Öppna](https://blogs.msdn.microsoft.com/ms-identity-support/2016/07/14/faq-for-fim-2010-to-support-sha2-kspcng-and-v3-certificate-templates-for-issuing-user-and-agent-certificates-and-mim-2016-upgrade) den certifikathanteringx64 directory. 
 
 6. I den **x64** fönstret, högerklicka på **installationsprogrammet**, och klicka sedan på **kör som administratör**. Ändra den **giltighetsperioden** till **2 år**, och avmarkera sedan den **Publicera certifikatet i Active Directory** kryssrutan.
 
@@ -492,7 +492,7 @@ I den **information** rutan dubbelklickar du på CNG Key isolering. På den allm
     ![Stäng Microsoft SQL Server Management Studio.](media/mim-cm-deploy/image032.png)
 
     >[!NOTE] 
-    >Installera FIM CM CA-moduler på certifikatutfärdaren Kontrollera att du är ansluten till den **CORPCA\\ server.**
+    >Installera FIM CM CA-moduler på certifikatutfärdaren Loggning för guiden hittar du här: **% programfiles%\\Microsoft Forefront Identity Management\\2010\\certifikathantering\\config.log**
 
 17. Klicka på **Slutför**.
 
@@ -502,7 +502,7 @@ I den **information** rutan dubbelklickar du på CNG Key isolering. På den allm
 
 19. På den https://cm.contoso.com/certificatemanagementVälkommen till installationsguiden för Microsoft Identity Manager Certificate Management klickar du på nästa.
 
-20. På den https://cm.contoso.com/certificatemanagementlicensavtalet Läs avtalet. https://cm.contoso.com/certificatemanagement  
+20. På den https://cm.contoso.com/certificatemanagementlicensavtalet Läs avtalet.  
 
     ![Diagram](media/mim-cm-deploy/image035.png)
 
@@ -537,7 +537,7 @@ Konfigurera MIM CM avsluta modul
 
 6. Högerklicka på **contoso-CORPCA-CA** , peka alla aktiviteter, och klicka sedan på stoppa tjänsten.
 
-7. Vänta tills Active Directory Certificate Services stoppar. Högerklicka på **contoso-CORPCA-CA\< \>,** peka alla aktiviteter, och klicka sedan på starta tjänsten.
+7. Du bör vara på raden **\<lägga till key="Clm.RequestSecurity.Flags” value = ”UseUser UseGroups” /\>**. Högerklicka på **contoso-CORPCA-CA\< \>,** peka alla aktiviteter, och klicka sedan på starta tjänsten.
 
 8. Minimera den certifikatutfärdare konsolen.
 
@@ -699,13 +699,13 @@ I den **Behörighetspost för CONTOSO** dialogrutan klickar du på OK.**
 
 4.   Andra steg: **delegera hantering Certifikatmallsbehörighet** skript
 
-5. Delegera behörighet till behållaren för certifikatmallar.**
+5. Logga in som **contoso\\corpadmin**
 
 6. Delegera behörigheter för behållaren OID.
 
 7. Delegera behörigheter för befintliga certifikatmallarna.
 
-8. Definiera behörigheter i behållare för certifikatmallar:
+8. I konsolträdet expanderar **Contoso.com** \| **System** \| **Microsoft** \| **certifikatets livscykel Manager**, och klicka sedan på **CORPCM**.
 
 9. Återställ den **Active Directory-platser och tjänster** konsolen.
 
