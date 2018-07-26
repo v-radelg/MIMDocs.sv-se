@@ -204,16 +204,16 @@ Flödet regler:
 
 | **Inledande flöde** | **Använd existens test** | **Flöda (FIM värdet ⇒ Målattributet)**                          |
 |-----------------------|---------------------------|-----------------------------------------------------------------------|
-|                       |                           | [displayName⇒displayName] (javascript:void(0);)                        |
-|                       |                           | [Vänster (id 20) ⇒accountName] (javascript:void(0);)                        |
-|                       |                           | [id⇒uid] (javascript:void(0);)                                         |
-|                       |                           | [userType⇒employeeType] (javascript:void(0);)                          |
-|                       |                           | [givenName⇒givenName] (javascript:void(0);)                            |
-|                       |                           | [surname⇒sn] (javascript:void(0);)                                     |
-|                       |                           | [userPrincipalName⇒userPrincipalName] (javascript:void(0);)            |
-|                       |                           | [id⇒cn] (javascript:void(0);)                                          |
-|                       |                           | [mail⇒mail] (javascript:void(0);)                                      |
-|                       |                           | [mobilePhone⇒mobilePhone] (javascript:void(0);)                        |
+|                       |                           | [displayName⇒displayName](javascript:void(0);)                        |
+|                       |                           | [Vänster (id 20) ⇒accountName](javascript:void(0);)                        |
+|                       |                           | [id⇒uid](javascript:void(0);)                                         |
+|                       |                           | [userType⇒employeeType](javascript:void(0);)                          |
+|                       |                           | [givenName⇒givenName](javascript:void(0);)                            |
+|                       |                           | [surname⇒sn](javascript:void(0);)                                     |
+|                       |                           | [userPrincipalName⇒userPrincipalName](javascript:void(0);)            |
+|                       |                           | [id⇒cn](javascript:void(0);)                                          |
+|                       |                           | [mail⇒mail](javascript:void(0);)                                      |
+|                       |                           | [mobilePhone⇒mobilePhone](javascript:void(0);)                        |
 
 ### <a name="synchronization-rule-create-guest-user-account-to-active-directory"></a>Synkroniseringsregeln: Skapa gäst användarkonto i Active Directory 
 
@@ -229,14 +229,14 @@ Flödet regler:
 
 | **Inledande flöde** | **Använd existens test** | **Flöda (FIM värdet ⇒ Målattributet)**                          |
 |-----------------------|---------------------------|-----------------------------------------------------------------------|
-|                       |                           | [accountName⇒sAMAccountName] (javascript:void(0);)                     |
-|                       |                           | [givenName⇒givenName] (javascript:void(0);)                            |
-|                       |                           | [mail⇒mail] (javascript:void(0);)                                      |
-|                       |                           | [sn⇒sn] (javascript:void(0);)                                          |
-|                       |                           | [userPrincipalName⇒userPrincipalName] (javascript:void(0);)            |
-| **Y**                 |                           | [”CN =” + uid + ”, OU = B2BGuest, DC = scontoso, DC = com” ⇒dn] (javascript:void(0);) |
-| **Y**                 |                           | [RandomNum (0,999) + userPrincipalName⇒unicodePwd] (javascript:void(0);)  |
-| **Y**                 |                           | [262656⇒userAccountControl] (javascript:void(0);)                      |
+|                       |                           | [accountName⇒sAMAccountName](javascript:void(0);)                     |
+|                       |                           | [givenName⇒givenName](javascript:void(0);)                            |
+|                       |                           | [mail⇒mail](javascript:void(0);)                                      |
+|                       |                           | [sn⇒sn](javascript:void(0);)                                          |
+|                       |                           | [userPrincipalName⇒userPrincipalName](javascript:void(0);)            |
+| **Y**                 |                           | [”CN =” + uid + ”, OU = B2BGuest, DC = scontoso, DC = com” ⇒dn](javascript:void(0);) |
+| **Y**                 |                           | [RandomNum (0,999) + userPrincipalName⇒unicodePwd](javascript:void(0);)  |
+| **Y**                 |                           | [262656⇒userAccountControl](javascript:void(0);)                      |
 
 ### <a name="synchronization-rule-import-b2b-guest-user-objects-sid-to-allow-for-login-to-mim"></a>Synkroniseringsregeln: Importera B2B gästen användaren objekt SID för inloggning till MIM 
 
@@ -278,9 +278,9 @@ Dessutom sedan lägga till användaren manuellt till Hantera användare och grup
 
 | **Inledande flöde** | **Använd existens test** | **Flöda (FIM värdet ⇒ Målattributet)**                          |
 |-----------------------|---------------------------|-----------------------------------------------------------------------|
-|                       |                           | [sAMAccountName⇒accountName] (javascript:void(0);)                     |
-|                       |                           | [”CONTOSO” ⇒domain] (javascript:void(0);)                            |
-|                       |                           | [objectSid⇒objectSid] (javascript:void(0);)                                      |
+|                       |                           | [sAMAccountName⇒accountName](javascript:void(0);)                     |
+|                       |                           | [”CONTOSO” ⇒domain](javascript:void(0);)                            |
+|                       |                           | [objectSid⇒objectSid](javascript:void(0);)                                      |
 
 När alla konfigurera
 
