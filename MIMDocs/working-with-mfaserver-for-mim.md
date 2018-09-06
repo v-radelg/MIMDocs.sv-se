@@ -2,20 +2,20 @@
 title: Använda SDK för Azure Multi-Factor Authentication Server för att aktivera PAM eller SSPR scenarier | Microsoft Docs
 description: Ställ in Azure Multi-Factor Authentication Server SDK som ett andra säkerhetslager när dina användare aktiverar roller i Privileged Access Management och återställning för återställning av lösenord.
 keywords: ''
-author: billmath
+author: fimguy
 ms.author: billmath
 manager: mtillman
-ms.date: 08/31/2018
+ms.date: 09/02/2018
 ms.topic: article
 ms.service: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: a2a3becab4fbef1126a96ade46b85ef10c0c6291
-ms.sourcegitcommit: acb2c61831cb634278acc439d6d9496ff51a6a54
+ms.openlocfilehash: 7191e445688cc9e3c5c02b9c6852c869a28a937a
+ms.sourcegitcommit: ad0690bd57e3d056397108bf1c8417965d69a32c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43694946"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43772686"
 ---
 # <a name="use-azure-multi-factor-authentication-server-to-activate-pam-or-sspr"></a>Använda Azure Multi-Factor Authentication-servern för att aktivera PAM eller SSPR
 Följande dokument beskriver hur du ställer in Azure MFA-servern som ett andra säkerhetslager när dina användare aktiverar roller i hantering av behörighet eller självbetjäningsportalen för lösenordsåterställning.
@@ -57,7 +57,8 @@ När du har laddat ned servern, [installera](https://docs.microsoft.com/en-us/az
 4. En gång guider är klicka igenom konfig, Välj ”MIM MFASDK” och programpoolen
 
 > [!NOTE] 
-> Guiden kräver en administratörsgrupp som ska skapas. Mer information finns på Azure MFA Azure Multi-Factor Authentication Server-dokumentationen.
+> Guiden kräver en administratörsgrupp som ska skapas. Mer information finns på Azure >> MFA Azure Multi-Factor Authentication Server-dokumentationen.
+
 5. Därefter måste vi importera MIM-tjänstens konto öppna Multi-Factor Authentication-konsolen väljer ”användare” en. Klicka på ”Importera från Active Directory” b. Gå till tjänstkontot kallas även ”contoso\mimservice” c. Klicka på ”Importera” och ”Stäng” ![fungerande-med-mfaserver-för-mim_importmimserviceaccount. PNG](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_importmimserviceaccount.PNG) 
 6. Redigera konto för MIM-tjänsten att aktivera i Multi-Factor Authentication-konsolen ![fungerande-med-mfaserver-för-mim_enableserviceaccount. PNG](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_enableserviceaccount.PNG)
 7. Uppdatera IIS-autentisering på webbplatsen ”MIM MFASDK”. Först inaktiverar vi ”anonym autentisering” och aktivera Windows-autentisering ” ![fungerande-med-mfaserver-för-mim_iisconfig. PNG](media/working-with-mfaserver-for-mim/working-with-mfaserver-for-mim_iisconfig.PNG)
@@ -65,7 +66,7 @@ När du har laddat ned servern, [installera](https://docs.microsoft.com/en-us/az
 
 ## <a name="configuring-the-mim-service-for-azure-multi-factor-authentication-server"></a>Konfigurera MIM-tjänsten för Azure Multi-Factor Authentication Server 
 
-### <a name="step-1-patch-server-to-452000"></a>Steg 1: Patch-servern till 4.5.200.0
+### <a name="step-1-patch-server-to-452020"></a>Steg 1: Patch-servern till 4.5.202.0
  
 ### <a name="step-2-backup-and-open-the-mfasettingsxml-located-in-the-cprogram-filesmicrosoft-forefront-identity-manager2010service"></a>Steg 2: Säkerhetskopiering och öppna MfaSettings.xml finns i ”C:\Program Files\Microsoft Forefront Identity Manager\2010\Service”
 
