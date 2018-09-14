@@ -12,12 +12,12 @@ ms.technology: security
 ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: f69648e7e4229ca7c8de895cdf10ccb2c5f368e2
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: a64ee79897ce73242d0f8510842fdcb6758fab2c
+ms.sourcegitcommit: 28834821cbddd6384613d8ba45424c35f4c39ce6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36289541"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45538582"
 ---
 # <a name="set-up-an-identity-management-server-sharepoint"></a>Konfigurera en server för identitetshantering: SharePoint
 
@@ -29,7 +29,7 @@ ms.locfileid: "36289541"
 > I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
 > - Domänkontrollantens namn - **corpdc**
 > - Domännamn – **contoso**
-> - MIM-tjänsten Server name - **corpservice**
+> - MIM-Tjänstserverns name - **corpservice**
 > - Servernamnet för MIM Sync - **corpsync**
 > - Namnet på SQL Server - **corpsql**
 > - Lösenord – <strong>Pass@word1</strong>
@@ -71,11 +71,11 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
 2. Ange den här servern som databasserver som **corpsql** för konfigurationsdatabasen och *Contoso\SharePoint* som kontot för SharePoint ska använda databasåtkomst.
 3. Skapa ett lösenord för gruppens säkerhetslösenfras.
 
-4. Vi rekommenderar att du väljer i konfigurationsguiden [MinRole](https://docs.microsoft.com/en-us/sharepoint/install/overview-of-minrole-server-roles-in-sharepoint-server-2016) typ av **frontend**
+4. Vi rekommenderar att du väljer i konfigurationsguiden [MinRole](https://docs.microsoft.com/sharepoint/install/overview-of-minrole-server-roles-in-sharepoint-server-2016) typ av **frontend**
 
 5. När konfigurationsguiden har slutfört konfigurationsåtgärd 10 av 10, klickar du på Slutför och en webbläsare öppnas...
 
-6. Om du uppmanas att göra det popup-fönstret i Internet Explorer autentiserar du som *Contoso\miminstall* (eller motsvarande administratörskonto) att gå vidare.
+6. Om du uppmanas popup-fönstret för Internet Explorer autentiserar du som *Contoso\miminstall* (eller motsvarande administratörskonto) att fortsätta.
 
 7. I guiden (från webbappen) klickar du på **Avbryt/hoppa över**.
 
@@ -96,7 +96,7 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
     > [!NOTE]
     > Ett varningsmeddelande visas med information om att Windows Classic-autentiseringsmetoden används och att det kan ta flera minuter för kommandot att returneras. När du är klar visas den nya portalens URL som utdata. Behåll den **hanteringsgränssnittet för SharePoint 2016** fönstret öppet för senare referens.
 
-2. Starta SharePoint 2016 Management Shell och kör följande PowerShell-skript för att skapa en **SharePoint-webbplatssamling** som är associerade med det webbprogrammet.
+2. Starta hanteringsgränssnittet för SharePoint 2016 och kör följande PowerShell-skript för att skapa en **SharePoint-webbplatssamling** som är associerade med det webbprogrammet.
 
    ```
     $t = Get-SPWebTemplate -compatibilityLevel 15 -Identity "STS#1"
@@ -107,9 +107,9 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
    ```
 
    > [!NOTE]
-   > Kontrollera att resultatet av den *CompatibilityLevel* variabeln är ”15”. Om resultatet är än ”15”, sedan skapades webbplatssamlingen inte korrekt experience-version. ta bort webbplatssamlingen och skapa den på nytt.
+   > Kontrollera att resultatet av den *CompatibilityLevel* variabeln är ”15”. Om resultatet är än ”15”, sedan skapades webbplatssamlingen inte korrekt upplevelse-version. ta bort webbplatssamlingen och skapa den på nytt.
 
-3. Inaktivera **SharePoint Server-Side Viewstate** och SharePoint-uppgiften ”Hälsoanalysjobb (varje timme, Microsoft SharePoint Foundation-Timer, alla servrar)” genom att köra följande PowerShell-kommandon i den  **Hanteringsgränssnittet för SharePoint 2016**:
+3. Inaktivera **SharePoint serversidan Viewstate** och SharePoint-uppgiften ”Hälsoanalysjobb (varje timme, Microsoft SharePoint Foundation-Timer, alla servrar)” genom att köra följande PowerShell-kommandon i den  **Hanteringsgränssnittet för SharePoint 2016**:
 
    ```
    $contentService = [Microsoft.SharePoint.Administration.SPWebService]::ContentService;
