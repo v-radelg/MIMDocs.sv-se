@@ -7,17 +7,17 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 08/30/2017
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: c6e3cd02-1e32-4194-a8ed-3a0b3d022a43
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: b6598857d5704accbee461366838bb8efb9b2fc0
-ms.sourcegitcommit: c049dceaf02ab8b6008fe440daae4d07b752ca2e
+ms.openlocfilehash: 0d4ae72b897af3c6e737b412b7f8971b249ffa23
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/31/2017
-ms.locfileid: "21942739"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49334252"
 ---
 # <a name="tier-model-for-partitioning-administrative-privileges"></a>Nivåmodell för partitionering av administratörsbehörighet
 
@@ -25,7 +25,7 @@ I den här artikeln beskrivs en säkerhetsmodell som är avsedd att skydda mot r
 
 ## <a name="elevation-of-privilege-in-active-directory-forests"></a>Utöka privilegier i Active Directory-skogar
 
-Användare, tjänster och programkonton som beviljas permanent administratörsbehörighet för skogar i Windows Server Active Directory (AD) medför betydande risker för organisationens mål och verksamhet. Dessa konton är ofta mål för angripare eftersom om ger angriparen har behörighet att ansluta till andra servrar och program i domänen.
+Användare, tjänster och programkonton som beviljas permanent administratörsbehörighet för skogar i Windows Server Active Directory (AD) medför betydande risker för organisationens mål och verksamhet. Dessa konton är ofta mål av angripare, eftersom om de skulle skadas kan angriparen har behörighet att ansluta till andra servrar och program i domänen.
 
 Med nivåmodellen delas administratörer upp utifrån vilka resurser de hanterar. Administratörer med kontroll över användararbetsstationer separeras från de som styr program eller hanterar företagsidentiteter. Läs mer om den här modellen i [referensmaterialet för att skydda privilegierad åtkomst](http://aka.ms/tiermodel).
 
@@ -61,4 +61,4 @@ Inloggningsbegränsningar kan tillämpas med:
 ## <a name="next-steps"></a>Nästa steg
 
 - I nästa artikel [Planera en skyddsmiljö](planning-bastion-environment.md) får du veta hur du lägger till en dedikerad administrativ skog för Microsoft Identity Manager för att upprätta administratörskonton.
-- [Priviledged åtkomst arbetsstationer](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations) innehåller ett dedikerat operativsystem känsliga som skyddas från Internet-attacker och hotvektorer.
+- [Arbetsstationer Priviledged åtkomst](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations) ger ett dedikerat operativsystem för känsliga uppgifter som är skyddat mot internetattacker och hotvektorer.

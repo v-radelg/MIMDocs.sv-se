@@ -7,16 +7,15 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 08/01/2017
 ms.topic: reference
-ms.prod: identity-manager-2016
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: 86b8b9bdf5c6441d0708cd874742fa48b65177fa
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: def1be943b4f2f919a079e3fc4aa544af10463aa
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36289371"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49333402"
 ---
 # <a name="microsoft-identity-manager-2016-password-management"></a>Lösenordshantering i Microsoft Identity Manager 2016
 
@@ -150,7 +149,7 @@ Helst synkroniseras ändringen utan fel när en användare ändrar ett lösenord
 
 En del fel är så allvarliga att det inte är sannolikt att åtgärden lyckas oavsett hur många återförsök som genomförs. I dessa fall loggas en felhändelse och processen stoppas. Nya försök görs inte för följande händelser:
 
-| Händelse | Allvarlighetsgrad    | Description                                                                                                                                                            |
+| Händelse | Allvarlighetsgrad    | Beskrivning                                                                                                                                                            |
 |-------|-------------|-----------|
 | 6919  | Information | En åtgärd för lösenordssynkronisering utfördes inte på grund av att tidsstämpeln var för gammal.                                                                      |
 | 6921  | Fel       | Åtgärden för lösenordssynkronisering bearbetades inte på grund av att lösenordshantering inte har aktiverats på hanteringsagenten som är mål.                                |

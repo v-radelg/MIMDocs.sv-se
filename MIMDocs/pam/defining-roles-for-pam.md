@@ -7,17 +7,17 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 08/31/2017
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 1a368e8e-68e1-4f40-a279-916e605581bc
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: cfd7c5bee0038740db0ad526072ec248ed9f221d
-ms.sourcegitcommit: 210195369d2ecd610569d57d0f519d683ea6a13b
+ms.openlocfilehash: 1e3b0d6cd29de0a58c330df064d907b1876dba3b
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/01/2017
-ms.locfileid: "21943765"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49334320"
 ---
 # <a name="define-roles-for-privileged-access-management"></a>Definiera roller för Privileged Access Management
 
@@ -25,7 +25,7 @@ Med Privileged Access Management kan du tilldela användare privilegierade rolle
 
 Ett enkelt sätt att definiera roller för Privileged Access Management är att samla all information i ett kalkylblad. Lista roller i rollerna och använd kolumnerna till att identifiera styrningskrav och -behörigheter.
 
-Styrningskraven varierar beroende på befintlig identitet och åtkomstprinciper eller efterlevnadskrav. Parametrar som ska identifieras för varje roll kan innehålla:
+Styrningskraven varierar beroende på befintlig identitet och åtkomstprinciper eller efterlevnadskrav. Parametrarna för att identifiera för varje roll kan innehålla:
 
 - Ägaren av rollen.
 - De kandidatanvändare som kan vara i rollen
@@ -43,9 +43,9 @@ Börja med att identifiera alla de roller som du kanske vill hantera med PAM. P�
 
 Titta närmare på varje program som ska hanteras för att hitta lämpliga roller:
 
-- Är programmet på [nivå 0, nivå 1 eller 2](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)?
+- Är programmet på [nivå 0, nivå 1 eller nivå 2](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)?
 - Vilka är de behörigheter som påverkar programmets sekretess, integritet eller tillgänglighet?
-- Har programmet beroenden på andra komponenter i systemet? Till exempel har den beroende databaser, nätverk, säkerhetsinfrastruktur, virtualisering eller värd för plattformen?
+- Har programmet beroenden på andra komponenter i systemet? Till exempel har den beroende databaser, nätverk, säkerhetsinfrastruktur, virtualisering eller som är värd för plattform?
 
 Bestämma hur du vill gruppera de programbehoven. Du vill ha roller med tydliga gränser som bara ger tillräcklig behörighet att utföra vanliga administrativa uppgifter i programmet.
 
@@ -87,13 +87,13 @@ När du identifierar kandidatroller börjar du med att fylla i kalkylbladet. Ska
 
 Det kan finnas flera roller i ett system för hantering av privilegierad åtkomst med samma behörigheter som tilldelats. Detta kan inträffa om olika användargrupper har olika krav för åtkomststyrning. En organisation kan till exempel använda olika principer för sina heltidsanställda och för IT-anställda i en annan organisation.
 
-I vissa fall kan en användare vara permanent tilldelade till en roll. I så fall behöver de inte begära eller aktivera en rolltilldelning. Exempel på scenarier med permanent tilldelning:
+I vissa fall kan en användare vara permanent tilldelade till en roll. I så fall kan behöver de inte begära eller aktivera en rolltilldelning. Exempel på scenarier med permanent tilldelning:
 
 - Ett hanterat tjänstkonto i den befintliga skogen
 
-- Ett användarkonto i den befintliga skogen med en autentiseringsuppgift som hanteras utanför PAM. Detta kan vara ett ”nödkonto”-konto. Nödkonto kanske behöver en roll som ”domän / domänkontrollanter” och åtgärda problem som till exempel förtroenden och Domänkontrollantstatus hälsa. Som ett nödkonto skulle det ha rollen permanent tilldelade med ett fysiskt skyddat lösenord)
+- Ett användarkonto i den befintliga skogen med autentiseringsuppgift som hanteras utanför PAM. Detta kan vara ett ”Bryt om”-konto. Nödkonto kanske behöver en roll som ”domän / domänkontrollanter” och åtgärda problem, till exempel förtroenden och hälsa. Som ett nödkonto skulle den ha rollen permanent tilldelade med ett fysiskt skyddat lösenord)
 
-- Ett användarkonto i den administrativa skogen som autentiseras med ett lösenord. Detta kan vara en användare behöver permanent administrativ behörighet för 24 x 7 och loggar in från en enhet som inte stöder stark autentisering.
+- Ett användarkonto i den administrativa skogen som autentiseras med ett lösenord. Detta kan vara en användare som behöver permanent administrativ behörighet för 24 x 7 och loggar in från en enhet som inte stöder stark autentisering.
 
 - Ett användarkonto i den administrativa skogen, med ett smartkort eller virtuellt smartkort (till exempel ett konto med ett offlinesmartkort som behövs för sällsynta underhållsuppgifter)
 
@@ -101,7 +101,7 @@ I guiden [Aktivera med hjälp av Azure MFA](use-azure-mfa-for-activation.md) hit
 
 ## <a name="delegate-active-directory-permissions"></a>Tilldela Active Directory-behörigheter
 
-Windows Server skapar automatiskt standardgrupper som "Domänadministratörer" när nya domäner skapas. Med de här grupperna blir det enklare att komma igång och de kan vara lämpliga för mindre organisationer. Större organisationer och organisationer behöver avgränsa administrativa privilegier, bör tom grupperna och ersätta dem med grupper som ger detaljerade behörigheter.
+Windows Server skapar automatiskt standardgrupper som "Domänadministratörer" när nya domäner skapas. Med de här grupperna blir det enklare att komma igång och de kan vara lämpliga för mindre organisationer. Stora organisationer eller behöver avgränsa administrativa privilegier bättre bör tom grupperna och ersätta dem med grupper som ger detaljerade behörigheter.
 
 En begränsning med gruppen Domänadministratörer är att den inte kan ha medlemmar från en extern domän. En annan begränsning är att den ger behörighet till tre olika funktioner:
 
@@ -109,7 +109,7 @@ En begränsning med gruppen Domänadministratörer är att den inte kan ha medle
 - Hantera de data som lagras i Active Directory
 - Aktivera fjärrinloggning till domänanslutna datorer.
 
-Skapa nya säkerhetsgrupper som ger endast behörighet i stället för standardgrupper som Domänadministratörer. Du bör använda MIM till dynamiskt administratörskonton med dessa gruppmedlemskap.
+Skapa nya säkerhetsgrupper som ger endast behörighet i stället för standardgrupper som Domänadministratörer. Du bör sedan använda MIM för att dynamiskt administratörskonton med dessa gruppmedlemskap.
 
 ### <a name="service-management-permissions"></a>Behörighet för tjänsthantering
 
@@ -117,7 +117,7 @@ Följande tabell innehåller exempel på behörigheter som är relevanta att ink
 
 | Roll | Beskrivning |
 | ---- | ---- |
-| Hantering av domäner/domänkontrollanter | Medlemskap i gruppen domän\administratör kan felsöka och ändra domänkontrollantens operativsystem. Åtgärder som du befordrar en ny domänkontrollant i en befintlig domän i skogen och delegering för AD-rollen.
+| Hantering av domäner/domänkontrollanter | Medlemskap i gruppen domän\administratör kan felsöka och ändra domain controller operativsystem. Åtgärder som du befordrar en ny domänkontrollant i en befintlig domän i skogen och delegering för AD-rollen.
 |Hantera virtuella domänkontrollanter | Hantera domänkontrollantens virtuella datorer med hjälp av programvara för hantering av virtualisering. Det här privilegiet kan tilldelas via fullständig kontroll över alla virtuella datorer i hanteringsverktyget och i funktionerna för rollbaserad åtkomstkontroll. |
 | Utöka schemat | Hantera schemat, inklusive att lägga till nya objektdefinitioner, ändra behörigheter till schemaobjekt och ändra schemats standardbehörigheter för objekttyper |
 | Säkerhetskopiera Active Directory-databasen | Gör en säkerhetskopia av Active Directory-databasen i sin helhet, inklusive alla hemligheter som tilldelats domänkontrollanten och domänen. |
@@ -129,7 +129,7 @@ Följande tabell innehåller exempel på behörigheter som är relevanta att ink
 
 ### <a name="data-management-permissions"></a>behörighet för datahantering
 
-Följande tabell innehåller exempel på behörigheter som är relevanta att inkludera i roller för hantering eller med hjälp av data som lagras i AD.
+I följande tabell innehåller exempel på behörigheter som är relevanta att inkludera i roller för att hantera eller med hjälp av data som lagras i AD.
 
 | Roll | Beskrivning |
 | ---- | ---- |
@@ -145,7 +145,7 @@ Följande tabell innehåller exempel på behörigheter som är relevanta att ink
 
 ## <a name="example-role-definitions"></a>Exempel på rolldefinitioner
 
-Valet av rolldefinitioner beror på nivån som hanteras. Detta beror också på vilka program som hanteras. Program som enterprise-produkter som Exchange och tredjepartsprodukter som SAP ofta kommer att få sina egna ytterligare rolldefinitioner för delegerad administration.
+Valet av rolldefinitioner beror på vilken nivå av servrar som hanteras. Detta beror också på valet av program som hanteras. Program som företagsprodukter Exchange och tredjepartsprodukter som SAP ofta att ta med sina egna ytterligare rolldefinitioner för delegerad administration.
 
 Följande avsnitt innehåller exempel för vanliga företagsscenarier.
 
@@ -208,5 +208,5 @@ Roller för hantering av icke-administrativa användare och datorer kan vara:
 
 ## <a name="next-steps"></a>Nästa steg
 
-- [Att säkra referensmaterialet för privilegierad åtkomst](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)
+- [Att säkra privilegierad åtkomst till referensmaterial](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)
 - [Aktivera med hjälp av Azure MFA](use-azure-mfa-for-activation.md)

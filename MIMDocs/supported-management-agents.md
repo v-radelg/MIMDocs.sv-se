@@ -7,17 +7,17 @@ ms.author: fimguy
 manager: bhu
 ms.date: 1/24/2018
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 8bc2f6d2-9f53-4db6-aee6-a937ae468163
 ms.reviewer: ''
 ms.suite: ems
-ms.openlocfilehash: 7b685ffb6f2a52bd2782395e4c1f26501ffe3101
-ms.sourcegitcommit: c773edc8262b38df50d82dae0f026bb49500d0a4
+ms.openlocfilehash: 5b56ad34c0549f21568585fb1a25d9a3f3fc6d00
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34479357"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49334388"
 ---
 # <a name="connect-to-your-directories"></a>Anslut till katalogerna
 
@@ -29,14 +29,14 @@ Den här artikeln omfattar anslutningsprogrammen som ingår & stöds i MIM, men 
 
 ## <a name="supported-connectors-in-mim-2016-sp1"></a>Anslutningsprogram som stöds i MIM 2016 SP1
 
-| Namn | Versioner som stöds av den anslutna datakällan & tekniska länkar |
+| Namn | Versioner som stöds av den anslutna datakällan & teknisk länkar |
 | ---- | ----------------------------------------------- |
 | Active Directory Domain Services | Active Directory-2012, 2016 |
 | ADLDS (Active Directory Lightweight Directory Services) | ADLDS (Active Directory Lightweight Directory Services) |
 | Active Directory Global Address List (GAL) | Active Directory globala adresslistan (GAL) – Exchange 2013, 2016 |
 | Extensible Connectivity 2.0 | Alla anropsbaserade eller filbaserade datakällor |
-| FIM-tjänst | FIM-tjänstens hanteringsagent (synkroniseringstjänsten) måste finnas på samma version av ”Forefront Identity Manager tjänsten” installerad |
-| IBM DB2 Universal Database | IBM DB2 version 9.5 eller 9.7; IBM DB2 OLEDB v9.5 FP5 eller v9.7 FP1 |
+| FIM-tjänst | FIM-tjänstens hanteringsagent (synkroniseringstjänsten) måste finnas på samma version av ”Forefront Identity Manager-tjänsten” installerat |
+| IBM DB2 Universal Database | 9.5 eller 9.7; IBM DB2-version IBM DB2 OLEDB v9.5 FP5 eller v9.7 FP1 |
 | IBM Directory Server | IBM Tivoli Directory Server 6.x |
 | Novell eDirectory | Novell eDirectory version 8.7.3, 8.8.5 och 8.8.6 |
 | Oracle Database | Oracle Database 10 g eller 11 g: 64-bitarsklient |
@@ -51,7 +51,7 @@ Den här artikeln omfattar anslutningsprogrammen som ingår & stöds i MIM, men 
 | [Connector för Web Services](https://www.microsoft.com/en-us/download/details.aspx?id=51495) | [SAP ECC 5.0 eller 6.0; Oracle PeopleSoft 9.1; Oracle eBusiness 12.1](https://docs.microsoft.com/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws) |
 | [Textfil med Attributvärdespar](https://technet.microsoft.com/library/cc708644(v=ws.10).aspx) | Textfiler med attributvärdespar |
 | [Avgränsad textfil](https://technet.microsoft.com/library/cc720612(v=ws.10).aspx) | Avgränsade textfiler |
-| [Directory Services Mark-up Language DSML)](https://technet.microsoft.com/library/cc720660(v=ws.10).aspx) | DSML 2.0 (Directory Services Markup Language) |
+| [Directory Services Mark-up Language (DSML)](https://technet.microsoft.com/library/cc720660(v=ws.10).aspx) | DSML 2.0 (Directory Services Markup Language) |
 | [Textfil med fast bredd](https://technet.microsoft.com/library/cc720633(v=ws.10).aspx) | Textfiler med fast bredd |
 | [LDAP Data Interchange Format (LDIF)](https://technet.microsoft.com/library/cc708662(v=ws.10).aspx) | LDAP Data Interchange Format (LDIF) |
 

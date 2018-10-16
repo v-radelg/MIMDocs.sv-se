@@ -7,17 +7,17 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 08/31/2017
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 479db14c-1bfb-4d7c-a344-cd718a01f328
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: e83c326d32645ce80541d5c415cd9c0e9d1dae54
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: 4e3a3fb2b23deced2202994463645521beef81e8
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36288800"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49332926"
 ---
 # <a name="environment-overview"></a>Översikt över miljön
 
@@ -25,12 +25,12 @@ Privileged Access Management arbetar med virtuella datorer med separata enheter 
 
 ![PAM-servrar: relationer och plattformar som stöds – diagram](media/pam-test-lab-architecture.png)
 
-Du behöver minst tre virtuella datorer.  Om du inte redan har en AD-domän som ska hanteras av PAM, måste en ytterligare virtuell dator som CORP-domänkontrollant.  Om du vill konfigurera PRIV-programvaran för hög tillgänglighet, måste ytterligare två virtuella datorer.
+Du behöver minst tre virtuella datorer.  Om du inte redan har en AD-domän som ska hanteras av PAM, måste en ytterligare virtuell dator som CORP-domänkontrollant.  Om du vill konfigurera PRIV-programvaran för hög tillgänglighet behöver du ytterligare två virtuella datorer.
 
-Enheter där VM-diskavbildningar ska sparas måste minst 120 GB ledigt diskutrymme.  Om du planerar att distribuera för hög tillgänglighet ska du kontrollera att diskdelsystemet uppfyller kraven för SQL-delad lagring.  Det delade lagringsutrymmet kan bestå av WSFC-klusterdiskar (Windows Server Failover Clustering), diskar på ett SAN-nätverk (Storage Area Network) eller filer som delas på en SMB-server.
+Enheter där VM-diskavbildningar ska sparas måste ha minst 120 GB ledigt diskutrymme.  Om du planerar att distribuera för hög tillgänglighet ska du kontrollera att diskdelsystemet uppfyller kraven för SQL-delad lagring.  Det delade lagringsutrymmet kan bestå av WSFC-klusterdiskar (Windows Server Failover Clustering), diskar på ett SAN-nätverk (Storage Area Network) eller filer som delas på en SMB-server.
 
 > [!IMPORTANT]
-> Lagring måste vara dedikerade till skyddsmiljön. Lagringsutrymmet delas med andra arbetsbelastningar utanför skyddsmiljön rekommenderas inte eftersom det kan äventyra skyddsmiljöns integritet i skyddsmiljön.
+> Lagring måste vara dedikerad till skyddsmiljön. Lagringsutrymmet delas med andra arbetsbelastningar utanför skyddsmiljön rekommenderas inte eftersom det kan äventyra skyddsmiljöns integritet i skyddsmiljön.
 
 ## <a name="next-steps"></a>Nästa steg
 

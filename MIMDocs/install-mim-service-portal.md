@@ -7,17 +7,17 @@ ms.author: barclayn
 manager: mbaldiwn
 ms.date: 04/30/2018
 ms.topic: get-started-article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 562ca6a977509cad7c3423ef42d4b6f6705494d3
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: f975bf659f285418380d52db5724bcbb46bbcf46
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36289524"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49333742"
 ---
 # <a name="install-mim-2016-mim-service-and-portal"></a>Installera MIM 2016: MIM-tjänst och -portal
 
@@ -51,7 +51,7 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
     ![Bild på Konfigurera MIM-databasanslutningen](media/install-mim-service-portal/MIM_Install10.png)
 
-7. På den **Konfigurera e-serveranslutningen**, ange namnet på Exchange-servern som **e-postserver** eller så kan du använda **O365 postlåda**. Om du inte har konfigurerat en e-postserver använder du **localhost** som namn på e-postservern och avmarkerar de två översta kryssrutorna. Klicka på **Nästa**.
+7. På den **Konfigurera e-serveranslutning**, ange namnet på Exchange-servern som **e-postserver** eller så kan du använda **O365 postlåda**. Om du inte har konfigurerat en e-postserver använder du **localhost** som namn på e-postservern och avmarkerar de två översta kryssrutorna. Klicka på **Nästa**.
 
     ![Bild på Konfigurera e-postserveranslutning](media/install-mim-service-portal/MIM_Install11.png)
 
@@ -63,17 +63,17 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 10. Observera att en varning kan komma att visas om att tjänstkontots nuvarande konfiguration inte är säker.
 
-11. Godkänn standardinställningarna för Synkroniseringsserverns plats och ange kontot för MIM-hanteringsagenten som *contoso\MIMMA*.
+11. Acceptera standardinställningarna för Synkroniseringsserverns plats och ange kontot för MIM-hanteringsagenten som *contoso\MIMMA*.
 
     ![Bild på Konfigurera MIM-tjänsten och -portalen](media/install-mim-service-portal/MIM_Install13.png)
 
 12. Ange *CORPIDM* (den här datorns namn) som MIM-tjänstens serveradress för MIM-portalen.
 
-13. Ange *http://mim.contoso.com* som SharePoint-webbplatssamlingen.
+13. Ange *http://mim.contoso.com* som SharePoint site URL: en samling.
 
-14. Ange *http://passwordregistration.contoso.com* rekommenderar uppdatera senare med SSL-certifikat på 443 som URL: en för registrering av lösenord-port 80.
+14. Ange *http://passwordregistration.contoso.com* som lösenord Registreringswebbadress-port 80 rekommenderar att du uppdaterar senare med SSL-certifikat på 443.
 
-15. Ange *http://passwordreset.contoso.com* rekommenderar uppdatera senare med SSL-certifikat på 443 som lösenord återställa URL-port 80.
+15. Ange *http://passwordreset.contoso.com* som URL för återställning av lösenord-port 80 rekommenderar att du uppdaterar senare med SSL-certifikat på 443.
 
 16. Markera kryssrutan för att öppna portarna 5725 och 5726 i brandväggen, och kryssrutan för att bevilja alla autentiserade användare åtkomst till MIM-portalen.
 
@@ -87,7 +87,7 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 3. En varning visas. Läs den och klicka på **Nästa**.
 
-4. I nästa konfigurationsskärm för MIM-portalen för registrering av lösenord anger *mim.contoso.com* som MIM-tjänstens serveradress för för portalen för registrering av lösenord.
+4. I nästa MIM-portalen för Lösenordsregistrering skärm för konfiguration, ange *mim.contoso.com* som MIM-tjänstens serveradress för för portalen för registrering av lösenord.
 
 ## <a name="configure-mim-password-reset-portal"></a>Konfigurera MIM-portalen för återställning av lösenord
 
@@ -99,7 +99,7 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 3. En varning visas. Läs den och klicka på **Nästa**.
 
-4. I nästa konfigurationsskärm för MIM-portalen för registrering av lösenord anger *mim.contoso.com* som MIM-tjänstens serveradress för för portalen för återställning av lösenord.
+4. I nästa MIM-portalen för Lösenordsregistrering skärm för konfiguration, ange *mim.contoso.com* som MIM-tjänstens serveradress för för i portalen för återställning.
 
 ## <a name="install-mim-service-and-portal"></a>Installera MIM-tjänsten och -portalen
 

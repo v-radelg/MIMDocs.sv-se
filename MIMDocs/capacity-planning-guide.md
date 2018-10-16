@@ -7,17 +7,17 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 10/12/2017
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 3ac5b990-1678-4996-996d-cbd84b8426b4
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 32cdf03ffa0d0d282a6277af766f97e93e3a3f3a
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: 5a54cd60f8ccee51d3bdb9cdb4770ff659afe854
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36289021"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49333810"
 ---
 # <a name="capacity-planning-guide"></a>Guide för kapacitetsplanering
 
@@ -31,17 +31,17 @@ Om du ännu inte har bekantat dig med MIM 2016 och dess komponenter bör du läs
 
 Det finns ett antal faktorer som kan påverka den totala kapaciteten och prestandan för din Microsoft Identity Manager-distribution:
 
-- Det sätt som du rent fysiskt distribuerar MIM-komponenterna (topologin).
-- Den maskinvara som komponenterna körs.
-- Antalet och komplexiteten hos konfigurationsobjekt för MIM-policyn är viktiga faktorer att tänka på när du planerar kapaciteten.
-- Distributionens förväntade skala distributionen och den förväntade belastningen är mer påtagligt faktorer som påverkar prestanda och kapacitet.
+- De sätt som du fysiskt distribuerar MIM-komponenterna (topologin).
+- Maskinvara som komponenterna körs.
+- Antal och komplexiteten i MIM-policyn för konfiguration är viktiga faktorer att tänka på när du planerar kapaciteten.
+- Förväntade skala distributionen och den förväntade belastningen är mer påtagligt som påverkar prestanda och kapacitet.
 
 I följande tabell beskrivs de viktigaste faktorerna som påverkar kapacitet och prestanda för en distribution av MIM 2016:
 
 | Designfaktor | Överväganden |
 | ------------- | -------------- |
 | Topologi | Distributionen av MIM-tjänsterna till datorerna i nätverket. |
-| Maskinvara | Den fysiska maskinvaran (fysiska eller virtuella) för varje MIM-komponent inklusive CPU, minne, nätverkskort och hårddiskkonfigurationen. |
+| Maskinvara | Den fysiska maskinvaran (fysisk eller virtuell) för varje MIM-komponent, inklusive processor, minne, nätverkskort och hårddiskkonfigurationen. |
 | Konfigurationsobjekt för MIM-policyn | Antalet och typ av konfigurationsobjekt för MIM-policyn, vilka innefattar uppsättningar, hanteringsprincipregler (MPR) och arbetsflöden. |
 | Skala | Den användare, grupper, beräknade grupper och anpassade objekt som ska hanteras av MIM 2016. Tänk också på komplexiteten i dynamiska grupper och var noga med att ta med gruppkapsling i beräkningen. |
 | Läs in | Användningsfrekvens. Åtgärder som till exempel ny grupp eller användare skapas, lösenord återställs eller portal sidbesök per minut eller timme. Observera att arbetsbelastningen kan variera under loppet av en timme, dag, vecka eller ett år. Beroende på vilken komponent det rör sig om kan du välja att utforma för hög belastning eller genomsnittlig belastning. |
@@ -68,7 +68,7 @@ Antalet användare och grupper i miljön är en av de viktigaste faktorerna när
 
 ## <a name="expected-load-levels"></a>Förväntade belastningsnivåer
 
-Du bör också fundera på vilken typ av belastning som MIM-komponenterna kommer att utsättas för. Du behöver att beräkna belastningen genom att titta på de befintliga programmen i din miljö. Här följer ett antal relevanta frågor du bör tänka på:
+Du bör också fundera på vilken typ av belastning som MIM-komponenterna kommer att utsättas för. Du behöver att uppskatta belastningen genom att titta på de befintliga programmen i din miljö. Här följer ett antal relevanta frågor du bör tänka på:
 
 - Hur ofta förväntar du dig en begäran att gå med i eller lämna en grupp?
 
@@ -78,15 +78,15 @@ Du bör också fundera på vilken typ av belastning som MIM-komponenterna kommer
 
 - Vilka slags scenarier planerar du att distribuera? Olika scenarier bidrar till olika belastningsmönster. Klientdatorer som har MIM 2016-klienten installerad regelbundet kontrollera till exempel om registrering krävs vid inloggning.
 
-- Förväntar du dig stora variationer i belastningsnivåerna, från normal till hög belastning? Till exempel brukar det till att många lösenordsåterställning efter semesterperioder. Se till att köra systemunderhåll och synkroniseringsscheman vid andra tider än under de förväntade användningstopparna. Ta med höga belastningsperioder i beräkningen när du överväger kapacitetsplaneringen.
+- Förväntar du dig stora variationer i belastningsnivåerna, från normal till hög belastning? Exempelvis kan du det tenderar att vara många lösenordsåterställning efter semesterperioder. Se till att köra systemunderhåll och synkroniseringsscheman vid andra tider än under de förväntade användningstopparna. Ta med höga belastningsperioder i beräkningen när du överväger kapacitetsplaneringen.
 
 ## <a name="policy-configuration-objects"></a>Konfigurationsobjekt för policy
 
-Konfigurationsobjekt för MIM-policyn inkluderar Hanteringsprincipregler, uppsättningar, arbetsflöden och Synkroniseringsregler för en distribution. MIM-distributioner är unika för varje kund eftersom policykonfigurationerna varierar efter varje distributions behov. KPI-överväganden omfattar följande konfigurationsobjekt för MIM-policyn:
+Konfigurationsobjekt för MIM-policy inkluderar MPR, uppsättningar, arbetsflöden och Synkroniseringsregler för en distribution. MIM-distributioner är unika för varje kund eftersom policykonfigurationerna varierar efter varje distributions behov. Viktiga prestandafaktorer är följande konfigurationsobjekt för MIM-policy:
 
-- **Uppsättningar** Varje åtgärd i systemet måste utvärderas gentemot befintliga uppsättningsmedlemskap och uppdateringar som orsakar ändringar i uppsättningsmedlemskap. Till exempel får en ändring av en anställds kontorsnummer inte ha en stor inverkan. Andra ändringar, t.ex. ett chefsbyte, kan emellertid sätta igång en dominoeffekt, vilket kan påverka flera objekt på flera nivåer.
+- **Uppsättningar** Varje åtgärd i systemet måste utvärderas gentemot befintliga uppsättningsmedlemskap och uppdateringar som orsakar ändringar i uppsättningsmedlemskap. En ändring av en anställds kan till exempel inte ha en stor inverkan. Andra ändringar, t.ex. ett chefsbyte, kan emellertid sätta igång en dominoeffekt, vilket kan påverka flera objekt på flera nivåer.
 
-- **Hanteringsprincipregler** Hanteringsprincipregler hanterar regler för åtkomstkontroll och sätter igång arbetsflöden. Skapa MPR kan skapa behovet av att öka antalet uppsättningar så att du kan registrera olika övergångstillstånd för objekt. De här extra uppsättningarna kan sätta igång ytterligare arbetsflöden, där varje arbetsflöde är kopplat till unika begäranden i systemet. Detta blir sedan ytterligare ett objekt som ska tas med när du planerar kapaciteten.
+- **Hanteringsprincipregler** Hanteringsprincipregler hanterar regler för åtkomstkontroll och sätter igång arbetsflöden. Skapa MPR kan skapa behovet av att öka antalet uppsättningar, så att du kan registrera olika övergångstillstånd för objekt. De här extra uppsättningarna kan sätta igång ytterligare arbetsflöden, där varje arbetsflöde är kopplat till unika begäranden i systemet. Detta blir sedan ytterligare ett objekt som ska tas med när du planerar kapaciteten.
 
 Konfiguration av MIM-policyn omfattar också beslut om etablering i din miljö. Var noga med att tänka på följande:
 
@@ -97,4 +97,4 @@ Konfiguration av MIM-policyn omfattar också beslut om etablering i din miljö. 
 ## <a name="next-steps"></a>Nästa steg
 
 - [Topologiska överväganden när du ska distribuera MIM](topology-considerations.md)
-- Det nedladdningsbara [Forefront Identity Manager (FIM) 2010 kapacitet Planning Guide](http://go.microsoft.com/fwlink/?LinkId=200180) innehåller mer information om en testversion och resultaten av prestandatest.
+- Den nedladdningsbara [Forefront Identity Manager (FIM) 2010 guide för kapacitetsplanering för](http://go.microsoft.com/fwlink/?LinkId=200180) innehåller mer information om en testversion och resultat av prestandatest.

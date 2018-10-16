@@ -7,17 +7,17 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 09/13/2017
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 7b689eff-3a10-4f51-97b2-cb1b4827b63c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 3a7359c664e1c4aeacbc571242c2b348be186a89
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: f449ca475d8b1fe72203bf4cd3b5dd3c65329d13
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36289592"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49332943"
 ---
 # <a name="step-6--transition-a-group-to-privileged-access-management"></a>Steg 6 – Överföra en grupp till Privileged Access Management
 
@@ -68,8 +68,8 @@ Du måste köra cmdletarna en gång för varje grupp och en gång för varje med
 
      -   Domännamn för CORP-skogens i form av NetBIOS  
      -   Namnet på gruppen för att kopiera från domänen  
-     -   CORP skogens Domain Controller NetBIOS-namn  
-     -   Autentiseringsuppgifterna för ett domain admin-användare i CORP-skogen  
+     -   CORP skog Domain Controller NetBIOS-namn  
+     -   Autentiseringsuppgifterna för en administratörsanvändare för domän i CORP-skogen  
 
 5. (Valfritt) Ta bort Lisas konto på CORPDC från gruppen **CONTOSO CorpAdmins** om det fortfarande finns kvar.  Det här krävs bara för att visa hur behörigheter kan associeras med konton som skapats i PRIV-skogen.
 

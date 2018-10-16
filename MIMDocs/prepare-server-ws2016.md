@@ -1,25 +1,25 @@
 ---
 title: Konfigurera Windows Server 2016 för MIM 2016 SP1 | Microsoft Docs
-description: Hämta stegen och minimikraven för att förbereda Windows Server 2016 att arbeta med MIM 2016 SP1.
+description: Hämta stegen och minimikraven för att förbereda Windows Server 2016 för att arbeta med MIM 2016 SP1.
 keywords: ''
 author: fimguy
 ms.author: davidste
 manager: mbaldwin
 ms.date: 04/26/2018
 ms.topic: get-started-article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: bfc79d27f015ee3d57c33c26ecae0f5b8ff38370
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: 2f6daf62e568a0a4ac6ca899d28589537369b2bb
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36289497"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49334235"
 ---
-# <a name="set-up-an-identity-management-servers-windows-server-2016"></a>Konfigurera en identity management-servrar: Windows Server 2016
+# <a name="set-up-an-identity-management-servers-windows-server-2016"></a>Konfigurera en identity-hanteringsservrar: Windows Server 2016
 
 > [!div class="step-by-step"]
 > [«Förbereda en domän](preparing-domain.md)
@@ -29,18 +29,18 @@ ms.locfileid: "36289497"
 > I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
 > - Domänkontrollantens namn - **corpdc**
 > - Domännamn – **contoso**
-> - MIM-tjänsten Server name - **corpservice**
+> - MIM-Tjänstserverns name - **corpservice**
 > - Servernamnet för MIM Sync - **corpsync**
 > - Namnet på SQL Server - **corpsql**
 > - Lösenord – <strong>Pass@word1</strong>
 
-## <a name="join-windows-server-2016-to-your-domain"></a>Windows Server 2016 Anslut till domänen
+## <a name="join-windows-server-2016-to-your-domain"></a>Anslut Windows Server 2016 till din domän
 
-Börja med en Windows Server 2016-dator med minst 8 – 12GB RAM-minne. Vid installationen anger du ”Windows Server 2016 Standard/Datacenter (Server med GUI) x 64” edition.
+Börja med en Windows Server 2016-dator, med minst 8 – 12 GB RAM-minne. Vid installationen anger du ”Windows Server 2016 Standard/Datacenter (Server med GUI) x 64” edition.
 
 1. Logga in på den nya datorn som administratör.
 
-2. Ge datorn en statisk IP-adress i nätverket med hjälp av Kontrollpanelen. Konfigurera nätverksgränssnittet att skicka DNS-frågor till IP-adressen för domänkontrollanten i föregående steg och ange datornamnet **CORPSERVICE**.  Detta kräver en omstart av servern.
+2. Ge datorn en statisk IP-adress i nätverket med hjälp av Kontrollpanelen. Konfigurera nätverksgränssnittet för att skicka DNS-frågor till IP-adressen för domänkontrollanten i föregående steg och ange datornamnet till **CORPSERVICE**.  Detta kräver en omstart av servern.
 
 3. Öppna Kontrollpanelen och Anslut datorn till domänen som du konfigurerade i det sista steget, *contoso.com*.  Detta omfattar att ange användarnamnet och autentiseringsuppgifterna för en domänadministratör, t.ex. *Contoso\Administratör*.  Efter att välkomstmeddelandet har visats kan du stänga dialogrutan och starta om servern igen.
 
@@ -70,7 +70,7 @@ Börja med en Windows Server 2016-dator med minst 8 – 12GB RAM-minne. Vid inst
 
 Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapats kan köras som tjänster.
 > [!NOTE] 
-> Beroende på konfigurationen baserat enkel server(all-in-one) eller server för distribuerad behöver du bara lägga till på datorn som synkroniseringsserver medlem. 
+> Beroende på konfigurationen baserat enkel server(all-in-one) eller server för distribuerad du behöver bara lägga till på datorn medlem som synkroniseringsserver. 
 
 1. Starta programmet för lokala säkerhetsprinciper
 
@@ -80,13 +80,13 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 
     ![Bild för Lokal säkerhetsprincip](media/MIM-DeployWS3.png)
 
-4. Klicka på **Lägg till användare eller grupp**, och i textrutan typen följande baserat på rollen `contoso\MIMSync; contoso\MIMMA; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\MIMSSPR`, klickar du på **Kontrollera namn**, och klicka på **OK**.
+4. Klicka på **lägga till användare eller grupp**, och i textrutan efter typen baserat på roll `contoso\MIMSync; contoso\MIMMA; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\MIMSSPR`, klickar du på **Kontrollera namn**, och klicka på **OK**.
 
 5. Klicka på **OK** för att stänga fönstret **Logga in som en tjänst Egenskaper**.
 
-6.  I informationsfönstret högerklickar du på **neka åtkomst till den här datorn från nätverket**, och välj **egenskaper**. >
+6.  I informationsfönstret, högerklickar du på **neka åtkomst till den här datorn från nätverket**, och välj **egenskaper**. >
 
-[!NOTE] Om separat rollen servrar i det här steget bryts vissa funktionerna som SSPR-funktionen.
+[!NOTE] Om separata rollservrar det här steget bryts vissa funktioner som SSPR-funktionen.
 
 7. Klicka på **Lägg till användare eller grupp**, skriv `contoso\MIMSync; contoso\MIMService` i textrutan och klicka på **OK**.
 
@@ -101,7 +101,7 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 12. Stäng fönstret för lokala säkerhetsprinicper.
 
 
-## <a name="change-the-iis-windows-authentication-mode-if-needed"></a>Ändra IIS Windows-autentiseringsläge vid behov
+## <a name="change-the-iis-windows-authentication-mode-if-needed"></a>Ändra IIS-autentisering för Windows-läge om det behövs
 
 1.  Öppna ett PowerShell-fönster.
 

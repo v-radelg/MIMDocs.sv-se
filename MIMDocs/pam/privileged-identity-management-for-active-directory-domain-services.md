@@ -7,17 +7,17 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 08/30/2017
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: cf3796f7-bc68-4cf7-b887-c5b14e855297
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 890e0f77219f6871de3fc43e3122fbc829c6adba
-ms.sourcegitcommit: c049dceaf02ab8b6008fe440daae4d07b752ca2e
+ms.openlocfilehash: f3c5a74966498264cd60033b2f7751622d111e2e
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/31/2017
-ms.locfileid: "21942722"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49333555"
 ---
 # <a name="privileged-access-management-for-active-directory-domain-services"></a>Privileged Access Management för Active Directory Domain Services
 
@@ -35,17 +35,17 @@ Med Privileged Access Management uppnår du två saker:
 
 Idag är åtkomsten till resurser i en Active Directory-miljö är ett betydande problem för företag. Särskilt oroande är:
 
-- Säkerhetsproblem.
+- Sårbarheter.
 - Obehöriga privilegieutökningar.
 - [Pass-the-hash](https://technet.microsoft.com/dn785092.aspx).
 - Pass-the-ticket.
-- spear nätfiske.
+- spearphishingmail nätfiske.
 - Kerberos-angrepp.
 - Andra attacker.
 
 Idag är det alldeles för enkelt för angripare att få tag i domänadministratörers autentiseringsuppgifter och alldeles för svårt att upptäcka angreppen efteråt. Målet med PAM är att minska angriparnas tillfällen att ta sig in och att öka din kontroll och kunskap om miljön.
 
-PAM gör det svårare för angripare att ta sig in i ett nätverk och få åtkomst till privilegierade konton. PAM lägger till skydd till privilegierade grupper som kontrollerar åtkomsten på många olika domänanslutna datorer och program på dessa datorer. Det ger också ökad övervakning, mer synlighet och mer detaljerade kontroller. Detta gör att organisationer att se vilka deras Privilegierade administratörer är och vad de gör. Med PAM får organisationer större insyn i hur administratörskonton används i miljön.
+PAM gör det svårare för angripare att ta sig in i ett nätverk och få åtkomst till privilegierade konton. PAM lägger till skydd till privilegierade grupper som kontrollerar åtkomsten på många olika domänanslutna datorer och program på dessa datorer. Det ger också ökad övervakning, mer synlighet och mer detaljerade kontroller. Detta gör att organisationer kan se vilka deras Privilegierade administratörer är och vad de gör. Med PAM får organisationer större insyn i hur administratörskonton används i miljön.
 
 ## <a name="setting-up-pam"></a>Konfigurera PAM
 
@@ -109,5 +109,5 @@ Det här arbetsflödet är speciellt avsett för dessa administratörskonton. Ad
 
 ## <a name="next-steps"></a>Nästa steg
 
-- [Minimera Pass-the-Hash (PtH)-attacker och annan stöld av autentiseringsuppgifter, Version 1 och 2](https://www.microsoft.com/download/details.aspx?id=36036)
-- [Privileged Access Management-cmdlets](https://docs.microsoft.com/powershell/identitymanager/mimpam/vlatest/mimpam)
+- [Minimera Pass-the-Hash (PtH)-attacker och annan stöld, Version 1 och 2](https://www.microsoft.com/download/details.aspx?id=36036)
+- [Cmdlets för privilegierad åtkomsthantering](https://docs.microsoft.com/powershell/identitymanager/mimpam/vlatest/mimpam)

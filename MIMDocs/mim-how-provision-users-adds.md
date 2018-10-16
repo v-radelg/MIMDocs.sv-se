@@ -7,15 +7,15 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 08/18/2017
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: a12a8436d70b3ae866df0f615e10a3d76f791168
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: 032f3cb68214dcdb7008b4b771a8b66c05ebe890
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36290109"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49333980"
 ---
 # <a name="how-do-i-provision-users-to-ad-ds"></a>Hur etablerar jag användare i AD DS
 
@@ -195,7 +195,7 @@ I följande tabell visas de viktigaste scenariospecifika inställningarna som du
 | Sida för hanteringsagentens designer | Konfiguration |
 |------------|------------------------------------|
 | Skapa hanteringsagent | 1. **Hanteringsagent för:** FIM-tjänstens hanteringsagent <br/> 2. **Namn:** Fabrikam FIMMA |
-| Anslut till databas     | Använd följande inställningar: <br/> &#183; **Server:** localhost <br/> &#183; **Databas:** FIMService <br/> &#183;**Basadress för FIM-tjänsten:** http://localhost:5725 <br/> <br/> Ange information om kontot som du skapade för den här hanteringsagenten |
+| Anslut till databas     | Använd följande inställningar: <br/> &#183; **Server:** localhost <br/> &#183; **Databas:** FIMService <br/> &#183;**FIM-tjänstens basadress:** http://localhost:5725 <br/> <br/> Ange information om kontot som du skapade för den här hanteringsagenten |
 | Välj objekttyper                                     | Utöver de objekttyper som redan har valts väljer du **Person.**   |
 | Konfigurera objekttypsmappningar                          | Utöver de objekttypsmappningar som redan finns lägger du till en mappning för personen **Typ av datakällobjekt** till **Metaversum**-objekttyppersonen. |
 | Konfigurera attributflöde                                | Utöver de mappningar av attributflöde som redan finns lägger du till följande mappningar av attributflöde: <br/><br/> ![Attributflöde](media/how-provision-users-adds/image018.jpg) |
@@ -232,7 +232,7 @@ Skapa körningsprofiler för varje hanteringsagent enligt föregående tabell.
 > 
 > 
 > [!Important]
->  Kontrollera att etablering är aktiverad i miljön. Du kan göra detta genom att köra skriptet med hjälp av Windows PowerShell för att aktivera etablering (http://go.microsoft.com/FWLink/p/?LinkId=189660).
+>  Kontrollera att etablering är aktiverad i miljön. Du kan göra detta genom att köra skriptet, använda Windows PowerShell för att aktivera etablering (http://go.microsoft.com/FWLink/p/?LinkId=189660).
 
 
 ## <a name="configuring-the-fim-service"></a>Konfigurera FIM-tjänsten
@@ -244,7 +244,7 @@ För scenariot i den här handledningen måste du konfigurera en etableringsprin
 
 Målet med den här etableringsprincipen är att föra in grupper i omfattningen för den utgående synkroniseringsregeln för AD-användare. Genom att föra in resursen i omfattningen för synkroniseringsregeln aktiverar du synkroniseringsmotorn så att den kan etablera resursen till AD DS i enlighet med din konfiguration.
 
-Konfigurera FIM-tjänsten genom att gå Windows Internet Explorer® till http://localhost/identitymanagement. På sidan för MIM-portalen skapar du etableringsprincipen genom att gå till de relaterade sidorna från avsnittet Administration. Du kan kontrollera konfigurationen genom att köra skriptet i [Using Windows PowerShell to document your provisioning policy configuration](http://go.microsoft.com/FWLink/p/?LinkId=189661) (Använda Windows PowerShell för att dokumentera konfiguration av etableringsprincipen).
+Om du vill konfigurera FIM-tjänsten, navigera Windows Internet Explorer® till http://localhost/identitymanagement. På sidan för MIM-portalen skapar du etableringsprincipen genom att gå till de relaterade sidorna från avsnittet Administration. Du kan kontrollera konfigurationen genom att köra skriptet i [Using Windows PowerShell to document your provisioning policy configuration](http://go.microsoft.com/FWLink/p/?LinkId=189661) (Använda Windows PowerShell för att dokumentera konfiguration av etableringsprincipen).
 
 ### <a name="step-6-create-the-synchronization-rule"></a>Steg 6: Skapa synkroniseringsregeln
 
@@ -253,7 +253,7 @@ Följande tabeller visar konfiguration av synkroniseringsregeln för etablering 
 | Konfiguration av synkroniseringsregel                                                                         |                                                                             |                                                           
 |------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------|
 | Namn                                                                                                       | Utgående synkroniseringsregel för Active Directory-användare                         |                                                          
-| Description                                                                                               |                                                                             |                                                           
+| Beskrivning                                                                                               |                                                                             |                                                           
 | Prioritet                                                                                                | 2                                                                           |                                                           
 | Dataflödesriktning   | Utgående             |       
 | Beroende       |         |                                         
@@ -304,7 +304,7 @@ Målet med AD-etableringsarbetsflödet är att lägga till synkroniseringsregeln
 | Arbetsflödeskonfiguration               |                                                                 |
 |--------------------------------------|-----------------------------------------------------------------|
 | Namn                                 | Etableringsarbetsflöde för Active Directory-användare                     |
-| Description                          |                                                                 |
+| Beskrivning                          |                                                                 |
 | Arbetsflödestyp                        | Action                                                          |
 | Kör vid principuppdatering                 | Falskt                                                           |
 
@@ -323,7 +323,7 @@ Den hanteringsprincipregel (MPR) som krävs har typen Uppsättningsövergång oc
 | MPR-konfiguration                    |                                                             |
 |--------------------------------------|-------------------------------------------------------------|
 | Namn                                 | Hanteringsprincipregel för etablering av AD-användare                 |
-| Description                          |                                                             |
+| Beskrivning                          |                                                             |
 | Typ                                 | Uppsättningsövergång                                              |
 | Ger behörigheter                   | Falskt                                                       |
 | Inaktiverad                             | Falskt                                                       |
@@ -460,7 +460,7 @@ Kör följande körningsprofiler för att utföra dessa uppgifter.
 | Fabrikam FIMMA   | 1. Exportera <br/> 2. Deltaimport       |
 
 
-Efter importen från FIM-tjänstdatabasen, Britta Simon och objektet ExpectedRuleEntry mellanlagras som länkar Britta för utgående synkroniseringsregeln AD-användare i Fabrikam FIMMA anslutningsplatsen. När du granskar Brittas egenskaper i anslutningsplatsen bredvid de attributvärden som du har konfigurerat i FIM-portalen hitta du också en giltig referens till objektet post förväntad regel. Följande skärm visar ett exempel på detta.
+Efter importen från FIM-tjänstdatabasen, Britta Simon och objektet ExpectedRuleEntry mellanlagras som länkar Britta till den utgående Synkroniseringsregeln för AD-användare i Fabrikam FIMMA-anslutningsplatsen. När du granskar Brittas egenskaper i anslutningsplatsen bredvid de attributvärden som du har konfigurerat i FIM-portalen hitta du också en giltig referens till objektet Expected Rule Entry. Följande skärm visar ett exempel på detta.
 
 ![Objektegenskaper för anslutarplats](media/how-provision-users-adds/image025.jpg)
 

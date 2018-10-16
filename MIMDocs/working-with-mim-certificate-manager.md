@@ -7,21 +7,21 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 10/16/2017
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 66060045-d0be-4874-914b-5926fd924ede
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: bf655d451e86261ffd3043117a56f4daccb4b460
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: 304c030bc08be222a147373acbda8ba45e8f8cb5
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36289881"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49333952"
 ---
-# <a name="mim-certificate-manager-windows-store-application-deployment"></a>MIM Certificate Manager Windows store-programdistribution
+# <a name="mim-certificate-manager-windows-store-application-deployment"></a>MIM Certificate Manager Windows lagra programdistribution
 
-När du har MIM 2016 och Certificate Manager igång kan distribuera du MIM Certificate Manager Windows store-programmet. Windows store-programmet kan användarna hantera sina fysiska smartkort, virtuella smartkort och programcertifikat. Distribution av MIM CM-appen genomförs i följande steg:
+När du har MIM 2016 och Certificate Manager igång kan distribuera du MIM Certificate Manager Windows store-program. Windows store-appen kan användarna hantera sina fysiska smartkort, virtuella smartkort och programcertifikat. Distribution av MIM CM-appen genomförs i följande steg:
 
 1. Skapa en certifikatmall.
 
@@ -47,7 +47,7 @@ Du skapar en certifikatmall för CM-appen på samma sätt som du normalt skapar 
 
 6. Högerklicka på mallen **Smartkortsinloggning** och klicka på **Kopiera mall**.
 
-7. På fliken kompatibilitet under certifikatutfärdare väljer du Windows Server 2008. Välj Windows 8.1 / Windows Server 2012 R2 under certifikatmottagare. Versionen av principmallen version anges första gången du skapar och sparar certifikatmallen. Om du inte skapade certifikatmallen sätt går det inte att ändra den till rätt version.
+7. På fliken kompatibilitet under certifikatutfärdare väljer du Windows Server 2008. Välj Windows 8.1 och Windows Server 2012 R2 under certifikatmottagare. Mallversion version anges för första gången du skapar och sparar certifikatmallen. Om du inte skapade certifikatmallen på så sätt går det inte att ändra den till rätt version.
 
    > [!NOTE]
    >  Det här steget är viktigt eftersom det gör att du har en version 3 (eller högre) certifikatmall. Endast version 3 mallar fungerar med appen för certifikathantering.
@@ -79,7 +79,7 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
 1.  Logga in på CM-portalen som en användare med administratörsbehörighet.
 
-2.  Gå till Administration &gt; hantera profilmallar. Kontrollera att kryssrutan är markerad bredvid **MIM CM exempel smartkortsinloggning Profilmall** och klicka sedan på Kopiera en markerad Profilmall.
+2.  Gå till Administration &gt; hantera profilmallar. Kontrollera att rutan är ikryssad bredvid **MIM CM exempellogg smartkort på Profilmall** och klicka sedan på Kopiera en markerad Profilmall.
 
 3.  Skriv in profilmallens namn och klicka på **OK**.
 
@@ -97,11 +97,11 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
 10. I den vänstra rutan klickar du på **Förnya princip &gt; Ändra allmänna inställningar**. Välj **Återanvänd kort vid förnyelse** och klicka på **OK**.
 
-11. Du måste inaktivera datainsamlingsobjekt för varje princip genom att klicka på principen i den vänstra rutan. Sedan måste du markera kryssrutan bredvid **exempeldataobjekt** klickar du på **ta bort datainsamlingsobjekt** och klicka sedan på **OK**.
+11. Du måste inaktivera datainsamlingsobjekt för varje princip genom att klicka på principen i den vänstra rutan. Du måste du markera kryssrutan bredvid **exempeldataobjekt** klickar du på **ta bort datainsamlingsobjekt** och klicka sedan på **OK**.
 
 ## <a name="prepare-the-cm-app-for-deployment"></a>Förbereda CM-appen för distribution
 
-1. Kör följande kommando för att packa upp appen i Kommandotolken. Kommandot kommer extrahera innehållet i en ny undermapp med namnet appx och skapa en kopia så att du inte ändrar den ursprungliga filen.
+1. I Kommandotolken kör du följande kommando för att packa upp appen. Kommandot extraheras innehållet i en ny undermapp med namnet appx och skapa en kopia så att du inte ändrar den ursprungliga filen.
 
     ```cmd
     makeappx unpack /l /p <app package name>.appx /d ./appx
@@ -117,7 +117,7 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
    |                     |                                                                                                                                                                                                          |
    |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    |      URL för MIMCM      |                                              FQDN för portalen som du använde för att konfigurera CM. Till exempel https://mimcmServerAddress/certificatemanagement                                              |
-   |      URL för ADFS       | Ange URL:en för din AD FS om du tänker använda AD FS. Till exempel <https://adfsServerSame/adfs> </br> Om AD FS inte används kan du konfigurera den här inställningen med en tom sträng.  Till exempel  ```<ADFS URL=""/>``` |
+   |      URL för ADFS       | Ange URL:en för din AD FS om du tänker använda AD FS. Till exempel <https://adfsServerSame/adfs> </br> Om AD FS inte används kan du konfigurera den här inställningen med en tom sträng.  Exempel:  ```<ADFS URL=""/>``` |
    |     PrivacyUrl      |                                         Du kan inkludera en webbadress till en sida som förklarar hanteringen av användarinformation som samlas in för certifikatregistrering.                                          |
    |     SupportMail     |                                                                           Du kan ange en e-postadress för supportfrågor.                                                                           |
    | LobComplianceEnable |                                                                     Du kan ställa in den här variabeln på sant eller falskt. Som standard är den inställd på sant.                                                                      |
@@ -125,7 +125,7 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
    |      NonAdmin       |           Du kan ställa in den här variabeln på sant eller falskt. Som standard är den inställd på falskt. Ändra bara det här om du vill att användare som inte är administratörer på sina datorer ska kunna registrera och förnya certifikat.            |
 
    > [!IMPORTANT]
-   > Ett värde måste anges för AD FS-URL. Om inget värde har angetts för Modern App kommer fel ut på första användningen.
+   > Ett värde måste anges för AD FS-URL. Om inget värde har angetts på moderna appar kommer fel ut på första användning.
 4. Spara filen och avsluta redigeraren.
 
 5. Vid signeringen av paketet skapas en signeringsfil, så du måste ta bort den ursprungliga signeringsfilen med namnet AppxSignature.p7x.
@@ -257,7 +257,7 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
     - serverFQDN kan endast vara MIMCM-serverns fullständiga datornamn.
 
-    - Hjälp med den **ConfigureMIimCMClientAndRelyingParty.ps1** skript, kör: </br> 
+    - Om du behöver hjälp med den **ConfigureMIimCMClientAndRelyingParty.ps1** skriptet som körs: </br> 
       ```Powershell
       get-help  -detailed ConfigureMimCMClientAndRelyingParty.ps1
       ```
@@ -268,5 +268,5 @@ När du konfigurerar CM-appen hämtar du filen MIMDMModernApp_&lt;version&gt;_An
 
 ## <a name="next-steps"></a>Nästa steg
 
-- [Konfigurera Profilmallar](https://technet.microsoft.com/library/cc708656)
+- [Konfigurationsprofilmallar](https://technet.microsoft.com/library/cc708656)
 - [Hantera program för smartkort](https://technet.microsoft.com/library/cc708681)

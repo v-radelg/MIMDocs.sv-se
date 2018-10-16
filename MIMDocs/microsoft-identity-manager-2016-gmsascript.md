@@ -1,26 +1,26 @@
 ---
-title: Uppdaterar MIM specifika tjänster konton för meddelanden och godkännanden när gMSA aktiveras | Microsoft Docs
-description: Avsnitt som beskriver de grundläggande stegen för att konfigurera gMSA.
+title: Uppdaterar MIM specifika tjänster konton för meddelandet och godkännanden när gMSA aktiveras | Microsoft Docs
+description: Avsnittet som beskriver de grundläggande stegen för att konfigurera gMSA.
 author: fimguy
 ms.author: billmath
 manager: mtillman
 ms.date: 06/27/2018
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
-ms.openlocfilehash: cc33293c0a836f9e5118fc372abc5d96c1a5373d
-ms.sourcegitcommit: c6cb2556bb9f2256b959a3c95db7ca5bbfc2b437
+ms.openlocfilehash: d989f9dc3a3b1dbde8290c2b4588a9beb8142949
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37065180"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49333266"
 ---
-# <a name="update-of-mim-specific-service-account-for-notifications-to-gmsa"></a>Uppdatering av MIM specifikt tjänstekonto för meddelanden till gMSA
+# <a name="update-of-mim-specific-service-account-for-notifications-to-gmsa"></a>Uppdatering för specifika MIM-tjänst-meddelanden till gMSA-kontot
 ===========================================
 
-Lösenordet som ska lagras konton under uppdateras powershell så att kunder inte behöver köra ändra läge
+Uppdatera lösenordet för att lagras konton, nedan är powershell så att kunder inte behöver köra ändra läge
 
-PowerShell: Uppdatering av Office365:
+PowerShell: Uppdatering för Office 365-konto:
 
 ```powershell
 #O365update.ps1

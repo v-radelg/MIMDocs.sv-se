@@ -6,15 +6,15 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 01/17/2018
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: 5325fce2-ae35-45b0-9c1a-ad8b592fcd07
-ms.openlocfilehash: 9515d17767a75b349b0d3150fb90c136c478baa2
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: 150e850e9184fef189b00e6aee3fab50939f47b9
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36289854"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49332824"
 ---
 # <a name="step-7--elevate-a-users-access"></a>Steg 7 – Utöka en användares behörighet
 
@@ -37,7 +37,7 @@ Utan utökad behörighet kan Lisa inte komma åt den privilegierade resursen i C
 ## <a name="request-privileged-access-from-mim"></a>Begär privilegierad åtkomst från MIM.
 
 > [!NOTE]
-> Det rekommenderas att en privilegierad workstation(PAW) på arbetsstationen.  Mer information finns i [PAW](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations).
+> Vi rekommenderar att en privilegierad workstation(PAW) på arbetsstationen.  Mer information finns i [PAW](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations).
 
 1. På PRIVWKSTN, logga in som PRIV\priv.jen.
 2. Klicka på **starta**, **kör**, och ange **PowerShell.exe**.

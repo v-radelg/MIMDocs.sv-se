@@ -7,17 +7,17 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 05/01/2018
 ms.topic: get-started-article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 2585e9c5-ce34-46c7-bdcf-8c08773901dc
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: c68b33b2ff28d75b6f4e63fa8caf0c87727a5927
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: 0c6f980aea883ef4e76b9a21e4492c4c21532b9f
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36289405"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49332875"
 ---
 # <a name="install-mim-2016-mim-synchronization-service"></a>Installera MIM 2016: MIM-synkroniseringstjänsten
 
@@ -29,18 +29,18 @@ ms.locfileid: "36289405"
 > I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
 > - Domänkontrollantens namn - **corpdc**
 > - Domännamn – **contoso**
-> - MIM-tjänsten Server name - **corpservice**
+> - MIM-Tjänstserverns name - **corpservice**
 > - Servernamnet för MIM Sync - **corpsync**
 > - Namnet på SQL Server - **corpsql**
 > - Lösenord – <strong>Pass@word1</strong>
 
 För att kunna installera Microsoft Identity Manager 2016-komponenterna måste du först installera installationspaketet.
 
-1. Logga in som *contoso\miminstall* till servern som du använder för server för Identitetshantering synkroniseringen **corpsync**.
+1. Logga in som *contoso\miminstall* till servern som du använder för server för Identitetshantering synkroniseringsomfattning **corpsync**.
 
 2. Packa upp installationspaketet MIM eller starta MIM-DVD:n.
 
-## <a name="install-mim-2016-sp1-synchronization-service"></a>Installera MIM 2016-synkroniseringstjänsten med SP1
+## <a name="install-mim-2016-sp1-synchronization-service"></a>Installera synkroniseringstjänsten för MIM 2016 SP1
 
 1. Packa upp MIM-installationsmappen och navigera till mappen **Synkroniseringstjänst**.
 

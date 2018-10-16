@@ -7,17 +7,17 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 09/13/2017
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: bfc7cb64-60c7-4e35-b36a-bbe73b99444b
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 16ad83ab9a0fbe2b93428cf318b5ef138e2f3783
-ms.sourcegitcommit: 2be26acadf35194293cef4310950e121653d2714
+ms.openlocfilehash: b4f31a3b998e25992a6549e8db43f3f1f62a14f6
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/14/2017
-ms.locfileid: "22052424"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49334150"
 ---
 # <a name="planning-a-bastion-environment"></a>Planera en skyddsmiljö
 
@@ -245,7 +245,7 @@ Om målet med hanteringen av privilegierad åtkomst är att minska antalet konto
 
 ### <a name="7-update-permissions-in-the-bastion-environment"></a>7. Uppdatera behörigheter i skyddsmiljön
 
-Granska behörigheterna i objektet *AdminSDHolder* i systembehållaren i den domänen. Objektet *AdminSDHolder* har en unik åtkomstkontrollista (ACL) som används till att kontrollera behörigheterna för säkerhetsobjekt som är medlemmar i inbyggda privilegierade Active Directory-grupper. Observera om det har gjorts ändringar i standardbehörigheterna som påverkar användare med administratörsbehörighet i domänen, eftersom de behörigheterna inte gäller för användare vars konton finns i skyddsmiljön.
+Granska behörigheterna i objektet *AdminSDHolder* i systemcontainern i den domänen. Objektet *AdminSDHolder* har en unik åtkomstkontrollista (ACL) som används till att kontrollera behörigheterna för säkerhetsobjekt som är medlemmar i inbyggda privilegierade Active Directory-grupper. Observera om det har gjorts ändringar i standardbehörigheterna som påverkar användare med administratörsbehörighet i domänen, eftersom de behörigheterna inte gäller för användare vars konton finns i skyddsmiljön.
 
 ## <a name="select-users-and-groups-for-inclusion"></a>Välja användare och grupper som ska ingå
 

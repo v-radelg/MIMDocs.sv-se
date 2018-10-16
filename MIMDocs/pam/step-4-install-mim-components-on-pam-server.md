@@ -7,18 +7,18 @@ ms.author: barclayn
 manager: barclayn
 ms.date: 09/13/2017
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: active-directory-domain-services
 ms.assetid: ef605496-7ed7-40f4-9475-5e4db4857b4f
 ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 81fe10b8fbf8ada08983c4bf3c58f85215cf1d66
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: 3f5ee3e2a6bdbd1ab203ffcf406b4ca3b991b6f5
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36290041"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49334014"
 ---
 # <a name="step-4--install-mim-components-on-pam-server-and-workstation"></a>Steg 4 – installera MIM-komponenter på PAM-servern och arbetsstationen
 
@@ -60,7 +60,7 @@ Följ riktlinjerna i installationsprogrammet och slutför installationen.
 
 7. Ange *PAMSRV* som MIM-tjänstens serveradress.
 
-8. Ange *http://pamsrv.priv.contoso.local:82* som SharePoint-webbplatssamlingen.
+8. Ange *http://pamsrv.priv.contoso.local:82* som SharePoint site URL: en samling.
 
 9. Lämna Registrering av portal-URL tomt.
 
@@ -164,7 +164,7 @@ I det här avsnittet ska du installera och konfigurera exempelwebbappen för RES
    iisreset
    ```
 
-7. (Valfritt) Kontrollera att användaren kan autentiseras för REST-API:t. Öppna en webbläsare som administratör på PAMSRV.  Gå till webbplatsens URL http://pamsrv.priv.contoso.local:8086/api/pamresources/pamroles/, autentisera om det behövs och kontrollera att en nedladdning sker.
+7. (Valfritt) Kontrollera att användaren kan autentiseras för REST-API:t. Öppna en webbläsare som administratör på PAMSRV.  Gå till webbplats-URL http://pamsrv.priv.contoso.local:8086/api/pamresources/pamroles/, autentisera om det behövs och se till att en nedladdning sker.
 
 ## <a name="install-the-mim-pam-requestor-cmdlets"></a>Installera MIM PAM-cmdletarna för begärande
 

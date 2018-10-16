@@ -7,17 +7,17 @@ ms.author: barclayn
 manager: mbaldwin
 ms.date: 10/12/2017
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: 735dc357-dfba-4f68-a5b3-d66d6c018803
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: f67068709cf9910fa04110fce75623fd2f94ca4a
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: f59b40f79c58ea5e34fbe090ac9c4a224c561654
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36289820"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49333283"
 ---
 # <a name="topology-considerations"></a>Topologiöverväganden
 Du kan distribuera Microsoft Identity Manager (MIM)-komponenter på en och samma server eller på flera servrar i flera olika konfigurationer. Vilken topologi du väljer för din distribution påverkar vilken prestanda du kan få ut från MIM. Denna artikel presenterar flera olika topologier som du kan överväga att implementera.

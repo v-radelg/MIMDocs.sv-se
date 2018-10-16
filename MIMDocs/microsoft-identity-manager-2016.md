@@ -7,17 +7,17 @@ ms.author: billmath
 manager: mtillman
 ms.date: 05/02/2018
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ccdd8a9f-02da-440a-81a8-354800dcd2a8
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: bd483ecb0abc3e4bb4444c87715971a3fba9820b
-ms.sourcegitcommit: 5405ed10fea6f50b711eca1153446c04d4faff7a
+ms.openlocfilehash: de00cc6da8c431519c9bdef3a2e97a8333cbb4ac
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36927195"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49332297"
 ---
 # <a name="microsoft-identity-manager-2016"></a>Microsoft Identity Manager 2016
 
@@ -26,16 +26,16 @@ Microsoft Identity Manager (MIM) 2016 bygger på funktionerna för identitets- o
 Förutom befintliga identity management-funktioner som ingår i [FIM](https://technet.microsoft.com/library/jj133868). MIM 2016 innehåller nya funktioner och förbättringar som:
 
 - Privileged Identity Management
-- Nya funktioner i Certifikathanteraren
+- Nya funktioner i certifikathantering
   - [Referens för certifikathanterings-REST API](./reference/certificate-management-rest-api-reference.md)
   - Stöd för topologier med flera skogar.
-  - [En Windows-app för virtuella smartkort](working-with-mim-certificate-manager.md)
+  - [En Windows-app för det virtuella smartkortet](working-with-mim-certificate-manager.md)
   - Uppdaterade händelser samt funktioner för felsökning. 
-- [Självbetjäningsscenarierna](working-with-self-service-password-reset.md) innehåller nu Account Unlock och Azure MFA () flerfaktorautentiseringsgate för återställning av lösenord.
+- [Självbetjäningsscenarier](working-with-self-service-password-reset.md) omfattar nu Kontoupplåsning och Azure MFA (multifaktorautentisering)-gate för återställning av lösenord.
 
 ## <a name="hybrid-experience"></a>Hybridupplevelse
 
-Microsoft Identity Manager 2016 fungerar tillsammans med [Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-whatis) för att ge dig kontroll över hela miljön. Med hybridrapportering i Azure AD får du dina lokala data och dina data från molnet på en och samma plats. Dessutom den [lösenordsåterställning för Self Service portal](working-with-self-service-password-reset.md) stöder Azure multifaktorautentisering (MFA).
+Microsoft Identity Manager 2016 fungerar tillsammans med [Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-whatis) för att ge dig kontroll över hela miljön. Med hybridrapportering i Azure AD får du dina lokala data och dina data från molnet på en och samma plats. Dessutom den [Self Service för lösenordsåterställning](working-with-self-service-password-reset.md) stöder Azure multifaktorautentisering (MFA).
 
 ## <a name="privileged-identity-management"></a>Privileged Identity Management
 

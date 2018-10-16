@@ -1,56 +1,56 @@
 ---
-title: BHOLD attestering installation | Microsoft Docs
-description: BHOLD attestering modulen kan du ange granskare och utföra granskningar
+title: Installation av BHOLD-attestering | Microsoft Docs
+description: BHOLD-attestering modulen kan du ange granskare och utföra granskningar
 keywords: ''
 author: barclayn
 ms.author: barclayn
 manager: mbaldwin
 ms.date: 09/07/2017
 ms.topic: article
-ms.service: microsoft-identity-manager
+ms.prod: microsoft-identity-manager
 ms.technology: security
 ms.assetid: ''
-ms.openlocfilehash: 6838355c05f7c19436d8a83839044ea5f4e2533d
-ms.sourcegitcommit: 35f2989dc007336422c58a6a94e304fa84d1bcb6
+ms.openlocfilehash: 45b650c726ddf423bb6ebc5ec34d4a57e41bb82e
+ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36290347"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49334133"
 ---
-# <a name="bhold-attestation-installation"></a>BHOLD attestering installation
+# <a name="bhold-attestation-installation"></a>Installation av BHOLD-attestering
 
-Attesteringen av BHOLD-modulen kan du ange granskare och utför återkommande granskning av relationerna mellan användare och per program behörigheter och konton.
+BHOLD-attestering modulen kan du ange granskare och utföra återkommande granskningar av relationerna mellan användare och per programbehörigheter och konton.
 
-## <a name="bhold-attestation-installation-requirements"></a>BHOLD attestering installationskrav
+## <a name="bhold-attestation-installation-requirements"></a>Installationskrav för BHOLD-attestering
 
-Innan du installerar modulen BHOLD attestering, måste du installera modulen BHOLD kärnor på den server som du tänker installera modulen BHOLD attestering. Information om hur du installerar BHOLD-kärnmodul finns [BHOLD-kärninstallation](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). Eftersom e-postmeddelandet BHOLD attestering modulen kontakter skickar meddelanden till användare, måste din miljö ha en SMTP Simple Mail Transfer Protocol () e-postserver, till exempel Microsoft Exchange Server.
+Innan du installerar modulen BHOLD-attestering måste du installera BHOLD-Core-modul på den server där du planerar att installera modulen BHOLD-attestering. Mer information om installation av BHOLD-kärnmodul, finns i [Core-Installation av BHOLD](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). Eftersom e-postmeddelandet BHOLD-attestering modulen kontakter skickar meddelanden till användare, måste din miljö ha en Simple Mail Transfer Protocol (SMTP) e-postserver, till exempel Microsoft Exchange Server.
 
 > [!IMPORTANT]
-> Om du installerar både BHOLD rapportering och BHOLD attestering, måste du installera Reporting BHOLD för innan du installerar BHOLD attestering.
+> Om du installerar både BHOLD-rapportering och BHOLD-attestering måste du installera BHOLD-rapportering för innan du installerar BHOLD-attestering.
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
-Innan du börjar installera modulen BHOLD attestering, måste förberedas för att ange information som installationsguiden BHOLD attestering krävs för att slutföra installationen. Följande kalkylblad hjälper dig att registrera informationen så att du är redo att leverera den när det behövs.
+Innan du börjar att installera modulen BHOLD-attestering måste förberedas för att ange information som installationsguiden för BHOLD-attestering krävs för att slutföra installationen. Följande kalkylblad beskriver hur du registrerar du den informationen så att du är redo att ange det när det behövs.
 
-| **Objektet**                                    | **Beskrivning**                                                                                                                                                                                                           | **Värde**                                                                                                                                                                                                                                                                                                            |
+| **Objekt**                                    | **Beskrivning**                                                                                                                                                                                                           | **Värde**                                                                                                                                                                                                                                                                                                            |
 |---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Använda Security Provider på domänen/dator** | Anger att Active Directory Domain Services-säkerhet kommer att styra åtkomsten till BHOLD-kärna.                                                                                                                | Markera kryssrutan. **Viktigt:** installationen misslyckas om den här kryssrutan är avmarkerad.                                                                                                                                                                                                                   |
-| **Domän**                                  | Anger den domän som innehåller det tjänstkonto som du skapade när du installerar BHOLD kärnor. Mer information finns i [BHOLD-kärninstallation](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | Domännamnet anges automatiskt av guiden. Ändra namnet endast om den är felaktig. **Viktigt:** ange domännamnet genom att använda NetBIOS (korta)-namn, inte det fullständigt kvalificerade domännamnet (FQDN). Till exempel om FQDN för domänen är fabrikam.com, ange namnet på en domän som FABRIKAM. |
-| **Användare**                                    | Anger användarkontot för BHOLD Core inloggningsnamn.                                                                                                                                                          | Skriv namnet på användarkontot här:                                                                                                                                                                                                                                                                                    |
+| **Använd säkerhetsprovider på domän/datorn** | Anger att Active Directory Domain Services-säkerhet ska styra åtkomst till BHOLD-kärna.                                                                                                                | Markera kryssrutan. **Viktigt:** installationen misslyckas om den här kryssrutan är avmarkerad.                                                                                                                                                                                                                   |
+| **Domän**                                  | Anger domänen som innehåller det tjänstkonto som du skapade när du installerar BHOLD-kärna. Mer information finns i [Core-Installation av BHOLD](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | Domännamnet anges automatiskt av guiden. Ändra namnet endast om det är felaktigt. **Viktigt:** ange domännamnet genom att använda NetBIOS (kort)-namn, inte det fullständigt kvalificerade domännamnet (FQDN). Till exempel om det fullständiga Domännamnet för domänen fabrikam.com, ange domännamnet som FABRIKAM. |
+| **Användare**                                    | Logga in namnet på användarkontot för BHOLD-kärna.                                                                                                                                                          | Skriv namnet på användarkontot här:                                                                                                                                                                                                                                                                                    |
 | **Lösenord**                                | Anger lösenordet för tjänstkontot för användaren.                                                                                                                                                                       | Skriv lösenordet här: **viktigt:** se till att det här lösenordet i en dold, säker plats.                                                                                                                                                                                                                  |
 
-## <a name="bhold-attestation-installation"></a>Attesteringen av BHOLD-installation
+## <a name="bhold-attestation-installation"></a>Installation av BHOLD-attestering
 
-Logga in som medlem i gruppen Domänadministratörer om du vill installera modulen BHOLD attestering, hämta följande fil och köra den som administratör på den server som du tänker installera modulen BHOLD attestering på:
+För att installera modulen BHOLD-attestering måste logga in som medlem i gruppen Domänadministratörer, hämta följande fil och köra den som administratör på den server som du planerar att installera modulen BHOLD-attestering på:
 
 - BholdAttestation<em>\<Version\></em>\_Release.msi
 
-Ersätt *\<Version\>* med versionsnumret för attestering av BHOLD-versionen som du installerar.
+Ersätt *\<Version\>* med versionsnumret för BHOLD-attestering versionen som du installerar.
 
-För att köra programfilen som administratör, högerklicka på filen och klicka sedan på **kör som administratör**.
+Om du vill köra programfilen som administratör, högerklicka på filen och klicka sedan på **kör som administratör**.
 
 ## <a name="next-steps"></a>Nästa steg
 
-- [BHOLD-installationsguiden](bhold-installation-guide.md)
+- [BHOLD-installationsguide](bhold-installation-guide.md)
 - [Referens för BHOLD-utvecklare](../reference/mim2016-bhold-developer-reference.md)
 - [BHOLD-versionshistorik](../reference/version-bhold-history.md)
