@@ -1,19 +1,18 @@
 ---
 title: Konvertering av MIM specifika tjänster till gMSA | Microsoft Docs
 description: Avsnittet som beskriver de grundläggande stegen för att konfigurera gMSA.
-author: fimguy
+author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 06/27/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.technology: security
-ms.openlocfilehash: d719b771e8db514d45b15c21b60460cc821e872e
-ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
+ms.openlocfilehash: d3c0b6677c42d4f14d4f6255a2a661d3ef23661d
+ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49333232"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49358303"
 ---
 # <a name="conversion-of-mim-specific-services-to-gmsa"></a>Konvertering av MIM specifika tjänster till gMSA
 

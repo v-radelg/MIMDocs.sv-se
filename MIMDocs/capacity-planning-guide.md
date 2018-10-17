@@ -3,21 +3,20 @@ title: Guide för kapacitetsplanering | Microsoft Docs
 description: Den här guiden hjälper dig att förstå de variabler du bör tänka på innan du distribuerar MIM 2016, inklusive belastningsnivåer och policybeslut.
 keywords: ''
 author: billmath
-ms.author: barclayn
-manager: mbaldwin
+ms.author: billmath
+manager: mtillman
 ms.date: 10/12/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.technology: security
 ms.assetid: 3ac5b990-1678-4996-996d-cbd84b8426b4
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 5a54cd60f8ccee51d3bdb9cdb4770ff659afe854
-ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
+ms.openlocfilehash: 7df93a0a24aee886ec4d07ee2894d93a91606fa0
+ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49333810"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49358401"
 ---
 # <a name="capacity-planning-guide"></a>Guide för kapacitetsplanering
 

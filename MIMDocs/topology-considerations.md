@@ -3,21 +3,20 @@ title: Topologiguide för distribution | Microsoft Docs
 description: Förstå komponenterna i MIM 2016 och få förslag på hur du kan distribuera dem i din miljö.
 keywords: ''
 author: billmath
-ms.author: barclayn
-manager: mbaldwin
+ms.author: billmath
+manager: mtillman
 ms.date: 10/12/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.technology: security
 ms.assetid: 735dc357-dfba-4f68-a5b3-d66d6c018803
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: f59b40f79c58ea5e34fbe090ac9c4a224c561654
-ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
+ms.openlocfilehash: 42562e92b3fe0daa63110d33d8952a3a1fc3de17
+ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49333283"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49358088"
 ---
 # <a name="topology-considerations"></a>Topologiöverväganden
 Du kan distribuera Microsoft Identity Manager (MIM)-komponenter på en och samma server eller på flera servrar i flera olika konfigurationer. Vilken topologi du väljer för din distribution påverkar vilken prestanda du kan få ut från MIM. Denna artikel presenterar flera olika topologier som du kan överväga att implementera.
