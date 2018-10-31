@@ -2,25 +2,24 @@
 title: Distribuera MIM Privileged Access Management med Windows Server 2016 | Microsoft Docs
 description: Lär dig mer om hur du distribuerar Privileged Access Management med server 2016
 keywords: ''
-author: barclayn
-ms.author: barclayn
-manager: mbaldwin
+author: billmath
+ms.author: billmath
+manager: mtillman
 ms.date: 08/18/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.technology: active-directory-domain-services
 ms.assetid: ''
-ms.openlocfilehash: fca3ed1b37a1cc3bf9833c2de4d606845867d5d8
-ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
+ms.openlocfilehash: 347eda5872792872a9bb30357c45835303f92e01
+ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49332909"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50379758"
 ---
 # <a name="deploy-mim-pam-with-windows-server-2016"></a>Distribuera MIM PAM med Windows Server 2016
 
 
-I det här scenariot kan MIM 2016 SP1 använda funktioner i Windows Server 2016 som domänkontrollant ”PRIV”-skogen.  När scenariot har konfigurerats tidsbegränsas en användares Kerberos-biljett till den återstående tiden för användarens rollaktivering. 
+I det här scenariot kan MIM 2016 SP1 använda funktioner i Windows Server 2016 som domänkontrollant ”PRIV”-skogen.  När scenariot har konfigurerats tidsbegränsas en användares Kerberos-biljett till den återstående tiden för användarens rollaktivering. 
 
 > [!Note]
 > Tidigare tekniska förhandsvisningar av Windows Server 2016 före teknisk förhandsvisning 5 inte kan användas med den här versionen av MIM.

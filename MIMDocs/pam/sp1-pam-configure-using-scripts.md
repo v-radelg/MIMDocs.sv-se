@@ -2,22 +2,21 @@
 title: Konfigurera PAM med hjälp av skript
 description: Den här artikeln ingår i en serie om att konfigurera PAM med hjälp av skript. Den beskriver hur du ändrar den XML-fil som ska användas av PAM-distributionsskripten.
 keywords: ''
-author: barclayn
-ms.author: barclayn
-manager: MBaldwin
+author: billmath
+ms.author: billmath
+manager: mtillman
 ms.date: 07/20/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: ''
 ms.suite: ems
-ms.openlocfilehash: 3d10d8642694873512e9cc85cc90a75ce45c3361
-ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
+ms.openlocfilehash: 28e8f5c28cd38ad820c6a1f12385dffbd0641ddd
+ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49332975"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50379542"
 ---
 # <a name="configure-pam-using-scripts"></a>Konfigurera PAM med hjälp av skript
 

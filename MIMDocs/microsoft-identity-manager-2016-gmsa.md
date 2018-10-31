@@ -7,12 +7,12 @@ manager: mtillman
 ms.date: 06/27/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: d3c0b6677c42d4f14d4f6255a2a661d3ef23661d
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 63f2509d35355a8fe3a59b173756257298079a92
+ms.sourcegitcommit: 6374aa4f7d58b7218626d36d0fc2dc4b38cb8332
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358303"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50237238"
 ---
 # <a name="conversion-of-mim-specific-services-to-gmsa"></a>Konvertering av MIM specifika tjänster till gMSA
 
@@ -82,9 +82,9 @@ Första steget på din windows-domänkontrollant
 
     -   Leta upp verktyget synkronisering tjänsten Key Management på den Server som synkroniseringstjänsten är installerad på
 
-    -   Som standard den ** Export key set ** har redan valts
+    -   Som standard den **exportera nyckeluppsättning** har redan valts
 
-    -   Klicka på **nästa**
+    -   Klicka på **nästa**
 
     -   Du kommer nu att uppmanas att ange befintliga kontoinformation för synkronisering
 
@@ -96,13 +96,13 @@ Första steget på din windows-domänkontrollant
 
         -   Domän - domän som Synchronization Service-kontot från varandra i
 
-    -   Klicka på **nästa**
+    -   Klicka på **nästa**
 
     -   Om du har angett något felaktigt, får du följande felmeddelande
 
     -   Nu du har angett informationen, visas med ett alternativ för att ändra målsökvägen (plats för exportfilen) av krypteringsnyckeln för säkerhetskopiering
 
-        -   Plats för exportfilen är som standard **C:\\Windows\\system32**\\miiskeys 1.bin.
+        -   Plats för exportfilen är som standard **C:\\Windows\\system32**\\miiskeys 1.bin.
 
 4. Installera synkroniseringstjänsten för Microsoft Identity Manager SP1 build 4.4.1302.0. Du hittar på Volume License Download Center eller hämta MSDN-webbplatsen. När du har slutfört installationen kan du se till att, sparar du keyset miiskeys.bin.
 
@@ -152,7 +152,7 @@ Första steget på din windows-domänkontrollant
 
 ![](media/0201f0281325c80eb70f91cbf0ac4d5b.jpg)
 
-3.  **OBS**.  Kända problem som tjänster som använder de hanterade kontona som låser sig efter omstart av servern på grund av Microsoft Key Distribution Service har inte startats efter omstart i Windows. Det gick inte att starta tjänsten och Windows kunde inte startas för. Problemet är reproducerbar minst på Windows Server 2012 R2. Lösning för det här problemet är att köra kommandot 
+3.  **OBS**.  Kända problem som tjänster som använder de hanterade kontona som låser sig efter omstart av servern på grund av Microsoft Key Distribution Service har inte startats efter omstart i Windows. Det gick inte att starta tjänsten och Windows kunde inte startas för. Problemet är reproducerbar minst på Windows Server 2012 R2. Lösning för det här problemet är att köra kommandot 
 
 -   **SC triggerinfo kdssvc start/networkon**
 

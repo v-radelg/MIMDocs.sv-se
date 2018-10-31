@@ -9,14 +9,13 @@ manager: mtillman
 ms.date: 07/06/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.technology: active-directory-domain-services
 ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
-ms.openlocfilehash: 10c8d4246122daa507d79a3f2e26e945c6ab5709
-ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
+ms.openlocfilehash: 9cb1e37f966db5c663694aaccd71f2b4c799dd4b
+ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49333733"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50379947"
 ---
 # <a name="using-azure-mfa-for-activation"></a>Aktivera med hjälp av Azure MFA
 > [!IMPORTANT]
@@ -43,7 +42,7 @@ För att kunna använda Azure MFA med MIM behöver du:
 
 ## <a name="creating-an-azure-mfa-provider"></a>Skapa en Azure MFA-leverantör
 
-I det här avsnittet ska ställa du in Azure MFA-leverantören i Microsoft Azure Active Directory.  Om du använder redan Azure MFA, antingen fristående eller konfigurerat med Azure Active Directory Premium, kan du gå vidare till nästa avsnitt.
+I det här avsnittet ska ställa du in Azure MFA-leverantören i Microsoft Azure Active Directory.  Om du använder redan Azure MFA, antingen fristående eller konfigurerat med Azure Active Directory Premium, kan du gå vidare till nästa avsnitt.
 
 1.  Öppna en webbläsare och anslut till den [klassiska Azure-portalen](https://manage.windowsazure.com) som administratör för ett Azure-abonnemang.
 
@@ -71,7 +70,7 @@ Nu genererar du en fil som innehåller de autentiseringsuppgifter som krävs fö
 
 ![Ladda ned SDK:t för Multi-Factor Authentication – skärmbild](media/PAM-Azure-MFA-Activation-Image-1.png)
 
-7.  Kopiera den skapade ZIP-filen till alla system där MIM-tjänsten är installerad. 
+7.  Kopiera den skapade ZIP-filen till alla system där MIM-tjänsten är installerad. 
 
 >[!NOTE]
 > ZIP-filen innehåller nyckeluppgifter som används vid autentisering via Azure MFA-tjänsten.

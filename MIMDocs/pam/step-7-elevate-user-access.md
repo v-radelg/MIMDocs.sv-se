@@ -1,20 +1,19 @@
 ---
 title: Distribuera PAM steg 7 – användaråtkomst | Microsoft Docs
 description: Som ett sista steg kan du ge en privilegierad användare tillfällig åtkomst för att se om distributionen av Privileged Access Management lyckades.
-author: barclayn
-ms.author: barclayn
-manager: mbaldwin
+author: billmath
+ms.author: billmath
+manager: mtillman
 ms.date: 01/17/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.technology: active-directory-domain-services
 ms.assetid: 5325fce2-ae35-45b0-9c1a-ad8b592fcd07
-ms.openlocfilehash: 150e850e9184fef189b00e6aee3fab50939f47b9
-ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
+ms.openlocfilehash: d00eaa284f1d54a1cbe2e0f8b936bbc41c19caea
+ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49332824"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50379627"
 ---
 # <a name="step-7--elevate-a-users-access"></a>Steg 7 – Utöka en användares behörighet
 

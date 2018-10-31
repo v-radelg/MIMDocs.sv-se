@@ -1,23 +1,20 @@
 ---
 title: MIM Service Dynamic Logging (Dynamisk loggning med MIM-tjänsten) | Microsoft Docs
 description: Aktivera dynamisk loggning med MIM-tjänsten utan att behöva starta om hanteringstjänsten
-keywords: ''
-author: fimguy
-ms.author: davidste
-manager: mbaldwin
-ms.date: 06/25/2018
+author: billmath
+ms.author: billmath
+manager: mtillman
+ms.date: 10/29/2018
 ms.topic: article
-ms.prod: microsoft-identity-manager
-ms.technology: active-directory-domain-services
-ms.assetid: ''
-ms.openlocfilehash: ff82b2fce31abe417509347ce7b477dd1b4056f2
-ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
+ms.openlocfilehash: e5d8bcc640ad77b71a515b13bcb3bcf6985654f5
+ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49332345"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50380093"
 ---
 # <a name="mim-sp1-4414360--service-dynamic-logging"></a>Tjänsten MIM SP1 (4.4.1436.0) –  dynamisk loggning
+
 Vi har introducerat en ny loggningsfunktion i 4.4.1436.0. Detta gör det möjligt för administratörer och supporttekniker att aktivera loggning utan att behöva starta om hanteringstjänsten.
 
 När installationen är klar visas följande nya rad i Microsoft.ResourceManagement.Service.exe.config som heter
@@ -55,9 +52,11 @@ Om du vill visa spårningen kan du använda den [visningsverktyget för tjänsts
 
 I bygger 4.5.x.x som vi har ändrat loggningsfunktionen om du vill ange Standardloggning är **”varning”**. Tjänsten skriver meddelanden i två filer (”00” och ”01” index har lagts till innan tillägget). Filerna som finns i ”C:\Program Files\Microsoft Forefront Identity Manager\2010\Service” katalog. När filen är större än maxstorleken skriva startar tjänsten i en annan fil. Om det finns en annan fil, kommer att skrivas över. Maximal standardstorlek för filen är 1 GB. Om du vill ändra Maximal standardstorlek, är det nödvändigt att lägga till **”maxOutputFileSizeKB”** parametern med värdet för maximal filstorlek i KB till lyssnare (se exemplet nedan) och starta om MIM-tjänsten. När tjänsten startas, läggs loggar i nyare fil (om gränsen utrymme överskrids den skriva över den äldsta filen). 
 
-> [!NOTE] Som tjänsten kontrollera filstorleken innan meddelandet skrivs kan storleken på filen vara större än maxstorleken för storleken på ett meddelande. som standard storleken på loggarna kan vara ungefär 6 GB (tre > lyssnare med två filen för en GB storlek).
+> [!NOTE] 
+> Som tjänsten kontrollera filstorleken innan meddelandet skrivs kan storleken på filen vara större än maxstorleken för storleken på ett meddelande. som standard storleken på loggarna kan vara ungefär 6 GB (tre > lyssnare med två filen för en GB storlek).
 
-> [!NOTE] Kontot ska ha behörighet att skriva i > ”C:\Program Files\Microsoft Forefront Identity Manager\2010\Service” > directory. Om kontot inte har sådana rättigheter den > kommer inte att skapa filer.
+> [!NOTE] 
+> Kontot ska ha behörighet att skriva i > ”C:\Program Files\Microsoft Forefront Identity Manager\2010\Service” > directory. Om kontot inte har sådana rättigheter den > kommer inte att skapa filer.
 
 Exempel hur du ställer in maximala filstorleken till 200 MB (200 * 1024 KB) för svclog filer och 100 MB * (100 * 1024 KB) för txt-filer
 

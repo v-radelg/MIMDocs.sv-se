@@ -2,22 +2,21 @@
 title: Steg 6 Konfigurera PAM-förtroendet
 description: Steg 6 i beskrivningen av hur du konfigurerar PAM med hjälp av skript. I det här avsnittet beskrivs hur du konfigurerar det nödvändiga förtroendet mellan företagsdomäner och privata domäner
 keywords: ''
-author: barclayn
-ms.author: barclayn
-manager: MBaldwin
+author: billmath
+ms.author: billmath
+manager: mtillman
 ms.date: 08/18/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.technology: active-directory-domain-services
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: ''
 ms.suite: ems
-ms.openlocfilehash: 635d9f5507732d636224de5efaba51c932031efc
-ms.sourcegitcommit: ace4d997c599215e46566386a1a3d335e991d821
+ms.openlocfilehash: ad1482718693c9ae7004a71334013de68f7c20da
+ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49333062"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50379387"
 ---
 # <a name="step-6-set-up-the-pam-trust"></a>Steg 6 Konfigurera PAM-förtroendet
 
