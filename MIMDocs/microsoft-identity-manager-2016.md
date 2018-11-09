@@ -1,49 +1,49 @@
 ---
-title: Microsoft Identity Manager 2016 | Microsoft Docs
+title: Microsoft Identity Manager | Microsoft Docs
 description: MIM innehåller åtkomsthanteringsfunktioner för FIM 2010 och hjälper dig att hantera användare, autentiseringsuppgifter, principer och åtkomst i din organisation.
 keywords: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 05/02/2018
+ms.date: 11/05/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.assetid: ccdd8a9f-02da-440a-81a8-354800dcd2a8
-ms.reviewer: mwahl
-ms.suite: ems
-ms.openlocfilehash: abbd661fa1bef13ad92b916f8485934390905bf4
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.technology: security
+ms.openlocfilehash: b25819d864f773578ba8aa52217c7b27536b7327
+ms.sourcegitcommit: f73a83f424d7e32b0119e870bc0020c061e966f7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358320"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51265273"
 ---
-# <a name="microsoft-identity-manager-2016"></a>Microsoft Identity Manager 2016
+# <a name="microsoft-identity-manager-2016-news-and-updates"></a>Microsoft Identity Manager 2016 nyheter och uppdateringar
 
-Microsoft Identity Manager (MIM) 2016 bygger på funktionerna för identitets- och åtkomsthantering i [FIM 2010 R2](https://technet.microsoft.com/library/jj133885.aspx). Precis som föregångaren hjälper MIM dig att hantera användare, autentiseringsuppgifter, principer och åtkomst inom din organisation.  I MIM 2016 har man dessutom lagt till en hybridupplevelse, hanteringsfunktioner för privilegierad åtkomst och stöd för nya plattformar.
+Microsoft Identity Manager (MIM) 2016 bygger på identitets- och hanteringsfunktioner i Forefront Identity Manager. Precis som föregångaren hjälper MIM dig att hantera användare, autentiseringsuppgifter, principer och åtkomst inom din organisation.  I MIM 2016 har man dessutom lagt till en hybridupplevelse, hanteringsfunktioner för privilegierad åtkomst och stöd för nya plattformar.
 
-Förutom befintliga identity management-funktioner som ingår i [FIM](https://technet.microsoft.com/library/jj133868). MIM 2016 innehåller nya funktioner och förbättringar som:
+Den aktuella versionen under mainstream-support är MIM 2016 Service Pack 1 (SP1).  Den här versionen i augusti 2017 ingår uppdateringar till MIM-portalen, PAM-scenariot och lagt till stöd för nya plattformar.  Kunder som kör FIM eller MIM-versioner före MIM 2016 SP1 bör uppgradera till MIM 2016 SP1 eller en senare snabbkorrigering.  Läs mer om [uppgradering till MIM 2016 SP1](microsoft-identity-manager-2016-sp1-release-notes.md).
 
-- Privileged Identity Management
-- Nya funktioner i certifikathantering
-  - [Referens för certifikathanterings-REST API](./reference/certificate-management-rest-api-reference.md)
-  - Stöd för topologier med flera skogar.
-  - [En Windows-app för det virtuella smartkortet](working-with-mim-certificate-manager.md)
-  - Uppdaterade händelser samt funktioner för felsökning. 
-- [Självbetjäningsscenarier](working-with-self-service-password-reset.md) omfattar nu Kontoupplåsning och Azure MFA (multifaktorautentisering)-gate för återställning av lösenord.
+## <a name="updates-since-mim-2016-sp1"></a>Uppdateringar efter MIM 2016 SP1
 
-## <a name="hybrid-experience"></a>Hybridupplevelse
+Microsoft levererar regelbundet uppdateringar till MIM, inklusive förbättringar för kundernas önskemål och felkorrigeringar under en pågående versionen cykel.
 
-Microsoft Identity Manager 2016 fungerar tillsammans med [Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-whatis) för att ge dig kontroll över hela miljön. Med hybridrapportering i Azure AD får du dina lokala data och dina data från molnet på en och samma plats. Dessutom den [Self Service för lösenordsåterställning](working-with-self-service-password-reset.md) stöder Azure multifaktorautentisering (MFA).
+### <a name="major-new-and-updated-scenarios"></a>Viktiga scenarier för nya och uppdaterade
 
-## <a name="privileged-identity-management"></a>Privileged Identity Management
+- [Azure AD B2B-samarbete med MIM- och Azure Application proxy är en förhandsversion](microsoft-identity-manager-2016-graph-b2b-scenario.md), senast uppdaterad April 2018
+- [Hybridrapportering i MIM är](https://cloudblogs.microsoft.com/enterprisemobility/2018/02/23/hybrid-mim-reporting-now-available-in-azure-active-directory/), senast uppdaterad februari 2018
+- [MIM föråldrad funktionslistan ändrat](microsoft-identity-manager-2016-deprecated-features.md), senast uppdaterad februari 2018
 
-Privileged Identity Management styr och hanterar administrativ åtkomst genom att tillhandahålla tillfällig och uppgiftsbaserad åtkomst till känsliga resurser. Det innebär att du bara behöver ge användare så mycket behörighet som krävs, vilket minskar risken för att en cyberangripare får fullständig administrativ åtkomst. Dessutom extraherar och isolerar Privileged Identity Management administrativa konton från befintliga Active Directory-skogar.
+### <a name="recent-software-releases"></a>Senaste programversioner
 
-MIM har stöd för en lokal Privileged Identity Management-lösning för hantering av Active Directory. Kom igång genom att [använda Privileged Access Management](./pam/privileged-identity-management-for-active-directory-domain-services.md).
+- [MIM-anslutningens släpper](./reference/microsoft-identity-manager-2016-connector-version-history.md), senast uppdaterad mars 2018
+- [MIM-synkronisering, tjänst, Portal, CM, tillägg och klienten släpper](./reference/version-history.md) senast uppdaterad November 2017
+- [MIM BHOLD-moduler släpper](./reference/version-bhold-history.md) senast uppdaterad September 2017
+
+
+
 
 ## <a name="related-topics"></a>Närliggande information
 
-- Microsoft Identity Manager har fortfarande mycket gemensamt med föregångaren Forefront Identity Manager. Om du fortfarande använder FIM, eller om du vill få tillgång till ytterligare dokumentation, kan du ta en titt på [dokumentationsöversikten för FIM 2010 R2](https://technet.microsoft.com/library/jj133885.aspx).
-- [Topologiöverväganden för distribution av MIM](topology-considerations.md) denna artikel presenterar flera olika topologier som du kan överväga att implementera.
-- [Guide för kapacitetsplanering](capacity-planning-guide.md) du kan använda den här guiden, tillsammans med testmiljöerna, för att förstå lämplig omfattning för distributionen.
+Lär dig mer om scenarier har lagts till i MIM 2016 och tidigare på [Microsoft Identity manager 2016](microsoft-identity-manager-2016.md).
+
+Läs mer dokumentation om hur du distribuerar MIM och den senaste versionen på den [MIM Dokumentationsöversikten](https://docs.microsoft.com/en-us/microsoft-identity-manager/).
+
