@@ -12,12 +12,12 @@ ms.assetid: 4978f60d-044d-4e84-8d93-65801fce1144
 ms.reviewer: ''
 ms.suite: ems
 ms.custom: mim
-ms.openlocfilehash: 0501dbeb279dc37655d1d9a5e99545b07eea0623
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 077a0330e3a9169583331854525d19cee2d9eaf4
+ms.sourcegitcommit: 3b514aba69af203f176b40cdb7c2a51c477c944a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358694"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51718324"
 ---
 # <a name="supported-platforms-for-mim-2016"></a>Plattformar som stöds för MIM 2016
 
@@ -47,7 +47,7 @@ I den här tabellen beskrivs de plattformar som stöds och versionen för respek
 | **MIM-portalerna för återställning och registrering av lösenord** | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 <br/> Windows Server 2016 * |
 | | Webbläsare | Alla större webbläsare som stöds |
 | **MIM-tillägg** | Windows | Windows 7<br/>Windows 8<br/>Windows 8,1<br/>Windows 10 |
-| | Outlook-integrering (valfritt) | Outlook 2010<br/>Outlook 2013 <br/> Outlook 2016 (i Windows 10) * |
+| | Outlook-integrering (valfritt) | Outlook 2010 (på Windows, utom Klicka och kör)<br/>Outlook 2013 (på Windows, utom Klicka och kör) <br/> Outlook 2016 (i Windows 10, utom Klicka och kör) * |
 | | PAM PowerShells begärande-cmdlet:ar (valfritt) | Windows 8,1<br/>Windows 10 |
 | **Certifikathantering i MIM** (server och integrering med certifikatutfärdare (CA)) | Windows Server | Windows Server 2008 R2 SP1<br/>Windows Server 2012 R2 <br/> Windows Server 2016 * |
 | | Certifikatutfärdare | Windows Server 2008 R2 SP1<br/>Windows Server 2012<br/>Windows Server 2012 R2 <br/> Windows Server 2016 * |

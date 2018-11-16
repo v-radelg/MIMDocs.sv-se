@@ -11,14 +11,14 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 49e549913a5fd87528df2205b8d5b0a83f3d2b24
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: a0fa1e837fd73872043748ee73f19a29d1d1412f
+ms.sourcegitcommit: 3b514aba69af203f176b40cdb7c2a51c477c944a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358252"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51718333"
 ---
-# <a name="set-up-an-identity-management-servers-windows-server-2016"></a>Konfigurera en identity-hanteringsservrar: Windows Server 2016
+# <a name="set-up-an-identity-management-server-windows-server-2016"></a>Konfigurera en server för Identitetshantering: Windows Server 2016
 
 > [!div class="step-by-step"]
 > [«Förbereda en domän](preparing-domain.md)
@@ -39,9 +39,9 @@ Börja med en Windows Server 2016-dator, med minst 8 – 12 GB RAM-minne. Vid in
 
 1. Logga in på den nya datorn som administratör.
 
-2. Ge datorn en statisk IP-adress i nätverket med hjälp av Kontrollpanelen. Konfigurera nätverksgränssnittet för att skicka DNS-frågor till IP-adressen för domänkontrollanten i föregående steg och ange datornamnet till **CORPSERVICE**.  Detta kräver en omstart av servern.
+2. Ge datorn en statisk IP-adress i nätverket med hjälp av Kontrollpanelen. Konfigurera nätverksgränssnittet för att skicka DNS-frågor till IP-adressen för domänkontrollanten i föregående steg och ange datornamnet till **CORPSERVICE**.  Den här åtgärden kräver en omstart av servern.
 
-3. Öppna Kontrollpanelen och Anslut datorn till domänen som du konfigurerade i det sista steget, *contoso.com*.  Detta omfattar att ange användarnamnet och autentiseringsuppgifterna för en domänadministratör, t.ex. *Contoso\Administratör*.  Efter att välkomstmeddelandet har visats kan du stänga dialogrutan och starta om servern igen.
+3. Öppna Kontrollpanelen och Anslut datorn till domänen som du konfigurerade i det sista steget, *contoso.com*.  Den här åtgärden innehåller ger användarnamnet och autentiseringsuppgifterna för en domänadministratör som *Contoso\Administrator*.  Efter att välkomstmeddelandet har visats kan du stänga dialogrutan och starta om servern igen.
 
 4. Logga in på datorn *CORPSERVICE* som ett domänkonto med administratören för lokala datorer som *Contoso\MIMINSTALL*.
 
@@ -69,13 +69,13 @@ Börja med en Windows Server 2016-dator, med minst 8 – 12 GB RAM-minne. Vid in
 
 Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapats kan köras som tjänster.
 > [!NOTE] 
-> Beroende på konfigurationen baserat enkel server(all-in-one) eller server för distribuerad du behöver bara lägga till på datorn medlem som synkroniseringsserver. 
+> Beroende på din konfiguration, enskild server(all-in-one) eller distribuerade servrar som du behöver bara lägga till, baserat på medlemmen datorn, t.ex. synkroniseringsserver. 
 
 1. Starta programmet för lokala säkerhetsprinciper
 
 2. Gå till **Lokala principer > Tilldelning av användarrättigheter**.
 
-3. Högerklicka på **Logga in som en tjänst** i informationsfönstret och välj **Egenskaper**.
+3. I informationsfönstret, högerklickar du på **logga in som en tjänst**, och välj **egenskaper**.
 
     ![Bild för Lokal säkerhetsprincip](media/MIM-DeployWS3.png)
 
@@ -85,13 +85,13 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 
 6.  I informationsfönstret, högerklickar du på **neka åtkomst till den här datorn från nätverket**, och välj **egenskaper**. >
 
-[!NOTE] Om separata rollservrar det här steget bryts vissa funktioner som SSPR-funktionen.
+[!NOTE] Separera rollservrar bryter vissa funktioner som SSPR.
 
 7. Klicka på **Lägg till användare eller grupp**, skriv `contoso\MIMSync; contoso\MIMService` i textrutan och klicka på **OK**.
 
 8. Klicka på **OK** för att stänga fönstret **Neka åtkomst till den här datorn från nätverket Egenskaper**.
 
-9. Högerklicka på **Neka inloggning lokalt** i informationsfönstret och välj **Egenskaper**.
+9. I informationsfönstret, högerklickar du på **Neka inloggning lokalt**, och välj **egenskaper**.
 
 10. Klicka på **Lägg till användare eller grupp**, skriv `contoso\MIMSync; contoso\MIMService` i textrutan och klicka på **OK**.
 
