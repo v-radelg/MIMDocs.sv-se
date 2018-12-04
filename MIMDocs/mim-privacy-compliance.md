@@ -5,21 +5,23 @@ keywords: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 05/22/2018
+ms.date: 12/02/2018
 ms.topic: get-started-article
 ms.prod: microsoft-identity-manager
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.suite: ems
-ms.openlocfilehash: 4102ffc450b993faaa62da66bb25f242b7e39280
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: f75eb69360852c9f629b60d4900638c8b51e068a
+ms.sourcegitcommit: 9e420840815adb133ac014a8694de9af4d307815
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358728"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "52825798"
 ---
 # <a name="microsoft-identity-manager-data-handling"></a>Datahantering för Microsoft Identity Manager 
 
-Den här artikeln innehåller anvisningar om hur organisationen kan genom sökning, ta bort, uppdatera och rapportera åtgärder beslut som din organisation behöver du öva eller implementera över många anslutna datakällor. Innan du bestämmer dig på din metod för att ta bort eller uppdatera förstå är aktuella design och konfiguration identity manager (MIM) viktigt. Nedan visas några scenarier kunder behöver tänka på och besvara följande frågor: 
+Den här artikeln innehåller anvisningar om hur organisationer kan fatta beslut som kan tillämpas i många anslutna datakällor.  Detta kan ske via sökning, ta bort, uppdatera och rapportåtgärder.  Innan du bestämmer dig för din metod för att ta bort eller uppdatera, är det viktigt med en förståelse för den aktuella designen och konfigurationen av systemet identity manager (MIM). 
+
+Nedan visas några scenarier kunder behöver tänka på och besvara följande frågor: 
 
 - Vilka data du behöver för du Identitetshantering som underlättar affärsprocess?
 - Där aktuella data ska lagras i MIM?

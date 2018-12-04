@@ -9,12 +9,12 @@ ms.date: 09/19/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 01c5c8357c8cb0424bd38b61836919f5c2c3e96a
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 7ab76d386d8633de8919167c6b8f26b5137323e5
+ms.sourcegitcommit: 9e420840815adb133ac014a8694de9af4d307815
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358881"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "52825849"
 ---
 # <a name="deploying-microsoft-identity-manager-certificate-manager-2016-mim-cm"></a>Distribuera Microsoft Identity Manager Certificate Manager 2016 (MIM CM)
 
@@ -499,9 +499,9 @@ Innan du loggar in till CORPCM Lägg till MIMINSTALL till **domän administratö
 
 18. Stäng alla öppna fönster.
 
-19. Lägg till https://cm.contoso.com/certificatemanagement till zonen Lokalt intranät i webbläsaren.
+19. Lägg till `https://cm.contoso.com/certificatemanagement` till zonen Lokalt intranät i webbläsaren.
 
-20. På den https://cm.contoso.com/certificatemanagementlicensavtalet Läs avtalet.  
+20. På den `https://cm.contoso.com/certificatemanagement`licensavtalet Läs avtalet.  
 
     ![Diagram](media/mim-cm-deploy/image035.png)
 
