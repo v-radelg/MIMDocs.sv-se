@@ -90,7 +90,7 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 ## <a name="configure-mim-password-reset-portal"></a>Konfigurera MIM-portalen för återställning av lösenord
 
-1. Ange namnet på tjänstkontot för SSPR-registrering *Contoso\MIMSSPR* och lösenordet som <em> Pass@word1 </em>.
+1. Ange namnet på tjänstkontot för SSPR-registrering *Contoso\MIMSSPR* och lösenordet som <em>Pass@word1</em>.
 
 2. Ange *passwordreset.contoso.com* som värdnamn för MIM lösenord portalen för återställning, och ange porten som **80**. Aktivera alternativet **Öppna port i brandväggen**.
 
@@ -106,7 +106,7 @@ När alla förberedande definitioner för installationen är klara klickar du p�
 
 Verifiera att MIM-portalen är aktiv när installationen är klar.
 
-1. Starta Internet Explorer och Anslut till MIM-portalen på * http://mim.contoso.com/identitymanagement *. Observera att det kan bli en kort fördröjning när du besöker sidan för första gången.
+1. Starta Internet Explorer och Anslut till MIM-portalen på *http://mim.contoso.com/identitymanagement*. Observera att det kan bli en kort fördröjning när du besöker sidan för första gången.
 
     - Om det behövs kan autentisera sig som *contoso\miminstall* till Internet Explorer.
 
