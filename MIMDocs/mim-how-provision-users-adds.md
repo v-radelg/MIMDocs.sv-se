@@ -1,5 +1,5 @@
 ---
-title: Microsoft Identity Manager 2016 | Microsoft Docs
+title: Microsoft Identity Manager 2016 användaretablering till AD | Microsoft Docs
 description: Gå igenom processen för att skapa användare i ADDS med Microsoft Identity Manager 2016
 keywords: ''
 author: billmath
@@ -9,12 +9,12 @@ ms.date: 08/18/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 88473df88271937b07450df409353c0b3ca08684
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 5e259df617c5a95fcd54f49c9cbb70f9cd0c36a4
+ms.sourcegitcommit: 486f860f0951413aed335138eb6ad4ce6c50ed4d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358796"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852671"
 ---
 # <a name="how-do-i-provision-users-to-ad-ds"></a>Hur etablerar jag användare i AD DS
 
@@ -121,7 +121,7 @@ Scenariot som beskrivs i den här handledningen består av de byggstenar som vis
 
 I det här avsnittet finns anvisningar för de resurser som du behöver skapa som ligger utanför MIM-miljön.
 
-### <a name="step-1-create-the-ou"></a>Steg 1: Skapa organisationsenheten
+### <a name="step-1-create-the-ou"></a>Steg 1: Skapa en Organisationsenhet
 
 
 Du behöver organisationsenheten som en container för den etablerade exempelanvändaren. Mer information om hur du skapar organisationsenheter finns i [Skapa en ny organisationsenhet](http://go.microsoft.com/FWLink/p/?LinkId=189655).
@@ -170,7 +170,7 @@ I följande tabell visas de viktigaste scenariospecifika inställningarna som du
 | Sida för hanteringsagentens designer                          | Konfiguration                                                  |
 |---------------------------------------------------------|----------------------------------------------------------------|
 | Skapa hanteringsagent                                 | 1. **Hanteringsagent för:** AD DS  <br/> 2.  **Namn:** Fabrikam ADMA |
-| Anslut till Active Directory-skogen                      | 1. **Välj katalogpartitioner:** "DC=Fabrikam, DC=com"   <br/>   2. Klicka på **Container** för att öppna dialogrutan **Välj container** och se till att **MIMObjects** är den enda organisationsenhet som är markerad.        |
+| Anslut till Active Directory-skogen                      | 1. **Välj katalogpartitioner:** “DC=Fabrikam,DC=com”   <br/>   2. Klicka på **Container** för att öppna dialogrutan **Välj container** och se till att **MIMObjects** är den enda organisationsenhet som är markerad.        |
 | Välj objekttyper                                     | Utöver de objekttyperna som redan har valts väljer du **användare.** |
 | Välj attribut                                       | 1. Klicka på **Visa alla.** <br/>   2. Välj följande attribut: <br/> &nbsp;&nbsp;&nbsp;&#176; **displayName** <br/> &nbsp;&nbsp;&nbsp;&#176; **givenName** <br/> &nbsp;&nbsp;&nbsp;&#176;  **sn** <br/> &nbsp;&nbsp;&nbsp;&#176;  **SamAccountName** <br/> &nbsp;&nbsp;&nbsp;&#176;  **unicodePwd** <br/> &nbsp;&nbsp;&nbsp;&#176;  **userAccountControl**     
 
@@ -194,7 +194,7 @@ I följande tabell visas de viktigaste scenariospecifika inställningarna som du
 | Sida för hanteringsagentens designer | Konfiguration |
 |------------|------------------------------------|
 | Skapa hanteringsagent | 1. **Hanteringsagent för:** FIM-tjänstens hanteringsagent <br/> 2. **Namn:** Fabrikam FIMMA |
-| Anslut till databas     | Använd följande inställningar: <br/> &#183; **Server:** localhost <br/> &#183; **Databas:** FIMService <br/> &#183;**FIM-tjänstens basadress:** http://localhost:5725 <br/> <br/> Ange information om kontot som du skapade för den här hanteringsagenten |
+| Anslut till databas     | Använd följande inställningar: <br/> &#183; **Server:** localhost <br/> &#183;**Databasen:** FIMService <br/> &#183;**FIM-tjänstens basadress:** http://localhost:5725 <br/> <br/> Ange information om kontot som du skapade för den här hanteringsagenten |
 | Välj objekttyper                                     | Utöver de objekttyper som redan har valts väljer du **Person.**   |
 | Konfigurera objekttypsmappningar                          | Utöver de objekttypsmappningar som redan finns lägger du till en mappning för personen **Typ av datakällobjekt** till **Metaversum**-objekttyppersonen. |
 | Konfigurera attributflöde                                | Utöver de mappningar av attributflöde som redan finns lägger du till följande mappningar av attributflöde: <br/><br/> ![Attributflöde](media/how-provision-users-adds/image018.jpg) |
@@ -269,7 +269,7 @@ Följande tabeller visar konfiguration av synkroniseringsregeln för etablering 
 | Relation ||
 |------------|---------|
 | Skapa resurs i externt system                                                                         | Sant                                                                        |                                                           
-| Aktivera avetablering                                                                                      | Falskt                                                                       |                                                           
+| Aktivera avetablering                                                                                      | False                                                                       |                                                           
 
 | Relationsvillkor                                                                                      | |
 |------------|----------|
@@ -280,16 +280,16 @@ Följande tabeller visar konfiguration av synkroniseringsregeln för etablering 
 |-------------------|---------------------- |---------------|
 | Tillåt null-värden                 | Mål                                                                 | Källa                                                    |
 | falskt                       | dn                                                                          | \+("CN=",displayName,",OU=MIMObjects,DC=fabrikam,DC=com") |
-| falskt                       | userAccountControl                                                          | **Konstant:** 512                                         |
-| falskt                                                                     | unicodePwd                    | Konstant: P\@\$\$W0rd                                    |
+| false                       | userAccountControl                                                          | **Konstant:** 512                                         |
+| false                                                                     | unicodePwd                    | Konstant: P\@\$\$W0rd                                    |
 
 | Beständiga utgående attributflöden  |                                                                     |                                                           |
 |--------------------------------------|---------------------------------------------------------------------|-----------------------------------------------------------|
 | Tillåt null-värden                                                                                                | Mål                                                                 | Källa                                                    |
-| falskt                                                                                                      | sAMAccountName                                                              | kontonamn                                               |
-| falskt                                                                                                      | visningsnamn                                                                 | visningsnamn                                               |
-| falskt                                                                                                      | förnamn                                                                   | förnamn                                                 |
-| falskt                                                                                                      | sn                                                                          | efternamn                                                  |
+| false                                                                                                      | sAMAccountName                                                              | kontonamn                                               |
+| false                                                                                                      | displayName                                                                 | displayName                                               |
+| false                                                                                                      | givenName                                                                   | förnamn                                                 |
+| false                                                                                                      | SN                                                                          | efternamn                                                  |
 
 
 
@@ -304,18 +304,18 @@ Målet med AD-etableringsarbetsflödet är att lägga till synkroniseringsregeln
 |--------------------------------------|-----------------------------------------------------------------|
 | Namn                                 | Etableringsarbetsflöde för Active Directory-användare                     |
 | Beskrivning                          |                                                                 |
-| Arbetsflödestyp                        | Action                                                          |
-| Kör vid principuppdatering                 | Falskt                                                           |
+| Arbetsflödestyp                        | Åtgärd                                                          |
+| Kör vid principuppdatering                 | False                                                           |
 
 | Synkroniseringsregel                 |                                                                 |
 |--------------------------------------|-----------------------------------------------------------------|
-| Namn                                 | Utgående synkroniseringsregel för Active Directory-användare             |
+| Name                                 | Utgående synkroniseringsregel för Active Directory-användare             |
 | Action                               | Lägg till                                                             |
 
 
 
 
-### <a name="step-8-create-the-mpr"></a>Steg 8: Skapa hanteringsprincipregel
+### <a name="step-8-create-the-mpr"></a>Steg 8: Skapa Hanteringsprincipregel
 
 Den hanteringsprincipregel (MPR) som krävs har typen Uppsättningsövergång och utlöses när en resurs blir medlem i uppsättningen Alla leverantörer. Följande tabeller visar konfigurationen.  Skapa MPR enligt data i tabellerna nedan.
 
@@ -323,8 +323,8 @@ Den hanteringsprincipregel (MPR) som krävs har typen Uppsättningsövergång oc
 |--------------------------------------|-------------------------------------------------------------|
 | Namn                                 | Hanteringsprincipregel för etablering av AD-användare                 |
 | Beskrivning                          |                                                             |
-| Typ                                 | Uppsättningsövergång                                              |
-| Ger behörigheter                   | Falskt                                                       |
+| Type                                 | Uppsättningsövergång                                              |
+| Ger behörigheter                   | False                                                       |
 | Inaktiverad                             | Falskt                                                       |
 
 | Definition av övergång                |                                                             |
@@ -334,7 +334,7 @@ Den hanteringsprincipregel (MPR) som krävs har typen Uppsättningsövergång oc
 
 | Principarbetsflöden                     |                                                             |
 |--------------------------------------|-------------------------------------------------------------|
-| Typ                                 | Action                                                      |
+| Type                                 | Åtgärd                                                      |
 | Visningsnamn                         | Etableringsarbetsflöde för Active Directory-användare                 |
 
 
@@ -406,14 +406,14 @@ Två krav måste uppfyllas för att etablera exempelanvändaren i AD DS:
 
 2.  Uppsättningsanvändaren måste finnas i omfattningen för den utgående synkroniseringsregeln.
 
-### <a name="step-11-verify-the-user-is-a-member-of-all-contractors"></a>Steg 11: Kontrollera att användaren är medlem i Alla leverantörer
+### <a name="step-11-verify-the-user-is-a-member-of-all-contractors"></a>Steg 11: Kontrollera att användaren är medlem i alla leverantörer
 
 Kontrollera om användaren är medlem i uppsättningen Alla leverantörer genom att öppna uppsättningen och sedan klicka på Visa medlemmar.
 
 ![Kontrollera att användaren är medlem i alla leverantörer](media/how-provision-users-adds/image022.jpg)
 
 
-### <a name="step-12-verify-the-user-is-in-the-scope-of-the-outbound-synchronization-rule"></a>Steg 12: Kontrollera att användaren finns i omfattningen för den utgående synkroniseringsregeln
+### <a name="step-12-verify-the-user-is-in-the-scope-of-the-outbound-synchronization-rule"></a>Steg 12: Kontrollera att användaren är inom omfånget för den utgående synkroniseringsregeln
 
 Kontrollera om användaren finns i omfattningen för synkroniseringsregeln genom att öppna användarens egenskapssida och granska attributet Expected Rules List på fliken Etablering. Attributet Lista över förväntade regler ska innehålla AD-användaren
 
@@ -524,7 +524,7 @@ Kontonamn, domän och objectSID-attribut krävs om du vill göra det möjligt f�
 
 [Hur kan jag hantera mitt FIM MA-konto](http://go.microsoft.com/FWLink/p/?LinkId=189672)
 
-[Identifiera icke-auktoritativa konton – Del 1: Visualisera](http://go.microsoft.com/FWLink/p/?LinkId=189673)
+[Identifiera icke-auktoritativa konton – del 1: Visualisera](http://go.microsoft.com/FWLink/p/?LinkId=189673)
 
 [Fattigmansversionen av en mekanism för anslutningsidentifiering](http://go.microsoft.com/FWLink/p/?LinkId=189674)
 

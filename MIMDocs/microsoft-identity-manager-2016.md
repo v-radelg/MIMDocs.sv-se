@@ -9,16 +9,22 @@ ms.date: 11/05/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.technology: security
-ms.openlocfilehash: 67064d930935f0091c14c64bf271dd0e1ded6bb4
-ms.sourcegitcommit: 3b514aba69af203f176b40cdb7c2a51c477c944a
+ms.openlocfilehash: 60d40a622475351efee846d8510373ecdc565a24
+ms.sourcegitcommit: 486f860f0951413aed335138eb6ad4ce6c50ed4d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51718232"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852637"
 ---
 # <a name="microsoft-identity-manager-2016-news-and-updates"></a>Microsoft Identity Manager 2016 nyheter och uppdateringar
 
 Microsoft Identity Manager (MIM) 2016 bygger på identitets- och hanteringsfunktioner i Forefront Identity Manager. Precis som föregångaren hjälper MIM dig att hantera användare, autentiseringsuppgifter, principer och åtkomst inom din organisation.  I MIM 2016 har man dessutom lagt till en hybridupplevelse, hanteringsfunktioner för privilegierad åtkomst och stöd för nya plattformar.
+
+
+En organisation kan förenkla identitetslivcykelhantering med automatiserade arbetsflöden, affärsregler och enkel integrering med heterogena plattformar genom datacenter med MIM. MIM gör det möjligt att organisationen får rätt användare och åtkomsträttigheter för Active Directory för lokala appar och Azure AD Connect kan sedan göra tillgängliga i Azure AD för Office 365 och molnbaserade appar. Vanliga MIM-scenarier är:
+ - Automatisk identitets- och gruppetablering baserat på företag-principen och arbetsflöde-drivna etablering
+ - Integrering av innehållet i kataloger med HR-system och andra källor av behörighet
+ - Synkronisering av identiteter mellan kataloger, databaser och lokala program via vanliga API: er och protokoll, levereras av Microsoft anslutningar och anslutningar som levereras av partner
 
 Den aktuella versionen under mainstream-support är MIM 2016 Service Pack 1 (SP1).  Den här versionen i augusti 2017 ingår uppdateringar till MIM-portalen, PAM-scenariot och lagt till stöd för nya plattformar.  Kunder som kör FIM eller MIM-versioner före MIM 2016 SP1 bör uppgradera till MIM 2016 SP1 eller en senare snabbkorrigering.  Läs mer om [uppgradering till MIM 2016 SP1](./reference/version-history.md).
 
@@ -28,7 +34,7 @@ Microsoft levererar regelbundet uppdateringar till MIM, inklusive förbättringa
 
 ### <a name="major-new-and-updated-scenarios"></a>Viktiga scenarier för nya och uppdaterade
 
-- [Azure AD B2B-samarbete med MIM- och Azure Application proxy är en förhandsversion](microsoft-identity-manager-2016-graph-b2b-scenario.md), senast uppdaterad April 2018
+- [Azure AD B2B-samarbete med MIM Graph-anslutningsprogrammet och Azure Application proxy är allmänt tillgängliga](microsoft-identity-manager-2016-graph-b2b-scenario.md), senast uppdaterad April 2018
 - [Hybridrapportering i MIM är](https://cloudblogs.microsoft.com/enterprisemobility/2018/02/23/hybrid-mim-reporting-now-available-in-azure-active-directory/), senast uppdaterad februari 2018
 - [MIM föråldrad funktionslistan ändrat](microsoft-identity-manager-2016-deprecated-features.md), senast uppdaterad februari 2018
 
