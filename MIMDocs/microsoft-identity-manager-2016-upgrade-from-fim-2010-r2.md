@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 9471ccc1-bafe-46ee-b169-1464262380e1
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 07998c20fcdc325cd33d8f9ee3d06c9c8572b654
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 36b5e97675d5900bf3b5348ad4857827c426e60e
+ms.sourcegitcommit: 4f0b2883922bcb8fbef6b4284c35c6ca62c11565
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358683"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56952170"
 ---
 # <a name="upgrade-from-forefront-identity-manager-2010-r2"></a>Uppgradera från Forefront Identity Manager 2010 R2
 
@@ -41,7 +41,7 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 
 2.  På varje server där FIM 2010 R2-komponenterna är installerade – till exempel *CORPIDM* – loggar du in som Contoso\Administrator. I den här exempeldistributionen behövs administratörsbehörighet för att uppgradera FIM 2010 R2 till **MIM**.
 
-3.  Hämta eller packa upp MIM-programvaran.
+3.  Hämta eller packa upp MIM-programvaran.  Om du inte har den här programvaran, se [licensiering för Microsoft Identity Manager och nedladdningar](microsoft-identity-manager-licensing.md).
 
 ## <a name="upgrade-the-synchronization-service"></a>Uppgradera synkroniseringstjänsten
 
@@ -197,6 +197,6 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 
 4. Observera att **Forefront Identity Manager-tjänsten** har startats om.
 
-Obs: Om FIM-tilläggen för närvarande finns distribuerade på användarens dator för SSPR ska du inte konfigurera de nya MFA-telefongrindarna för återställning av lösenord förrän alla FIM-tillägg har uppgraderats till MIM 2016.  Eftersom FIM 2010- och FIM 2010 R2-tilläggen inte kan identifiera de nya grindarna orsakar de ett fel och användaren kan inte slutföra  återställningen av lösenordet.
+Obs! Om FIM-tillägg och tillägg distribueras för närvarande på användarens dator för SSPR, inte konfigurera de nya MFA-telefongrindarna för återställning av lösenord förrän efter alla FIM-tillägg-tillägg har uppgraderats till MIM 2016.  Eftersom FIM 2010- och FIM 2010 R2-tilläggen inte kan identifiera de nya grindarna orsakar de ett fel och användaren kan inte slutföra  återställningen av lösenordet.
 
 Riktlinjer för uppdatering av Microsoft Identity Manager 2016 SP1 finns i [Uppdateringspaketet för Microsoft Identity Manager 2016 Service Pack 1](https://blogs.technet.microsoft.com/iamsupport/2016/11/08/microsoft-identity-manager-2016-service-pack-1-update-package/)

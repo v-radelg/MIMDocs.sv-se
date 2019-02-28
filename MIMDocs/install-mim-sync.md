@@ -11,14 +11,14 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 2585e9c5-ce34-46c7-bdcf-8c08773901dc
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 1bc313a66776778fe3617969645076a6d2d10418
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: cec04cf430ba38ec40b61e4aad68fd8447d13c99
+ms.sourcegitcommit: 4f0b2883922bcb8fbef6b4284c35c6ca62c11565
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49357844"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56952187"
 ---
-# <a name="install-mim-2016-mim-synchronization-service"></a>Installera MIM 2016: MIM-synkroniseringstjänsten
+# <a name="install-mim-2016-mim-synchronization-service"></a>Install MIM 2016: Synkroniseringstjänst för MIM
 
 > [!div class="step-by-step"]
 > [«Exchange Server](prepare-server-exchange.md)
@@ -37,7 +37,7 @@ För att kunna installera Microsoft Identity Manager 2016-komponenterna måste d
 
 1. Logga in som *contoso\miminstall* till servern som du använder för server för Identitetshantering synkroniseringsomfattning **corpsync**.
 
-2. Packa upp installationspaketet MIM eller starta MIM-DVD:n.
+2. Packa upp installationspaketet MIM eller starta MIM-DVD:n.  Om du inte har den här DVD, se [licensiering för Microsoft Identity Manager och nedladdningar](microsoft-identity-manager-licensing.md).
 
 ## <a name="install-mim-2016-sp1-synchronization-service"></a>Installera synkroniseringstjänsten för MIM 2016 SP1
 
@@ -57,7 +57,7 @@ För att kunna installera Microsoft Identity Manager 2016-komponenterna måste d
 
 6. På skärmen för konfiguration av synkroniseringstjänstens databas väljer du:
 
-   1.  SQL Server finns på: **A fjärrdatorn** kallas **corpsql.contoso.com**.
+   1.  SQL Server finns på: **En fjärrdator** kallas **corpsql.contoso.com**.
 
    2.  SQL Server-instansen är: **Standardinstansen**
 
