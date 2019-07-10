@@ -9,12 +9,12 @@ manager: mtillman
 ms.date: 09/04/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 750947d04f540e2c8317861c5826c2145deba1fd
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 7fb111520f94541672fc56d0fd2ee95bfcd3a49e
+ms.sourcegitcommit: f58926a9e681131596a25b66418af410a028ad2c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358416"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690747"
 ---
 # <a name="use-a-custom-multi-factor-authentication-provider-via-an-api-during-pam-role-activation-or-in-sspr"></a>Använda en anpassad Multi-Factor Authentication-provider via ett API under aktiveringen för PAM-rollen eller i SSPR
 
@@ -27,17 +27,17 @@ MIM-kunder har ytterligare två alternativ:
 
 Den här artikeln beskrivs hur du använder MIM med en anpassad Multi factor authentication-provider, via ett API och en integration SDK som har utvecklats av kunden.  
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Om du vill använda en anpassad Multi-Factor Authentication-provider API med MIM behöver du:
 
 - telefonnummer till alla kandidatanvändare
-- MIM-snabbkorrigeringen [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) eller senare – i [versionshistorik](/reference/version-history.md) för meddelanden
+- MIM-snabbkorrigeringen [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) eller senare – i [versionshistorik](reference/version-history.md) för meddelanden
 - MIM-tjänsten som konfigurerats för SSPR eller PAM
 
 ## <a name="approach-using-custom-multi-factor-authentication-code"></a>Metoden med hjälp av anpassade multifaktorautentisering kod
 
-### <a name="step-1-ensure-mim-service-is-at-version-452020-or-later"></a>Steg 1: Kontrollera att MIM-tjänsten är version 4.5.202.0 eller senare
+### <a name="step-1-ensure-mim-service-is-at-version-452020-or-later"></a>Steg 1: Se till att MIM-tjänsten är version 4.5.202.0 eller senare
 
 Ladda ned och installera MIM-snabbkorrigeringen [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) eller en senare version.
 
@@ -135,7 +135,7 @@ namespace CustomPhoneGate
     }
 }
 ```
-### <a name="step-3-backup-the-mfasettingsxml-located-in-the-cprogram-filesmicrosoft-forefront-identity-manager2010service"></a>Steg 3: Säkerhetskopiera MfaSettings.xml finns i ”C:\Program Files\Microsoft Forefront Identity Manager\2010\Service”
+### <a name="step-3-backup-the-mfasettingsxml-located-in-the-cprogram-filesmicrosoft-forefront-identity-manager2010service"></a>Steg 3: Backup MfaSettings.xml finns i ”C:\Program Files\Microsoft Forefront Identity Manager\2010\Service”
 
 ### <a name="step-4-edit-the-mfasettingsxml-file"></a>Steg 4: Redigera filen mfasettings.XML
 

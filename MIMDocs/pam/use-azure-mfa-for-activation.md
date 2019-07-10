@@ -10,16 +10,16 @@ ms.date: 07/06/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
-ms.openlocfilehash: 9cb1e37f966db5c663694aaccd71f2b4c799dd4b
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.openlocfilehash: 72dd1d3cf34e28567fa672b747a04347b150797e
+ms.sourcegitcommit: f58926a9e681131596a25b66418af410a028ad2c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379947"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690789"
 ---
 # <a name="using-azure-mfa-for-activation"></a>Aktivera med hjälp av Azure MFA
 > [!IMPORTANT]
-> På grund av meddelande om utfasning av Azure Multi-Factor Authentication Software Development Kit. Azure MFA SDK kommer att stödjas för befintliga kunder fram till datumet för tillbakadragandet för den 14 November 2018. Nya kunder och befintliga kunder kommer inte att kunna ladda ned SDK längre via den klassiska Azure-portalen. Om du vill hämta du behöver att nå ut till Azure-kundsupporten för att få din genererade autentiseringsuppgifter MFA-paket. <br> Utvecklingsteamet Microsoft arbetar med ändringar av MFA genom att integrera med MFA Server SDK.  Detta kommer att inkluderas i en kommande snabbkorrigeringen finns [versionshistorik](/reference/version-history.md) efter meddelanden. 
+> På grund av meddelande om utfasning av Azure Multi-Factor Authentication Software Development Kit. Azure MFA SDK kommer att stödjas för befintliga kunder fram till datumet för tillbakadragandet för den 14 November 2018. Nya kunder och befintliga kunder kommer inte att kunna ladda ned SDK längre via den klassiska Azure-portalen. Om du vill hämta du behöver att nå ut till Azure-kundsupporten för att få din genererade autentiseringsuppgifter MFA-paket. <br> Utvecklingsteamet Microsoft arbetar med ändringar av MFA genom att integrera med MFA Server SDK.  Detta kommer att inkluderas i en kommande snabbkorrigeringen finns [versionshistorik](../reference/version-history.md) efter meddelanden. 
 
 
 När du konfigurerar en PAM-roll kan du välja hur du ger behörighet till användare som ber att få aktivera rollen. De alternativ som implementeras med PAM-auktoriseringsuppgiften är:
@@ -31,7 +31,7 @@ Om ingen kontroll är aktiverad aktiveras kandidatanvändare automatiskt för si
 
 Microsoft Azure Multi-Factor Authentication (MFA) är en autentiseringstjänst med vilken användare måste bekräfta sina inloggningsförsök via mobilapp, telefonsamtal eller SMS. Den kan användas med Microsoft Azure Active Directory och som en tjänst för molnbaserade och lokala företagsprogram. Azure MFA ger en extra autentiseringsmetod för PAM-scenariot. Azure MFA kan användas för auktorisering, oavsett hur en användare autentiseras till Windows PRIV-domänen.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 För att kunna använda Azure MFA med MIM behöver du:
 
@@ -66,7 +66,7 @@ Nu genererar du en fil som innehåller de autentiseringsuppgifter som krävs fö
 
 5.  I fönstret **Azure Multi-Factor Authentication** klickar du på **SDK** under **Hämtade filer**.
 
-6.  Klicka på länken **Hämta** i ZIP-kolumnen för filen med språket **SDK för ASP.net 2.0 C\#**.
+6.  Klicka på länken **Hämta** i ZIP-kolumnen för filen med språket **SDK för ASP.net 2.0 C\#** .
 
 ![Ladda ned SDK:t för Multi-Factor Authentication – skärmbild](media/PAM-Azure-MFA-Activation-Image-1.png)
 
@@ -95,7 +95,7 @@ Nu genererar du en fil som innehåller de autentiseringsuppgifter som krävs fö
 
 8. I XML-elementet **<CertFilePath>** anger du den fullständiga sökvägen till filen cert\_key.p12 du extraherade tidigare.
 
-9. Ange ett valfritt användarnamn i elementet **<username>**.
+9. Ange ett valfritt användarnamn i elementet **<username>** .
 
 10. I elementet **<DefaultCountryCode>** ange du landskoden till dina användare, till exempel 1 för USA och Kanada. Det här värdet används när användare är registrerade med telefonnummer utan landskod. Om en användares telefonnummer har en annan internationell landskod än den som har konfigurerats för organisationen, måste den landskoden inkluderas i det telefonnumret som registreras.
 
@@ -130,7 +130,7 @@ Azure MFA kan inaktiveras för en roll genom att parametern "-MFAEnabled 0" ange
 
 Följande händelser kan du hitta i händelseloggen för Privileged Access Management:
 
-| ID  | Allvarlighetsgrad | Genererat av | Beskrivning |
+| ID  | Severity | Genererat av | Beskrivning |
 |-----|----------|--------------|-------------|
 | 101 | Fel       | MIM-tjänst            | Användaren slutförde inte Azure MFA (t.ex. svarade inte i telefon) |
 | 103 | Information | MIM-tjänst            | Användaren slutförde Azure MFA vid aktivering                       |

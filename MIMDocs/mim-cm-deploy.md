@@ -9,12 +9,12 @@ ms.date: 09/19/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 7ab76d386d8633de8919167c6b8f26b5137323e5
-ms.sourcegitcommit: 9e420840815adb133ac014a8694de9af4d307815
+ms.openlocfilehash: 9a9e00f7dca118627a5140967a104d13273cbc26
+ms.sourcegitcommit: f58926a9e681131596a25b66418af410a028ad2c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "52825849"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690805"
 ---
 # <a name="deploying-microsoft-identity-manager-certificate-manager-2016-mim-cm"></a>Distribuera Microsoft Identity Manager Certificate Manager 2016 (MIM CM)
 
@@ -38,7 +38,7 @@ Diagrammet nedan visar ett exempel på typ av miljö som kan användas. System m
     Labbet består av windows 2016 Datacenter-servrar.
 
     >[!NOTE]
-    >För mer information om plattformar som stöds för MIM 2016 ta en titt på artikeln [plattformar som stöds för MIM 2016](/microsoft-identity-manager/microsoft-identity-manager-2016-supported-platforms.md)
+    >För mer information om plattformar som stöds för MIM 2016 ta en titt på artikeln [plattformar som stöds för MIM 2016](microsoft-identity-manager-2016-supported-platforms.md).
 
 1. Fördistributionssteg
 
@@ -58,13 +58,13 @@ Diagrammet nedan visar ett exempel på typ av miljö som kan användas. System m
 
         - Databasbehörighet
 
-2. distribution
+2. Distribution
 
 ## <a name="pre-deployment-steps"></a>Fördistributionssteg
 
 Guiden för konfiguration av MIM CM kräver information som anges på vägen för att den har slutförts.
 
-![Diagram](media/mim-cm-deploy/image003.png)
+![diagram](media/mim-cm-deploy/image003.png)
 
 ### <a name="extending-the-schema"></a>Utöka schemat
 
@@ -77,20 +77,20 @@ Processen med att utöka schemat är enkelt, men måste vara närmat sig med fö
 
 2. Kopiera mappen schemat till CORPDC och gå sedan till den.
 
-    ![Diagram](media/mim-cm-deploy/image005.png)
+    ![diagram](media/mim-cm-deploy/image005.png)
 
 3. Köra skript resourceForestModifySchema.vbs enkel skog scenariot. Kör skripten för resursen skog scenariot:
-   - DomänA – användare finns (userForestModifySchema.vbs)
+   - DomainA – Users located (userForestModifySchema.vbs)
    - ResourceForestB – platsen för CM-installation (resourceForestModifySchema.vbs).
 
      >[!NOTE]
      >Schemaändringar är en enkelriktad åtgärd och kräver en skog återställning för att återställa så se till att du har nödvändiga säkerhetskopior. För information om ändringar som görs i schemat genom att utföra den här åtgärden granska artikeln [schemaändringar för Forefront Identity Manager 2010 certifikat Management](https://technet.microsoft.com/library/jj159298(v=ws.10).aspx)
 
-     ![Diagram](media/mim-cm-deploy/image007.png)
+     ![diagram](media/mim-cm-deploy/image007.png)
 
 4. Kör skriptet och du bör få lyckas visas en gång att skriptet har körts.
 
-    ![Meddelande om slutförande](media/mim-cm-deploy/image009.png)
+    ![Meddelande om att något har slutförts](media/mim-cm-deploy/image009.png)
 
 Schemat i AD nu har utökats för att stödja MIM CM.
 
@@ -122,8 +122,8 @@ Grupper:
 
 | **Roll**               | **Grupp**         |
 |------------------------|-------------------|
-| CM-supportavdelningen medlemmar    | MIMCM supportavdelningen    |
-| CM Manager medlemmar     | MIMCM-hanterare    |
+| CM-supportavdelningen medlemmar    | MIMCM-Helpdesk    |
+| CM Manager medlemmar     | MIMCM-Managers    |
 | CM-prenumeranter medlemmar | MIMCM-prenumeranter |
 
 PowerShell: Agentkonton:
@@ -221,7 +221,7 @@ Alla tre av ovanstående konton kommer ha utökade rättigheter i din organisati
     ![Visa resulterande ändringar](media/mim-cm-deploy/image014.png)
 
     >[!NOTE]
-    >MIM CM fungerar inte med certifikat baserat på version 3 certifikatmallar. Du måste skapa en certifikatmall för Windows Server® 2003 Enterprise (version 2). Se [V3 information Öppna](https://blogs.msdn.microsoft.com/ms-identity-support/2016/07/14/faq-for-fim-2010-to-support-sha2-kspcng-and-v3-certificate-templates-for-issuing-user-and-agent-certificates-and-mim-2016-upgrade) den certifikathanteringx64 directory. 
+    >MIM CM fungerar inte med certifikat baserat på version 3 certifikatmallar. Du måste skapa en certifikatmall för Windows Server® 2003 Enterprise (version 2). Se [V3 information Öppna](https://blogs.msdn.microsoft.com/ms-identity-support/2016/07/14/faq-for-fim-2010-to-support-sha2-kspcng-and-v3-certificate-templates-for-issuing-user-and-agent-certificates-and-mim-2016-upgrade) den certifikathanteringx64 directory.
 
 6. I den **egenskaper för ny mall** dialogrutan den **Allmänt** fliken den **mallvisningsnamnet** skriver **MIM CM-signering**. Ändra den **giltighetsperioden** till **2 år**, och avmarkera de **Publicera certifikatet i Active Directory** markerar du kryssrutan.
 
@@ -359,7 +359,7 @@ Get-ADUser CONTOSO\MIMCMWebAgent | Set-ADObject -Add @{"msDS-AllowedToDelegateTo
 
 **Uppdatera IIS på CORPCM**
 
-![Diagram](media/mim-cm-deploy/image022.png)
+![diagram](media/mim-cm-deploy/image022.png)
 
 ```powershell
 add-pssnapin WebAdministration
@@ -455,13 +455,13 @@ Innan du loggar in till CORPCM Lägg till MIMINSTALL till **domän administratö
 
 9. I den **agenter – FIM CM** flera flikar dialogrutan på varje flik, skriver du följande information:
 
-   - Användarnamn: **Update**
+   - Användarnamn: **Uppdatera**
 
-   - Lösenord: **skicka\@word1**
+   - Lösenord: **Skicka\@word1**
 
-   - Bekräfta lösenord: **skicka\@word1**
+   - Bekräfta lösenord: **Skicka\@word1**
 
-   - Använd en befintlig användare: **aktiverad**
+   - Använd en befintlig användare: **Aktiverad**
 
      >[!NOTE]
      >Dessa konton som vi skapade tidigare. Se till att procedurerna i steg 8 upprepas för alla sex agenten konto flikar.
@@ -488,7 +488,7 @@ Innan du loggar in till CORPCM Lägg till MIMINSTALL till **domän administratö
 
 16. I den **konfigurationsguiden – Microsoft Forefront Identity Manager 2010 R2** varning dialogrutan klickar du på **OK** att bekräfta att SSL inte är aktiverat på den virtuella katalogen för IIS.
 
-    ![Media/image17.png](media/mim-cm-deploy/image032.png)
+    ![media/image17.png](media/mim-cm-deploy/image032.png)
 
     >[!NOTE] 
     >Klicka inte på Slutför tills körningen av guiden har slutförts. Loggning för guiden hittar du här: **% programfiles%\\Microsoft Forefront Identity Management\\2010\\certifikathantering\\config.log**
@@ -503,7 +503,7 @@ Innan du loggar in till CORPCM Lägg till MIMINSTALL till **domän administratö
 
 20. På den `https://cm.contoso.com/certificatemanagement`licensavtalet Läs avtalet.  
 
-    ![Diagram](media/mim-cm-deploy/image035.png)
+    ![diagram](media/mim-cm-deploy/image035.png)
 
 ### <a name="verify-the-cng-key-isolation-service"></a>Kontrollera CNG Key Isolation-tjänst
 
@@ -536,7 +536,7 @@ I det här steget ska vi installera och konfigurera FIM CM CA-moduler på certif
 
 6. Stäng den **Sök och Ersätt** dialogrutan.
 
-7. Du bör vara på raden **\<lägga till key="Clm.RequestSecurity.Flags” value = ”UseUser UseGroups” /\>**. Ändra raden till  **\<lägga till key="Clm.RequestSecurity.Flags” värde = ”UseUser” /\>**.
+7. Du bör vara på raden **\<lägga till key="Clm.RequestSecurity.Flags” value = ”UseUser UseGroups” /\>** . Ändra raden till  **\<lägga till key="Clm.RequestSecurity.Flags” värde = ”UseUser” /\>** .
 
 8. Stäng filen, sparar alla ändringar.
 
@@ -554,7 +554,7 @@ I det här steget ska vi installera och konfigurera FIM CM CA-moduler på certif
 
 15. Högerklicka på **inloggningar**, och klicka sedan på **ny inloggning**.
 
-16. På den **Allmänt** sidan den **inloggningsnamn** skriver **contoso\\CORPCA\$**. Välj **Windows-autentisering**. Standarddatabasen är **FIMCertificateManagement**.
+16. På den **Allmänt** sidan den **inloggningsnamn** skriver **contoso\\CORPCA\$** . Välj **Windows-autentisering**. Standarddatabasen är **FIMCertificateManagement**.
 
 17. I den vänstra rutan väljer **användarmappning**. I den högra rutan klickar du på kryssrutan i den **kartan** kolumnen bredvid **FIMCertificateManagement**. I den **databas rollmedlemskap för: FIMCertificateManagement** listan måste du aktivera den **clmApp** roll.
 
@@ -668,7 +668,7 @@ I det här steget ska vi installera och konfigurera FIM CM CA-moduler på certif
     - I den **certifikat** dialogrutan klickar du på **OK**.
 
         >[!Note]
-        >Om den **OK** knappen är inte aktiverad, du av misstag med ett dolda tecken i tumavtryckssträngen när du har kopierat tumavtrycket från clmAgent certifikatet. Upprepa alla steg som startar från **uppgift 4: kopiera MIMCMAgent certifikatets tumavtryck till Windows Urklipp** i den här övningen.
+        >Om den **OK** knappen är inte aktiverad, du av misstag med ett dolda tecken i tumavtryckssträngen när du har kopierat tumavtrycket från clmAgent certifikatet. Upprepa alla steg som startar från **uppgift 4: Kopiera MIMCMAgent certifikatets tumavtryck till Windows Urklipp** i den här övningen.
 
 4. I den **konfigurationsegenskaper** dialogrutan kontrollerar du att tumavtrycket visas i den **giltiga certifikat för signering** listan och klicka sedan på **OK**.
 
@@ -688,7 +688,7 @@ I det här steget ska vi installera och konfigurera FIM CM CA-moduler på certif
 
 **Sista steget i distributionen** är vi vill vara säker på att CONTOSO\\MIMCM-hanterare kan distribuera och skapa mallar och konfigurera systemet utan att vara schemat och Domänadministratörer. Nästa skriptet kommer ACL behörighet att använda dsacls certifikatmallarna. Kör med konto som har fullständig behörighet för att ändra säkerhet Läs- och skrivbehörighet till varje befintlig certifikatmall i skogen.
 
-Första stegen: **hur du konfigurerar tjänstanslutningspunkten och målgruppen behörigheter & delegera mall profilhantering**
+Första stegen: **Hur du konfigurerar tjänstanslutningspunkten och målgruppen behörigheter & delegera mall profilhantering**
 
 1. Konfigurera behörigheter för tjänstanslutningspunkt (SCP).
 
@@ -712,8 +712,8 @@ Första stegen: **hur du konfigurerar tjänstanslutningspunkten och målgruppen 
 
     | Grupp          | Behörigheter      |
     |----------------|------------------|
-    | mimcm-hanterare | Läs </br> FIM CM-granskning</br> FIM CM-registreringsagent</br> Registrera för FIM CM-begäran</br> Återställ för FIM CM-begäran</br> Förnya FIM CM-begäran</br> FIM CM-begäran återkalla </br> FIM CM-begäran Avblockera smartkort |
-    | MIMCM supportavdelningen | Läs</br> FIM CM-registreringsagent</br> FIM CM-begäran återkalla</br> FIM CM-begäran Avblockera smartkort |
+    | mimcm-Managers | Läsa </br> FIM CM-granskning</br> FIM CM-registreringsagent</br> Registrera för FIM CM-begäran</br> Återställ för FIM CM-begäran</br> Förnya FIM CM-begäran</br> FIM CM-begäran återkalla </br> FIM CM-begäran Avblockera smartkort |
+    | mimcm-HelpDesk | Läsa</br> FIM CM-registreringsagent</br> FIM CM-begäran återkalla</br> FIM CM-begäran Avblockera smartkort |
 
 11. I den **CORPDC egenskaper** dialogrutan klickar du på **OK**.
 
@@ -835,7 +835,7 @@ Första stegen: **hur du konfigurerar tjänstanslutningspunkten och målgruppen 
 
 14. Lämna **Active Directory-användare och datorer** öppna.
 
-Andra steg: **delegera hantering för Certifikatmallsbehörigheter \<skript\>**
+Andra steg: **Delegera hantering för Certifikatmallsbehörigheter \<skript\>**
 
 - Delegera behörigheter för behållaren för certifikatmallar.
 
@@ -885,9 +885,9 @@ Definiera behörigheter för OID-behållaren:
 
 8. Stäng **Active Directory-platser och tjänster**.
 
-**Skript: Behörighet till behållaren för OID, Profilmall & certifikatmallar**
+**Skript: Behörigheter för behållaren OID, Profilmall & certifikatmallar**
 
-![Diagram](media/mim-cm-deploy/image021.png)
+![diagram](media/mim-cm-deploy/image021.png)
 
 ```powershell
 import-module activedirectory
@@ -913,7 +913,7 @@ $acl.AddAccessRule($ace)
 
 **Skript: Delegera behörigheter för befintliga certifikatmallarna.**  
 
-![Diagram](media/mim-cm-deploy/image039.png)
+![diagram](media/mim-cm-deploy/image039.png)
 
 ```shell
 dsacls "CN=Administrator,CN=Certificate Templates,CN=Public Key

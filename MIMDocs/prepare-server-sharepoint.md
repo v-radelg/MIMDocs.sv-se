@@ -11,14 +11,14 @@ ms.prod: microsoft-identity-manager
 ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 466f5eb7d4aee27336948e15f96087d6ba898170
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 5beee58388c12abbe8e3245ff610d3528b03786a
+ms.sourcegitcommit: f58926a9e681131596a25b66418af410a028ad2c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358643"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690757"
 ---
-# <a name="set-up-an-identity-management-server-sharepoint"></a>Konfigurera en server för identitetshantering: SharePoint
+# <a name="set-up-an-identity-management-server-sharepoint"></a>Konfigurera en server för Identitetshantering: SharePoint
 
 > [!div class="step-by-step"]
 > [«SQL Server 2016](prepare-server-sql2016.md)
@@ -45,7 +45,7 @@ Följ dessa steg om du vill installera SharePoint 2016. När du har slutfört in
 
     -   Ändra till katalogen där SharePoint packades upp.
 
-    -   Skriv in följande kommando:
+    -   Skriv följande kommando.
 
         ```
         .\prerequisiteinstaller.exe
@@ -70,7 +70,7 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
 2. Ange den här servern som databasserver som **corpsql** för konfigurationsdatabasen och *Contoso\SharePoint* som kontot för SharePoint ska använda databasåtkomst.
 3. Skapa ett lösenord för gruppens säkerhetslösenfras.
 
-4. Vi rekommenderar att du väljer i konfigurationsguiden [MinRole](https://docs.microsoft.com/sharepoint/install/overview-of-minrole-server-roles-in-sharepoint-server-2016) typ av **frontend**
+4. Vi rekommenderar att du väljer i konfigurationsguiden [MinRole](/sharepoint/install/overview-of-minrole-server-roles-in-sharepoint-server) typ av **frontend**
 
 5. När konfigurationsguiden har slutfört konfigurationsåtgärd 10 av 10, klickar du på Slutför och en webbläsare öppnas...
 

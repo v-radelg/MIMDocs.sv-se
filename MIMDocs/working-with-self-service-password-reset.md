@@ -5,27 +5,27 @@ keywords: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 08/30/2018
+ms.date: 05/11/2019
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: 3a86569a8de77f4cf4d5aeafe0cd01dab40232b3
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 90452391170114270765e9a7fe08e98eea0747e4
+ms.sourcegitcommit: f58926a9e681131596a25b66418af410a028ad2c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358474"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690701"
 ---
 # <a name="self-service-password-reset-deployment-options"></a>Självbetjäning för återställning av lösenord distributionsalternativ
 
-För nya kunder som är [licens för Azure Active Directory Premium](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-licensing), bör du använda [återställning av lösenord för självbetjäning i Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-howitworks.md) att tillhandahålla slutanvändarens upplevelse.  Lösenord för självbetjäning av Azure AD lösenordsåterställning innehåller både en webb- och Windows-integrerad upplevelse för en användare att återställa sina egna lösenord och stöder många av funktionerna som MIM, inklusive alternativ e-postadress och Q & A portar.  När du distribuerar Azure AD via Självbetjäning för återställning av lösenord, Azure AD Connect stöder [skriver tillbaka de nya lösenorden till AD DS](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-writeback.md), och MIM [lösenordet ändra Notification Service](deploying-mim-password-change-notification-service-on-domain-controller.md) kan användas för att vidarebefordra den lösenord till andra system, t.ex en annan leverantörs katalogserver, samt.  Distribuera MIM för [lösenordshantering](infrastructure/mim2016-password-management.md) kräver inte MIM-tjänsten eller lösenord för självbetjäning MIM portaler återställning eller registrering som ska distribueras.  I stället kan du följa dessa steg:
+För nya kunder som är [licens för Azure Active Directory Premium](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-licensing), bör du använda [återställning av lösenord för självbetjäning i Azure AD](/azure/active-directory/authentication/concept-sspr-howitworks) att tillhandahålla slutanvändarens upplevelse.  Lösenord för självbetjäning av Azure AD lösenordsåterställning innehåller både en webb- och Windows-integrerad upplevelse för en användare att återställa sina egna lösenord och stöder många av funktionerna som MIM, inklusive alternativ e-postadress och Q & A portar.  När du distribuerar Azure AD via Självbetjäning för återställning av lösenord, Azure AD Connect stöder [skriver tillbaka de nya lösenorden till AD DS](/azure/active-directory/authentication/concept-sspr-writeback), och MIM [lösenordet ändra Notification Service](deploying-mim-password-change-notification-service-on-domain-controller.md) kan användas för att vidarebefordra den lösenord till andra system, t.ex en annan leverantörs katalogserver, samt.  Distribuera MIM för [lösenordshantering](infrastructure/mim2016-password-management.md) kräver inte MIM-tjänsten eller lösenord för självbetjäning MIM portaler återställning eller registrering som ska distribueras.  I stället kan du följa dessa steg:
 
 - Första, om du vill skicka lösenord till kataloger än Azure AD och AD DS, distribuera MIM-synkronisering med anslutningsprogram till Active Directory Domain Services och eventuella ytterligare målsystem, konfigurera MIM för [lösenordshantering](infrastructure/mim2016-password-management.md) och distribuera den [lösenordet ändra meddelandetjänsten](deploying-mim-password-change-notification-service-on-domain-controller.md).
-- Sedan, om du vill skicka lösenord till kataloger än Azure AD kan konfigurera Azure AD Connect för [skriver tillbaka de nya lösenorden till AD DS](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-writeback.md).
-- Du kan också [föranmäl dig användare](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-authenticationdata.md).
-- Slutligen [lanseras Azure AD lösenordsåterställning via Självbetjäning för dina slutanvändare](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-deployment.md).
+- Sedan, om du vill skicka lösenord till kataloger än Azure AD kan konfigurera Azure AD Connect för [skriver tillbaka de nya lösenorden till AD DS](/azure/active-directory/authentication/concept-sspr-writeback).
+- Du kan också [föranmäl dig användare](/azure/active-directory/authentication/howto-sspr-authenticationdata).
+- Slutligen [lanseras Azure AD lösenordsåterställning via Självbetjäning för dina slutanvändare](/azure/active-directory/authentication/howto-sspr-deployment).
 
-För befintliga kunder som hade tidigare har distribuerat Forefront Identity Manager (FIM) för återställning av lösenord nollställa och är licensierade för Azure Active Directory Premium, rekommenderar vi att planera övergången till Azure AD-självbetjäning lösenord återställa.  Du kan migrera användare till Azure AD lösenordsåterställning via självbetjäning utan att behöva dem registrera, av [eller genom att ange via PowerShell en användares alternativa e-postadress eller telefonnummer för mobila nummer](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-authenticationdata.md). När användare är registrerad för lösenord för självbetjäning i Azure AD återställa, FIM-återställningsportal av lösenord kan inaktiveras.
+För befintliga kunder som hade tidigare har distribuerat Forefront Identity Manager (FIM) för återställning av lösenord nollställa och är licensierade för Azure Active Directory Premium, rekommenderar vi att planera övergången till Azure AD-självbetjäning lösenord återställa.  Du kan migrera användare till Azure AD lösenordsåterställning via självbetjäning utan att behöva dem registrera, av [eller genom att ange via PowerShell en användares alternativa e-postadress eller telefonnummer för mobila nummer](/azure/active-directory/authentication/howto-sspr-authenticationdata). När användare är registrerad för lösenord för självbetjäning i Azure AD återställa, FIM-återställningsportal av lösenord kan inaktiveras.
 
 För kunder som inte har distribuerat Azure AD lösenordsåterställning via Självbetjäning för sina användare, dessutom MIM lösenordsåterställning via självbetjäning portaler.  MIM 2016 innehåller jämfört med FIM, följande ändringar:
 
@@ -79,7 +79,7 @@ I nästa avsnitt ställer du in Azure MFA-leverantören i Microsoft Azure Active
 
 ### <a name="register-your-multi-factor-authentication-provider-in-azure"></a>Registrera din leverantör av multifaktorautentiseringstjänsten i Azure
 
-1.  Skapa en [MFA-provider](https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factor-authentication-get-started-auth-provider.md).
+1.  Skapa en [MFA-provider](/azure/multi-factor-authentication/multi-factor-authentication-get-started-auth-provider).
 
 2. Öppna ett supportärende och begär direkt SDK för ASP.net 2.0 C#. SDK: N ges endast till användare av MIM med MFA eftersom direkt SDK är föråldrad. Nya kunder intar nästa version av MIM som kan integreras med MFA-servern.
 
@@ -99,7 +99,7 @@ I nästa avsnitt ställer du in Azure MFA-leverantören i Microsoft Azure Active
 
     ![pf_auth.cs code image](media/MIM-SSPR-pFile.png)
 
-6.  I **C:\Program Files\Microsoft Forefront Identity Manager\2010\Service** öppnar du filen: **MfaSettings**.xml.
+6.  I **C:\Program Files\Microsoft Forefront Identity Manager\2010\Service**, öppna filen: **MfaSettings**.xml.
 
 7.  Kopiera värdena från `LICENSE_KEY, GROUP_KEY, CERT_PASSWORD`-parametrarna i filen pf_aut.cs till deras respektive xml-element i filen MfaSettings.xml.
 
@@ -124,6 +124,8 @@ I nästa avsnitt ställer du in Azure MFA-leverantören i Microsoft Azure Active
 3.  Klicka på fliken **Aktiviteter** och bläddra till **Lägg till aktivitet**.
 
 4.  Välj **Telefonport** eller **SMS-gate för engångslösenord**, klicka på **Välj** och sedan på **OK**.
+
+Obs: Om du använder Azure MFA Server eller en annan provider, vilket genererar engångslösenord själva, kontrollera att längdfältet konfigurerade ovan är samma längd som som genererats av MFA-providern.  Den här längden måste vara 6 för Azure MFA Server.  Azure MFA Server genererar även en egen meddelandetext så att SMS-textmeddelande ignoreras.
 
 Användare i din organisation kan nu registrera sig för att få sina lösenord återställda.  Som en del av denna process får de ange sitt telefonnummer till arbetet eller sitt mobiltelefonnummer så att systemet vet hur det ska ringa upp dem (eller skicka SMS).
 

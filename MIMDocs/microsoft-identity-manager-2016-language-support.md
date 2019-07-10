@@ -9,12 +9,12 @@ ms.date: 05/23/2018
 ms.topic: get-started-article
 ms.prod: microsoft-identity-manager
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
-ms.openlocfilehash: 61d5f4ec20f5e29d1846a6822bec9669b364760f
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 2d843dcd5285d02a67955e763769a16f1a535abb
+ms.sourcegitcommit: f58926a9e681131596a25b66418af410a028ad2c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358711"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690737"
 ---
 # <a name="supported-languages"></a>Språk som stöds
 
@@ -32,53 +32,53 @@ Microsoft MIM-tjänsten och portalen Language Pack stöder följande språk 33 s
 
 |       Språk        | FIM(4.3.x.x)/MIM(4.4.xx) | MIM(4.5.x.x) |
 |-----------------------|--------------------------|--------------|
-|       Bulgariska       |          BG-BG           |      BG      |
-| Kinesiska (förenklad)  |          zh-CN           |   zh hans    |
+|       Bulgariska       |          BG-BG           |      bg      |
+| Förenklad kinesiska  |          zh-CN           |   zh-hans    |
 |   Kinesiska (Taiwan)    |          zh-TW           |   zh-hant    |
 |       Kroatiska        |          HR-HR           |      hr      |
-|         Tjeckiska         |          CS-CZ           |      CS      |
+|         Tjeckiska         |          CS-CZ           |      cs      |
 |        Danska         |          da-DK           |      da      |
-|         Nederländska         |          NL-NL           |      NL      |
-|       Estniska        |          et EE           |      et      |
+|         Nederländska         |          NL-NL           |      nl      |
+|       Estniska        |          et-EE           |      et      |
 |        Franska         |          fr-FR           |      fr      |
-|        Finska        |          fi-FI           |      Fi      |
-|        Tyska         |          de-DE           |      Tyskland      |
+|        Finska        |          fi-FI           |      fi      |
+|        Tyska         |          de-DE           |      de      |
 |         Grekiska         |          el GR           |      el      |
-|         Hindi         |          Hej Indien           |      Hej      |
-|       Ungerska       |          hu-HU           |      HU      |
-|        Italienska        |          IT-IT           |      den      |
-|       Japanska        |          ja-JP           |      Japan      |
-|        Koreanska         |          ko-KR           |      Ko      |
+|         Hindi         |          Hej Indien           |      hi      |
+|       Ungerska       |          hu-HU           |      hu      |
+|        Italienska        |          IT-IT           |      it      |
+|       Japanska        |          ja-JP           |      ja      |
+|        Koreanska         |          ko-KR           |      ko      |
 |      Litauiska       |          lt-LT           |      lt      |
-|        Lettiska        |          lv-LV           |      LV      |
+|        Lettiska        |          lv-LV           |      lv      |
 |       Norska       |          NB-NO           |    NB-NO     |
-|        Polska         |          pl-PL           |      PL      |
-| portugisiska (Portugal) |          PT-PT           |      pt      |
+|        Polska         |          pl-PL           |      pl      |
+| Portugisiska (Portugal) |          PT-PT           |      pt      |
 |  Portugisiska (Brasilien)  |          pt-BR           |    pt-BR     |
-|        Ryska        |          ru-RU           |      RU      |
+|        Ryska        |          ru-RU           |      ru      |
 |       Rumänska        |          RO-RO           |      ro      |
 |        Spanska        |          es-ES           |      ES      |
-|        Slovakiska         |          sk-SK           |      Sk      |
-|        Svenska        |          SV-SE           |      SA      |
-|       Slovenska       |          sl-SI           |      Sl      |
+|        Slovakiska         |          sk-SK           |      sk      |
+|        Svenska        |          SV-SE           |      sv      |
+|       Slovenska       |          sl-SI           |      sl      |
 |   Serbiska - Serbien    |  sr-latn-CS(Depricated)  |  SR-Latn-RS  |
 |         Thai          |          TH-TH           |      TH      |
-|        Turkiska        |          TR-TR           |      TR      |
+|        Turkiska        |          TR-TR           |      tr      |
 |       Ukrainska       |          uk-UA           |      Storbritannien      |
 
 ## <a name="certificate-management"></a>Certifikathantering 
 Certifikathantering Microsoft stöder följande 9 språk. 
 
-|Språk|FIM(4.3.x.x)/MIM(4.4.xx)|Ny MIM(4.5.x.x)
+|Språk|FIM(4.3.x.x)/MIM(4.4.xx)|New MIM(4.5.x.x)
 |-----|-----|-----|-----|
-|Kinesiska (förenklad)|zh-CN|zh hans|
+|Förenklad kinesiska|zh-CN|zh-hans|
 |Kinesiska (Taiwan)|zh-TW|zh-hant|
-|Nederländska|NL-NL|NL|
+|Nederländska|NL-NL|nl|
 |Franska|fr-FR|fr|
-|Tyska|de-DE|Tyskland|
-|Italienska|IT-IT|den|
-|Japanska|ja-JP|Japan|
-|portugisiska (Portugal)|PT-PT|PT-PT|
+|Tyska|de-DE|de|
+|Italienska|IT-IT|it|
+|Japanska|ja-JP|ja|
+|Portugisiska (Portugal)|PT-PT|PT-PT|
 |Spanska|es-ES|ES|
 
 ## <a name="certificate-management-modern-application"></a>Certifikat Management moderna program  
@@ -86,30 +86,30 @@ Microsoft Certificate Management modernt program har stöd för följande 33 spr
 
 |Språk | [1.0.225.104](https://www.microsoft.com/en-us/download/details.aspx?id=54954) | |
 |-----|-----|-----|-----|
-|Nederländska|NL-NL|NL|
-|Kinesiska (förenklad)|zh-CN|zh hans|
+|Nederländska|NL-NL|nl|
+|Förenklad kinesiska|zh-CN|zh-hans|
 |Kinesiska (Taiwan)|zh-TW|zh-hant|
-|Tjeckiska|CS-CZ|CS|
+|Tjeckiska|CS-CZ|cs|
 |Danska|da-DK|da|
 |Franska|fr-FR|fr|
-|Finska|fi-FI|Fi|
-|Tyska|de-DE|Tyskland|
+|Finska|fi-FI|fi|
+|Tyska|de-DE|de|
 |Grekiska|el GR|el|
-|Ungerska|hu-HU|HU|
-|Italienska|IT-IT|den|
-|Japanska|ja-JP|Japan|
-|Koreanska|ko-KR|Ko|
+|Ungerska|hu-HU|hu|
+|Italienska|IT-IT|it|
+|Japanska|ja-JP|ja|
+|Koreanska|ko-KR|ko|
 |Norska|NB-NO|NB-NO|
-|Polska|pl-PL|PL|
-|portugisiska (Portugal)|PT-PT|pt|
+|Polska|pl-PL|pl|
+|Portugisiska (Portugal)|PT-PT|pt|
 |Portugisiska (Brasilien)|pt-BR|pt-BR|
-|Ryska|ru-RU|RU|
+|Ryska|ru-RU|ru|
 |Rumänska|RO-RO|ro|
 |Spanska|es-ES|ES|
-|Svenska|SV-SE|SA|
-|Turkiska|TR-TR|TR|
+|Svenska|SV-SE|sv|
+|Turkiska|TR-TR|tr|
 
 ## <a name="next-steps"></a>Nästa steg
 
 - [Första distributionen](microsoft-identity-manager-deploy.md)
-- [Versionshistorik](/reference/version-history.md)
+- [Versionshistorik](reference/version-history.md)
