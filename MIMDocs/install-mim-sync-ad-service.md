@@ -6,19 +6,19 @@ author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 10/12/2017
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: 5e532b67-64a6-4af6-a806-980a6c11a82d
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 75935513ccb4ec3ebc089f9c5aad1d1624789a13
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 69698721b0fbabc78cf5bb4c1032ab8fc2613772
+ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358830"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701203"
 ---
-# <a name="install-mim-2016-synchronize-active-directory-and-mim-service"></a>Installera MIM 2016: synkronisera Active Directory och MIM-tjänsten
+# <a name="install-mim-2016-synchronize-active-directory-and-mim-service"></a>Installera MIM 2016: Synkronisera Active Directory och MIM-tjänsten
 
 > [!div class="step-by-step"]
 > [« MIM-tjänst och portal](install-mim-service-portal.md)
@@ -43,11 +43,11 @@ När du ska konfigurera en MIM-hanteringsagent måste du ange ett användarkonto
 
 1.  genom att öppna Hanteraren för synkroniseringstjänsten.
 
-2.  Öppna guiden Skapa hanteringsagenten ändrar du till den **Hanteringsagenter** sidan, klicka på den **åtgärder** menyn klickar du på **skapa**.
+2.  Öppna guiden skapa hanterings agent genom att ändra till sidan **hanterings agenter** och sedan klicka på **skapa**på menyn **åtgärder** .
 
 3.  På sidan **Skapa hanteringsagent** anger du följande inställningar och klickar sedan på **Nästa**.
 
-    -   Hanteringsagent för: FIM-tjänstens hanteringsagent
+    -   Hanterings agent för: Hanterings agent för FIM-tjänsten
 
     -   Namn: MIMMA
 
@@ -55,9 +55,9 @@ När du ska konfigurera en MIM-hanteringsagent måste du ange ett användarkonto
 
     -   Server: localhost
 
-    -   Databas: FIMService
+    -   Databas FIMService
 
-    -   MIM-tjänstens basadress: http://localhost:5725
+    -   Bas adress för MIM-tjänst: http://localhost:5725
 
     -   Autentiseringsläge: Windows-integrerad autentisering
 
@@ -113,14 +113,14 @@ När du ska konfigurera en MIM-hanteringsagent måste du ange ett användarkonto
     | **Attribut för datakälla** | **Flödesriktning** | **Attribut för metaversum** |
     |-|-|-|
     | Kontonamn | Exportera | kontonamn |
-    | DisplayName | Exportera | visningsnamn |
+    | DisplayName | Exportera | displayName |
     | Domain | Exportera | domän |
-    | E-post | Exportera | e-post |
+    | Email | Exportera | e-post |
     | EmployeeID | Exportera | anställnings-ID |
     | Anställningstyp | Exportera | anställningstyp |
-    | Förnamn | Exportera | förnamn |
+    | FirstName | Exportera | förnamn |
     | Efternamn | Exportera | efternamn |
-    | Objekt-SID | Exportera | objekt-SID |
+    | Objekt-SID | Exportera | objectSid |
 
     -   Välj **Grupp** som typ av datakällobjekt och metaversumobjekt.
 
@@ -139,23 +139,23 @@ När du ska konfigurera en MIM-hanteringsagent måste du ange ett användarkonto
     | **Attribut för datakälla** | **Flödesriktning** | **Attribut för metaversum** |
     |-|-|-|
     | Kontonamn | Exportera | kontonamn |
-    | DisplayName | Exportera | visningsnamn |
+    | DisplayName | Exportera | displayName |
     | Domain | Exportera | domän |
-    | E-post | Exportera | e-post |
+    | Email | Exportera | e-post |
     | Smeknamn för e-post | Exportera | smeknamn för e-post |
     | Medlem | Exportera | medlem |
     | Objekt-SID | Exportera | objekt-SID |
     | Omfång | Exportera | omfång |
-    | Typ | Exportera | typ |
+    | type | Exportera | type |
     | Lägg till arbetsflöde för medlemskap | Exportera | lägg till arbetsflöde för medlemskap |
     | Medlemskap låst | Exportera | medlemskap låst |
     | Kontonamn | Importera | kontonamn |
     | Visad ägare | Importera | visad ägare |
-    | DisplayName | Importera | visningsnamn |
+    | DisplayName | Importera | displayName |
     | Smeknamn för e-post | Importera | smeknamn för e-post |
     | Medlem | Importera | medlem |
-    | Omfång | Importera | omfång |
-    | Typ | Importera | typ |
+    | Omfång | Importera | scope |
+    | type | Importera | typ |
 
 10.  På sidan **Konfigurera avetablering** klickar du på **Nästa**
 
@@ -168,7 +168,7 @@ Active Directory-hanteringsagenten är en anslutning för AD-domäntjänster. An
 
 2. På sidan **Skapa hanteringsagent** anger du följande inställningar och klickar sedan på **Nästa**
 
-    - Hanteringsagent för: Active Directory Domain Services
+    - Hanterings agent för: Active Directory Domain Services
     - Namn: ADMA
 
 3. På sidan **Anslut till Active Directory-skog** anger du följande inställningar och klickar sedan på **Nästa**:
@@ -196,19 +196,19 @@ Active Directory-hanteringsagenten är en anslutning för AD-domäntjänster. An
 
 7. På sidan **Välj attribut** markerar du **Visa ALLA**, väljer följande attribut och klickar på **Nästa**:
 
-    -   företag
-    -   visningsnamn
+    -   Företagets
+    -   displayName
     -   anställnings-ID
     -   anställningstyp
-    -   förnamn
+    -   givenName
     -   grupptyp
     -   hanteradAv
     -   manager
     -   medlem
-    -   objekt-SID
+    -   objectSid
     -   sAMAccountName
     -   sAMAccountType
-    -   sn
+    -   SN
     -   unicodePwd
     -   userAccountControl
 
@@ -225,13 +225,13 @@ Active Directory-hanteringsagenten är en anslutning för AD-domäntjänster. An
 
 ## <a name="create-run-profiles"></a>Skapa körningsprofiler
 
-Skapa körningsprofiler för ADMA- och MIMMA-kopplingarna.
+Skapa körnings profiler för ADMA-och MIMMA-anslutningarna.
 
 ### <a name="create-run-profiles-for-the-adma-connector"></a>Skapa körningsprofiler för ADMA-anslutningen
 
 Den här tabellen visar de fem körningsprofiler du ska skapa för ADMA-anslutningen:
 
-| Namn | Typ |
+| Namn | type |
 | ---- | ---- |
 | Profil1 | Fullständig import (endast mellanlagring) |
 | Profil2 | Fullständig synkronisering |
@@ -263,7 +263,7 @@ För att skapa körningsprofiler för ADMA-anslutningen:
 
 I den här tabellen visas de fem matchande körningsprofilerna för MIMMA-anslutningen:
 
-| Namn | Typ |
+| Namn | type |
 | -------- | -------- |
 | Profil1 | Fullständig import (endast mellanlagring) |
 | Profil2 | Fullständig synkronisering |
@@ -305,8 +305,8 @@ Så här skapar du regeln för inkommande synkronisering av AD-användare:
 
 4. På fliken **Allmänt** anger du följande uppgifter och klickar sedan på **Nästa**.
 
-    -   Visningsnamn: Regel för inkommande synkronisering av AD-användare
-    -   Dataflödesriktning: inkommande
+    -   Visnings namn: Regel för inkommande synkronisering av AD-användare
+    -   Data flödes riktning: Inkommande
 
 5. På fliken **Omfattning** anger du följande uppgifter och klickar sedan på **Nästa**.
 
@@ -322,14 +322,14 @@ Så här skapar du regeln för inkommande synkronisering av AD-användare:
 
 7. På sidan **Inkommande attributflöde** anger du följande uppgifter och klickar sedan på **Nästa**:
 
-    | Flödesregel | Källa | Mål |
+    | Flödesregel | Source | Mål |
     |-|-|-|
     |Regel 1|samAccountName|kontonamn|
-    |Regel 2|visningsnamn|visningsnamn|
+    |Regel 2|displayName|displayName|
     |Regel 3|Anställningstyp|anställningstyp|
     |Regel 4|förnamn|förnamn|
     |Regel 5|sn|efternamn|
-    |Regel 6|Manager|manager|
+    |Regel 6|Manager|ansvarig|
     |Regel 7|objekt-SID|Objekt-SID|
     |Regel 8|”Contoso”|domän|
 

@@ -6,17 +6,17 @@ author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 10/26/2017
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: cbba7abe810fea0943e087206f7b0b6e3baa7cbb
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 35845cc9bb4358f3f837b8a007de15da972c980d
+ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49357895"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701318"
 ---
 # <a name="set-up-a-domain"></a>Konfigurera en domän
 
@@ -33,11 +33,11 @@ Alla komponenter i MIM-distributionen behöver ha egna identiteter i domänen. D
 
 > [!NOTE]
 > I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
-> - Domänkontrollantens namn - **corpdc**
+> - Domänkontrollantens namn – **corpdc**
 > - Domännamn – **contoso**
-> - MIM-Tjänstserverns name - **corpservice**
-> - Servernamnet för MIM Sync - **corpsync**
-> - Namnet på SQL Server - **corpsql**
+> - Server namn för MIM-tjänst – **corpservice**
+> - MIM Sync Server-namn – **corpsync**
+> - SQL Server namn – **corpsql**
 > - Lösenord – <strong>Pass@word1</strong>
 
 1. Logga in på domänkontrollanten som domänadministratör (*t.ex. Contoso\Administratör*).
@@ -99,11 +99,11 @@ Alla komponenter i MIM-distributionen behöver ha egna identiteter i domänen. D
     setspn -S FIMService/mim.contoso.com Contoso\MIMService
     setspn -S FIMService/corpservice.contoso.com Contoso\MIMService
     ```
-5.  Under installationen måste vi lägga till följande DNS ”A”-posterna för korrekt namnmatchning
+5.  Under installationen måste du lägga till följande DNS-poster för korrekt namn matchning
 
-- mim.contoso.com punkt till corpservice fysiska ip-adress
-- passwordreset.contoso.com punkt till corpservice fysiska ip-adress
-- passwordregistration.contoso.com punkt till corpservice fysiska ip-adress
+- mim.contoso.com pekar på corpservice fysiska IP-adress
+- passwordreset.contoso.com pekar på corpservice fysiska IP-adress
+- passwordregistration.contoso.com pekar på corpservice fysiska IP-adress
 
 > [!div class="step-by-step"]
 > [Windows Server 2016»](prepare-server-ws2016.md)

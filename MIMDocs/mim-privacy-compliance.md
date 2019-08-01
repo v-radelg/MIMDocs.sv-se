@@ -1,183 +1,183 @@
 ---
-title: Microsoft Identity Manager-datahantering | Microsoft Docs
-description: Förstå hantera för att identifiera prenumeranten och rapportera om data i miljö, vidta åtgärder för Microsoft Identity Manager-data i den angivna system baserat på operativa funktioner och krav.
+title: Microsoft Identity Manager data hantering | Microsoft Docs
+description: Förstå Microsoft Identity Manager data hantering för att identifiera prenumeranten och rapportera om data i miljön, vidta åtgärder i det aktuella systemet baserat på operativa funktioner och krav.
 keywords: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 12/02/2018
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.suite: ems
-ms.openlocfilehash: f75eb69360852c9f629b60d4900638c8b51e068a
-ms.sourcegitcommit: 9e420840815adb133ac014a8694de9af4d307815
+ms.openlocfilehash: 6f861c5b1984de70a91edcac89276402f289e355
+ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "52825798"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701487"
 ---
-# <a name="microsoft-identity-manager-data-handling"></a>Datahantering för Microsoft Identity Manager 
+# <a name="microsoft-identity-manager-data-handling"></a>Microsoft Identity Manager data hantering 
 
-Den här artikeln innehåller anvisningar om hur organisationer kan fatta beslut som kan tillämpas i många anslutna datakällor.  Detta kan ske via sökning, ta bort, uppdatera och rapportåtgärder.  Innan du bestämmer dig för din metod för att ta bort eller uppdatera, är det viktigt med en förståelse för den aktuella designen och konfigurationen av systemet identity manager (MIM). 
+I den här artikeln får du vägledning om hur organisationer kan fatta beslut som kan tillämpas på många anslutna data källor.  Detta kan uppnås genom åtgärderna Sök, ta bort, uppdatera och rapportera.  Innan du bestämmer dig för att ta bort eller uppdatera är det viktigt att förstå den aktuella utformningen och konfigurationen av ditt Identity Manager-system (MIM). 
 
-Nedan visas några scenarier kunder behöver tänka på och besvara följande frågor: 
+Nedan visas några scenarier som kunderna behöver tänka på och svara på följande frågor: 
 
-- Vilka data du behöver för du Identitetshantering som underlättar affärsprocess?
-- Där aktuella data ska lagras i MIM?
-- Hur kommer du använder dessa data i systemet?
-- Delar du dessa data med alla externa partners data sources(Exporting)
-- Vad är den auktoritativa källan för data och bearbetning av dem?
-- Vad kommer din datalagring och dataradering planera på plats?
-- Har du identifierat den teknik du behöver för att bearbeta och hantera data?
+- Vilka data behöver du för identitets hantering för att hjälpa till med affärs processen?
+- Var kommer aktuella data att lagras i MIM?
+- Hur kommer du att använda dessa data i systemet?
+- Delar dessa data med alla externa partners data källor (export)
+- Vad är den auktoritativa källan för data och bearbetning av den?
+- Vad gör data lagringen och data borttagnings planen på plats?
+- Har du identifierat all teknik du behöver för att bearbeta och hantera data?
 
-Du kan använda följande verktyg för att dokumentera din MIM-miljö eller att referera till implementering designdokument för att hjälpa dig att förstå aktuella MIM-miljö.
-- [MIM Documentor - tillåter för att exportera aktuell konfiguration](https://github.com/Microsoft/MIMConfigDocumenter)
+För att hjälpa dig att förstå en aktuell MIM-miljö kan du använda följande verktyg för att dokumentera MIM-miljön, eller Överlåt dig till implementerings design dokumenten.
+- [MIM-Dokumentor – tillåter export av den aktuella konfigurationen](https://github.com/Microsoft/MIMConfigDocumenter)
 
 ## <a name="searching-for-and-identifying-personal-data"></a>Söka efter och identifiera personliga data
-Söka efter data i MIM är beroende av konfiguration och installation. De flesta miljöer är sammankopplade men för tydlighetens skull vi utbrott dem av övergripande komponenten.
+Sökning av data i MIM är beroende av konfigurationen och konfigurationen. De flesta miljöer är sammankopplade, men för tydlighets skull kan vi dela upp dem med hög nivå komponent.
 
 ### <a name="synchronization-service"></a>Synkroniseringstjänst
 
-Alla data i MIM som relaterar till användare härleds från Active Directory (AD) och HR-datakällor. När du söker efter personliga data, är den första plats bör du överväga att söka i AD eller anslutna datakällor. 
+Alla data i MIM som relaterar till användare härleds från Active Directory (AD) och data källor i HR. När du söker efter personliga data bör du överväga att söka är AD eller anslutna data källor. 
 
-Om du inte är säker källa för kan du spåra den här användaren från MIM Synchronization Service Manager-konsolen, klickar du på fältet Metaversumsökning om du vill visa identifierbar personliga data som lagras i databasen. Användare kan söka efter en viss användare eller ett attribut.
+Om du inte är säker på källan till utfärdaren kan du spåra den här användaren från MIM Synchronization Service Manager-konsolen, klicka på Sök fältet metaversum för att visa de identifierbara personliga data som lagras i databasen. Användare kan söka efter en speciell användare eller ett attribut.
 
-- Du utför en granskning eller Sök objekt användardata
-    - Öppna tjänstklienten synkronisering
-        - Med hjälp av metaversum designer om du vill se attributflöde importerar och prioritet.
-![mim-sekretess-compliance_1.PNG](media/mim-privacy-compliance/mim-privacy-compliance_1.PNG)
-        - Med hjälp av metaversumsökningen kan du söka på alla objekt och attribut i databasen ![mim-sekretess-compliance_2.PNG](media/mim-privacy-compliance/mim-privacy-compliance_2.PNG)
+- Utföra en granskning eller sökning efter användar objekts data
+    - Öppna tjänsten synkroniseringstjänst
+        - Med hjälp av metaversum Designer kan du se import och prioritet för Attribute Flow.
+![MIM-Privacy-compliance_1. PNG](media/mim-privacy-compliance/mim-privacy-compliance_1.PNG)
+        - Med hjälp av metaversum-sökningen kan du söka efter objekt och attribut i databasen ![MIM-Privacy-compliance_2. png](media/mim-privacy-compliance/mim-privacy-compliance_2.PNG)
  
-När du har hittat objektet, öppnas klickar på objektet användarens profilsida. Information om objekt ger dig med detaljer om objektet, dess attribut, senast ändrad och auktoritetskälla och relaterade ansluten datakälla har härletts från management agent configuration exemplet nedan.
+När du har hittat objektet öppnas sidan användar profil när du klickar på objektet. Objekt informationen ger dig fullständig information om objektet, dess attribut, senast ändrad och källan till utfärdaren och relaterad ansluten data källa härledda från konfigurations exemplet för hanterings agenten nedan.
 
-![mim-sekretess-efterlevnad. PNG](media/mim-privacy-compliance/mim-privacy-compliance.PNG)
+![MIM-sekretess-efterlevnad. KÄLLFIL](media/mim-privacy-compliance/mim-privacy-compliance.PNG)
 
-### <a name="service-and-portal--pam"></a>Tjänst och Portal / PAM
-Om du har en instans av tjänsten och portalen eller PAM installerat som är kan söka efter användare viktigt. 
+### <a name="service-and-portal--pam"></a>Tjänst och Portal/PAM
+Om du har en instans av tjänsten och portalen eller PAM installerat som kan söka efter användare är det viktigt. 
 
-Om du har installerat portalen kan du använda Användargränssnittet söka på alla attribut eller en fråga för en viss användare.
+Om du har installerat portalen kan du använda användar gränssnittet för att söka efter attribut eller frågor för en viss användare.
 
-Om du bara har den tjänst server (utan portalens användargränssnitt) installerad du kan köra en Söksyntaxen baserat på [FIMAutomation PSSnapin] exempel finns [här](https://social.technet.microsoft.com/wiki/contents/articles/22713.fim-portals-use-powershell-to-find-all-users-without-a-manager.aspx).
+Om du bara har installerat tjänst servern (utan Portal användar gränssnitt) kan du köra en söksyntax baserat på [FIMAutomation PSSnapin], exempel som du hittar [här](https://social.technet.microsoft.com/wiki/contents/articles/22713.fim-portals-use-powershell-to-find-all-users-without-a-manager.aspx).
 
-PAM kan använda samma syntax som ovan eller du kan använda den [MIMPAM modulen](https://docs.microsoft.com/powershell/module/mimpam/get-pamuser?view=idm-ps-2016sp1) specifikt cmdleten get-pamuser att söka efter användare i PAM-miljön.
+PAM kan använda samma syntax ovan eller så kan du använda [MIMPAM-modulen](https://docs.microsoft.com/powershell/module/mimpam/get-pamuser?view=idm-ps-2016sp1) särskilt cmdleten Get-pamuser för att söka efter användaren i pam-miljön.
 
-Andra reporting alternativ för att söka på tillgänglig data är i tjänsten och portalen.
-- [Hybrid Reporting](https://docs.microsoft.com/microsoft-identity-manager/identity-manager-hybrid-reporting-azure)
-- [Rapportering med SCSM](https://docs.microsoft.com/previous-versions/mim/jj133853%28v%3dws.10%29)
+Andra rapporterings alternativ för att söka efter tillgängliga data finns i tjänsten och portalen.
+- [Hybrid rapportering](https://docs.microsoft.com/microsoft-identity-manager/identity-manager-hybrid-reporting-azure)
+- [Rapportera med SCSM](https://docs.microsoft.com/previous-versions/mim/jj133853%28v%3dws.10%29)
 
 ### <a name="bhold"></a>BHOLD
-Bhold-Core-tjänst har ett gränssnitt som gör att du kan söka efter en användare eller attribut. 
+BHOLD Core Service har ett användar gränssnitt som gör att du kan söka efter en användare eller attribut. 
 
-![bhold-sökning](media/mim-privacy-compliance/mim-privacy-compliance-bhold.PNG)
+![BHOLD-sökning](media/mim-privacy-compliance/mim-privacy-compliance-bhold.PNG)
 
-Om du synkroniserar BHOLD med [åtkomst till management-anslutningstjänsten](https://docs.microsoft.com/microsoft-identity-manager/bhold/bhold-access-management-connector-install) för synkroniseringstjänsten kommer du att kunna se de anslutna objekt och attribut din skicka BHOLD-kärna.
+Om du synkroniserar BHOLD med [Access Management Connector](https://docs.microsoft.com/microsoft-identity-manager/bhold/bhold-access-management-connector-install) för synkroniseringstjänst kommer du att kunna se de anslutna användar objekten och de attribut som skickas till BHOLD-kärnan.
 
-Du kan också läsa in modulen BHOLD-rapportering.
+Du kan också läsa in modulen BHOLD rapportering.
 
 - [BHOLD-rapportering](https://docs.microsoft.com/microsoft-identity-manager/bhold/bhold-concepts-guide#reporting)
 
 ### <a name="certificate-management"></a>Certifikathantering
-Certifikatsökning management-tjänsten är inbyggd i Användargränssnittet. Administratören startar och välj ”hitta användare och visa eller hantera sin information'  
+Sök tjänsten för certifikat hantering är inbyggd i användar gränssnittet. Administratören startar och väljer "hitta användare och Visa eller hantera deras information"  
 
 ![cm-sökning](media/mim-privacy-compliance/mim-privacy-compliance-cm.PNG)
 
 ## <a name="exporting-personal-data"></a>Exportera personliga data
-Eftersom de data som rör entiteter i MIM hämtas från flera källor, lagras de flesta data i databasen för synkroniseringstjänsten. Därför bör du exportera objekt-relaterade data från MIM Sync eller du kan fastställa ägaren av dessa data.
+Eftersom data som är relaterade till entiteter i MIM härleds från flera källor lagras de flesta data i databasen för synkroniseringstjänsten. Därför bör du exportera objekt relaterade data från MIM-synkronisering eller så kan du bestämma vem som är ägare till dessa data.
 
 ### <a name="synchronization-service"></a>Synkroniseringstjänst
-Synkroniseringstjänster för export av data kan du bara väljer du data från sökningen Användargränssnittet och kopiera och klistra in i en csv- eller formatet du väljer. Ett annat sätt att exportera dessa data är att skapa en filbaserad MA för att ta bort aktuella data behövs om en flaggade användare av intresse. En exemplet för att använda filbaserad MA finns [här](https://blogs.msdn.microsoft.com/connector_space/2016/11/17/management-agent-configuration-part-4-delimited-text-file-management-agent/).
+Med Sync Services för export av data väljer du bara data från Sök gränssnittet och kopierar och klistrar in dem i ett CSV-eller önskat format. Ett annat sätt att exportera dessa data är att skapa ett filbaserat MA för att släppa aktuella data som behövs för en flaggad användare av intresse. Det går att hitta en exemplet med hjälp av filbaserad [ma.](https://blogs.msdn.microsoft.com/connector_space/2016/11/17/management-agent-configuration-part-4-delimited-text-file-management-agent/)
 
 
-### <a name="service-and-portal--pam"></a>Tjänst och Portal / PAM
-Tjänst och portal tillsammans med PAM som du kan exportera dessa data körs en Söksyntaxen baserat på [FIMAutomation PSSnapin] exempel finns [här](https://social.technet.microsoft.com/wiki/contents/articles/22713.fim-portals-use-powershell-to-find-all-users-without-a-manager.aspx) och skicka det till [csv](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-6).
+### <a name="service-and-portal--pam"></a>Tjänst och Portal/PAM
+Tjänst och Portal tillsammans med PAM du kan exportera dessa data kör en söksyntax baserat på [FIMAutomation PSSnapin], exempel som du hittar [här](https://social.technet.microsoft.com/wiki/contents/articles/22713.fim-portals-use-powershell-to-find-all-users-without-a-manager.aspx) och pipe till [CSV](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-6).
 
-PAM kan använda samma syntax som ovan eller du kan använda den [MIMPAM modulen](https://docs.microsoft.com/powershell/module/mimpam/get-pamuser?view=idm-ps-2016sp1) specifikt den get-pamuser att söka efter användare i PAM-miljön och skicka det till en CSV-fil.
+PAM kan använda samma syntax ovan eller så kan du använda [MIMPAM-modulen](https://docs.microsoft.com/powershell/module/mimpam/get-pamuser?view=idm-ps-2016sp1) särskilt get-pamuser för att söka efter användaren i pam-miljön och skicka en pipe till en CSV.
 
-- [Exempel frågor till MIM-tjänsten med hjälp av PowerShell](https://gallery.technet.microsoft.com/Querying-The-FIMMIM-dcb82de3)
+- [Exempel som frågar MIM-tjänsten med PowerShell](https://gallery.technet.microsoft.com/Querying-The-FIMMIM-dcb82de3)
 
 ### <a name="bhold"></a>BHOLD
-Bhold-data kan exporteras med hjälp av bhold rapporterar modulen till formatet du väljer.
+BHOLD-data kan exporteras med BHOLD-rapporterings modulen till önskat format.
 
 ### <a name="certificate-management"></a>Certifikathantering
-Certifikat management data som rör personliga data är ansluten till active directory. Administratörer kan exportera dessa data med hjälp av Active Directory powershell.
+Certifikat hanterings data relaterade till personliga data är anslutna till Active Directory. En administratör kan exportera dessa data med hjälp av Active Directory PowerShell.
 
 ## <a name="updating-personal-data"></a>Uppdatera personliga data
 
-Personliga data om användare eller objekt i MIM-lösningar vanligtvis härleds från användarens objekt i din organisations anslutna datakällor. Eftersom ändringar som görs till användarens profil i HR käll- eller en annan auktoritativ system för registrering, till exempel AD sedan avspeglas i MIM-synkroniseringstjänsten.
+Person uppgifter om användare eller objekt i MIM-lösningar härleds vanligt vis från användarens objekt i organisationens anslutna data källor. Eftersom ändringar som görs i användar profilen i HR-källan, eller ett annat auktoritativt post system, till exempel AD, avspeglas i MIM-synkroniseringstjänsten.
 
 ### <a name="synchronization-service"></a>Synkroniseringstjänst
 
-För att kunna utföra hanteringsåtgärder, administratörer måste vara en del av synkroniseringsåtgärder eller administratörsdefinierad [här](https://docs.microsoft.com/previous-versions/mim/jj590183(v%3dws.10)).
+För att utföra hanterings åtgärder måste administratörer vara en del av de åtgärder för synkronisering eller administratör som definierats [här](https://docs.microsoft.com/previous-versions/mim/jj590183(v%3dws.10)).
 
-Uppdatering av data görs genom att definiera regler för utfärdaren från källan. Konsolen Grupprinciphantering hjälper dig identifiera källan för att uppdatera den vid källan. Ett annat alternativ är att skapa synkroniseringsregel eller regel tillägg att styra data uppdateras om källan som HR data behöver fortfarande kvar. Det här är avialible stöds alternativ.
+Uppdatering av data görs genom att definiera regler från auktoritets källan. Hanterings konsolen hjälper till att identifiera källan till behörighet att uppdatera den vid källan. Ett annat alternativ är att skapa en Synkroniseringsregel eller regel omfattning för att kontrol lera att data uppdateras om källan som HR-data fortfarande måste vara kvar. Detta är avialible alternativ som stöds.
 
 Mer information om olika sätt att uppdatera attribut finns nedan. 
 
-- [Med tillägg för Etableringsregler](https://msdn.microsoft.com/library/windows/desktop/ms698810(v=vs.100).aspx)
+- [Använda regel tillägg](https://msdn.microsoft.com/library/windows/desktop/ms698810(v=vs.100).aspx)
 - [Förstå datasynkronisering med externa system](https://docs.microsoft.com/previous-versions/mim/jj133850(v%3dws.10))
 
-### <a name="service-and-portal--pam"></a>Tjänst och Portal / PAM
+### <a name="service-and-portal--pam"></a>Tjänst och Portal/PAM
 
-Tjänst och Portal för att inkludera PAM data kan uppdateras med hjälp av FIMAutomation eller PAM-cmdlets. Om du har på portalen kan du också direkt uppdatera genom att söka och ändra objektet. En sak till anteckning och, beroende på konfigurationen genom att uppdatera från portalen innebär inte det kommer att finnas. Eftersom auktoritetskälla är mycket beroende på övergripande konfiguration.
+Tjänsten och portalen för att inkludera PAM-data kan uppdateras med hjälp av FIMAutomation-eller PAM-cmdletar. Om du har portalen kan du också direkt uppdatera genom att söka efter och ändra objektet. En sak att notera och beroende på konfiguration som helt enkelt uppdaterar från portalen innebär inte att den är kvar. Som auktoritets källa är mycket beroende av den övergripande konfigurationen.
 
 ### <a name="bhold"></a>BHOLD
 
-Användare kan uppdateras direkt med användargränssnittet för BHOLD-kärna eller access management-anslutningstjänsten.
+Användare kan uppdateras direkt med BHOLD Core-användargränssnittet eller åtkomst hanterings anslutningen.
 
 ### <a name="certificate-management"></a>Certifikathantering
 
-Användare i den certifikatet management-tjänsten är en avbildning från active directory. Att uppdatera Använd Active Directory för att ändra information om objekt.
+Användare i certifikat hanterings tjänsten är en reflektion från Active Directory. Om du vill uppdatera använder Active Directory för att ändra objekt information.
 
 ## <a name="deleting-personal-data"></a>Ta bort personliga data
 
 >[!Note] 
-> Den här artikeln innehåller råd om sätt att ta bort personliga data från Microsoft Identity Manager och kan användas för att stödja dina skyldigheter enligt GDPR. Om du letar efter allmän information om GDPR finns den i [GDPR-avsnittet i Service Trust-portalen](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
+> Den här artikeln innehåller rikt linjer för hur du tar bort personliga data från Microsoft Identity Manager och som kan användas för att stödja dina skyldigheter enligt GDPR. Om du letar efter allmän information om GDPR finns den i [GDPR-avsnittet i Service Trust-portalen](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
-Data i MIM synkroniseras och uppdateras alltid från den anslutna datakällan. När ett objekt tas bort i målet, kan objektdata i MIM hanteras för säkerhetsundersökning. Ta bort objekt konfigureras per anslutna källregler eller regel extension(code) och/eller regler för borttagning av objekt.
+Data i MIM synkroniseras och uppdateras alltid från den anslutna data källan. När ett objekt tas bort i mål, kan objektets data i MIM upprätthållas i samband med säkerhets undersökningen. Objekt borttagning har kon figurer ATS per ansluten data käll regler eller regel tillägg (kod) och/eller objekt borttagnings regler.
 
 ### <a name="synchronization-service"></a>Synkroniseringstjänst
-Synkronisering av tjänsten som många sätt att hantera data eller ta bort data, beroende på affärsprocesser. För att förstå visas nedan några artiklar för att förstå alternativen på Ta bort och uppdatera attribut: 
+Synkroniseringstjänsten på många sätt för att hantera data eller ta bort data beroende på affärs processer. För att förstå, nedan finns några artiklar som hjälper dig att förstå alternativen för att ta bort och uppdatera attribut: 
 
 - [Förstå avetablering](https://social.technet.microsoft.com/wiki/contents/articles/1270.understanding-deprovisioning-in-fim.aspx)
-- [Med tillägg för Etableringsregler](https://msdn.microsoft.com/library/windows/desktop/ms698810(v=vs.100).aspx)
-- [Metodtips för MIM](https://docs.microsoft.com/microsoft-identity-manager/mim-best-practices)
+- [Använda regel tillägg](https://msdn.microsoft.com/library/windows/desktop/ms698810(v=vs.100).aspx)
+- [Bästa praxis för MIM](https://docs.microsoft.com/microsoft-identity-manager/mim-best-practices)
 
-### <a name="service-and-portal--pam"></a>Tjänst och Portal / PAM
+### <a name="service-and-portal--pam"></a>Tjänst och Portal/PAM
 
-Vi rekommenderar för tjänsten och att du behåller standard 30 dagar-kvarhållningskonfiguration-portalen. Detta talar om för tjänsten när den tas bort, inte bara data för programbegäranden utan även objekt som måste tas bort från systemet. När den process alla data som är länkad till det här objektet tas bort detta omfattar alla data för SSPR-registrering. Det spelar i objektet tas bort konfigurationen ovan. Vi har en tabell har vi lagrar guid för objekten. Att minska den sammanlagda storleken på tabellen i build 4.4.1459 som vi har lagt till en process som kallas FIM_DeleteExpiredSystemObjectsJob information om den här processen finns [här](https://support.microsoft.com/en-us/help/4012498/hotfix-rollup-package-build-4-4-1459-0-is-available-for-microsoft-iden).
+Vi rekommenderar att du behåller tjänst & portalen att du behåller standard konfigurationen för 30 dagar system resurs kvarhållning. Detta meddelar tjänsten när den tas bort, inte bara begär ande data, utan även objekt som behöver rensas från systemet. När processen har tagits bort tas alla data som är länkade till objektet bort, inklusive alla SSPR registrerings data. Detta spelas upp i konfigurationen för borttagning av objekt ovan. Vi har en tabell som vi lagrar GUID för objekten. För att minska den totala storleken på tabellen i build-4.4.1459 vi har lagt till en process som heter FIM_DeleteExpiredSystemObjectsJob information om den här processen finns [här](https://support.microsoft.com/en-us/help/4012498/hotfix-rollup-package-build-4-4-1459-0-is-available-for-microsoft-iden).
 
-![mim-sekretess-efterlevnad-srrc. PNG](media/mim-privacy-compliance/mim-privacy-compliance-srrc.PNG)
+![MIM-Privacy-Compliance-SRRC. KÄLLFIL](media/mim-privacy-compliance/mim-privacy-compliance-srrc.PNG)
 
 
 ### <a name="bhold"></a>BHOLD
 
-Bhold som de flesta system som är anslutna till tjänsten för synkronisering kan konfigureras för att ta bort när källobjektet som HR tas bort. Detta har konfigurerats på hanteringsagenten. och kontrolleras av objektborttagning regler som beskrivs under synkroniseringar service-funktioner.
+BHOLD som de flesta system som är anslutna till synkroniseringstjänsten kan konfigureras att ta bort när källobjektet som HR tas bort. Detta är konfigurerat på hanterings agenten. och kontrol leras av reglerna för borttagning av objekt enligt beskrivningen i funktionerna i synkroniseringen.
 
-Ett annat alternativ är att ta bort objektet direkt från BHOLD Core användargränssnittet. Beroende på inställningarna kan detta fungerar bra men Observera etablering logic kan återskapa den här användaren om det inte har tagits bort vid källan.
-![mim-sekretess-efterlevnad-bholdr. PNG](media/mim-privacy-compliance/mim-privacy-compliance-bholdr.PNG)
+Ett annat alternativ är att ta bort användar objekt direkt från BHOLD Core-användargränssnittet. Beroende på installationen kan detta fungera, men antecknings etablerings logiken kan återskapa den här användaren om den inte togs bort vid källan.
+![MIM-Privacy-Compliance-bholdr. KÄLLFIL](media/mim-privacy-compliance/mim-privacy-compliance-bholdr.PNG)
 
 
 ### <a name="certificate-management"></a>Certifikathantering
-Om du vill ta bort en användare från CM, finns ta bort användaren i active directory.
+Ta bort användaren från CM genom att ta bort användaren i Active Directory.
 
-Certifikathantering som det lagras endast profil uid från Certifikattjänster med sAMAccountName i domänen. När användaren har tagits bort från användarcachen finns bara för certifikat AD ÄXLA som de har registrerat. Vi rekommenderar inte att ta bort något i databasen eftersom detta kan skada övergripande driften av miljön.
+Certifikat hantering eftersom den endast kommer att lagra profil-UID från certifikat tjänster med domän-sAMAccountName. När användaren har tagits bort från AD finns det bara användarens cacheminne för certifikaten äxla de har registrerats. Vi rekommenderar inte att du tar bort något i databasen eftersom det kan orsaka övergripande skada på driften av miljön.
 
-## <a name="opt-out-of-telemetry"></a>Avstår från telemetri
-Tidigare versioner FIM/MIM används för att samlar in anonymiserade telemetri om varje distribution och överför dessa data via HTTPS till Microsoft-servrar. Dessa data har använts av Microsoft för att förbättra framtida versioner av FIM/MIM tidigare.
+## <a name="opt-out-of-telemetry"></a>Inaktivera telemetri
+Tidigare versioner av FIM/MIM används för att samla in anonymiserats telemetri om varje distribution och överföring av data via HTTPS till Microsoft-servrar. Dessa data användes av Microsoft för att hjälpa till att förbättra framtida versioner av FIM/MIM tidigare.
 
 >[!Note] 
-> I senare versioner av 4.5.x.x eller större data kommer samlingen att inaktiveras.
+> I senare versioner av 4.5. x. x eller en större data insamling inaktive ras.
 
-Inaktivera data samling i föregående versionen genom att köra ändra läge och avmarkera följande meddelande:
+Om du vill inaktivera data insamling i tidigare versioner kör du ändrings läge och avmarkerar du följande prompt:
 
-![mim-sekretess-efterlevnad-ceip. PNG](media/mim-privacy-compliance/mim-privacy-compliance-ceip.PNG)
+![MIM-Privacy-Compliance-CEIP. KÄLLFIL](media/mim-privacy-compliance/mim-privacy-compliance-ceip.PNG)
 
-eller redigera registret och ange värdet till 0: (komponent) CEIP HKLM\SOFTWARE\Microsoft\Forefront identitet Manager\2010
+eller redigera registret och Ställ in värdet på 0: Komponentfilerna CEIP HKLM\SOFTWARE\Microsoft\Forefront Identity Manager\2010
 
-![mim-sekretess-efterlevnad-ceip2. PNG](media/mim-privacy-compliance/mim-privacy-compliance-ceip2.PNG)
+![MIM-Privacy-Compliance-ceip2. KÄLLFIL](media/mim-privacy-compliance/mim-privacy-compliance-ceip2.PNG)
 
 ## <a name="next-steps"></a>Nästa steg 
-- [För SQL-relaterade sekretess vägledning](https://docs.microsoft.com/sql/relational-databases/security/microsoft-sql-and-the-gdpr-requirements?view=sql-server-2017)
-- [GDPR-delen av den Service Trust portalen](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted)
-- [FIM 2010-arkivet: Ramp Up - implementera Forefront Identity Manager 2010](https://social.technet.microsoft.com/wiki/contents/articles/35789.fim-2010-archive-ramp-up-implementing-forefront-identity-manager-2010.aspx)
+- [Råd om SQL-relaterad sekretess](https://docs.microsoft.com/sql/relational-databases/security/microsoft-sql-and-the-gdpr-requirements?view=sql-server-2017)
+- [Avsnittet GDPR i service Trust-portalen](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted)
+- [FIM 2010-Arkiv: Ramp up – implementera Forefront Identity Manager 2010](https://social.technet.microsoft.com/wiki/contents/articles/35789.fim-2010-archive-ramp-up-implementing-forefront-identity-manager-2010.aspx)

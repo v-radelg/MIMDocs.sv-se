@@ -1,347 +1,348 @@
 ---
-title: Guide för Microsoft BHOLD Suite begrepp | Microsoft Docs
+title: Koncept guide för Microsoft BHOLD Suite | Microsoft Docs
 description: Kom igång med MIM 2016-komponenterna genom att installera och konfigurera Synkroniseringstjänsten.
 keywords: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 09/14/2017
+ms.topic: conceptual
 ms.assetid: ''
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 32bd77140cf70047eaa02d363a1348e73783f87a
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: 3749b74fd867601ee05f8e45d273ad2de9144b5b
+ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358847"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701426"
 ---
-# <a name="microsoft-bhold-suite-concepts-guide"></a>Microsoft BHOLD Suite begrepp Guide
+# <a name="microsoft-bhold-suite-concepts-guide"></a>Koncept guide för Microsoft BHOLD Suite
 
-Microsoft Identity Manager 2016 (MIM) gör det möjligt för organisationer att hantera hela livscykeln för användaridentiteter och deras associerade autentiseringsuppgifterna. Den kan konfigureras för att synkronisera identiteter centralt hantera certifikat och lösenord och etablerar användare i heterogena system. Med MIM, IT-organisationer definiera och automatisera processer som används för att hantera identiteter från skapandet pensionering.
+Microsoft Identity Manager 2016 (MIM) gör det möjligt för organisationer att hantera hela livs cykeln för användar identiteter och deras associerade autentiseringsuppgifter. Den kan konfigureras för att synkronisera identiteter, centralt hantera certifikat och lösen ord och etablera användare i heterogena system. Med MIM kan IT-organisationer definiera och automatisera processer som används för att hantera identiteter från skapandet till pensionering.
 
-Microsoft BHOLD-programsvit utökar funktionerna i MIM genom att lägga till rollbaserad åtkomstkontroll. BHOLD gör det möjligt för organisationer att definiera användarroller och för att styra åtkomsten till känsliga data och program. Åtkomsten baseras vad som är lämpligt för de här rollerna. BHOLD-programsvit innehåller tjänster och verktyg som gör det lättare för modellering av relationerna roll i organisationen. BHOLD mappar rollerna till rättigheter och kontrollera att den roll- och associerade behörigheter tillämpas korrekt för användare. Dessa funktioner är helt integrerade med MIM, vilket ger en sömlös upplevelse för slutanvändare och IT-personal som är både.
+Microsoft BHOLD Suite utökar dessa funktioner i MIM genom att lägga till rollbaserad åtkomst kontroll. BHOLD gör det möjligt för organisationer att definiera användar roller och kontrol lera åtkomsten till känsliga data och program. Åtkomsten baseras på vad som är lämpligt för dessa roller. BHOLD Suite innehåller tjänster och verktyg som fören klar modelleringen av roll relationerna i organisationen. BHOLD mappar dessa roller till rättigheter och kontrollerar att roll definitionerna och de associerade rättigheterna är korrekt kopplade till användarna. Dessa funktioner är helt integrerade med MIM och ger en sömlös upplevelse för slutanvändare och IT-personal.
 
-Den här guiden hjälper dig att förstå hur BHOLD-programsvit fungerar med MIM och innehåller följande avsnitt:
+Den här guiden hjälper dig att förstå hur BHOLD Suite fungerar med MIM och omfattar följande ämnen:
 
 - Rollbaserad åtkomstkontroll
 - Attestering
 - Analytics
 - Rapportering
-- Access Management-anslutningstjänsten
+- Åtkomst hanterings anslutning
 - MIM-integrering
 
 ## <a name="role-based-access-control"></a>Rollbaserad åtkomstkontroll
 
-Det är den vanligaste metoden för att styra användaråtkomst till data och program via åtkomstkontrollinformation (DAC). I de vanligaste-implementeringar kan har alla betydande objekt en identifierade ägare. Ägare har möjlighet att bevilja eller neka åtkomst till objektet till andra baserat på individuell identitet eller gruppmedlemskap. I praktiken DAC vanligtvis resulterar i en mängd olika säkerhetsgrupper vissa som återspeglar organisationens struktur, andra som representerar funktionella grupperingar (till exempel jobbtyper eller projekttilldelningar) och andra som består av makeshift samlingar med användare och enheter som är länkade för flera tillfälliga. Eftersom organisationer växer, blir det allt svårare att hantera medlemskap i dessa grupper. Till exempel om en anställd har överförts från ett projekt till en annan, måste de grupper som används för att styra åtkomsten till projekt tillgångar uppdateras manuellt. I sådana fall kan är det inte ovanligt att misstag ska ske, misstag som kan störa projekt säkerhets- eller produktivitet.
+Den vanligaste metoden för att kontrol lera användar åtkomst till data och program är via DAC (Discretionary Access Control). I de vanligaste implementeringarna har varje betydelsefullt objekt en identifierad ägare. Ägaren kan bevilja eller neka åtkomst till objektet till andra baserat på individuell identitet eller grupp medlemskap. I praktiken resulterar DAC vanligt vis i en mängd olika av säkerhets grupper, en del som återspeglar organisations strukturen, andra som representerar funktionella grupperingar (till exempel jobb typer eller projekt tilldelningar) och andra som består av Makeshift-samlingar av användare och enheter som är länkade för mer temporära syfte. När organisationer växer blir medlemskap i dessa grupper allt svårare att hantera. Om en anställd exempelvis överförs från ett projekt till ett annat, måste de grupper som används för att styra åtkomsten till projekt till gångarna uppdateras manuellt. I sådana fall är det inte ovanligt att misstag uppstår, misstag som kan störa projekt säkerheten eller produktiviteten.
 
-MIM innehåller funktioner som hjälper till att minska det här problemet genom att tillhandahålla automatisk kontroll över medlemskap för gruppen och distribution. Men behandlar detta inte inbäddade komplexitet Prolifererande grupper som inte nödvändigtvis relaterade till varandra på ett mer strukturerat sätt.
+MIM innehåller funktioner som hjälper dig att minimera det här problemet genom att tillhandahålla automatisk kontroll över medlemskap i grupper och distributions listor. Detta tar dock inte itu med den inneboende komplexiteten för de spridnings grupper som inte nödvändigt vis är relaterade till varandra på ett strukturerat sätt.
 
-Ett sätt att avsevärt minska den här utbredningen är genom att distribuera rollbaserad åtkomstkontroll (RBAC). RBAC inte avlägsna DAC.  RBAC bygger på DAC genom att tillhandahålla ett ramverk för klassificering av användare och IT-resurser. På så sätt kan du se explicit deras relation och åtkomstbehörigheter som är lämpliga enligt denna klassificering. Till exempel genom att tilldela en användare attribut som anger användarna befattning och projekttilldelningar, användaren kan beviljas åtkomst till verktyg som behövs för användarens jobb och data som användaren behöver för att bidra till ett visst projekt. När användaren tar ett annat jobb och projekttilldelningar, ändring av attribut som anger användarens befattning och projekt blockerar automatiskt åtkomst till de resurser som krävs endast för den föregående positionen för användare.
+Ett sätt att avsevärt minska den här spridningen är genom att distribuera rollbaserad åtkomst kontroll (RBAC). RBAC förskjuter inte DAC.  RBAC bygger på DAC genom att tillhandahålla ett ramverk för att klassificera användare och IT-resurser. På så sätt kan du göra explicita relationer och de behörigheter som är lämpliga enligt denna klassificering. Genom att till exempel tilldela ett användarattribut som anger användarens jobb titel och projekt tilldelningar, kan användaren beviljas åtkomst till verktyg som behövs för användarens jobb och data som användaren behöver för att bidra till ett visst projekt. När användaren förutsätter ett annat jobb och olika projekt tilldelningar, ändrar attributen som anger användarens befattning och projekt automatiskt åtkomst till resurserna som krävs för den tidigare positionen.
 
-Eftersom roller kan finnas i roller på ett hierarkiskt sätt (till exempel rollerna för försäljningschef och säljrepresentant kan finnas i försäljning mer allmänna rollen), är det enkelt att tilldela lämpliga behörigheter för specifika roller och ge fortfarande ännu behörighet för alla som delar den mindre restriktiva rollen. Till exempel all medicinska personal kan få rätt att visa en patienter poster i ett sjukhus, men endast läkare (en Underroll till rollen medicinska) kan få möjlighet att ange villkoren för patienten. På samma sätt kan användare som tillhör rollen tjänstemän nekas åtkomst till patientjournaler förutom fakturering lagerarbetare (en Underroll till rollen tjänstemän), som kan beviljas åtkomst till dessa delar av en patienter poster som krävs för att debitera patienten för tjänster tillhandahålls av sjukhuset.
+Eftersom roller kan ingå i roller på hierarkiskt sätt, (till exempel kan försäljnings chefens och försäljnings representantens roller ingå i den mer generella rollen försäljning), är det enkelt att tilldela lämpliga rättigheter till vissa roller och ännu fortfarande tillhandahålla lämpliga rättigheter till alla som delar rollen mer inkluderar också. Till exempel kan alla medicinska personal få till gång till rätten att se en patienter, men endast läkare (en under roll i medicinska rollen) kan få behörighet att ange förskrifter för patienten. På samma sätt kan användare som tillhör den här rollen nekas åtkomst till patient poster, förutom fakturerings administratörer (en under roll till den som är den som är den som är under roll), som kan beviljas åtkomst till de delar av en patienter som krävs för att fakturera patienten för tjänster tillhandahålls av sjukhus.
 
-En annan fördel med RBAC är möjligheten att definiera och genomdriva uppdelning av uppgifter (matjordsutläggning). På så sätt kan en organisation att definiera kombinationer av roller som beviljar behörigheter som inte bör lyda av samma användare, så att en viss användare inte kan tilldelas roller som används för att initiera en betalning och för att auktorisera en betalning, till exempel. RBAC ger möjlighet att använda typen av princip automatiskt i stället för att behöva utvärdera en effektiv för principen per användare.
+En ytterligare fördel med RBAC är möjligheten att definiera och upprätthålla separering av uppgifter (SoD). På så sätt kan en organisation definiera kombinationer av roller som beviljar behörigheter som inte ska innehas av samma användare, så att en viss användare inte kan tilldelas roller som gör det möjligt för användaren att initiera en betalning och för att auktorisera en betalning, till exempel. RBAC ger möjlighet att genomdriva en sådan princip automatiskt i stället för att behöva utvärdera den effektiva implementeringen av principen per användare.
 
-### <a name="bhold-role-model-objects"></a>BHOLD rollen modellobjekt
+### <a name="bhold-role-model-objects"></a>BHOLD roll modell objekt
 
-Du kan använda BHOLD-programsvit för att ange och organisera roller inom din organisation kartan användare till roller och kartan lämpliga behörigheter till roller. Den här strukturen kallas en roll-modell och den innehåller och ansluter fem typer av objekt: 
+Med BHOLD Suite kan du ange och ordna roller i din organisation, mappa användare till roller och mappa lämpliga behörigheter till roller. Den här strukturen kallas en roll modell och den innehåller och ansluter fem typer av objekt: 
 
-- Organisationsenheter
+- Organisatoriska enheter
 - Användare
 - Roller
 - Behörigheter
 - Program
 
-#### <a name="organizational-units"></a>Organisationsenheter
+#### <a name="organizational-units"></a>Organisatoriska enheter
 
-Organisationsenheter (OrgUnits) är de viktigaste sätten som användare är ordnade i modellen för BHOLD-rollen. Varje användare måste tillhöra minst en OrgUnit. (I själva verket när en användare tas bort från den senaste organisationsenheten i BHOLD användarposten data tas bort från BHOLD-databas.)
+Organisations enheter (OrgUnits) är det huvudsakliga sättet som användarna organiseras genom i BHOLD-roll modellen. Varje användare måste tillhöra minst en OrgUnit. (I själva verket tas användarens data post bort från BHOLD-databasen när en användare tas bort från den senaste organisationsenheten i BHOLD.)
 
 > [!Important]
-> Organisationsenheter i modellen för BHOLD-roll ska inte förväxlas med organisationsenheter i Active Directory Domain Services (AD DS). Normalt baseras organisationsenhetsstrukturen i BHOLD på organisation och principer för ditt företag inte kraven för din nätverksinfrastruktur.
+> Organisationsenheter i BHOLD-roll modellen bör inte förväxlas med organisationsenheter i Active Directory Domain Services (AD DS). Den organisatoriska enhets strukturen i BHOLD baseras vanligt vis på organisation och principer för din verksamhet, inte kraven i din nätverks infrastruktur.
 
-Även om det inte krävs, i de flesta fall är organisationsenheter strukturerade i BHOLD som representerar en hierarkisk struktur för den faktiska organisationen liknar den nedan:
+Även om det inte är obligatoriskt, är det i de flesta fall organisationsenheter som är strukturerade i BHOLD för att representera den faktiska organisationens hierarkiska struktur, som liknar den som visas nedan:
 
 ![](media/bhold-concepts-guide/org-chart.png)
 
-I det här exemplet skulle rollen modellen organizationalganizatinal enhet för företaget som helhet (som representeras av president eftersom ordförande inte är en del av en enhet för mororganizationalganizatinal) eller organisationsenheten för BHOLD-rot (som alltid Det finns) kan användas för detta ändamål. OrgUnits som representerar företagets avdelningar som leds av vice VD placeras i företagets organisationsenheten. Nästa, organisationens enheter för marknadsföring och försäljning styrelsen skulle läggas till marknadsföring och försäljning organisationsenheter och organisationsenheter som representerar de regionala försäljningschefer placeras i organisationsenheten för den East region försäljningschef. Försäljningsställen som inte hanterar andra användare, skulle göras medlemmar i organisationsenheten för försäljningschef east region. Observera att användare kan vara medlemmar i en organisationsenhet på vilken nivå. En administrativ assistent som inte är en chef och rapporter direkt till en vice president, skulle till exempel vara medlem i den Vp organisationsenhet.
+I det här exemplet skulle roll modellen organizationalganizatinal enhet för företaget som helhet (representeras av VD, eftersom VD inte är en del av en mororganizationalganizatinal-enhet) eller den BHOLD rot organisationsenheten (som alltid finns) kan användas för detta ändamål. OrgUnits som representerar de företags indelningar som leds av vice president placeras i företagets organisationsenhet. Sedan kommer organisationsenheter som motsvarar marknadsförings-och försäljnings ansvariga att läggas till i organisationsenheterna för marknadsföring och försäljning, och organisationsenheter som representerar de regionala försäljnings cheferna placeras i organisationsenheten för regions försäljnings chef, östra. Sälj ansvariga, som inte hanterar andra användare, kommer att bli medlemmar i organisationsenheten för den östra regionens försäljnings chef. Observera att användare kan vara medlemmar i en organisationsenhet på valfri nivå. En administrativ assistent, som inte är en chef och rapporter direkt till en vice VD, är till exempel medlem i vice presidentens organisationsenhet.
 
-Förutom som representerar organisationsstrukturen kan organisationsenheter också användas för att gruppera användare och andra organisationsenheter enligt funktionella kriterier, till exempel projekt eller specialisering. Följande diagram visar hur organisationens enheter som skulle användas för att gruppera försäljningsställen enligt kundtyp:
+Förutom att representera organisations strukturen kan organisationsenheter också användas för att gruppera användare och andra organisationsenheter utifrån funktionella villkor, till exempel för projekt eller specialisering. Följande diagram visar hur organisationsenheter ska användas för att gruppera Sälj Associates enligt kund typ:
 
 ![](media/bhold-concepts-guide/org-chart-02.png)
 
-I det här exemplet skulle varje säljaren tillhör två organisationsenheter: en som representerar den associera plats i organisationens hanteringsstruktur och en som representerar den associera kundbas (försäljning eller företagets). Varje organisationsenhet kan tilldelas olika roller som i sin tur kan tilldelas olika behörigheter för åtkomst till organisationens IT-resurser. Dessutom ärvas roller från överordnade organisationsenheter, förenkla processen för sprida roller till användare. Specifika roller kan å andra sidan, förhindras från att vara ärvt, se till att en viss roll är bara kopplade till lämpliga organisationsenheter.
+I det här exemplet skulle varje Sälj partner tillhöra två organisationsenheter: en som representerar kopplingens plats i organisationens hanterings struktur och en som representerar kundens kund bas (detalj handel eller företag). Varje organisationsenhet kan tilldelas olika roller, som i sin tur kan tilldelas olika behörigheter för att komma åt organisationens IT-resurser. Dessutom kan roller ärvas från överordnade organisationsenheter, vilket fören klar processen för att sprida roller till användare. Å andra sidan kan vissa roller förhindras från att ärvas, vilket säkerställer att en speciell roll endast är kopplad till rätt organisationsenheter.
 
-OrgUnits kan skapas i BHOLD-programsvit med hjälp av BHOLD-kärna webbportal eller genom att använda Generator för BHOLD-modellen.
+OrgUnits kan skapas i BHOLD Suite med hjälp av BHOLD Core-webbportalen eller med BHOLD Model Generator.
 
 #### <a name="users"></a>Användare
 
-Som nämnts ovan måste varje användare tillhöra minst en organisationsenhet (OrgUnit). Eftersom organisationsenheter är den primära mekanismen för att associera en användare till roller, i flesta organisationer tillhör en viss användare flera OrgUnits att göra det enklare att associera roller med den användaren. I vissa fall, men kan det vara nödvändigt att koppla en roll till en användare förutom eventuella OrgUnits som användaren tillhör. Därför måste kan en användare tilldelas direkt till en roll, samt erhålla roller från OrgUnits som användaren tillhör.
+Som anges ovan måste varje användare tillhöra minst en organisationsenhet (OrgUnit). Eftersom organisationsenheter är huvudmekanismen för att associera en användare med roller, i de flesta organisationer som en specifik användare hör till flera OrgUnits för att göra det lättare att associera roller med den användaren. I vissa fall kan det dock vara nödvändigt att associera en roll med en användare som skiljer sig från alla OrgUnits som användaren tillhör. Det innebär att en användare kan tilldelas direkt till en roll och hämta roller från OrgUnits som användaren tillhör.
 
-När en användare inte är aktiv i organisationen (Tag bort för medicinska ledighet, till exempel) kan användaren stängas av, som återkallar alla användarens behörigheter utan att ta bort användaren från rollen modellen. Vid tillbaka till tull kan kan användaren återaktiveras, vilket återställer alla behörigheter som beviljats av användarens roller.
+När en användare inte är aktiv i organisationen (till exempel för medicinsk ledighet, till exempel) kan användaren stängas av, vilket återkallar alla användarens behörigheter utan att ta bort användaren från roll modellen. När du återvänder till tullen kan användaren återaktiveras, vilket återställer alla behörigheter som beviljats av användarens roller.
 
-Objekt för användare kan antingen skapas individuellt i BHOLD via webbportalen för BHOLD-kärna eller importeras gruppvis med hjälp av BHOLD-modellen Generator eller genom för att importera användarinformation från med Access Management-anslutningstjänsten med FIM-synkroniseringstjänsten sådana källor som Active Directory Domain Services eller hr-program.
+Objekt för användare kan skapas individuellt i BHOLD via BHOLD Core-webbportalen, eller så kan de importeras i bulk med hjälp av BHOLD modell generator eller med hjälp av åtkomst hanterings anslutningen med FIM-synkroniseringstjänsten för att importera användar information från sådana källor som Active Directory Domain Services eller personal resurser.
 
-Användare kan skapas direkt i BHOLD utan att använda FIM-synkroniseringstjänsten. Detta kan vara användbart när modellering roller i en Förproduktion eller testmiljö. Du kan också tillåta externa användare (till exempel anställda i en underleverantörernas) till tilldelas roller och därmed få åtkomst till IT-resurser utan att anställda-databas. Dessa användare kommer dock inte att kunna använda BHOLD Self service-funktioner.
+Användare kan skapas direkt i BHOLD utan att använda FIM-synkroniseringstjänsten. Detta kan vara användbart när du modellerar roller i en för produktions-eller test miljö. Du kan också tillåta externa användare (t. ex. anställda på en underleverantör) att tilldelas roller och därmed få till gång till IT-resurser utan att läggas till i medarbetar databasen. Dessa användare kommer dock inte att kunna använda självbetjänings funktionerna i BHOLD.
 
 #### <a name="roles"></a>Roller
 
-Som vi nämnde tidigare, under rollbaserad modellen för åtkomstkontroll (RBAC), behörigheter som är associerade med roller i stället för enskilda användare. Detta gör det möjligt att ge varje användare behörighet att utföra användarens uppgifter genom att ändra användarens roller i stället separat bevilja eller neka användarbehörighet. Det betyder tilldelning av behörigheter kräver inte längre IT-avdelningen deltagande, men i stället kan utföras som en del av hantering av företaget. En roll kan aggregera behörigheter för åtkomst till olika system, antingen direkt eller via underroller, vilket ytterligare minskar behovet av IT-utrustning vid hantering av användarbehörigheter.
+Som tidigare nämnts, under modellen rollbaserad åtkomst kontroll (RBAC), är behörigheter kopplade till roller i stället för enskilda användare. Detta gör det möjligt att ge varje användare de behörigheter som krävs för att utföra användarens uppgifter genom att ändra användarens roller i stället för att separat bevilja eller neka användar behörighet. Därför kräver tilldelningen av behörigheter inte längre IT-avdelningens medverkan, utan kan i stället utföras som en del av hanteringen av verksamheten. En roll kan aggregera behörigheter för åtkomst till olika system, antingen direkt eller via användning av under roller, vilket ytterligare minskar behovet av IT-inblandning i hanteringen av användar behörigheter.
 
-Det är viktigt att Observera att roller är en funktion i RBAC-modellen. roller tillhandahålls vanligtvis inte target program. Den här möjliggör RBAC för att användas tillsammans med befintliga program som inte är utformade för att använda roller eller att ändra rollen definitioner för att uppfylla behoven hos ändra affärsmodeller utan att behöva ändra själva programmen. Om ett målprogram är utformat för att använda roller, kan du associerade roller i modellen för BHOLD-roll med motsvarande programroller genom att behandla de programspecifika rollerna som behörigheter.
+Det är viktigt att notera att roller är en funktion i själva RBAC-modellen. rollerna är vanligt vis inte etablerade för mål program. Detta gör att RBAC kan användas tillsammans med befintliga program som inte är utformade för att använda roller eller ändra roll definitionerna uppfyller behoven för att ändra affärs modeller utan att behöva ändra själva programmen. Om ett mål program är utformat för att använda roller, kan du associera roller i BHOLD-roll modellen med motsvarande program roller genom att behandla de programspecifika rollerna som behörigheter.
 
-BHOLD, att du kan tilldela en roll till en användare främst genom två sätt:
+I BHOLD kan du tilldela en roll till en användare huvudsakligen genom två mekanismer:
 
-- Genom att tilldela en roll till en organisations enhet (organisationsenhet) som användaren är medlem
+- Genom att tilldela en roll till en organisationsenhet (organisatorisk enhet) som användaren är medlem i
 - Genom att tilldela en roll direkt till en användare
 
-En roll som tilldelats till en överordnad organisationsenhet eventuellt kan ärvas av dess medlem organisationsenheter. När en roll tilldelas eller ärvs av en organisationsenhet, kan det anges som en effektiv eller föreslagna roll. Om det är en effektiv roll tilldelas rollen som med alla användare i organisationsenheten. Om det är en föreslagna roll måste vara aktiverat för varje användare eller medlem organisationsenhet att börja gälla för den användaren eller organisatorisk enhet medlemmar. Detta gör det möjligt att tilldela användare till en delmängd av de roller som är associerade med en organisationsenhet i stället för att automatiskt tilldela alla roller för den organisationsenhet för alla medlemmar. Dessutom roller kan ges start- och slutdatumen och begränsningar kan läggas på procentandelen användare i en organisationsenhet som en roll kan gälla.
+En roll som är tilldelad en överordnad organisationsenhet kan alternativt ärvas av dess medlems organisatoriska enheter. När en roll tilldelas eller ärvs av en organisationsenhet, kan den utses som en effektiv eller föreslagen roll. Om det är en effektiv roll tilldelas rollen alla användare i organisationsenheten. Om det är en föreslagen roll måste den aktive ras för att varje användare eller organisations enhet ska bli giltig för den användaren eller organisationsenhetens medlemmar. Detta gör det möjligt att tilldela användare en delmängd av rollerna som är kopplade till en organisationsenhet, i stället för att automatiskt tilldela alla medlemmars roller i organisationen. Dessutom kan roller tilldelas start-och slutdatum och gränser kan placeras på procent andelen användare i en organisationsenhet för vilken en roll kan vara effektiv.
 
 Följande diagram illustrerar hur en enskild användare kan tilldelas en roll i BHOLD:
 
 ![](media/bhold-concepts-guide/org-chart-flow.png)
 
-I det här diagrammet roll A tilldelas till en organisationsenhet som en roll som kan ärvas och så ärvs av dess medlem organisationsenheter och alla användare inom dessa organisationsenheter. Som en föreslagna roll tilldelas rollen B för en organisationsenhet. Den måste aktiveras innan en användare i organisationsenheten kan auktoriseras med rollens behörigheter. C är en effektiv roll, så att dess behörigheter gäller direkt för alla användare i organisationsenheten. Rollen D är länkad direkt till användaren och så dess behörigheter gäller direkt för den användaren.
+I det här diagrammet tilldelas roll A en organisationsenhet som en ärftlig roll, och den ärvs av dess medlemmars organisationsenheter och alla användare inom dessa organisationsenheter. Roll B är tilldelad som en föreslagen roll för en organisationsenhet. Den måste aktive ras innan en användare i organisationsenheten kan auktoriseras med rollens behörigheter. Roll C är en effektiv roll, så dess behörigheter gäller omedelbart för alla användare i organisationsenheten. Roll D är direkt länkad till användaren och dess behörigheter gäller omedelbart för den användaren.
 
-Dessutom kan kan en roll aktiveras för en användare baserat på en användares attribut. Mer information finns i attributbaserade auktorisering.
+Dessutom kan en roll aktive ras för en användare baserat på en användares attribut. Mer information finns i attribut-baserad auktorisering.
 
 #### <a name="permissions"></a>Behörigheter
 
-En behörighet i BHOLD motsvarar en auktorisering som importerats från en målprogrammet. Det vill säga när BHOLD konfigureras för att arbeta med ett program, får den en lista över godkännanden som BHOLD kan länkas till roller. Till exempel när Active Directory Domain Services (AD DS) har lagts till av BHOLD som ett program, får den en lista med säkerhetsgrupper som som BHOLD-behörigheter kan länkas till roller i BHOLD.
+En behörighet i BHOLD motsvarar en auktorisering som importer ATS från ett mål program. Det vill säga när BHOLD har kon figurer ATS för att fungera med ett program, får den en lista över auktoriseringar som BHOLD kan länka till roller. Exempel: när Active Directory Domain Services (AD DS) läggs till BHOLD som ett program får den en lista över säkerhets grupper som BHOLD-behörigheter kan länkas till roller i BHOLD.
 
-Behörigheter som är specifika för program. BHOLD ger en enhetlig vy över behörigheter så att behörigheter kan associeras med roller utan rollen hanterare kan förstå implementeringen av behörigheter. I praktiken är kan olika system tvinga en behörighet på olika sätt. Den programspecifika anslutningen från FIM-synkroniseringstjänsten så att programmet anger hur ändrade behörigheter för en användare har angetts till programmet. 
+Behörigheter är bara för program. BHOLD tillhandahåller en enda, enhetlig vy över behörigheter så att behörigheter kan associeras med roller utan att roll hanterare måste förstå implementerings information om behörigheterna. I praktiken kan olika system framtvinga en behörighet på ett annat sätt. Programspecifik anslutning från FIM-synkroniseringstjänsten till programmet avgör hur behörighets ändringar för en användare tillhandahålls för programmet. 
 
 #### <a name="applications"></a>Program
 
-BHOLD implementerar en metod för att använda rollbaserad åtkomstkontroll (RBAC) för externa program. Det vill säga när BHOLD etableras med användare och behörigheter från ett program, kan BHOLD koppla dessa behörigheter till användare genom att tilldela roller till användare och sedan länka behörigheter i rollerna. Programmets bakgrundsprocess kan sedan mappa rätt behörigheter till sina användare baserat på rollbehörighet/mappningen i BHOLD.
+BHOLD implementerar en metod för att tillämpa rollbaserad åtkomst kontroll (RBAC) till externa program. Det vill säga när BHOLD är etablerad med användare och behörigheter från ett program, kan BHOLD associera dessa behörigheter med användare genom att tilldela roller till användarna och sedan länka behörigheterna till rollerna. Programmets bakgrunds process kan sedan mappa rätt behörigheter till användare baserat på roll-/behörighets mappningen i BHOLD.
 
-### <a name="developing-the-bhold-suite-role-model"></a>Utveckla förebild BHOLD-programsvit
+### <a name="developing-the-bhold-suite-role-model"></a>Utveckla BHOLD-paketets roll modell
 
-Så att du utvecklar din modell för rollen, ger BHOLD-programsvit modellen Generator, ett verktyg som är både enkelt att använda och omfattande.
+För att hjälpa dig att utveckla din roll modell tillhandahåller BHOLD Suite modell generator, ett verktyg som är både enkelt att använda och omfattande.
 
-Innan du använder modellen Generator, måste du skapa ett antal filer som definierar de objekt som modell Generator används för att konstruera rollen modellen. Information om hur du skapar de här filerna finns i Microsoft BHOLD Suite Teknisk referens.
+Innan du använder modell Generator måste du skapa en serie filer som definierar de objekt som modell generatorn använder för att skapa roll modellen. Information om hur du skapar de här filerna finns i teknisk referens för Microsoft BHOLD Suite.
 
-Det första steget i med hjälp av Generator för BHOLD-modellen är att importera de här filerna för att läsa in de grundläggande byggstenarna i modellen Generator. När filerna har lästs, kan du ange villkor som modell Generator används för att skapa flera klasser av roller:
+Det första steget i att använda BHOLD modell Generator är att importera de här filerna för att läsa in de grundläggande Bygg stenarna i modell generatorn. När filerna har lästs in kan du ange kriterier som modell generatorn använder för att skapa flera klasser av roller:
 
-- Medlemskapsroller som har tilldelats en användare utifrån OrgUnits (organisationsenheter) som användaren tillhör
-- Attributet roller som har tilldelats en användare baserat på användarattribut i BHOLD-databas
-- Föreslagna roller som är kopplade till en organisationsenhet men måste vara aktiverat för specifika användare
-- Ägarskap roller som ger en användarkontroll över organisationsenheter och roller som ägare inte har angetts i de importerade filerna
+- Medlemskaps roller som tilldelas till en användare baserat på de OrgUnits (organisationsenheter) som användaren tillhör
+- Attributrelationer som tilldelas en användare baserat på användarens attribut i BHOLD-databasen
+- Föreslagna roller som är länkade till en organisationsenhet men måste aktive ras för vissa användare
+- Ägarskaps roller som ger en användar kontroll över organisationsenheter och roller för vilka en ägare inte anges i de importerade filerna
 
 > [!Important]
-> När du överför filer, Välj den **Behåll befintlig modell** kryssrutan bara i testmiljöer. I produktionsmiljöer, måste du använda modellen Generator för att skapa den första modellen för rollen. Du kan inte använda den för att ändra en befintlig roll-modell i BHOLD-databas.
+> När du laddar upp filer markerar du kryss rutan **Behåll befintlig modell** endast i test miljöer. I produktions miljöer måste du använda modell generator för att skapa den inledande roll modellen. Du kan inte använda den för att ändra en befintlig roll modell i BHOLD-databasen.
 
-Du kan sedan exportera modellen rollen till BHOLD-databas i form av en XML-fil när modellen generatorn skapar rollerna i rollen modellen.
+När modell generatorn skapar dessa roller i roll modellen kan du exportera roll modellen till BHOLD-databasen i form av en XML-fil.
 
 ### <a name="advanced-bhold-features"></a>Avancerade BHOLD-funktioner
 
-Föregående avsnitt beskrivs de grundläggande funktionerna i rollbaserad åtkomstkontroll (RBAC) i BHOLD. Det här avsnittet beskrivs ytterligare funktioner i BHOLD som ger förbättrad säkerhet och flexibilitet till din organisations implementering av RBAC. Det här avsnittet innehåller översikter över följande BHOLD-funktioner:
+I föregående avsnitt beskrivs de grundläggande funktionerna i rollbaserad åtkomst kontroll (RBAC) i BHOLD. Det här avsnittet beskriver ytterligare funktioner i BHOLD som ger förbättrad säkerhet och flexibilitet för organisationens implementering av RBAC. Det här avsnittet innehåller översikter över följande BHOLD-funktioner:
 
-- kardinalitet
-- Uppdelning av uppgifter
-- Kontext anpassningsbar behörigheter
-- Attributbaserad auktorisering
+- Kardinalitet
+- Separering av uppgifter
+- Kontext-anpassningsbara behörigheter
+- Attribut-baserad auktorisering
 - Flexibla attributtyper
 
 
-#### <a name="cardinality"></a>kardinalitet
+#### <a name="cardinality"></a>Kardinalitet
 
-*Kardinalitet* refererar till implementeringen av affärsregler som är utformade för att begränsa antalet gånger som två entiteter kan vara relaterade till varandra. När det gäller BHOLD, kan kardinalitet regler fastställas för roller, behörigheter och användare.
+*Kardinalitet* syftar på implementeringen av affärs regler som är utformade för att begränsa antalet gånger som två entiteter kan vara relaterade till varandra. Om du använder BHOLD kan du upprätta kardinalitet för roller, behörigheter och användare.
 
 Du kan konfigurera en roll för att begränsa följande:
 
-- Det maximala antalet användare som en föreslagna roll kan aktiveras
-- Det maximala antalet underroller som kan länkas till rollen
+- Det maximala antalet användare för vilka en föreslagen roll kan aktive ras
+- Det maximala antalet under roller som kan länkas till rollen
 - Det maximala antalet behörigheter som kan länkas till rollen
 
 Du kan konfigurera en behörighet för att begränsa följande:
 
-- Det maximala antalet roller som kan länkas till behörighet
-- Det maximala antalet användare som kan beviljas behörighet
+- Det maximala antalet roller som kan länkas till behörigheten
+- Det maximala antalet användare som kan beviljas behörigheten
 
-Du kan konfigurera en användare för att begränsa följande:
+Du kan konfigurera en användare så att den begränsar följande:
 
 - Det maximala antalet roller som kan länkas till användaren
-- Det maximala antalet behörigheter som kan tilldelas till användare via rolltilldelningar
+- Det maximala antalet behörigheter som kan tilldelas användaren via roll tilldelningar
 
-#### <a name="separation-of-duties"></a>Uppdelning av uppgifter
+#### <a name="separation-of-duties"></a>Separering av uppgifter
 
-Uppdelning av uppgifter (matjordsutläggning) är en business-princip som söker efter att förhindra att enskilda användare från att få möjlighet att utföra åtgärder som inte får vara tillgängliga för en enskild person. En medarbetare bör till exempel går inte att begära en betalning och auktorisera betalningen. Principen om Matjord gör det möjligt för organisationer att implementera ett system av kontroller och balanser att minimera sina exponeringen för risk från medarbetare fel eller som ett fel.
+Separering av uppgifter (SoD) är en affärs princip som kan förhindra att personer får möjlighet att utföra åtgärder som inte ska vara tillgängliga för en enskild person. En medarbetare ska till exempel inte kunna begära en betalning och godkänna betalningen. Principen för SoD gör det möjligt för organisationer att implementera ett system med kontroller och balanser för att minimera deras exponering för risk från medarbetares fel eller fel uppförande.
 
-BHOLD implementerar Matjord genom att låta dig definiera inkompatibla behörigheter. När behörigheterna definieras BHOLD tillämpar Matjord genom att förhindra att skapandet av roller som är länkade till inkompatibla behörigheter, oavsett om de är länkad direkt eller genom arv och genom att förhindra att användare inte tilldelas flera roller som, när kombineras, beviljar inkompatibla behörigheter igen genom att direkt tilldelning eller via arv. Du kan också kan konflikter åsidosättas.
+BHOLD implementerar SoD genom att låta dig definiera inkompatibla behörigheter. När dessa behörigheter har definierats tvingar BHOLD SoD genom att förhindra skapandet av roller som är länkade till inkompatibla behörigheter, oavsett om de är länkade direkt eller genom arv, och hindra användare från att tilldelas flera roller som, när kombinerat beviljar inkompatibla behörigheter, återigen genom direkt tilldelning eller arv. Du kan också åsidosätta konflikter.
 
-#### <a name="context-adaptable-permissions"></a>Kontext anpassningsbar behörigheter
+#### <a name="context-adaptable-permissions"></a>Kontext-anpassningsbara behörigheter
 
-Du kan minska det totala antalet behörigheter som du behöver hantera genom att skapa behörigheter som kan ändras automatiskt baserat på ett objektattribut. Kontext anpassningsbar behörigheter (CAP) kan du definiera en formel som ett attribut för behörigheten som ändrar hur behörigheten används av programmet som är associerade med behörigheten. Du kan till exempel skapa en formel som ändras behörighet till en mapp (via en säkerhetsgrupp som är associerade med mappens access control list) baserat på om en användare som tillhör en organisations enhet (organisationsenhet) som innehåller heltid eller minimera anställda. Om användaren flyttas från en organisationsenhet till en annan ny behörighet tillämpas automatiskt och gamla behörigheten är inaktiverad. 
+Genom att skapa behörigheter som kan ändras automatiskt baserat på ett objekt-attribut kan du minska det totala antalet behörigheter som du måste hantera. Med Sammanhangs beroende behörighet kan du definiera en formel som ett behörighets attribut som ändrar hur behörigheten tillämpas av programmet som är associerat med behörigheten. Du kan till exempel skapa en formel som ändrar åtkomst behörigheten till en filmapp (via en säkerhets grupp som är associerad med mappens åtkomst kontrol lista) baserat på om en användare tillhör en organisationsenhet (Organisationsenhet) som innehåller heltids-eller kontrakts anställda. Om användaren flyttas från en organisationsenhet till en annan, tillämpas den nya behörigheten automatiskt och den gamla behörigheten inaktive ras. 
 
-CAP-formeln kan fråga värdena för attribut som har tillämpats för program, behörigheter, organisationsenheter och användare.
+CAP-formeln kan fråga värdena för attribut som har tillämpats på program, behörigheter, organisationsenheter och användare.
 
-#### <a name="attribute-based-authorization"></a>Attributbaserad auktorisering
+#### <a name="attribute-based-authorization"></a>Attribut-baserad auktorisering
 
-Ett sätt att kontrollera om en roll som är länkad till en organisationsenhet (organisationsenhet) är aktiverad för en viss användare i organisationsenheten är att använda attributbaserade auktorisering (ABA). Genom att använda ABA kan aktivera du automatiskt en roll bara när vissa regler baserat på en användares attribut är uppfyllda. Du kan till exempel länka en roll till en organisationsenhet som aktiveras för en användare endast om användarens befattning matchar befattning i ABA-regeln. Detta eliminerar behovet av att manuellt aktivera en föreslagna roll för en användare. I stället kan en roll aktiveras för alla användare i en organisationsenhet som har ett attributvärde som uppfyller rollens ABA-regel. Regler kan kombineras så att en roll aktiveras endast när en användares attribut uppfyller alla ABA-regler som angetts för rollen.
+Ett sätt att kontrol lera om en roll som är länkad till en organisationsenhet (Organisationsenhet) har Aktiver ATS för en viss användare i organisationsenheten är att använda ABA (Attribute-based Authorization). Genom att använda ABA kan du automatiskt aktivera en roll när vissa regler som baseras på en användares attribut är uppfyllda. Du kan till exempel länka en roll till en organisationsenhet som bara är aktiv för en användare om användarens befattning matchar jobb titeln i ABA-regeln. Detta eliminerar behovet av att manuellt aktivera en föreslagen roll för en användare. I stället kan en roll aktive ras för alla användare i en organisationsenhet som har ett attributvärde som uppfyller rollens ABA-regel. Regler kan kombineras, så att en roll endast aktive ras när en användares attribut uppfyller alla ABA-regler som har angetts för rollen.
 
-Det är viktigt att notera att resultaten av ABA regeln tester begränsas av Kardinalitetsinställningar. Om inställningen kardinalitet för en regel som anger att mer än två användare kan tilldelas en roll, och om en regel för ABA annars vill aktivera en roll för fyra användare, till exempel aktiveras rollen endast för de första två användare som skickar ABA-test.
+Det är viktigt att Observera att resultaten av ABA-regler är begränsade av inställningarna för kardinalitet. Till exempel, om inställningen kardinalitet för en regel anger att det inte finns fler än två användare som kan tilldelas en roll, och om en ABA-regel annars aktiverar en roll för fyra användare, aktive ras rollen bara för de första två användare som klarar ABA-testet.
 
 #### <a name="flexible-attribute-types"></a>Flexibla attributtyper
 
-Systemet av attribut i BHOLD är mycket anpassningsbara. Du kan definiera nya typer för sådana objekt som användare, organisationens enheter (organisationsenheter) och roller. Attribut kan vara definierad så att värden är heltal, booleskt (Ja/Nej), alfanumeriska, datum, tid och e-postadresser. Attribut kan anges som enda värden eller en lista med värden.
+Systemet med attribut i BHOLD är mycket utöknings Bart. Du kan definiera nya attributtyper för sådana objekt som användare, organisationsenheter (organisationsenheter) och roller. Attribut kan definieras för att ha värden som är heltal, booleska (Ja/Nej), alfanumeriska data, datum, tid och e-postadresser. Attribut kan anges som enstaka värden eller en värde lista.
 
 ## <a name="attestation"></a>Attestering
 
-BHOLD-programsvit innehåller verktyg som du kan använda för att verifiera att enskilda användare har fått behörighet att utföra sina uppgifter. Administratören kan använda på portalen som tillhandahålls av BHOLD-attestering-modulen för att utforma en hantera attesteringsprocessen.
+BHOLD-sviten innehåller verktyg som du kan använda för att kontrol lera att enskilda användare har fått rätt behörighet för att utföra sina affärs uppgifter. Administratören kan använda portalen som tillhandahålls av modulen BHOLD attestering för att utforma en hantera attesterings processen.
 
-Attesteringsprocessen med kampanjer i vilken kampanj förvaltare ges möjlighet och innebär att kontrollera att de användare som är ansvarig har lämplig åtkomst till BHOLD-hanterade program och rätt behörigheter på dessa program. En kampanjägare är utsedda att övervaka kampanjen och säkerställa att kampanjen utförs korrekt. Du kan skapa en kampanj för att förekomma en gång eller återkommande.
+Attesteringen utförs med hjälp av kampanjer där kampanj administratörer får möjlighet att kontrol lera att de användare för vilka de är ansvariga har lämplig åtkomst till BHOLD-hanterade program och rätt behörigheter inom dessa program. En kampanj ägare utses för att övervaka kampanjen och se till att kampanjen genomförs korrekt. En kampanj kan skapas för att ske en gång eller regelbundet.
 
-Steward för en kampanj kommer normalt att en chef som kommer intyga åtkomsträttigheterna för användare som tillhör en eller flera organisationsenheter som chefen är ansvarig. Förvaltare kan väljas automatiskt för de användare som har godkänt dem i en kampanj baserat på användarattribut eller förvaltare för en kampanj kan definieras genom att lista dem i en fil som kopplar varje användare som godkänts i kampanjen till en steward.
+Normalt är vården för en kampanj en ansvarig som bestyrkar åtkomst rättigheterna för användare som tillhör en eller flera organisationsenheter som chefen ansvarar för. Administratörer kan väljas automatiskt för användare som besvaras i en kampanj baserat på användarattribut, eller så kan en kampanjs administratörer definieras genom att lista dem i en fil som mappar varje användare som betecknas i kampanjen till en vård.
 
-När en kampanj börjar BHOLD skickar ett e-postmeddelande till kampanjen förvaltare och ägare och sedan skickar regelbundna påminnelser som hjälper dem att underhålla förloppet i kampanjen. Förvaltare dirigeras till en kampanj-portal där de kan se en lista över användare som är ansvarig och de roller som är tilldelade till dessa användare. Förvaltare kan sedan bekräfta om de ansvarar för var och en av användarna som visas och godkänna eller neka åtkomsträttigheterna för var och en av användarna som visas.
+När en kampanj börjar skickar BHOLD ett e-postmeddelande till kampanjens beställningar och ägare och skickar sedan regelbundna påminnelser för att hjälpa dem att underhålla förloppet i kampanjen. Vården dirigeras till en kampanj portal där de kan se en lista över de användare som de är ansvariga för och de roller som är tilldelade till dessa användare. Behållarna kan sedan bekräfta om de är ansvariga för var och en av de listade användarna och godkänner eller nekar åtkomst behörigheterna för var och en av de listade användarna.
 
-Kampanjen ägare även använda portalen för att övervaka förloppet för kampanjen och kampanjaktiviteter loggas så kampanj ägare kan analysera de åtgärder som vidtagits under kampanjen.
+Kampanj ägare använder också portalen för att övervaka kampanjens förlopp och kampanj aktiviteter loggas så att kampanj ägare kan analysera de åtgärder som vidtagits under kampanjen.
 
 ## <a name="analytics"></a>Analytics
 
-En av de viktiga överväganden när implementerar ett omfattande rights-baserad åtkomst (RBAC) system är balans mellan upprätthålla strikta åtkomstkontroll och undvika onödiga (eller, sämre, oväntat) hinder för att få åtkomst till. Det enklare att underhålla balans ofta resulterar i en access-control-struktur som är så komplex att oväntade samverkan mellan principer är nästan oundvikligt med.
+Ett av de viktigaste aspekterna vid implementeringen av en omfattande användarbaserad åtkomst kontroll (RBAC) är balansen mellan att upprätthålla strikt åtkomst kontroll och undvika onödiga (eller, sämre, oväntade) hinder för åtkomst. Arbetet med att underhålla detta saldo leder ofta till en åtkomst kontroll struktur som är så komplicerad att oväntade interaktioner mellan principer är nästan oundvikliga.
 
-Därför finns är det viktigt för att kunna analysera effekterna av principer för åtkomstkontroll innan de börjar faktiskt på plats. Analytics-modulen för BHOLD-programsvit får du möjligheten att utföra den här analysen du utveckla regler som representerar dina principer och sedan som visar användarna vars behörigheter följer eller står i konflikt med regeln. Baserat på den här analysen kan du justera principen eller ändra roller och behörigheter för att undvika konflikter med principen.
+Av den anledningen är det viktigt att kunna analysera effekterna av åtkomst kontroll principer innan de faktiskt placeras på plats. Analytics-modulen i BHOLD Suite ger dig möjlighet att utföra den här analysen genom att låta dig utveckla regler som representerar dina principer och sedan Visa de användare vars behörigheter uppfyller eller står i konflikt med regeln. Baserat på den här analysen kan du justera principen eller ändra roller och behörigheter för att undvika konflikter med principen.
 
-BHOLD-Analytics-portalen ger dig möjlighet att skapa regeluppsättningar som består av en eller flera regler som du skapar för att testa en viss princip eller en grupp av principer. En regel består av följande huvuddelar:
+BHOLD Analytics-portalen ger dig möjlighet att skapa rulesets som består av en eller flera regler som du skapar för att testa en viss princip eller grupp med principer. En regel består av följande huvud delar:
 
-- En rubrik och beskrivning som hjälper dig identifiera och Beskriv regeln
-- En status som anger om regeln är redo för granskning, som granskas eller godkännas
-- Ett element som har angetts (till exempel användare eller behörigheter) som regeln är utformad för att testa
-- Valfritt delmängd filter som är uttryck som du kan använda för att välja en lämplig undergrupp till elementet undersökas
-- Ett eller flera regeln filter som är uttryck som representerar den princip som testas.
+- En rubrik och beskrivning som gör att du kan identifiera och beskriva regeln
+- En status som anger om regeln är klar för granskning, granskas eller godkänns
+- En element uppsättning (till exempel användare eller behörigheter) som regeln är utformad för att testas
+- Valfria del filter som är uttryck som du kan använda för att välja en lämplig under grupp för det element som ska undersökas
+- Ett eller flera regel filter som är uttryck som representerar den princip som testas.
 
-En regel kan testa någon av följande element:
+En regel kan testa vilken som helst av följande element uppsättningar:
 
 - Användare
-- Organisationsenheter
+- Organisatoriska enheter
 - Roller
 - Behörigheter
 - Program
 - Konton
 
-Följande diagram illustrerar en enkel regel som består av två delmängd regler och två filterregler:
+Följande diagram illustrerar en enkel regel bestående av två delmängds regler och två filter regler:
 
 ![](media/bhold-concepts-guide/rules.png)
 
-Observera skillnaden i effekten inte en delmängd filter och inte ett filter för regeln: ett delmängd filter som misslyckas tar bort ett elementobjekt från testning genom att efterföljande filter, medan misslyckas ett filter i regeln gör objektet som ska rapporteras som inkompatibla. Endast de objekt som klarar alla delmängd-filter och alla filter för regeln redovisas som överensstämmande.
+Observera skillnaden i effekterna av att ett del filter inte har filtrerats och att regel filtret inte fungerar: Om du inte skickar ett del mängds filter raderas ett element objekt från testningen av efterföljande filter, medan ett regel filter Miss låter att objektet rapporteras som inkompatibelt. Endast de objekt som uppfyller alla del mängds filter och alla regel filter rapporteras som kompatibla.
 
-Varje filter består av en typ, en operator (som är typen beroende), en nyckel (ett av elementen) och ett värde som nyckeln har testats av operatorn. Följande filter skulle till exempel testa om antalet användare i en delmängd av element överskrider 10:
+Varje filter består av en typ, en operator (som är av typen Dependent), en nyckel (ett av de element) och ett värde mot vilket nyckeln testas av operatorn. Följande filter kommer till exempel att testa om antalet användare i ett Elements delmängd överskrider 10:
 
 
 |   |   |   |   |   |
 |---|---|---|---|---|
 |**Typ:**   | Antal   |
-| **Nyckel:**  | Användare  |
+| **Knapp**  | Användare  |
 | **Operator**  | >  |
 | **Värde:** | 10 |
 
-Regler för filter kan tre typer av och använda operatorer som är specifika för typ, som anges:
+Regel filtren kan vara av tre typer och använder operatörer som är speciella för deras typ, enligt vad som anges:
 
 - Attribut
   - < och >
   - = och! =
-  - **innehåller**
+  - **Ingår**
   - **Innehåller inte**
 - Antal
   - < och >
   - = och! =
 - Restriktiva
-  - **Måste ha någon och måste ha alla**
-  - **Får inte innehålla något och kan inte ha alla**
-  - **Kan bara ha någon och kan endast ha alla**
-  - **Exklusivt har någon och exklusivt har alla**
+  - **Måste ha alla och måste ha alla**
+  - **Det får inte finnas några och kan inte ha alla**
+  - **Kan bara ha alla**
+  - **Enbart ha några och exklusivt har alla**
 
 > [!Note]
-> Restriktiva filter kan använda de angivna operatorerna för att testa en nyckel mot en uppsättning med flera värden.
+> Begränsade filter kan använda de angivna operatorerna för att testa en nyckel mot en uppsättning med flera värden.
 
-Om du vill testa implementeringen av en uppdelning av uppgifter (matjordsutläggning)-princip som anger att inga användare som har behörighet för begär betalning är också att godkänna betalning behörighet kan du skapa en regel som liknar följande:
+Om du till exempel vill testa implementeringen av en SoD-princip (ansvars fördelning) som säger att ingen användare som har behörigheten be om betalning också har behörigheten godkänna betalning, kan du skapa en regel som följande:
 
 |   |  |
 |---|--|
-|Namn:| Betalning Matjord Test|
-|Elementet:| Användare|
-|Vissa filter:| Med vilken behörighet som begär betalning|
-|Regeln filter: | Det går inte att ha någon behörighet Godkänn betalning|
+|Namn:| Betalnings SoD-test|
+|Brevpost| Användare|
+|Del mängds filter:| Med en begäran om behörighets betalning|
+|Regel filter: | Det går inte att godkänna betalning för någon behörighet|
 
-När du kör den här regeln visar BHOLD analysmodul antalet användare i den valda delmängden (antal användare med behörighet att begära betalning), hur många användare som är kompatibla med regeln och antalet användare som inte är kompatibla med regeln. Du kan sedan Visa icke-kompatibla användare så att du kan korrigera problemet.
+När du kör den här regeln visar modulen BHOLD-analys antalet användare i den valda del mängden (antalet användare med behörigheten begär ande betalning), antalet användare som följer regeln och antalet användare som inte följer regeln. Du kan sedan Visa de inkompatibla användarna så att du kan åtgärda inkonsekvensen.
 
-Du kan också spara rapporten som en fil med kommaavgränsade värden (CSV) eller XML-fil så att du kan analysera resultaten senare förutom att visa resultatet. Du kan också anpassa den resulterande rapporten för att visa ytterligare information som hjälper dig att bättre förstå effekten. Till exempel om du vill testa användare, kan du visa (eller rapporten) konton kompatibla eller inkompatibla användare så att du kan se vilka program som ingår.
+Förutom att visa resultaten kan du också spara rapporten som en CSV-eller XML-fil så att du kan analysera resultaten senare. Du kan också anpassa den resulterande rapporten för att visa ytterligare information som kan hjälpa dig att bättre förstå påverkan. Om du till exempel testar användare kan du Visa (eller rapportera) konton för de inkompatibla eller inkompatibla användarna så att du kan se vilka program som ingår.
 
-Eftersom en regel kan innehålla flera filter kan du dessutom koppla filter för att testa om det finns en viss uppsättning villkor. Resultatet är produkten av ett booleskt och test av alla filter som standard, men du kan ange att ett OR-test av filterkombination ska utföras.
+Eftersom en regel kan innehålla flera filter kan du ansluta filter för att testa om det finns en viss kombination av villkor. Som standard är resultatet produkten av ett och booleska test av alla filter, men du kan ange att en eller ett test av filter kombinationen ska utföras.
 
-Till exempel om ditt företag-principen kräver hanterare kan ha behörigheten Ändra betalning eller godkänna betalning behörighet, kan du testa efterlevnad med principen genom att skapa en regel som liknar följande:
+Om din affärs policy till exempel kräver att chefer har behörigheten Ändra betalning eller godkänn betalning, kan du testa efterlevnaden av principen genom att skapa en regel som följande:
 
-
-|  |  |
-|--|--|
-|Namn: | Ändra betalningsmetod Matjord Test|
-|Elementet: | Användare |
-|Vissa filter: | Att ha någon roll Manager|
-| Regeln filter: |Måste ha vilken behörighet som helst ändra betalningsmetod </br> Måste ha någon behörighet Godkänn betalning|
-
-Som standard rapporteras alla användare som är en chef som har både ändra betalningen och behörigheten begär betalning som kompatibel. Principen kräver dock att en chef har antingen behörighet inte nödvändigtvis båda. Om du vill testa faktiska efterlevnad med principen, måste du använda eller booleska operatorn med regeln för att avgöra om det finns några chefer som inte har antingen ändra betalning behörighet eller godkänna betalning behörighet.
-
-Till skillnad från andra operatörer den **exklusivt har några** och **exklusivt har alla** operatörer visar kompatibiliteten för objekt som annars skulle undantas av en delmängd-filtret. Till exempel att testa en princip för att alla chefer (och endast chefer) har behörigheten godkänna granskningar kan du skapa en regel på följande sätt:
 
 |  |  |
 |--|--|
-|Namn: | Granska godkännande Test|
-|Elementet: | Användare|
-| Vissa filter: | Att ha någon roll Manager
-|Regeln filter: | Exklusivt har någon behörighet godkänna granskningar|
+|Namn: | Ändra betalnings SoD-test|
+|Brevpost | Användare |
+|Del mängds filter: | Med någon roll hanterare|
+| Regel filter: |Måste ha behörighet att ändra betalning </br> Måste ha behörighet för att godkänna betalning|
 
-Den här regeln ska rapporteras som kompatibla användare som är ansvariga och har behörighet för godkänna granskningar och användare som inte är chefer och som inte har behörigheten godkänna granskningar. Omvänt kan rapporteras chefer som inte har den behörighet och användare som inte är chefer men har den behörigheten som inte är kompatibla.
+Som standard rapporteras alla användare som är ansvariga för både ändra betalning och begär ande betalnings behörighet som kompatibla. Principen kräver dock att en chef har antingen behörighet, inte nödvändigt vis båda. Om du vill testa den faktiska efterlevnaden av principen måste du använda operatorn eller Boolean med regeln för att avgöra om det finns några hanterare som inte har behörigheten Ändra betalning eller godkänn betalnings behörighet.
 
-Som nämndes tidigare, kan du kombinera regler i en regeluppsättning, vilket gör det enklare för dig att kategorisera och hantera regler för att uppfylla dina affärsbehov.
+Till skillnad från andra operatorer, **har det exklusivt** och **exklusivt sett alla** operatorer som anger kompatibilitet för objekt som annars skulle uteslutas av ett del mängds filter. Om du till exempel vill testa en princip som alla hanterare (och endast administratörer) har behörigheten Godkänn granskning kan du skapa en regel på följande sätt:
 
-Du kan också definiera en uppsättning av globala filter som, när det är aktiverat, gäller för alla regler som ska testas. Om du behöver ofta undanta en delmängd av poster när du testar regler i olika regeluppsättningar, kan du ange globala filter som du kan aktivera eller inaktivera efter behov.
+|  |  |
+|--|--|
+|Namn: | Granska godkännande test|
+|Brevpost | Användare|
+| Del mängds filter: | Med någon roll hanterare
+|Regel filter: | Ha enbart behörighet att godkänna granskningar|
+
+Den här regeln rapporterar som kompatibla användare som är chefer och har behörigheten Godkänn granskningar och användare som inte är administratörer och som inte har behörigheten Godkänn granskning. Administratörer som inte har den behörigheten och användare som inte är hanterare, men som har den behörigheten rapporteras som icke-kompatibla.
+
+Som tidigare nämnts kan du kombinera regler till en ruleset, vilket gör det enklare för dig att kategorisera och hantera regler som uppfyller dina affärs behov.
+
+Du kan också definiera en uppsättning globala filter som, när det är aktiverat, gäller för alla regler som testas. Om du ofta behöver undanta en viss delmängd poster när du testar regler i olika rulesets, kan du ange globala filter som du kan aktivera eller inaktivera vid behov.
 
 ## <a name="reporting"></a>Rapportering
 
-BHOLD-rapportmodul ger dig möjlighet att visa information i rollen modellen via en mängd olika rapporter. BHOLD-rapportmodul ger en omfattande uppsättning inbyggda rapporter, samt den innehåller en guide som du kan använda för att skapa både grundläggande och avancerade anpassade rapporter. När du kör en rapport kan du omedelbart visa resultaten eller spara resultaten i en Microsoft Excel (.xlsx)-fil. Om du vill visa den här filen med hjälp av Microsoft Excel 2000, Microsoft Excel 2002 eller Microsoft Excel 2003, kan du hämta och installera Microsoft Office Compatibility Pack för Word, Excel och PowerPoint filformat.
+BHOLD repor ting-modulen ger dig möjlighet att visa information i roll modellen via en rad olika rapporter. BHOLD repor ting-modulen innehåller en omfattande uppsättning inbyggda rapporter, och innehåller en guide som du kan använda för att skapa både grundläggande och avancerade anpassade rapporter. När du kör en rapport kan du direkt Visa resultaten eller Spara resultaten i en Microsoft Excel-fil (. xlsx). Om du vill visa den här filen med Microsoft Excel 2000, Microsoft Excel 2002 eller Microsoft Excel 2003 kan du hämta och installera Microsoft Office Compatibility Pack för Word-, Excel-och PowerPoint-filformat.
 
 
-Du kan använda BHOLD rapportmodulen huvudsakligen för att skapa rapporter som baseras på aktuella rollinformation. Genererade rapporter för granskning ändringar identitetsinformation har Forefront Identity Manager 2010 R2 en rapporteringsfunktionen för FIM-tjänsten som är implementerad i System Center Service Manager-datalagret. Mer information om FIM rapportering finns i Forefront Identity Manager 2010 och Forefront Identity Manager 2010 R2-dokumentationen i det tekniska biblioteket för Forefront Identity Management.
+Du använder BHOLD repor ting module för att skapa rapporter som baseras på den aktuella roll informationen. För genererade rapporter om gransknings ändringar av identitets information har Forefront Identity Manager 2010 R2 en rapporterings funktion för FIM-tjänsten som implementeras i System Center Service Manager data lagret. Mer information om FIM-rapportering finns i Forefront Identity Manager 2010 och Forefront Identity Manager 2010 R2-dokumentationen i det tekniska biblioteket för Forefront Identity Management.
 
-Kategorier som omfattas av de inbyggda rapporterna är följande:
+Kategorier som omfattas av de inbyggda rapporterna innehåller följande:
 
 - Administration
 - Attestering
-- kontroller
-- Aktiv åtkomstkontroll
+- Kontroller
+- Ankomstreg Access Control
 - Loggning
 - Modell
-- statistik
+- Uppgifterna
 - Arbetsflöde
 
-Du kan skapa rapporter och lägga till dem i dessa kategorier, eller du kan definiera dina egna kategorier som du kan placera anpassade och inbyggda rapporter.
+Du kan skapa rapporter och lägga till dem i dessa kategorier, eller så kan du definiera egna kategorier där du kan placera anpassade och inbyggda rapporter.
 
-När du skapar en rapport i guiden beskriver hur du med följande parametrar:
+När du skapar en rapport vägleder vi dig genom att tillhandahålla följande parametrar i guiden:
 
-- Identifierande information, inklusive namn, beskrivning, kategori, användning och målgrupp
+- Identifierings information, inklusive namn, beskrivning, kategori, användning och mål grupp
 - Fält som ska visas i rapporten
 - Frågor som anger vilka objekt som ska analyseras
-- Ordning i vilken rader ska sorteras
+- Ordningen som raderna ska sorteras i
 - Fält som används för att dela upp rapporten i avsnitt
 - Filter för att förfina de element som returneras i rapporten
 
-Du kan förhandsgranska rapporten när du gjort hittills och spara den om du inte behöver ange ytterligare parametrar i varje steg i guiden. Du kan också flytta tillbaka till föregående steg att ändra parametrar som du angav tidigare i guiden.
+I varje steg i guiden kan du förhandsgranska rapporten eftersom du har definierat den hittills och spara den om du inte behöver ange ytterligare parametrar. Du kan också gå tillbaka till föregående steg för att ändra parametrarna som du angav tidigare i guiden.
 
-## <a name="access-management-connector"></a>Access Management-anslutningstjänsten
+## <a name="access-management-connector"></a>Åtkomst hanterings anslutning
 
-Modulen BHOLD Suite Access Management-anslutningstjänsten har stöd för både första och pågående synkronisering av data till BHOLD. Management-anslutningstjänsten åtkomst fungerar med FIM-synkroniseringstjänsten för att flytta data mellan BHOLD-kärna-databasen, MIM metaversum och målprogram och identitetslagringar.
+BHOLD Suite Access Management Connector-modulen stöder både inledande och pågående synkronisering av data till BHOLD. Anslutnings hanterings anslutningen fungerar med FIM-synkroniseringstjänsten för att flytta data mellan BHOLD Core-databasen, MIM-metaversum och mål program och identitets lager.
 
-Äldre versioner av BHOLD kräver flera MAs att styra dataflödet mellan MIM och mellanliggande BHOLD-databastabeller. BHOLD-programsvit SP1 kan du definiera hanteringsagenter (MAs) i MIM med dataöverföring direkt mellan BHOLD och MIM i Access Management-anslutningstjänsten.
+Tidigare versioner av BHOLD krävde flera MAs för att styra data flödet mellan MIM och mellanliggande BHOLD databas tabeller. I BHOLD Suite SP1 kan du med åtkomst hanterings anslutningen definiera hanterings agenter (MAs) i MIM som tillhandahåller data överföring direkt mellan BHOLD och MIM.
 
 ## <a name="mim-integration"></a>MIM-integrering
 
-En viktig och kraftfull funktion i Forefront Identity Manager 2010 och Forefront Identity Manager 2010 R2 är självbetjäningsportalen som kan användarna visa och hantera sin identitet och medlemskap information. MIM-integrering utökar MIM-portalen med självbetjäning rollhantering. Exempelvis kan en användare med hjälp av BHOLD-funktioner i MIM-portalen kan begära rolltilldelning och kan visa aktiva roller och väntande begäranden. Ytterligare funktioner kan beviljas till delegerade administratörer, som möjligheten att förfrågan rolltilldelningar för andra användare.
+En viktig och kraftfull funktion i Forefront Identity Manager 2010 och Forefront Identity Manager 2010 R2 är självbetjänings portalen som gör att slutanvändare kan visa och hantera sin identitets-och medlemskaps information. MIM-integrering utökar MIM-portalen med självbetjänings roll hantering. Genom att använda BHOLD-funktionerna i MIM-portalen kan en användare exempelvis begära roll tilldelning och Visa aktiva roller och väntande begär Anden. Ytterligare funktioner kan beviljas delegerade administratörer, till exempel möjligheten att begära roll tilldelningar för andra användare.
 
-Det är viktigt att Observera att BHOLD-tillägg till MIM-portalen stöder självbetjäningsrollen och hanterings- och rapportering. Andra BHOLD administrativa funktioner, samt attestering, tillhandahålls av webbportalerna för BHOLD-moduler som är värd separat från MIM-portalen.
+Det är viktigt att Observera att BHOLD-tilläggen till MIM-portalen stöder självbetjänings roll och arbets flödes hantering och rapportering. Andra BHOLD administrations funktioner, samt attestering, tillhandahålls av webb portalerna i BHOLD-modulerna, som finns separat från MIM-portalen.
 
 ## <a name="next-steps"></a>Nästa steg
 
-- [BHOLD-installationsguide](bhold-installation-guide.md)
+- [Installations guide för BHOLD](bhold-installation-guide.md)
 - [Referens för BHOLD-utvecklare](../reference/mim2016-bhold-developer-reference.md)
 - [BHOLD-versionshistorik](../reference/version-bhold-history.md)
