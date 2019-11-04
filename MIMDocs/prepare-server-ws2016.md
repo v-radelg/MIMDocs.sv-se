@@ -1,29 +1,34 @@
 ---
-title: Konfigurera Windows Server 2016 för MIM 2016 SP1 | Microsoft Docs
-description: Hämta stegen och minimi kraven för att förbereda Windows Server 2016 för att arbeta med MIM 2016 SP1.
+title: Konfigurera Windows Server 2016 eller 2019 för MIM 2016 SP2 | Microsoft Docs
+description: Hämta stegen och minimi kraven för att förbereda Windows Server 2016 eller 2019 för att arbeta med MIM 2016 SP2.
 keywords: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 04/26/2018
+ms.date: 10/18/2019
 ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 7348507593426ba112feef9d68686ee493a6391d
-ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
+ms.openlocfilehash: 66011b135d575ce09d916be7c528accb230b343b
+ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701397"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73329429"
 ---
-# <a name="set-up-an-identity-management-server-windows-server-2016"></a>Konfigurera en server för identitets hantering: Windows Server 2016
+# <a name="set-up-an-identity-management-server-windows-server-2016-or-2019"></a>Konfigurera en server för identitets hantering: Windows Server 2016 eller 2019
 
 > [!div class="step-by-step"]
 > [«Förbereda en domän](preparing-domain.md)
-> [SQL Server 2016»](prepare-server-sql2016.md)
+> [SQL Server»](prepare-server-sql2016.md)
 > 
+
+> [!NOTE]
+Installations proceduren för Windows Server 2019 skiljer sig inte från installations proceduren för Windows Server 2016.
+
+
 > [!NOTE]
 > I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
 > - Domänkontrollantens namn – **corpdc**
@@ -58,7 +63,7 @@ Börja med en Windows Server 2016-dator med minst 8 – 12 GB RAM-minne. När du
 
     ![Bild av PowerShell-funktioner](media/MIM-DeployWS2.png)
 
-7. Skriv följande kommandon i PowerShell. Observera att det kan vara nödvändigt att ange en annan plats för källfilerna för **.NET Framework** 3.5-funktionerna. De här funktionerna finns vanligtvis inte när du installerar Windows Server, men är tillgängliga i mappen sida-vid-sida (SxS) i mappen Sources på OS-installationsdisken, t.ex. ” \*d:\Sources\SxS\* ”.
+7. Skriv följande kommandon i PowerShell. Observera att det kan vara nödvändigt att ange en annan plats för källfilerna för **.NET Framework** 3.5-funktionerna. De här funktionerna finns vanligtvis inte när du installerar Windows Server, men är tillgängliga i mappen sida-vid-sida (SxS) i mappen Sources på OS-installationsdisken, t.ex. ” *d:\Sources\SxS\* ”.
 
     ```
     import-module ServerManager
@@ -79,7 +84,7 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 
     ![Bild för Lokal säkerhetsprincip](media/MIM-DeployWS3.png)
 
-4. Klicka på **Lägg till användare eller grupp**och skriv följande i text rutan som följer efter `contoso\MIMSync; contoso\MIMMA; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\MIMSSPR`roll, klicka på **kontrol lera namn**och klicka på **OK**.
+4. Klicka på **Lägg till användare eller grupp**, och i text rutan skriver du följande baserat på roll `contoso\MIMSync; contoso\MIMMA; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\MIMSSPR`, klicka på **kontrol lera namn**och klicka på **OK**.
 
 5. Klicka på **OK** för att stänga fönstret **Logga in som en tjänst Egenskaper**.
 
@@ -99,6 +104,19 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 
 12. Stäng fönstret för lokala säkerhetsprinicper.
 
+## <a name="software-prerequisites"></a>Program varu krav
+
+Innan du installerar MIM 2016 SP2-komponenter måste du kontrol lera att du installerar alla program varu krav:
+
+13. Installera [Visual C++ 2013 Redistributable-paket](https://www.microsoft.com/download/details.aspx?id=40784).
+
+14. Installera .NET Framework 4,6.
+
+15. På den server som ska vara värd för MIM-synkroniseringstjänsten måste du [SQL Server Native Client](https://www.microsoft.com/download/details.aspx?id=50402)i MIM-synkroniseringstjänsten.
+
+16. MIM-tjänsten kräver .NET Framework 3,5 på den server som ska vara värd för MIM-tjänsten.
+
+17. Om du använder TLS 1,2 eller FIPS-läge, se [MIM 2016 SP2 i miljöer med endast TLS 1,2 eller FIPS-läge](preparing-tls.md).
 
 ## <a name="change-the-iis-windows-authentication-mode-if-needed"></a>Ändra läget IIS Windows-autentisering om det behövs
 
@@ -114,4 +132,4 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 
 > [!div class="step-by-step"]  
 > [«Förbereda en domän](preparing-domain.md)
-> [SQL Server 2016»](prepare-server-sql2016.md)
+> [SQL Server»](prepare-server-sql2016.md)

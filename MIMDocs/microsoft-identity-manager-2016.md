@@ -5,15 +5,15 @@ keywords: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 11/05/2018
+ms.date: 10/18/2019
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: e1419f7b7ae49ec56f4294051d8e094846ac2ed0
-ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
+ms.openlocfilehash: 1af53aee05d10fa7c7f77cef3c6dba1051be24b1
+ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701456"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73329392"
 ---
 # <a name="microsoft-identity-manager-2016-news-and-updates"></a>Microsoft Identity Manager 2016 nyheter och uppdateringar
 
@@ -25,23 +25,25 @@ Med MIM kan en organisation förenkla hanteringen av identitets livs cykeln med 
  - Integrering av innehållet i kataloger med HR-system och andra auktoritets källor
  - Synkronisering av identiteter mellan kataloger, databaser och lokala program via vanliga API: er och protokoll, Microsoft-levererade anslutningar och partners levererade anslutningar
 
-Den nuvarande versionen under vanlig support är MIM 2016 Service Pack 1 (SP1).  Den här versionen i augusti 2017 innehöll uppdateringar av MIM-portalen, PAM-scenario och stöd för nya plattformar.  Kunder som kör FIM-eller MIM-versioner före MIM 2016 SP1 bör uppgradera till MIM 2016 SP1 eller en senare snabb korrigering.  Läs mer om [att uppgradera till MIM 2016 SP1](./reference/version-history.md).
-
-## <a name="updates-since-mim-2016-sp1"></a>Uppdateringar sedan MIM 2016 SP1
+De aktuella versionerna under vanlig support är MIM 2016 Service Pack 1 och Service Pack 2 (SP2).  Kunder som kör FIM-eller MIM-versioner före MIM 2016 SP1 bör uppgradera till MIM 2016 SP2 eller en senare snabb korrigering.
 
 Microsoft levererar regelbundet uppdateringar till MIM, inklusive förbättringar av kund förfrågningar och fel korrigeringar, i en pågående lanserings cykel.
 
+## <a name="updates-in-mim-2016-sp2"></a>Uppdateringar i MIM 2016 SP2
+
+MIM 2016 Service Pack 2 är en sammanfattning av befintliga snabb korrigeringar sedan MIM 2016 SP1. Det introducerar också alternativet att konfigurera användningen av grupphanterade tjänst konton för MIM-synkroniseringstjänsten och MIM-tjänsten, och gör att MIM kan distribueras med andra uppdaterade plattforms program. Mer information finns i [MIM 2016 versions historik](./reference/version-history.md)
+
 ### <a name="major-new-and-updated-scenarios"></a>Större nya och uppdaterade scenarier
 
-- [Azure AD B2B-samarbete med MIM Graph Connector och Azure Application Proxy är ga](microsoft-identity-manager-2016-graph-b2b-scenario.md), senast uppdaterad april 2018
-- [Hybrid MIM-rapportering är ga](https://cloudblogs.microsoft.com/enterprisemobility/2018/02/23/hybrid-mim-reporting-now-available-in-azure-active-directory/), senast uppdaterad februari 2018
+- [Azure AD B2B-samarbete med MIM Graph Connector och Azure Application Proxy är ga](microsoft-identity-manager-2016-graph-b2b-scenario.md), senast uppdaterad juli 2019
+- [Hybrid MIM-rapportering är ga](https://cloudblogs.microsoft.com/enterprisemobility/2018/02/23/hybrid-mim-reporting-now-available-in-azure-active-directory/), senast uppdaterad april 2019
 - [Listan över föråldrade MIM-funktioner har ändrats](microsoft-identity-manager-2016-deprecated-features.md), senast uppdaterad februari 2018
 
 ### <a name="recent-software-releases"></a>Senaste program varu versionerna
 
-- [MIM Connector-versioner](./reference/microsoft-identity-manager-2016-connector-version-history.md), senast uppdaterad mars 2018
-- [MIM Sync, service, Portal, cm, tillägg och klient versioner](./reference/version-history.md) senast uppdaterad november 2017
-- [Versioner av MIM BHOLD-moduler](./reference/version-bhold-history.md) senast uppdaterad september 2017
+- [MIM Connector-versioner](./reference/microsoft-identity-manager-2016-connector-version-history.md), senast uppdaterad juli 2019
+- [MIM Sync, service, Portal, cm, tillägg och klient versioner](./reference/version-history.md) senast uppdaterad oktober 2019
+- [Versioner av MIM BHOLD-moduler](./reference/version-bhold-history.md) senast uppdaterad oktober 2018
 
 
 
@@ -50,5 +52,5 @@ Microsoft levererar regelbundet uppdateringar till MIM, inklusive förbättringa
 
 Läs mer om scenarier som lagts till i MIM 2016 och tidigare på [Microsoft Identity manager 2016](microsoft-identity-manager-2016.md).
 
-Läs mer dokumentation om hur du distribuerar MIM och den senaste versionen i [Översikt över MIM-dokumentation](https://docs.microsoft.com/en-us/microsoft-identity-manager/).
+Läs mer dokumentation om hur du distribuerar MIM och den senaste versionen i [Översikt över MIM-dokumentation](https://docs.microsoft.com/microsoft-identity-manager/).
 
