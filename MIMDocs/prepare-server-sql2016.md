@@ -11,22 +11,21 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 297df3b3-192e-4ed9-82ed-c95eb5297c84
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 757e5c49b12e47f1b5610fd96d4be319696be113
-ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
+ms.openlocfilehash: 4be699f123bf7d48b709ee8b8e91e2222cd492e2
+ms.sourcegitcommit: 323c2748dcc6b6991b1421dd8e3721588247bc17
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73329399"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73568014"
 ---
 # <a name="set-up-an-identity-management-server-sql-server-2016-or-2017"></a>Konfigurera en server för identitets hantering: SQL Server 2016 eller 2017
 
 > [!div class="step-by-step"]
 > [«Windows Server](prepare-server-ws2016.md)
 > [SharePoint»](prepare-server-sharepoint.md)
-> 
-
-> [!NOTE]
-Installations proceduren för SQL Server 2017 skiljer sig inte från installations proceduren för SQL Server 2016.
+ 
+> [!NOTE] 
+> Installations proceduren för SQL Server 2017 skiljer sig inte från installations proceduren för SQL Server 2016.
 
 > [!NOTE]
 > I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
@@ -38,7 +37,7 @@ Installations proceduren för SQL Server 2017 skiljer sig inte från installatio
 > - Lösenord – <strong>Pass@word1</strong>
 
 > [!IMPORTANT]
-MIM 2016 SP2 har stöd för SQL AlwaysOn tillgänglighets grupp (AoAG) med alternativet *RegisterAllProvidersIP* inställt på 0, vilket innebär att SQL Server AoAG mellan under nätet inte stöds för närvarande.
+> MIM 2016 SP2 har stöd för SQL AlwaysOn tillgänglighets grupp (AoAG) med alternativet *RegisterAllProvidersIP* inställt på 0, vilket innebär att SQL Server AoAG mellan under nätet inte stöds för närvarande.
 
 ## <a name="install-sql-server-2016-standardenterprise-edition"></a>Installera **SQL Server 2016 standard/Enterprise Edition**
 
@@ -56,7 +55,7 @@ Mer information SQL-distributionspaket och-tjänster finns [här](https://docs.m
 
 > [!NOTE]
 > SSMS ingår inte längre i SQL 2016. Information om hämtning hittar du [här](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017)
-> 
+
 > [!div class="step-by-step"]  
 > [«Windows Server](prepare-server-ws2016.md)
 > [SharePoint»](prepare-server-sharepoint.md)

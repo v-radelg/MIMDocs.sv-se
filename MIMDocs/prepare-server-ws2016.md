@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 66011b135d575ce09d916be7c528accb230b343b
-ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
+ms.openlocfilehash: c6d5d5081f0e932b9c60d8f2025b54e47dc352d5
+ms.sourcegitcommit: 323c2748dcc6b6991b1421dd8e3721588247bc17
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73329429"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73568037"
 ---
 # <a name="set-up-an-identity-management-server-windows-server-2016-or-2019"></a>Konfigurera en server för identitets hantering: Windows Server 2016 eller 2019
 
@@ -26,7 +26,7 @@ ms.locfileid: "73329429"
 > 
 
 > [!NOTE]
-Installations proceduren för Windows Server 2019 skiljer sig inte från installations proceduren för Windows Server 2016.
+> Installations proceduren för Windows Server 2019 skiljer sig inte från installations proceduren för Windows Server 2016.
 
 
 > [!NOTE]
@@ -89,8 +89,6 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 5. Klicka på **OK** för att stänga fönstret **Logga in som en tjänst Egenskaper**.
 
 6.  I informations fönstret högerklickar **du på neka åtkomst till den här datorn från nätverket**och väljer **Egenskaper**. >
-
-[!NOTE] Om roll servrar åtskiljs avbryts vissa funktioner som SSPR.
 
 7. Klicka på **Lägg till användare eller grupp**, skriv `contoso\MIMSync; contoso\MIMService` i textrutan och klicka på **OK**.
 

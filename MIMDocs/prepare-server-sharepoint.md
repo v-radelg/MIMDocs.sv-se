@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 46320c8c2d1ae7c530c4670159e393ee1be7165c
-ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
+ms.openlocfilehash: 62ef8796717dbcaea18d21bc3d28248efdeef92e
+ms.sourcegitcommit: 323c2748dcc6b6991b1421dd8e3721588247bc17
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73329454"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73568107"
 ---
 # <a name="set-up-an-identity-management-server-sharepoint"></a>Konfigurera en server för identitetshantering: SharePoint
 
@@ -26,7 +26,7 @@ ms.locfileid: "73329454"
 > 
 
 > [!NOTE]
-Installations proceduren för SharePoint Server 2019 skiljer sig inte från installations proceduren för SharePoint Server 2016 **förutom** ett extra steg som måste utföras för att AVblockera ASHX-filer som används av MIM-portalen.
+> Installations proceduren för SharePoint Server 2019 skiljer sig inte från installations proceduren för SharePoint Server 2016 **förutom** ett extra steg som måste utföras för att AVblockera ASHX-filer som används av MIM-portalen.
 
 > [!NOTE]
 > I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
@@ -50,13 +50,13 @@ Följ de här stegen för att installera SharePoint 2016. När du har slutfört 
     -   Ändra till katalogen där SharePoint packades upp.
 
     -   Skriv in följande kommando:
-    ```CMD
+    ```
     .\prerequisiteinstaller.exe
     ```
 
 2.  När du har installerat **SharePoint** -förutsättningarna installerar du **SharePoint 2016** genom att skriva följande kommando:
 
-    ```CMD
+    ```
     .\setup.exe
     ```
 
@@ -99,26 +99,26 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
     > Ett varningsmeddelande visas med information om att Windows Classic-autentiseringsmetoden används och att det kan ta flera minuter för kommandot att returneras. När du är klar visas den nya portalens URL som utdata. Låt **SharePoint 2016 Management Shell** -fönstret vara öppet för senare bruk.
 
 2. Starta SharePoint 2016 Management Shell och kör följande PowerShell-skript för att skapa en **SharePoint** -webbplatssamling som är associerad med webb programmet.
-   ```PowerShell
+    ```PowerShell
     $t = Get-SPWebTemplate -compatibilityLevel 15 -Identity "STS#1"
     $w = Get-SPWebApplication http://mim.contoso.com/
     New-SPSite -Url $w.Url -Template $t -OwnerAlias contoso\miminstall -CompatibilityLevel 15 -Name "MIM Portal"
     $s = SpSite($w.Url)
     $s.CompatibilityLevel
-   ```
-   > [!NOTE]
-   > Kontrol lera att resultatet av *CompatibilityLevel* -variabeln är "15". Om resultatet är annat än "15" skapades inte webbplats samlingen med rätt version. ta bort webbplats samlingen och skapa den igen.
+    ```
+    > [!NOTE]
+    > Kontrol lera att resultatet av *CompatibilityLevel* -variabeln är "15". Om resultatet är annat än "15" skapades inte webbplats samlingen med rätt version. ta bort webbplats samlingen och skapa den igen.
 
     > [!IMPORTANT]
-SharePoint Server 2019 använder olika webb programs egenskaper för att behålla en lista över blockerade fil namns tillägg. För att avblockera. ASHX-filer som används av MIM-portalen tre extra-kommandon måste köras manuellt från hanterings gränssnittet för SharePoint.
-<br/>
+    > SharePoint Server 2019 använder olika webb programs egenskaper för att behålla en lista över blockerade fil namns tillägg. För att avblockera. ASHX-filer som används av MIM-portalen tre extra-kommandon måste köras manuellt från hanterings gränssnittet för SharePoint.
+    <br/>
     **Kör endast följande tre kommandon för SharePoint 2019:**
 
-   ```PowerShell
+    ```PowerShell
     $w.BlockedASPNetExtensions.Remove("ashx")
     $w.Update()
     $w.BlockedASPNetExtensions
-   ```
+    ```
    > [!NOTE]
    > Kontrol lera att *BlockedASPNetExtensions* -listan inte innehåller fler än ASHX-tillägg flera MIM-portaler kan inte återges på rätt sätt.
 

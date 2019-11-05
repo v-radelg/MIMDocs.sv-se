@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 9471ccc1-bafe-46ee-b169-1464262380e1
 ms.reviewer: markwahl-msft
 ms.suite: ems
-ms.openlocfilehash: 35c4dc2aa3c933a729d3503527eca03c68bf02b5
-ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
+ms.openlocfilehash: bdf34be4841b1a911fdb61673e5a3855e66e7320
+ms.sourcegitcommit: 323c2748dcc6b6991b1421dd8e3721588247bc17
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73383963"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73568062"
 ---
 # <a name="mim-2016-sp2-upgrade--from-forefront-identity--or-microsoft-identity-manager"></a>MIM 2016 SP2-uppgradering från Forefront Identity eller Microsoft Identity Manager
 
@@ -30,7 +30,7 @@ Det finns flera tillgängliga uppgraderings alternativ. Om du redan kör MIM 201
 ## <a name="upgrade-from-fim-2010-r2-sp1-or-later-fim-builds"></a>Uppgradera från FIM 2010 R2 SP1 eller senare FIM-versioner
 
 > [!NOTE]
-Den minimala versionen av Forefront Identity Manager som kan uppgraderas direkt till MIM 2016 SP2 är FIM 2010 R2 SP1 (build 4.1.3419.0). Direkt uppgradering till MIM 2016 SP2 från tidigare versioner av FIM stöds inte. Om du kör FIM-versioner som är äldre än 4.1.3419.0 måste du uppgradera till FIM 2010 R2 SP1 innan du uppgraderar till MIM 2016 SP2.
+> Den minimala versionen av Forefront Identity Manager som kan uppgraderas direkt till MIM 2016 SP2 är FIM 2010 R2 SP1 (build 4.1.3419.0). Direkt uppgradering till MIM 2016 SP2 från tidigare versioner av FIM stöds inte. Om du kör FIM-versioner som är äldre än 4.1.3419.0 måste du uppgradera till FIM 2010 R2 SP1 innan du uppgraderar till MIM 2016 SP2.
 
 1. **Alternativ 1: fullständig installation med befintliga databaser**
     1. Gör en säkerhets kopia av dina FIMSynchronizationService-och FIMService-databaser.
@@ -69,6 +69,6 @@ Den minimala versionen av Forefront Identity Manager som kan uppgraderas direkt 
     1. Uppgradera MIM 2016-tillägg och lösen ords återställnings klienter, ange ett nytt MIM-servernamn om MIM-tjänstens Server namn har ändrats.
 
 > [!NOTE]
-Uppdateringar av språk paket efter MIM 2016 SP2 distribueras som snabb korrigeringar (. msp-filer), vilket eliminerar behovet av att avinstallera/ominstallera språk paket.
+> Uppdateringar av språk paket efter MIM 2016 SP2 distribueras som snabb korrigeringar (. msp-filer), vilket eliminerar behovet av att avinstallera/ominstallera språk paket.
 
 Mer detaljerad information om säkerhets kopierings procedurerna för uppgradering och databaser finns i artikeln [Uppgradera till fim 2010 R2](https://docs.microsoft.com/previous-versions/mim/jj134291%28v%3dws.10%29) , som gäller för uppgraderings processen för FIM eller mim.

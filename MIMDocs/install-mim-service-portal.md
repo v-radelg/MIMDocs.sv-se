@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: markwahl-msft
 ms.suite: ems
-ms.openlocfilehash: d579de0957efb6027f7061e67aa4d1f1ddff2395
-ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
+ms.openlocfilehash: 1f7aa8e257ef4fd1d97ee602a4e0f3f878d8c1b6
+ms.sourcegitcommit: 323c2748dcc6b6991b1421dd8e3721588247bc17
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73329367"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73568076"
 ---
 # <a name="install-mim-2016-mim-service-and-portal"></a>Installera MIM 2016: MIM-tjänst och -portal
 
@@ -58,8 +58,7 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 9. Ange namnet på det tjänstkonto du ska använda, till exempel *MIMService*, lösenordet till tjänstkontot, till exempel <em>Pass@word1</em>, din tjänstkontodomän, till exempel *contoso*, samt tjänst-e-postkontot, till exempel *contoso*.
     >[!NOTE]
-MIM 2016 SP2 och senare: om du använder grupphanterade tjänst konton måste du se till att **$** -tecknen är i slutet av namnet på tjänst kontot, t. ex. MIMService $, och lämnar fältet lösen ord för tjänst konto tomt.
-
+    >MIM 2016 SP2 och senare: om du använder grupphanterade tjänst konton måste du se till att **$** -tecknen är i slutet av namnet på tjänst kontot, t. ex. MIMService $, och lämnar fältet lösen ord för tjänst konto tomt.
 
     ![Bild av Konfigurera MIM-tjänstkontot](media/install-mim-service-portal/MIM_Install12.png)
 
@@ -67,7 +66,7 @@ MIM 2016 SP2 och senare: om du använder grupphanterade tjänst konton måste du
 
 11. Acceptera standardvärdena för platsen för synkroniseringstjänsten och ange kontot för MIM-hanterings agenten som *contoso\MIMMA*.
     >[!NOTE]
-MIM 2016 SP2 och senare: om du planerar att använda det hanterade tjänst kontot för MIM-synkroniseringstjänsten i MIM-synkronisering och aktiverar funktionen Använd MIM Sync-konto anger du MIM-gMSA namn som MIM MA-kontot, t. ex. *contoso\MIMSync $* .
+    >MIM 2016 SP2 och senare: om du planerar att använda det hanterade tjänst kontot för MIM-synkroniseringstjänsten i MIM-synkronisering och aktiverar funktionen Använd MIM Sync-konto anger du MIM-gMSA namn som MIM MA-kontot, t. ex. *contoso\MIMSync $* .
 
     ![Bild på Konfigurera MIM-tjänsten och -portalen](media/install-mim-service-portal/MIM_Install13.png)
 
