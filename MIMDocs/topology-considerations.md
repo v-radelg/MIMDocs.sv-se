@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 735dc357-dfba-4f68-a5b3-d66d6c018803
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 42562e92b3fe0daa63110d33d8952a3a1fc3de17
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.openlocfilehash: d9d749029d52c7e685e581ffe603aca63752ca3e
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358088"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73636999"
 ---
 # <a name="topology-considerations"></a>Topologiöverväganden
 Du kan distribuera Microsoft Identity Manager (MIM)-komponenter på en och samma server eller på flera servrar i flera olika konfigurationer. Vilken topologi du väljer för din distribution påverkar vilken prestanda du kan få ut från MIM. Denna artikel presenterar flera olika topologier som du kan överväga att implementera.
@@ -65,4 +65,5 @@ Precis som för standardversionen av topologi i flera skikt kan du höja MIM-por
 Datorerna som kör SQL Server och som är värdar för MIM-synkroniseringstjänsten och MIM-tjänstdatabasen påverkar avsevärt den övergripande prestandan för din MIM-distribution. Därför ska du följa rekommendationerna i dokumentationen för SQL Server för att optimera databasprestandan. Mer information finns i följande dokument:
 
 ## <a name="see-also"></a>Se även
-- Du kan hämta [Kapacitetsplaneringsguiden för Forefront Identity Manager (FIM) 2010](http://go.microsoft.com/fwlink/?LinkId=200180) som innehåller mer information om en testversion och resultat av prestandatest.
+
+- Den nedladdnings bara [guiden för kapacitets planering för Forefront Identity Manager (FIM) 2010](https://www.microsoft.com/en-us/download/details.aspx?id=7437) ger mer information om test-och prestanda testnings resultat.
