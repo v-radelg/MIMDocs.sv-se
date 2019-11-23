@@ -25,7 +25,7 @@ ms.locfileid: "73568089"
 > [MIM-tjänst och portal»](install-mim-service-portal.md)
  
 > [!NOTE]
-> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
+> Den här genomgången använder exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
 > - Domänkontrollantens namn – **corpdc**
 > - Domännamn – **contoso**
 > - Server namn för MIM-tjänst – **corpservice**
@@ -53,7 +53,7 @@ För att kunna installera Microsoft Identity Manager 2016-komponenterna måste d
 
 5. På skärmen **Anpassad installation** klickar du på **Nästa**.
 
-    ![Bild på anpassad installation](media/install-mim-sync/MIM_Install2.png)
+    ![Bild av Anpassad installation](media/install-mim-sync/MIM_Install2.png)
 
 6. På skärmen för konfiguration av synkroniseringstjänstens databas väljer du:
 

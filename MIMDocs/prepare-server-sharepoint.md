@@ -29,7 +29,7 @@ ms.locfileid: "73568107"
 > Installations proceduren för SharePoint Server 2019 skiljer sig inte från installations proceduren för SharePoint Server 2016 **förutom** ett extra steg som måste utföras för att AVblockera ASHX-filer som används av MIM-portalen.
 
 > [!NOTE]
-> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
+> Den här genomgången använder exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
 > - Domänkontrollantens namn – **corpdc**
 > - Domännamn – **contoso**
 > - Server namn för MIM-tjänst – **corpservice**
@@ -49,7 +49,7 @@ Följ de här stegen för att installera SharePoint 2016. När du har slutfört 
 
     -   Ändra till katalogen där SharePoint packades upp.
 
-    -   Skriv in följande kommando:
+    -   Skriv följande kommando.
     ```
     .\prerequisiteinstaller.exe
     ```

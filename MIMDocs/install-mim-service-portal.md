@@ -25,7 +25,7 @@ ms.locfileid: "73568076"
 > [Synkronisera databaser»](install-mim-sync-ad-service.md)
  
 > [!NOTE]
-> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
+> Den här genomgången använder exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
 > - Namn på domänkontrollant – **mimservername**
 > - Domännamn – **contoso**
 > - Lösenord – <strong>Pass@word1</strong>
@@ -52,7 +52,7 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 7. På sidan **Konfigurera anslutning till e-postserver**anger du namnet på Exchange-servern som **e-postserver** eller så kan du använda **O365-postlåda**. Om du inte har konfigurerat en e-postserver använder du **localhost** som namn på e-postservern och avmarkerar de två översta kryssrutorna. Klicka på **Nästa**.
 
-    ![Bild på Konfigurera e-postserveranslutning](media/install-mim-service-portal/MIM_Install11.png)
+    ![Bild på Konfigurera anslutning till e-postserver](media/install-mim-service-portal/MIM_Install11.png)
 
 8. Ange att du vill generera ett nytt självsignerat certifikat eller välj relevant certifikat.
 
@@ -60,7 +60,7 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
     >[!NOTE]
     >MIM 2016 SP2 och senare: om du använder grupphanterade tjänst konton måste du se till att **$** -tecknen är i slutet av namnet på tjänst kontot, t. ex. MIMService $, och lämnar fältet lösen ord för tjänst konto tomt.
 
-    ![Bild av Konfigurera MIM-tjänstkontot](media/install-mim-service-portal/MIM_Install12.png)
+    ![Bild på Konfigurera MIM-tjänstkontot](media/install-mim-service-portal/MIM_Install12.png)
 
 10. Observera att en varning kan komma att visas om att tjänstkontots nuvarande konfiguration inte är säker.
 
