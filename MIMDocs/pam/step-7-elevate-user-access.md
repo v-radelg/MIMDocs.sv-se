@@ -9,11 +9,11 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 5325fce2-ae35-45b0-9c1a-ad8b592fcd07
 ms.openlocfilehash: d00eaa284f1d54a1cbe2e0f8b936bbc41c19caea
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379627"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64517859"
 ---
 # <a name="step-7--elevate-a-users-access"></a>Steg 7 – Utöka en användares behörighet
 
@@ -36,10 +36,10 @@ Utan utökad behörighet kan Lisa inte komma åt den privilegierade resursen i C
 ## <a name="request-privileged-access-from-mim"></a>Begär privilegierad åtkomst från MIM.
 
 > [!NOTE]
-> Vi rekommenderar att en privilegierad workstation(PAW) på arbetsstationen.  Mer information finns i [PAW](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations).
+> Vi rekommenderar att arbets stationen är en privilegie rad arbets Station (PAW).  Mer information finns i [Paw](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations).
 
-1. På PRIVWKSTN, logga in som PRIV\priv.jen.
-2. Klicka på **starta**, **kör**, och ange **PowerShell.exe**.
+1. På PRIVWKSTN loggar du in som PRIV\priv.jen.
+2. Klicka på **Start**, **Kör**och ange **PowerShell. exe**.
 3. Skriv in följande kommando:
 
     ```cmd
@@ -90,7 +90,7 @@ Aktivera på begäran privilegierad åtkomst via PAM-exempelportalen.
     ```
 
 3. När du uppmanas anger du lösenordet för kontot PRIV.Lisa. Ett nytt webbläsarfönster visas.
-4. Gå till http://pamsrv.priv.contoso.local:8090 och se till att en webbsida från exempelportalen visas.
+4. Navigera till http://pamsrv.priv.contoso.local:8090 och se till att en webb sida från exempel portalen är synlig.
 5. I Internet Explorer väljer du **Verktyg** > **Internetalternativ** och klicka på fliken **Säkerhet**.
 6. Klicka på **Zonen Lokalt nätverk** > **Platser** > **Avancerat** och lägg till webbplatsen i zonen.
 7. Stäng dialogrutan **Internetalternativ**.

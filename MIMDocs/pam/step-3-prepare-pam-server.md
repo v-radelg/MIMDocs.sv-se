@@ -13,11 +13,11 @@ ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: e306748e982eb2eb123246bc7f309465823eaf35
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379913"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518224"
 ---
 # <a name="step-3--prepare-a-pam-server"></a>Steg 3 – Förbereda en PAM-server
 
@@ -186,7 +186,7 @@ Sedan skapar du en SharePoint-webbplatssamling som är kopplade till den webbapp
 
     Kontrollera att variabeln **CompatibilityLevel** är inställd på *14*. Om den returnerar *15* skapades inte webbplatssamlingen för 2010-versionen. Ta bort webbplatssamlingen och skapa den igen.
 
-2.  Kör följande PowerShell-kommandon i **SharePoint 2013 Management Shell**. Det inaktiverar vytillståndet på SharePoint Server-sidan och SharePoint-uppgiften **Hälsoanalysjobb (Varje timme, Microsoft SharePoint Foundation-timer, alla servrar)**.
+2.  Kör följande PowerShell-kommandon i **SharePoint 2013 Management Shell**. Det inaktiverar vytillståndet på SharePoint Server-sidan och SharePoint-uppgiften **Hälsoanalysjobb (Varje timme, Microsoft SharePoint Foundation-timer, alla servrar)** .
 
     ```PowerShell
     $contentService = [Microsoft.SharePoint.Administration.SPWebService]::ContentService;
@@ -204,7 +204,7 @@ Sedan skapar du en SharePoint-webbplatssamling som är kopplade till den webbapp
 ## <a name="set-the-website-as-the-local-intranet"></a>Ange webbplatsen som lokalt intranät
 
 1. Starta Internet Explorer och öppna en ny webbläsarflik
-2. Gå till http://pamsrv.priv.contoso.local:82/ och logga in som PRIV\MIMAdmin.  En tom SharePoint-webbplats med namnet MIM-portal visas.  
+2. Navigera till http://pamsrv.priv.contoso.local:82/ och logga in som PRIV\MIMAdmin.  En tom SharePoint-webbplats med namnet MIM-portal visas.  
 3. I Internet Explorer öppnar du **Internetalternativ**, byter till fliken **Säkerhet**, väljer **Lokalt intranät** och lägger till webbadressen `http://pamsrv.priv.contoso.local:82/`.
 
 Om inloggningen misslyckas kan du behöva uppdatera de Kerberos SPN du skapade i [steg 2](step-2-prepare-priv-domain-controller.md).

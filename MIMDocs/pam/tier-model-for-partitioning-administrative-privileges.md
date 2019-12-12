@@ -12,11 +12,11 @@ ms.assetid: c6e3cd02-1e32-4194-a8ed-3a0b3d022a43
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 8e7b7217714f0ef74c1d959eb51dac07018d6e77
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379731"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64517842"
 ---
 # <a name="tier-model-for-partitioning-administrative-privileges"></a>Nivåmodell för partitionering av administratörsbehörighet
 
@@ -24,7 +24,7 @@ I den här artikeln beskrivs en säkerhetsmodell som är avsedd att skydda mot r
 
 ## <a name="elevation-of-privilege-in-active-directory-forests"></a>Utöka privilegier i Active Directory-skogar
 
-Användare, tjänster och programkonton som beviljas permanent administratörsbehörighet för skogar i Windows Server Active Directory (AD) medför betydande risker för organisationens mål och verksamhet. Dessa konton är ofta mål av angripare, eftersom om de skulle skadas kan angriparen har behörighet att ansluta till andra servrar och program i domänen.
+Användare, tjänster och programkonton som beviljas permanent administratörsbehörighet för skogar i Windows Server Active Directory (AD) medför betydande risker för organisationens mål och verksamhet. Dessa konton är ofta riktade mot angripare eftersom angriparen har behörighet att ansluta till andra servrar eller program i domänen.
 
 Med nivåmodellen delas administratörer upp utifrån vilka resurser de hanterar. Administratörer med kontroll över användararbetsstationer separeras från de som styr program eller hanterar företagsidentiteter. Läs mer om den här modellen i [referensmaterialet för att skydda privilegierad åtkomst](http://aka.ms/tiermodel).
 
@@ -49,7 +49,7 @@ Inloggningsbegränsningar bör tillämpas för att säkerställa att konton med 
 Inloggningsbegränsningar kan tillämpas med:
 
 - Grupprincipbegränsningar för inloggningsrättigheter, bland annat:
-    - Neka tillgång till den här datorn från nätverket
+    - Neka åtkomst till den här datorn från nätverket
     - Neka inloggning som batchjobb
     - Neka att logga in som en tjänst
     - Neka lokal inloggning
@@ -60,4 +60,4 @@ Inloggningsbegränsningar kan tillämpas med:
 ## <a name="next-steps"></a>Nästa steg
 
 - I nästa artikel [Planera en skyddsmiljö](planning-bastion-environment.md) får du veta hur du lägger till en dedikerad administrativ skog för Microsoft Identity Manager för att upprätta administratörskonton.
-- [Arbetsstationer Priviledged åtkomst](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations) ger ett dedikerat operativsystem för känsliga uppgifter som är skyddat mot internetattacker och hotvektorer.
+- [Till gångs arbets stationer](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations) tillhandahåller ett dedikerat operativ system för känsliga uppgifter som skyddas från Internet attacker och hot vektorer.

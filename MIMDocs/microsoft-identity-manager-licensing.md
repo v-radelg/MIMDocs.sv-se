@@ -12,10 +12,10 @@ ms.assetid: ''
 ms.reviewer: billmath
 ms.suite: ems
 ms.openlocfilehash: e0bfd868345b8e7dcc6a02e745d3ccbf632a6c58
-ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73329291"
 ---
 # <a name="microsoft-identity-manager-2016-licensing-and-downloads"></a>Microsoft Identity Manager 2016-licensiering och nedladdningar
@@ -30,7 +30,7 @@ Microsoft Identity Manager 2016 licensieras per användare.  Informationen om li
 
 Microsoft Identity Manager 2016 ingår i Azure Active Directory Premium (P1 och P2), som är en del av Enterprise Mobility + Security.
 
-Azure AD Premium är tillgängligt via en [Microsoft Enterprise-avtal](https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx), [Open Volume License-programmet](https://www.microsoft.com/licensing/licensing-programs/open-license.aspx)och [Cloud solution providers](https://go.microsoft.com/fwlink/?LinkId=614968&clcid=0x409) -programmet. Azure-och Office 365-prenumeranter kan också köpa Azure Active Directory Premium P1 och P2 online.  Läs mer på [Azure Active Directory prissättning](https://azure.microsoft.com/pricing/details/active-directory/).
+Azure AD Premium är tillgängligt via en [Microsoft Enterprise-avtal](https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx), [Open Volume License-programmet](https://www.microsoft.com/licensing/licensing-programs/open-license.aspx)och [Cloud solution providers](https://go.microsoft.com/fwlink/?LinkId=614968&clcid=0x409) -programmet. Azure- och Office 365-prenumeranter kan även köpa Azure Active Directory Premium P1 och P2 online.  Läs mer på [Azure Active Directory prissättning](https://azure.microsoft.com/pricing/details/active-directory/).
 
 ### <a name="mim-cals"></a>MIM CAL
 
@@ -57,8 +57,8 @@ Om du startar en ny installation måste du ladda ned installationsfilerna för v
 | Självbetjäning | Tillägg och tillägg | Nej | `Add-ins and extensions` | Installeras på slut användar datorer |
 | Självbetjäning | SCSM-rapportering | Nej | `Data Warehouse Support Scripts` | |
 | Självbetjäning | Hybrid rapporterings agent | Nej | E.t. | Distribuerad via Download Center |
-| Självbetjäning | Språk paket | Nej | `LANGUAGE Packs` | |
-| Certifikathantering | 210 | Ja | `Certificate Management` | |
+| Självbetjäning | Språkpaket | Nej | `LANGUAGE Packs` | |
+| Certifikathantering | CM | Ja | `Certificate Management` | |
 | Certifikathantering | CM Mass klient | Nej | `CM Bulk Client` | |
 | Certifikathantering | CM-klient | Nej | `CM Client`  | |
 | Certifikathantering | CM-app för Windows | Nej | `FIMCMModernApp*` | | |
@@ -84,12 +84,12 @@ För att avgöra vilka uppdateringsfiler som behövs, visar den här tabellen ko
 
 | Scenario | Komponent | Namn på DVD ISO-mapp | Namn på motsvarande uppdaterings korrigerings fil |
 |----------|-----------|-   |-------------------|----------|--------------|
-|Synkronisering| Synkroniseringstjänsten | `Synchronization Service` | `MIMSyncService_x64*.msp` |
+|Synkronisering| Synkroniseringstjänst | `Synchronization Service` | `MIMSyncService_x64*.msp` |
 | Självbetjäning | MIM-tjänsten, MIM-portalen | `Service and Portal` | `MIMService_x64*msp` |
 | Självbetjäning | Tillägg och tillägg | `Add-ins and extensions` | `MIMAddinsExtensions*msp` |
-| Självbetjäning | Språk paket | `LANGUAGE Packs` | `LANGUAGE Packs.zip` |
+| Självbetjäning | Språkpaket | `LANGUAGE Packs` | `LANGUAGE Packs.zip` |
 | Åtkomst hantering (BHOLD) | BHOLD | `BHOLD` | `AccessManagementConnector.msi`, `BHOLD*.msi` |
-| Certifikathantering | 210 |  `Certificate Management` | `MIMCM*.msp` |
+| Certifikathantering | CM |  `Certificate Management` | `MIMCM*.msp` |
 | Certifikathantering | CM Mass klient |  `CM Bulk Client` |`MIMCMBulkClient*msp` |
 | Certifikathantering | CM-klient | `CM Client` |`MIMCMClient*msp` |
 

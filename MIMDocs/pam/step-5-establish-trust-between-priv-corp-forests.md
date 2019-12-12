@@ -12,11 +12,11 @@ ms.assetid: eef248c4-b3b6-4b28-9dd0-ae2f0b552425
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 04195febdb721291e9dcf72f5bbda04923075596
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379775"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518270"
 ---
 # <a name="step-5--establish-trust-between-priv-and-corp-forests"></a>Steg 5 – upprätta förtroende mellan PRIV- och CORP-skogar
 
@@ -75,7 +75,7 @@ Aktivera läsbehörighet till AD för PRIV-administratörer och övervakningstj�
 3. Högerklicka på domänen **contoso.local** och välj **Delegera kontroll**.  
 4. På fliken Valda användare och grupper klickar du på **Lägg till**.  
 5. I fönstret Välj användare, datorer eller grupper klickar du på **Platser** och ändrar platsen till *priv.contoso.local*.  På objektnamnet skriver du *Domänadministratörer* och klickar på **Kontrollera namn**. När ett popup-fönster visas anger du användarnamnet *priv\administratör* och lösenordet.  
-6. Efter Domänadministratörer lägger du till "*; MIMMonitor*". När namnen **Domänadministratörer** och **MIMMonitor** är understrukna klickar du på **OK** och sedan på **Nästa**.  
+6. Efter Domänadministratörer lägger du till " *; MIMMonitor*". När namnen **Domänadministratörer** och **MIMMonitor** är understrukna klickar du på **OK** och sedan på **Nästa**.  
 7. I listan med vanliga uppgifter väljer du **Läsa all användarinformation** och klickar på **Nästa** och **Slutför**.  
 8. Stäng Active Directory – användare och datorer.
 

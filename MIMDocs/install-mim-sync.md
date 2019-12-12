@@ -12,10 +12,10 @@ ms.assetid: 2585e9c5-ce34-46c7-bdcf-8c08773901dc
 ms.reviewer: markwahl-msft
 ms.suite: ems
 ms.openlocfilehash: b9bc580710a13b3a0868b0580d55469a753e7f33
-ms.sourcegitcommit: 323c2748dcc6b6991b1421dd8e3721588247bc17
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73568089"
 ---
 # <a name="install-mim-2016-mim-synchronization-service"></a>Installera MIM 2016: MIM-synkroniseringstjänsten
@@ -25,7 +25,7 @@ ms.locfileid: "73568089"
 > [MIM-tjänst och portal»](install-mim-service-portal.md)
  
 > [!NOTE]
-> Den här genomgången använder exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
+> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
 > - Domänkontrollantens namn – **corpdc**
 > - Domännamn – **contoso**
 > - Server namn för MIM-tjänst – **corpservice**
@@ -53,7 +53,7 @@ För att kunna installera Microsoft Identity Manager 2016-komponenterna måste d
 
 5. På skärmen **Anpassad installation** klickar du på **Nästa**.
 
-    ![Bild av Anpassad installation](media/install-mim-sync/MIM_Install2.png)
+    ![Bild på anpassad installation](media/install-mim-sync/MIM_Install2.png)
 
 6. På skärmen för konfiguration av synkroniseringstjänstens databas väljer du:
 

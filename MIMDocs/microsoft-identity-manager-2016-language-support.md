@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.openlocfilehash: 5704e978734bea13f1a362aeb203810f3864205a
-ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68701476"
 ---
 # <a name="supported-languages"></a>Språk som stöds
@@ -25,7 +25,7 @@ Den här artikeln beskriver de språk som stöds och mappning av uppdateringar f
 Microsoft MIM-tjänsten och Portal språk paketet har stöd för följande språk 33-språk.  
 
 > [!NOTE]
-> I [4.4.1642.0](https://support.microsoft.com/en-us/help/4021562/hotfix-rollup-package-build-4-4-1642-0-is-available-for-microsoft) kommer en register nyckel som har lagts till med namnet "OverrideDefaultUILocale" till MIM-tillägg och-språk paket att försöka mappa alla liknande språk till det som stöds. Om t. ex. visnings språket för Windows är es-cl (spanska Chile) eller något es\*, kommer det att försöka mappa detta till es-es (spanska Spanien).
+> I [4.4.1642.0](https://support.microsoft.com/en-us/help/4021562/hotfix-rollup-package-build-4-4-1642-0-is-available-for-microsoft) kommer en register nyckel som har lagts till med namnet "OverrideDefaultUILocale" till MIM-tillägg och-språk paket att försöka mappa alla liknande språk till det som stöds. Om t. ex. visnings språket för Windows är ES-CL (spanska Chile) eller en ES-\*, försöker det att mappa detta till ES-ES (spanska Spanien).
 
 > [!IMPORTANT]
 > Texten i SSPR-tillägget och-portalen kommer att lokaliseras, men frågorna kommer inte att fungera utan ytterligare arbete. Du måste skapa authn-arbetsflöden (och tillhör ande uppsättningar och MPR) för att rikta in dig på frågor på varje språk till mål platsen.
@@ -35,7 +35,7 @@ Microsoft MIM-tjänsten och Portal språk paketet har stöd för följande språ
 |       Bulgariska       |          BG-BG           |      Bulgarien      |
 | Förenklad kinesiska  |          zh-CN           |   zh-hans    |
 |   Kinesiska (Taiwan)    |          zh-TW           |   zh-hant    |
-|       Kroatiska        |          HR-HR           |      timmars      |
+|       Kroatiska        |          HR-HR           |      tim      |
 |         Tjeckiska         |          CS-CZ           |      cs      |
 |        Danska         |          da-DK           |      da      |
 |         Nederländska         |          NL-NL           |      nl      |
@@ -43,17 +43,17 @@ Microsoft MIM-tjänsten och Portal språk paketet har stöd för följande språ
 |        Franska         |          fr-FR           |      fr      |
 |        Finska        |          fi-FI           |      fi      |
 |        Tyska         |          de-DE           |      de      |
-|         Grekiska         |          el GR           |      El      |
-|         Hindi         |          Hej Indien           |      Hej      |
-|       Ungerska       |          hu-HU           |      HU      |
+|         Grekiska         |          el GR           |      el      |
+|         Hindi         |          Hej Indien           |      hej      |
+|       Ungerska       |          hu-HU           |      hu      |
 |        Italienska        |          IT-IT           |      it      |
 |       Japanska        |          ja-JP           |      ja      |
-|        Koreanska         |          ko-KR           |      Ko      |
+|        Koreanska         |          ko-KR           |      ko      |
 |      Litauiska       |          lt-LT           |      lt      |
 |        Lettiska        |          lv-LV           |      LV      |
-|       Norska       |          NB-NO           |    NB-NO     |
+|       Norska       |          nb-NO           |    nb-NO     |
 |        Polska         |          pl-PL           |      pl      |
-| Portugisiska (Portugal) |          PT-PT           |      pt      |
+| portugisiska (Portugal) |          PT-PT           |      pt      |
 |  Portugisiska (Brasilien)  |          pt-BR           |    pt-BR     |
 |        Ryska        |          ru-RU           |      ru      |
 |       Rumänska        |          RO-RO           |      ro      |
@@ -78,7 +78,7 @@ Microsoft Certificate Management stöder följande 9 språk.
 |Tyska|de-DE|de|
 |Italienska|IT-IT|it|
 |Japanska|ja-JP|ja|
-|Portugisiska (Portugal)|PT-PT|PT-PT|
+|portugisiska (Portugal)|PT-PT|PT-PT|
 |Spanska|es-ES|ES|
 
 ## <a name="certificate-management-modern-application"></a>Modernt program för certifikat hantering  
@@ -94,14 +94,14 @@ Microsoft Certificate Management moderna program har stöd för följande 33-spr
 |Franska|fr-FR|fr|
 |Finska|fi-FI|fi|
 |Tyska|de-DE|de|
-|Grekiska|el GR|El|
-|Ungerska|hu-HU|HU|
+|Grekiska|el GR|el|
+|Ungerska|hu-HU|hu|
 |Italienska|IT-IT|it|
 |Japanska|ja-JP|ja|
-|Koreanska|ko-KR|Ko|
-|Norska|NB-NO|NB-NO|
+|Koreanska|ko-KR|ko|
+|Norska|nb-NO|nb-NO|
 |Polska|pl-PL|pl|
-|Portugisiska (Portugal)|PT-PT|pt|
+|portugisiska (Portugal)|PT-PT|pt|
 |Portugisiska (Brasilien)|pt-BR|pt-BR|
 |Ryska|ru-RU|ru|
 |Rumänska|RO-RO|ro|
@@ -112,4 +112,4 @@ Microsoft Certificate Management moderna program har stöd för följande 33-spr
 ## <a name="next-steps"></a>Nästa steg
 
 - [Första distributionen](microsoft-identity-manager-deploy.md)
-- [Versions historik](reference/version-history.md)
+- [Versionshistorik](reference/version-history.md)

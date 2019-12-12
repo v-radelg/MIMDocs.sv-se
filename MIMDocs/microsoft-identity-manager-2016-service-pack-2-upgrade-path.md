@@ -12,17 +12,17 @@ ms.assetid: 9471ccc1-bafe-46ee-b169-1464262380e1
 ms.reviewer: markwahl-msft
 ms.suite: ems
 ms.openlocfilehash: bdf34be4841b1a911fdb61673e5a3855e66e7320
-ms.sourcegitcommit: 323c2748dcc6b6991b1421dd8e3721588247bc17
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73568062"
 ---
 # <a name="mim-2016-sp2-upgrade--from-forefront-identity--or-microsoft-identity-manager"></a>MIM 2016 SP2-uppgradering från Forefront Identity eller Microsoft Identity Manager
 
 Organisationer kan uppgradera till Microsoft Identity Manager 2016 SP2 från tidigare versioner av Microsoft Identity Manager eller Forefront Identity Manager.  I varje avsnitt i den här artikeln beskrivs en uppgraderings väg som stöds.
 
-Det finns flera tillgängliga uppgraderings alternativ. Om du redan kör MIM 2016 och inte behöver uppdatera den underliggande plattformen (Windows Server, SQL, SharePoint, SCSM DW) eller köra MIM-tjänster med hjälp av grupphanterade tjänst konton och du inte använder MIM-språkpaket, är det enklaste alternativet på plats installation av uppgradering/Hotfix (. msp). Annars rekommenderas den fullständiga installationen.
+Det finns flera tillgängliga uppgraderings alternativ. Om du redan kör MIM 2016 och inte behöver uppdatera den underliggande plattformen (Windows Server, SQL, SharePoint, SCSM DW) eller köra MIM-tjänster med hjälp av grupphanterade tjänst konton och du inte använder MIM-språkpaket, är det enklaste alternativet uppgradering/Hotfix (. msp) på plats. Annars rekommenderas den fullständiga installationen.
 
 > [!IMPORTANT]
 > Kontrol lera avsnittet uppdaterade [program varu krav](prepare-server-ws2016.md#software-prerequisites) innan du installerar MIM 2016 SP2

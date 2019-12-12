@@ -12,17 +12,17 @@ ms.assetid: bfc7cb64-60c7-4e35-b36a-bbe73b99444b
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: f8fd71d2244760d3a6561c6f55bf676e6f42561a
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50380076"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518884"
 ---
 # <a name="planning-a-bastion-environment"></a>Planera en skyddsmiljö
 
 Genom att lägga till en skyddsmiljö med en dedikerad administrativ skog för Active Directory kan organisationer enkelt hantera administratörskonton, arbetsstationer och grupper i en miljö med starkare säkerhetskontroller än den befintliga produktionsmiljön.
 
-Den här arkitekturen möjliggör ett antal kontroller som inte är möjliga eller enkla att konfigurera i en arkitektur med en enda skog. Det omfattar att tilldela konton som vanliga icke-privilegierade användare i den administrativa skogen, vilka är mycket privilegierade i produktionsmiljön, vilket möjliggör större teknisk tillämpning av styrningen. Den här arkitekturen möjliggör också användning av funktionen för selektiv autentisering av ett förtroende, vilket gör att det går att begränsa inloggning (och exponering av autentiseringsuppgifter) till enbart auktoriserade värdar. När du behöver en högre säkerhetsnivå för produktionsskogen men vill slippa kostnaden och komplexiteten för en fullständig ombyggnation, kan du få en miljö som höjer säkerhetsnivån i produktionsmiljön med hjälp av en administrativ skog.
+Den här arkitekturen möjliggör ett antal kontroller som inte är möjliga eller enkla att konfigurera i en arkitektur med en enda skog. Det omfattar att tilldela konton som vanliga icke-privilegierade användare i den administrativa skogen, vilka är mycket privilegierade i produktionsmiljön, vilket möjliggör större teknisk tillämpning av styrningen. Denna arkitektur kan också använda funktionen selektiv autentisering för ett förtroende som ett sätt att begränsa inloggningar (och exponering av autentiseringsuppgifter) till endast auktoriserade värdar. I situationer där en högre säkerhetsnivå önskas för produktionsskogen utan medförande kostnad och komplexitet för ett fullständigt återskapande, kan en administrativ skog tillhandahålla en miljö som ökar produktionsmiljöns säkerhetsnivå.
 
 Annan teknik kan användas vid sidan av den dedikerade administrativa skogen. Sådan teknik kan bland annat begränsa platserna där administratörers autentiseringsuppgifter exponeras, begränsa användarnas rollprivilegier i skogen och säkerställa att administrativa uppgifter inte utförs på värdar som används för standardanvändares aktiviteter (till exempel e-postanvändning och webbsurfande).
 
@@ -40,7 +40,7 @@ Enligt [nivåmodellen](tier-model-for-partitioning-administrative-privileges.md)
 
 ### <a name="restricted-trust"></a>Begränsat förtroende
 
-*CORP*-skogen för produktion bör ha förtroende för den administrativa *PRIV*-skogen, men inte tvärtom. Det kan vara ett domänförtroende eller ett skogsförtroende. Den administrativa skogens domän behöver inte ha förtroende för hanterade domäner och skogar för att hantera Active Directory, men för ytterligare program kan det krävas en dubbelriktad förtroenderelation, säkerhetsvalidering och testning.
+*CORP*-skogen för produktion bör ha förtroende för den administrativa *PRIV*-skogen, men inte tvärtom. Detta kan vara ett domänförtroende eller ett skogsförtroende. Den administrativa skogens domän behöver inte ha förtroende för hanterade domäner och skogar för att hantera Active Directory, men för ytterligare program kan det krävas en dubbelriktad förtroenderelation, säkerhetsvalidering och testning.
 
 Selektiv autentisering bör användas för att säkerställa att kontona i den administrativa skogen endast använder rätt produktionsvärdar. För att hantera domänkontrollanter och delegera behörigheter i Active Directory kräver detta att behörigheten "Tillåts att logga in" på domänkontrollanter tilldelas angivna administratörskonton på nivå 0 i den administrativa skogen. I [Configuring Selective Authentication Settings](http://technet.microsoft.com/library/cc816580.aspx) (Konfigurera inställningar för selektiv autentisering) finns mer information.
 
@@ -76,11 +76,11 @@ I och med att administrationen av program överförs till skyddsmiljön måste d
 
 Den administrativa skogen ska konfigureras för det lägsta privilegium som krävs för Active Directory-administration.
 
-- Konton i den administrativa skogen som används för att administrera produktionsmiljön bör inte beviljas administratörsbehörighet för den administrativa skogen, domäner i den eller arbetsstationer i den.
+- Konton i den administrativa skogen som används för att administrera produktionsmiljön bör inte beviljas administrativ behörighet för den administrativa skogen, domäner i den eller arbetsstationer i den.
 
-- Administratörsbehörigheter över själva den administrativa skogen bör vara hårt styrda av en offlineprocess för att minska externa och interna angripares möjlighet att radera granskningsloggar. Detta hjälper också att se till att personal med konton för produktionsadministration inte kan minska begränsningarna för sina konton och öka risken för organisationen.
+- Administratörsbehörigheter över själva den administrativa skogen bör vara hårt styrda av en offlineprocess för att minska externa och interna angripares möjlighet att radera granskningsloggar. Detta bidrar även till att personal med administratörskonton för produktion inte kan släppa på begränsningarna för sina konton och öka risken för organisationen.
 
-- Den administrativa skogen bör följa Microsoft Security Compliance Managers (SCM) konfigurationer för domänen, inklusive ordentliga konfigurationer för autentiseringsprotokoll.
+- Den administrativa skogen bör följa konfigurationerna för Microsoft Security Compliance Manager (SCM) för domänen, inklusive starka konfigurationer för autentiseringsprotokoll.
 
 När du skapar skyddsmiljön, innan du installerar Microsoft Identity Manager, identifierar och skapar du de konton som ska användas för administration i miljön. Det innefattar:
 
@@ -96,7 +96,7 @@ Alla värdar, inklusive domänkontrollanter, servrar och arbetsstationer som är
 
 - De program som krävs för administration ska finnas på alla arbetsstationer så att kontona som använder dem inte måste finnas i den lokala administratörsgruppen för att installera dem. Underhållet av domänkontrollanter kan vanligtvis utföras med RDP och verktyg för fjärrserveradministration.
 
-- Värdarna för de administrativa skogarna ska uppdateras automatiskt med säkerhetsuppdateringar. Även om det kan skapa risk för att underhåll av domänkontrollanter avbryts minskar det säkerhetsriskerna betydligt för okorrigerade säkerhetsproblem.
+- Administrativa skogsvärdar ska uppdateras automatiskt med säkerhetsuppdateringar. Även om detta kan riskera att avbryta domänkontrollantens underhållsåtgärder, ger det en betydande minskning av okorrigerad sårbarhet.
 
 ### <a name="identify-administrative-hosts"></a>Identifiera administrativa värdar
 
@@ -162,15 +162,15 @@ När du har upprättat förtroendet konfigurerar du varje domän för att aktive
 
 Det finns sju krav för att aktivera hantering för en befintlig domän.
 
-### <a name="1-a-security-group-on-the-local-domain"></a>1. En säkerhetsgrupp i den lokala domänen
+### <a name="1-a-security-group-on-the-local-domain"></a>1. en säkerhets grupp i den lokala domänen
 
-Det måste finnas en grupp i den befintliga domänen, vars namn är NetBIOS-domännamnet följt av tre dollartecken, t.ex. *CONTOSO$$$*. Gruppomfånget måste vara *domänlokal* och grupptypen måste vara *säkerhet*. Det krävs för att grupper ska kunna skapas i den dedikerade administrativa skogen med samma säkerhetsidentifierare som grupper i domänen. Skapa den här gruppen med följande PowerShell-kommando, som utförs av en administratör för den befintliga domänen och körs på en arbetsstation som är ansluten till den befintliga domänen:
+Det måste finnas en grupp i den befintliga domänen, vars namn är NetBIOS-domännamnet följt av tre dollartecken, t.ex. *CONTOSO$$$* . Gruppomfånget måste vara *domänlokal* och grupptypen måste vara *säkerhet*. Det krävs för att grupper ska kunna skapas i den dedikerade administrativa skogen med samma säkerhetsidentifierare som grupper i domänen. Skapa den här gruppen med följande PowerShell-kommando, som utförs av en administratör för den befintliga domänen och körs på en arbetsstation som är ansluten till den befintliga domänen:
 
 ```PowerShell
 New-ADGroup -name 'CONTOSO$$$' -GroupCategory Security -GroupScope DomainLocal -SamAccountName 'CONTOSO$$$'
 ```
 
-### <a name="2-success-and-failure-auditing"></a>2. Granskning av lyckade och misslyckade åtgärder
+### <a name="2-success-and-failure-auditing"></a>2. granskning av lyckade och misslyckade försök
 
 Grupprincipinställningarna på domänkontrollanten för granskning måste innehålla granskning av både misslyckade och lyckade åtgärder för Granska kontohantering och Granska katalogtjänståtkomst. Det kan göras av en administratör för den befintliga domänen med konsolen Grupprinciphantering och sedan köras på en arbetsstation som är ansluten till den befintliga domänen:
 
@@ -200,7 +200,7 @@ Grupprincipinställningarna på domänkontrollanten för granskning måste inneh
 
 Meddelandet ”Uppdatering av grupprincip har slutförts”. bör visas efter några minuter.
 
-### <a name="3-allow-connections-to-the-local-security-authority"></a>3. Tillåt anslutningar till den lokala säkerhetskontrollen
+### <a name="3-allow-connections-to-the-local-security-authority"></a>3. Tillåt anslutningar till den lokala säkerhets kontrollen
 
 Domänkontrollanterna måste tillåta RPC över TCP/IP-anslutningar för lokal säkerhetskontroll (LSA) från skyddsmiljön. TCP/IP-stöd i LSA måste aktiveras i registret på äldre versioner av Windows Server:
 
@@ -208,7 +208,7 @@ Domänkontrollanterna måste tillåta RPC över TCP/IP-anslutningar för lokal s
 New-ItemProperty -Path HKLM:SYSTEM\\CurrentControlSet\\Control\\Lsa -Name TcpipClientSupport -PropertyType DWORD -Value 1
 ```
 
-### <a name="4-create-the-pam-domain-configuration"></a>4. Skapa PAM-domänens konfiguration
+### <a name="4-create-the-pam-domain-configuration"></a>4. skapa PAM-domänens konfiguration
 
 `New-PAMDomainConfiguration`-cmdleten måste köras på MIM-tjänstdatorn i administrationsdomänen. Parametrarna för det här kommandot är domännamnet för den befintliga domänen och autentiseringsuppgifterna för en administratör i domänen.
 
@@ -216,7 +216,7 @@ New-ItemProperty -Path HKLM:SYSTEM\\CurrentControlSet\\Control\\Lsa -Name TcpipC
  New-PAMDomainConfiguration -SourceDomain "contoso" -Credentials (get-credential)
 ```
 
-### <a name="5-give-read-permissions-to-accounts"></a>5. Bevilja läsbehörighet för konton
+### <a name="5-give-read-permissions-to-accounts"></a>5. ge Läs behörighet till konton
 
 De konton i skyddsskogen som används till att skapa roller (administratörer som använder cmdletarna `New-PAMUser` och `New-PAMGroup`), samt det konto som används av MIM-övervakningstjänsten måste ha läsbehörighet i domänen.
 
@@ -238,11 +238,11 @@ Följande steg ger läsbehörighet för användaren *PRIV\Administratör* till d
 
 18. Stäng Active Directory – användare och datorer.
 
-### <a name="6-a-break-glass-account"></a>6. Ett nödkonto
+### <a name="6-a-break-glass-account"></a>6. ett rast glas konto
 
 Om målet med hanteringen av privilegierad åtkomst är att minska antalet konton med domänadministratörsbehörighet som är permanent tilldelade för domänen måste det också finnas ett *nödkonto* i domänen om det senare skulle uppstå problem i förtroenderelationen. Konton för nödåtkomst till produktionsskogen ska finnas i varje domän och ska bara kunna logga in på domänkontrollanter. För organisationer med flera platser, kan det krävas ytterligare konton för redundans.
 
-### <a name="7-update-permissions-in-the-bastion-environment"></a>7. Uppdatera behörigheter i skyddsmiljön
+### <a name="7-update-permissions-in-the-bastion-environment"></a>7. uppdatera behörigheter i skydds-miljön
 
 Granska behörigheterna i objektet *AdminSDHolder* i systemcontainern i den domänen. Objektet *AdminSDHolder* har en unik åtkomstkontrollista (ACL) som används till att kontrollera behörigheterna för säkerhetsobjekt som är medlemmar i inbyggda privilegierade Active Directory-grupper. Observera om det har gjorts ändringar i standardbehörigheterna som påverkar användare med administratörsbehörighet i domänen, eftersom de behörigheterna inte gäller för användare vars konton finns i skyddsmiljön.
 

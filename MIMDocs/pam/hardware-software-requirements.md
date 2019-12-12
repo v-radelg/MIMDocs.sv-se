@@ -12,18 +12,18 @@ ms.assetid: 82a9085c-9667-4b3b-8079-657eab1d1e58
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 4838e9e8a495866902a78e713bb3b226eaf9def1
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379819"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518832"
 ---
 # <a name="hardware-and-software-requirements"></a>Maskin- och programvarukrav
 
 Privileged Access Management har inga maskinvarukrav förutom för de underliggande programvaruplattformarna. Kontrollera att du har tillräckligt med minne och diskutrymme, och är ansluten till nätverket.
 
 > [!IMPORTANT]
-> Den här artikeln innehåller minimikraven för en grundläggande distribution. Det är inte avsett att demonstrera prestanda, skalbarhet och hög tillgänglighet. Det motsvarar inte en rekommenderad distributionstopologi för stora företag och produktionsmiljöer.
+> Den här artikeln innehåller minimikraven för en grundläggande distribution. Den är inte avsedd att demonstrera prestanda, skalbarhet eller hög tillgänglighet. Den representerar inte en rekommenderad distributions topologi för stora företag eller produktions miljöer.
 
 ## <a name="installing-from-software-packages"></a>Installera från programvarupaket
 
@@ -35,12 +35,12 @@ Följande programvara kan laddas ned från TechNet Evaluation Center eller MSDN:
 
 Följande programvara kan laddas ned från GitHub:
 
-- [PAMSamplePortal](https://github.com/Azure/identity-management-samples): innehåller exempelwebbapp för REST API
+- [PAMSamplePortal](https://github.com/Azure/identity-management-samples): innehåller ett exempel webb program för REST API
 
 ## <a name="required-software"></a>Programvara som krävs
 
 - Windows Server 2012 R2
-- Windows 10 Enterprise
+- Windows 10 Enterprise
 - SQL Server 2012 Service Pack 1 eller SQL Server 2014
 
 ## <a name="evaluation-software"></a>Utvärderingsprogramvara

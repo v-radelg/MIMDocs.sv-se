@@ -12,11 +12,11 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: dda6a05337e9a9778135fc7d833a38369540b3e0
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379998"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518187"
 ---
 # <a name="step-1---prepare-the-host-and-the-corp-domain"></a>Steg 1 – förbereda värden och CORP-domänen
 
@@ -35,7 +35,7 @@ I det här avsnittet beskrivs hur du konfigurerar en domänkontrollant för en C
 
 Installera Windows Server 2012 R2 eller Windows Server 2016 Technical Preview 4 eller senare på en virtuell dator för att skapa en dator som kallas *CORPDC*.
 
-1. Välj **Windows Server 2012 R2 Standard (server med GUI) x64** eller **Windows Server 2016 Technical Preview (server med Skrivbordsmiljö)**.
+1. Välj **Windows Server 2012 R2 Standard (server med GUI) x64** eller **Windows Server 2016 Technical Preview (server med Skrivbordsmiljö)** .
 
 2. Granska och godkänn licensvillkoren.
 
@@ -66,13 +66,13 @@ I det här avsnittet lägger du till roller för Active Directory Domain Service
 
    En uppmaning visas om att du ska ange ett administratörslösenord för säkert läge. Obs! Varningsmeddelanden för DNS-delegering och kryptografiinställningar visas. Det är normalt.
 
-3. När skogen har skapats loggar du ut. Servern startar om automatiskt.
+3. När du har skapat skogen loggar du ut. Servern kommer att startas om automatiskt.
 
 4. När servern har startats om logga du in på CORPDC som administratör för domänen. Det är vanligtvis användaren CONTOSO\\Administratör som har lösenordet som skapades när du installerade Windows på CORPDC.
 
 ### <a name="create-a-group"></a>Skapa en grupp
 
-Skapa en grupp för granskning av Active Directory om gruppen inte redan finns. Namnet på gruppen måste vara NetBIOS-domännamnet följt av tre dollartecken, till exempel *CONTOSO$$$*.
+Skapa en grupp för granskning av Active Directory om gruppen inte redan finns. Namnet på gruppen måste vara NetBIOS-domännamnet följt av tre dollartecken, till exempel *CONTOSO$$$* .
 
 Logga in på en domänkontrollant som domänadministratör för varje domän och utför följande steg:
 
@@ -123,7 +123,7 @@ Du måste aktivera granskning i befintliga skogar för att upprätta PAM-konfigu
 
 Logga in på en domänkontrollant som domänadministratör för varje domän och utför följande steg:
 
-1. Gå till **Start** > **Administrationsverktyg** (på Windows Server 2016 **Administrationsverktyg för Windows**) och starta **Grupprinciphantering**.
+1. Gå till **Start** > **Administrationsverktyg** (på Windows Server 2016 **Administrationsverktyg för Windows** ) och starta **Grupprinciphantering**.
 
 2. Gå till domänens princip för domänkontrollanter.  Om du har skapat en ny domän för contoso.local går du till **Skog: contoso.local** > **Domäner** > **contoso.local** > **Domänkontrollanter** > **Standardprincip för domänkontrollanter**. Ett informationsmeddelande visas.
 

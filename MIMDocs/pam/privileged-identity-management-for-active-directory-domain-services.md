@@ -11,12 +11,14 @@ ms.prod: microsoft-identity-manager
 ms.assetid: cf3796f7-bc68-4cf7-b887-c5b14e855297
 ms.reviewer: mwahl
 ms.suite: ems
+experimental: true
+experiment_id: kgremban_images
 ms.openlocfilehash: 3855842f0339e2611c75761484de9c059eec6fa0
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50380042"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518795"
 ---
 # <a name="privileged-access-management-for-active-directory-domain-services"></a>Privileged Access Management för Active Directory Domain Services
 
@@ -35,20 +37,20 @@ Med Privileged Access Management uppnår du två saker:
 Idag är åtkomsten till resurser i en Active Directory-miljö är ett betydande problem för företag. Särskilt oroande är:
 
 - Sårbarheter.
-- Obehöriga privilegieutökningar.
-- [Pass-the-hash](https://technet.microsoft.com/dn785092.aspx).
-- Pass-the-ticket.
-- spearphishingmail nätfiske.
-- Kerberos-angrepp.
+- Obehöriga privilegier att eskalera.
+- [Pass-The-hash](https://technet.microsoft.com/dn785092.aspx).
+- Pass-The-Ticket.
+- spjut phishing.
+- Kerberos-kompromisser.
 - Andra attacker.
 
 Idag är det alldeles för enkelt för angripare att få tag i domänadministratörers autentiseringsuppgifter och alldeles för svårt att upptäcka angreppen efteråt. Målet med PAM är att minska angriparnas tillfällen att ta sig in och att öka din kontroll och kunskap om miljön.
 
-PAM gör det svårare för angripare att ta sig in i ett nätverk och få åtkomst till privilegierade konton. PAM lägger till skydd till privilegierade grupper som kontrollerar åtkomsten på många olika domänanslutna datorer och program på dessa datorer. Det ger också ökad övervakning, mer synlighet och mer detaljerade kontroller. Detta gör att organisationer kan se vilka deras Privilegierade administratörer är och vad de gör. Med PAM får organisationer större insyn i hur administratörskonton används i miljön.
+PAM gör det svårare för angripare att ta sig in i ett nätverk och få åtkomst till privilegierade konton. PAM lägger till skydd till privilegierade grupper som kontrollerar åtkomsten på många olika domänanslutna datorer och program på dessa datorer. Den lägger också till mer övervakning, mer synlighet och mer detaljerade kontroller. Detta gör det möjligt för organisationer att se vem deras privilegierade administratörer är och vad de gör. Med PAM får organisationer större insyn i hur administratörskonton används i miljön.
 
-## <a name="setting-up-pam"></a>Konfigurera PAM
+## <a name="setting-up-pam"></a>Konfigurerar PAM
 
-PAM bygger på principen för just-in-time-administration, som är relaterat till [JEA (just enough administration)](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DCIM-B362). JEA är ett Windows PowerShell-verktyg som definierar en uppsättning kommandon för att utföra Privilegierade aktiviteter. Det är en slutpunkt där administratörer kan få behörighet att köra kommandon. I JEA beslutar administratör att användare med en viss behörighet kan utföra en viss uppgift. Varje gång en behörig användare behöver utföra aktiviteten aktiveras behörigheten. Behörigheten upphör efter en angiven tidsperiod, så att obehöriga användare inte kan få åtkomst.
+PAM bygger på principen för just-in-time-administration, som är relaterat till [JEA (just enough administration)](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DCIM-B362). JEA är ett Windows PowerShell-verktyg som definierar en uppsättning kommandon för att utföra privilegierade aktiviteter. Det är en slut punkt där administratörer kan få behörighet att köra kommandon. I JEA beslutar administratör att användare med en viss behörighet kan utföra en viss uppgift. Varje gång en behörig användare behöver utföra aktiviteten aktiveras behörigheten. Behörigheten upphör efter en angiven tidsperiod, så att obehöriga användare inte kan få åtkomst.
 
 PAM-installationen och -driften består av fyra steg.
 
@@ -108,5 +110,5 @@ Det här arbetsflödet är speciellt avsett för dessa administratörskonton. Ad
 
 ## <a name="next-steps"></a>Nästa steg
 
-- [Minimera Pass-the-Hash (PtH)-attacker och annan stöld, Version 1 och 2](https://www.microsoft.com/download/details.aspx?id=36036)
-- [Cmdlets för privilegierad åtkomsthantering](https://docs.microsoft.com/powershell/identitymanager/mimpam/vlatest/mimpam)
+- [Minimera pass-The-hash-attacker (PtH) och annan stöld av autentiseringsuppgifter, version 1 och 2](https://www.microsoft.com/download/details.aspx?id=36036)
+- [Privileged Access Management-cmdletar](https://docs.microsoft.com/powershell/identitymanager/mimpam/vlatest/mimpam)

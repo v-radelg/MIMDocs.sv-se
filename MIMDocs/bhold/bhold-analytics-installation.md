@@ -1,6 +1,6 @@
 ---
-title: Installation av BHOLD-analys | Microsoft Docs
-description: BHOLD-Analytics-modulen innehåller regelbaserad testning av åtkomst till data
+title: BHOLD Analytics-installation | Microsoft Docs
+description: BHOLD Analytics-modulen innehåller regelbaserade tester av data åtkomst
 keywords: ''
 author: billmath
 ms.author: billmath
@@ -10,43 +10,43 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: ec7069156aa033b33a139ae83e26abcdea7b482a
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358337"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64516880"
 ---
-# <a name="bhold-analytics-installation"></a>Installation av BHOLD-analys
+# <a name="bhold-analytics-installation"></a>BHOLD Analytics-installation
 
-BHOLD-Analytics-modulen innehåller regelbaserad testning av åtkomst till data så att din organisation kan ett effektivt sätt att styra åtkomsten till data och uppfyller kraven för intern och extern åtkomst. Den automatiska konsekvensanalys som genererats av modulen BHOLD-analys ger en översikt som visar antalet användare som kan påverkas av tillämpning av en föreslagen regel både personer som skulle vara kompatibel med regeln och de som skulle strida mot regeln. BHOLD-analysmodul kan också ge en detaljerad lista över de användare som vill följa regeln och de som skulle strida mot regeln.
+BHOLD Analytics-modulen innehåller regelbaserade test av data åtkomst för att säkerställa att din organisation effektivt kan styra åtkomsten till data och uppfylla interna och externa åtkomst krav. Den automatiserade effekt analys som genereras av BHOLD Analytics-modulen ger dig en översikt som visar antalet användare som skulle påverkas av en föreslagen regels genomförande, både de som skulle följa regeln och de som skulle strida mot regeln. BHOLD Analytics-modulen kan också innehålla en detaljerad lista över de användare som skulle följa regeln och de som skulle kränka regeln.
 
-## <a name="bhold-analytics-installation-requirements"></a>Installationskrav för BHOLD-analys
+## <a name="bhold-analytics-installation-requirements"></a>Installations krav för BHOLD Analytics
 
-Innan du installerar modulen BHOLD-analys, måste du installera BHOLD-Core-modul på den server där du planerar att installera modulen BHOLD-analys. Mer information om installation av BHOLD-kärnmodul, finns i [Core-Installation av BHOLD](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx).
+Innan du installerar BHOLD Analytics-modulen måste du installera BHOLD Core-modulen på den server där du planerar att installera BHOLD Analytics-modulen. Information om hur du installerar BHOLD Core-modulen finns i [BHOLD Core-installation](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx).
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
-Innan du börjar installera modulen BHOLD-analys, måste förberedas för att ange den information som installationsguiden för BHOLD Analytics kräver för att slutföra installationen. Följande kalkylblad beskriver hur du registrerar du den informationen så att du är redo att ange det när det behövs.
+Innan du börjar installera BHOLD Analytics-modulen måste du vara beredd på att tillhandahålla den information som installations guiden för BHOLD Analytics kräver för att slutföra installationen. I följande kalkyl blad kan du registrera informationen så att du är redo att tillhandahålla den när den behövs.
 
 | **Objekt**                                    | **Beskrivning**                                                                                                                                                                                                           | **Värde**                                                                                                                                                                                                                                                                                                            |
 |---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Använd säkerhetsprovider på domän/datorn** | Anger att Active Directory Domain Services-säkerhet ska styra åtkomst till BHOLD-kärna.                                                                                                                | Markera kryssrutan. **Viktigt:** installationen misslyckas om den här kryssrutan är avmarkerad.                                                                                                                                                                                                                   |
-| **Domän**                                  | Anger domänen som innehåller det tjänstkonto som du skapade när du installerar BHOLD-kärna. Mer information finns i [Core-Installation av BHOLD](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | Domännamnet anges automatiskt av guiden. Ändra namnet endast om det är felaktigt. **Viktigt:** ange domännamnet genom att använda NetBIOS (kort)-namn, inte det fullständigt kvalificerade domännamnet (FQDN). Till exempel om det fullständiga Domännamnet för domänen fabrikam.com, ange domännamnet som FABRIKAM. |
-| **Användare**                                    | Logga in namnet på användarkontot för BHOLD-kärna.                                                                                                                                                          | Skriv namnet på användarkontot här:                                                                                                                                                                                                                                                                                    |
-| **Lösenord**                                | Anger lösenordet för tjänstkontot för användaren.                                                                                                                                                                       | Skriv lösenordet här: **viktigt:** se till att det här lösenordet i en dold, säker plats.                                                                                                                                                                                                                  |
+| **Använd säkerhetsprovidern på domän/dator** | När du väljer det här anger du att Active Directory Domain Services säkerhet ska styra åtkomsten till BHOLD-kärnan.                                                                                                                | Markera kryssrutan. **Viktigt:** Installationen Miss kommer om den här kryss rutan inte är markerad.                                                                                                                                                                                                                   |
+| **Domän**                                  | Anger den domän som innehåller det tjänst konto som du skapade när du installerade BHOLD-kärnan. Mer information finns i [BHOLD Core-installation](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | Domän namnet anges automatiskt av guiden. Ändra bara namnet om det är felaktigt. **Viktigt:** Ange domän namnet med hjälp av NetBIOS-namnet (Short), inte det fullständigt kvalificerade domän namnet (FQDN). Om FQDN för domänen till exempel är fabrikam.com anger du domän namnet som FABRIKAM. |
+| **Användare**                                    | Anger inloggnings namnet för BHOLD Core Service-användarkontot.                                                                                                                                                          | Skriv användar kontots namn här:                                                                                                                                                                                                                                                                                    |
+| **Lösenord**                                | Anger lösen ordet för tjänstens användar konto.                                                                                                                                                                       | Skriv lösen ordet här: **viktigt:** se till att behålla det här lösen ordet på en dold, säker plats.                                                                                                                                                                                                                  |
 
-## <a name="bhold-analytics-installation"></a>Installation av BHOLD-analys
+## <a name="bhold-analytics-installation"></a>BHOLD Analytics-installation
 
-Logga in som medlem i gruppen Domänadministratörer för att installera modulen BHOLD-analys, hämta följande fil och köra den som administratör på den server som du planerar att installera modulen BHOLD-analys på:
+Om du vill installera BHOLD Analytics-modulen loggar du in som medlem i gruppen domän administratörer, laddar ned följande fil och kör den som administratör på den server som du tänker installera BHOLD Analytics-modulen på:
 
-- BholdAnalytics<em>\<Version\></em>\_Release.msi
+- BholdAnalytics<em>\<Version\></em>\_release. msi
 
-Ersätt *\<Version\>* med versionsnumret för BHOLD-analys-versionen som du installerar.
+Ersätt *\<version\>* med versions numret för den BHOLD Analytics-version som du installerar.
 
-Om du vill köra programfilen som administratör, högerklicka på filen och klicka sedan på **kör som administratör**.
+Om du vill köra program filen som administratör högerklickar du på filen och klickar sedan på **Kör som administratör**.
 
 # <a name="next-steps"></a>Nästa steg
 
-- [BHOLD-Core-Installation](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx)
-- [BHOLD-installationsguide](bhold-installation-guide.md)
+- [BHOLD Core-installation](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx)
+- [Installations guide för BHOLD](bhold-installation-guide.md)
 - [BHOLD-versionshistorik](../reference/version-bhold-history.md)

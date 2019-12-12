@@ -12,10 +12,10 @@ ms.assetid: fa0af422-b5e9-4599-9d9b-cb6c18ea07f9
 ms.reviewer: markwahl-msft
 ms.suite: ems
 ms.openlocfilehash: 8216dc144dd7cee2ccb30d89198f6d2bb3a726c1
-ms.sourcegitcommit: b09a8c93983d9d92ca4871054650b994e9996ecf
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73329447"
 ---
 # <a name="deploy-microsoft-identity-manager-2016-sp2"></a>Distribuera Microsoft Identity Manager 2016 SP2
@@ -41,7 +41,7 @@ Mer information om plattformar som stöds finns i [plattformar som stöds för M
  Detta omfattar att konfigurera:
 - [Windows Server](prepare-server-ws2016.md)
 - [SQLServer](prepare-server-sql2016.md)
-- [SharePoint-Server](prepare-server-sharepoint.md)
+- [SharePoint Server](prepare-server-sharepoint.md)
 - [Exchange Server](prepare-server-exchange.md) (tillval)
 
 ## <a name="finally-install-microsoft-identity-manager-2016-sp2-components"></a>Slutligen: installera Microsoft Identity Manager 2016 SP2-komponenter

@@ -1,6 +1,6 @@
 ---
-title: MIM inaktuella funktioner och planerar för framtiden | Microsoft Docs
-description: Den här artikeln dokument inaktuella funktioner av MIM Identity Manager 2016 SP1.
+title: MIM-föråldrade funktioner och planering för framtiden | Microsoft Docs
+description: I den här artikeln dokumenteras inaktuella funktioner i MIM Identity Manager 2016 SP1.
 keywords: ''
 author: billmath
 ms.author: billmath
@@ -10,67 +10,67 @@ ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: fcf9ec8387761b6f154a95d6100ef54a12d4caf8
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358453"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518947"
 ---
-# <a name="deprecated-features"></a>Inaktuella funktioner
+# <a name="deprecated-features"></a>Föråldrade funktioner
 
-Den här artikeln beskriver de inaktuella funktionerna i Microsoft Identity Manager 2016 SP1. Där funktionen finns kvar i Microsoft Identity Manager, stöds det fortfarande. Funktioner rekommenderas inte för nya distributioner så kan de tas bort i en funktionsutgåva.  För utvecklare rekommenderar vi inte använder inaktuella funktioner i nya program eller lösningar.
+I den här artikeln beskrivs de inaktuella funktionerna i Microsoft Identity Manager 2016 SP1. Om funktionen fortfarande finns i Microsoft Identity Manager, stöds den fortfarande. Funktioner rekommenderas inte för nya distributioner, eftersom de kan tas bort i en funktions utgåva.  För utvecklare rekommenderar vi att du inte använder inaktuella funktioner i nya program eller lösningar.
 
 > [!NOTE]
-> Funktioner och funktionalitet som tas bort i Microsoft Identity Manager SP1 identifieras med **. <br>
-> Mer information om support [livscykel för Microsoft Identity Manager](https://support.microsoft.com/en-us/lifecycle/search?alpha=Microsoft%20Forefront%20Identity%20Manager%202010%20R2%20Service%20Pack%201,Microsoft%20Identity%20Manager%202016,Microsoft%20Forefront%20Identity%20Manager%202010)
+> Funktioner som tas bort i Microsoft Identity Manager SP1 identifieras med * *. <br>
+> Mer information om support [livs cykeln för Microsoft Identity Manager](https://support.microsoft.com/en-us/lifecycle/search?alpha=Microsoft%20Forefront%20Identity%20Manager%202010%20R2%20Service%20Pack%201,Microsoft%20Identity%20Manager%202016,Microsoft%20Forefront%20Identity%20Manager%202010)
 
 
 ## <a name="bhold"></a>BHOLD 
 
-Microsoft rekommenderar inte kunder börjar nya distributioner av BHOLD-programsvit för Microsoft-komponenter. Befintliga distributioner av BHOLD fortsätter att stödjas. Azure AD nu innehåller [åtkomstgranskningar](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-azure-ad-controls-access-reviews-overview) som ersätter några av funktionerna för BHOLD-attestering kampanj.
+Microsoft rekommenderar inte att kunder startar nya distributioner av Microsoft BHOLD Suite-komponenter. Befintliga distributioner av BHOLD kommer att fortsätta att stödjas. Azure AD ger nu [åtkomst granskningar](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-azure-ad-controls-access-reviews-overview) som ersätter några av kampanj funktionerna för BHOLD-attestering.
 
 ## <a name="certificate-management"></a>Certifikathantering 
 
-| **Kategori**                | **Föråldrad funktion**              | **Ersättning och kommentera**           |
+| **Kategori**                | **Föråldrad funktion**              | **Ersätta och kommentera**           |
 |-----------------------------|-------------------------------------|----------------------------------------------|
-| Hanteringsagenter | ** FIM-certifikathantering | Hanteringsagent för FIM-certifikatet har tagits bort i MIM 2016.                                                             |
+| Hanterings agenter | \* * FIM-certifikat hantering | FIM-certifikatets hanterings agent har tagits bort i MIM 2016.                                                             |
 
 ## <a name="service-and-portal"></a>Tjänst och portal
 
-| **Kategori**                | **Föråldrad funktion**              | **Ersättning och kommentera**           |
+| **Kategori**                | **Föråldrad funktion**              | **Ersätta och kommentera**           |
 |-----------------------------|-------------------------------------|----------------------------------------------|
-| Programkonfiguration | Web Service-Konfigurationsgränssnittet (ma-data och mv-data) | Möjligheten att konfigurera FIM-synkroniseringstjänsten via webbtjänsten för FIM-tjänsten tas bort i nästa version.
+| Program konfiguration | Konfigurations gränssnitt för webb tjänst (MA-data och MV-data) | Möjligheten att konfigurera FIM-synkroniseringstjänsten via FIM-tjänsten kommer att tas bort i nästa version.
 |
 
 ## <a name="synchronization-service"></a>Synkroniseringstjänst 
 
-| **Kategori**                | **Föråldrad funktion**              | **Ersättning och kommentera**           |
+| **Kategori**                | **Föråldrad funktion**              | **Ersätta och kommentera**           |
 |-----------------------------|-------------------------------------|----------------------------------------------|
-| Programkonfiguration | Konfigurationsgränssnittet för Web Service | Möjligheten att konfigurera FIM-synkroniseringstjänsten via FIM-tjänsten tas bort i nästa version.                                                          |
-| Hanteringsagenter           | Inbyggda MAs                        | Följande MAs har tagits bort i MIM 2016: </br> 1. ** MA för FIM-certifikathantering </br>2. ** MA för Lotus Notes</br> 3. ** MA för SAP R/3 </br> Lotus Notes och SAP R/3 MAs har ersatts med nya versioner. Mer information finns i [senaste versionshistorik för Anslutningsappen och hämta](https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnectsync-connector-version-history)                                                                                                                                                                                                                                              |
-| Hanteringsagenter           | ECMA1                               | ECMA1/XMA utökningsbarhet framework har ersatts av ECMA 2.0. Uppdatera befintliga ECMA1 hanteringsagenter med ECMA2.0 kopplingar måste anges.                                                                                                                                          |
-| Hanteringsagenter           | Kör kopplingar av utanför      | Den här funktionen kommer inte att ersättas. Synkroniseringstjänsten kommer alltid att anropa anslutningen i samma process. Det är ansvar av anslutningsappen som ska starta och hantera den andra processen. |
-| Hanteringsagenter           | Konfigurera visningsnamn för partition    | Den här funktionen kommer inte att ersättas. Det här alternativet endast används för att ange ett alternativt namn för en partition i WMI-gränssnitt.                                                                                                                                                                       |
-| Körning av profiler                | Kombinerade profiler                   | Den kombinerade profiler import/Deltasynkronisering och fullständig import-/ Deltasynkronisering fullständig import/synkronisering tas bort. Du bör använda körning av profiler med två steg i stället. 
+| Program konfiguration | Konfigurations gränssnitt för webb tjänst | Möjligheten att konfigurera FIM-synkroniseringstjänsten via FIM-tjänsten kommer att tas bort i nästa version.                                                          |
+| Hanterings agenter           | Inbyggda MAs                        | Följande MAs har tagits bort i MIM 2016: </br> 1. * * MA för FIM-certifikat hantering </br>2. * * MA för Lotus-anteckningar</br> 3. * * MA för SAP R/3 </br> Lotus Notes-och SAP R/3-MAs har ersatts med nya versioner. Mer information finns i [senaste versions historik för Connector & Hämta](https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnectsync-connector-version-history)                                                                                                                                                                                                                                              |
+| Hanterings agenter           | ECMA1                               | Utöknings ramverket ECMA1/XMA har ersatts av ECMA 2,0. Det krävs en uppdatering av befintliga ECMA1-hanterings agenter med ECMA 2.0-anslutningar.                                                                                                                                          |
+| Hanterings agenter           | Köra anslutningar utanför proc      | Den här funktionen kommer inte att ersättas. Synkroniseringstjänsten anropar alltid anslutnings tjänsten i samma process. Det är kopplingens ansvar att starta och hantera den andra processen. |
+| Hanterings agenter           | Konfigurera visnings namn för partition    | Den här funktionen kommer inte att ersättas. Det här alternativet användes bara för att ange ett alternativt namn för en partition i WMI-gränssnitten.                                                                                                                                                                       |
+| Köra profiler                | Kombinerade profiler                   | De kombinerade profilerna delta import/Sync, fullständig import/delta-synkronisering och fullständig import/synkronisering tas bort. Du bör använda kör profiler med två steg i stället. 
 
 > [!NOTE]
-> Endast i miljöer där prestanda kan påverkas av ett stort antal befintliga disconnectors bör du behålla kombinerade körning av profiler.
+> Du bör endast behålla kombinerade körnings profiler i miljöer där prestandan skulle påverkas av ett stort antal befintliga disconnector.
 
 
-| **Kategori**                | **Föråldrad funktion**              | **Ersättning och kommentera**           |
+| **Kategori**                | **Föråldrad funktion**              | **Ersätta och kommentera**           |
 |--------|-------|---|    
-| Attributprioritet | Multi-höjdpunkter/samma prioritet                       | Samma prioritet tas bort. Det finns ingen ersättning för den här funktionen. I stället bör du konfigurera manuell prioritet. Du kan fortsätta att använda den här funktionen om din miljö har en hanteringsagent för FIM-tjänsten distribueras. Den här hanteringsagenten ger inte manuell prioritet för att undvika export-not-överordnade för deklarativ etablering. |
-| Ansluta till regler           | Gå med på ”alla” objekttyp                             | Den här funktionen kommer inte att ersättas. Alla regler för koppling bör explicit definiera typ av metaversumobjekt de försöker ansluta till.       |
-| Attributflöden      | Avmarkera ”Tillåt att null-värden” för exporterade värden            | Den här funktionen kommer inte att ersättas. ”Tillåt att null-värden” kommer alltid att väljas. Kontrollera att du har ”Tillåt Null-värden” valt i den aktuella miljön.  |
-| Attributflöden      | ”Kommer inte ihåg attribut”                            | Den här funktionen kommer inte att ersättas. Attribut kommer alltid att återkalla, vilket är den bästa metoden.  |
-| Tillägg för regler      | Kör metaversum och ma regler tillägg av utanför | Den här funktionen kommer inte att ersättas. Postflödesregler metaversum och attributet körs i samma process som Synkroniseringsmotorn.       |
-| Tillägg för regler      | Transaktionsegenskaper                                | Den här funktionen kommer inte att ersättas. Du bör undvika att överföra data mellan inkommande, etablering och utgående synkronisering med hjälp av den här klassen i verktyget.  |
-| Tillägg för regler      | ExchangeUtils: Create55\* metoder                     | Metoder för att skapa objekt för Exchange 5.5-servrar kommer att tas bort.        |
-| Gränssnittet            | Mms_Metaverse                                        | Vissa klassmedlemmar för ClmUtils tas bort i nästa version.   |
+| Attributprioritet | Flera huvud/samma prioritet                       | Samma prioritet kommer att tas bort. Det finns ingen ersättning för den här funktionen. Du bör konfigurera manuell prioritet i stället. Du kan fortsätta att använda den här funktionen om din miljö har en hanterings agent för FIM-tjänsten distribuerad. Den här hanterings agenten ger inte manuell prioritet för att undvika export-inte-överordnade för deklarativ etablering. |
+| Anslut till regler           | Anslut till objekt typen "any"                             | Den här funktionen kommer inte att ersättas. Alla kopplings regler ska uttryckligen definiera den metaversum objekt typ som de försöker ansluta till.       |
+| Attribut flöden      | Avmarkera "Tillåt null-värden" för exporterade värden            | Den här funktionen kommer inte att ersättas. "Tillåt nullvärden" är alltid markerat. Se till att du har valt "Tillåt nullvärden" i din aktuella miljö.  |
+| Attribut flöden      | "Återkalla inte attribut"                            | Den här funktionen kommer inte att ersättas. Attribut kommer alltid att återkallas, vilket är den bästa metoden.  |
+| Regel tillägg      | Köra metaversum-och ma-regler utanför proc | Den här funktionen kommer inte att ersättas. Flödes reglerna för metaversum och-attribut körs i samma process som Synkroniseringsmotorn.       |
+| Regel tillägg      | Transaktions egenskaper                                | Den här funktionen kommer inte att ersättas. Undvik att överföra data mellan inkommande, etablering och utgående synkronisering med hjälp av den här verktygs klassen.  |
+| Regel tillägg      | ExchangeUtils: Create55\* metoder                     | Metoderna för att skapa objekt för Exchange 5,5-servrar kommer att tas bort.        |
+| Gränssnitt            | Mms_Metaverse                                        | Alla medlemmar i ClmUtils-klass kommer att tas bort i nästa version.   |
 
 ## <a name="next-steps"></a>Nästa steg
 Läs mer om:
 
 - Microsoft Identity Manager har fortfarande mycket gemensamt med föregångaren Forefront Identity Manager. Om du fortfarande använder FIM, eller om du vill få tillgång till ytterligare dokumentation, kan du ta en titt på [dokumentationsöversikten för FIM 2010 R2](https://technet.microsoft.com/library/jj133885.aspx).
-- [Topologiöverväganden för distribution av MIM](topology-considerations.md) denna artikel presenterar flera olika topologier som du kan överväga att implementera.
-- [Guide för kapacitetsplanering](capacity-planning-guide.md) du kan använda den här guiden, tillsammans med testmiljöerna, för att förstå lämplig omfattning för distributionen.
+- [Överväganden vid topologier för distribution av MIM](topology-considerations.md) Den här artikeln beskriver flera topologier för distribution som du kan överväga att implementera.
+- [Guide för kapacitets planering](capacity-planning-guide.md) Du kan använda den här guiden, tillsammans med test miljöer, för att förstå lämplig omfattning för distributionen.

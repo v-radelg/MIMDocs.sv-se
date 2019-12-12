@@ -12,11 +12,11 @@ ms.assetid: 7b689eff-3a10-4f51-97b2-cb1b4827b63c
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 0473ea9e01a44aeb4acbebe01e6e6f989c8581d0
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379319"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64517831"
 ---
 # <a name="step-6--transition-a-group-to-privileged-access-management"></a>Steg 6 – Överföra en grupp till Privileged Access Management
 
@@ -65,10 +65,10 @@ Du måste köra cmdletarna en gång för varje grupp och en gång för varje med
 
     Kommandot **New-PAMGroup** innehåller följande parametrar:
 
-     -   Domännamn för CORP-skogens i form av NetBIOS  
-     -   Namnet på gruppen för att kopiera från domänen  
-     -   CORP skog Domain Controller NetBIOS-namn  
-     -   Autentiseringsuppgifterna för en administratörsanvändare för domän i CORP-skogen  
+     -   CORP-skogens domän namn i NetBIOS-form  
+     -   Namnet på den grupp som ska kopieras från domänen  
+     -   CORP-skogens domän domänkontrollant NetBIOS-namn  
+     -   Autentiseringsuppgifterna för en domän administratörs användare i CORP-skogen  
 
 5. (Valfritt) Ta bort Lisas konto på CORPDC från gruppen **CONTOSO CorpAdmins** om det fortfarande finns kvar.  Det här krävs bara för att visa hur behörigheter kan associeras med konton som skapats i PRIV-skogen.
 

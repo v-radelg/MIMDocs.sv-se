@@ -12,15 +12,15 @@ ms.assetid: 66060045-d0be-4874-914b-5926fd924ede
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 8ff9edce6da865418e300095ff0827853a35d4eb
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358354"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64517207"
 ---
-# <a name="mim-certificate-manager-windows-store-application-deployment"></a>MIM Certificate Manager Windows lagra programdistribution
+# <a name="mim-certificate-manager-windows-store-application-deployment"></a>MIM Certificate Manager Windows Store program distribution
 
-När du har MIM 2016 och Certificate Manager igång kan distribuera du MIM Certificate Manager Windows store-program. Windows store-appen kan användarna hantera sina fysiska smartkort, virtuella smartkort och programcertifikat. Distribution av MIM CM-appen genomförs i följande steg:
+När du har MIM 2016 och Certificate Manager igång kan du distribuera MIM Certificate Manager Windows Store-programmet. Med Windows Store-programmet kan användarna hantera sina fysiska smartkort, virtuella smartkort och program certifikat. Distribution av MIM CM-appen genomförs i följande steg:
 
 1. Skapa en certifikatmall.
 
@@ -34,11 +34,11 @@ När du har MIM 2016 och Certificate Manager igång kan distribuera du MIM Certi
 
 Du skapar en certifikatmall för CM-appen på samma sätt som du normalt skapar en certifikatmall, förutom att du måste se till att certifikatmallen är av version 3 eller senare.
 
-1. Logga in på den server som kör AD CS (certifikatservern).
+1. Logga in på servern som kör AD CS (certifikat servern).
 
 2. Öppna MMC.
 
-3. Klicka på **filen &gt; Lägg till/ta bort snapin-modulen**.
+3. Klicka på **arkiv &gt; Lägg till/ta bort snapin-modul**.
 
 4. I listan Tillgängliga snapin-moduler klickar du på **Certifikatmallar** och sedan på **Lägg till**.
 
@@ -46,10 +46,10 @@ Du skapar en certifikatmall för CM-appen på samma sätt som du normalt skapar 
 
 6. Högerklicka på mallen **Smartkortsinloggning** och klicka på **Kopiera mall**.
 
-7. På fliken kompatibilitet under certifikatutfärdare väljer du Windows Server 2008. Välj Windows 8.1 och Windows Server 2012 R2 under certifikatmottagare. Mallversion version anges för första gången du skapar och sparar certifikatmallen. Om du inte skapade certifikatmallen på så sätt går det inte att ändra den till rätt version.
+7. På fliken kompatibilitet under certifikat utfärdare väljer du Windows Server 2008. Under certifikat mottagare väljer du Windows 8.1/Windows Server 2012 R2. Versions mal len version är inställd första gången du skapar och sparar certifikat mal len. Om du inte skapade certifikat mal len på det här sättet går det inte att ändra den till rätt version.
 
    > [!NOTE]
-   >  Det här steget är viktigt eftersom det gör att du har en version 3 (eller högre) certifikatmall. Endast version 3 mallar fungerar med appen för certifikathantering.
+   >  Det här steget är viktigt eftersom det ser till att du har en certifikatmall av version 3 (eller högre). Endast version 3 av mallarna fungerar med Certificate Manager-appen.
 
 8. På fliken **Allmänt** i fältet **Visningsnamn** anger du det namn du vill ska visas i appens användargränssnitt, till exempel **Inloggning för virtuellt smartkort**.
 
@@ -78,7 +78,7 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
 1.  Logga in på CM-portalen som en användare med administratörsbehörighet.
 
-2.  Gå till Administration &gt; hantera profilmallar. Kontrollera att rutan är ikryssad bredvid **MIM CM exempellogg smartkort på Profilmall** och klicka sedan på Kopiera en markerad Profilmall.
+2.  Gå till administration &gt; hantera mallar. Kontrol lera att rutan är markerad bredvid **MIM cm exempel på smartkorts logg i profil mal len** och klicka på Kopiera en vald profil mall.
 
 3.  Skriv in profilmallens namn och klicka på **OK**.
 
@@ -96,11 +96,11 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
 10. I den vänstra rutan klickar du på **Förnya princip &gt; Ändra allmänna inställningar**. Välj **Återanvänd kort vid förnyelse** och klicka på **OK**.
 
-11. Du måste inaktivera datainsamlingsobjekt för varje princip genom att klicka på principen i den vänstra rutan. Du måste du markera kryssrutan bredvid **exempeldataobjekt** klickar du på **ta bort datainsamlingsobjekt** och klicka sedan på **OK**.
+11. Du måste inaktivera data insamlings objekt för varje princip genom att klicka på principen i det vänstra fönstret. Sedan måste du markera kryss rutan bredvid **exempel data objekt** Klicka på **ta bort data insamlings objekt** och klicka sedan på **OK**.
 
 ## <a name="prepare-the-cm-app-for-deployment"></a>Förbereda CM-appen för distribution
 
-1. I Kommandotolken kör du följande kommando för att packa upp appen. Kommandot extraheras innehållet i en ny undermapp med namnet appx och skapa en kopia så att du inte ändrar den ursprungliga filen.
+1. I kommando tolken kör du följande kommando för att packa upp appen. Kommandot extraherar innehållet till en ny undermapp med namnet appx och skapar en kopia så att du inte ändrar den ursprungliga filen.
 
     ```cmd
     makeappx unpack /l /p <app package name>.appx /d ./appx
@@ -116,7 +116,7 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
    |                     |                                                                                                                                                                                                          |
    |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    |      URL för MIMCM      |                                              FQDN för portalen som du använde för att konfigurera CM. Till exempel https://mimcmServerAddress/certificatemanagement                                              |
-   |      URL för ADFS       | Ange URL:en för din AD FS om du tänker använda AD FS. Till exempel <https://adfsServerSame/adfs> </br> Om AD FS inte används kan du konfigurera den här inställningen med en tom sträng.  Exempel:  ```<ADFS URL=""/>``` |
+   |      URL för ADFS       | Ange URL:en för din AD FS om du tänker använda AD FS. Till exempel <https://adfsServerSame/adfs> </br> Om ADFS inte används konfigurerar du den här inställningen med en tom sträng.  Till exempel ```<ADFS URL=""/>``` |
    |     PrivacyUrl      |                                         Du kan inkludera en webbadress till en sida som förklarar hanteringen av användarinformation som samlas in för certifikatregistrering.                                          |
    |     SupportMail     |                                                                           Du kan ange en e-postadress för supportfrågor.                                                                           |
    | LobComplianceEnable |                                                                     Du kan ställa in den här variabeln på sant eller falskt. Som standard är den inställd på sant.                                                                      |
@@ -124,7 +124,7 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
    |      NonAdmin       |           Du kan ställa in den här variabeln på sant eller falskt. Som standard är den inställd på falskt. Ändra bara det här om du vill att användare som inte är administratörer på sina datorer ska kunna registrera och förnya certifikat.            |
 
    > [!IMPORTANT]
-   > Ett värde måste anges för AD FS-URL. Om inget värde har angetts på moderna appar kommer fel ut på första användning.
+   > Ett värde måste anges för ADFS-URL: en. Om inget värde anges kommer den moderna appen att bli fel vid den första användningen.
 4. Spara filen och avsluta redigeraren.
 
 5. Vid signeringen av paketet skapas en signeringsfil, så du måste ta bort den ursprungliga signeringsfilen med namnet AppxSignature.p7x.
@@ -256,7 +256,7 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
     - serverFQDN kan endast vara MIMCM-serverns fullständiga datornamn.
 
-    - Om du behöver hjälp med den **ConfigureMIimCMClientAndRelyingParty.ps1** skriptet som körs: </br> 
+    - Om du behöver hjälp med skriptet **ConfigureMIimCMClientAndRelyingParty. ps1** kör du: </br> 
       ```Powershell
       get-help  -detailed ConfigureMimCMClientAndRelyingParty.ps1
       ```
@@ -267,5 +267,5 @@ När du konfigurerar CM-appen hämtar du filen MIMDMModernApp_&lt;version&gt;_An
 
 ## <a name="next-steps"></a>Nästa steg
 
-- [Konfigurationsprofilmallar](https://technet.microsoft.com/library/cc708656)
+- [Konfigurera mallar](https://technet.microsoft.com/library/cc708656)
 - [Hantera program för smartkort](https://technet.microsoft.com/library/cc708681)

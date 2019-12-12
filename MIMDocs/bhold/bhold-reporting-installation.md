@@ -1,6 +1,6 @@
 ---
-title: BHOLD-rapportering Installation | Microsoft Docs
-description: BHOLD rapportmodulen kan du generera rapporter om roller och auktoriseringsprinciper
+title: Installation av BHOLD-rapportering | Microsoft Docs
+description: Med BHOLD repor ting module kan du generera rapporter om roller och Auktoriseringsprinciper
 keywords: ''
 author: billmath
 ms.author: billmath
@@ -10,46 +10,46 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: 1f69f9f08cba24898509c771e4477b81c5ed272f
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358026"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64519189"
 ---
-# <a name="bhold-reporting-installation"></a>BHOLD-rapportering Installation
+# <a name="bhold-reporting-installation"></a>Installation av BHOLD-rapportering
 
-BHOLD-rapportmodul ger dig möjlighet att generera rapporter om roller och andra auktoriseringsprinciper i BHOLD. De här rapporterna är ofta användbara för granskning eller för att visa efterlevnad av regelkrav. Den här modulen utökar dessutom dina möjligheter att hantera auktorisering i din organisation genom att ge användare information de behöver för att analysera medlemskapet för deras roller. Rapporterna kan ha begränsad vyer som se till att de användare som skapar rapporter visas endast informationen som de har behörighet att visa.
+BHOLD repor ting-modulen ger dig möjlighet att generera rapporter om roller och andra auktoriseringsprinciper i BHOLD. Dessa rapporter är ofta användbara för granskning eller för att demonstrera efterlevnad av myndighets krav. Dessutom utökar den här modulen din möjlighet att hantera auktorisering i organisationen genom att ge användarna den information de behöver för att analysera medlemskapet för deras roller. Rapporterna kan ha begränsade vyer som säkerställer att de användare som skapar rapporter endast visar den information som de får se.
 
-## <a name="bhold-reporting-installation-requirements"></a>BHOLD-rapportering installationskrav
+## <a name="bhold-reporting-installation-requirements"></a>Installations krav för BHOLD-rapportering
 
-Innan du installerar rapportmodulen för BHOLD, måste du installera BHOLD-Core-modul på den server där du planerar att installera modulen BHOLD-rapportering. Mer information om installation av BHOLD-kärnmodul, finns i [Core-Installation av BHOLD](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx).
+Innan du installerar BHOLD repor ting-modulen måste du installera BHOLD Core-modulen på den server där du planerar att installera modulen BHOLD rapportering. Information om hur du installerar BHOLD Core-modulen finns i [BHOLD Core-installation](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx).
 
 > [!IMPORTANT]
-> Om du installerar både BHOLD-rapportering och BHOLD-attestering måste du installera BHOLD-rapportering för innan du installerar BHOLD-attestering.
+> Om du installerar både BHOLD-rapportering och BHOLD-attestering måste du installera BHOLD repor ting innan du installerar BHOLD-attestering.
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
-Innan du börjar installera rapportmodulen för BHOLD, måste förberedas för att ange information som installationsguiden för BHOLD Reporting krävs för att slutföra installationen. Följande kalkylblad beskriver hur du registrerar du den informationen så att du är redo att ange det när det behövs.
+Innan du börjar installera BHOLD repor ting-modulen måste du vara beredd på att tillhandahålla den information som krävs för att slutföra installationen av installations guiden för BHOLD-rapportering. I följande kalkyl blad kan du registrera informationen så att du är redo att tillhandahålla den när den behövs.
 
 | **Objekt**                                    | **Beskrivning**                                                                                                                                                                                                           | **Värde**                                                                                                                                                                                                                                                                                                            |
 |---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Använd säkerhetsprovider på domän/datorn** | Anger att Active Directory Domain Services-säkerhet ska styra åtkomst till BHOLD-kärna.                                                                                                                | Markera kryssrutan. </br>**Viktigt:** installationen misslyckas om den här kryssrutan är avmarkerad.                                                                                                                                                                                                                   |
-| **Domän**                                  | Anger domänen som innehåller det tjänstkonto som du skapade när du installerar BHOLD-kärna. Mer information finns i [Core-Installation av BHOLD](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | Domännamnet anges automatiskt av guiden. Ändra namnet endast om det är felaktigt. **Viktigt:** ange domännamnet genom att använda NetBIOS (kort)-namn, inte det fullständigt kvalificerade domännamnet (FQDN). Till exempel om det fullständiga Domännamnet för domänen fabrikam.com, ange domännamnet som FABRIKAM. |
-| **Användare**                                    | Logga in namnet på användarkontot för BHOLD-kärna.                                                                                                                                                          | Skriv namnet på användarkontot här:                                                                                                                                                                                                                                                                                    |
-| **Lösenord**                                | Anger lösenordet för tjänstkontot för användaren.                                                                                                                                                                       | Skriv lösenordet här: </br>**Viktigt:** se till att det här lösenordet i en dold, säker plats.                                                                                                                                                                                                                  |
+| **Använd säkerhetsprovidern på domän/dator** | När du väljer det här anger du att Active Directory Domain Services säkerhet ska styra åtkomsten till BHOLD-kärnan.                                                                                                                | Markera kryssrutan. </br>**Viktigt:** Installationen Miss kommer om den här kryss rutan inte är markerad.                                                                                                                                                                                                                   |
+| **Domän**                                  | Anger den domän som innehåller det tjänst konto som du skapade när du installerade BHOLD-kärnan. Mer information finns i [BHOLD Core-installation](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | Domän namnet anges automatiskt av guiden. Ändra bara namnet om det är felaktigt. **Viktigt:** Ange domän namnet med hjälp av NetBIOS-namnet (Short), inte det fullständigt kvalificerade domän namnet (FQDN). Om FQDN för domänen till exempel är fabrikam.com anger du domän namnet som FABRIKAM. |
+| **Användare**                                    | Anger inloggnings namnet för BHOLD Core Service-användarkontot.                                                                                                                                                          | Skriv användar kontots namn här:                                                                                                                                                                                                                                                                                    |
+| **Lösenord**                                | Anger lösen ordet för tjänstens användar konto.                                                                                                                                                                       | Skriv lösen ordet här: </br>**Viktigt:** Se till att behålla det här lösen ordet på en dold, säker plats.                                                                                                                                                                                                                  |
 
 ## <a name="bhold-reporting-installation"></a>Installation av BHOLD-rapportering
 
-Logga in som medlem i gruppen Domänadministratörer för att installera rapportmodulen för BHOLD, hämta följande fil och köra den som administratör på den server som du planerar att installera modulen BHOLD-rapportering på:
+Om du vill installera BHOLD repor ting-modulen loggar du in som medlem i gruppen domän administratörer, laddar ned följande fil och kör den som administratör på den server som du tänker installera BHOLD repor ting module på:
 
-- BholdReporting<em>\<Version\></em>\_Release.msi
+- BholdReporting<em>\<Version\></em>\_release. msi
 
-Ersätt *\<Version\>* med versionsnumret för BHOLD-rapportering versionen som du installerar.
+Ersätt *\<version\>* med versions numret för den BHOLD-rapport version som du installerar.
 
-Om du vill köra programfilen som administratör, högerklicka på filen och klicka sedan på **kör som administratör**.
+Om du vill köra program filen som administratör högerklickar du på filen och klickar sedan på **Kör som administratör**.
 
 ## <a name="next-steps"></a>Nästa steg
 
-- [BHOLD-installationsguide](bhold-installation-guide.md)
+- [Installations guide för BHOLD](bhold-installation-guide.md)
 - [Referens för BHOLD-utvecklare](../reference/mim2016-bhold-developer-reference.md)
 - [BHOLD-versionshistorik](../reference/version-bhold-history.md)

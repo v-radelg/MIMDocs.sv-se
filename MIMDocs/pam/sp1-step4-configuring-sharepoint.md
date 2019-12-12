@@ -12,11 +12,11 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: ''
 ms.suite: ems
 ms.openlocfilehash: 422c4c973d76f5b91fb2463e237ead1984153484
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50379438"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518098"
 ---
 # <a name="step-4-configuring-sharepoint"></a>Steg 4 Konfigurera SharePoint
 
@@ -46,7 +46,7 @@ Efter installationen öppnas det grafiska användargränssnittet för SharePoint
 
 1. Ändra till **Skapa en ny servergrupp** på fliken **Anslut till en servergrupp**.
 2. Ange **SQLServer** som databasservern för konfigurationsdatabasen och **SharePoint ServiceAccount** som det konto för databasåtkomst som SharePoint ska använda.
-3. Ange ett lösenord som lösenfrasen för att skydda servergruppen **(det används inte senare)**.
+3. Ange ett lösenord som lösenfrasen för att skydda servergruppen **(det används inte senare)** .
 4. Acceptera resten av standardinställningarna i konfigurationsguiden för SharePoint för att skapa en servergrupp med en enda server.
 
 Mer information finns i avsnittet **Konfigurera SharePoint** i [Steg 3 – Förbereda en PAM-server](/microsoft-identity-manager/pam/step-3-prepare-pam-server). När konfigurationsguiden har slutförts kör du skriptet ”.\PAMDeployment.ps1” igen och väljer alternativ 4 (SharePoint-konfiguration) för att slutföra det här steget.

@@ -11,10 +11,10 @@ ms.prod: microsoft-identity-manager
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.suite: ems
 ms.openlocfilehash: 6f861c5b1984de70a91edcac89276402f289e355
-ms.sourcegitcommit: 65e11fd639464ed383219ef61632decb69859065
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68701487"
 ---
 # <a name="microsoft-identity-manager-data-handling"></a>Microsoft Identity Manager data hantering 
@@ -34,7 +34,7 @@ Nedan visas några scenarier som kunderna behöver tänka på och svara på föl
 För att hjälpa dig att förstå en aktuell MIM-miljö kan du använda följande verktyg för att dokumentera MIM-miljön, eller Överlåt dig till implementerings design dokumenten.
 - [MIM-Dokumentor – tillåter export av den aktuella konfigurationen](https://github.com/Microsoft/MIMConfigDocumenter)
 
-## <a name="searching-for-and-identifying-personal-data"></a>Söka efter och identifiera personliga data
+## <a name="searching-for-and-identifying-personal-data"></a>Söker efter och identifierar personuppgifter
 Sökning av data i MIM är beroende av konfigurationen och konfigurationen. De flesta miljöer är sammankopplade, men för tydlighets skull kan vi dela upp dem med hög nivå komponent.
 
 ### <a name="synchronization-service"></a>Synkroniseringstjänst
@@ -47,7 +47,7 @@ Om du inte är säker på källan till utfärdaren kan du spåra den här använ
     - Öppna tjänsten synkroniseringstjänst
         - Med hjälp av metaversum Designer kan du se import och prioritet för Attribute Flow.
 ![MIM-Privacy-compliance_1. PNG](media/mim-privacy-compliance/mim-privacy-compliance_1.PNG)
-        - Med hjälp av metaversum-sökningen kan du söka efter objekt och attribut i databasen ![MIM-Privacy-compliance_2. png](media/mim-privacy-compliance/mim-privacy-compliance_2.PNG)
+        - Med hjälp av metaversum-sökningen kan du söka efter objekt och attribut i databasen ![MIM-Privacy-compliance_2. PNG](media/mim-privacy-compliance/mim-privacy-compliance_2.PNG)
  
 När du har hittat objektet öppnas sidan användar profil när du klickar på objektet. Objekt informationen ger dig fullständig information om objektet, dess attribut, senast ändrad och källan till utfärdaren och relaterad ansluten data källa härledda från konfigurations exemplet för hanterings agenten nedan.
 
@@ -145,7 +145,7 @@ Synkroniseringstjänsten på många sätt för att hantera data eller ta bort da
 
 ### <a name="service-and-portal--pam"></a>Tjänst och Portal/PAM
 
-Vi rekommenderar att du behåller tjänst & portalen att du behåller standard konfigurationen för 30 dagar system resurs kvarhållning. Detta meddelar tjänsten när den tas bort, inte bara begär ande data, utan även objekt som behöver rensas från systemet. När processen har tagits bort tas alla data som är länkade till objektet bort, inklusive alla SSPR registrerings data. Detta spelas upp i konfigurationen för borttagning av objekt ovan. Vi har en tabell som vi lagrar GUID för objekten. För att minska den totala storleken på tabellen i build-4.4.1459 vi har lagt till en process som heter FIM_DeleteExpiredSystemObjectsJob information om den här processen finns [här](https://support.microsoft.com/en-us/help/4012498/hotfix-rollup-package-build-4-4-1459-0-is-available-for-microsoft-iden).
+Vi rekommenderar att du behåller tjänst & portalen att du behåller standard konfigurationen för 30 dagar system resurs kvarhållning. Detta meddelar tjänsten när den tas bort, inte bara begär ande data, utan även objekt som behöver rensas från systemet. När processen har tagits bort tas alla data som är länkade till objektet bort, inklusive alla SSPR registrerings data. Detta spelas upp i konfigurationen för borttagning av objekt ovan. Vi har en tabell som vi lagrar GUID för objekten. För att minska den totala storleken på tabellen i build-4.4.1459 vi har lagt till en process som heter FIM_DeleteExpiredSystemObjectsJob information om den här processen hittar du [här](https://support.microsoft.com/en-us/help/4012498/hotfix-rollup-package-build-4-4-1459-0-is-available-for-microsoft-iden).
 
 ![MIM-Privacy-Compliance-SRRC. KÄLLFIL](media/mim-privacy-compliance/mim-privacy-compliance-srrc.PNG)
 
@@ -155,7 +155,7 @@ Vi rekommenderar att du behåller tjänst & portalen att du behåller standard k
 BHOLD som de flesta system som är anslutna till synkroniseringstjänsten kan konfigureras att ta bort när källobjektet som HR tas bort. Detta är konfigurerat på hanterings agenten. och kontrol leras av reglerna för borttagning av objekt enligt beskrivningen i funktionerna i synkroniseringen.
 
 Ett annat alternativ är att ta bort användar objekt direkt från BHOLD Core-användargränssnittet. Beroende på installationen kan detta fungera, men antecknings etablerings logiken kan återskapa den här användaren om den inte togs bort vid källan.
-![MIM-Privacy-Compliance-bholdr. KÄLLFIL](media/mim-privacy-compliance/mim-privacy-compliance-bholdr.PNG)
+![MIM-Privacy-Compliance-bholdr. PNG-](media/mim-privacy-compliance/mim-privacy-compliance-bholdr.PNG)
 
 
 ### <a name="certificate-management"></a>Certifikathantering
@@ -173,11 +173,11 @@ Om du vill inaktivera data insamling i tidigare versioner kör du ändrings läg
 
 ![MIM-Privacy-Compliance-CEIP. KÄLLFIL](media/mim-privacy-compliance/mim-privacy-compliance-ceip.PNG)
 
-eller redigera registret och Ställ in värdet på 0: Komponentfilerna CEIP HKLM\SOFTWARE\Microsoft\Forefront Identity Manager\2010
+eller redigera registret och Ställ in värdet på 0: (komponent) CEIP HKLM\SOFTWARE\Microsoft\Forefront Identity Manager\2010
 
 ![MIM-Privacy-Compliance-ceip2. KÄLLFIL](media/mim-privacy-compliance/mim-privacy-compliance-ceip2.PNG)
 
 ## <a name="next-steps"></a>Nästa steg 
 - [Råd om SQL-relaterad sekretess](https://docs.microsoft.com/sql/relational-databases/security/microsoft-sql-and-the-gdpr-requirements?view=sql-server-2017)
 - [Avsnittet GDPR i service Trust-portalen](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted)
-- [FIM 2010-Arkiv: Ramp up – implementera Forefront Identity Manager 2010](https://social.technet.microsoft.com/wiki/contents/articles/35789.fim-2010-archive-ramp-up-implementing-forefront-identity-manager-2010.aspx)
+- [FIM 2010-Arkiv: ramp up – implementera Forefront Identity Manager 2010](https://social.technet.microsoft.com/wiki/contents/articles/35789.fim-2010-archive-ramp-up-implementing-forefront-identity-manager-2010.aspx)

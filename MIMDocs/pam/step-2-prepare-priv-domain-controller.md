@@ -12,11 +12,11 @@ ms.assetid: 0e9993a0-b8ae-40e2-8228-040256adb7e2
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 0364b0d14d08ab3af32010675e0ba80d39404342
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50380059"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64518087"
 ---
 # <a name="step-2---prepare-the-first-priv-domain-controller"></a>Steg 2 – Förbereda den första PRIV-domänkontrollanten
 
@@ -260,7 +260,7 @@ Utför följande steg på PRIVDC som domänadministratör.
     - **Ta bort alla underordnade objekt**
     - **Läsa alla egenskaper**
     - **Skriva alla egenskaper**
-    - **Migrera SID-historik** klickar du på **nästa** sedan **Slutför**.
+    - **MIGRERA sid-historik** Klicka på **Nästa** och sedan på **Slutför**.
 
 11. Högerklicka på domänen **priv.contoso.local** och välj **Delegera kontroll**.  
 12. På fliken Valda användare och grupper klickar du på **Lägg till**.  
