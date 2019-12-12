@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: 05eb2afc0ddbf6104e27a5c24e121a55bd805292
-ms.sourcegitcommit: 4c4bc7aa42cd5984c838abdd302490355ddcb4ea
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68238906"
 ---
 # <a name="microsoft-bhold-suite-sp1-60-installation-guide"></a>Installations guide för Microsoft BHOLD Suite SP1 (6,0)
@@ -99,7 +99,7 @@ Windows kan konfigureras för att hämta rot certifikat från Microsoft via en I
 
 ![IIS-installation BHOLD](media/bhold-installation-guide/iis-install-bhold.png)
 
-Om du installerar BHOLD Suite SP1 på Windows Server 2012 eller 2016 kommer BHOLD-webbsidor inte att vara tillgängliga förrän du ändrar filen applicationHost. config som finns i ```C:\Windows\System32\inetsrv\config```. I avsnittet lägger ```preCondition="bitness64``` du till posten som börjar ```<add name="SPNativeRequestModule"``` så att den ser ut så här: ```<globalModules>```
+Om du installerar BHOLD Suite SP1 på Windows Server 2012 eller 2016 kommer BHOLD-webbsidor inte att vara tillgängliga förrän du ändrar filen applicationHost. config som finns i ```C:\Windows\System32\inetsrv\config```. I avsnittet ```<globalModules>``` lägger du till ```preCondition="bitness64``` till posten som börjar ```<add name="SPNativeRequestModule"``` så att den ser ut så här:
 
 ```<add name="SPNativeRequestModule" image="C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\15\isapi\spnativerequestmodule.dll" preCondition="bitness64"/>```
 

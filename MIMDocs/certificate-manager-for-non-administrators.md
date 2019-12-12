@@ -12,16 +12,16 @@ ms.assetid: bfabc562-a2f0-4cff-ac31-36927f41e102
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 4d66c566912f186bce175dde9f16346942afd72e
-ms.sourcegitcommit: 7de35aaca3a21192e4696fdfd57d4dac2a7b9f90
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49358232"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64516652"
 ---
 # <a name="enroll-smart-cards-for-non-administrators"></a>Registrera smartkort för icke-administratörer
 Om en användare inte är lokal administratör på sin dator kan denne normalt inte registrera ett smartkort på sin egen dator. Genom att följa proceduren som beskrivs nedan kan dock du kringgå den här begränsningen.
 
-## <a name="enabling-smart-card-renewal-for-non-admins-in-mim-2016-certificate-manager"></a>Aktivera förnyelse av smartkort för icke-administratörer i Certifikathanteraren i MIM 2016 
+## <a name="enabling-smart-card-renewal-for-non-admins-in-mim-2016-certificate-manager"></a>Aktivera förnyelse av smartkort för icke-administratörer i Certifikathanteraren i MIM 2016
 
 1.  **Packa upp appx-filen**
 
@@ -49,7 +49,7 @@ Om en användare inte är lokal administratör på sin dator kan denne normalt i
 
     4.  Redigera filen som heter AppxManifest.xml
 
-    5.  I elementet &lt;Identity&gt; ändrar du värdet för attributet Publisher till subjektet i ditt signeringscertifikat, t.ex. ”CN=ABCD”
+    5.  I &lt;Identity&gt;-elementet ändrar du värdet för attributet Publisher till ämnet för ditt signerings certifikat, t. ex. "CN = ABCD"
 
         Subjektet här måste vara detsamma som subjektet i signeringscertifikatet du använder för att signera appen.
 

@@ -1,6 +1,6 @@
 ---
-title: Använda en alternativ Multi-Factor Authentication-provider via ett API för att aktivera PAM eller i SSPR scenario | Microsoft Docs
-description: Ställ in anpassat API för MFA som ett andra säkerhetslager när dina användare aktiverar roller i Privileged Access Management och använda lösenord självåterställning.
+title: Använd en annan Multi-Factor Authentication-provider via ett API för att aktivera PAM eller i SSPR-scenario | Microsoft Docs
+description: Konfigurera anpassad MFA-API som ett andra säkerhets lager när användarna aktiverar roller i Privileged Access Management och använder lösen ords återställning via självbetjäning.
 keywords: ''
 author: billmath
 ms.author: billmath
@@ -10,50 +10,50 @@ ms.date: 09/04/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.openlocfilehash: 7fb111520f94541672fc56d0fd2ee95bfcd3a49e
-ms.sourcegitcommit: f58926a9e681131596a25b66418af410a028ad2c
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67690747"
 ---
-# <a name="use-a-custom-multi-factor-authentication-provider-via-an-api-during-pam-role-activation-or-in-sspr"></a>Använda en anpassad Multi-Factor Authentication-provider via ett API under aktiveringen för PAM-rollen eller i SSPR
+# <a name="use-a-custom-multi-factor-authentication-provider-via-an-api-during-pam-role-activation-or-in-sspr"></a>Använd en anpassad Multi-Factor Authentication-provider via ett API vid aktivering av PAM-rollen eller i SSPR
 
-Azure AD Premium eller Azure MFA-kunder kan du integrera Azure MFA i två MIM-scenarier – Privileged Access Management (PAM) rollaktivering och Self-Service lösenord återställer (SSPR).
+Kunder med Azure AD Premium eller Azure MFA kan integrera Azure MFA i två MIM-scenarier – Privileged Access Management (PAM) roll aktivering och självbetjäning för återställning av lösen ord (SSPR).
 
-MIM-kunder har ytterligare två alternativ:
+MIM-kunder har två ytterligare alternativ:
 
- - Använda en anpassad en gång lösenord delivery provider som gäller endast i MIM SSPR-scenariot och är dokumenterade i handboken för att [konfigurera självbetjäningsportalen för lösenordsåterställning med SMS-Gate för Engångslösenord](https://docs.microsoft.com/en-us/previous-versions/mim/hh824692(v=ws.10))
- - Använd en anpassad telefoni flerfunktionsautentiseringsleverantör. Detta gäller i både MIM SSPR och PAM-scenarier, som beskrivs i den här artikeln
+ - Använd en anpassad leverantör för eng ång slö sen ord som endast gäller i MIM SSPR-scenariot och dokumenterat i guiden för att [Konfigurera lösen ords återställning via självbetjäning med eng ång slö sen ord SMS-grind](https://docs.microsoft.com/en-us/previous-versions/mim/hh824692(v=ws.10))
+ - Använd en anpassad telefonitjänstprovider för Multi-Factor Authentication. Detta gäller både MIM-SSPR och PAM-scenarier som beskrivs i den här artikeln
 
-Den här artikeln beskrivs hur du använder MIM med en anpassad Multi factor authentication-provider, via ett API och en integration SDK som har utvecklats av kunden.  
+Den här artikeln beskriver hur du använder MIM med en anpassad Multi-Factor Authentication-provider, via ett API och en integrerings-SDK som utvecklats av kunden.  
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
-Om du vill använda en anpassad Multi-Factor Authentication-provider API med MIM behöver du:
+För att kunna använda ett anpassat Multi-Factor Authentication-provider-API med MIM behöver du:
 
 - telefonnummer till alla kandidatanvändare
-- MIM-snabbkorrigeringen [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) eller senare – i [versionshistorik](reference/version-history.md) för meddelanden
-- MIM-tjänsten som konfigurerats för SSPR eller PAM
+- MIM-snabbkorrigering [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) eller senare – se [versions historiken](reference/version-history.md) för meddelanden
+- MIM-tjänsten har kon figurer ATS för SSPR eller PAM
 
-## <a name="approach-using-custom-multi-factor-authentication-code"></a>Metoden med hjälp av anpassade multifaktorautentisering kod
+## <a name="approach-using-custom-multi-factor-authentication-code"></a>Metod användning med anpassad Multi-Factor Authentication-kod
 
-### <a name="step-1-ensure-mim-service-is-at-version-452020-or-later"></a>Steg 1: Se till att MIM-tjänsten är version 4.5.202.0 eller senare
+### <a name="step-1-ensure-mim-service-is-at-version-452020-or-later"></a>Steg 1: se till att MIM-tjänsten är i version 4.5.202.0 eller senare
 
-Ladda ned och installera MIM-snabbkorrigeringen [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) eller en senare version.
+Hämta och installera MIM Hotfix [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) eller en senare version.
 
-### <a name="step-2-create-a-dll-which-implements-the-iphoneserviceprovider-interface"></a>Steg 2: Skapa en DLL-fil som implementerar gränssnittet IPhoneServiceProvider
+### <a name="step-2-create-a-dll-which-implements-the-iphoneserviceprovider-interface"></a>Steg 2: skapa en DLL som implementerar IPhoneServiceProvider-gränssnittet
 
 DLL-filen måste innehålla en klass som implementerar tre metoder:
 
-- `InitiateCall`: MIM-tjänsten ska anropa den här metoden. Tjänsten skickar phone tal och begäran-ID som parametrar.  Metoden måste returnera ett `PhoneCallStatus` värdet för `Pending`, `Success` eller `Failed`.
-- `GetCallStatus`: Om ett tidigare anrop till `initiateCall` returnerade `Pending`, MIM-tjänsten anropar den här metoden. Den här metoden returnerar också `PhoneCallStatus` värdet för `Pending`, `Success` eller `Failed`.
-- `GetFailureMessage`: Om ett tidigare anrop av `InitiateCall` eller `GetCallStatus` returnerade `Failed`, MIM-tjänsten anropar den här metoden. Den här metoden returnerar en diagnostikmeddelande.
+- `InitiateCall`: MIM-tjänsten kommer att anropa den här metoden. Tjänsten skickar telefonnumret och begärande-ID som parametrar.  Metoden måste returnera ett `PhoneCallStatus` värde för `Pending`, `Success` eller `Failed`.
+- `GetCallStatus`: om ett tidigare anrop till `initiateCall` returnerade `Pending`anropar MIM-tjänsten den här metoden. Den här metoden returnerar också `PhoneCallStatus` värde för `Pending`, `Success` eller `Failed`.
+- `GetFailureMessage`: om ett tidigare anrop till `InitiateCall` eller `GetCallStatus` returnerat `Failed`, kommer MIM-tjänsten att anropa den här metoden. Den här metoden returnerar ett diagnostiskt meddelande.
 
-Implementeringar av dessa metoder måste vara trådsäkra, och dessutom implementeringen av den `GetCallStatus` och `GetFailureMessage` måste förutsätter inte att de kommer att anropas av samma tråd som ett tidigare anrop till `InitiateCall`.
+Implementeringarna av dessa metoder måste vara tråd säkra, och implementeringen av `GetCallStatus` och `GetFailureMessage` får inte anta att de kommer att anropas av samma tråd som ett tidigare anrop till `InitiateCall`.
 
-Store DLL-filen i den `C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\` directory.
+Lagra DLL-filen i `C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\`-katalogen.
 
-Exempelkod, som kan vara kompilerade med hjälp av Visual Studio 2010 eller senare.
+Exempel kod som kan kompileras med Visual Studio 2010 eller senare.
 
 ```csharp
 using System;
@@ -135,27 +135,27 @@ namespace CustomPhoneGate
     }
 }
 ```
-### <a name="step-3-backup-the-mfasettingsxml-located-in-the-cprogram-filesmicrosoft-forefront-identity-manager2010service"></a>Steg 3: Backup MfaSettings.xml finns i ”C:\Program Files\Microsoft Forefront Identity Manager\2010\Service”
+### <a name="step-3-backup-the-mfasettingsxml-located-in-the-cprogram-filesmicrosoft-forefront-identity-manager2010service"></a>Steg 3: säkerhetskopiera MfaSettings. xml som finns i "C:\Program Files\Microsoft Forefront Identity Manager\2010\Service"
 
-### <a name="step-4-edit-the-mfasettingsxml-file"></a>Steg 4: Redigera filen mfasettings.XML
+### <a name="step-4-edit-the-mfasettingsxml-file"></a>Steg 4: redigera filen MfaSettings. XML
 
 Uppdatera eller ta bort följande rader:
 
-- Ta bort/rensa alla configuration poster rader 
+- Ta bort/rensa alla konfigurations poster rader 
 
-- Uppdatera eller lägga till följande rader till följande till MfaSettings.xml med din telefon, eget-provider <br>
+- Uppdatera eller Lägg till följande rader i följande till MfaSettings. xml med din anpassade telefon leverantör <br>
 `<CustomPhoneProvider>C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\CustomPhoneGate.dll</CustomPhoneProvider>`
 
-### <a name="step-5-restart-mim-service"></a>Steg 5: Starta om MIM-tjänsten
+### <a name="step-5-restart-mim-service"></a>Steg 5: starta om MIM-tjänsten
 
-När tjänsten har startats om, använda SSPR och/eller PAM för att validera funktioner med den anpassade identitetsprovidern.
+När tjänsten har startats om använder du SSPR och/eller PAM för att validera funktioner med den anpassade identitets leverantören.
 
 > [!NOTE] 
-> Om du vill återställa inställningen Ersätt MfaSettings.xml med säkerhetskopian i steg 3
+> Om du vill återställa inställningen ersätter du MfaSettings. xml med säkerhets kopian i steg 3
 
 
 ## <a name="next-steps"></a>Nästa steg
 
 - [Komma igång med Azure Multi-Factor Authentication Server](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfaserver-deploy)
 - [Vad är Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
-- [MIM-versionshistorik](./reference/version-history.md)
+- [Versions historik för MIM](./reference/version-history.md)

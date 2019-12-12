@@ -10,11 +10,11 @@ ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: 45b46ed10f7eda506fe1fc1af94c4be06a1a37b9
-ms.sourcegitcommit: 44a2293ff17c50381a59053303311d7db8b25249
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50380200"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "64516584"
 ---
 # <a name="microsoft-identity-manager-2016-password-management"></a>Lösenordshantering i Microsoft Identity Manager 2016
 
@@ -45,7 +45,7 @@ Hanteringsagenter för katalogservrar stöder åtgärder för lösenordsändring
 
 | Lösenordshantering stöds som standard i hanteringsagenter för: | Genom att använda ett lösenordstillägg stöds lösenordshantering även i hanteringsagenterna för: |
 |---------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| Active Directory                                                          | Textfiler med attributvärdespar                                                                    |
+| Active Directory                                                          | Textfiler med attributvärdespar                                                                    |
 | ADLDS (Active Directory Lightweight Directory Services)                   | Avgränsade textfiler                                                                               |
 | IBM Directory Server                                                      | Directory Services Markup Language (DSML)                                                          |
 | Lotus Notes                                                               | Extensible Connectivity                                                                            |
@@ -109,7 +109,7 @@ Mer information om att konfigurera lösenordssynkronisering finns i Using Passwo
 
 Processen för synkronisering av en begäran om lösenordsändring från en Active Directory-domänkontrollant till andra anslutna datakällor visas i följande diagram:
 
-1.  Användaren initierar begäran om lösenordsändring genom att trycka på Ctrl+Alt+Del. Begäran om lösenordsändring, inklusive det nya lösenordet, skickas till närmaste domänkontrollant.
+1.  Användaren initierar begäran om lösen ords ändring genom att trycka på Ctrl + Alt + del. Begäran om lösen ords ändring, inklusive det nya lösen ordet, skickas till den närmaste domänkontrollanten.
 
 2.  Domänkontrollanten registrerar begäran om lösenordsändring och meddelar filtret för meddelande om lösenordsändring (Pcnsflt.dll).
 
@@ -148,7 +148,7 @@ Helst synkroniseras ändringen utan fel när en användare ändrar ett lösenord
 
 En del fel är så allvarliga att det inte är sannolikt att åtgärden lyckas oavsett hur många återförsök som genomförs. I dessa fall loggas en felhändelse och processen stoppas. Nya försök görs inte för följande händelser:
 
-| Händelse | Allvarlighetsgrad    | Beskrivning                                                                                                                                                            |
+| Händelse | Allvarlighetsgrad    | Description                                                                                                                                                            |
 |-------|-------------|-----------|
 | 6919  | Information | En åtgärd för lösenordssynkronisering utfördes inte på grund av att tidsstämpeln var för gammal.                                                                      |
 | 6921  | Fel       | Åtgärden för lösenordssynkronisering bearbetades inte på grund av att lösenordshantering inte har aktiverats på hanteringsagenten som är mål.                                |

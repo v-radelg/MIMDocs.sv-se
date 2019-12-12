@@ -11,15 +11,15 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
 ms.openlocfilehash: 72dd1d3cf34e28567fa672b747a04347b150797e
-ms.sourcegitcommit: f58926a9e681131596a25b66418af410a028ad2c
+ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67690789"
 ---
 # <a name="using-azure-mfa-for-activation"></a>Aktivera med hjälp av Azure MFA
 > [!IMPORTANT]
-> På grund av meddelande om utfasning av Azure Multi-Factor Authentication Software Development Kit. Azure MFA SDK kommer att stödjas för befintliga kunder fram till datumet för tillbakadragandet för den 14 November 2018. Nya kunder och befintliga kunder kommer inte att kunna ladda ned SDK längre via den klassiska Azure-portalen. Om du vill hämta du behöver att nå ut till Azure-kundsupporten för att få din genererade autentiseringsuppgifter MFA-paket. <br> Utvecklingsteamet Microsoft arbetar med ändringar av MFA genom att integrera med MFA Server SDK.  Detta kommer att inkluderas i en kommande snabbkorrigeringen finns [versionshistorik](../reference/version-history.md) efter meddelanden. 
+> På grund av meddelandet om utfasning av Azure Multi-Factor Authentication Software Development Kit. Azure MFA SDK kommer att stödjas för befintliga kunder fram till avtiden den 14 november 2018. Nya kunder och aktuella kunder kommer inte att kunna hämta SDK längre via den klassiska Azure-portalen. För att du ska kunna ladda ned måste du kontakta Azures kund support för att ta emot ditt genererade autentiseringsuppgifter för MFA-tjänsten. <br> Microsoft Development Team arbetar med ändringar i MFA genom att integrera med MFA Server SDK.  Detta kommer att ingå i en kommande snabb korrigering. mer information finns i [versions historiken](../reference/version-history.md) för meddelanden. 
 
 
 När du konfigurerar en PAM-roll kan du välja hur du ger behörighet till användare som ber att få aktivera rollen. De alternativ som implementeras med PAM-auktoriseringsuppgiften är:
@@ -29,9 +29,9 @@ När du konfigurerar en PAM-roll kan du välja hur du ger behörighet till anvä
 
 Om ingen kontroll är aktiverad aktiveras kandidatanvändare automatiskt för sina roller.
 
-Microsoft Azure Multi-Factor Authentication (MFA) är en autentiseringstjänst med vilken användare måste bekräfta sina inloggningsförsök via mobilapp, telefonsamtal eller SMS. Den kan användas med Microsoft Azure Active Directory och som en tjänst för molnbaserade och lokala företagsprogram. Azure MFA ger en extra autentiseringsmetod för PAM-scenariot. Azure MFA kan användas för auktorisering, oavsett hur en användare autentiseras till Windows PRIV-domänen.
+Microsoft Azure Multi-Factor Authentication (MFA) är en autentiseringstjänst med vilken användare måste bekräfta sina inloggningsförsök via mobilapp, telefonsamtal eller SMS. Den kan användas med Microsoft Azure Active Directory och som en tjänst för molnbaserade och lokala företagsprogram. I PAM-scenariot tillhandahåller Azure MFA en ytterligare autentiseringsmekanism. Azure MFA kan användas för auktorisering, oavsett hur en användare autentiseras mot Windows-domänen.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 För att kunna använda Azure MFA med MIM behöver du:
 
@@ -42,13 +42,13 @@ För att kunna använda Azure MFA med MIM behöver du:
 
 ## <a name="creating-an-azure-mfa-provider"></a>Skapa en Azure MFA-leverantör
 
-I det här avsnittet ska ställa du in Azure MFA-leverantören i Microsoft Azure Active Directory.  Om du använder redan Azure MFA, antingen fristående eller konfigurerat med Azure Active Directory Premium, kan du gå vidare till nästa avsnitt.
+I det här avsnittet konfigurerar du Azure MFA-providern i Microsoft Azure Active Directory.  Om du redan använder Azure MFA, antingen fristående eller konfigurerade med Azure Active Directory Premium, kan du gå vidare till nästa avsnitt.
 
 1.  Öppna en webbläsare och anslut till den [klassiska Azure-portalen](https://manage.windowsazure.com) som administratör för ett Azure-abonnemang.
 
 2.  Klicka på **Ny** längst ned till vänster.
 
-3.  Klicka på **App Services &gt; Active Directory &gt; Leverantör av multifaktorautent. &gt; Snabbregistrering**.
+3.  Klicka på **App Services > Active Directory > Leverantör av multifaktorautent. > Snabbregistrering**.
 
 4.  I fältet **Namn** skriver du **PAM**, och i fältet Användningsmodell väljer du Per aktiverad användare. Om du redan har en Azure AD-katalog väljer du den katalogen. Klicka på **Skapa**.
 
@@ -81,11 +81,11 @@ Nu genererar du en fil som innehåller de autentiseringsuppgifter som krävs fö
 
 2.  Skapa en ny katalogmapp i katalogen där MIM-tjänsten är installeras, exempelvis ```C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\MfaCerts```.
 
-3.  Windows Explorer, gå till den ```pf\certs``` mappen i ZIP-filen som hämtades i föregående avsnitt. Kopiera filen ```cert\_key.p12``` till den nya katalogen.
+3.  Använd Utforskaren i Windows för att navigera till mappen ```pf\certs``` i ZIP-filen som hämtades i föregående avsnitt. Kopiera filen ```cert\_key.p12``` till den nya katalogen.
 
-4.  Windows Explorer, gå till den ```pf``` mappen ZIP och öppna filen ```pf\_auth.cs``` i en textredigerare, till exempel Wordpad.
+4.  Använd Utforskaren i Windows och navigera till mappen ```pf``` i ZIP-filen och öppna filen ```pf\_auth.cs``` i en text redigerare som WordPad.
 
-5. Lokalisera dessa tre parametrar: ```LICENSE\_KEY```, ```GROUP\_KEY```, ```CERT\_PASSWORD```.
+5. Sök efter följande tre parametrar: ```LICENSE\_KEY```, ```GROUP\_KEY``````CERT\_PASSWORD```.
 
 ![Kopiera värden från filen pf\_auth.cs – skärmbild](media/PAM-Azure-MFA-Activation-Image-2.png)
 
@@ -130,7 +130,7 @@ Azure MFA kan inaktiveras för en roll genom att parametern "-MFAEnabled 0" ange
 
 Följande händelser kan du hitta i händelseloggen för Privileged Access Management:
 
-| ID  | Severity | Genererat av | Beskrivning |
+| ID  | Allvarlighetsgrad | Genererat av | Description |
 |-----|----------|--------------|-------------|
 | 101 | Fel       | MIM-tjänst            | Användaren slutförde inte Azure MFA (t.ex. svarade inte i telefon) |
 | 103 | Information | MIM-tjänst            | Användaren slutförde Azure MFA vid aktivering                       |
@@ -153,4 +153,4 @@ Du kan också visa eller ladda ned en rapport från Azure MFA om du vill veta me
 ## <a name="next-steps"></a>Nästa steg
 
 - [Vad är Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
-- [Skapa ditt kostnadsfria Azure-konto i dag](https://azure.microsoft.com/free/)
+- [Skapa ditt kostnads fria Azure-konto idag](https://azure.microsoft.com/free/)
