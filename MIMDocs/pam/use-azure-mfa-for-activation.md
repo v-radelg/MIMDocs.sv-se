@@ -10,16 +10,18 @@ ms.date: 07/06/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
-ms.openlocfilehash: 72dd1d3cf34e28567fa672b747a04347b150797e
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 6c3a2d87037a818a9a8784b0d4a7b86227fcaef4
+ms.sourcegitcommit: 28a20aaa1f08b428cc1ae0eae43ae47de4d9d22a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67690789"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684065"
 ---
 # <a name="using-azure-mfa-for-activation"></a>Aktivera med hjälp av Azure MFA
 > [!IMPORTANT]
-> På grund av meddelandet om utfasning av Azure Multi-Factor Authentication Software Development Kit. Azure MFA SDK kommer att stödjas för befintliga kunder fram till avtiden den 14 november 2018. Nya kunder och aktuella kunder kommer inte att kunna hämta SDK längre via den klassiska Azure-portalen. För att du ska kunna ladda ned måste du kontakta Azures kund support för att ta emot ditt genererade autentiseringsuppgifter för MFA-tjänsten. <br> Microsoft Development Team arbetar med ändringar i MFA genom att integrera med MFA Server SDK.  Detta kommer att ingå i en kommande snabb korrigering. mer information finns i [versions historiken](../reference/version-history.md) för meddelanden. 
+> På grund av utfasningen av Azure Multi-Factor Authentication Software Development Kit, kommer Azure MFA SDK att stödjas för befintliga kunder fram till avtiden den 14 november 2018. Nya kunder och aktuella kunder kommer inte att kunna hämta Azure MFA SDK längre via den klassiska Azure-portalen. Information om hur du använder Azure MFA Server finns [i använda Azure MFA server i pam eller SSPR](../working-with-mfaserver-for-mim.md).
+
+
 
 
 När du konfigurerar en PAM-roll kan du välja hur du ger behörighet till användare som ber att få aktivera rollen. De alternativ som implementeras med PAM-auktoriseringsuppgiften är:
@@ -48,13 +50,17 @@ I det här avsnittet konfigurerar du Azure MFA-providern i Microsoft Azure Activ
 
 2.  Klicka på **Ny** längst ned till vänster.
 
-3.  Klicka på **App Services > Active Directory > Leverantör av multifaktorautent. > Snabbregistrering**.
+3.  Klicka på **App Services &gt; Active Directory &gt; Leverantör av multifaktorautent. &gt; Snabbregistrering**.
 
 4.  I fältet **Namn** skriver du **PAM**, och i fältet Användningsmodell väljer du Per aktiverad användare. Om du redan har en Azure AD-katalog väljer du den katalogen. Klicka på **Skapa**.
 
 ## <a name="downloading-the-azure-mfa-service-credentials"></a>Ladda ned autentiseringsuppgifter för Azure MFA-tjänsten
 
-Nu genererar du en fil som innehåller de autentiseringsuppgifter som krävs för att PAM ska kunna kontakta Azure MFA.
+> [!IMPORTANT]
+> Azure MFA SDK är inte längre tillgängligt. Information om hur du använder Azure MFA Server finns i [använda Azure MFA server i pam eller SSPR](../working-with-mfaserver-for-mim.md) i stället.
+
+
+Tidigare genererade du en fil som innehåller autentiserings materialet för PAM för att kontakta Azure MFA.
 
 1. Öppna en webbläsare och anslut till den [klassiska Azure-portalen](https://manage.windowsazure.com) som administratör för ett Azure-abonnemang.
 
