@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: fa0af422-b5e9-4599-9d9b-cb6c18ea07f9
 ms.reviewer: markwahl-msft
 ms.suite: ems
-ms.openlocfilehash: 8216dc144dd7cee2ccb30d89198f6d2bb3a726c1
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: ea9caef07c2496c5d2e040f5d88764938231220b
+ms.sourcegitcommit: 80cdfd782cc6e2a4c4698decd54342f0e1460f5f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73329447"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75756167"
 ---
 # <a name="deploy-microsoft-identity-manager-2016-sp2"></a>Distribuera Microsoft Identity Manager 2016 SP2
 Artiklarna i det här avsnittet ger stegvisa instruktioner för att distribuera Microsoft Identity Manager (MIM) 2016 vid självbetjäning för slutanvändare som använder en ny server där FIM eller MIM inte tidigare har distribuerats.
@@ -30,7 +30,8 @@ Processen för att distribuera MIM liknar processen för dess föregångare, FIM
 
 ## <a name="first-prepare-a-domain"></a>Steg ett: Förbered en domän
 MIM fungerar med Active Directory (AD), så följ de här stegen för att konfigurera din AD-domänkontrollant.
-- [Domänkonfiguration](preparing-domain.md)
+- [Domän konfiguration](preparing-domain.md) eller
+- [Domän konfiguration för grupphanterade tjänst konton](preparing-domain-gmsa.md)
 
 
 ## <a name="next-prepare-an-identity-management-servers"></a>Nästa steg: Förbered en identitets hanterings Server
@@ -49,4 +50,3 @@ När du har konfigurerat domänen och servern är du redo att installera MIM-kom
 - [Synkroniseringstjänst för MIM](install-mim-sync.md)
 - [MIM-tjänst och portal](install-mim-service-portal.md)
 - [Synkronisera Active Directory och MIM-tjänstens databaser](install-mim-sync-ad-service.md)
-
