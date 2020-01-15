@@ -92,7 +92,6 @@
 ### [Exportera prestandaguide](https://technet.microsoft.com/library/hh322883)
 ## Rapportering
 ### [Rapportera anpassade rapporter och utökningsbarhet](https://technet.microsoft.com/library/jj133861)
-## [Microsoft identitetsprogram: Offentliga versioner](https://blogs.technet.microsoft.com/iamsupport/idmbuildversions/)
 # [Referens](./reference/microsoft-identity-manager-2016-developer-reference.md)
 ## För utvecklare
 ### [Referens för MIM 2016-utvecklare](./reference/microsoft-identity-manager-2016-developer-reference.md)
