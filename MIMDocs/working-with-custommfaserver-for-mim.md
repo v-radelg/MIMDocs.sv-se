@@ -9,12 +9,12 @@ manager: mtillman
 ms.date: 09/04/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 7fb111520f94541672fc56d0fd2ee95bfcd3a49e
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 9ce531fb3f6f9c831ecdb716f006f947611871e6
+ms.sourcegitcommit: 1ca298d61f6020623f1936f86346b47ec5105d44
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67690747"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256605"
 ---
 # <a name="use-a-custom-multi-factor-authentication-provider-via-an-api-during-pam-role-activation-or-in-sspr"></a>Använd en anpassad Multi-Factor Authentication-provider via ett API vid aktivering av PAM-rollen eller i SSPR
 
@@ -22,7 +22,7 @@ Kunder med Azure AD Premium eller Azure MFA kan integrera Azure MFA i två MIM-s
 
 MIM-kunder har två ytterligare alternativ:
 
- - Använd en anpassad leverantör för eng ång slö sen ord som endast gäller i MIM SSPR-scenariot och dokumenterat i guiden för att [Konfigurera lösen ords återställning via självbetjäning med eng ång slö sen ord SMS-grind](https://docs.microsoft.com/en-us/previous-versions/mim/hh824692(v=ws.10))
+ - Använd en anpassad leverantör för eng ång slö sen ord som endast gäller i MIM SSPR-scenariot och dokumenterat i guiden för att [Konfigurera lösen ords återställning via självbetjäning med eng ång slö sen ord SMS-grind](https://docs.microsoft.com/previous-versions/mim/hh824692(v=ws.10))
  - Använd en anpassad telefonitjänstprovider för Multi-Factor Authentication. Detta gäller både MIM-SSPR och PAM-scenarier som beskrivs i den här artikeln
 
 Den här artikeln beskriver hur du använder MIM med en anpassad Multi-Factor Authentication-provider, via ett API och en integrerings-SDK som utvecklats av kunden.  
@@ -32,7 +32,7 @@ Den här artikeln beskriver hur du använder MIM med en anpassad Multi-Factor Au
 För att kunna använda ett anpassat Multi-Factor Authentication-provider-API med MIM behöver du:
 
 - telefonnummer till alla kandidatanvändare
-- MIM-snabbkorrigering [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) eller senare – se [versions historiken](reference/version-history.md) för meddelanden
+- MIM-snabbkorrigering 4.5.202.0 eller senare – se [versions historiken](reference/version-history.md) för meddelanden
 - MIM-tjänsten har kon figurer ATS för SSPR eller PAM
 
 ## <a name="approach-using-custom-multi-factor-authentication-code"></a>Metod användning med anpassad Multi-Factor Authentication-kod
@@ -156,6 +156,6 @@ När tjänsten har startats om använder du SSPR och/eller PAM för att validera
 
 ## <a name="next-steps"></a>Nästa steg
 
-- [Komma igång med Azure Multi-Factor Authentication Server](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfaserver-deploy)
+- [Komma igång med Azure Multi-Factor Authentication Server](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy)
 - [Vad är Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
 - [Versions historik för MIM](./reference/version-history.md)

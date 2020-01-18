@@ -9,12 +9,12 @@ ms.date: 08/18/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 5e259df617c5a95fcd54f49c9cbb70f9cd0c36a4
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 77f1eb5d8355472c7aee7bc9f389ca8b24ab76a9
+ms.sourcegitcommit: 1ca298d61f6020623f1936f86346b47ec5105d44
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64520020"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256622"
 ---
 # <a name="how-do-i-provision-users-to-ad-ds"></a>Hur etablerar jag användare i AD DS
 
@@ -27,7 +27,7 @@ Den här guiden leder dig igenom de viktigaste byggstenarna som ingår i process
 ## <a name="before-you-begin"></a>Innan du börjar
 
 
-I det här avsnittet hittar du information om det här dokumentets omfattning. Vägledningar är normalt riktade mot användare som redan har grundläggande kunskaper om processen för att synkronisera objekt med MIM enligt beskrivningen i de relaterade [guiderna för att komma igång](http://go.microsoft.com/FWLink/p/?LinkId=190486).
+I det här avsnittet hittar du information om det här dokumentets omfattning. Vägledningar är normalt riktade mot användare som redan har grundläggande kunskaper om processen för att synkronisera objekt med MIM enligt beskrivningen i de relaterade [guiderna för att komma igång](https://go.microsoft.com/FWLink/p/?LinkId=190486).
 
 ### <a name="audience"></a>Målgrupp
 
@@ -39,9 +39,9 @@ Den här guiden är avsedd för IT-experter som redan har grundläggande kunskap
 
 Det här dokumentet förutsätter att du har tillgång till en instans av MIM som körs och att du har erfarenhet av att konfigurera enkla synkroniseringsscenarier enligt beskrivning i följande dokument:
 
--   [Introduktion till ingående synkronisering](http://go.microsoft.com/FWLink/p/?LinkId=189652)
+-   [Introduktion till ingående synkronisering](https://go.microsoft.com/FWLink/p/?LinkId=189652)
 
--   [Introduktion till utgående synkronisering](http://go.microsoft.com/FWLink/p/?LinkId=189653)
+-   [Introduktion till utgående synkronisering](https://go.microsoft.com/FWLink/p/?LinkId=189653)
 
 Innehållet i det här dokumentet är avsett att fungera som ett tillägg till dessa grundläggande dokument.
 
@@ -62,7 +62,7 @@ Denna tidsberäkning förutsätter att testmiljön redan är konfigurerad och om
 ### <a name="getting-support"></a>Få support
 
 
-Om du har frågor om innehållet i detta dokument eller om du har allmänna kommentarer som du vill diskutera kan du lägga upp ett meddelande i [forumet för Forefront Identity Manager 2010](http://go.microsoft.com/FWLink/p/?LinkId=189654).
+Om du har frågor om innehållet i detta dokument eller om du har allmänna kommentarer som du vill diskutera kan du lägga upp ett meddelande i [forumet för Forefront Identity Manager 2010](https://go.microsoft.com/FWLink/p/?LinkId=189654).
 
 ## <a name="scenario-description"></a>Scenario-beskrivning
 
@@ -88,7 +88,7 @@ Följande bild visar den miljö som krävs.
 Du kan köra alla komponenter på en dator.
 
 > [!NOTE]
-> Mer information om hur du konfigurerar MIM finns i [FIM-installationsguiden](http://go.microsoft.com/FWLink/p/?LinkId=165845).
+> Mer information om hur du konfigurerar MIM finns i [FIM-installationsguiden](https://go.microsoft.com/FWLink/p/?LinkId=165845).
 
 ## <a name="scenario-components-list"></a>Lista över scenariokomponenter
 
@@ -124,7 +124,7 @@ I det här avsnittet finns anvisningar för de resurser som du behöver skapa so
 ### <a name="step-1-create-the-ou"></a>Steg 1: Skapa organisationsenheten
 
 
-Du behöver organisationsenheten som en container för den etablerade exempelanvändaren. Mer information om hur du skapar organisationsenheter finns i [Skapa en ny organisationsenhet](http://go.microsoft.com/FWLink/p/?LinkId=189655).
+Du behöver organisationsenheten som en container för den etablerade exempelanvändaren. Mer information om hur du skapar organisationsenheter finns i [Skapa en ny organisationsenhet](https://go.microsoft.com/FWLink/p/?LinkId=189655).
 
 Skapa en organisationsenhet som heter MIMObjects i AD DS.
 
@@ -136,7 +136,7 @@ För scenariot i den här handledningen behöver du två Active Directory-använ
 
 - **FIMMA** – används av FIM-tjänstens hanteringsagent.
 
-I båda fallen räcker det att skapa vanliga användarkonton. Mer information om de specifika kraven för båda kontona finns senare i det här dokumentet. Mer information om hur du skapar organisationsenheter finns i [Skapa ett nytt användarkonto](http://go.microsoft.com/FWLink/p/?LinkId=189656).
+I båda fallen räcker det att skapa vanliga användarkonton. Mer information om de specifika kraven för båda kontona finns senare i det här dokumentet. Mer information om hur du skapar organisationsenheter finns i [Skapa ett nytt användarkonto](https://go.microsoft.com/FWLink/p/?LinkId=189656).
 
 
 ## <a name="configuring-the-fim-synchronization-service"></a>Konfigurera FIM-synkroniseringstjänsten
@@ -154,7 +154,7 @@ För scenariot i den här handledningen måste du skapa två hanteringsagenter:
 
 ### <a name="step-3-create-the-fabrikam-adma-management-agent"></a>Steg 3: Skapa Fabrikam ADMA-hanteringsagenten
 
-När du konfigurerar en hanteringsagent för AD DS måste du ange ett konto som används av hanteringsagenten i datautbytet med AD DS. Du bör använda ett vanligt användarkonto. För att importera data från AD DS måste dock kontot har behörighet att avsöka ändringar från DirSync-kontrollen. Om du vill att hanteringsagenten ska exportera data till AD DS måste du ge kontot tillräcklig behörighet i målets organisationsenheter. Mer information om det här ämnet finns i [Konfigurera ADMA-kontot](http://go.microsoft.com/FWLink/p/?LinkId=189657).
+När du konfigurerar en hanteringsagent för AD DS måste du ange ett konto som används av hanteringsagenten i datautbytet med AD DS. Du bör använda ett vanligt användarkonto. För att importera data från AD DS måste dock kontot har behörighet att avsöka ändringar från DirSync-kontrollen. Om du vill att hanteringsagenten ska exportera data till AD DS måste du ge kontot tillräcklig behörighet i målets organisationsenheter. Mer information om det här ämnet finns i [Konfigurera ADMA-kontot](https://go.microsoft.com/FWLink/p/?LinkId=189657).
 
 Om du vill skapa en användare i AD DS måste du flöda ut objektets DN. Utöver detta är det bra att flöda förnamn, efternamn och visningsnamn för att se till att objekten är synliga.
 
@@ -163,7 +163,7 @@ I AD DS är det fortfarande vanligt att användarna använder samma sAMAccountNa
 > [!Note]
 > Kontrollera att värdet som du anger som unicodePwd uppfyller lösenordsprinciperna för målets AD DS.
 
-När du anger ett lösenord för AD DS-konton måste du också skapa ett konto som ett aktiverat konto. Det gör du genom att konfigurera userAccountControl-attributet. Mer information om userAccountControl-attributet finns i [Använda FIM för att aktivera eller inaktivera konton i Active Directory](http://go.microsoft.com/FWLink/p/?LinkId=189658).
+När du anger ett lösenord för AD DS-konton måste du också skapa ett konto som ett aktiverat konto. Det gör du genom att konfigurera userAccountControl-attributet. Mer information om userAccountControl-attributet finns i [Använda FIM för att aktivera eller inaktivera konton i Active Directory](https://go.microsoft.com/FWLink/p/?LinkId=189658).
 
 I följande tabell visas de viktigaste scenariospecifika inställningarna som du behöver konfigurera.
 
@@ -187,7 +187,7 @@ Mer information finns i följande avsnitt i hjälpen:
 
 När du konfigurerar en hanteringsagent för FIM-tjänsten måste du ange ett konto som används av hanteringsagenten i datautbytet med FIM-tjänsten.
 
-Du bör använda ett vanligt användarkonto. Kontot måste vara samma konto som du angav under installationen av MIM. Information om ett skript som du kan använda för att fastställa namnet på FIMMA-kontot som du angav under konfigurationen och för att testa om detta konto fortfarande är giltigt finns i Använda Windows PowerShell för att utföra ett [snabbtest för FIM MA-kontokonfiguration](http://go.microsoft.com/FWLink/p/?LinkId=189659).
+Du bör använda ett vanligt användarkonto. Kontot måste vara samma konto som du angav under installationen av MIM. Information om ett skript som du kan använda för att fastställa namnet på FIMMA-kontot som du angav under konfigurationen och för att testa om detta konto fortfarande är giltigt finns i Använda Windows PowerShell för att utföra ett [snabbtest för FIM MA-kontokonfiguration](https://go.microsoft.com/FWLink/p/?LinkId=189659).
 
 I följande tabell visas de viktigaste scenariospecifika inställningarna som du behöver konfigurera. Skapa hanteringsagenten baserat på informationen i tabellen nedan.  
 
@@ -231,7 +231,7 @@ Skapa körningsprofiler för varje hanteringsagent enligt föregående tabell.
 > 
 > 
 > [!Important]
->  Kontrollera att etablering är aktiverad i miljön. Du kan göra detta genom att köra skriptet med Windows PowerShell för att aktivera etablering (http://go.microsoft.com/FWLink/p/?LinkId=189660).
+>  Kontrollera att etablering är aktiverad i miljön. Du kan göra detta genom att köra skriptet med Windows PowerShell för att aktivera etablering (https://go.microsoft.com/FWLink/p/?LinkId=189660).
 
 
 ## <a name="configuring-the-fim-service"></a>Konfigurera FIM-tjänsten
@@ -243,7 +243,7 @@ För scenariot i den här handledningen måste du konfigurera en etableringsprin
 
 Målet med den här etableringsprincipen är att föra in grupper i omfattningen för den utgående synkroniseringsregeln för AD-användare. Genom att föra in resursen i omfattningen för synkroniseringsregeln aktiverar du synkroniseringsmotorn så att den kan etablera resursen till AD DS i enlighet med din konfiguration.
 
-Om du vill konfigurera FIM-tjänsten navigerar du i Windows Internet Explorer® till http://localhost/identitymanagement. På sidan för MIM-portalen skapar du etableringsprincipen genom att gå till de relaterade sidorna från avsnittet Administration. Du kan kontrollera konfigurationen genom att köra skriptet i [Using Windows PowerShell to document your provisioning policy configuration](http://go.microsoft.com/FWLink/p/?LinkId=189661) (Använda Windows PowerShell för att dokumentera konfiguration av etableringsprincipen).
+Om du vill konfigurera FIM-tjänsten navigerar du i Windows Internet Explorer® till http://localhost/identitymanagement. På sidan för MIM-portalen skapar du etableringsprincipen genom att gå till de relaterade sidorna från avsnittet Administration. Du kan kontrollera konfigurationen genom att köra skriptet i [Using Windows PowerShell to document your provisioning policy configuration](https://go.microsoft.com/FWLink/p/?LinkId=189661) (Använda Windows PowerShell för att dokumentera konfiguration av etableringsprincipen).
 
 ### <a name="step-6-create-the-synchronization-rule"></a>Steg 6: Skapa synkroniseringsregeln
 
@@ -251,7 +251,7 @@ Följande tabeller visar konfiguration av synkroniseringsregeln för etablering 
 
 | Konfiguration av synkroniseringsregel                                                                         |                                                                             |                                                           
 |------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------|
-| Namn                                                                                                       | Utgående synkroniseringsregel för Active Directory-användare                         |                                                          
+| Name                                                                                                       | Utgående synkroniseringsregel för Active Directory-användare                         |                                                          
 | Description                                                                                               |                                                                             |                                                           
 | Prioritet                                                                                                | 2                                                                           |                                                           
 | Dataflödesriktning   | Utgående             |       
@@ -302,14 +302,14 @@ Målet med AD-etableringsarbetsflödet är att lägga till synkroniseringsregeln
 
 | Arbetsflödeskonfiguration               |                                                                 |
 |--------------------------------------|-----------------------------------------------------------------|
-| Namn                                 | Etableringsarbetsflöde för Active Directory-användare                     |
+| Name                                 | Etableringsarbetsflöde för Active Directory-användare                     |
 | Description                          |                                                                 |
 | Arbetsflödestyp                        | Action                                                          |
 | Kör vid principuppdatering                 | Falskt                                                           |
 
 | Synkroniseringsregel                 |                                                                 |
 |--------------------------------------|-----------------------------------------------------------------|
-| Namn                                 | Utgående synkroniseringsregel för Active Directory-användare             |
+| Name                                 | Utgående synkroniseringsregel för Active Directory-användare             |
 | Action                               | Lägg till                                                             |
 
 
@@ -321,7 +321,7 @@ Den hanteringsprincipregel (MPR) som krävs har typen Uppsättningsövergång oc
 
 | MPR-konfiguration                    |                                                             |
 |--------------------------------------|-------------------------------------------------------------|
-| Namn                                 | Hanteringsprincipregel för etablering av AD-användare                 |
+| Name                                 | Hanteringsprincipregel för etablering av AD-användare                 |
 | Description                          |                                                             |
 | Typ                                 | Uppsättningsövergång                                              |
 | Ger behörigheter                   | Falskt                                                       |
@@ -384,7 +384,7 @@ Målet med det här avsnittet är att testa den faktiska konfigurationen. För a
 ### <a name="step-10-create-a-sample-user-in-mim"></a>Steg 10: Skapa en exempelanvändare i MIM
 
 
-I följande tabell visas egenskaperna för exempelanvändaren. Skapa en exempelanvändare enligt data i tabellen nedan.
+I följande tabell visas egenskaperna för exempelanvändaren. Skapa en exempel användare enligt data i tabellen nedan.
 
 | Attribut                              | Värde                                                          |
 |----------------------------------------|----------------------------------------------------------------|
@@ -417,7 +417,7 @@ Kontrollera om användaren är medlem i uppsättningen Alla leverantörer genom 
 
 Du kan kontrol lera om användaren är i omfånget för synkroniseringsregeln genom att öppna användarens egenskaps sida och granska attributet förväntade regler-lista på fliken etablering. Attributet för förväntade regler ska visa en lista över AD-användaren
 
-Utgående synkroniseringsregel. Följande skärmbild visar ett exempel på attributet Lista över förväntade regler.
+Utgående synkroniseringsregel. Följande skärm bild visar ett exempel på attributet för förväntade regler-lista.
 
 ![Status för synkroniseringsregel](media/how-provision-users-adds/image023.jpg)
 
@@ -459,7 +459,7 @@ Kör följande körningsprofiler för att utföra dessa uppgifter.
 | Fabrikam FIMMA   | 1. exportera <br/> 2. delta import       |
 
 
-När importen från FIM-tjänstedatabasen är Britta Simon och ExpectedRuleEntry-objektet som länkar Britta till den utgående synkroniseringsregeln för AD-användare, mellanlagras i anslutnings utrymmet Fabrikam FIMMA. När du granskar Britta egenskaper i kopplings utrymmet, bredvid de attributvärden som du har konfigurerat i FIM-portalen, hittar du också en giltig referens till det förväntade regel post-objektet. Följande skärm visar ett exempel på detta.
+När importen från FIM-tjänstedatabasen är Britta Simon och ExpectedRuleEntry-objektet som länkar Britta till den utgående synkroniseringsregeln för AD-användare, mellanlagras i anslutnings utrymmet Fabrikam FIMMA. När du granskar Britta egenskaper i kopplings utrymmet, bredvid de attributvärden som du har konfigurerat i FIM-portalen, hittar du också en giltig referens till det förväntade regel post-objektet. Följande skärm bild visar ett exempel på detta.
 
 ![Objektegenskaper för anslutarplats](media/how-provision-users-adds/image025.jpg)
 
@@ -481,7 +481,7 @@ Under följande export på Fabrikam FIMMA uppdateras synkroniseringsregelstatus 
 
 ![Verkställd synkroniseringsregel](media/how-provision-users-adds/image028.jpg)
 
-Eftersom ett nytt objekt har etablerats i ADMA-anslutarplatsen bör du ha en export med Lägg till väntande på denna hanteringsagent. Med hjälp av ett skript för detta syfte kan du se en rapporterad export med Lägg till väntande för Fabrikam ADMA. Om du vill använda skriptet kan du gå till [Using Windows PowerShell to Display the Export State of a Management Agent](http://go.microsoft.com/FWLink/p/?LinkId=189664) (Använda Windows PowerShell för att visa exporttillstånd för en hanteringsagent).
+Eftersom ett nytt objekt har etablerats i ADMA-anslutarplatsen bör du ha en export med Lägg till väntande på denna hanteringsagent. 
 
 ![Väntande exporter för hanteringsagent](media/how-provision-users-adds/image029.jpg)
 
@@ -507,10 +507,10 @@ Syftet med det här dokumentet är att presentera de viktigaste byggstenarna fö
 När du testar konfigurationen är det mycket troligt att du tar bort och skapar om nya testobjekt. För objekt med ett
 
 ifyllt ExpectedRulesList-attribut kan det här leda till frånkopplade ERE-objekt.
-En beskrivning av hur du kan ta bort dessa objekt från testmiljön finns i [En metod för att ta bort överblivna ExpectedRuleEntry-objekt från miljön](http://go.microsoft.com/FWLink/p/?LinkId=189667).
+En beskrivning av hur du kan ta bort dessa objekt från testmiljön finns i [En metod för att ta bort överblivna ExpectedRuleEntry-objekt från miljön](https://go.microsoft.com/FWLink/p/?LinkId=189667).
 
 I ett normalt synkroniseringsscenario som omfattar AD DS som synkroniseringsmål är MIM inte auktoritativt för alla attribut för ett objekt. När du exempelvis hanterar användarobjekt i AD DS med hjälp av FIM måste domänen och objectSID-attributen som minst bidras till av AD DS-hanteringsagenten.
-Kontonamn, domän och objectSID-attribut krävs om du vill göra det möjligt för en användare att logga in på FIM-portalen. En ytterligare ingående synkroniseringsregel krävs för AD DS-anslutarplatsen för att fylla i dessa attribut från AD DS. När du hanterar objekt med flera källor för attributvärden måste du se till att du konfigurerar attributflödets prioritet korrekt. Om attributflödets prioritet inte är korrekt konfigurerad blockerar synkroniseringsmotorn attribut från att fyllas i. Mer information om prioritet för attributflödet finns i artikeln [Om prioritet för attributflöde](http://go.microsoft.com/FWLink/p/?LinkId=189675).
+Kontonamn, domän och objectSID-attribut krävs om du vill göra det möjligt för en användare att logga in på FIM-portalen. En ytterligare ingående synkroniseringsregel krävs för AD DS-anslutarplatsen för att fylla i dessa attribut från AD DS. När du hanterar objekt med flera källor för attributvärden måste du se till att du konfigurerar attributflödets prioritet korrekt. Om attributflödets prioritet inte är korrekt konfigurerad blockerar synkroniseringsmotorn attribut från att fyllas i. Mer information om prioritet för attributflödet finns i artikeln [Om prioritet för attributflöde](https://go.microsoft.com/FWLink/p/?LinkId=189675).
 
 <a name="see-also"></a>Se även
 =========
@@ -518,20 +518,18 @@ Kontonamn, domän och objectSID-attribut krävs om du vill göra det möjligt f�
 <a name="other-resources"></a>Andra resurser
 ---------------
 
-[Använda FIM för att aktivera eller inaktivera konton i Active Directory](http://go.microsoft.com/FWLink/p/?LinkId=189670)
+[Använda FIM för att aktivera eller inaktivera konton i Active Directory](https://go.microsoft.com/FWLink/p/?LinkId=189670)
 
-[Om referensattribut](http://go.microsoft.com/FWLink/p/?LinkId=189671)
+[Förstå behandling av referenser för attribut](https://go.microsoft.com/FWLink/p/?LinkId=189671)
 
-[Hur kan jag hantera mitt FIM MA-konto](http://go.microsoft.com/FWLink/p/?LinkId=189672)
+[Så här hanterar du FIM MA-kontot](https://go.microsoft.com/FWLink/p/?LinkId=189672)
 
-[Identifiera icke-auktoritativa konton – Del 1: Visualisera](http://go.microsoft.com/FWLink/p/?LinkId=189673)
+[Identifiera icke-auktoritativa konton – del 1: konfiguration](https://go.microsoft.com/FWLink/p/?LinkId=189673)
 
-[Fattigmansversionen av en mekanism för anslutningsidentifiering](http://go.microsoft.com/FWLink/p/?LinkId=189674)
+[Så här identifierar du anslutningar](https://go.microsoft.com/FWLink/p/?LinkId=189674)
 
-[Konfigurera ADMA-kontot](http://go.microsoft.com/FWLink/p/?LinkId=189657)
+[Så här konfigurerar du ADMA-kontot](https://go.microsoft.com/FWLink/p/?LinkId=189657)
 
-[En metod för att ta bort överblivna ExpectedRuleEntry-objekt från miljön](http://go.microsoft.com/FWLink/p/?LinkId=189667)
+[Om prioritet för attributflöde](https://go.microsoft.com/FWLink/p/?LinkId=189675)
 
-[Om prioritet för attributflöde](http://go.microsoft.com/FWLink/p/?LinkId=189675)
-
-[Om exporter](http://go.microsoft.com/FWLink/p/?LinkId=189676)
+[Förstå exporter](https://social.technet.microsoft.com/wiki/contents/articles/1861.understanding-exports-in-ilm-2007.aspx)

@@ -9,12 +9,12 @@ ms.date: 2/28/2018
 ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: fcf9ec8387761b6f154a95d6100ef54a12d4caf8
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: dd023e2152693f56dd9a86dc66d9c1a8ef4ec64e
+ms.sourcegitcommit: 1ca298d61f6020623f1936f86346b47ec5105d44
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64518947"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256588"
 ---
 # <a name="deprecated-features"></a>Föråldrade funktioner
 
@@ -27,7 +27,7 @@ I den här artikeln beskrivs de inaktuella funktionerna i Microsoft Identity Man
 
 ## <a name="bhold"></a>BHOLD 
 
-Microsoft rekommenderar inte att kunder startar nya distributioner av Microsoft BHOLD Suite-komponenter. Befintliga distributioner av BHOLD kommer att fortsätta att stödjas. Azure AD ger nu [åtkomst granskningar](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-azure-ad-controls-access-reviews-overview) som ersätter några av kampanj funktionerna för BHOLD-attestering.
+Microsoft rekommenderar inte att kunder startar nya distributioner av Microsoft BHOLD Suite-komponenter. Befintliga distributioner av BHOLD kommer att fortsätta att stödjas. Azure AD ger nu [åtkomst granskningar](https://docs.microsoft.com/azure/active-directory/active-directory-azure-ad-controls-access-reviews-overview) som ersätter några av kampanj funktionerna för BHOLD-attestering.
 
 ## <a name="certificate-management"></a>Certifikathantering 
 
@@ -47,7 +47,7 @@ Microsoft rekommenderar inte att kunder startar nya distributioner av Microsoft 
 | **Kategori**                | **Föråldrad funktion**              | **Ersätta och kommentera**           |
 |-----------------------------|-------------------------------------|----------------------------------------------|
 | Program konfiguration | Konfigurations gränssnitt för webb tjänst | Möjligheten att konfigurera FIM-synkroniseringstjänsten via FIM-tjänsten kommer att tas bort i nästa version.                                                          |
-| Hanterings agenter           | Inbyggda MAs                        | Följande MAs har tagits bort i MIM 2016: </br> 1. * * MA för FIM-certifikat hantering </br>2. * * MA för Lotus-anteckningar</br> 3. * * MA för SAP R/3 </br> Lotus Notes-och SAP R/3-MAs har ersatts med nya versioner. Mer information finns i [senaste versions historik för Connector & Hämta](https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnectsync-connector-version-history)                                                                                                                                                                                                                                              |
+| Hanterings agenter           | Inbyggda MAs                        | Följande MAs har tagits bort i MIM 2016: </br> 1. * * MA för FIM-certifikat hantering </br>2. * * MA för Lotus-anteckningar</br> 3. * * MA för SAP R/3 </br> Lotus Notes-och SAP R/3-MAs har ersatts med nya versioner. Mer information finns i [senaste versions historik för Connector & Hämta](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-connector-version-history)                                                                                                                                                                                                                                              |
 | Hanterings agenter           | ECMA1                               | Utöknings ramverket ECMA1/XMA har ersatts av ECMA 2,0. Det krävs en uppdatering av befintliga ECMA1-hanterings agenter med ECMA 2.0-anslutningar.                                                                                                                                          |
 | Hanterings agenter           | Köra anslutningar utanför proc      | Den här funktionen kommer inte att ersättas. Synkroniseringstjänsten anropar alltid anslutnings tjänsten i samma process. Det är kopplingens ansvar att starta och hantera den andra processen. |
 | Hanterings agenter           | Konfigurera visnings namn för partition    | Den här funktionen kommer inte att ersättas. Det här alternativet användes bara för att ange ett alternativt namn för en partition i WMI-gränssnitten.                                                                                                                                                                       |
