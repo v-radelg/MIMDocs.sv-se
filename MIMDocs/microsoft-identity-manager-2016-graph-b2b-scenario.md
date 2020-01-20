@@ -9,12 +9,12 @@ ms.date: 10/02/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: 139c58510117ad422529a4ff0facd23040023713
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: ba70cd299f2ebec31555bb40b935a6b54779d198
+ms.sourcegitcommit: 1ca298d61f6020623f1936f86346b47ec5105d44
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64521182"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256639"
 ---
 <a name="azure-ad-business-to-business-b2b-collaboration-with-microsoft-identity-managermim-2016-sp1-with-azure-application-proxy"></a>Azure AD Business-to-Business (B2B)-samarbete med Microsoft Identity Manager (MIM) 2016 SP1 med Azure Application Proxy
 ============================================================================================================================
@@ -31,8 +31,6 @@ Några antaganden som görs i konfigurationen av B2B med MIM och Azure AD-progra
 -   Du har redan följt anvisningarna i artikeln om hur du hämtar och installerar [graf Connector](microsoft-identity-manager-2016-connector-graph.md).
 
 -   Du har Azure AD Connect konfigurerat för synkronisering av användare och grupper till Azure AD.
-
--   Du har Azure AD Connect konfigurerat för synkronisering av Office-grupper för att styra program [tillbaka till en lokal AD DS](http://robsgroupsblog.com/blog/how-to-write-back-an-office-group-in-azure-active-directory-to-a-mail-enabled-security-group-in-an-on-premises-active-directory)
 
 -   Du har redan konfigurerat Application Proxy-kopplingar och anslutnings grupper, om inte kan du gå [hit](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-enable#install-and-register-a-connector) för att installera och konfigurera
 
@@ -63,13 +61,13 @@ Som standard förutsätter Azure AD Connect att icke-administratörs användare 
 De användare som förts in i AD DS av MIM från Azure AD måste därför lagras på ett sätt som Azure AD inte kommer att försöka synkronisera de här användarna tillbaka till Azure AD.
 Ett sätt att göra detta är att skapa en ny organisationsenhet i AD DS och konfigurera Azure AD Connect att exkludera den organisationsenheten.  
 
-Mer information finns i [Azure AD Connect synkronisering: Konfigurera filtrerings](https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnectsync-configure-filtering). 
+Mer information finns i [Azure AD Connect Sync: Konfigurera filtrering](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-configure-filtering). 
  
 
 ## <a name="create-the-azure-ad-application"></a>Skapa Azure AD-programmet 
 
 
-Obs! Innan du skapar i MIM synkroniserar du hanterings agenten för graf Connector, kontrollerar att du har granskat guiden för att distribuera [graf Connector](microsoft-identity-manager-2016-connector-graph.md)och skapat ett program med klient-ID och hemlighet.
+Obs! innan du skapar i MIM synkroniserar du hanterings agenten för graf Connector, kontrollerar att du har granskat guiden för att distribuera [graf Connector](microsoft-identity-manager-2016-connector-graph.md)och skapat ett program med klient-ID och hemlighet.
 Se till att programmet har behörighet för minst en av följande behörigheter: `User.Read.All``User.ReadWrite.All``Directory.Read.All` eller `Directory.ReadWrite.All`. 
 
 ## <a name="create-the-new-management-agent"></a>Skapa den nya hanterings agenten
@@ -183,7 +181,7 @@ Slutför sedan följande information
 
 Attributnamn: **userPrincipalName**
 
-Attributtyp: **Sträng (Indexbar)**
+Attributtyp: **sträng (indexbar)**
 
 Indexerad = **Sant**
 
@@ -199,7 +197,7 @@ Nästa steg kräver att du lägger till minimal konfiguration till FIM MA och AD
 
 Mer information hittar du här för konfigurations <https://technet.microsoft.com/library/ff686263(v=ws.10).aspx> – hur etablerar jag användare i AD DS
 
-### <a name="synchronization-rule-import-guest-user-to-mv-to-synchronization-service-metaverse-from-azure-active-directorybr"></a>Synkroniseringsregel: Importera gäst användare till MV till metaversum för synkroniseringstjänst från Azure Active Directory<br>
+### <a name="synchronization-rule-import-guest-user-to-mv-to-synchronization-service-metaverse-from-azure-active-directorybr"></a>Synkroniseringsregel: importera gäst användare till MV till metaversum för synkroniseringstjänst från Azure Active Directory<br>
 
 Navigera till MIM-portalen, Välj regler för synkronisering och klicka på ny.  Skapa en regel för inkommande synkronisering för B2B-flödet via graf Connector.
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/ba39855f54268aa824cd8d484bae83cf.png)
@@ -226,7 +224,7 @@ Konfigurera följande flödes regler för inkommande attribut.  Var noga med att
 |                       |                           | [mail⇒mail](javascript:void(0);)                                      |
 |                       |                           | [mobilePhone⇒mobilePhone](javascript:void(0);)                        |
 
-### <a name="synchronization-rule-create-guest-user-account-to-active-directory"></a>Synkroniseringsregel: Skapa ett gäst användar konto för att Active Directory 
+### <a name="synchronization-rule-create-guest-user-account-to-active-directory"></a>Synkroniseringsregel: skapa ett gäst användar konto som ska Active Directory 
 
 Den här synkroniseringsregeln skapar användaren i Active Directory.  Se till att flödet för `dn` måste placera användaren i organisationsenheten som uteslöts från Azure AD Connect.  Uppdatera även flödet för `unicodePwd` för att uppfylla lösen ords principen för AD – användaren behöver inte känna till lösen ordet.  Observera värdet för `262656` för `userAccountControl` kodar flaggorna `SMARTCARD_REQUIRED` och `NORMAL_ACCOUNT`.
 
@@ -245,11 +243,11 @@ Flödes regler:
 |                       |                           | [mail⇒mail](javascript:void(0);)                                      |
 |                       |                           | [sn⇒sn](javascript:void(0);)                                          |
 |                       |                           | [userPrincipalName⇒userPrincipalName](javascript:void(0);)            |
-| **JA**                 |                           | [”CN =” + uid + ”, OU = B2BGuest, DC = contoso, DC = com” ⇒dn](javascript:void(0);) |
-| **JA**                 |                           | [RandomNum (0,999) + userPrincipalName⇒unicodePwd](javascript:void(0);)  |
-| **JA**                 |                           | [262656⇒userAccountControl](javascript:void(0);)                      |
+| **Y**                 |                           | [”CN =” + uid + ”, OU = B2BGuest, DC = contoso, DC = com” ⇒dn](javascript:void(0);) |
+| **Y**                 |                           | [RandomNum (0,999) + userPrincipalName⇒unicodePwd](javascript:void(0);)  |
+| **Y**                 |                           | [262656⇒userAccountControl](javascript:void(0);)                      |
 
-### <a name="optional-synchronization-rule-import-b2b-guest-user-objects-sid-to-allow-for-login-to-mim"></a>Valfri Synkroniseringsregel: Importera B2B-gäst användar objekt SID för att tillåta inloggning till MIM 
+### <a name="optional-synchronization-rule-import-b2b-guest-user-objects-sid-to-allow-for-login-to-mim"></a>Valfri Synkroniseringsregel: importera B2B-gäst användar objekt SID för att tillåta inloggning till MIM 
 
 Den här regeln för inkommande synkronisering hämtar användarens SID-attribut från Active Directory tillbaka till MIM, så att användaren kan komma åt MIM-portalen.  MIM-portalen kräver att användaren har attributen `samAccountName`, `domain` och `objectSid` som är ifyllda i MIM-tjänstens databas.
 
@@ -291,7 +289,7 @@ Sedan bjuder vi in användaren och kör sedan reglerna för hanterings agenten i
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/506f0a093c8b58cbb62cc4341b251564.png)
 
 
-## <a name="optional-application-proxy-for-b2b-guests-logging-into-mim-portal"></a>Valfritt: Programproxy för B2B-gäster som loggar in på MIM-portalen
+## <a name="optional-application-proxy-for-b2b-guests-logging-into-mim-portal"></a>Valfritt: programproxy för B2B-gäster som loggar in på MIM-portalen
 
 Nu när vi har skapat reglerna för synkronisering i MIM. I konfiguration av App-proxy definierar du Använd Cloud-huvudobjektet för att tillåta KCD på App proxy.
 Dessutom har användaren lagt till användaren manuellt i hantera användare och grupper. Alternativen för att inte Visa användaren förrän skapandet har skett i MIM för att lägga till gästen i en Office-grupp när etableringen har slutförts kräver lite mer konfiguration som inte beskrivs i det här dokumentet.
@@ -316,6 +314,6 @@ När alla har kon figurer ATS, har du B2B-användar inloggning och kan se progra
 
 [Funktionsreferens för FIM 2010](https://technet.microsoft.com/library/ff800820(v=ws.10).aspx)
 
-[Så här ger du säker fjärråtkomst till lokala program](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)
+[Ge säker fjärråtkomst till lokala program](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)
 
-[Hämta Microsoft Identity Manager Connector för Microsoft Graph](http://go.microsoft.com/fwlink/?LinkId=717495)
+[Hämta Microsoft Identity Manager Connector för Microsoft Graph](https://go.microsoft.com/fwlink/?LinkId=717495)
