@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.reviewer: markwahl-msft
 ms.suite: ems
-ms.openlocfilehash: a74f4074d9a0cf8378fd4972b7f51f723bd2f1c6
-ms.sourcegitcommit: 80cdfd782cc6e2a4c4698decd54342f0e1460f5f
+ms.openlocfilehash: be5dc1e8615f56d3157a78891e80897e446eafab
+ms.sourcegitcommit: 32c7a46b2f8ed3f2f9ebc6f79a4ecb0019fe62e0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75756276"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77527930"
 ---
 # <a name="configure-a-domain-for-group-managed-service-accounts-gmsa-scenario"></a>Konfigurera en domän för gMSA-scenario (Group Managed Service accounts)
 
@@ -28,7 +28,7 @@ ms.locfileid: "75756276"
 
 Microsoft Identity Manager (MIM) fungerar med Active Directory-domänen (AD). Du bör redan ha en AD installerad och se till att du har en domänkontrollant i miljön för en domän du har administratörsbehörighet för.  Den här artikeln beskriver hur du konfigurerar grupphanterade tjänst konton i domänen för användning av MIM.
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Översikt
 
 Grupphanterade tjänst konton eliminerar behovet av att regelbundet ändra lösen ord för tjänst konton. I och med lanseringen av MIM 2016 SP2 kan följande MIM-komponenter ha gMSA-konton konfigurerade för användning under installations processen:
 
@@ -109,7 +109,7 @@ Alla komponenter i MIM-distributionen behöver ha egna identiteter i domänen. D
 4.  Lägg till SPN-namn om du vill aktivera Kerberos-autentisering för tjänstkonton
 
     ```PowerShell
-    Set-ADServiceAccount -Identity svcMIMAppPool -ServicePrincipalNames @{Add="http/mim.contoso.com"}
+    setspn -S http/mim.contoso.com contoso\svcMIMAppPool
     ```
 
 5.  Se till att registrera följande DNS "A"-poster för korrekt namn matchning (förutsatt att MIM-tjänsten, MIM-portalen, lösen ords återställning och lösen ords registrering webbplatser kommer att finnas på samma dator)
