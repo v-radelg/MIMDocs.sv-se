@@ -1,24 +1,24 @@
 ---
 title: Konvertering av MIM-/regionsspecifika tjänster till gMSA | Microsoft Docs
 description: Avsnitt som beskriver de grundläggande stegen för att konfigurera gMSA.
-author: billmath
-ms.author: billmath
-manager: mtillman
+author: EugeneSergeev
+ms.author: esergeev
+manager: aashiman
 ms.date: 06/27/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 96d375d82a71a21f0be444d628f387c4e1ffdd09
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 49216a2d2077dd1be83f17719e996a20abb61cf8
+ms.sourcegitcommit: d98a76d933d4d7ecb02c72c30d57abe3e7f5d015
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64520626"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78289502"
 ---
 # <a name="conversion-of-mim-specific-services-to-gmsa"></a>Konvertering av MIM-/regionsspecifika tjänster till gMSA
 
 Den här guiden vägleder dig genom de grundläggande stegen för att konfigurera gMSA för tjänster som stöds. Processen att konvertera till gMSA är enkel när du förkonfigurerar din miljö.
 
-Snabb korrigering krävs: \<länk till senaste KB-\>
+Snabb korrigering krävs: [4.5.26.0 eller senare](https://docs.microsoft.com/microsoft-identity-manager/reference/version-history)
 
 Stöds:
 
@@ -163,7 +163,9 @@ Första steget på din Windows-domänkontrollant
 4.  Kör förhöjd MSI av MIM-tjänsten och välj Ändra.
 
 5.  Markera kryss rutan Använd ett annat konto för Exchange (för hanterade konton) på sidan Konfigurera huvud server anslutning. Här kan du välja att använda det gamla kontot som har en post låda eller med hjälp av en moln post låda.
-
+    >[!NOTE]
+    >När **Använd Exchange Online** -alternativet är valt, för att aktivera MIM-tjänsten för att bearbeta godkännande svar från MIM Outlook-tillägget, måste du ange register nyckeln HKLM\SYSTEM\CurrentControlSet\Services\FIMService-värdet för PollExchangeEnabled till 1 efter installationen.
+    
 ![](media/0cd8ce521ed7945c43bef6100f8eb222.png)
 
 6.  På sidan "Konfigurera MIM-tjänstkontot" anger du tjänst kontot med \$ symbol i slutet. Skriv också lösen ordet för tjänsten e-postkontot. Lösen ordet för tjänst kontot bör inaktive ras.
@@ -198,7 +200,7 @@ Första steget på din Windows-domänkontrollant
 
 13.  Slutför installationen.
 
-Anm
+Obs!
 
 -  Efter installationen skapas två nya nycklar i registret efter sökväg
     - "HKEY_LOCAL_MACHINE\\program vara\\Microsoft\\Forefront Identity

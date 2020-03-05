@@ -2,21 +2,21 @@
 title: Installera Microsoft Identity Manager-tjänst och -portal | Microsoft Docs
 description: Hämta anvisningarna för att konfigurera och installera MIM-tjänsten och -portalen för Microsoft Identity Manager 2016
 keywords: ''
-author: billmath
-ms.author: billmath
-manager: mtillman
+author: EugeneSergeev
+ms.author: esergeev
+manager: aashiman
 ms.date: 10/18/2019
 ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: markwahl-msft
 ms.suite: ems
-ms.openlocfilehash: 1f7aa8e257ef4fd1d97ee602a4e0f3f878d8c1b6
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 4604c17d3e58c57f9819aaa036dc12a669aed55d
+ms.sourcegitcommit: d98a76d933d4d7ecb02c72c30d57abe3e7f5d015
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73568076"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78289497"
 ---
 # <a name="install-mim-2016-mim-service-and-portal"></a>Installera MIM 2016: MIM-tjänst och -portal
 
@@ -25,7 +25,7 @@ ms.locfileid: "73568076"
 > [Synkronisera databaser»](install-mim-sync-ad-service.md)
  
 > [!NOTE]
-> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
+> Den här genomgången använder exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
 > - Namn på domänkontrollant – **mimservername**
 > - Domännamn – **contoso**
 > - Lösenord – <strong>Pass@word1</strong>
@@ -51,8 +51,13 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
     ![Bild på Konfigurera MIM-databasanslutningen](media/install-mim-service-portal/MIM_Install10.png)
 
 7. På sidan **Konfigurera anslutning till e-postserver**anger du namnet på Exchange-servern som **e-postserver** eller så kan du använda **O365-postlåda**. Om du inte har konfigurerat en e-postserver använder du **localhost** som namn på e-postservern och avmarkerar de två översta kryssrutorna. Klicka på **Nästa**.
+    >[!NOTE]
+    >MIM 2016 SP2 och senare: om du använder grupphanterade tjänst konton, måste du markera kryss rutan **Använd annan användare för Exchange** även om du inte planerar att använda Exchange.
+    
+    >[!NOTE]
+    >När **Använd Exchange Online** -alternativet är valt, för att aktivera MIM-tjänsten för att bearbeta godkännande svar från MIM Outlook-tillägget, måste du ange register nyckeln HKLM\SYSTEM\CurrentControlSet\Services\FIMService-värdet för PollExchangeEnabled till 1 efter installationen.
 
-    ![Bild på Konfigurera e-postserveranslutning](media/install-mim-service-portal/MIM_Install11.png)
+    ![Bild på Konfigurera anslutning till e-postserver](media/install-mim-service-portal/MIM_Install11.png)
 
 8. Ange att du vill generera ett nytt självsignerat certifikat eller välj relevant certifikat.
 
@@ -60,7 +65,7 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
     >[!NOTE]
     >MIM 2016 SP2 och senare: om du använder grupphanterade tjänst konton måste du se till att **$** -tecknen är i slutet av namnet på tjänst kontot, t. ex. MIMService $, och lämnar fältet lösen ord för tjänst konto tomt.
 
-    ![Bild av Konfigurera MIM-tjänstkontot](media/install-mim-service-portal/MIM_Install12.png)
+    ![Bild på Konfigurera MIM-tjänstkontot](media/install-mim-service-portal/MIM_Install12.png)
 
 10. Observera att en varning kan komma att visas om att tjänstkontots nuvarande konfiguration inte är säker.
 
