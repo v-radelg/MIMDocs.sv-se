@@ -4,12 +4,12 @@ ms.topic: landing-page
 ms.prod: microsoft-identity-manager
 title: Dokumentation om Microsoft Identity Manager | Microsoft Docs
 description: Lär dig hur du använder Microsoft Identity Manager.
-ms.openlocfilehash: d73275383fef6de6ad3d4697c55cc9f60b2ef7dd
-ms.sourcegitcommit: 32c7a46b2f8ed3f2f9ebc6f79a4ecb0019fe62e0
+ms.openlocfilehash: 3e0e4488c9115533cf4e5fcd7f6a7f8e0d6b56a0
+ms.sourcegitcommit: c23b1ad0af5e781a883e0ff475922da1f2642eaa
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77527896"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78946380"
 ---
 # <a name="microsoft-identity-manager-documentation"></a>Dokumentation om Microsoft Identity Manager
 
@@ -41,7 +41,7 @@ Microsoft Identity Manager 2016 binder samman Microsofts identitets- och åtkoms
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src=/MIMDocs/media/index/i_learn-about.svg" alt="" />
+                            <img src="/MIMDocs/media/index/i_learn-about.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -58,7 +58,7 @@ Microsoft Identity Manager 2016 binder samman Microsofts identitets- och åtkoms
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src=/MIMDocs/media/index/i_deploy.svg" alt="" />
+                            <img src="/MIMDocs/media/index/i_deploy.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -86,7 +86,7 @@ Microsoft Identity Manager 2016 binder samman Microsofts identitets- och åtkoms
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src=/MIMDocs/media/index/i_reference.svg" alt="" />
+                            <img src="/MIMDocs/media/index/i_reference.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -104,7 +104,7 @@ Microsoft Identity Manager 2016 binder samman Microsofts identitets- och åtkoms
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src=/MIMDocs/media/index/i_reference.svg" alt="" />
+                            <img src="/MIMDocs/media/index/i_reference.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
