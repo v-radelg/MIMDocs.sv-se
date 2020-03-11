@@ -4,19 +4,19 @@ description: Lär dig hur du registrerar smartkort för användare utan administ
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/12/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: bfabc562-a2f0-4cff-ac31-36927f41e102
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 4d66c566912f186bce175dde9f16346942afd72e
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 91409b0272c0b21cac90dbc4c162e5bf4d9f8464
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64516652"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79042142"
 ---
 # <a name="enroll-smart-cards-for-non-administrators"></a>Registrera smartkort för icke-administratörer
 Om en användare inte är lokal administratör på sin dator kan denne normalt inte registrera ett smartkort på sin egen dator. Genom att följa proceduren som beskrivs nedan kan dock du kringgå den här begränsningen.
@@ -67,9 +67,9 @@ Om en användare inte är lokal administratör på sin dator kan denne normalt i
 
 4.  Duplicera profilmallen och lägg till den ursprungliga administratörsnyckeln för att konfigurera MIM-servern:
 
-    1.  Logga in på CM-portalen som en användare med administratörsbehörighet.
+    1.  Logga in på CM-portalen som användare med administratörsbehörighet.
 
-    2.  Gå till **Administration** &gt; **Hantera profilmallar** och kontrollera att kryssrutan bredvid den profilmall du skapat är markerad. Klicka sedan på Kopiera en vald profilmall.
+    2.  Gå till **Administration** &gt; **Hantera profilmappar** och se till att rutan är markerad bredvid den mall som du skapade och klicka på Kopiera en vald profil mall.
 
     3.  Ange namnet på profilmallen, lägg till ”nonAdmin” och klicka på **OK**.
 

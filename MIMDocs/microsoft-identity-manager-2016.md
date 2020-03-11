@@ -4,16 +4,16 @@ description: MIM innehåller åtkomsthanteringsfunktioner för FIM 2010 och hjä
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/18/2019
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 1af53aee05d10fa7c7f77cef3c6dba1051be24b1
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: b2b63f4490b5f53f5a2d683d5130b3ac1e74dc04
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73329392"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044097"
 ---
 # <a name="microsoft-identity-manager-2016-news-and-updates"></a>Microsoft Identity Manager 2016 nyheter och uppdateringar
 

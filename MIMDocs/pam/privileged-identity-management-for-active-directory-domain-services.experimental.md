@@ -4,7 +4,7 @@ description: Privileged Access Management (PAM) hjälper organisationer att begr
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 03/13/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
@@ -12,12 +12,12 @@ ms.assetid: cf3796f7-bc68-4cf7-b887-c5b14e855297
 ms.reviewer: mwahl
 ms.suite: ems
 experiment_id: kgremban_images
-ms.openlocfilehash: 40ed05c1f77cace74b86dc3a5675855993d4bc56
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: acec45a2843febd3821d9045336098cdeb4ddcf7
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64518365"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043944"
 ---
 # <a name="privileged-access-management-for-active-directory-domain-services"></a>Privileged Access Management för Active Directory Domain Services
 
@@ -43,7 +43,7 @@ PAM gör det svårare för angripare att ta sig in i ett nätverk och få åtkom
 
 ## <a name="how-is-pam-set-up"></a>Hur konfigureras PAM?
 
-PAM bygger på principen för just-in-time-administration, som är relaterat till [JEA (just enough administration)](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DCIM-B362). JEA är ett Windows PowerShell-verktyg som definierar en uppsättning kommandon för att utföra privilegierade aktiviteter och en slutpunkt där administratörer kan få behörighet att köra dessa kommandon. I JEA beslutar administratör att användare med en viss behörighet kan utföra en viss uppgift. Varje gång en behörig användare behöver utföra aktiviteten aktiveras behörigheten. Behörigheten upphör efter en angiven tidsperiod, så att obehöriga användare inte kan få åtkomst.
+PAM bygger på principen för just-in-time-administration, som är relaterat till [JEA (just enough administration)](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DCIM-B362). JEA är ett Windows PowerShell-verktyg som definierar en uppsättning kommandon för att utföra privilegierade aktiviteter och en slutpunkt där administratörer kan få behörighet att köra dessa kommandon. I JEA beslutar administratör att användare med en viss behörighet kan utföra en viss uppgift. Varje gång en behörig användare behöver utföra aktiviteten aktiveras behörigheten. Behörigheten upphör efter en angiven tidsperiod, så att obehöriga användare inte kan få åtkomst.
 
 PAM-installationen och -driften består av fyra steg.
 

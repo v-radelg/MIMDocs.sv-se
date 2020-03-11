@@ -4,19 +4,19 @@ description: Hämta hela listan med stegvisa instruktioner för att distribuera 
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/17/2019
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: fa0af422-b5e9-4599-9d9b-cb6c18ea07f9
 ms.reviewer: markwahl-msft
 ms.suite: ems
-ms.openlocfilehash: ea9caef07c2496c5d2e040f5d88764938231220b
-ms.sourcegitcommit: 80cdfd782cc6e2a4c4698decd54342f0e1460f5f
+ms.openlocfilehash: 5a80718b038a10bb8d746a86856b87d016783fd6
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75756167"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043196"
 ---
 # <a name="deploy-microsoft-identity-manager-2016-sp2"></a>Distribuera Microsoft Identity Manager 2016 SP2
 Artiklarna i det här avsnittet ger stegvisa instruktioner för att distribuera Microsoft Identity Manager (MIM) 2016 vid självbetjäning för slutanvändare som använder en ny server där FIM eller MIM inte tidigare har distribuerats.
@@ -41,8 +41,8 @@ Mer information om plattformar som stöds finns i [plattformar som stöds för M
 
  Detta omfattar att konfigurera:
 - [Windows Server](prepare-server-ws2016.md)
-- [SQLServer](prepare-server-sql2016.md)
-- [SharePoint Server](prepare-server-sharepoint.md)
+- [SQL Server](prepare-server-sql2016.md)
+- [SharePoint-Server](prepare-server-sharepoint.md)
 - [Exchange Server](prepare-server-exchange.md) (tillval)
 
 ## <a name="finally-install-microsoft-identity-manager-2016-sp2-components"></a>Slutligen: installera Microsoft Identity Manager 2016 SP2-komponenter

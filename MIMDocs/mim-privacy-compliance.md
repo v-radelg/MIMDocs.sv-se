@@ -4,18 +4,18 @@ description: Förstå Microsoft Identity Manager data hantering för att identif
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 12/02/2018
 ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.suite: ems
-ms.openlocfilehash: 6f861c5b1984de70a91edcac89276402f289e355
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: e95cf26b62e582eaa3c07c40e551bc5930d3b1b0
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68701487"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044114"
 ---
 # <a name="microsoft-identity-manager-data-handling"></a>Microsoft Identity Manager data hantering 
 
@@ -34,7 +34,7 @@ Nedan visas några scenarier som kunderna behöver tänka på och svara på föl
 För att hjälpa dig att förstå en aktuell MIM-miljö kan du använda följande verktyg för att dokumentera MIM-miljön, eller Överlåt dig till implementerings design dokumenten.
 - [MIM-Dokumentor – tillåter export av den aktuella konfigurationen](https://github.com/Microsoft/MIMConfigDocumenter)
 
-## <a name="searching-for-and-identifying-personal-data"></a>Söker efter och identifierar personuppgifter
+## <a name="searching-for-and-identifying-personal-data"></a>Söka efter och identifiera personliga data
 Sökning av data i MIM är beroende av konfigurationen och konfigurationen. De flesta miljöer är sammankopplade, men för tydlighets skull kan vi dela upp dem med hög nivå komponent.
 
 ### <a name="synchronization-service"></a>Synkroniseringstjänst

@@ -4,19 +4,19 @@ description: Upprätta förtroende mellan skogarna PRIV och CORP så att privile
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 11/29/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: eef248c4-b3b6-4b28-9dd0-ae2f0b552425
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 04195febdb721291e9dcf72f5bbda04923075596
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 0cf952c93c0a7b95fd41939efc767e9e8c20be5e
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64518270"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043655"
 ---
 # <a name="step-5--establish-trust-between-priv-and-corp-forests"></a>Steg 5 – upprätta förtroende mellan PRIV- och CORP-skogar
 
@@ -87,7 +87,7 @@ Aktivera läsbehörighet till AD för PRIV-administratörer och övervakningstj�
     ```
     Resultatet bör antingen ge **SID-historik aktiveras för förtroendet** eller **SID-historik har redan aktiverats för förtroendet**.
 
-    Resultatet bör också ange **SID-filtrering har inte aktiverats för förtroendet**. Mer information finns i [Inaktivera SID-filterkarantän](http://technet.microsoft.com/library/cc772816.aspx).
+    Resultatet bör också ange **SID-filtrering har inte aktiverats för förtroendet**. Mer information finns i [Inaktivera SID-filterkarantän](https://technet.microsoft.com/library/cc772816.aspx).
 
 ## <a name="start-the-monitoring-and-component-services"></a>Starta övervaknings- och komponenttjänsterna
 

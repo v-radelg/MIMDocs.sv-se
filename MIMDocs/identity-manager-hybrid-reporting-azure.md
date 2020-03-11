@@ -4,18 +4,18 @@ description: Med aktivitets rapporter för Hybrid granskning i Azure Active Dire
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 02/20/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 7320f014-8b60-4866-92de-cfbd3e6edc48
 ms.suite: ems
-ms.openlocfilehash: dd87f00fb3faded60671a47a0ba1dab7e4c2a531
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 6f4f2aea998fc5682d1fb21d77e4d4f1c582d770
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64516765"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79042159"
 ---
 # <a name="hybrid-identity-management-audit-reporting-in-azure-active-directory"></a>Gransknings rapportering för Hybrid identitets hantering i Azure Active Directory
 Med Azure Active Directory (Azure AD) rapportering av gransknings aktiviteter kan du övervaka identitets hanterings aktiviteter antingen lokalt eller i molnet. Genom att hantera alla dina identitets-och åtkomst data i en enda rapport kan du spara tid och minska totalkostnaden.
@@ -43,7 +43,7 @@ Hybrid rapportering sker i följande steg:
 ## <a name="next-steps"></a>Nästa steg
 Läs mer om:
 - [Arbeta med Identity Manager hybrid repor ting](working-with-identity-manager-hybrid-reporting.md)
-- [Granska aktivitetsrapporter i Azure Active Directory-portalen](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-activity-audit-logs)
+- [Granska aktivitets rapporter i Azure Active Directory Portal](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-activity-audit-logs)
 - [Rapportera bevarande principer](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-retention)
 - [Microsoft Azure log integration (SIEM)](https://docs.microsoft.com/azure/security/security-azure-log-integration-overview)
 - [API för Azure Active Directory rapportering](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-api-getting-started)

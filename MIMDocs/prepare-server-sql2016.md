@@ -4,19 +4,19 @@ description: Installera SQL Server 2016 eller 2017 som förberedelse för instal
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 04/26/2018
 ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: 297df3b3-192e-4ed9-82ed-c95eb5297c84
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 4be699f123bf7d48b709ee8b8e91e2222cd492e2
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 2ca9131a6c4f38ed559618d662848b74e1bffe66
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73568014"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043502"
 ---
 # <a name="set-up-an-identity-management-server-sql-server-2016-or-2017"></a>Konfigurera en server för identitets hantering: SQL Server 2016 eller 2017
 
@@ -28,7 +28,7 @@ ms.locfileid: "73568014"
 > Installations proceduren för SQL Server 2017 skiljer sig inte från installations proceduren för SQL Server 2016.
 
 > [!NOTE]
-> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
+> Den här genomgången använder exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
 > - Domänkontrollantens namn – **corpdc**
 > - Domännamn – **contoso**
 > - Server namn för MIM-tjänst – **corpservice**

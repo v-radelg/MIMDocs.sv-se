@@ -4,17 +4,17 @@ description: ''
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 08/01/2017
 ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 45b46ed10f7eda506fe1fc1af94c4be06a1a37b9
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: b28c9623e3a05168adafc19c43634d686dc7e8e2
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64516584"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79042414"
 ---
 # <a name="microsoft-identity-manager-2016-password-management"></a>Lösenordshantering i Microsoft Identity Manager 2016
 
@@ -45,7 +45,7 @@ Hanteringsagenter för katalogservrar stöder åtgärder för lösenordsändring
 
 | Lösenordshantering stöds som standard i hanteringsagenter för: | Genom att använda ett lösenordstillägg stöds lösenordshantering även i hanteringsagenterna för: |
 |---------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| Active Directory                                                          | Textfiler med attributvärdespar                                                                    |
+| Active Directory                                                          | Textfiler med attributvärdespar                                                                    |
 | ADLDS (Active Directory Lightweight Directory Services)                   | Avgränsade textfiler                                                                               |
 | IBM Directory Server                                                      | Directory Services Markup Language (DSML)                                                          |
 | Lotus Notes                                                               | Extensible Connectivity                                                                            |
@@ -148,7 +148,7 @@ Helst synkroniseras ändringen utan fel när en användare ändrar ett lösenord
 
 En del fel är så allvarliga att det inte är sannolikt att åtgärden lyckas oavsett hur många återförsök som genomförs. I dessa fall loggas en felhändelse och processen stoppas. Nya försök görs inte för följande händelser:
 
-| Händelse | Allvarlighetsgrad    | Description                                                                                                                                                            |
+| Händelse | Allvarlighetsgrad    | Beskrivning                                                                                                                                                            |
 |-------|-------------|-----------|
 | 6919  | Information | En åtgärd för lösenordssynkronisering utfördes inte på grund av att tidsstämpeln var för gammal.                                                                      |
 | 6921  | Fel       | Åtgärden för lösenordssynkronisering bearbetades inte på grund av att lösenordshantering inte har aktiverats på hanteringsagenten som är mål.                                |

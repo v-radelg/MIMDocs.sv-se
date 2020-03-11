@@ -4,25 +4,25 @@ description: Lär dig hur du konfigurerar Privileged Access Management för hög
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 09/13/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 03e521cd-cbf0-49f8-9797-dbc284c63018
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 0d0d55d4007ab88df4c2f3b5a30ca0fdedea9fe2
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 67ce70e6bc0603a991731cf1e5fb95751f5016c6
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64518655"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043978"
 ---
 # <a name="high-availability-and-disaster-recovery-considerations-for-the-bastion-environment"></a>Överväganden för hög tillgänglighet och haveriberedskap i skyddsmiljön
 
 I den här artikeln beskrivs överväganden för hög tillgänglighet och haveriberedskap när du distribuerar Active Directory Domain Services (AD DS) och Microsoft Identity Manager 2016 (MIM) för Privileged Access Management PAM.
 
-Företag fokuserar på hög tillgänglighet och haveriberedskap för arbetsbelastningar i Windows Server, SQL Server och Active Directory. Men det är också viktigt att tillgängligheten till skyddsmiljön för privilegierad åtkomsthantering är tillförlitlig. Skyddsmiljön är en viktig del av organisationens IT-infrastruktur eftersom användarna interagerar med dess komponenter för att använda administrativa roller. Mer information om hög tillgänglighet i allmänhet finns i faktabladet [Microsoft – översikt över hög tillgänglighet](http://download.microsoft.com/download/3/B/5/3B51A025-7522-4686-AA16-8AE2E536034D/Microsoft%20High%20Availability%20Strategy%20White%20Paper.doc).
+Företag fokuserar på hög tillgänglighet och haveriberedskap för arbetsbelastningar i Windows Server, SQL Server och Active Directory. Men det är också viktigt att tillgängligheten till skyddsmiljön för privilegierad åtkomsthantering är tillförlitlig. Skyddsmiljön är en viktig del av organisationens IT-infrastruktur eftersom användarna interagerar med dess komponenter för att använda administrativa roller. Mer information om hög tillgänglighet i allmänhet finns i faktabladet [Microsoft – översikt över hög tillgänglighet](https://download.microsoft.com/download/3/B/5/3B51A025-7522-4686-AA16-8AE2E536034D/Microsoft%20High%20Availability%20Strategy%20White%20Paper.doc).
 
 ## <a name="high-availability-and-disaster-recovery-scenarios"></a>Scenarier för hög tillgänglighet och haveriberedskap
 
@@ -214,7 +214,7 @@ MIM-tjänsten måste också bearbeta aktiveringsbegäran.  Om värddatorn för M
 
 #### <a name="preparation"></a>Förberedelse
 Du rekommenderas att distribuera MIM-tjänsten på flera servrar som är anslutna till PRIV-domänen.
-Information om hög tillgänglighet finns i Windows Server-dokumenten [ Maskinvarukrav och lagringsalternativ för redundanskluster](https://technet.microsoft.com/library/jj612869.aspx) och [Skapa ett redundanskluster för Windows Server 2012](http://blogs.msdn.com/b/clustering/archive/2012/05/01/10299698.aspx).
+Information om hög tillgänglighet finns i Windows Server-dokumenten [ Maskinvarukrav och lagringsalternativ för redundanskluster](https://technet.microsoft.com/library/jj612869.aspx) och [Skapa ett redundanskluster för Windows Server 2012](https://blogs.msdn.com/b/clustering/archive/2012/05/01/10299698.aspx).
 
 Vid produktionsdistribution över flera servrar kan du kan använda Utjämning av nätverksbelastning för att distribuera bearbetningsbelastningen.  Du bör även ha ett enda alias (till exempel A- eller CNAME-poster) så att ett allmänt namn visas för användaren.
 

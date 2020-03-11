@@ -4,17 +4,17 @@ description: Core-dokument för BHOLD Suite-installation
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 09/07/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: e4b18d3caa866767524c56ce184e787a190e9390
-ms.sourcegitcommit: 8ba50298cef65e8cc90402282e88410fad86b4d9
+ms.openlocfilehash: c4dfb4184292ba1b5da8c4e3e176d53e6a885ed8
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/18/2019
-ms.locfileid: "75187325"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79042278"
 ---
 # <a name="bhold-core-installation"></a>BHOLD Core-installation
 
@@ -70,7 +70,7 @@ BHOLD Core-modulen måste kunna logga in på domänen med ett användar konto so
 
 3.  I dialog rutan **nytt objekt – grupp** , i **grupp namn**, skriver du namnet på gruppen (BHOLD default: BHOLDApplicationGroup) och klickar sedan på **OK**.
 
-4.  Högerklicka på **användare**, peka på **ny**och klicka sedan på **användare**.
+4.  Högerklicka på **Användare**, peka på **Nya**, och klicka sedan på **Användare**.
 
 5.  I **fullständigt namn**skriver du ett namn som hjälper dig att identifiera kontot, till exempel BHOLD Core Service-konto.
 
@@ -94,9 +94,9 @@ Innan du börjar installera BHOLD Core-modulen måste du vara beredd på att til
 
 ### <a name="account-settings"></a>Kontoinställningar
 
-| **Objekt**                                    | **Beskrivning**                                                                                                                                                                                                                                                                                             | **Värde**                                                                                                                                                          |
+| **Konfigurationsobjektet**                                    | **Beskrivning**                                                                                                                                                                                                                                                                                             | **Värde**                                                                                                                                                          |
 |---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Använd säkerhetsprovidern på domän/dator** | När du väljer det här anger du att Active Directory Domain Services säkerhet ska styra åtkomsten till BHOLD-kärnan.                                                                                                                                                                                                  | Markera kryssrutan. **Viktigt:** Installationen Miss kommer om den här kryss rutan inte är markerad.                                                                 |
+| **Använd säkerhetsprovidern på domän/dator** | När du väljer det här anger du att Active Directory Domain Services säkerhet ska styra åtkomsten till BHOLD-kärnan.                                                                                                                                                                                                  | Markera kryss rutan. **Viktigt:** Installationen Miss kommer om den här kryss rutan inte är markerad.                                                                 |
 | **Domän**                                  | Anger den domän som innehåller BHOLD-servern, tjänst kontot och program gruppen. **Viktigt:** Ange domän namnet med hjälp av NetBIOS-namnet (Short), inte det fullständigt kvalificerade domän namnet (FQDN). Om FQDN för domänen till exempel är fabrikam.com anger du domän namnet som CONTOSO. | Skriv domän namnet här:                                                                                                                                        |
 | **Program grupp**                       | Anger namnet på den säkerhets grupp som du skapade tidigare i den [begärda användaren och gruppen](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx#rug).                                                                                                                                  | Skriv grupp namnet här:                                                                                                                                         |
 | **Tjänst användare**                            | Anger inloggnings namnet för det tjänst användar konto som du skapade tidigare i den [begärda användaren och gruppen](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx#rug).                                                                                                                      | Skriv användar kontots namn här:                                                                                                                                  |
@@ -105,7 +105,7 @@ Innan du börjar installera BHOLD Core-modulen måste du vara beredd på att til
 
 ### <a name="database-settings"></a>Databas inställningar
 
-| **Objekt**                                       | **Beskrivning**                                                                                                                                                                                                                                                           | **Värde**                                                                                                                                                                                                                                                                                                                                                                                             |
+| **Konfigurationsobjektet**                                       | **Beskrivning**                                                                                                                                                                                                                                                           | **Värde**                                                                                                                                                                                                                                                                                                                                                                                             |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Använd integrerad säkerhet**                    | Anger att Windows-autentisering används för att komma åt databasen.                                                                                                                                                                                                     | Markera kryss rutan om Windows-autentisering används för att ansluta till SQL Server. Avmarkera kryss rutan om SQL Server autentisering används. Databasen måste ha skapats innan du kör BHOLD Core-installationen om SQL Server autentisering används. **Obs:** Om Windows-autentisering används måste du vara inloggad med ett konto som har rollen sysadmin-server på databas servern. |
 | **Databas användare** och **databas lösen ord** | Anger användar namn och lösen ord för en användare med Server rollen sysadmin på databas servern. Dessa värden anges bara när SQL Server autentisering används.                                                                                               | Skriv SQL Server användar namn här: Skriv SQL Server användar lösen ord här: **Obs!** se till att behålla det här lösen ordet på en dold, säker plats.                                                                                                                                                                                                                                                  |
@@ -171,7 +171,7 @@ Om nätverks namnet som används för att kontakta BHOLD-webbplatsen inte är sa
 > [!IMPORTANT]
 > Om modulen BHOLD Core är installerad på samma dator som FIM-portalen måste du skapa DNS-resursposter (CNAME eller A) med olika värdnamn för servrarna som kör BHOLD Core och servern som kör FIM-portalen. Det går bara att upprätta ett tjänst huvud namn för ett visst par av typen tjänst-typ/Server-alias, och därför kräver BHOLD Core och FIM-portalen separata SPN-namn eftersom de ofta körs under olika konton. Setspn-kommandot rapporterar ett fel om ett SPN redan har upprättats under ett annat konto.
 
-Det krävs minst medlemskap i **domän administratörer**, eller motsvarande, för att kunna slutföra den här proceduren.
+Det krävs minst medlemskap i **Domänadministratörer**, eller motsvarande, för att kunna slutföra den här proceduren.
 
 #### <a name="to-establish-the-spn-of-the-bhold-website"></a>Så här upprättar du SPN för webbplatsen BHOLD
 
@@ -196,7 +196,7 @@ För att verifiera att installationen av BHOLD Core-modulen lyckades, öppnar du
 | **Dagar mellan ABA-körning**     | Ange ett tvåsiffrigt heltal för att ange intervallet (i dagar) mellan två ABA-körningar (Attribute-based Authorization). Om du till exempel vill ange att ABA-körningar ska avgränsas med två dagar skriver du 02.                                                                                                                     |
 | **Start timme för ABA-körning**    | Ange ett tvåsiffrigt heltal för att ange den timme på dagen då en attribut-baserad auktoriseringsfel ska utföras. Om du till exempel vill ange att ABA-körningen ska ske kl 11:00 (23:00), skriv 23.                                                                                                             |
 | **Systemets kardinalitet**       | Ange till N om du inte vill ha en kontroll av systemets kardinalitet i BHOLD. Standardvärdet är Y.                                                                                                                                                                                                                             |
-| **Loggning**                  | Ange till N om du inte vill att ändringar ska loggas. Standardvärdet är Y.                                                                                                                                                                                                                                            |
+| **Logging**                  | Ange till N om du inte vill att ändringar ska loggas. Standardvärdet är Y.                                                                                                                                                                                                                                            |
 | **SystemQueue-bearbetning**   | Ange till N om du inte vill att system kön ska behandlas. Ändra inte det här värdet om inget annat har inriktats av produkt supporten.                                                                                                                                                                                           |
 
 Du måste vara inloggad som medlem i gruppen domän administratörer för att kunna utföra den här proceduren.

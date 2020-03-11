@@ -4,17 +4,17 @@ description: BHOLD Connector-modulen stöder inledande och pågående synkronise
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 09/07/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 60886a84c6105e94a2cd3d42f17b86b2d69c8c0a
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: ae9cc0bb4c63089c6733c06b7b035b2b9566fdd0
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64516052"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79041871"
 ---
 # <a name="access-management-connector-installation"></a>Installation av åtkomst hanterings anslutning
 
@@ -22,7 +22,7 @@ BHOLD Suite Access Management Connector-modulen stöder både inledande och påg
 
 ## <a name="access-management-connector-software-requirements"></a>Program varu krav för åtkomst hanterings anslutning
 
-Innan du kan installera Access Management Connector-modulen måste du installera Microsoft .NET Framework 4. Mer information om .NET Framework 4 och installations anvisningar finns på [Start sidan för Microsoft .net](http://www.microsoft.com/net).
+Innan du kan installera Access Management Connector-modulen måste du installera Microsoft .NET Framework 4. Mer information om .NET Framework 4 och installations anvisningar finns på [Start sidan för Microsoft .net](https://www.microsoft.com/net).
 Du måste installera Access Management Connector på en dator som kör FIM-synkroniseringstjänsten för MIM.
 
 ## <a name="access-management-connector-setup"></a>Installation av åtkomst hanterings anslutning

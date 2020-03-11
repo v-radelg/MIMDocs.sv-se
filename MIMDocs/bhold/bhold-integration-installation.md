@@ -4,17 +4,17 @@ description: Integrerings modulen för BHOLD Lägg till självbetjänings roll h
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 09/12/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 317c9ae4c940a509b6ac328cd5bb7cd7baa4dde9
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 3005e06606ec4b3b6854003213c712770376b35d
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64516025"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79042210"
 ---
 # <a name="bhold-fimmim-integration-installation"></a>Installation av BHOLD FIM/MIM-integrering
 
@@ -43,16 +43,16 @@ Dessutom måste du vara beredd att tillhandahålla den information som installat
 
 ### <a name="bholdfim-account-settings"></a>BHOLDFim konto inställningar
 
-| **Objekt**                            | **Beskrivning**                                                                                                                                                                                                               | **Värde**                                                                                                                                                                                                                                                                                                            |
+| **Konfigurationsobjektet**                            | **Beskrivning**                                                                                                                                                                                                               | **Värde**                                                                                                                                                                                                                                                                                                            |
 |-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Använd säkerhetsprovidern på domän** | När du väljer det här anger du att Active Directory Domain Services säkerhet ska styra åtkomsten till BHOLD-kärnan.                                                                                                                    | Markera kryssrutan. **Viktigt:** Installationen Miss kommer om den här kryss rutan inte är markerad.                                                                                                                                                                                                                   |
+| **Använd säkerhetsprovidern på domän** | När du väljer det här anger du att Active Directory Domain Services säkerhet ska styra åtkomsten till BHOLD-kärnan.                                                                                                                    | Markera kryss rutan. **Viktigt:** Installationen Miss kommer om den här kryss rutan inte är markerad.                                                                                                                                                                                                                   |
 | **Domän**                          | Anger den domän som innehåller det **tjänst konto** som du skapade när du installerade BHOLD-kärnan. Mer information finns i [BHOLD Core-installation](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | Domän namnet anges automatiskt av guiden. Ändra bara namnet om det är felaktigt. **Viktigt:** Ange domän namnet med hjälp av NetBIOS-namnet (Short), inte det fullständigt kvalificerade domän namnet (FQDN). Om FQDN för domänen till exempel är fabrikam.com anger du domän namnet som FABRIKAM. |
 | **Användarnamn**                        | Anger inloggnings namnet för BHOLD Core Service-användarkontot.                                                                                                                                                              | Skriv användar kontots namn här:                                                                                                                                                                                                                                                                                    |
 | **Lösenord**                        | Anger lösen ordet för tjänstens användar konto.                                                                                                                                                                           | Skriv lösen ordet här: **viktigt:** se till att behålla det här lösen ordet på en dold, säker plats.                                                                                                                                                                                                                  |
 
 ### <a name="fim-service-settings"></a>FIM-tjänstens inställningar
 
-| **Objekt**            | **Beskrivning**                                                                                                                                                                                                                               | **Värde**                                                                                           |
+| **Konfigurationsobjektet**            | **Beskrivning**                                                                                                                                                                                                                               | **Värde**                                                                                           |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
 | **Användare**            | Anger inloggnings namnet för ett konto med administratörs behörighet för FIM. Microsoft rekommenderar starkt att du inte använder kontot som är kopplat till rot användaren i BHOLD Core (som standard kontot som används för att installera BHOLD Core). | Skriv användar kontots namn här:                                                                   |
 | **Lösenord**        | Anger lösen ordet för FIM-administratörens användar konto.                                                                                                                                                                                 | Skriv lösen ordet här: **viktigt:** se till att behålla det här lösen ordet på en dold, säker plats. |
@@ -61,7 +61,7 @@ Dessutom måste du vara beredd att tillhandahålla den information som installat
 
 ### <a name="bhold-core-connection"></a>BHOLD Core-anslutning
 
-| **Objekt**               | **Beskrivning**                                                                                                                                                                                                                                                                                                                                                                               | **Värde**                                                                                           |
+| **Konfigurationsobjektet**               | **Beskrivning**                                                                                                                                                                                                                                                                                                                                                                               | **Värde**                                                                                           |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
 | **Domän**             | Anger namnet på domänen för det konto som anges i **användare**, nedan. Ange domänen i NetBIOS (Short)-format.                                                                                                                                                                                                                                                                   | Skriv användar kontots domän namn här?                                                            |
 | **Användare**               | Anger inloggnings namnet för kontot för **en BHOLD-användare som är ansvarig** för alla användare och roller och har behörighet att länka och ta bort länkar till användar roller. Microsoft rekommenderar starkt att du inte använder kontot som är kopplat till rot användaren i BHOLD Core (som standard kontot som används för att installera BHOLD Core). Det här kontot kan vara samma konto som du använder för att ansluta till FIM | Skriv användar kontots namn här:                                                                   |
@@ -81,7 +81,7 @@ Om du vill köra program filen som administratör högerklickar du på filen och
 
 ![köra MSI](media/bhold-integration-installation/cmd.png)
 
-## <a name="post-installation-tasks"></a>Uppgifter efter installation
+## <a name="post-installation-tasks"></a>Publicera installations uppgifter
 
 När du har installerat BHOLD FIM-integrering måste du konfigurera Microsoft SharePoint för att ge BHOLD-tjänstkontot plats-ägar behörighet. Om FIM-portalen har kon figurer ATS för att använda Secure Sockets Layer säkerhet (SSL) måste du också ändra filer som innehåller referenser till adresserna för de BHOLD-sidor som har lagts till i FIM-portalen.
 

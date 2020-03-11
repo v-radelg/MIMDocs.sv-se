@@ -4,19 +4,19 @@ description: Förbered CORP-domänen med befintliga eller nya identiteter som sk
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 09/13/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: dda6a05337e9a9778135fc7d833a38369540b3e0
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: c21228dad923d80ab63c255c1184b7de04a0ff3d
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64518187"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043740"
 ---
 # <a name="step-1---prepare-the-host-and-the-corp-domain"></a>Steg 1 – förbereda värden och CORP-domänen
 
@@ -159,7 +159,7 @@ I det här avsnittet ska du konfigurera de registerinställningar som krävs fö
    Restart-Computer
    ```
 
-Domänkontrollanten CORPDC startas om. Mer information om den här registerinställningen finns i [Felsöka sIDHistory-migrering mellan skogar med ADMTv2](http://support.microsoft.com/kb/322970).
+Domänkontrollanten CORPDC startas om. Mer information om den här registerinställningen finns i [Felsöka sIDHistory-migrering mellan skogar med ADMTv2](https://support.microsoft.com/kb/322970).
 
 ## <a name="prepare-a-corp-workstation-and-resource"></a>Förbereda en CORP-arbetsstation och -resurs
 

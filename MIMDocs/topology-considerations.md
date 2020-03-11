@@ -4,19 +4,19 @@ description: Förstå komponenterna i MIM 2016 och få förslag på hur du kan d
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/12/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 735dc357-dfba-4f68-a5b3-d66d6c018803
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: d9d749029d52c7e685e581ffe603aca63752ca3e
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 7f2d78b487e3c20fbd656aad37b67a6382b67df0
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73636999"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044335"
 ---
 # <a name="topology-considerations"></a>Topologiöverväganden
 Du kan distribuera Microsoft Identity Manager (MIM)-komponenter på en och samma server eller på flera servrar i flera olika konfigurationer. Vilken topologi du väljer för din distribution påverkar vilken prestanda du kan få ut från MIM. Denna artikel presenterar flera olika topologier som du kan överväga att implementera.

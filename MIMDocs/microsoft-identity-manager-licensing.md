@@ -4,19 +4,19 @@ description: Den här artikeln beskriver metoderna för licens Microsoft Identit
 keywords: ''
 author: markwahl-msft
 ms.author: mwahl
-manager: femila
+manager: daveba
 ms.date: 10/18/2019
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.reviewer: billmath
 ms.suite: ems
-ms.openlocfilehash: e0bfd868345b8e7dcc6a02e745d3ccbf632a6c58
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 62a6b936dc30b8593c8758a6158244d0f6dbbc4f
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73329291"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043026"
 ---
 # <a name="microsoft-identity-manager-2016-licensing-and-downloads"></a>Microsoft Identity Manager 2016-licensiering och nedladdningar
 
@@ -30,7 +30,7 @@ Microsoft Identity Manager 2016 licensieras per användare.  Informationen om li
 
 Microsoft Identity Manager 2016 ingår i Azure Active Directory Premium (P1 och P2), som är en del av Enterprise Mobility + Security.
 
-Azure AD Premium är tillgängligt via en [Microsoft Enterprise-avtal](https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx), [Open Volume License-programmet](https://www.microsoft.com/licensing/licensing-programs/open-license.aspx)och [Cloud solution providers](https://go.microsoft.com/fwlink/?LinkId=614968&clcid=0x409) -programmet. Azure- och Office 365-prenumeranter kan även köpa Azure Active Directory Premium P1 och P2 online.  Läs mer på [Azure Active Directory prissättning](https://azure.microsoft.com/pricing/details/active-directory/).
+Azure AD Premium är tillgängligt via en [Microsoft Enterprise-avtal](https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx), [Open Volume License-programmet](https://www.microsoft.com/licensing/licensing-programs/open-license.aspx)och [Cloud solution providers](https://go.microsoft.com/fwlink/?LinkId=614968&clcid=0x409) -programmet. Azure-och Office 365-prenumeranter kan också köpa Azure Active Directory Premium P1 och P2 online.  Läs mer på [Azure Active Directory prissättning](https://azure.microsoft.com/pricing/details/active-directory/).
 
 ### <a name="mim-cals"></a>MIM CAL
 
@@ -51,12 +51,12 @@ Om du startar en ny installation måste du ladda ned installationsfilerna för v
 |----------|-----------|---------------------   |-------------------|----------|--------------|
 |Synkronisering| Sync service (inklusive anslutning till AD) | Ja | `Synchronization Service` | |
 | Synkronisering | PCNS | Nej | `Password Change Notification Service` |  Installeras på domänkontrollanter |
-| Synkronisering | Anslutningar för LDAP, SQL, Web Services, PowerShell, Lotus Domino, Graph | Nej | E.t. | Distribuerad via Download Center |
+| Synkronisering | Anslutningar för LDAP, SQL, Web Services, PowerShell, Lotus Domino, Graph | Nej | Saknas | Distribuerad via Download Center |
 | Privilegierad åtkomsthantering | MIM-tjänst | Ja | `Service and Portal` | |
 | Självbetjäning | MIM-tjänsten, MIM-portalen | Ja | `Service and Portal` | |
 | Självbetjäning | Tillägg och tillägg | Nej | `Add-ins and extensions` | Installeras på slut användar datorer |
 | Självbetjäning | SCSM-rapportering | Nej | `Data Warehouse Support Scripts` | |
-| Självbetjäning | Hybrid rapporterings agent | Nej | E.t. | Distribuerad via Download Center |
+| Självbetjäning | Hybrid rapporterings agent | Nej | Saknas | Distribuerad via Download Center |
 | Självbetjäning | Språkpaket | Nej | `LANGUAGE Packs` | |
 | Certifikathantering | CM | Ja | `Certificate Management` | |
 | Certifikathantering | CM Mass klient | Nej | `CM Bulk Client` | |
@@ -84,7 +84,7 @@ För att avgöra vilka uppdateringsfiler som behövs, visar den här tabellen ko
 
 | Scenario | Komponent | Namn på DVD ISO-mapp | Namn på motsvarande uppdaterings korrigerings fil |
 |----------|-----------|-   |-------------------|----------|--------------|
-|Synkronisering| Synkroniseringstjänst | `Synchronization Service` | `MIMSyncService_x64*.msp` |
+|Synkronisering| Synkroniseringstjänsten | `Synchronization Service` | `MIMSyncService_x64*.msp` |
 | Självbetjäning | MIM-tjänsten, MIM-portalen | `Service and Portal` | `MIMService_x64*msp` |
 | Självbetjäning | Tillägg och tillägg | `Add-ins and extensions` | `MIMAddinsExtensions*msp` |
 | Självbetjäning | Språkpaket | `LANGUAGE Packs` | `LANGUAGE Packs.zip` |

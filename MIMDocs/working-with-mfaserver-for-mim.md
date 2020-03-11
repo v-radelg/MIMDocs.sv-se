@@ -4,17 +4,17 @@ description: Konfigurera Azure Multi-Factor Authentication-server som ett andra 
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/29/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: 39ebec3002f488077cfda28a5780b0c78c19f363
-ms.sourcegitcommit: 28a20aaa1f08b428cc1ae0eae43ae47de4d9d22a
+ms.openlocfilehash: 1dd87db01a5c1100c8206d82bedf96a8a5e702ad
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684099"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044318"
 ---
 # <a name="use-azure-multi-factor-authentication-server-to-activate-pam-or-sspr"></a>Använd Azure Multi-Factor Authentication-server för att aktivera PAM eller SSPR
 I följande dokument beskrivs hur du konfigurerar Azure MFA-servern som ett andra säkerhets lager när användarna aktiverar roller i Privileged Access Management eller lösen ords återställning via självbetjäning.
@@ -24,7 +24,7 @@ I följande dokument beskrivs hur du konfigurerar Azure MFA-servern som ett andr
 
 Artikeln nedan beskriver konfigurations uppdateringen och stegen för att aktivera flytt från Azure MFA SDK till Azure Multi-Factor Authentication-server.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 För att kunna använda Azure Multi-Factor Authentication-server med MIM behöver du:
 
@@ -89,7 +89,7 @@ När du har hämtat servern [installerar](https://docs.microsoft.com/azure/activ
 
 ## <a name="see-also"></a>Se även
 
--    [Komma igång med Azure Multi-Factor Authentication Server](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy)
+-    [Komma igång med Azure-Multi-Factor Authentication-server](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy)
 - [Vad är Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
 - [Använd anpassad Multi-Factor Authentication-API för att aktivera PAM eller SSPR](Working-with-custommfaserver-for-mim.md)
 - [Versions historik för MIM](./reference/version-history.md)

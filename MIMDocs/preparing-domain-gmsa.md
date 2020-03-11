@@ -4,19 +4,19 @@ description: Konfigurera grupphanterade tjänst konton i en domän för Microsof
 keywords: ''
 author: EugeneSergeev
 ms.author: esergeev
-manager: aashiman
+manager: daveba
 ms.date: 1/7/2019
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.reviewer: markwahl-msft
 ms.suite: ems
-ms.openlocfilehash: be5dc1e8615f56d3157a78891e80897e446eafab
-ms.sourcegitcommit: 32c7a46b2f8ed3f2f9ebc6f79a4ecb0019fe62e0
+ms.openlocfilehash: 32b346dd9cf99b617edfaca953389cba30d6681c
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77527930"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043519"
 ---
 # <a name="configure-a-domain-for-group-managed-service-accounts-gmsa-scenario"></a>Konfigurera en domän för gMSA-scenario (Group Managed Service accounts)
 
@@ -28,7 +28,7 @@ ms.locfileid: "77527930"
 
 Microsoft Identity Manager (MIM) fungerar med Active Directory-domänen (AD). Du bör redan ha en AD installerad och se till att du har en domänkontrollant i miljön för en domän du har administratörsbehörighet för.  Den här artikeln beskriver hur du konfigurerar grupphanterade tjänst konton i domänen för användning av MIM.
 
-## <a name="overview"></a>Översikt
+## <a name="overview"></a>Overview
 
 Grupphanterade tjänst konton eliminerar behovet av att regelbundet ändra lösen ord för tjänst konton. I och med lanseringen av MIM 2016 SP2 kan följande MIM-komponenter ha gMSA-konton konfigurerade för användning under installations processen:
 
@@ -61,7 +61,7 @@ Alla komponenter i MIM-distributionen behöver ha egna identiteter i domänen. D
 
 
 > [!NOTE]
-> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
+> Den här genomgången använder exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
 > - Domänkontrollantens namn- **DC**
 > - Domännamn – **contoso**
 > - Server namn för MIM-tjänst – **mimservice**

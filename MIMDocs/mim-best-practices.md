@@ -4,17 +4,17 @@ description: ''
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 01/05/2018
 ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 8987bc53af37b32b95b00c3df67d9581d4e47120
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 72b77034d5591d0bc2ab420f185acee719fe8324
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64518781"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043009"
 ---
 # <a name="microsoft-identity-manager-2016-best-practices"></a>Rekommenderade metoder för Microsoft Identity Manager 2016
 
@@ -127,7 +127,7 @@ Följande är rekommenderade metoder för att konfigurera Microsoft Exchange Ser
 
 - Konfigurera tjänstekontot så att det endast kan ta emot e-post från interna e-postadresser. Tjänstekontots postlåda ska specifikt aldrig kunna ta emot e-post från externa SMTP-servrar.
 
-#### <a name="to-configure-the-service-account"></a>För att konfigurera tjänstekontot
+#### <a name="to-configure-the-service-account"></a>Konfigurera tjänstkontot
 
 1.  I Exchange Management-konsolen väljer du **FIM-tjänstens tjänstkonto**.
 
@@ -281,7 +281,7 @@ Tjänstekontona bör vara begränsade för att kunna konfigurera servrarna som k
 
 -   Neka lokal inloggning
 
--   Neka åtkomst till den här datorn från nätverket
+-   Neka tillgång till den här datorn från nätverket
 
 Tjänstekontona bör inte vara medlem i den lokala administratörsgruppen.
 
@@ -358,7 +358,7 @@ Implementera SSL:
 
 29. Klicka på http://servername.
 
-30. Ändra http://servername till https://servername och klicka sedan på OK.
+30. Ändra http://servername till https://servernameoch klicka sedan på OK.
 
 31. Klicka på Start, klicka på Kör, skriv iisreset och klicka på OK.
 
@@ -550,7 +550,7 @@ Det finns 13 huvudattribut som tilldelas till alla resurstyper. Du bör inte på
 
 -   DeletedTime
 
--   Description
+-   Beskrivning
 
 -   DetectedRulesList • DisplayName
 

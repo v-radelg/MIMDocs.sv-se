@@ -4,17 +4,17 @@ description: Lär dig mer om hur du distribuerar Privileged Access Management me
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 08/18/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 347eda5872792872a9bb30357c45835303f92e01
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 521b96c3ef9cae5a5f9151ddf125cfb534ae0332
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64518523"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044029"
 ---
 # <a name="deploy-mim-pam-with-windows-server-2016"></a>Distribuera MIM PAM med Windows Server 2016
 
@@ -50,7 +50,7 @@ Genomför installationen enligt beskrivningen i guiden [för att komma igång](p
 
   - Ändringarna som beskrivs i ”Konfigurera granskning”(objekt #8) och ”Konfigurera registerinställningar” (objekt #10) **rekommenderas men är inte obligatoriska** när både CORP- och PRIV-domänkontrollanternas funktionsnivåer är konfigurerade för Windows Server 2016.
 
-- Om du väljer att använda Windows Server 2012 R2 som operativsystem för CORPDC, måste du installera snabbkorrigeringar 2919442, 2919355, [och uppdatera 3155495](http://support.microsoft.com/kb/3156418) på CORPDC.
+- Om du väljer att använda Windows Server 2012 R2 som operativsystem för CORPDC, måste du installera snabbkorrigeringar 2919442, 2919355, [och uppdatera 3155495](https://support.microsoft.com/kb/3156418) på CORPDC.
 
 - Följ instruktionerna i [Steg 2 - Förbereda PRIV-domänkontrollant](step-2-prepare-priv-domain-controller.md) med undantag av dessa justeringar:
 

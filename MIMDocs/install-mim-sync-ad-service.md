@@ -4,19 +4,19 @@ description: Använd hanteringsagenter och MIM-synkroniseringstjänsten för att
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/12/2017
 ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: 5e532b67-64a6-4af6-a806-980a6c11a82d
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 1627bae6aecdfc3d57261485de04a78feb264013
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 81cf34959ccdea5ad9eb463f85a25d26bc1d8ede
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73329330"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79042431"
 ---
 # <a name="install-mim-2016-synchronize-active-directory-and-mim-service"></a>Installera MIM 2016: synkronisera Active Directory och MIM-tjänsten
 
@@ -24,7 +24,7 @@ ms.locfileid: "73329330"
 > [« MIM-tjänst och portal](install-mim-service-portal.md)
 > 
 > [!NOTE]
-> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
+> Den här genomgången använder exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
 > - Namn på domänkontrollant – **mimservername**
 > - Domännamn – **contoso**
 > - Lösenord – <strong>Pass@word1</strong>
@@ -111,15 +111,15 @@ När du ska konfigurera en MIM-hanteringsagent måste du ange ett användarkonto
 
     | **Attribut för datakälla** | **Flödesriktning** | **Attribut för metaversum** |
     |-|-|-|
-    | Kontonamn | Export | kontonamn |
-    | Visningsnamn | Export | visningsnamn |
-    | Domain | Export | domän |
-    | E-post | Export | e-post |
-    | EmployeeID | Export | anställnings-ID |
-    | Anställningstyp | Export | anställningstyp |
-    | Förnamn | Export | förnamn |
-    | Efternamn | Export | efternamn |
-    | Objekt-SID | Export | objekt-SID |
+    | Kontonamn | Exportera | kontonamn |
+    | DisplayName | Exportera | visningsnamn |
+    | Domain | Exportera | domän |
+    | E-post | Exportera | e-post |
+    | EmployeeID | Exportera | anställnings-ID |
+    | Anställningstyp | Exportera | anställningstyp |
+    | Förnamn | Exportera | förnamn |
+    | Efternamn | Exportera | efternamn |
+    | Objekt-SID | Exportera | objekt-SID |
 
     -   Välj **Grupp** som typ av datakällobjekt och metaversumobjekt.
 
@@ -137,20 +137,20 @@ När du ska konfigurera en MIM-hanteringsagent måste du ange ett användarkonto
 
     | **Attribut för datakälla** | **Flödesriktning** | **Attribut för metaversum** |
     |-|-|-|
-    | Kontonamn | Export | kontonamn |
-    | Visningsnamn | Export | visningsnamn |
-    | Domain | Export | domän |
-    | E-post | Export | e-post |
-    | Smeknamn för e-post | Export | smeknamn för e-post |
-    | Medlem | Export | medlem |
-    | Objekt-SID | Export | objekt-SID |
-    | Omfång | Export | omfång |
-    | Typ | Export | typ |
-    | Lägg till arbetsflöde för medlemskap | Export | lägg till arbetsflöde för medlemskap |
-    | Medlemskap låst | Export | medlemskap låst |
+    | Kontonamn | Exportera | kontonamn |
+    | DisplayName | Exportera | visningsnamn |
+    | Domain | Exportera | domän |
+    | E-post | Exportera | e-post |
+    | Smeknamn för e-post | Exportera | smeknamn för e-post |
+    | Medlem | Exportera | medlem |
+    | Objekt-SID | Exportera | objekt-SID |
+    | Omfång | Exportera | omfång |
+    | Typ | Exportera | typ |
+    | Lägg till arbetsflöde för medlemskap | Exportera | lägg till arbetsflöde för medlemskap |
+    | Medlemskap låst | Exportera | medlemskap låst |
     | Kontonamn | Importera | kontonamn |
     | Visad ägare | Importera | visad ägare |
-    | Visningsnamn | Importera | visningsnamn |
+    | DisplayName | Importera | visningsnamn |
     | Smeknamn för e-post | Importera | smeknamn för e-post |
     | Medlem | Importera | medlem |
     | Omfång | Importera | omfång |
@@ -236,7 +236,7 @@ Den här tabellen visar de fem körningsprofiler du ska skapa för ADMA-anslutni
 | Profil2 | Fullständig synkronisering |
 | Profil3 | Deltaimport (endast mellanlagring) |
 | Profil4 | Deltasynkronisering |
-| Profil5 | Export |
+| Profil5 | Exportera |
 
 För att skapa körningsprofiler för ADMA-anslutningen:
 
@@ -268,7 +268,7 @@ I den här tabellen visas de fem matchande körningsprofilerna för MIMMA-anslut
 | Profil2 | Fullständig synkronisering |
 | Profil3 | Deltaimport (endast mellanlagring) |
 | Profil4 | Deltasynkronisering |
-| Profil5 | Export |
+| Profil5 | Exportera |
 
 Skapa körningsprofiler för MIMMA-anslutningen genom att:
 
@@ -363,7 +363,7 @@ Kör en fullständig synkroniseringscykel på den här anslutningen. Den fullst�
 
 - Fullständig import
 - Fullständig synkronisering
-- Export
+- Exportera
 - Deltaimport
 
 Följ dessa steg för att köra var och en av de fyra körningsprofilerna.
@@ -410,7 +410,7 @@ För att initiera Active Directory-anslutningen måste du köra en fullständig 
 
 För att fylla MIM-tjänstdatabasen med objekten måste du köra en synkroniseringscykel på MIMMA-anslutningen. Cykeln består av:
 
-- Export
+- Exportera
 - Fullständig import
 - Fullständig synkronisering
 

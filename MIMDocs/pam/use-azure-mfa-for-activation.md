@@ -5,17 +5,17 @@ keywords: ''
 author: billmath
 ms.author: billmath
 ms.reviewer: fimguy
-manager: mtillman
+manager: daveba
 ms.date: 07/06/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
-ms.openlocfilehash: 6c3a2d87037a818a9a8784b0d4a7b86227fcaef4
-ms.sourcegitcommit: 28a20aaa1f08b428cc1ae0eae43ae47de4d9d22a
+ms.openlocfilehash: 512a1887329f9ec5c93fd69f0ce0b22495ba009c
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684065"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043553"
 ---
 # <a name="using-azure-mfa-for-activation"></a>Aktivera med hjälp av Azure MFA
 > [!IMPORTANT]
@@ -33,7 +33,7 @@ Om ingen kontroll är aktiverad aktiveras kandidatanvändare automatiskt för si
 
 Microsoft Azure Multi-Factor Authentication (MFA) är en autentiseringstjänst med vilken användare måste bekräfta sina inloggningsförsök via mobilapp, telefonsamtal eller SMS. Den kan användas med Microsoft Azure Active Directory och som en tjänst för molnbaserade och lokala företagsprogram. I PAM-scenariot tillhandahåller Azure MFA en ytterligare autentiseringsmekanism. Azure MFA kan användas för auktorisering, oavsett hur en användare autentiseras mot Windows-domänen.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 För att kunna använda Azure MFA med MIM behöver du:
 
@@ -50,7 +50,7 @@ I det här avsnittet konfigurerar du Azure MFA-providern i Microsoft Azure Activ
 
 2.  Klicka på **Ny** längst ned till vänster.
 
-3.  Klicka på **App Services &gt; Active Directory &gt; Leverantör av multifaktorautent. &gt; Snabbregistrering**.
+3.  Klicka på **App Services > Active Directory > Leverantör av multifaktorautent. > Snabbregistrering**.
 
 4.  I fältet **Namn** skriver du **PAM**, och i fältet Användningsmodell väljer du Per aktiverad användare. Om du redan har en Azure AD-katalog väljer du den katalogen. Klicka på **Skapa**.
 
@@ -136,7 +136,7 @@ Azure MFA kan inaktiveras för en roll genom att parametern "-MFAEnabled 0" ange
 
 Följande händelser kan du hitta i händelseloggen för Privileged Access Management:
 
-| ID  | Allvarlighetsgrad | Genererat av | Description |
+| ID  | Allvarlighetsgrad | Genererat av | Beskrivning |
 |-----|----------|--------------|-------------|
 | 101 | Fel       | MIM-tjänst            | Användaren slutförde inte Azure MFA (t.ex. svarade inte i telefon) |
 | 103 | Information | MIM-tjänst            | Användaren slutförde Azure MFA vid aktivering                       |

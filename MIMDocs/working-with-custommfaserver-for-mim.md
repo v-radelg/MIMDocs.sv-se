@@ -5,16 +5,16 @@ keywords: ''
 author: billmath
 ms.author: billmath
 ms.reviewer: fimguy
-manager: mtillman
+manager: daveba
 ms.date: 09/04/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 9ce531fb3f6f9c831ecdb716f006f947611871e6
-ms.sourcegitcommit: 1ca298d61f6020623f1936f86346b47ec5105d44
+ms.openlocfilehash: b157b2a8716d20ce3b472d5655d393e64f2baa6b
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256605"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044369"
 ---
 # <a name="use-a-custom-multi-factor-authentication-provider-via-an-api-during-pam-role-activation-or-in-sspr"></a>Använd en anpassad Multi-Factor Authentication-provider via ett API vid aktivering av PAM-rollen eller i SSPR
 
@@ -27,7 +27,7 @@ MIM-kunder har två ytterligare alternativ:
 
 Den här artikeln beskriver hur du använder MIM med en anpassad Multi-Factor Authentication-provider, via ett API och en integrerings-SDK som utvecklats av kunden.  
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 För att kunna använda ett anpassat Multi-Factor Authentication-provider-API med MIM behöver du:
 
@@ -156,6 +156,6 @@ När tjänsten har startats om använder du SSPR och/eller PAM för att validera
 
 ## <a name="next-steps"></a>Nästa steg
 
-- [Komma igång med Azure Multi-Factor Authentication Server](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy)
+- [Komma igång med Azure-Multi-Factor Authentication-server](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy)
 - [Vad är Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
 - [Versions historik för MIM](./reference/version-history.md)

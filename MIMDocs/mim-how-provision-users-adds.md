@@ -4,17 +4,17 @@ description: Gå igenom processen för att skapa användare i ADDS med Microsoft
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 08/18/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 77f1eb5d8355472c7aee7bc9f389ca8b24ab76a9
-ms.sourcegitcommit: 1ca298d61f6020623f1936f86346b47ec5105d44
+ms.openlocfilehash: 149339a6e1029f01378a518a98029c1d588de6f9
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256622"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044182"
 ---
 # <a name="how-do-i-provision-users-to-ad-ds"></a>Hur etablerar jag användare i AD DS
 
@@ -251,8 +251,8 @@ Följande tabeller visar konfiguration av synkroniseringsregeln för etablering 
 
 | Konfiguration av synkroniseringsregel                                                                         |                                                                             |                                                           
 |------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------|
-| Name                                                                                                       | Utgående synkroniseringsregel för Active Directory-användare                         |                                                          
-| Description                                                                                               |                                                                             |                                                           
+| Namn                                                                                                       | Utgående synkroniseringsregel för Active Directory-användare                         |                                                          
+| Beskrivning                                                                                               |                                                                             |                                                           
 | Prioritet                                                                                                | 2                                                                           |                                                           
 | Dataflödesriktning   | Utgående             |       
 | Beroende       |         |                                         
@@ -302,14 +302,14 @@ Målet med AD-etableringsarbetsflödet är att lägga till synkroniseringsregeln
 
 | Arbetsflödeskonfiguration               |                                                                 |
 |--------------------------------------|-----------------------------------------------------------------|
-| Name                                 | Etableringsarbetsflöde för Active Directory-användare                     |
-| Description                          |                                                                 |
+| Namn                                 | Etableringsarbetsflöde för Active Directory-användare                     |
+| Beskrivning                          |                                                                 |
 | Arbetsflödestyp                        | Action                                                          |
 | Kör vid principuppdatering                 | Falskt                                                           |
 
 | Synkroniseringsregel                 |                                                                 |
 |--------------------------------------|-----------------------------------------------------------------|
-| Name                                 | Utgående synkroniseringsregel för Active Directory-användare             |
+| Namn                                 | Utgående synkroniseringsregel för Active Directory-användare             |
 | Action                               | Lägg till                                                             |
 
 
@@ -321,11 +321,11 @@ Den hanteringsprincipregel (MPR) som krävs har typen Uppsättningsövergång oc
 
 | MPR-konfiguration                    |                                                             |
 |--------------------------------------|-------------------------------------------------------------|
-| Name                                 | Hanteringsprincipregel för etablering av AD-användare                 |
-| Description                          |                                                             |
+| Namn                                 | Hanteringsprincipregel för etablering av AD-användare                 |
+| Beskrivning                          |                                                             |
 | Typ                                 | Uppsättningsövergång                                              |
 | Ger behörigheter                   | Falskt                                                       |
-| Inaktiverat                             | Falskt                                                       |
+| Inaktiverad                             | Falskt                                                       |
 
 | Definition av övergång                |                                                             |
 |--------------------------------------|-------------------------------------------------------------|
@@ -357,7 +357,7 @@ Följande tabell visar de körningsprofiler som ingår i initieringsfasen.  Kör
 |---------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|----------------------|
 | 1                                                                                                             | Fabrikam FIMMA                                        | Fullständig import          |
 | 2                                                                                                             |                                                       | Fullständig synkronisering |
-| 3                                                                                                             |                                                       | Export               |
+| 3                                                                                                             |                                                       | Exportera               |
 | 4                                                                                                             |                                                       | Deltaimport         |
 |                                                                                                               |                                                       |                      |
 | 5                                                                                                             | Fabrikam ADMA                                         | Fullständig import          |
@@ -499,8 +499,8 @@ Kontrollera att exempelanvändaren har etablerats i AD DS genom att öppna organ
 
 ![verifiera att användaren finns i organisationsobjektet FIMObjects](media/how-provision-users-adds/image033.jpg)
 
-<a name="summary"></a>Sammanfattning
-=======
+## <a name="summary"></a>Sammanfattning
+
 
 Syftet med det här dokumentet är att presentera de viktigaste byggstenarna för att synkronisera en användare i MIM med AD DS. Under det första testet bör du börja med det lägsta antalet attribut som krävs för att slutföra en uppgift och lägga till fler attribut i scenariot när de allmänna stegen fungerar som förväntat. Genom att se till att komplexiteten är så låg som möjligt förenklas felsökningsprocessen.
 
@@ -512,11 +512,7 @@ En beskrivning av hur du kan ta bort dessa objekt från testmiljön finns i [En 
 I ett normalt synkroniseringsscenario som omfattar AD DS som synkroniseringsmål är MIM inte auktoritativt för alla attribut för ett objekt. När du exempelvis hanterar användarobjekt i AD DS med hjälp av FIM måste domänen och objectSID-attributen som minst bidras till av AD DS-hanteringsagenten.
 Kontonamn, domän och objectSID-attribut krävs om du vill göra det möjligt för en användare att logga in på FIM-portalen. En ytterligare ingående synkroniseringsregel krävs för AD DS-anslutarplatsen för att fylla i dessa attribut från AD DS. När du hanterar objekt med flera källor för attributvärden måste du se till att du konfigurerar attributflödets prioritet korrekt. Om attributflödets prioritet inte är korrekt konfigurerad blockerar synkroniseringsmotorn attribut från att fyllas i. Mer information om prioritet för attributflödet finns i artikeln [Om prioritet för attributflöde](https://go.microsoft.com/FWLink/p/?LinkId=189675).
 
-<a name="see-also"></a>Se även
-=========
-
-<a name="other-resources"></a>Andra resurser
----------------
+## <a name="next-steps"></a>Nästa steg
 
 [Använda FIM för att aktivera eller inaktivera konton i Active Directory](https://go.microsoft.com/FWLink/p/?LinkId=189670)
 

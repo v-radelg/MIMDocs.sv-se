@@ -4,19 +4,19 @@ description: Läs mer om hur du distribuerar Certificate Manager-appen, så att 
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/16/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 66060045-d0be-4874-914b-5926fd924ede
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 8ff9edce6da865418e300095ff0827853a35d4eb
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 2adf1152aaf874d0ff0d93079fb4bfbfcf731b60
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64517207"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044301"
 ---
 # <a name="mim-certificate-manager-windows-store-application-deployment"></a>MIM Certificate Manager Windows Store program distribution
 
@@ -76,13 +76,13 @@ Du skapar en certifikatmall för CM-appen på samma sätt som du normalt skapar 
 
 När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta bort det virtuella smartkortet och att ta bort insamlade data. CM-appen kan inte hantera insamlade data, så det är viktigt att inaktivera den. Det gör du så här:
 
-1.  Logga in på CM-portalen som en användare med administratörsbehörighet.
+1.  Logga in på CM-portalen som användare med administratörsbehörighet.
 
 2.  Gå till administration &gt; hantera mallar. Kontrol lera att rutan är markerad bredvid **MIM cm exempel på smartkorts logg i profil mal len** och klicka på Kopiera en vald profil mall.
 
 3.  Skriv in profilmallens namn och klicka på **OK**.
 
-4.  På nästa skärm klickar du på **Lägg till ny certifikatmall**. Se till att markera kryssrutan bredvid namnet på Certifikatutfärdaren.
+4.  På nästa sida klickar du på **Lägg till ny certifikatmall** och se till att kryssrutan bredvid certifikatutfärdarens namn är markerad.
 
 5.  Markera rutan bredvid namnet på profilmallen **Inloggning** och klicka på **Lägg till**.
 

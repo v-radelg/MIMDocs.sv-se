@@ -4,19 +4,19 @@ description: Lär dig att använda Certifikathanteraren för att skapa och förn
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/12/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: fed5ada9-d80f-4825-aad7-4172ac5d71d3
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: e9454643f425a6bd306c2828479129312d5a5d4f
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: b8a1b55ed836f46c184941ccf6ec25ef63ad4c30
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64516643"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79042108"
 ---
 # <a name="create-software-certificates-with-certificate-manager"></a>Skapa programcertifikat med Certifikathanteraren
 För att registrera och förnya programcertifikat behöver du inte vara administratör och du behöver inte heller ha ett virtuellt smartkort. Det bör påpekas att du vid en viss tidpunkt kommer att uppmanas tillåta en certifikatåtgärd, vilket är normalt.
@@ -73,13 +73,13 @@ För att registrera och förnya programcertifikat behöver du inte vara administ
 
 ## <a name="create-the-profile-template"></a>Skapa profilmallen
 
-1.  Logga in på CM-portalen som en användare med administratörsbehörighet.
+1.  Logga in på CM-portalen som användare med administratörsbehörighet.
 
 2.  Gå till **Administration &gt; Hantera profilmallar** och markera rutan bredvid **MIM CM Exempelprofilmall för smartkort** och klicka sedan på **Kopiera en markerad profilmall**.
 
 3.  Skriv in profilmallens namn och klicka på **OK**.
 
-4.  På nästa skärm klickar du på **Lägg till ny certifikatmall**. Se till att markera kryssrutan bredvid namnet på Certifikatutfärdaren.
+4.  På nästa sida klickar du på **Lägg till ny certifikatmall** och se till att kryssrutan bredvid certifikatutfärdarens namn är markerad.
 
 5.  Markera kryssrutan bredvid namnet på det arkiverade programcertifikatet och klicka på **Lägg till**.
 

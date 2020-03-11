@@ -4,17 +4,17 @@ description: Kom igång med MIM 2016-komponenterna genom att installera och konf
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 09/14/2017
 ms.topic: conceptual
 ms.assetid: ''
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 3749b74fd867601ee05f8e45d273ad2de9144b5b
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: f120709e517d82d4f94e72f4d0a44361f5552a1c
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68701426"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79042312"
 ---
 # <a name="microsoft-bhold-suite-concepts-guide"></a>Koncept guide för Microsoft BHOLD Suite
 
@@ -27,7 +27,7 @@ Den här guiden hjälper dig att förstå hur BHOLD Suite fungerar med MIM och o
 - Rollbaserad åtkomstkontroll
 - Attestering
 - Analytics
-- Rapporter
+- Rapportering
 - Åtkomst hanterings anslutning
 - MIM-integrering
 
@@ -138,7 +138,7 @@ När modell generatorn skapar dessa roller i roll modellen kan du exportera roll
 I föregående avsnitt beskrivs de grundläggande funktionerna i rollbaserad åtkomst kontroll (RBAC) i BHOLD. Det här avsnittet beskriver ytterligare funktioner i BHOLD som ger förbättrad säkerhet och flexibilitet för organisationens implementering av RBAC. Det här avsnittet innehåller översikter över följande BHOLD-funktioner:
 
 - Kardinalitet
-- Isolering av uppgifter
+- Separering av uppgifter
 - Kontext-anpassningsbara behörigheter
 - Attribut-baserad auktorisering
 - Flexibla attributtyper
@@ -164,7 +164,7 @@ Du kan konfigurera en användare så att den begränsar följande:
 - Det maximala antalet roller som kan länkas till användaren
 - Det maximala antalet behörigheter som kan tilldelas användaren via roll tilldelningar
 
-#### <a name="separation-of-duties"></a>Isolering av uppgifter
+#### <a name="separation-of-duties"></a>Separering av uppgifter
 
 Separering av uppgifter (SoD) är en affärs princip som kan förhindra att personer får möjlighet att utföra åtgärder som inte ska vara tillgängliga för en enskild person. En medarbetare ska till exempel inte kunna begära en betalning och godkänna betalningen. Principen för SoD gör det möjligt för organisationer att implementera ett system med kontroller och balanser för att minimera deras exponering för risk från medarbetares fel eller fel uppförande.
 
@@ -242,7 +242,7 @@ Regel filtren kan vara av tre typer och använder operatörer som är speciella 
 - Attribut
   - < och >
   - = och! =
-  - **Contains**
+  - **Ingår**
   - **Innehåller inte**
 - Antal
   - < och >
@@ -298,7 +298,7 @@ Som tidigare nämnts kan du kombinera regler till en ruleset, vilket gör det en
 
 Du kan också definiera en uppsättning globala filter som, när det är aktiverat, gäller för alla regler som testas. Om du ofta behöver undanta en viss delmängd poster när du testar regler i olika rulesets, kan du ange globala filter som du kan aktivera eller inaktivera vid behov.
 
-## <a name="reporting"></a>Rapporter
+## <a name="reporting"></a>Rapportering
 
 BHOLD repor ting-modulen ger dig möjlighet att visa information i roll modellen via en rad olika rapporter. BHOLD repor ting-modulen innehåller en omfattande uppsättning inbyggda rapporter, och innehåller en guide som du kan använda för att skapa både grundläggande och avancerade anpassade rapporter. När du kör en rapport kan du direkt Visa resultaten eller Spara resultaten i en Microsoft Excel-fil (. xlsx). Om du vill visa den här filen med Microsoft Excel 2000, Microsoft Excel 2002 eller Microsoft Excel 2003 kan du hämta och installera Microsoft Office Compatibility Pack för Word-, Excel-och PowerPoint-filformat.
 
@@ -309,11 +309,11 @@ Kategorier som omfattas av de inbyggda rapporterna innehåller följande:
 
 - Administration
 - Attestering
-- Kontroller
+- Kontrollerar
 - Ankomstreg Access Control
 - Loggning
 - Modell
-- Statistik
+- uppgifterna
 - Arbetsflöde
 
 Du kan skapa rapporter och lägga till dem i dessa kategorier, eller så kan du definiera egna kategorier där du kan placera anpassade och inbyggda rapporter.

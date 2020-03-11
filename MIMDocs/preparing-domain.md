@@ -4,19 +4,19 @@ description: Skapa en Active Directory-domänkontrollant innan du installerar MI
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/26/2017
 ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 4d1e555de6c926c65b76d01c341becb383b8930b
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 70ac40d38af06e6be98e00caf1dc73630b62334e
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73329346"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043485"
 ---
 # <a name="set-up-a-domain"></a>Konfigurera en domän
 
@@ -32,7 +32,7 @@ Den här artikeln vägleder dig igenom stegen för att förbereda domänen så a
 Alla komponenter i MIM-distributionen behöver ha egna identiteter i domänen. Detta omfattar MIM-komponenter som Service och Sync, samt SharePoint och SQL.
 
 > [!NOTE]
-> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
+> Den här genomgången använder exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
 > - Domänkontrollantens namn – **corpdc**
 > - Domännamn – **contoso**
 > - Server namn för MIM-tjänst – **corpservice**

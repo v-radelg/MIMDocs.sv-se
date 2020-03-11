@@ -3,16 +3,16 @@ title: MIM Service Dynamic Logging (Dynamisk loggning med MIM-tjänsten) | Micro
 description: Aktivera dynamisk loggning med MIM-tjänsten utan att behöva starta om hanteringstjänsten
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/29/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 90ef2ab63be3914d1d48c7319821177e7e62f9e0
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 69ebe774ddea0176fb26ef74b8f4352e4bb5d039
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68701302"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79042176"
 ---
 # <a name="mim-sp1-4414360--service-dynamic-logging"></a>Tjänsten MIM SP1 (4.4.1436.0) –  dynamisk loggning
 
@@ -49,7 +49,7 @@ Om du vill visa spårningen kan du använda [verktyget service spårnings visare
 
  ![Skärmbild av visningsverktyget för tjänstspårning](media/mim-service-dynamic-logging/screen04.png)
 
-# <a name="updates-build-45xx-or-greater"></a>Uppdateringar: build 4.5. x. x eller senare
+## <a name="updates-build-45xx-or-greater"></a>Uppdateringar: build 4.5. x. x eller senare
 
 I build 4.5. x. x har vi ändrat loggnings funktionen för att ange standard loggnings nivån **"varning"** . Tjänsten skriver meddelanden i två filer ("00"-och "01"-index läggs till före tillägget). Filerna finns i katalogen C:\Program Files\Microsoft Forefront Identity Manager\2010\Service. När filen överskrider max storleken börjar tjänsten skriva i en annan fil. Om det finns en annan fil kommer den att skrivas över. Den maximala standard storleken för filen är 1 GB. Om du vill ändra den maximala standard storleken är det nödvändigt att lägga till parametern **"maxOutputFileSizeKB"** med värdet Max fil storlek i KB till lyssnare (se exemplet nedan) och starta om MIM-tjänsten. När tjänsten startas lägger den till loggar i mer nyligen använda fil (om gränsen för utrymme överskrids skrivs den äldsta filen över). 
 

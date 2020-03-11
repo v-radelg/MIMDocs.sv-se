@@ -4,19 +4,19 @@ description: Planera Microsoft Identity Manager 2016 i TLS 1,2-miljö
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/26/2017
 ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: b574a9c8536a460cdddf57131a821775672c082a
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: f8d0be0cb9ffa0f32415f11b407954cb0c985024
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73383956"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043451"
 ---
 # <a name="planning-mim-2016-sp2-in-tls-12-or-fips-mode-environments"></a>Planera MIM 2016 SP2 i miljöer med TLS 1,2 eller FIPS-läge
 

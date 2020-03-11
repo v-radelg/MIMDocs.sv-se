@@ -4,19 +4,19 @@ description: Läs mer om nivåmodellen som segregerar ditt system baserat på s�
 keywords: ''
 author: billmath
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 08/30/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: c6e3cd02-1e32-4194-a8ed-3a0b3d022a43
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 8e7b7217714f0ef74c1d959eb51dac07018d6e77
-ms.sourcegitcommit: a4f77aae75a317f5277d7d2a3187516cae1e3e19
+ms.openlocfilehash: 4fb5689400d170adc19f15cbbc2d45915cb39fe3
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64517842"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79043604"
 ---
 # <a name="tier-model-for-partitioning-administrative-privileges"></a>Nivåmodell för partitionering av administratörsbehörighet
 
@@ -26,7 +26,7 @@ I den här artikeln beskrivs en säkerhetsmodell som är avsedd att skydda mot r
 
 Användare, tjänster och programkonton som beviljas permanent administratörsbehörighet för skogar i Windows Server Active Directory (AD) medför betydande risker för organisationens mål och verksamhet. Dessa konton är ofta riktade mot angripare eftersom angriparen har behörighet att ansluta till andra servrar eller program i domänen.
 
-Med nivåmodellen delas administratörer upp utifrån vilka resurser de hanterar. Administratörer med kontroll över användararbetsstationer separeras från de som styr program eller hanterar företagsidentiteter. Läs mer om den här modellen i [referensmaterialet för att skydda privilegierad åtkomst](http://aka.ms/tiermodel).
+Med nivåmodellen delas administratörer upp utifrån vilka resurser de hanterar. Administratörer med kontroll över användararbetsstationer separeras från de som styr program eller hanterar företagsidentiteter. Läs mer om den här modellen i [referensmaterialet för att skydda privilegierad åtkomst](https://aka.ms/tiermodel).
 
 ## <a name="restricting-credential-exposure-with-logon-restrictions"></a>Begränsa exponeringen av autentiseringsuppgifter med inloggningsbegränsningar
 
@@ -38,7 +38,7 @@ Vanligen måste man omforma de administrativa metoderna för att minska risken f
 
 Nästa steg är att implementera inloggningsbegränsningar och aktivera processer och metoder för att uppfylla kraven för nivåmodellen. Helst bör exponering av autentiseringsuppgifter också reduceras till det lägsta privilegium som krävs för rollen inom varje nivå.
 
-Inloggningsbegränsningar bör tillämpas för att säkerställa att konton med höga privilegier inte har åtkomst till mindre säkra resurser. Exempel:
+Inloggningsbegränsningar bör tillämpas för att säkerställa att konton med höga privilegier inte har åtkomst till mindre säkra resurser. Till exempel:
 
 - Domänadministratörer (nivå 0) kan inte logga in på företagsservrar (nivå 1) och standardanvändares arbetsstationer (nivå 2).
 - Serveradministratörer (nivå 1) kan inte logga in på standardanvändare arbetsstationer (nivå 2).
@@ -49,7 +49,7 @@ Inloggningsbegränsningar bör tillämpas för att säkerställa att konton med 
 Inloggningsbegränsningar kan tillämpas med:
 
 - Grupprincipbegränsningar för inloggningsrättigheter, bland annat:
-    - Neka åtkomst till den här datorn från nätverket
+    - Neka tillgång till den här datorn från nätverket
     - Neka inloggning som batchjobb
     - Neka att logga in som en tjänst
     - Neka lokal inloggning
