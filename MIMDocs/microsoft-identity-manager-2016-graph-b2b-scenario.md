@@ -4,17 +4,17 @@ author: billmath
 description: Microsoft Graph koppling är en extern användares livs cykel hantering för AD-konto. I det här scenariot har en organisation bjudit in gäster till sin Azure AD-katalog och vill ge gästarna till gång till lokala Windows-integrerade autentiseringar eller Kerberos-baserade program
 keywords: ''
 ms.author: billmath
-manager: mtillman
+manager: daveba
 ms.date: 10/02/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: ba70cd299f2ebec31555bb40b935a6b54779d198
-ms.sourcegitcommit: 1ca298d61f6020623f1936f86346b47ec5105d44
+ms.openlocfilehash: 2f91a5c24df5475130755574c77b536f57e64d24
+ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256639"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79044250"
 ---
 <a name="azure-ad-business-to-business-b2b-collaboration-with-microsoft-identity-managermim-2016-sp1-with-azure-application-proxy"></a>Azure AD Business-to-Business (B2B)-samarbete med Microsoft Identity Manager (MIM) 2016 SP1 med Azure Application Proxy
 ============================================================================================================================
@@ -78,7 +78,7 @@ Välj **Graph (Microsoft)**  och ge den ett beskrivande namn.
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/d95c6b2cc7951b607388cbd25920d7d0.png)
 
-### <a name="connectivity"></a>Anslutning
+### <a name="connectivity"></a>Anslutningar
 
 På sidan anslutningar måste du ange Graph API version. Produktions klara PAI är **V 1,0**och icke-produktion är **beta**.
 
@@ -100,7 +100,7 @@ På sidan partitioner och hierarkier väljer du alla namn områden med objekt so
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/72f0adc789ed78c66d066768146fb874.png)
 
-#### <a name="select-object-types"></a>Välj objekttyper
+#### <a name="select-object-types"></a>Välj objekt typer
 
 På sidan objekt typer väljer du de objekt typer som du tänker importera. Du måste välja minst användare.
 
@@ -130,19 +130,19 @@ På sidan Konfigurera fäst punkt krävs ett obligatoriskt steg när du konfigur
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/9377ab7b760221517a431384689c8c76.png)
 
-#### <a name="configure-connector-filter"></a>Konfigurera anslutningsfilter
+#### <a name="configure-connector-filter"></a>Konfigurera anslutnings filter
 
 På sidan Konfigurera anslutnings filter kan du använda MIM för att filtrera bort objekt baserat på attribut filter. I det här scenariot för B2B är målet att bara hämta användare med värdet för det `userType`-attribut som är lika med `Guest`, och inte användare med userType som är lika med `member`.
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/d90691fce652ba41c7a98c9a863ee710.png)
 
-#### <a name="configure-join-and-projection-rules"></a>Konfigurera anslutnings- och projektionsregler
+#### <a name="configure-join-and-projection-rules"></a>Konfigurera regler för anslutning och projektion
 
 Den här guiden förutsätter att du skapar en Synkroniseringsregel.  När du konfigurerar kopplings-och projektions regler hanteras av en Synkroniseringsregel, behöver du inte identifiera en koppling och projektion på själva kopplingen. Lämna standard och klicka på OK.
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/34896440ae6ad404e824eb35d8629986.png)
 
-#### <a name="configure-attribute-flow"></a>Konfigurera attributflöde
+#### <a name="configure-attribute-flow"></a>Konfigurera Attribute Flow
 
 Den här guiden förutsätter att du skapar en Synkroniseringsregel.  Projektion behövs inte för att definiera Attribute-flödet i MIM Sync, eftersom det hanteras av den Synkroniseringsregel som skapas senare. Lämna standard och klicka på OK.
 
@@ -243,9 +243,9 @@ Flödes regler:
 |                       |                           | [mail⇒mail](javascript:void(0);)                                      |
 |                       |                           | [sn⇒sn](javascript:void(0);)                                          |
 |                       |                           | [userPrincipalName⇒userPrincipalName](javascript:void(0);)            |
-| **Y**                 |                           | [”CN =” + uid + ”, OU = B2BGuest, DC = contoso, DC = com” ⇒dn](javascript:void(0);) |
-| **Y**                 |                           | [RandomNum (0,999) + userPrincipalName⇒unicodePwd](javascript:void(0);)  |
-| **Y**                 |                           | [262656⇒userAccountControl](javascript:void(0);)                      |
+| **Ja**                 |                           | [”CN =” + uid + ”, OU = B2BGuest, DC = contoso, DC = com” ⇒dn](javascript:void(0);) |
+| **Ja**                 |                           | [RandomNum (0,999) + userPrincipalName⇒unicodePwd](javascript:void(0);)  |
+| **Ja**                 |                           | [262656⇒userAccountControl](javascript:void(0);)                      |
 
 ### <a name="optional-synchronization-rule-import-b2b-guest-user-objects-sid-to-allow-for-login-to-mim"></a>Valfri Synkroniseringsregel: importera B2B-gäst användar objekt SID för att tillåta inloggning till MIM 
 
@@ -314,6 +314,6 @@ När alla har kon figurer ATS, har du B2B-användar inloggning och kan se progra
 
 [Funktionsreferens för FIM 2010](https://technet.microsoft.com/library/ff800820(v=ws.10).aspx)
 
-[Ge säker fjärråtkomst till lokala program](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)
+[Så här ger du säker fjärråtkomst till lokala program](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)
 
 [Hämta Microsoft Identity Manager Connector för Microsoft Graph](https://go.microsoft.com/fwlink/?LinkId=717495)
