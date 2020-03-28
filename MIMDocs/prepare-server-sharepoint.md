@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 7fb65eec7a42da94c4f27a30e59c09739279e882
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.openlocfilehash: 6597a7b364c1b7fa023e78bef917163ea2c19dac
+ms.sourcegitcommit: 87f94edf26fdb7f2c65c06c22cd0bc80d2f20450
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79043536"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80374299"
 ---
 # <a name="set-up-an-identity-management-server-sharepoint"></a>Konfigurera en server för identitetshantering: SharePoint
 
@@ -29,7 +29,7 @@ ms.locfileid: "79043536"
 > Installations proceduren för SharePoint Server 2019 skiljer sig inte från installations proceduren för SharePoint Server 2016 **förutom** ett extra steg som måste utföras för att AVblockera ASHX-filer som används av MIM-portalen.
 
 > [!NOTE]
-> Den här genomgången använder exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
+> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
 > - Domänkontrollantens namn – **corpdc**
 > - Domännamn – **contoso**
 > - Server namn för MIM-tjänst – **corpservice**
@@ -132,7 +132,7 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
    Get-SPTimerJob hourly-all-sptimerservice-health-analysis-job | disable-SPTimerJob
    ```
 
-4. Öppna en ny webbläsare-flik på din Identity Management-Server och navigera till http://mim.contoso.com/ och logga in som *contoso\miminstall*.  En tom SharePoint-sida med namnet *MIM-portal* visas.
+4. Öppna en ny webbläsare-flik på din Identity Management-Server och navigera till `http://mim.contoso.com/` och logga in som *contoso\miminstall*.  En tom SharePoint-sida med namnet *MIM-portal* visas.
 
     ![MIM-portalen på http://mim.contoso.com/ avbildning](media/prepare-server-sharepoint/MIM_DeploySP1new.png)
 
