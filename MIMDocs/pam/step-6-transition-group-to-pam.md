@@ -12,17 +12,17 @@ ms.assetid: 7b689eff-3a10-4f51-97b2-cb1b4827b63c
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: e88407ceb1c7ac99f1746f453b7e4a7a5d296e5a
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043638"
 ---
 # <a name="step-6--transition-a-group-to-privileged-access-management"></a>Steg 6 – Överföra en grupp till Privileged Access Management
 
 > [!div class="step-by-step"]
-> [«Steg 5 ](step-5-establish-trust-between-priv-corp-forests.md)
-> [Steg 7»](step-7-elevate-user-access.md)
+> [«Steg 5 ](step-5-establish-trust-between-priv-corp-forests.md) 
+>  [steg 7»](step-7-elevate-user-access.md)
 
 Privilegierade konto skapas i PRIV-skogen med PowerShell-cmdletar. Dessa cmdletar utför följande funktioner:
 
@@ -84,5 +84,5 @@ Du måste köra cmdletarna en gång för varje grupp och en gång för varje med
 Om du vill visa att åtkomstbehörigheter mellan skogar gäller för användarens administratörskonto fortsätter du till nästa steg.
 
 > [!div class="step-by-step"]
-> [«Steg 5 ](step-5-establish-trust-between-priv-corp-forests.md)
-> [Steg 7»](step-7-elevate-user-access.md)
+> [«Steg 5 ](step-5-establish-trust-between-priv-corp-forests.md) 
+>  [steg 7»](step-7-elevate-user-access.md)

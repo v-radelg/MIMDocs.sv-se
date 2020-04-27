@@ -12,10 +12,10 @@ ms.assetid: 3ac5b990-1678-4996-996d-cbd84b8426b4
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 15eb35d01ed5c5c6e125c45f238bb2f7a7c564d7
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042125"
 ---
 # <a name="capacity-planning-guide"></a>Guide för kapacitetsplanering
@@ -26,7 +26,7 @@ Innan du börjar med MIM använder du den här guiden, tillsammans med testmilj�
 
 Om du ännu inte har bekantat dig med MIM 2016 och dess komponenter bör du läsa mer om  [Microsoft Identity Manager 2016](microsoft-identity-manager-2016.md) innan du fortsätter.
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Översikt
 
 Det finns ett antal faktorer som kan påverka den övergripande kapaciteten och prestandan för din Microsoft Identity Manager-distribution:
 
@@ -43,17 +43,17 @@ De viktigaste faktorerna som påverkar kapaciteten och prestanda för en MIM 201
 | Maskinvara | Den fysiska maskin varan (fysisk eller virtuell) för varje MIM-komponent, inklusive CPU, minne, nätverkskort och hård disk konfiguration. |
 | Konfigurationsobjekt för MIM-policyn | Antalet och typ av konfigurationsobjekt för MIM-policyn, vilka innefattar uppsättningar, hanteringsprincipregler (MPR) och arbetsflöden. |
 | Skala | Användare, grupper, beräknade grupper och anpassade objekt typer som ska hanteras av MIM 2016. Tänk också på komplexiteten i dynamiska grupper och var noga med att ta med gruppkapsling i beräkningen. |
-| Läs in | Användningsfrekvens. Åtgärder som ny grupp eller användare skapar, återställer lösen ord eller Portal besök per minut eller timme. Observera att arbetsbelastningen kan variera under loppet av en timme, dag, vecka eller ett år. Beroende på vilken komponent det rör sig om kan du välja att utforma för hög belastning eller genomsnittlig belastning. |
+| Läsa in | Användningsfrekvens. Åtgärder som ny grupp eller användare skapar, återställer lösen ord eller Portal besök per minut eller timme. Observera att arbetsbelastningen kan variera under loppet av en timme, dag, vecka eller ett år. Beroende på vilken komponent det rör sig om kan du välja att utforma för hög belastning eller genomsnittlig belastning. |
 
 ## <a name="hosting-microsoft-identity-manager-components"></a>Vara värd för Microsoft Identity Manager-komponenter
 
 Komponenterna i Microsoft Identity Manager behöver inte finnas på samma dator. Beaktande av de här komponenterna och de fysiska eller virtuella värdmaskinerna är en viktig del av kapacitetsplaneringen.
 
-Maskinvarufaktorer kan påverka prestandan i MIM-miljön. Till exempel:
+Maskinvarufaktorer kan påverka prestandan i MIM-miljön. Ett exempel:
 
 - Hur ser den fysiska diskkonfigurationen ut för den dator som kör MIM 2016-tjänstens SQL-databas? Antalet spindlar som utgör diskkonfigurationen eller distributionen av logg- och datafiler kan i hög grad påverka systemet.
 
-Tänk också på de externa faktorerna för konfigurationen. Till exempel:
+Tänk också på de externa faktorerna för konfigurationen. Ett exempel:
 
 - Om du använder ett datalagringsnätverk (SAN) som konfiguration för MIM 2016-tjänstens databas, vilka andra program delar detta SAN? De här programmen kan påverka databasens prestanda om de måste konkurrera om de delade diskresurserna för SAN.
 

@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: 3005e06606ec4b3b6854003213c712770376b35d
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042210"
 ---
 # <a name="bhold-fimmim-integration-installation"></a>Installation av BHOLD FIM/MIM-integrering
@@ -43,16 +43,16 @@ Dessutom måste du vara beredd att tillhandahålla den information som installat
 
 ### <a name="bholdfim-account-settings"></a>BHOLDFim konto inställningar
 
-| **Konfigurationsobjektet**                            | **Beskrivning**                                                                                                                                                                                                               | **Värde**                                                                                                                                                                                                                                                                                                            |
+| **Objekt**                            | **Beskrivning**                                                                                                                                                                                                               | **Värde**                                                                                                                                                                                                                                                                                                            |
 |-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Använd säkerhetsprovidern på domän** | När du väljer det här anger du att Active Directory Domain Services säkerhet ska styra åtkomsten till BHOLD-kärnan.                                                                                                                    | Markera kryss rutan. **Viktigt:** Installationen Miss kommer om den här kryss rutan inte är markerad.                                                                                                                                                                                                                   |
-| **Domän**                          | Anger den domän som innehåller det **tjänst konto** som du skapade när du installerade BHOLD-kärnan. Mer information finns i [BHOLD Core-installation](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | Domän namnet anges automatiskt av guiden. Ändra bara namnet om det är felaktigt. **Viktigt:** Ange domän namnet med hjälp av NetBIOS-namnet (Short), inte det fullständigt kvalificerade domän namnet (FQDN). Om FQDN för domänen till exempel är fabrikam.com anger du domän namnet som FABRIKAM. |
-| **Användarnamn**                        | Anger inloggnings namnet för BHOLD Core Service-användarkontot.                                                                                                                                                              | Skriv användar kontots namn här:                                                                                                                                                                                                                                                                                    |
+| **Använd säkerhetsprovidern på domän** | När du väljer det här anger du att Active Directory Domain Services säkerhet ska styra åtkomsten till BHOLD-kärnan.                                                                                                                    | Markera kryssrutan. **Viktigt:** Installationen Miss kommer om den här kryss rutan inte är markerad.                                                                                                                                                                                                                   |
+| **Domain**                          | Anger den domän som innehåller det **tjänst konto** som du skapade när du installerade BHOLD-kärnan. Mer information finns i [BHOLD Core-installation](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | Domän namnet anges automatiskt av guiden. Ändra bara namnet om det är felaktigt. **Viktigt:** Ange domän namnet med hjälp av NetBIOS-namnet (Short), inte det fullständigt kvalificerade domän namnet (FQDN). Om FQDN för domänen till exempel är fabrikam.com anger du domän namnet som FABRIKAM. |
+| **Användar**                        | Anger inloggnings namnet för BHOLD Core Service-användarkontot.                                                                                                                                                              | Skriv användar kontots namn här:                                                                                                                                                                                                                                                                                    |
 | **Lösenord**                        | Anger lösen ordet för tjänstens användar konto.                                                                                                                                                                           | Skriv lösen ordet här: **viktigt:** se till att behålla det här lösen ordet på en dold, säker plats.                                                                                                                                                                                                                  |
 
 ### <a name="fim-service-settings"></a>FIM-tjänstens inställningar
 
-| **Konfigurationsobjektet**            | **Beskrivning**                                                                                                                                                                                                                               | **Värde**                                                                                           |
+| **Objekt**            | **Beskrivning**                                                                                                                                                                                                                               | **Värde**                                                                                           |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
 | **Användare**            | Anger inloggnings namnet för ett konto med administratörs behörighet för FIM. Microsoft rekommenderar starkt att du inte använder kontot som är kopplat till rot användaren i BHOLD Core (som standard kontot som används för att installera BHOLD Core). | Skriv användar kontots namn här:                                                                   |
 | **Lösenord**        | Anger lösen ordet för FIM-administratörens användar konto.                                                                                                                                                                                 | Skriv lösen ordet här: **viktigt:** se till att behålla det här lösen ordet på en dold, säker plats. |
@@ -61,9 +61,9 @@ Dessutom måste du vara beredd att tillhandahålla den information som installat
 
 ### <a name="bhold-core-connection"></a>BHOLD Core-anslutning
 
-| **Konfigurationsobjektet**               | **Beskrivning**                                                                                                                                                                                                                                                                                                                                                                               | **Värde**                                                                                           |
+| **Objekt**               | **Beskrivning**                                                                                                                                                                                                                                                                                                                                                                               | **Värde**                                                                                           |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| **Domän**             | Anger namnet på domänen för det konto som anges i **användare**, nedan. Ange domänen i NetBIOS (Short)-format.                                                                                                                                                                                                                                                                   | Skriv användar kontots domän namn här?                                                            |
+| **Domain**             | Anger namnet på domänen för det konto som anges i **användare**, nedan. Ange domänen i NetBIOS (Short)-format.                                                                                                                                                                                                                                                                   | Skriv användar kontots domän namn här?                                                            |
 | **Användare**               | Anger inloggnings namnet för kontot för **en BHOLD-användare som är ansvarig** för alla användare och roller och har behörighet att länka och ta bort länkar till användar roller. Microsoft rekommenderar starkt att du inte använder kontot som är kopplat till rot användaren i BHOLD Core (som standard kontot som används för att installera BHOLD Core). Det här kontot kan vara samma konto som du använder för att ansluta till FIM | Skriv användar kontots namn här:                                                                   |
 | **Lösenord**           | Anger lösen ordet för det användar konto som anges i **användaren**.                                                                                                                                                                                                                                                                                                                             | Skriv lösen ordet här: **viktigt:** se till att behålla det här lösen ordet på en dold, säker plats. |
 | **IP-/dator adress** | Anger IP-adressen för BHOLD Core-webbplatsens Server. Använd inte Server namnet.                                                                                                                                                                                                                                                                                                        | Skriv IP-adressen här:                                                                          |
@@ -73,15 +73,15 @@ Dessutom måste du vara beredd att tillhandahålla den information som installat
 
 Om du vill installera BHOLD FIM-integrering loggar du in som medlem i gruppen domän administratörer, laddar ned följande fil och kör den som administratör på den server som du vill installera BHOLD FIM-integrering på:
 
-- BholdFIMIntegration<em>\<Version\></em>\_release. msi
+- BholdFIMIntegration<em>\<version\></em>\_release. msi
 
-Ersätt *\<version\>* med versions numret för den BHOLD FIM-integrering som du installerar.
+Ersätt * \<version\> * med versions numret för den BHOLD FIM-integrering som du installerar.
 
 Om du vill köra program filen som administratör högerklickar du på filen och klickar sedan på **Kör som administratör**.
 
 ![köra MSI](media/bhold-integration-installation/cmd.png)
 
-## <a name="post-installation-tasks"></a>Publicera installations uppgifter
+## <a name="post-installation-tasks"></a>Uppgifter efter installation
 
 När du har installerat BHOLD FIM-integrering måste du konfigurera Microsoft SharePoint för att ge BHOLD-tjänstkontot plats-ägar behörighet. Om FIM-portalen har kon figurer ATS för att använda Secure Sockets Layer säkerhet (SSL) måste du också ändra filer som innehåller referenser till adresserna för de BHOLD-sidor som har lagts till i FIM-portalen.
 
@@ -95,7 +95,7 @@ För att fungera korrekt kräver BHOLD FIM-integrering att BHOLD-tjänstkontot h
 
 2.  Klicka på **Start**och sedan på **Internet Exporer**.
 
-3.  I adress fältet skriver <https://localhost> om SharePoint har kon figurer ATS för att använda SSL-säkerhet, annars skriver du <http://localhost>.
+3.  I adress fältet skriver <https://localhost> du om SharePoint har kon figurer ATS för att använda SSL-säkerhet <http://localhost>, annars skriver du.
 
 4.  På vänster sida av sidan **grupp webbplats** klickar du på **personer och grupper**.
 
@@ -117,25 +117,25 @@ I följande tabell visas filerna och de ursprungliga och ändrade versionerna av
 
 | **Fil**                  | **Ursprunglig sträng**                                                                                                                   | **Ändrad sträng**                                                                                                                                |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| Analytics. aspx            |   http://< BHOLD_Server >/bhold/Analytics/index_fim. html | https://< BHOLD_Server_FQDN >/bhold/Analytics/index_fim. html       |
-| AttestationCampaigns. aspx |    http://< BHOLD_Server >/bhold/Attestation/Campaigns.aspx? hideMenu = 1 | https://< BHOLD_Server_FQDN >/bhold/Attestation/Campaigns.aspx? hideMenu = 1 | 
-| AttestationMain. aspx      |  http://< BHOLD_Server >/bhold/Attestation/Dashboard.aspx? hideMenu = 1        | https://< BHOLD_Server_FQDN >/bhold/Attestation/Dashboard.aspx? hideMenu = 1 |
-| Repor ting. aspx            | http://< BHOLD_Server >/bhold/Reporting/index_fim. html |  https://< BHOLD_Server_FQDN >/bhold/Reporting/index_fim. html |
-| Självbetjänings. aspx          | RoleExchangePoint = http://\<*FIM_Server*\>: \<*FIM_Port*\>/BHOLD/RoleExchangePoint/BHOLDRoleExchangePoint. svc, TransportMode = transport | RoleExchangePoint = https://\<*FIM_Server_FQDN*\>: \<*FIM_SSL_Port\>* \>/BHOLD/RoleExchangePoint/BHOLDRoleExchangePoint. svc, TransportMode = transport |
+| Analytics. aspx            |   http://<BHOLD_Server>/bhold/Analytics/index_fim.html | https://<BHOLD_Server_FQDN>/bhold/Analytics/index_fim.html       |
+| AttestationCampaigns. aspx |    http://<BHOLD_Server>/bhold/Attestation/Campaigns.aspx? hideMenu = 1 | https://<BHOLD_Server_FQDN>/bhold/Attestation/Campaigns.aspx? hideMenu = 1 | 
+| AttestationMain. aspx      |  http://<BHOLD_Server>/bhold/Attestation/Dashboard.aspx? hideMenu = 1        | https://<BHOLD_Server_FQDN>/bhold/Attestation/Dashboard.aspx? hideMenu = 1 |
+| Repor ting. aspx            | http://<BHOLD_Server>/bhold/Reporting/index_fim.html |  https://<BHOLD_Server_FQDN>/bhold/Reporting/index_fim.html |
+| Självbetjänings. aspx          | RoleExchangePoint = http://\<*FIM_Server*\>: \< *FIM_Port*\>/BHOLD/RoleExchangePoint/BHOLDRoleExchangePoint. svc, TransportMode = transport | RoleExchangePoint = https://\<*FIM_Server_FQDN*\>: \< *FIM_SSL_Port\>*\>/BHOLD/RoleExchangePoint/BHOLDRoleExchangePoint. svc, TransportMode = transport |
 
 Där:
 
--   *\<BHOLD_Server\>* anger namnet på den BHOLD-server som finns i den ursprungliga versionen av filen
+-   BHOLD_Server anger namnet på den BHOLD-server som finns i den ursprungliga versionen av filen * \<\> *
 
--   *\<MIM_Server\>* anger namnet på FIM-servern som finns i den ursprungliga versionen av filen
+-   MIM_Server anger namnet på FIM-servern som finns i den ursprungliga versionen av filen * \<\> *
 
--   *\<BHOLD_Server_FQDN\>* anger det fullständigt kvalificerade domän namnet (FQDN) för BHOLD-servern
+-   BHOLD_Server_FQDN anger det fullständigt kvalificerade domän namnet (FQDN) för BHOLD-servern * \<\> *
 
--   *\<MIM_Port\>* anger port numret för FIM-servern som finns i den ursprungliga versionen av filen
+-   MIM_Port anger port numret för FIM-servern som finns i den ursprungliga versionen av filen * \<\> *
 
--   *\<MIM_Server_FQDN\>* anger FIM-serverns fullständiga domän namn
+-   MIM_Server_FQDN anger FIM-serverns fullständiga domän namn * \<\> *
 
--   *\<MIM_SSL_Port\>* anger en annan port för användning med SSL på FIM-servern
+-   MIM_SSL_Port anger en annan port för användning med SSL på FIM-servern * \<\> *
 
 ### <a name="enable-approval-workflows-in-bhold-core"></a>Aktivera godkännande arbets flöden i BHOLD Core
 
@@ -157,7 +157,7 @@ Om en god kännare för en självbetjänings roll-begäran inte anges av någon 
 
 2.  Klicka på **Start**och sedan på **Internet Explorer**.
 
-3.  I adress fältet i Internet Explorer skriver du <http://localhost:5151/bhold/core>och trycker sedan på RETUR-tangenten.
+3.  I adress fältet i Internet Explorer skriver <http://localhost:5151/bhold/core>du och trycker sedan på RETUR-tangenten.
 
 4.  På Start sidan för BHOLD Core, under **attribut def**, klickar du på **attributtyper**.
 
@@ -189,7 +189,7 @@ Om en god kännare för en självbetjänings roll-begäran inte anges av någon 
 
 18. På sidan **organisations enhet/rot** klickar du på **ändra**.
 
-19. På sidan **ändra attribut/rot för organisationsenheten** , i **god kännare**, anger du domän och användar namn för den användare som ska godkänna begär Anden om tilldelning av roller, i *formatet\<domän\>* \\ *\<användare\>* , där *\<domän\>* är NetBIOS (Short) domän namn och *\<användaren\>* är användarens inloggnings namn.
+19. På sidan **ändra attribut/rot för organisationsenheten** , i **god kännare**, anger du domän och användar namn för den användare som ska godkänna begär Anden om tilldelning av roller, i * \<formatet\>domän*\\*\<användare\>*, * \<där\> domän* är NetBIOS (Short) domän namn och * \<användare\> * är användarens inloggnings namn.
 20. Klicka på **OK**.
 
 > [!IMPORTANT]
@@ -199,7 +199,7 @@ Som ett alternativ till att ange en god kännare för organisatoriska enheter ka
 
 Om du vill ge bättre arbets flödes säkerhet, förutom god kännare, bör du ange ytterligare godkännande lägen och användare genom att skapa och fylla i följande attribut för OrgUnits och roller:
 
-- eskalering<em>\<n\></em>
+- eskalerar<em>\<n\></em>
 
 - ägare<em>\<n\></em>
 
@@ -207,7 +207,7 @@ Om du vill ge bättre arbets flödes säkerhet, förutom god kännare, bör du a
 
 - meddelande<em>\<n\></em>
 
-där *\<n\>* anger ett valfritt numeriskt suffix för att tillhandahålla flera attribut av samma typ.
+där * \<n\> * anger ett valfritt numeriskt suffix för att tillhandahålla flera attribut av samma typ.
 
 ### <a name="verify-approval-workflows-configured-in-the-fim-service"></a>Verifiera godkännande arbets flöden som kon figurer ATS i FIM-tjänsten
 

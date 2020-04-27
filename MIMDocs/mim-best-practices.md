@@ -10,10 +10,10 @@ ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: 72b77034d5591d0bc2ab420f185acee719fe8324
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043009"
 ---
 # <a name="microsoft-identity-manager-2016-best-practices"></a>Rekommenderade metoder för Microsoft Identity Manager 2016
@@ -127,7 +127,7 @@ Följande är rekommenderade metoder för att konfigurera Microsoft Exchange Ser
 
 - Konfigurera tjänstekontot så att det endast kan ta emot e-post från interna e-postadresser. Tjänstekontots postlåda ska specifikt aldrig kunna ta emot e-post från externa SMTP-servrar.
 
-#### <a name="to-configure-the-service-account"></a>Konfigurera tjänstkontot
+#### <a name="to-configure-the-service-account"></a>För att konfigurera tjänstekontot
 
 1.  I Exchange Management-konsolen väljer du **FIM-tjänstens tjänstkonto**.
 
@@ -222,7 +222,7 @@ Beroende på dina scenarier kan detta omfatta att skapa ytterligare uppsättning
 
 ### <a name="step-5-reconfigure-sql-to-previous-settings"></a>Steg 5: Konfigurera om SQL till tidigare inställningar
 
-Kom ihåg att ändra SQL-inställningen till dess normala inställningar. Du måste bland annat:
+Kom ihåg att ändra SQL-inställningen till dess normala inställningar. Det här omfattar:
 
 -   Aktivera fulltextsökning
 
@@ -281,7 +281,7 @@ Tjänstekontona bör vara begränsade för att kunna konfigurera servrarna som k
 
 -   Neka lokal inloggning
 
--   Neka tillgång till den här datorn från nätverket
+-   Neka åtkomst till den här datorn från nätverket
 
 Tjänstekontona bör inte vara medlem i den lokala administratörsgruppen.
 
@@ -344,7 +344,7 @@ Implementera SSL:
 
 22. För certifikatet väljer du det som har samma namn som servern (detta är det certifikat du precis har importerat).
 
-23. Klicka på Ok.
+23. Klicka på OK.
 
 24. Ta bort HTTP-bindningen.
 
@@ -494,11 +494,11 @@ Negativa villkor är de medlemskapsvillkor som använder följande operatorer el
 
 Användning av villkor baserat på referensattribut med flera värden ska minimeras, eftersom om det finns stora mängder sådana uppsättningar kan det påverka prestanda för åtgärder på det attribut som används i medlemskapsvillkoret.
 
-### <a name="password-reset"></a>Återställning av lösenord
+### <a name="password-reset"></a>Lösenordsåterställning
 
 #### <a name="kiosk-like-computers-that-are-used-for-password-reset-should-set-local-security-to-clear-the-virtual-memory-pagefile"></a>Kioskliknande datorer som används för lösenordsåterställning bör ange lokal säkerhet för att rensa den virtuella minnesväxlingsfilen
 
-När du distribuerar MIM-lösenordet för lösen ord på en arbets station som är avsedd att vara en hel skärms fil, rekommenderar vi att inställningen Stäng av den virtuella datorns lokala säkerhets princip för virtuellt minne är aktive rad för att säkerställa att känslig information från process minnet inte är tillgänglig för obehöriga användare.
+När du distribuerar MIM-lösenordet för lösen ords återställning på en arbets station som är avsedd att vara en hel skärms fil, rekommenderar vi att inställningen Stäng av den lokala säkerhets principen för virtuellt minne är aktive rad för att säkerställa att känslig information från process minnet inte är tillgänglig för obehöriga användare.
 
 #### <a name="users-should-always-register-for-a-password-reset-on-a-computer-that-they-are-logged-on-to"></a>Användare bör alltid registrera sig för lösenordsåterställning på en dator som de är inloggade på
 
@@ -558,7 +558,7 @@ Det finns 13 huvudattribut som tilldelas till alla resurstyper. Du bör inte på
 
 -   ExpirationTime
 
--   Språk
+-   Nationell inställning
 
 -   MVObjectID
 

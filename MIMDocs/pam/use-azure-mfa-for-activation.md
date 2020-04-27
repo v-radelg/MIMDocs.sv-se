@@ -11,10 +11,10 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
 ms.openlocfilehash: 512a1887329f9ec5c93fd69f0ce0b22495ba009c
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043553"
 ---
 # <a name="using-azure-mfa-for-activation"></a>Aktivera med hjälp av Azure MFA
@@ -33,24 +33,24 @@ Om ingen kontroll är aktiverad aktiveras kandidatanvändare automatiskt för si
 
 Microsoft Azure Multi-Factor Authentication (MFA) är en autentiseringstjänst med vilken användare måste bekräfta sina inloggningsförsök via mobilapp, telefonsamtal eller SMS. Den kan användas med Microsoft Azure Active Directory och som en tjänst för molnbaserade och lokala företagsprogram. I PAM-scenariot tillhandahåller Azure MFA en ytterligare autentiseringsmekanism. Azure MFA kan användas för auktorisering, oavsett hur en användare autentiseras mot Windows-domänen.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 För att kunna använda Azure MFA med MIM behöver du:
 
 - internetåtkomst från varje MIM-tjänst som tillhandahåller PAM för att kunna kontakta tjänsten Azure MFA
-- en Azure-prenumeration
+- En Azure-prenumeration
 - Azure Active Directory Premium-licenser för kandidatanvändare eller ett annat sätt att licensiera Azure MFA
 - telefonnummer till alla kandidatanvändare
 
 ## <a name="creating-an-azure-mfa-provider"></a>Skapa en Azure MFA-leverantör
 
-I det här avsnittet konfigurerar du Azure MFA-providern i Microsoft Azure Active Directory.  Om du redan använder Azure MFA, antingen fristående eller konfigurerade med Azure Active Directory Premium, kan du gå vidare till nästa avsnitt.
+I det här avsnittet konfigurerar du Azure MFA-providern i Microsoft Azure Active Directory.Om du använder redan Azure MFA, antingen fristående eller konfigurerat med Azure Active Directory Premium, kan du gå vidare till nästa avsnitt.
 
 1.  Öppna en webbläsare och anslut till den [klassiska Azure-portalen](https://manage.windowsazure.com) som administratör för ett Azure-abonnemang.
 
 2.  Klicka på **Ny** längst ned till vänster.
 
-3.  Klicka på **App Services > Active Directory > Leverantör av multifaktorautent. > Snabbregistrering**.
+3.  Klicka på **App Services &gt; Active Directory &gt; Leverantör av multifaktorautent. &gt; Snabbregistrering**.
 
 4.  I fältet **Namn** skriver du **PAM**, och i fältet Användningsmodell väljer du Per aktiverad användare. Om du redan har en Azure AD-katalog väljer du den katalogen. Klicka på **Skapa**.
 
@@ -68,11 +68,11 @@ Tidigare genererade du en fil som innehåller autentiserings materialet för PAM
 
 3.  Klicka på Azure MFA-leverantören du ska använda för PAM och klicka på **Hantera**.
 
-4.  I vänsterpanelen i det nya fönstret, under **Konfigurera** klickar du på **Inställningar**.
+4.  I det nya fönstret i den vänstra panelen under **Konfigurera**klickar du på **Inställningar**.
 
 5.  I fönstret **Azure Multi-Factor Authentication** klickar du på **SDK** under **Hämtade filer**.
 
-6.  Klicka på länken **Hämta** i ZIP-kolumnen för filen med språket **SDK för ASP.net 2.0 C\#** .
+6.  Klicka på länken **Hämta** i zip-kolumnen för filen med language **SDK för ASP.NET 2,0 C\#**.
 
 ![Ladda ned SDK:t för Multi-Factor Authentication – skärmbild](media/PAM-Azure-MFA-Activation-Image-1.png)
 
@@ -87,11 +87,11 @@ Tidigare genererade du en fil som innehåller autentiserings materialet för PAM
 
 2.  Skapa en ny katalogmapp i katalogen där MIM-tjänsten är installeras, exempelvis ```C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\MfaCerts```.
 
-3.  Använd Utforskaren i Windows för att navigera till mappen ```pf\certs``` i ZIP-filen som hämtades i föregående avsnitt. Kopiera filen ```cert\_key.p12``` till den nya katalogen.
+3.  Använd Utforskaren i Windows och navigera till ```pf\certs``` mappen för den zip-fil som hämtades i föregående avsnitt. Kopiera filen ```cert\_key.p12``` till den nya katalogen.
 
-4.  Använd Utforskaren i Windows och navigera till mappen ```pf``` i ZIP-filen och öppna filen ```pf\_auth.cs``` i en text redigerare som WordPad.
+4.  Använd Utforskaren i Windows och navigera till ```pf``` mappen i zip-filen och öppna filen ```pf\_auth.cs``` i en text redigerare som WordPad.
 
-5. Sök efter följande tre parametrar: ```LICENSE\_KEY```, ```GROUP\_KEY``````CERT\_PASSWORD```.
+5. Sök efter följande tre parametrar ```LICENSE\_KEY```: ```GROUP\_KEY```, ```CERT\_PASSWORD```,.
 
 ![Kopiera värden från filen pf\_auth.cs – skärmbild](media/PAM-Azure-MFA-Activation-Image-2.png)
 
@@ -99,11 +99,11 @@ Tidigare genererade du en fil som innehåller autentiserings materialet för PAM
 
 7. Kopiera värdena från parametrarna LICENSE\_KEY, GROUP\_KEY och CERT\_PASSWORD i filen pf\_auth.cs till deras respektive xml-element i filen MfaSettings.xml.
 
-8. I XML-elementet **<CertFilePath>** anger du den fullständiga sökvägen till filen cert\_key.p12 du extraherade tidigare.
+8. I **<CertFilePath>** XML-elementet anger du det fullständiga Sök vägs namnet för certifikat\_nyckeln. p12-filen har extraherats tidigare.
 
-9. Ange ett valfritt användarnamn i elementet **<username>** .
+9. Ange ett **<username>** användar namn i elementet.
 
-10. I elementet **<DefaultCountryCode>** ange du landskoden till dina användare, till exempel 1 för USA och Kanada. Det här värdet används när användare är registrerade med telefonnummer utan landskod. Om en användares telefonnummer har en annan internationell landskod än den som har konfigurerats för organisationen, måste den landskoden inkluderas i det telefonnumret som registreras.
+10. I- **<DefaultCountryCode>** elementet anger du lands koden för att kunna ringa dina användare, till exempel 1 för USA och Kanada. Det här värdet används när användare är registrerade med telefonnummer utan landskod. Om en användares telefonnummer har en annan internationell landskod än den som har konfigurerats för organisationen, måste den landskoden inkluderas i det telefonnumret som registreras.
 
 11. Spara och skriv över filen **MfaSettings.xml** i MIM-tjänstmappen ```C:\Program Files\Microsoft Forefront Identity Manager\2010\\Service```.
 
@@ -136,7 +136,7 @@ Azure MFA kan inaktiveras för en roll genom att parametern "-MFAEnabled 0" ange
 
 Följande händelser kan du hitta i händelseloggen för Privileged Access Management:
 
-| ID  | Allvarlighetsgrad | Genererat av | Beskrivning |
+| ID  | Severity | Genererat av | Beskrivning |
 |-----|----------|--------------|-------------|
 | 101 | Fel       | MIM-tjänst            | Användaren slutförde inte Azure MFA (t.ex. svarade inte i telefon) |
 | 103 | Information | MIM-tjänst            | Användaren slutförde Azure MFA vid aktivering                       |
@@ -154,9 +154,9 @@ Du kan också visa eller ladda ned en rapport från Azure MFA om du vill veta me
 
 5.  Ange tidsintervall och markera kryssrutan bredvid **Namn** i den extra rapportkolumnen. Klicka på **Exportera till CSV**.
 
-6.  När rapporten har skapats kan du visa den i portalen. Om MFA-rapporten är omfattande kan du ladda ned den som en CSV-fil. **SDK**-värdena i kolumnen **AUTENTISERINGSTYP** visar rader som är relevanta som PAM-aktiveringsbegäranden: de är händelser från MIM och annan lokal programvara. Fältet **ANVÄNDARNAMN** är GUID för användarobjektet i MIM-tjänstens databas. Om ett samtal misslyckades är värdet i kolumnen **AUTHD** **Nej** och värdet i kolumnen **SAMTALSRESULTAT** innehåller information om felorsaken.
+6.  När rapporten har skapats kan du visa den i portalen. Om MFA-rapporten är omfattande kan du ladda ned den som en CSV-fil. **SDK**-värdena i kolumnen **AUTENTISERINGSTYP** visar rader som är relevanta som PAM-aktiveringsbegäranden: de är händelser från MIM och annan lokal programvara. Fältet **ANVÄNDARNAMN** är GUID för användarobjektet i MIM-tjänstens databas. Om ett samtal misslyckades är värdet i kolumnen **AUTHD****Nej** och värdet i kolumnen **SAMTALSRESULTAT** innehåller information om felorsaken.
 
-## <a name="next-steps"></a>Nästa steg
+## <a name="next-steps"></a>Efterföljande moment
 
 - [Vad är Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
 - [Skapa ditt kostnads fria Azure-konto idag](https://azure.microsoft.com/free/)

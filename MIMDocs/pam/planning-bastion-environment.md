@@ -12,17 +12,17 @@ ms.assetid: bfc7cb64-60c7-4e35-b36a-bbe73b99444b
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 3b99bd6d8f10c993d65e026bab23deeb65c547e9
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043961"
 ---
 # <a name="planning-a-bastion-environment"></a>Planera en skyddsmiljö
 
 Genom att lägga till en skyddsmiljö med en dedikerad administrativ skog för Active Directory kan organisationer enkelt hantera administratörskonton, arbetsstationer och grupper i en miljö med starkare säkerhetskontroller än den befintliga produktionsmiljön.
 
-Den här arkitekturen möjliggör ett antal kontroller som inte är möjliga eller enkla att konfigurera i en arkitektur med en enda skog. Det omfattar att tilldela konton som vanliga icke-privilegierade användare i den administrativa skogen, vilka är mycket privilegierade i produktionsmiljön, vilket möjliggör större teknisk tillämpning av styrningen. Den här arkitekturen möjliggör också användning av funktionen för selektiv autentisering av ett förtroende, vilket gör att det går att begränsa inloggning (och exponering av autentiseringsuppgifter) till enbart auktoriserade värdar. När du behöver en högre säkerhetsnivå för produktionsskogen men vill slippa kostnaden och komplexiteten för en fullständig ombyggnation, kan du få en miljö som höjer säkerhetsnivån i produktionsmiljön med hjälp av en administrativ skog.
+Den här arkitekturen möjliggör ett antal kontroller som inte är möjliga eller enkla att konfigurera i en arkitektur med en enda skog. Det omfattar att tilldela konton som vanliga icke-privilegierade användare i den administrativa skogen, vilka är mycket privilegierade i produktionsmiljön, vilket möjliggör större teknisk tillämpning av styrningen. Denna arkitektur kan också använda funktionen selektiv autentisering för ett förtroende som ett sätt att begränsa inloggningar (och exponering av autentiseringsuppgifter) till endast auktoriserade värdar. I situationer där en högre säkerhetsnivå önskas för produktionsskogen utan medförande kostnad och komplexitet för ett fullständigt återskapande, kan en administrativ skog tillhandahålla en miljö som ökar produktionsmiljöns säkerhetsnivå.
 
 Annan teknik kan användas vid sidan av den dedikerade administrativa skogen. Sådan teknik kan bland annat begränsa platserna där administratörers autentiseringsuppgifter exponeras, begränsa användarnas rollprivilegier i skogen och säkerställa att administrativa uppgifter inte utförs på värdar som används för standardanvändares aktiviteter (till exempel e-postanvändning och webbsurfande).
 
@@ -40,9 +40,9 @@ Enligt [nivåmodellen](tier-model-for-partitioning-administrative-privileges.md)
 
 ### <a name="restricted-trust"></a>Begränsat förtroende
 
-*CORP*-skogen för produktion bör ha förtroende för den administrativa *PRIV*-skogen, men inte tvärtom. Det kan vara ett domänförtroende eller ett skogsförtroende. Den administrativa skogens domän behöver inte ha förtroende för hanterade domäner och skogar för att hantera Active Directory, men för ytterligare program kan det krävas en dubbelriktad förtroenderelation, säkerhetsvalidering och testning.
+*CORP*-skogen för produktion bör ha förtroende för den administrativa *PRIV*-skogen, men inte tvärtom. Detta kan vara ett domänförtroende eller ett skogsförtroende. Den administrativa skogens domän behöver inte ha förtroende för hanterade domäner och skogar för att hantera Active Directory, men för ytterligare program kan det krävas en dubbelriktad förtroenderelation, säkerhetsvalidering och testning.
 
-Selektiv autentisering bör användas för att säkerställa att kontona i den administrativa skogen endast använder rätt produktionsvärdar. För att hantera domänkontrollanter och delegera behörigheter i Active Directory kräver detta att behörigheten "Tillåts att logga in" på domänkontrollanter tilldelas angivna administratörskonton på nivå 0 i den administrativa skogen. I [Configuring Selective Authentication Settings](https://technet.microsoft.com/library/cc816580.aspx) (Konfigurera inställningar för selektiv autentisering) finns mer information.
+Selektiv autentisering bör användas för att säkerställa att kontona i den administrativa skogen endast använder rätt produktionsvärdar. För att hantera domänkontrollanter och delegera behörigheter i Active Directory kräver detta att behörigheten "Tillåts att logga in" på domänkontrollanter tilldelas angivna administratörskonton på nivå 0 i den administrativa skogen. Mer information finns i [Konfigurera inställningar för selektiv autentisering](https://technet.microsoft.com/library/cc816580.aspx) .
 
 ## <a name="maintain-logical-separation"></a>Upprätthålla logisk uppdelning
 
@@ -76,11 +76,11 @@ I och med att administrationen av program överförs till skyddsmiljön måste d
 
 Den administrativa skogen ska konfigureras för det lägsta privilegium som krävs för Active Directory-administration.
 
-- Konton i den administrativa skogen som används för att administrera produktionsmiljön bör inte beviljas administratörsbehörighet för den administrativa skogen, domäner i den eller arbetsstationer i den.
+- Konton i den administrativa skogen som används för att administrera produktionsmiljön bör inte beviljas administrativ behörighet för den administrativa skogen, domäner i den eller arbetsstationer i den.
 
-- Administratörsbehörigheter över själva den administrativa skogen bör vara hårt styrda av en offlineprocess för att minska externa och interna angripares möjlighet att radera granskningsloggar. Detta hjälper också att se till att personal med konton för produktionsadministration inte kan minska begränsningarna för sina konton och öka risken för organisationen.
+- Administratörsbehörigheter över själva den administrativa skogen bör vara hårt styrda av en offlineprocess för att minska externa och interna angripares möjlighet att radera granskningsloggar. Detta bidrar även till att personal med administratörskonton för produktion inte kan släppa på begränsningarna för sina konton och öka risken för organisationen.
 
-- Den administrativa skogen bör följa Microsoft Security Compliance Managers (SCM) konfigurationer för domänen, inklusive ordentliga konfigurationer för autentiseringsprotokoll.
+- Den administrativa skogen bör följa konfigurationerna för Microsoft Security Compliance Manager (SCM) för domänen, inklusive starka konfigurationer för autentiseringsprotokoll.
 
 När du skapar skyddsmiljön, innan du installerar Microsoft Identity Manager, identifierar och skapar du de konton som ska användas för administration i miljön. Det innefattar:
 
@@ -96,7 +96,7 @@ Alla värdar, inklusive domänkontrollanter, servrar och arbetsstationer som är
 
 - De program som krävs för administration ska finnas på alla arbetsstationer så att kontona som använder dem inte måste finnas i den lokala administratörsgruppen för att installera dem. Underhållet av domänkontrollanter kan vanligtvis utföras med RDP och verktyg för fjärrserveradministration.
 
-- Värdarna för de administrativa skogarna ska uppdateras automatiskt med säkerhetsuppdateringar. Även om det kan skapa risk för att underhåll av domänkontrollanter avbryts minskar det säkerhetsriskerna betydligt för okorrigerade säkerhetsproblem.
+- Administrativa skogsvärdar ska uppdateras automatiskt med säkerhetsuppdateringar. Även om detta kan riskera att avbryta domänkontrollantens underhållsåtgärder, ger det en betydande minskning av okorrigerad sårbarhet.
 
 ### <a name="identify-administrative-hosts"></a>Identifiera administrativa värdar
 
@@ -118,23 +118,23 @@ Administrativa värdar omfattar följande datorer:
 
 - **Kontrollera att alla media i bygget är rena** för att minska risken för att skadlig kod installeras i en huvudavbildning eller införs i en installationsfil som laddas ned och lagras.
 
-- Startkonfigurationerna bör utgå från **baslinjer för säkerhet**. Med Microsoft Security Compliance Manager (SCM) kan du konfigurera baslinjer på administrativa värdar.
+- **Säkerhets bas linjer** ska användas som start för konfigurationer. Med Microsoft Security Compliance Manager (SCM) kan du konfigurera baslinjer på administrativa värdar.
 
-- **Säker Start** skyddar mot angripare och skadlig kod som försöker läsa in osignerad kod i startprocessen.
+- **Säker start** för att minimera angripare eller skadlig kod som försöker läsa in osignerad kod i Start processen.
 
 - **Begränsning av programvara** så att endast auktoriserade administrativa program körs på de administrativa värdarna. Kunder kan använda AppLocker för den här uppgiften med en godkänd lista över auktoriserade program och på så sätt förhindra att skadlig programvara och obehöriga program körs.
 
-- **Fullständig volymkryptering** skyddar mot fysisk förlust av datorer, som bärbara administrationsdatorer för fjärranvändning.
+- **Fullständig volym kryptering** för att undvika fysisk förlust av datorer, till exempel administrativa bärbara datorer som används via fjärr anslutning.
 
 - **USB-begränsningar** skyddar mot fysiska angrepp.
 
-- **Nätverksisolering** skyddar mot nätverksattacker och oavsiktliga administrativa åtgärder. Värdens brandväggar ska blockera alla inkommande anslutningar utom de som uttryckligen krävs och blockera all onödig utgående internetåtkomst.
+- **Nätverks isolering** för att skydda mot nätverks attacker och oavsiktliga administrativa åtgärder. Värdens brandväggar ska blockera alla inkommande anslutningar utom de som uttryckligen krävs och blockera all onödig utgående internetåtkomst.
 
-- **Program mot skadlig kod** skyddar mot kända hot och skadlig kod.
+- **Program mot skadlig kod** för att skydda mot kända hot och skadlig kod.
 
 - **Skydd mot trojaner** skyddar mot okända hot och trojaner, bland annat Enhanced Mitigation Experience Toolkit (EMET).
 
-- **Analys av attackyta** förhindrar att nya attackvektorer införs i Windows när ny programvara installeras. Verktyg som Attack Surface Analyzer (ASA) hjälper dig att utvärdera konfigurationsinställningar på en värd och identifiera attackvektorer som införs med programvara eller ändringar av konfigurationen.
+- **Analys av attack ytan** för att förhindra att nya angrepps vektorer introduceras i Windows under installationen av ny program vara. Verktyg som Attack Surface Analyzer (ASA) hjälper dig att utvärdera konfigurationsinställningar på en värd och identifiera attackvektorer som införs med programvara eller ändringar av konfigurationen.
 
 - **Administrativ behörighet** bör inte ges till användare på deras lokala datorer.
 
@@ -164,7 +164,7 @@ Det finns sju krav för att aktivera hantering för en befintlig domän.
 
 ### <a name="1-a-security-group-on-the-local-domain"></a>1. en säkerhets grupp i den lokala domänen
 
-Det måste finnas en grupp i den befintliga domänen, vars namn är NetBIOS-domännamnet följt av tre dollartecken, t.ex. *CONTOSO$$$* . Gruppomfånget måste vara *domänlokal* och grupptypen måste vara *säkerhet*. Det krävs för att grupper ska kunna skapas i den dedikerade administrativa skogen med samma säkerhetsidentifierare som grupper i domänen. Skapa den här gruppen med följande PowerShell-kommando, som utförs av en administratör för den befintliga domänen och körs på en arbetsstation som är ansluten till den befintliga domänen:
+Det måste finnas en grupp i den befintliga domänen, vars namn är NetBIOS-domännamnet följt av tre dollartecken, t.ex. *CONTOSO$$$*. Gruppomfånget måste vara *domänlokal* och grupptypen måste vara *säkerhet*. Det krävs för att grupper ska kunna skapas i den dedikerade administrativa skogen med samma säkerhetsidentifierare som grupper i domänen. Skapa den här gruppen med följande PowerShell-kommando, som utförs av en administratör för den befintliga domänen och körs på en arbetsstation som är ansluten till den befintliga domänen:
 
 ```PowerShell
 New-ADGroup -name 'CONTOSO$$$' -GroupCategory Security -GroupScope DomainLocal -SamAccountName 'CONTOSO$$$'
@@ -174,15 +174,15 @@ New-ADGroup -name 'CONTOSO$$$' -GroupCategory Security -GroupScope DomainLocal -
 
 Grupprincipinställningarna på domänkontrollanten för granskning måste innehålla granskning av både misslyckade och lyckade åtgärder för Granska kontohantering och Granska katalogtjänståtkomst. Det kan göras av en administratör för den befintliga domänen med konsolen Grupprinciphantering och sedan köras på en arbetsstation som är ansluten till den befintliga domänen:
 
-3. Gå till **Start** > **Administrationsverktyg** > **Grupprinciphantering**.
+3. Gå till **Start** > **administrations verktyg** > **Grupprincip hantering**.
 
-4. Gå till **Skog: contoso.local** > **Domäner** > **contoso.local** > **Domänkontrollanter** > **Standardprincip för domänkontrollanter**. Ett informationsmeddelande visas.
+4. Navigera till **skog: contoso. local** > **Domains** > Domains**contoso. lokala** > **Domain Controllers** > domänkontrollanter**standard domän kontrol Lanterna**. Ett informationsmeddelande visas.
 
     ![Standardprincip för domänkontrollanter – skärmbild](media/pam-group-policy-management.jpg)
 
 5. Högerklicka på **Standardprincip för domänkontrollanter** och välj **Redigera**. Ett nytt fönster visas.
 
-6. I fönstret Redigeraren Grupprinciphantering under trädet Standardprincip för domänkontrollanter går du till **Datorkonfiguration** > **Principer** > **Windows-inställningar** > **Säkerhetsinställningar** > **Lokala principer** > **Granskningsprincip**.
+6. I fönstret Redigeraren Grupprinciphantering, under princip trädet standard domänkontrollanter, navigerar du till **dator konfiguration** > **principer** > **Windows-inställningar** > **säkerhets inställningar** > **lokala principer** > **gransknings princip**.
 
     ![Redigeraren Grupprinciphantering – skärmbild](media/pam-group-policy-management-editor.jpg)
 
@@ -228,7 +228,7 @@ Följande steg ger läsbehörighet för användaren *PRIV\Administratör* till d
 
 3. Högerklicka på domänen **contoso.local** och välj **Delegera kontroll**.
 
-4. På fliken Valda användare och grupper klickar du på **Lägg till**.
+4. På fliken valda användare och grupper klickar du på **Lägg till**.
 
 5. I popup-fönstret Välj användare, datorer eller grupper klickar du på **Platser** och ändrar platsen till *priv.contoso.local*. På objektnamnet skriver du *Domänadministratörer* och klickar på **Kontrollera namn**. När ett popup-fönster visas anger du användarnamnet *priv\administratör* och lösenordet.
 

@@ -12,16 +12,16 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: c21228dad923d80ab63c255c1184b7de04a0ff3d
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043740"
 ---
 # <a name="step-1---prepare-the-host-and-the-corp-domain"></a>Steg 1 – förbereda värden och CORP-domänen
 
 > [!div class="step-by-step"]
-> [Steg 2 »](step-2-prepare-priv-domain-controller.md)
+> [Steg 2»](step-2-prepare-priv-domain-controller.md)
 
 I det här steget förbereder du hanteringen av skyddsmiljön. Vid behov kan du också skapa en domänkontrollant och en medlemsarbetsstation i en ny domän och skog (*CORP*-skogen) med identiteter som ska hanteras av skyddsmiljön. Den här CORP-skogen simulerar en befintlig skog som har resurser som ska hanteras. I det här dokumentet finns en exempelresurs som ska skyddas, en filresurs.
 
@@ -35,11 +35,11 @@ I det här avsnittet beskrivs hur du konfigurerar en domänkontrollant för en C
 
 Installera Windows Server 2012 R2 eller Windows Server 2016 Technical Preview 4 eller senare på en virtuell dator för att skapa en dator som kallas *CORPDC*.
 
-1. Välj **Windows Server 2012 R2 Standard (server med GUI) x64** eller **Windows Server 2016 Technical Preview (server med Skrivbordsmiljö)** .
+1. Välj **Windows Server 2012 R2 Standard (server med GUI) x64** eller **Windows Server 2016 Technical Preview (server med Skrivbordsmiljö)**.
 
 2. Granska och godkänn licensvillkoren.
 
-3. Eftersom disken är tom markerar du **Anpassad: Installera bara Windows** och använd diskutrymmet som inte initierats.
+3. Eftersom disken är tom väljer du **Anpassad: Installera endast Windows** och Använd det oinitierade disk utrymmet.
 
 4. Logga in på den nya datorn som administratör. Gå till Kontrollpanelen. Ange datornamnet till *CORPDC*, och tilldela en statisk IP-adress på det virtuella nätverket. Starta om servern.
 
@@ -72,7 +72,7 @@ I det här avsnittet lägger du till roller för Active Directory Domain Service
 
 ### <a name="create-a-group"></a>Skapa en grupp
 
-Skapa en grupp för granskning av Active Directory om gruppen inte redan finns. Namnet på gruppen måste vara NetBIOS-domännamnet följt av tre dollartecken, till exempel *CONTOSO$$$* .
+Skapa en grupp för granskning av Active Directory om gruppen inte redan finns. Namnet på gruppen måste vara NetBIOS-domännamnet följt av tre dollartecken, till exempel *CONTOSO$$$*.
 
 Logga in på en domänkontrollant som domänadministratör för varje domän och utför följande steg:
 
@@ -123,13 +123,13 @@ Du måste aktivera granskning i befintliga skogar för att upprätta PAM-konfigu
 
 Logga in på en domänkontrollant som domänadministratör för varje domän och utför följande steg:
 
-1. Gå till **Start** > **Administrationsverktyg** (på Windows Server 2016 **Administrationsverktyg för Windows** ) och starta **Grupprinciphantering**.
+1. Gå till **Start** > **administrations verktyg** (eller, på Windows Server 2016, **Windows administrations verktyg**) och starta **Grupprincip hantering**.
 
-2. Gå till domänens princip för domänkontrollanter.  Om du har skapat en ny domän för contoso.local går du till **Skog: contoso.local** > **Domäner** > **contoso.local** > **Domänkontrollanter** > **Standardprincip för domänkontrollanter**. Ett informationsmeddelande visas.
+2. Gå till domänens princip för domänkontrollanter.  Om du har skapat en ny domän för contoso. local navigerar du till **skog: contoso. local** > **Domains** > Domains**contoso. lokala** > **Domain Controllers** > domänkontrollanter**standard domän kontroller**. Ett informationsmeddelande visas.
 
 3. Högerklicka på **Standardprincip för domänkontrollanter** och välj **Redigera**. Ett nytt fönster visas.
 
-4. I fönstret Redigeraren Grupprinciphantering under trädet Standardprincip för domänkontrollanter går du till **Datorkonfiguration** > **Principer** > **Windows-inställningar** > **Säkerhetsinställningar** > **Lokala principer** > **Granskningsprincip**.
+4. I fönstret Redigeraren Grupprinciphantering, under princip trädet standard domänkontrollanter, navigerar du till **dator konfiguration** > **principer** > **Windows-inställningar** > **säkerhets inställningar** > **lokala principer** > **gransknings princip**.
 
 5. Högerklicka på **Granska kontohantering** i informationsfönstret och välj **Egenskaper**. Välj **Definiera följande principinställningar**, markera kryssrutorna **Lyckade** och **Misslyckade** och klicka på **Tillämpa** och **OK**.
 
@@ -209,4 +209,4 @@ Du behöver en resurs för att visa säkerhetsgruppsbaserad åtkomst med PAM.  O
 I nästa steg förbereder du PRIV-domänkontrollanten.
 
 > [!div class="step-by-step"]
-> [Steg 2 »](step-2-prepare-priv-domain-controller.md)
+> [Steg 2»](step-2-prepare-priv-domain-controller.md)

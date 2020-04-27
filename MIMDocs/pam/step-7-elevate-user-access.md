@@ -9,10 +9,10 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 5325fce2-ae35-45b0-9c1a-ad8b592fcd07
 ms.openlocfilehash: 05e05966bf90700885e67ba16f10ab0d7864cf10
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043621"
 ---
 # <a name="step-7--elevate-a-users-access"></a>Steg 7 – Utöka en användares behörighet
@@ -40,7 +40,7 @@ Utan utökad behörighet kan Lisa inte komma åt den privilegierade resursen i C
 
 1. På PRIVWKSTN loggar du in som PRIV\priv.jen.
 2. Klicka på **Start**, **Kör**och ange **PowerShell. exe**.
-3. Skriv in följande kommando:
+3. Ange följande kommando.
 
     ```cmd
     runas /user:Priv.Jen@priv.contoso.local powershell
@@ -90,9 +90,9 @@ Aktivera på begäran privilegierad åtkomst via PAM-exempelportalen.
     ```
 
 3. När du uppmanas anger du lösenordet för kontot PRIV.Lisa. Ett nytt webbläsarfönster visas.
-4. Navigera till http://pamsrv.priv.contoso.local:8090 och se till att en webb sida från exempel portalen är synlig.
-5. I Internet Explorer väljer du **Verktyg** > **Internetalternativ** och klicka på fliken **Säkerhet**.
-6. Klicka på **Zonen Lokalt nätverk** > **Platser** > **Avancerat** och lägg till webbplatsen i zonen.
+4. Navigera till http://pamsrv.priv.contoso.local:8090 och kontrol lera att en webb sida från exempel portalen är synlig.
+5. I Internet Explorer väljer du **verktyg** > **Internet alternativ** och klickar på fliken **säkerhet** .
+6. Klicka på**platser** > i den **lokala intranät zonen** > **Avancerat** och Lägg sedan till webbplatsen i zonen.
 7. Stäng dialogrutan **Internetalternativ**.
 8. På den vänstra fliken klickar du på **Aktivera**. Välj **PAM-roll** och klicka på **Aktivera**.
 

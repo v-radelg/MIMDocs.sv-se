@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.assetid: ''
 ms.prod: microsoft-identity-manager
 ms.openlocfilehash: f120709e517d82d4f94e72f4d0a44361f5552a1c
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042312"
 ---
 # <a name="microsoft-bhold-suite-concepts-guide"></a>Koncept guide för Microsoft BHOLD Suite
@@ -25,7 +25,7 @@ Microsoft BHOLD Suite utökar dessa funktioner i MIM genom att lägga till rollb
 Den här guiden hjälper dig att förstå hur BHOLD Suite fungerar med MIM och omfattar följande ämnen:
 
 - Rollbaserad åtkomstkontroll
-- Attestering
+- Hälsoattestering
 - Analytics
 - Rapportering
 - Åtkomst hanterings anslutning
@@ -33,13 +33,13 @@ Den här guiden hjälper dig att förstå hur BHOLD Suite fungerar med MIM och o
 
 ## <a name="role-based-access-control"></a>Rollbaserad åtkomstkontroll
 
-Den vanligaste metoden för att kontrol lera användar åtkomst till data och program är via DAC (Discretionary Access Control). I de vanligaste implementeringarna har varje betydelsefullt objekt en identifierad ägare. Ägaren kan bevilja eller neka åtkomst till objektet till andra baserat på individuell identitet eller grupp medlemskap. I praktiken resulterar DAC vanligt vis i en mängd olika av säkerhets grupper, en del som återspeglar organisations strukturen, andra som representerar funktionella grupperingar (till exempel jobb typer eller projekt tilldelningar) och andra som består av Makeshift-samlingar av användare och enheter som är länkade för mer temporära syfte. När organisationer växer blir medlemskap i dessa grupper allt svårare att hantera. Om en anställd exempelvis överförs från ett projekt till ett annat, måste de grupper som används för att styra åtkomsten till projekt till gångarna uppdateras manuellt. I sådana fall är det inte ovanligt att misstag uppstår, misstag som kan störa projekt säkerheten eller produktiviteten.
+Den vanligaste metoden för att kontrol lera användar åtkomst till data och program är via DAC (Discretionary Access Control). I de vanligaste implementeringarna har varje betydelsefullt objekt en identifierad ägare. Ägaren kan bevilja eller neka åtkomst till objektet till andra baserat på individuell identitet eller grupp medlemskap. I praktiken resulterar DAC vanligt vis i en mängd olika av säkerhets grupper, en del som återspeglar organisations strukturen, andra som representerar funktions grupperingar (till exempel jobb typer eller projekt tilldelningar) och andra som består av Makeshift-samlingar av användare och enheter som är länkade i flera temporära syfte. När organisationer växer blir medlemskap i dessa grupper allt svårare att hantera. Om en anställd exempelvis överförs från ett projekt till ett annat, måste de grupper som används för att styra åtkomsten till projekt till gångarna uppdateras manuellt. I sådana fall är det inte ovanligt att misstag uppstår, misstag som kan störa projekt säkerheten eller produktiviteten.
 
 MIM innehåller funktioner som hjälper dig att minimera det här problemet genom att tillhandahålla automatisk kontroll över medlemskap i grupper och distributions listor. Detta tar dock inte itu med den inneboende komplexiteten för de spridnings grupper som inte nödvändigt vis är relaterade till varandra på ett strukturerat sätt.
 
 Ett sätt att avsevärt minska den här spridningen är genom att distribuera rollbaserad åtkomst kontroll (RBAC). RBAC förskjuter inte DAC.  RBAC bygger på DAC genom att tillhandahålla ett ramverk för att klassificera användare och IT-resurser. På så sätt kan du göra explicita relationer och de behörigheter som är lämpliga enligt denna klassificering. Genom att till exempel tilldela ett användarattribut som anger användarens jobb titel och projekt tilldelningar, kan användaren beviljas åtkomst till verktyg som behövs för användarens jobb och data som användaren behöver för att bidra till ett visst projekt. När användaren förutsätter ett annat jobb och olika projekt tilldelningar, ändrar attributen som anger användarens befattning och projekt automatiskt åtkomst till resurserna som krävs för den tidigare positionen.
 
-Eftersom roller kan ingå i roller på hierarkiskt sätt, (till exempel kan försäljnings chefens och försäljnings representantens roller ingå i den mer generella rollen försäljning), är det enkelt att tilldela lämpliga rättigheter till vissa roller och ännu fortfarande tillhandahålla lämpliga rättigheter till alla som delar rollen mer inkluderar också. Till exempel kan alla medicinska personal få till gång till rätten att se en patienter, men endast läkare (en under roll i medicinska rollen) kan få behörighet att ange förskrifter för patienten. På samma sätt kan användare som tillhör den här rollen nekas åtkomst till patient poster, förutom fakturerings administratörer (en under roll till den som är den som är den som är under roll), som kan beviljas åtkomst till de delar av en patienter som krävs för att fakturera patienten för tjänster tillhandahålls av sjukhus.
+Eftersom roller kan ingå i roller på hierarkiskt sätt, (till exempel kan försäljnings chefens och försäljnings representantens roller ingå i den mer generella rollen försäljning), är det enkelt att tilldela lämpliga rättigheter till vissa roller och ändå ge lämpliga rättigheter till alla som delar rollen mer inklusive. Till exempel kan alla medicinska personal få till gång till rätten att se en patienter, men endast läkare (en under roll i medicinska rollen) kan få behörighet att ange förskrifter för patienten. På samma sätt kan användare som tillhör en tjänsteroll nekas åtkomst till patient poster, förutom fakturerings administratörer (en under roll till den som är den som är den som har rollen som tjänstemän), som kan beviljas åtkomst till de delar av en patienter som krävs för att fakturera patienten för tjänster som tillhandahålls av sjukhuset.
 
 En ytterligare fördel med RBAC är möjligheten att definiera och upprätthålla separering av uppgifter (SoD). På så sätt kan en organisation definiera kombinationer av roller som beviljar behörigheter som inte ska innehas av samma användare, så att en viss användare inte kan tilldelas roller som gör det möjligt för användaren att initiera en betalning och för att auktorisera en betalning, till exempel. RBAC ger möjlighet att genomdriva en sådan princip automatiskt i stället för att behöva utvärdera den effektiva implementeringen av principen per användare.
 
@@ -48,7 +48,7 @@ En ytterligare fördel med RBAC är möjligheten att definiera och upprätthåll
 Med BHOLD Suite kan du ange och ordna roller i din organisation, mappa användare till roller och mappa lämpliga behörigheter till roller. Den här strukturen kallas en roll modell och den innehåller och ansluter fem typer av objekt: 
 
 - Organisatoriska enheter
-- Users
+- Användare
 - Roller
 - Behörigheter
 - Program
@@ -64,7 +64,7 @@ Organisations enheter (OrgUnits) är det huvudsakliga sättet som användarna or
 
 ![](media/bhold-concepts-guide/org-chart.png)
 
-I det här exemplet skulle roll modellen organizationalganizatinal enhet för företaget som helhet (representeras av VD, eftersom VD inte är en del av en mororganizationalganizatinal-enhet) eller den BHOLD rot organisationsenheten (som alltid finns) kan användas för detta ändamål. OrgUnits som representerar de företags indelningar som leds av vice president placeras i företagets organisationsenhet. Sedan kommer organisationsenheter som motsvarar marknadsförings-och försäljnings ansvariga att läggas till i organisationsenheterna för marknadsföring och försäljning, och organisationsenheter som representerar de regionala försäljnings cheferna placeras i organisationsenheten för regions försäljnings chef, östra. Sälj ansvariga, som inte hanterar andra användare, kommer att bli medlemmar i organisationsenheten för den östra regionens försäljnings chef. Observera att användare kan vara medlemmar i en organisationsenhet på valfri nivå. En administrativ assistent, som inte är en chef och rapporter direkt till en vice VD, är till exempel medlem i vice presidentens organisationsenhet.
+I det här exemplet skulle roll modellen organizationalganizatinal enhet för företaget som helhet (representeras av VD, eftersom VD inte är en del av en mororganizationalganizatinal-enhet) eller BHOLD rot organisationsenheten (som alltid finns) kan användas för detta ändamål. OrgUnits som representerar de företags indelningar som leds av vice president placeras i företagets organisationsenhet. Sedan kommer organisationsenheter som motsvarar marknadsförings-och försäljnings ansvariga att läggas till i organisationsenheterna för marknadsföring och försäljning, och organisationsenheter som representerar de regionala försäljnings cheferna placeras i organisationsenheten för regionen för den östra regionen. Sälj ansvariga, som inte hanterar andra användare, kommer att bli medlemmar i organisationsenheten för den östra regionens försäljnings chef. Observera att användare kan vara medlemmar i en organisationsenhet på valfri nivå. En administrativ assistent, som inte är en chef och rapporter direkt till en vice VD, är till exempel medlem i vice presidentens organisationsenhet.
 
 Förutom att representera organisations strukturen kan organisationsenheter också användas för att gruppera användare och andra organisationsenheter utifrån funktionella villkor, till exempel för projekt eller specialisering. Följande diagram visar hur organisationsenheter ska användas för att gruppera Sälj Associates enligt kund typ:
 
@@ -74,13 +74,13 @@ I det här exemplet skulle varje Sälj partner tillhöra två organisationsenhet
 
 OrgUnits kan skapas i BHOLD Suite med hjälp av BHOLD Core-webbportalen eller med BHOLD Model Generator.
 
-#### <a name="users"></a>Users
+#### <a name="users"></a>Användare
 
 Som anges ovan måste varje användare tillhöra minst en organisationsenhet (OrgUnit). Eftersom organisationsenheter är huvudmekanismen för att associera en användare med roller, i de flesta organisationer som en specifik användare hör till flera OrgUnits för att göra det lättare att associera roller med den användaren. I vissa fall kan det dock vara nödvändigt att associera en roll med en användare som skiljer sig från alla OrgUnits som användaren tillhör. Det innebär att en användare kan tilldelas direkt till en roll och hämta roller från OrgUnits som användaren tillhör.
 
 När en användare inte är aktiv i organisationen (till exempel för medicinsk ledighet, till exempel) kan användaren stängas av, vilket återkallar alla användarens behörigheter utan att ta bort användaren från roll modellen. När du återvänder till tullen kan användaren återaktiveras, vilket återställer alla behörigheter som beviljats av användarens roller.
 
-Objekt för användare kan skapas individuellt i BHOLD via BHOLD Core-webbportalen, eller så kan de importeras i bulk med hjälp av BHOLD modell generator eller med hjälp av åtkomst hanterings anslutningen med FIM-synkroniseringstjänsten för att importera användar information från sådana källor som Active Directory Domain Services eller personal resurser.
+Objekt för användare kan skapas individuellt i BHOLD via webb portalen för BHOLD-kärnan, eller så kan de importeras i bulk med hjälp av BHOLD modell generator eller med hjälp av åtkomst hanterings anslutningen med FIM-synkroniseringstjänsten för att importera användar information från sådana källor som Active Directory Domain Services eller personal program.
 
 Användare kan skapas direkt i BHOLD utan att använda FIM-synkroniseringstjänsten. Detta kan vara användbart när du modellerar roller i en för produktions-eller test miljö. Du kan också tillåta externa användare (t. ex. anställda på en underleverantör) att tilldelas roller och därmed få till gång till IT-resurser utan att läggas till i medarbetar databasen. Dessa användare kommer dock inte att kunna använda självbetjänings funktionerna i BHOLD.
 
@@ -168,7 +168,7 @@ Du kan konfigurera en användare så att den begränsar följande:
 
 Separering av uppgifter (SoD) är en affärs princip som kan förhindra att personer får möjlighet att utföra åtgärder som inte ska vara tillgängliga för en enskild person. En medarbetare ska till exempel inte kunna begära en betalning och godkänna betalningen. Principen för SoD gör det möjligt för organisationer att implementera ett system med kontroller och balanser för att minimera deras exponering för risk från medarbetares fel eller fel uppförande.
 
-BHOLD implementerar SoD genom att låta dig definiera inkompatibla behörigheter. När dessa behörigheter har definierats tvingar BHOLD SoD genom att förhindra skapandet av roller som är länkade till inkompatibla behörigheter, oavsett om de är länkade direkt eller genom arv, och hindra användare från att tilldelas flera roller som, när kombinerat beviljar inkompatibla behörigheter, återigen genom direkt tilldelning eller arv. Du kan också åsidosätta konflikter.
+BHOLD implementerar SoD genom att låta dig definiera inkompatibla behörigheter. När de här behörigheterna har definierats tvingar BHOLD SoD genom att förhindra skapandet av roller som är länkade till inkompatibla behörigheter, om de är länkade direkt eller genom arv, och genom att hindra användare från att tilldelas flera roller som, när de kombineras, beviljar inkompatibla behörigheter igen genom direkt tilldelning eller genom arv. Du kan också åsidosätta konflikter.
 
 #### <a name="context-adaptable-permissions"></a>Kontext-anpassningsbara behörigheter
 
@@ -186,7 +186,7 @@ Det är viktigt att Observera att resultaten av ABA-regler är begränsade av in
 
 Systemet med attribut i BHOLD är mycket utöknings Bart. Du kan definiera nya attributtyper för sådana objekt som användare, organisationsenheter (organisationsenheter) och roller. Attribut kan definieras för att ha värden som är heltal, booleska (Ja/Nej), alfanumeriska data, datum, tid och e-postadresser. Attribut kan anges som enstaka värden eller en värde lista.
 
-## <a name="attestation"></a>Attestering
+## <a name="attestation"></a>Hälsoattestering
 
 BHOLD-sviten innehåller verktyg som du kan använda för att kontrol lera att enskilda användare har fått rätt behörighet för att utföra sina affärs uppgifter. Administratören kan använda portalen som tillhandahålls av modulen BHOLD attestering för att utforma en hantera attesterings processen.
 
@@ -214,7 +214,7 @@ BHOLD Analytics-portalen ger dig möjlighet att skapa rulesets som består av en
 
 En regel kan testa vilken som helst av följande element uppsättningar:
 
-- Users
+- Användare
 - Organisatoriska enheter
 - Roller
 - Behörigheter
@@ -232,8 +232,8 @@ Varje filter består av en typ, en operator (som är av typen Dependent), en nyc
 
 |   |   |   |   |   |
 |---|---|---|---|---|
-|**Typ:**   | Antal   |
-| **Knapp**  | Users  |
+|**Bastyp**   | Antal   |
+| **Knapp**  | Användare  |
 | **Operator**  | >  |
 | **Värde:** | 10 |
 
@@ -261,7 +261,7 @@ Om du till exempel vill testa implementeringen av en SoD-princip (ansvars förde
 |   |  |
 |---|--|
 |Namn:| Betalnings SoD-test|
-|Brevpost| Users|
+|Brevpost| Användare|
 |Del mängds filter:| Med en begäran om behörighets betalning|
 |Regel filter: | Det går inte att godkänna betalning för någon behörighet|
 
@@ -277,7 +277,7 @@ Om din affärs policy till exempel kräver att chefer har behörigheten Ändra b
 |  |  |
 |--|--|
 |Namn: | Ändra betalnings SoD-test|
-|Brevpost | Users |
+|Brevpost | Användare |
 |Del mängds filter: | Med någon roll hanterare|
 | Regel filter: |Måste ha behörighet att ändra betalning </br> Måste ha behörighet för att godkänna betalning|
 
@@ -288,7 +288,7 @@ Till skillnad från andra operatorer, **har det exklusivt** och **exklusivt sett
 |  |  |
 |--|--|
 |Namn: | Granska godkännande test|
-|Brevpost | Users|
+|Brevpost | Användare|
 | Del mängds filter: | Med någon roll hanterare
 |Regel filter: | Ha enbart behörighet att godkänna granskningar|
 
@@ -308,12 +308,12 @@ Du använder BHOLD repor ting module för att skapa rapporter som baseras på de
 Kategorier som omfattas av de inbyggda rapporterna innehåller följande:
 
 - Administration
-- Attestering
-- Kontrollerar
+- Hälsoattestering
+- Kontroller
 - Ankomstreg Access Control
 - Loggning
 - Modell
-- uppgifterna
+- Statistik
 - Arbetsflöde
 
 Du kan skapa rapporter och lägga till dem i dessa kategorier, eller så kan du definiera egna kategorier där du kan placera anpassade och inbyggda rapporter.

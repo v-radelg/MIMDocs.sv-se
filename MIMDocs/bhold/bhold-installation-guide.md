@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: fb3cf6e5b00c1bd0c01d86aff474dc2ff28c2815
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042261"
 ---
 # <a name="microsoft-bhold-suite-sp1-60-installation-guide"></a>Installations guide för Microsoft BHOLD Suite SP1 (6,0)
@@ -93,13 +93,13 @@ Mer information om SQL Server bästa praxis finns i de [10 bästa praxisen för 
 ### <a name="trusted-certificates-list-update"></a>Uppdatering av lista över betrodda certifikat
 
 Windows kan konfigureras för att verifiera certifikat kedjor innan en tjänst startas. På sådana system kan en tjänst inte starta om den körbara koden för tjänsten har signerats med ett certifikat som inte finns i listan över betrodda certifikat (TCL) på servern. Microsoft BHOLD Suite SP1-programmet är kod signerat med en kedja av kod signerings certifikat som kommer från certifikat utfärdaren Microsoft Root Certificate Authority 2010.
-Windows kan konfigureras för att hämta rot certifikat från Microsoft via en Internet anslutning. På ett frånkopplat system innehåller dock Windows Server bara de certifikat som fanns i rot programmet vid en tidpunkt innan Windows släpptes. I versioner av Windows Server före Windows Server 2010 innehåller dessa certifikat inte det rot certifikat som krävs för att verifiera certifikat kedjan för kod signering i BHOLD Suite SP1. Om du planerar att installera en eller flera Microsoft BHOLD Suite SP1-moduler på ett system som kanske inte har en uppdaterad TCL måste du ladda ned och installera rot uppdaterings paketet, eller använda grupprincip för att installera rot uppdaterings paketet innan du installerar ett BHOLD Suite SP1 modulen. Mer information finns i [Windows Root Certificate program members](https://support.microsoft.com/kb/931125).
+Windows kan konfigureras för att hämta rot certifikat från Microsoft via en Internet anslutning. På ett frånkopplat system innehåller dock Windows Server bara de certifikat som fanns i rot programmet vid en tidpunkt innan Windows släpptes. I versioner av Windows Server före Windows Server 2010 innehåller dessa certifikat inte det rot certifikat som krävs för att verifiera certifikat kedjan för kod signering i BHOLD Suite SP1. Om du planerar att installera en eller flera Microsoft BHOLD Suite SP1-moduler på ett system som kanske inte har en uppdaterad TCL måste du hämta och installera rot uppdaterings paketet, eller använda grupprincip för att installera rot uppdaterings paketet innan du installerar en BHOLD Suite SP1-modul. Mer information finns i [Windows Root Certificate program members](https://support.microsoft.com/kb/931125).
 
 ### <a name="installing-bhold-suite-sp1-on-windows-server-20122016-required-step"></a>Steg för att installera BHOLD Suite SP1 i Windows Server 2012/2016 
 
 ![IIS-installation BHOLD](media/bhold-installation-guide/iis-install-bhold.png)
 
-Om du installerar BHOLD Suite SP1 på Windows Server 2012 eller 2016 kommer BHOLD-webbsidor inte att vara tillgängliga förrän du ändrar filen applicationHost. config som finns i ```C:\Windows\System32\inetsrv\config```. I avsnittet ```<globalModules>``` lägger du till ```preCondition="bitness64``` till posten som börjar ```<add name="SPNativeRequestModule"``` så att den ser ut så här:
+Om du installerar BHOLD Suite SP1 på Windows Server 2012 eller 2016 kommer BHOLD-webbsidor inte att vara tillgängliga förrän du ändrar filen applicationHost. config som finns i ```C:\Windows\System32\inetsrv\config```. I ```<globalModules>``` avsnittet lägger ```preCondition="bitness64``` du till posten som börjar ```<add name="SPNativeRequestModule"``` så att den ser ut så här:
 
 ```<add name="SPNativeRequestModule" image="C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\15\isapi\spnativerequestmodule.dll" preCondition="bitness64"/>```
 

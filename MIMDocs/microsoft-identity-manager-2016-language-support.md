@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.openlocfilehash: 2caf9f06067c229d585019f912a7ff4e00fad3e6
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044131"
 ---
 # <a name="supported-languages"></a>Språk som stöds
@@ -25,60 +25,60 @@ Den här artikeln beskriver de språk som stöds och mappning av uppdateringar f
 Microsoft MIM-tjänsten och Portal språk paketet har stöd för följande språk 33-språk.  
 
 > [!NOTE]
-> I [4.4.1642.0](https://support.microsoft.com/en-us/help/4021562/hotfix-rollup-package-build-4-4-1642-0-is-available-for-microsoft) kommer en register nyckel som har lagts till med namnet "OverrideDefaultUILocale" till MIM-tillägg och-språk paket att försöka mappa alla liknande språk till det som stöds. Om t. ex. visnings språket för Windows är ES-CL (spanska Chile) eller en ES-\*, försöker det att mappa detta till ES-ES (spanska Spanien).
+> I [4.4.1642.0](https://support.microsoft.com/en-us/help/4021562/hotfix-rollup-package-build-4-4-1642-0-is-available-for-microsoft) kommer en register nyckel som har lagts till med namnet "OverrideDefaultUILocale" till MIM-tillägg och-språk paket att försöka mappa alla liknande språk till det som stöds. Om t. ex. visnings språket för Windows är ES-CL (spanska Chile) eller något ES\*, kommer det att försöka mappa detta till ES-es (spanska Spanien).
 
 > [!IMPORTANT]
 > Texten i SSPR-tillägget och-portalen kommer att lokaliseras, men frågorna kommer inte att fungera utan ytterligare arbete. Du måste skapa authn-arbetsflöden (och tillhör ande uppsättningar och MPR) för att rikta in dig på frågor på varje språk till mål platsen.
 
-|       Språk        | FIM(4.3.x.x)/MIM(4.4.xx) | MIM(4.5.x.x) |
+|       Språk        | FIM (4.3. x)/MIM (4.4. xx) | MIM (4.5. x. x) |
 |-----------------------|--------------------------|--------------|
-|       Bulgariska       |          BG-BG           |      Bulgarien      |
+|       Bulgariska       |          bg-BG           |      Bulgarien      |
 | Kinesiska (förenklad)  |          zh-CN           |   zh-hans    |
-|   Kinesiska (Taiwan)    |          zh-TW           |   zh-hant    |
-|       Kroatiska        |          HR-HR           |      timmars      |
-|         Tjeckiska         |          CS-CZ           |      cs      |
+|   Kinesiska (Taiwan)    |          zh-TW           |   zh-Hant    |
+|       Kroatiska        |          hr-HR           |      tim      |
+|         Tjeckiska         |          cs-CZ           |      östasiatisk      |
 |        Danska         |          da-DK           |      da      |
-|         Nederländska         |          NL-NL           |      nederländska      |
+|         Nederländska         |          nl-NL           |      nl      |
 |       Estniska        |          et-EE           |      ge      |
 |        Franska         |          fr-FR           |      fr      |
-|        Finska        |          fi-FI           |      s      |
-|        Tyska         |          de-DE           |      tillförsel      |
-|         Grekiska         |          el GR           |      El      |
-|         Hindi         |          Hej Indien           |      Hej      |
+|        Finska        |          fi-FI           |      fi      |
+|        Tyska         |          de-DE           |      de      |
+|         Grekiska         |          el-GR           |      El      |
+|         Hindi         |          hi-IN           |      Hej      |
 |       Ungerska       |          hu-HU           |      HU      |
-|        italienska        |          IT-IT           |      företaget      |
-|       Japanska        |          ja-JP           |      Japan      |
-|        Koreanska         |          ko-KR           |      Ko      |
-|      Litauiska       |          lt-LT           |      lt      |
+|        Italienska        |          it-IT           |      it      |
+|       Japanska        |          ja-JP           |      ja      |
+|        Koreansk         |          ko-KR           |      Ko      |
+|      Litauiska       |          lt-LT           |      långsiktiga      |
 |        Lettiska        |          lv-LV           |      LV      |
-|       Norska       |          NB-NO           |    NB-NO     |
+|       Norska       |          nb-NO           |    nb-NO     |
 |        Polska         |          pl-PL           |      pl      |
-| portugisiska (Portugal) |          PT-PT           |      pt      |
+| Portugisiska (Portugal) |          pt-PT           |      pt      |
 |  Portugisiska (Brasilien)  |          pt-BR           |    pt-BR     |
-|        Ryska        |          ru-RU           |      |      |
-|       Rumänska        |          RO-RO           |      ro      |
+|        Ryska        |          ru-RU           |      ru      |
+|       Rumänska        |          ro-RO           |      ro      |
 |        Spanska        |          es-ES           |      ES      |
 |        Slovakiska         |          sk-SK           |      sk      |
-|        Svenska        |          SV-SE           |      sa      |
+|        Svenska        |          sv-SE           |      sv      |
 |       Slovenska       |          sl-SI           |      SL      |
-|   Serbiska-Serbien    |  sr-latn-CS(Depricated)  |  SR-latn-RS  |
-|         Thai          |          TH-TH           |      i:te      |
-|        Turkiska        |          TR-TR           |      TR      |
+|   Serbiska-Serbien    |  SR-latn-CS (inaktuell)  |  sr-Latn-RS  |
+|         Thailändska          |          th-TH           |      i:te      |
+|        Turkiska        |          tr-TR           |      TR      |
 |       Ukrainska       |          uk-UA           |      Storbritannien      |
 
 ## <a name="certificate-management"></a>Certifikathantering 
 Microsoft Certificate Management stöder följande 9 språk. 
 
-|Språk|FIM(4.3.x.x)/MIM(4.4.xx)|Ny MIM (4.5. x. x)
+|Språk|FIM (4.3. x)/MIM (4.4. xx)|Ny MIM (4.5. x. x)
 |-----|-----|-----|-----|
 |Kinesiska (förenklad)|zh-CN|zh-hans|
-|Kinesiska (Taiwan)|zh-TW|zh-hant|
-|Nederländska|NL-NL|nederländska|
+|Kinesiska (Taiwan)|zh-TW|zh-Hant|
+|Nederländska|nl-NL|nl|
 |Franska|fr-FR|fr|
-|Tyska|de-DE|tillförsel|
-|italienska|IT-IT|företaget|
-|Japanska|ja-JP|Japan|
-|portugisiska (Portugal)|PT-PT|PT-PT|
+|Tyska|de-DE|de|
+|Italienska|it-IT|it|
+|Japanska|ja-JP|ja|
+|Portugisiska (Portugal)|pt-PT|pt-PT|
 |Spanska|es-ES|ES|
 
 ## <a name="certificate-management-modern-application"></a>Modernt program för certifikat hantering  
@@ -86,28 +86,28 @@ Microsoft Certificate Management moderna program har stöd för följande 33-spr
 
 |Språk | [1.0.225.104](https://www.microsoft.com/en-us/download/details.aspx?id=54954) | |
 |-----|-----|-----|-----|
-|Nederländska|NL-NL|nederländska|
+|Nederländska|nl-NL|nl|
 |Kinesiska (förenklad)|zh-CN|zh-hans|
-|Kinesiska (Taiwan)|zh-TW|zh-hant|
-|Tjeckiska|CS-CZ|cs|
+|Kinesiska (Taiwan)|zh-TW|zh-Hant|
+|Tjeckiska|cs-CZ|östasiatisk|
 |Danska|da-DK|da|
 |Franska|fr-FR|fr|
-|Finska|fi-FI|s|
-|Tyska|de-DE|tillförsel|
-|Grekiska|el GR|El|
+|Finska|fi-FI|fi|
+|Tyska|de-DE|de|
+|Grekiska|el-GR|El|
 |Ungerska|hu-HU|HU|
-|italienska|IT-IT|företaget|
-|Japanska|ja-JP|Japan|
-|Koreanska|ko-KR|Ko|
-|Norska|NB-NO|NB-NO|
+|Italienska|it-IT|it|
+|Japanska|ja-JP|ja|
+|Koreansk|ko-KR|Ko|
+|Norska|nb-NO|nb-NO|
 |Polska|pl-PL|pl|
-|portugisiska (Portugal)|PT-PT|pt|
+|Portugisiska (Portugal)|pt-PT|pt|
 |Portugisiska (Brasilien)|pt-BR|pt-BR|
-|Ryska|ru-RU|||
-|Rumänska|RO-RO|ro|
+|Ryska|ru-RU|ru|
+|Rumänska|ro-RO|ro|
 |Spanska|es-ES|ES|
-|Svenska|SV-SE|sa|
-|Turkiska|TR-TR|TR|
+|Svenska|sv-SE|sv|
+|Turkiska|tr-TR|TR|
 
 ## <a name="next-steps"></a>Nästa steg
 

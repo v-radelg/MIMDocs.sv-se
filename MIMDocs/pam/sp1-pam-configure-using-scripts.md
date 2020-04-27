@@ -12,10 +12,10 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: ''
 ms.suite: ems
 ms.openlocfilehash: 102754fc88af32cb9abed40716ba9168a041d58e
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043893"
 ---
 # <a name="configure-pam-using-scripts"></a>Konfigurera PAM med hjälp av skript
@@ -43,9 +43,9 @@ Steg:
 
 Innan du fortsätter uppdaterar du PAMDeploymentConfig. xml och placerar den uppdaterade kopian på alla datorer.
 
-### <a name="setup"></a>Setup
+### <a name="setup"></a>Installation
 
-|Machine   | Vem du ska köra som   |Kommandon   |
+|Dator   | Vem du ska köra som   |Kommandon   |
 |---|---|---|
 |  PRIVDC |PRIV-domänadministratör   | .\PAMDeployment.ps1 Välj menyalternativ 1 (PRIV-skogskonfiguration)   |
 |   |   |  Med ovanstående steg skapas en SIDs.txt. Den här filen måste kopieras till $envDrive:PAM på CORPDC innan du utför nästa steg. |
@@ -57,7 +57,7 @@ Innan du fortsätter uppdaterar du PAMDeploymentConfig. xml och placerar den upp
 
 ### <a name="validation"></a>Validering
 
-|  Machine | Vem du ska köra som   | Kommandon   |
+|  Dator | Vem du ska köra som   | Kommandon   |
 |---|---|---|
 | CORPClient  | CORP-användare (lokal administratör)  |   .\PAMDeployment.ps1 Välj menyalternativ 7 (MIM PAM-klientkonfiguration)  |
 | CORPDC  | CORP-domänadministratör   | Import-module .\PAMValidation.psm1 ; Create-PAMValidationCORPDCConfig   |

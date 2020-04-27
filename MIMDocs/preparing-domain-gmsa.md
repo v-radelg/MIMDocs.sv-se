@@ -12,10 +12,10 @@ ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.reviewer: markwahl-msft
 ms.suite: ems
 ms.openlocfilehash: 32b346dd9cf99b617edfaca953389cba30d6681c
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043519"
 ---
 # <a name="configure-a-domain-for-group-managed-service-accounts-gmsa-scenario"></a>Konfigurera en domän för gMSA-scenario (Group Managed Service accounts)
@@ -28,7 +28,7 @@ ms.locfileid: "79043519"
 
 Microsoft Identity Manager (MIM) fungerar med Active Directory-domänen (AD). Du bör redan ha en AD installerad och se till att du har en domänkontrollant i miljön för en domän du har administratörsbehörighet för.  Den här artikeln beskriver hur du konfigurerar grupphanterade tjänst konton i domänen för användning av MIM.
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Översikt
 
 Grupphanterade tjänst konton eliminerar behovet av att regelbundet ändra lösen ord för tjänst konton. I och med lanseringen av MIM 2016 SP2 kan följande MIM-komponenter ha gMSA-konton konfigurerade för användning under installations processen:
 
@@ -49,11 +49,11 @@ Följande MIM-komponenter stöder inte körning som gMSA-konton:
 
 
 Mer information om gMSA finns i följande artiklar:
--   [Översikt över grupphanterade tjänst konton](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)
+-   [Översikt över grupphanterade tjänstkonton](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)
 
 -   [New-ADServiceAccount](https://docs.microsoft.com/powershell/module/addsadministration/new-adserviceaccount?view=win10-ps)
 
--   [Skapa rot nyckeln för Key Distribution Services-KDS](https://technet.microsoft.com/library/jj128430(v=ws.11).aspx)
+-   [Skapa KDS-rotnyckeln för nyckeldistributionstjänster](https://technet.microsoft.com/library/jj128430(v=ws.11).aspx)
 
 ## <a name="create-user-accounts-and-groups"></a>Skapa användarkonton och grupper
 
@@ -61,13 +61,13 @@ Alla komponenter i MIM-distributionen behöver ha egna identiteter i domänen. D
 
 
 > [!NOTE]
-> Den här genomgången använder exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
+> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Ett exempel:
 > - Domänkontrollantens namn- **DC**
 > - Domännamn – **contoso**
 > - Server namn för MIM-tjänst – **mimservice**
 > - MIM Sync Server-namn – **mimsync**
 > - SQL Server namn – **SQL**
-> - Lösenord – <strong>Pass@word1</strong>
+> - Ords<strong>Pass@word1</strong>
 
 1. Logga in på domänkontrollanten som domänadministratör (*t.ex. Contoso\Administratör*).
 
@@ -144,7 +144,7 @@ Om det redan finns en rot nyckel för domänen (Använd **Get-KdsRootKey** för 
 Se till att alla dator konton för datorer där MIM-programvaran ska installeras redan är anslutna till domänen.  Utför sedan de här stegen i PowerShell som domän administratör.
 
 7.  Skapa en grupp *MIMSync_Servers* och Lägg till alla MIM-synkroniseringsenheter i den här gruppen.
-    Skriv följande för att skapa en ny AD-grupp för MIM-synkroniseringsenheter. Sedan kan du lägga till MIM-synkroniseringstjänsten Active Directory dator konton, t. ex. *contoso\MIMSync $* , i den här gruppen.
+    Skriv följande för att skapa en ny AD-grupp för MIM-synkroniseringsenheter. Sedan kan du lägga till MIM-synkroniseringstjänsten Active Directory dator konton, t. ex. *contoso\MIMSync $*, i den här gruppen.
 
     ```PowerShell
     New-ADGroup –name MIMSync_Servers –GroupCategory Security –GroupScope Global –SamAccountName MIMSync_Servers
@@ -175,7 +175,7 @@ Se till att alla dator konton för datorer där MIM-programvaran ska installeras
 
 - Använd MIM-synkroniseringstjänsten för grupphanterade tjänst konton och skapa inte ett separat konto
 
-    Du kan hoppa över skapandet av tjänst kontot för MIM-tjänstehanterings agenten. I det här fallet använder du MIM-gMSA namn, t. ex. *contoso\MIMSyncGMSAsvc $* , i stället för MIM ma-kontot när du installerar MIM-tjänsten. Senare i konfiguration av MIM-tjänstens hanterings agent aktiverar du alternativet *Använd MIMSync konto* .
+    Du kan hoppa över skapandet av tjänst kontot för MIM-tjänstehanterings agenten. I det här fallet använder du MIM-gMSA namn, t. ex. *contoso\MIMSyncGMSAsvc $*, i stället för MIM ma-kontot när du installerar MIM-tjänsten. Senare i konfiguration av MIM-tjänstens hanterings agent aktiverar du alternativet *Använd MIMSync konto* .
 
     Aktivera inte "Neka inloggning från nätverket för MIM-synkroniseringstjänsten gMSA som MIM MA-kontot kräver behörigheten Tillåt nätverks inloggning.
 
@@ -197,7 +197,7 @@ Se till att alla dator konton för datorer där MIM-programvaran ska installeras
 
 Fortsätt att använda PowerShell som domän administratör.
    
-12. Skapa en grupp *MIMService_Servers* och Lägg till alla MIM-tjänsteservrar i den här gruppen.  Skriv följande PowerShell för att skapa en ny AD-grupp för MIM-tjänsteservrar och Lägg till MIM-tjänsteserver Active Directory dator konto, t. ex. *contoso\MIMPortal $* , i den här gruppen.
+12. Skapa en grupp *MIMService_Servers* och Lägg till alla MIM-tjänsteservrar i den här gruppen.  Skriv följande PowerShell för att skapa en ny AD-grupp för MIM-tjänsteservrar och Lägg till MIM-tjänsteserver Active Directory dator konto, t. ex. *contoso\MIMPortal $*, i den här gruppen.
 
     ```PowerShell
     New-ADGroup –name MIMService_Servers –GroupCategory Security –GroupScope Global –SamAccountName MIMService_Servers
@@ -240,7 +240,7 @@ Om du konfigurerar MIM PAM följer du samma rikt linjer som beskrivits ovan för
 
 ## <a name="specifying-a-gmsa-when-installing-mim"></a>Ange en gMSA när du installerar MIM
 
-Som en allmän regel, i de flesta fall när du använder ett MIM-installationsprogram, för att ange att du vill använda en gMSA i stället för ett vanligt konto, lägger du till ett dollar tecken till gMSA namn, t. ex. **contoso\MIMSyncGMSAsvc $** , och lämnar fältet lösen ord tomt. Ett undantag är verktyget *miisactivate. exe* som godkänner gMSA namn utan dollar tecken.
+Som en allmän regel, i de flesta fall när du använder ett MIM-installationsprogram, för att ange att du vill använda en gMSA i stället för ett vanligt konto, lägger du till ett dollar tecken till gMSA namn, t. ex. **contoso\MIMSyncGMSAsvc $**, och lämnar fältet lösen ord tomt. Ett undantag är verktyget *miisactivate. exe* som godkänner gMSA namn utan dollar tecken.
 <br/>
 
 > [!div class="step-by-step"]

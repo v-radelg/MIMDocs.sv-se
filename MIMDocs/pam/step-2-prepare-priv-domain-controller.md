@@ -12,17 +12,17 @@ ms.assetid: 0e9993a0-b8ae-40e2-8228-040256adb7e2
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 97b425fc4444b241ddce99e7d5e3abf564daf245
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043706"
 ---
 # <a name="step-2---prepare-the-first-priv-domain-controller"></a>Steg 2 – Förbereda den första PRIV-domänkontrollanten
 
 > [!div class="step-by-step"]
-> [« Steg 1](step-1-prepare-corp-domain.md)
-> [Steg 3 »](step-3-prepare-pam-server.md)
+> [«Steg 1](step-1-prepare-corp-domain.md)
+> [steg 3»](step-3-prepare-pam-server.md)
 
 I det här steget ska du skapa en ny domän som tillhandahåller skyddsmiljön för autentisering av administratörer.  Den här skogen måste ha minst en domänkontrollant och minst en medlemsserver. Medlemsservern konfigureras i nästa steg.
 
@@ -34,11 +34,11 @@ I det här avsnittet konfigurerar du en virtuell dator som ska fungera som en do
 
 Installera Windows Server 2012 R2 för att göra en dator "PRIVDC" på en annan ny virtuell dator utan någon programvara installerad.
 
-1. Välj att utföra en anpassad (inte uppgraderad) installation av Windows Server. När du installerar, anger du **Windows Server 2012 R2 Standard (Server med GUI) x64**; _Välj inte_ **Data Center eller Server Core**.
+1. Välj att utföra en anpassad (inte uppgraderad) installation av Windows Server. Vid installationen anger du **Windows Server 2012 R2 Standard (server med GUI) x64**. _Välj inte _ **Datacenter eller Server Core**.
 
 2. Granska och godkänn licensvillkoren.
 
-3. Eftersom disken är tom markerar du **Anpassad: Installera bara Windows** och använd diskutrymmet som inte initierats.
+3. Eftersom disken är tom väljer du **Anpassad: Installera endast Windows** och Använd det oinitierade disk utrymmet.
 
 4. När du har installerat operativsystemsversionen, loggar du in på den nya datorn som den nya administratören. Använd kontrollpanelen till att ge datorn namnet *PRIVDC*, ge den en statisk IP-adress på det virtuella nätverket och konfigurera DNS-servern som den för domänkontrollanten som installerades i föregående steg. Detta kräver en omstart av servern.
 
@@ -165,25 +165,25 @@ Du måste ställa in granskning för att PAM-konfigurationen ska upprättas mell
 
 1. Kontrollera att du är inloggad som domänadministratör (PRIV\\Administrator).
 
-2. Gå till **Start** > **Administrationsverktyg** > **Grupprinciphantering**.
+2. Gå till **Start** > **administrations verktyg** > **Grupprincip hantering**.
 
-3. Gå till **Skog: priv.contoso.local** > **Domäner** > **priv.contoso.local** > **Domänkontrollanter** > **Standardprincip för domänkontrollanter**. En varning visas.
+3. Navigera till **skog: Föreg. contoso. local** > **Domains** > Domains **. contoso. lokala** > **Domain Controllers** > domänkontrollanter är**standard domän**kontrollers princip för domänkontrollanter. En varning visas.
 
 4. Högerklicka på **Standardprincip för domänkontrollanter** och välj **Redigera**.
 
-5. I fönstret Redigeraren Grupprinciphantering går du till **Datorkonfiguration** > **Principer** > **Windows-inställningar** > **Säkerhetsinställningar** > **Lokala principer** > **Granskningsprincip**.
+5. I redigeraren Grupprinciphantering konsol trädet navigerar du till **dator konfiguration** > **principer** > **Windows-inställningar** > **säkerhets inställningar** > **lokala principer** > **gransknings princip**.
 
 6. Högerklicka på **Granska kontohantering** i informationsfönstret och välj **Egenskaper**. Klicka på **Definiera följande principinställningar**, markera kryssrutorna **Lyckade** och **Misslyckade**, klicka på **Tillämpa** och på **OK**.
 
 7. Högerklicka på **Granska katalogtjänståtkomst** i informationsfönstret och välj **Egenskaper**. Klicka på **Definiera följande principinställningar**, markera kryssrutorna **Lyckade** och **Misslyckade**, klicka på **Tillämpa** och på **OK**.
 
-8. Gå till **Datorkonfiguration** > **Principer** > **Windows-inställningar** > **Säkerhetsinställningar** > **Konto principer** > **Kerberos-princip**.
+8. Gå till **dator konfiguration** > **principer** > **Windows-inställningar** > **säkerhets inställningar** > **konto principer** > **Kerberos-princip**.
 
 9. I informationsfönstret högerklickar du på **Högsta livstid för användarbiljett** och väljer **Egenskaper**. Klicka på **Definiera följande principinställningar** ange antalet timmar till *1*, klicka på **Tillämpa** och på **OK**. Obs! Andra inställningar i fönstret ändras också.
 
 10. I fönstret Grupprinciphantering väljer du på **Standarddomänprincip** och högerklickar och väljer **Redigera**.
 
-11. Visa **Datorkonfiguration** > **Principer** > **Windows-inställningar** > **Säkerhetsinställningar** > **Lokala principer** och välj **Tilldelning av användarrättigheter**.
+11. Expandera **dator konfiguration** > **principer** > **Windows-inställningar** > **säkerhets inställningar** > **lokala principer** och välj **tilldelning av användar rättigheter**.
 
 12. Högerklicka på **Neka inloggning som batchjobb** i informationsfönstret och välj **Egenskaper**.
 
@@ -304,5 +304,5 @@ Mer information finns i [Skydda arbetsstationer med privilegierad åtkomst](http
 I nästa steg ska du förbereda en PAM-server.
 
 > [!div class="step-by-step"]
-> [« Steg 1](step-1-prepare-corp-domain.md)
-> [Steg 3 »](step-3-prepare-pam-server.md)
+> [«Steg 1](step-1-prepare-corp-domain.md)
+> [steg 3»](step-3-prepare-pam-server.md)

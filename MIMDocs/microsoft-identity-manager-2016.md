@@ -9,10 +9,10 @@ ms.date: 10/18/2019
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.openlocfilehash: b2b63f4490b5f53f5a2d683d5130b3ac1e74dc04
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044097"
 ---
 # <a name="microsoft-identity-manager-2016-news-and-updates"></a>Microsoft Identity Manager 2016 nyheter och uppdateringar
@@ -48,7 +48,7 @@ MIM 2016 Service Pack 2 är en sammanfattning av befintliga snabb korrigeringar 
 
 
 
-## <a name="related-topics"></a>Närliggande information
+## <a name="related-topics"></a>Relaterade ämnen
 
 Läs mer om scenarier som lagts till i MIM 2016 och tidigare på [Microsoft Identity manager 2016](microsoft-identity-manager-2016.md).
 

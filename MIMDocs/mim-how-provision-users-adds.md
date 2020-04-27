@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: 149339a6e1029f01378a518a98029c1d588de6f9
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044182"
 ---
 # <a name="how-do-i-provision-users-to-ad-ds"></a>Hur etablerar jag användare i AD DS
@@ -64,7 +64,7 @@ Denna tidsberäkning förutsätter att testmiljön redan är konfigurerad och om
 
 Om du har frågor om innehållet i detta dokument eller om du har allmänna kommentarer som du vill diskutera kan du lägga upp ett meddelande i [forumet för Forefront Identity Manager 2010](https://go.microsoft.com/FWLink/p/?LinkId=189654).
 
-## <a name="scenario-description"></a>Scenario-beskrivning
+## <a name="scenario-description"></a>Scenariobeskrivning
 
 
 Fabrikam, ett fiktivt företag, planerar att använda MIM för att hantera användarkonton i företagets AD DS med hjälp av MIM. Som en del av den här processen måste Fabrikam etablera användare i AD DS. För att starta den första testningen har Fabrikam installerat en grundläggande laboratoriemiljö som består av MIM och AD DS.
@@ -113,7 +113,7 @@ Följande tabell visar de komponenter som är en del av scenariot i denna guide.
 
 Scenariot som beskrivs i den här handledningen består av de byggstenar som visas i följande bild.
 
-![Scenarioanvisningar](media/how-provision-users-adds/image013.png)
+![Scenariosteg](media/how-provision-users-adds/image013.png)
 
 
 ## <a name="configuring-the-external-systems"></a>Konfigurera de externa systemen
@@ -194,7 +194,7 @@ I följande tabell visas de viktigaste scenariospecifika inställningarna som du
 | Sida för hanteringsagentens designer | Konfiguration |
 |------------|------------------------------------|
 | Skapa hanteringsagent | 1. **hanterings agent för:** FIM-tjänstens hanterings agent <br/> 2. **namn** Fabrikam FIMMA |
-| Anslut till databas     | Använd följande inställningar: <br/> &#183; **Server:** localhost <br/> &#183; **Databas:** FIMService <br/> &#183;**FIM-tjänstens bas adress:** http://localhost:5725 <br/> <br/> Ange information om kontot som du skapade för den här hanteringsagenten |
+| Ansluta till databasen     | Använd följande inställningar: <br/> &#183; **Server:** localhost <br/> &#183; **Databas:** FIMService <br/> &#183; för **FIM-tjänstens bas adress:**http://localhost:5725 <br/> <br/> Ange information om kontot som du skapade för den här hanteringsagenten |
 | Välj objekttyper                                     | Utöver de objekttyper som redan har valts väljer du **Person.**   |
 | Konfigurera objekttypsmappningar                          | Utöver de objekttypsmappningar som redan finns lägger du till en mappning för personen **Typ av datakällobjekt** till **Metaversum**-objekttyppersonen. |
 | Konfigurera attributflöde                                | Utöver de mappningar av attributflöde som redan finns lägger du till följande mappningar av attributflöde: <br/><br/> ![Attributflöde](media/how-provision-users-adds/image018.jpg) |
@@ -243,7 +243,7 @@ För scenariot i den här handledningen måste du konfigurera en etableringsprin
 
 Målet med den här etableringsprincipen är att föra in grupper i omfattningen för den utgående synkroniseringsregeln för AD-användare. Genom att föra in resursen i omfattningen för synkroniseringsregeln aktiverar du synkroniseringsmotorn så att den kan etablera resursen till AD DS i enlighet med din konfiguration.
 
-Om du vill konfigurera FIM-tjänsten navigerar du i Windows Internet Explorer® till http://localhost/identitymanagement. På sidan för MIM-portalen skapar du etableringsprincipen genom att gå till de relaterade sidorna från avsnittet Administration. Du kan kontrollera konfigurationen genom att köra skriptet i [Using Windows PowerShell to document your provisioning policy configuration](https://go.microsoft.com/FWLink/p/?LinkId=189661) (Använda Windows PowerShell för att dokumentera konfiguration av etableringsprincipen).
+Om du vill konfigurera FIM-tjänsten navigerar du i Windows Internet http://localhost/identitymanagementExplorer® till. På sidan för MIM-portalen skapar du etableringsprincipen genom att gå till de relaterade sidorna från avsnittet Administration. Du kan kontrollera konfigurationen genom att köra skriptet i [Using Windows PowerShell to document your provisioning policy configuration](https://go.microsoft.com/FWLink/p/?LinkId=189661) (Använda Windows PowerShell för att dokumentera konfiguration av etableringsprincipen).
 
 ### <a name="step-6-create-the-synchronization-rule"></a>Steg 6: Skapa synkroniseringsregeln
 
@@ -251,7 +251,7 @@ Följande tabeller visar konfiguration av synkroniseringsregeln för etablering 
 
 | Konfiguration av synkroniseringsregel                                                                         |                                                                             |                                                           
 |------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------|
-| Namn                                                                                                       | Utgående synkroniseringsregel för Active Directory-användare                         |                                                          
+| Name                                                                                                       | Utgående synkroniseringsregel för Active Directory-användare                         |                                                          
 | Beskrivning                                                                                               |                                                                             |                                                           
 | Prioritet                                                                                                | 2                                                                           |                                                           
 | Dataflödesriktning   | Utgående             |       
@@ -268,8 +268,8 @@ Följande tabeller visar konfiguration av synkroniseringsregeln för etablering 
 
 | Relation ||
 |------------|---------|
-| Skapa resurs i externt system                                                                         | Sant                                                                        |                                                           
-| Aktivera avetablering                                                                                      | Falskt                                                                       |                                                           
+| Skapa resurs i externt system                                                                         | True                                                                        |                                                           
+| Aktivera avetablering                                                                                      | False                                                                       |                                                           
 
 | Relationsvillkor                                                                                      | |
 |------------|----------|
@@ -279,17 +279,17 @@ Följande tabeller visar konfiguration av synkroniseringsregeln för etablering 
 | Inledande utgående attributflöden        | |                                                             |
 |-------------------|---------------------- |---------------|
 | Tillåt null-värden                 | Mål                                                                 | Källa                                                    |
-| falskt                       | dn                                                                          | \+("CN=",displayName,",OU=MIMObjects,DC=fabrikam,DC=com") |
-| falskt                       | userAccountControl                                                          | **Konstant:** 512                                         |
-| falskt                                                                     | unicodePwd                    | Konstant: P\@\$\$W0rd                                    |
+| false                       | dn                                                                          | \+("CN=",displayName,",OU=MIMObjects,DC=fabrikam,DC=com") |
+| false                       | userAccountControl                                                          | **Konstant:** 512                                         |
+| false                                                                     | unicodePwd                    | Konstant: P\@\$\$W0rd                                    |
 
 | Beständiga utgående attributflöden  |                                                                     |                                                           |
 |--------------------------------------|---------------------------------------------------------------------|-----------------------------------------------------------|
 | Tillåt null-värden                                                                                                | Mål                                                                 | Källa                                                    |
-| falskt                                                                                                      | sAMAccountName                                                              | kontonamn                                               |
-| falskt                                                                                                      | visningsnamn                                                                 | visningsnamn                                               |
-| falskt                                                                                                      | förnamn                                                                   | förnamn                                                 |
-| falskt                                                                                                      | sn                                                                          | efternamn                                                  |
+| false                                                                                                      | sAMAccountName                                                              | accountName                                               |
+| false                                                                                                      | displayName                                                                 | displayName                                               |
+| false                                                                                                      | förnamn                                                                   | firstName                                                 |
+| false                                                                                                      | sn                                                                          | lastName                                                  |
 
 
 
@@ -302,15 +302,15 @@ Målet med AD-etableringsarbetsflödet är att lägga till synkroniseringsregeln
 
 | Arbetsflödeskonfiguration               |                                                                 |
 |--------------------------------------|-----------------------------------------------------------------|
-| Namn                                 | Etableringsarbetsflöde för Active Directory-användare                     |
+| Name                                 | Etableringsarbetsflöde för Active Directory-användare                     |
 | Beskrivning                          |                                                                 |
-| Arbetsflödestyp                        | Action                                                          |
-| Kör vid principuppdatering                 | Falskt                                                           |
+| Arbetsflödestyp                        | Åtgärd                                                          |
+| Kör vid principuppdatering                 | False                                                           |
 
 | Synkroniseringsregel                 |                                                                 |
 |--------------------------------------|-----------------------------------------------------------------|
-| Namn                                 | Utgående synkroniseringsregel för Active Directory-användare             |
-| Action                               | Lägg till                                                             |
+| Name                                 | Utgående synkroniseringsregel för Active Directory-användare             |
+| Åtgärd                               | Lägg till                                                             |
 
 
 
@@ -321,11 +321,11 @@ Den hanteringsprincipregel (MPR) som krävs har typen Uppsättningsövergång oc
 
 | MPR-konfiguration                    |                                                             |
 |--------------------------------------|-------------------------------------------------------------|
-| Namn                                 | Hanteringsprincipregel för etablering av AD-användare                 |
+| Name                                 | Hanteringsprincipregel för etablering av AD-användare                 |
 | Beskrivning                          |                                                             |
 | Typ                                 | Uppsättningsövergång                                              |
-| Ger behörigheter                   | Falskt                                                       |
-| Inaktiverad                             | Falskt                                                       |
+| Ger behörigheter                   | False                                                       |
+| Disabled                             | False                                                       |
 
 | Definition av övergång                |                                                             |
 |--------------------------------------|-------------------------------------------------------------|
@@ -334,7 +334,7 @@ Den hanteringsprincipregel (MPR) som krävs har typen Uppsättningsövergång oc
 
 | Principarbetsflöden                     |                                                             |
 |--------------------------------------|-------------------------------------------------------------|
-| Typ                                 | Action                                                      |
+| Typ                                 | Åtgärd                                                      |
 | Visningsnamn                         | Etableringsarbetsflöde för Active Directory-användare                 |
 
 
@@ -512,7 +512,7 @@ En beskrivning av hur du kan ta bort dessa objekt från testmiljön finns i [En 
 I ett normalt synkroniseringsscenario som omfattar AD DS som synkroniseringsmål är MIM inte auktoritativt för alla attribut för ett objekt. När du exempelvis hanterar användarobjekt i AD DS med hjälp av FIM måste domänen och objectSID-attributen som minst bidras till av AD DS-hanteringsagenten.
 Kontonamn, domän och objectSID-attribut krävs om du vill göra det möjligt för en användare att logga in på FIM-portalen. En ytterligare ingående synkroniseringsregel krävs för AD DS-anslutarplatsen för att fylla i dessa attribut från AD DS. När du hanterar objekt med flera källor för attributvärden måste du se till att du konfigurerar attributflödets prioritet korrekt. Om attributflödets prioritet inte är korrekt konfigurerad blockerar synkroniseringsmotorn attribut från att fyllas i. Mer information om prioritet för attributflödet finns i artikeln [Om prioritet för attributflöde](https://go.microsoft.com/FWLink/p/?LinkId=189675).
 
-## <a name="next-steps"></a>Nästa steg
+## <a name="next-steps"></a>Efterföljande moment
 
 [Använda FIM för att aktivera eller inaktivera konton i Active Directory](https://go.microsoft.com/FWLink/p/?LinkId=189670)
 

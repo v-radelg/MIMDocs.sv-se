@@ -12,17 +12,17 @@ ms.assetid: eef248c4-b3b6-4b28-9dd0-ae2f0b552425
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 0cf952c93c0a7b95fd41939efc767e9e8c20be5e
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043655"
 ---
 # <a name="step-5--establish-trust-between-priv-and-corp-forests"></a>Steg 5 – upprätta förtroende mellan PRIV- och CORP-skogar
 
 > [!div class="step-by-step"]
-> [« Steg 4](step-4-install-mim-components-on-pam-server.md)
-> [Steg 6 »](step-6-transition-group-to-pam.md)
+> [«Steg 4](step-4-install-mim-components-on-pam-server.md)
+> [steg 6»](step-6-transition-group-to-pam.md)
 
 För varje CORP-domän, till exempel contoso.local, måste domänkontrollanterna PRIV och CONTOSO vara bundna av ett förtroende. Det gör att användarna i PRIV-domänen kan komma åt resurser i CORP-domänen.
 
@@ -40,7 +40,7 @@ Innan du upprättar förtroende måste domänkontrollanterna konfigureras för D
     ```
     Kontrollera att utdata visar en namnserverpost för PRIV-domänen med rätt IP-adress.
 
-3.  Om domänkontrollanten inte kan vidarebefordra till PRIV-domänen använder du **DNS-hanteraren** (finns under **Start** > **Programverktyg** > **DNS**) till att konfigurera vidarebefordran av DNS-namn för PRIV-domänen till IP-adressen för PRIVDC. Om den är en överordnad domän (t.ex. contoso.local) expanderar du noderna för domänkontrollanten och dess domän, till exempel **CORPDC** > **Zoner för vanlig sökning** > **contoso.local** och ser till att det finns en nyckel med namnet **priv** som namnservertyp (NS).
+3.  Om domänkontrollanten inte kan vidarebefordra till PRIV-domänen använder du **DNS-hanteraren** (finns under **Start** > **Programverktyg** > **DNS**) till att konfigurera vidarebefordran av DNS-namn för PRIV-domänen till IP-adressen för PRIVDC. Om det är en överordnad domän (t. ex. contoso. local) expanderar du noderna för den här domänkontrollanten och dess domän, till exempel **CORPDCs** > **Forward lookup Zones** > **contoso. local**och se till att en nyckel med namnet **föreg** finns som namnserver typ (namnserver).
 
     ![filstruktur för priv-nyckeln – skärmbild](./media/PAM_GS_DNS_Manager.png)
 
@@ -75,12 +75,12 @@ Aktivera läsbehörighet till AD för PRIV-administratörer och övervakningstj�
 3. Högerklicka på domänen **contoso.local** och välj **Delegera kontroll**.  
 4. På fliken Valda användare och grupper klickar du på **Lägg till**.  
 5. I fönstret Välj användare, datorer eller grupper klickar du på **Platser** och ändrar platsen till *priv.contoso.local*.  På objektnamnet skriver du *Domänadministratörer* och klickar på **Kontrollera namn**. När ett popup-fönster visas anger du användarnamnet *priv\administratör* och lösenordet.  
-6. Efter Domänadministratörer lägger du till " *; MIMMonitor*". När namnen **Domänadministratörer** och **MIMMonitor** är understrukna klickar du på **OK** och sedan på **Nästa**.  
+6. Efter Domänadministratörer lägger du till "*; MIMMonitor*". När namnen **Domänadministratörer** och **MIMMonitor** är understrukna klickar du på **OK** och sedan på **Nästa**.  
 7. I listan med vanliga uppgifter väljer du **Läsa all användarinformation** och klickar på **Nästa** och **Slutför**.  
 8. Stäng Active Directory – användare och datorer.
 
 9. Öppna ett PowerShell-fönster.
-10. Se till att SID-historik är aktiverat och SID-filtrering är inaktiverat med hjälp av `netdom`. Typ:
+10. Se till att SID-historik är aktiverat och SID-filtrering är inaktiverat med hjälp av `netdom`. Ange:
     ```cmd
     netdom trust contoso.local /quarantine:no /domain priv.contoso.local
     netdom trust /enablesidhistory:yes /domain priv.contoso.local
@@ -105,5 +105,5 @@ Aktivera läsbehörighet till AD för PRIV-administratörer och övervakningstj�
 I nästa steg flyttar du en grupp till PAM.
 
 > [!div class="step-by-step"]
-> [« Steg 4](step-4-install-mim-components-on-pam-server.md)
-> [Steg 6 »](step-6-transition-group-to-pam.md)
+> [«Steg 4](step-4-install-mim-components-on-pam-server.md)
+> [steg 6»](step-6-transition-group-to-pam.md)

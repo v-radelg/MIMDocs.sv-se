@@ -12,10 +12,10 @@ ms.assetid: c01487f2-3de6-4fc4-8c3a-7d62f7c2496c
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 6597a7b364c1b7fa023e78bef917163ea2c19dac
-ms.sourcegitcommit: 87f94edf26fdb7f2c65c06c22cd0bc80d2f20450
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80374299"
 ---
 # <a name="set-up-an-identity-management-server-sharepoint"></a>Konfigurera en server för identitetshantering: SharePoint
@@ -29,13 +29,13 @@ ms.locfileid: "80374299"
 > Installations proceduren för SharePoint Server 2019 skiljer sig inte från installations proceduren för SharePoint Server 2016 **förutom** ett extra steg som måste utföras för att AVblockera ASHX-filer som används av MIM-portalen.
 
 > [!NOTE]
-> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
+> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Ett exempel:
 > - Domänkontrollantens namn – **corpdc**
 > - Domännamn – **contoso**
 > - Server namn för MIM-tjänst – **corpservice**
 > - MIM Sync Server-namn – **corpsync**
 > - SQL Server namn – **corpsql**
-> - Lösenord – <strong>Pass@word1</strong>
+> - Ords<strong>Pass@word1</strong>
 
 
 ## <a name="install-sharepoint-2016"></a>Installera **SharePoint 2016**
@@ -49,7 +49,7 @@ Följ de här stegen för att installera SharePoint 2016. När du har slutfört 
 
     -   Ändra till katalogen där SharePoint packades upp.
 
-    -   Skriv in följande kommando:
+    -   Ange följande kommando.
     ```
     .\prerequisiteinstaller.exe
     ```
@@ -132,9 +132,9 @@ Följ stegen i **Konfigurationsguiden för SharePoint-produkter** för att konfi
    Get-SPTimerJob hourly-all-sptimerservice-health-analysis-job | disable-SPTimerJob
    ```
 
-4. Öppna en ny webbläsare-flik på din Identity Management-Server och navigera till `http://mim.contoso.com/` och logga in som *contoso\miminstall*.  En tom SharePoint-sida med namnet *MIM-portal* visas.
+4. Öppna en ny webbläsare-flik på din identitets hanterings Server och gå till `http://mim.contoso.com/` och logga in som *contoso\miminstall*.  En tom SharePoint-webbplats med namnet *MIM-Portal* visas.
 
-    ![MIM-portalen på http://mim.contoso.com/ avbildning](media/prepare-server-sharepoint/MIM_DeploySP1new.png)
+    ![MIM-portalen http://mim.contoso.com/ i bild](media/prepare-server-sharepoint/MIM_DeploySP1new.png)
 
 5. Kopiera webbadressen och öppna sedan **Internetalternativ** i Internet Explorer, byt till fliken **Säkerhet**, välj **Lokalt intranät** och klicka på **Platser**.
 

@@ -10,16 +10,16 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: 521b96c3ef9cae5a5f9151ddf125cfb534ae0332
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044029"
 ---
 # <a name="deploy-mim-pam-with-windows-server-2016"></a>Distribuera MIM PAM med Windows Server 2016
 
 
-I det här scenariot kan MIM 2016 SP1 använda funktioner i Windows Server 2016 som domänkontrollant ”PRIV”-skogen.  När det här scenariot har kon figurer ATS kommer en användares Kerberos-biljett tidsbegränsas till den återstående tiden för deras roll aktiveringar. 
+I det här scenariot kan MIM 2016 SP1 använda funktioner i Windows Server 2016 som domänkontrollant ”PRIV”-skogen. När scenariot har konfigurerats tidsbegränsas en användares Kerberos-biljett till den återstående tiden för användarens rollaktivering. 
 
 > [!Note]
 > Tidigare tekniska förhandsvisningar av Windows Server 2016 före teknisk förhandsvisning 5 inte kan användas med den här versionen av MIM.
@@ -83,7 +83,7 @@ Genomför installationen enligt beskrivningen i guiden [för att komma igång](p
 
     d. Högerklicka på ”CN = Shadow Principal Configuration” och klicka på Egenskaper. Gå till säkerhetsfliken när dialogrutan Egenskaper visas.
 
-    e. Klicka på Lägg till.... Ange kontona ”MIMService”, samt andra MIM-administratörer som senare kommer att utföra New-PAMGroup för att skapa ytterligare PAM-grupper. För varje användare i behörighetslistan över tillåtna lägger du till ”Skriva”, ”Skapa alla underordnade objekt” och ”Ta bort alla underordnade objekt”. Lägg till behörigheterna.
+    e. Klicka på Add (Lägg till). Ange kontona ”MIMService”, samt andra MIM-administratörer som senare kommer att utföra New-PAMGroup för att skapa ytterligare PAM-grupper. För varje användare i behörighetslistan över tillåtna lägger du till ”Skriva”, ”Skapa alla underordnade objekt” och ”Ta bort alla underordnade objekt”. Lägg till behörigheterna.
 
     f. Ändra till avancerade säkerhetsinställningar. Klicka på Redigera på den rad som tillåter åtkomst till MIMService. Ändra inställningen ”Gäller” till ”För det här objektet och alla underordnade objekt”. Uppdatera behörighetsinställningen och stäng dialogrutan säkerhet.
 

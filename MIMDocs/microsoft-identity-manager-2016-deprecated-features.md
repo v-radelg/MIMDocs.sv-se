@@ -10,10 +10,10 @@ ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: 009d0e99e2da445d4df35dc9de81b297a65fe2a3
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044233"
 ---
 # <a name="deprecated-features"></a>Föråldrade funktioner
@@ -33,7 +33,7 @@ Microsoft rekommenderar inte att kunder startar nya distributioner av Microsoft 
 
 | **Kategori**                | **Föråldrad funktion**              | **Ersätta och kommentera**           |
 |-----------------------------|-------------------------------------|----------------------------------------------|
-| Hanterings agenter | \* * FIM-certifikat hantering | FIM-certifikatets hanterings agent har tagits bort i MIM 2016.                                                             |
+| Hanterings agenter | * * FIM-certifikat hantering | FIM-certifikatets hanterings agent har tagits bort i MIM 2016.                                                             |
 
 ## <a name="service-and-portal"></a>Tjänst och portal
 
@@ -59,13 +59,13 @@ Microsoft rekommenderar inte att kunder startar nya distributioner av Microsoft 
 
 | **Kategori**                | **Föråldrad funktion**              | **Ersätta och kommentera**           |
 |--------|-------|---|    
-| Attributets prioritet | Flera huvud/samma prioritet                       | Samma prioritet kommer att tas bort. Det finns ingen ersättning för den här funktionen. Du bör konfigurera manuell prioritet i stället. Du kan fortsätta att använda den här funktionen om din miljö har en hanterings agent för FIM-tjänsten distribuerad. Den här hanterings agenten ger inte manuell prioritet för att undvika export-inte-överordnade för deklarativ etablering. |
+| Attributprioritet | Flera huvud/samma prioritet                       | Samma prioritet kommer att tas bort. Det finns ingen ersättning för den här funktionen. Du bör konfigurera manuell prioritet i stället. Du kan fortsätta att använda den här funktionen om din miljö har en hanterings agent för FIM-tjänsten distribuerad. Den här hanterings agenten ger inte manuell prioritet för att undvika export-inte-överordnade för deklarativ etablering. |
 | Anslut till regler           | Anslut till objekt typen "any"                             | Den här funktionen kommer inte att ersättas. Alla kopplings regler ska uttryckligen definiera den metaversum objekt typ som de försöker ansluta till.       |
 | Attribut flöden      | Avmarkera "Tillåt null-värden" för exporterade värden            | Den här funktionen kommer inte att ersättas. "Tillåt nullvärden" är alltid markerat. Se till att du har valt "Tillåt nullvärden" i din aktuella miljö.  |
 | Attribut flöden      | "Återkalla inte attribut"                            | Den här funktionen kommer inte att ersättas. Attribut kommer alltid att återkallas, vilket är den bästa metoden.  |
 | Regel tillägg      | Köra metaversum-och ma-regler utanför proc | Den här funktionen kommer inte att ersättas. Flödes reglerna för metaversum och-attribut körs i samma process som Synkroniseringsmotorn.       |
 | Regel tillägg      | Transaktions egenskaper                                | Den här funktionen kommer inte att ersättas. Undvik att överföra data mellan inkommande, etablering och utgående synkronisering med hjälp av den här verktygs klassen.  |
-| Regel tillägg      | ExchangeUtils: Create55\* metoder                     | Metoderna för att skapa objekt för Exchange 5,5-servrar kommer att tas bort.        |
+| Regel tillägg      | ExchangeUtils: Create55\* -metoder                     | Metoderna för att skapa objekt för Exchange 5,5-servrar kommer att tas bort.        |
 | Gränssnitt            | Mms_Metaverse                                        | Alla medlemmar i ClmUtils-klass kommer att tas bort i nästa version.   |
 
 ## <a name="next-steps"></a>Nästa steg

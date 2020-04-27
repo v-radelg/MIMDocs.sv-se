@@ -10,15 +10,15 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
 ms.openlocfilehash: 41aba931111d6ef46e60dfed173362e59c411dfe
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044284"
 ---
 # <a name="self-service-password-reset-deployment-options"></a>Distributions alternativ för lösen ords återställning via självbetjäning
 
-För nya kunder som är [licensierade för Azure Active Directory Premium](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-licensing)rekommenderar vi att du använder [lösen ords återställning via självbetjäning i Azure AD](/azure/active-directory/authentication/concept-sspr-howitworks) för att ge slutanvändarens upplevelse.  Återställning av lösen ord för självbetjäning i Azure AD ger både en webbaserad och Windows-integrerad upplevelse för en användare att återställa sina egna lösen ord och har stöd för många av samma funktioner som MIM, inklusive alternativa e-postmeddelanden och frågor & portar.  När du distribuerar lösen ords återställning via självbetjäning i Azure AD, Azure AD Connect har stöd för att [skriva tillbaka de nya lösen orden till AD DS](/azure/active-directory/authentication/concept-sspr-writeback)och MIM- [tjänsten för meddelanden om lösen ords ändring](deploying-mim-password-change-notification-service-on-domain-controller.md) kan användas för att vidarebefordra lösen orden till andra system, till exempel en annan leverantörs katalog server.  Distribution av MIM för [lösen ords hantering](infrastructure/mim2016-password-management.md) kräver inte MIM-tjänsten eller MIM självbetjäning för återställning av lösen ord eller registrerings portaler som ska distribueras.  I stället kan du följa dessa steg:
+För nya kunder som är [licensierade för Azure Active Directory Premium](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-licensing)rekommenderar vi att du använder [lösen ords återställning via självbetjäning i Azure AD](/azure/active-directory/authentication/concept-sspr-howitworks) för att ge slutanvändarens upplevelse.  Återställning av lösen ord för självbetjäning i Azure AD ger både en webbaserad och Windows-integrerad upplevelse för en användare att återställa sina egna lösen ord och har stöd för många av samma funktioner som MIM, inklusive alternativa e-postmeddelanden och frågor&portar.  När du distribuerar lösen ords återställning via självbetjäning i Azure AD, Azure AD Connect har stöd för att [skriva tillbaka de nya lösen orden till AD DS](/azure/active-directory/authentication/concept-sspr-writeback)och MIM- [tjänsten för meddelanden om lösen ords ändring](deploying-mim-password-change-notification-service-on-domain-controller.md) kan användas för att vidarebefordra lösen orden till andra system, till exempel en annan leverantörs katalog server.  Distribution av MIM för [lösen ords hantering](infrastructure/mim2016-password-management.md) kräver inte MIM-tjänsten eller MIM självbetjäning för återställning av lösen ord eller registrerings portaler som ska distribueras.  I stället kan du följa dessa steg:
 
 - Om du först behöver skicka lösen ord till andra kataloger än Azure AD och AD DS distribuerar du MIM Sync med kopplingar till Active Directory Domain Services och eventuella ytterligare mål system, konfigurerar MIM för [lösen ords hantering](infrastructure/mim2016-password-management.md) och distribuerar [tjänsten för meddelanden om lösen ords ändring](deploying-mim-password-change-notification-service-on-domain-controller.md).
 - Om du sedan behöver skicka lösen ord till andra kataloger än Azure AD konfigurerar du Azure AD Connect för att [skriva tillbaka de nya lösen orden till AD DS](/azure/active-directory/authentication/concept-sspr-writeback).
@@ -91,7 +91,7 @@ I nästa avsnitt ställer du in Azure MFA-leverantören i Microsoft Azure Active
 
 2. Skapa en ny katalogmapp direkt under den katalog där MIM-tjänsten installerades, t.ex. **C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\MfaCerts**.
 
-3. Använd Windows Explorer och navigera till mappen **\pf\certs** i ZIP-filen som hämtades i föregående avsnitt och kopiera filen **cert_key.p12** till den nya katalogen.
+3. Använd Utforskaren i Windows för att navigera till mappen **\pf\certs** i zip-filen som hämtades i föregående avsnitt och kopiera filen **cert_key. p12** till den nya katalogen.
 
 4.  Gå till mappen **\pf** i SDK-zipfilen och öppna filen **pf_auth.cs**.
 

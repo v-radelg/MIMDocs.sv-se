@@ -12,16 +12,16 @@ ms.assetid: bfabc562-a2f0-4cff-ac31-36927f41e102
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 91409b0272c0b21cac90dbc4c162e5bf4d9f8464
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042142"
 ---
 # <a name="enroll-smart-cards-for-non-administrators"></a>Registrera smartkort för icke-administratörer
 Om en användare inte är lokal administratör på sin dator kan denne normalt inte registrera ett smartkort på sin egen dator. Genom att följa proceduren som beskrivs nedan kan dock du kringgå den här begränsningen.
 
-## <a name="enabling-smart-card-renewal-for-non-admins-in-mim-2016-certificate-manager"></a>Aktivera förnyelse av smartkort för icke-administratörer i Certifikathanteraren i MIM 2016
+## <a name="enabling-smart-card-renewal-for-non-admins-in-mim-2016-certificate-manager"></a>Aktivera förnyelse av smartkort för icke-administratörer i Certifikathanteraren i MIM 2016 
 
 1.  **Packa upp appx-filen**
 
@@ -49,7 +49,7 @@ Om en användare inte är lokal administratör på sin dator kan denne normalt i
 
     4.  Redigera filen som heter AppxManifest.xml
 
-    5.  I &lt;Identity&gt;-elementet ändrar du värdet för attributet Publisher till ämnet för ditt signerings certifikat, t. ex. "CN = ABCD"
+    5.  I &lt;Identity&gt; -elementet ändrar du värdet för attributet Publisher till ämnet för ditt signerings certifikat, t. ex. "CN = abcd"
 
         Subjektet här måste vara detsamma som subjektet i signeringscertifikatet du använder för att signera appen.
 
@@ -67,9 +67,9 @@ Om en användare inte är lokal administratör på sin dator kan denne normalt i
 
 4.  Duplicera profilmallen och lägg till den ursprungliga administratörsnyckeln för att konfigurera MIM-servern:
 
-    1.  Logga in på CM-portalen som användare med administratörsbehörighet.
+    1.  Logga in på CM-portalen som en användare med administratörsbehörighet.
 
-    2.  Gå till **Administration** &gt; **Hantera profilmappar** och se till att rutan är markerad bredvid den mall som du skapade och klicka på Kopiera en vald profil mall.
+    2.  Gå till **Administration** &gt; **Hantera profilmallar** och kontrollera att kryssrutan bredvid den profilmall du skapat är markerad. Klicka sedan på Kopiera en vald profilmall.
 
     3.  Ange namnet på profilmallen, lägg till ”nonAdmin” och klicka på **OK**.
 

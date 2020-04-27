@@ -11,10 +11,10 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 7320f014-8b60-4866-92de-cfbd3e6edc48
 ms.suite: ems
 ms.openlocfilehash: 6f4f2aea998fc5682d1fb21d77e4d4f1c582d770
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042159"
 ---
 # <a name="hybrid-identity-management-audit-reporting-in-azure-active-directory"></a>Gransknings rapportering för Hybrid identitets hantering i Azure Active Directory
@@ -42,8 +42,8 @@ Hybrid rapportering sker i följande steg:
 
 ## <a name="next-steps"></a>Nästa steg
 Läs mer om:
-- [Arbeta med Identity Manager hybrid repor ting](working-with-identity-manager-hybrid-reporting.md)
-- [Granska aktivitets rapporter i Azure Active Directory Portal](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-activity-audit-logs)
+- [Arbeta med Identity Manager Hybrid Reporting](working-with-identity-manager-hybrid-reporting.md)
+- [Granska aktivitetsrapporter i Azure Active Directory-portalen](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-activity-audit-logs)
 - [Rapportera bevarande principer](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-retention)
 - [Microsoft Azure log integration (SIEM)](https://docs.microsoft.com/azure/security/security-azure-log-integration-overview)
 - [API för Azure Active Directory rapportering](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-api-getting-started)

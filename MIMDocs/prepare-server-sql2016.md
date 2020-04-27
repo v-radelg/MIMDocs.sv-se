@@ -12,10 +12,10 @@ ms.assetid: 297df3b3-192e-4ed9-82ed-c95eb5297c84
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 2ca9131a6c4f38ed559618d662848b74e1bffe66
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043502"
 ---
 # <a name="set-up-an-identity-management-server-sql-server-2016-or-2017"></a>Konfigurera en server för identitets hantering: SQL Server 2016 eller 2017
@@ -28,13 +28,13 @@ ms.locfileid: "79043502"
 > Installations proceduren för SQL Server 2017 skiljer sig inte från installations proceduren för SQL Server 2016.
 
 > [!NOTE]
-> Den här genomgången använder exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
+> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Ett exempel:
 > - Domänkontrollantens namn – **corpdc**
 > - Domännamn – **contoso**
 > - Server namn för MIM-tjänst – **corpservice**
 > - MIM Sync Server-namn – **corpsync**
 > - SQL Server namn – **corpsql**
-> - Lösenord – <strong>Pass@word1</strong>
+> - Ords<strong>Pass@word1</strong>
 
 > [!IMPORTANT]
 > MIM 2016 SP2 har stöd för SQL AlwaysOn tillgänglighets grupp (AoAG) med alternativet *RegisterAllProvidersIP* inställt på 0, vilket innebär att SQL Server AoAG mellan under nätet inte stöds för närvarande.

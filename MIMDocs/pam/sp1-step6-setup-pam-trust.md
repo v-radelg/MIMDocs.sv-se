@@ -12,17 +12,17 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: ''
 ms.suite: ems
 ms.openlocfilehash: baab111f1b8f0f290611b9b63bb6981d8ae9538a
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043774"
 ---
 # <a name="step-6-set-up-the-pam-trust"></a>Steg 6 Konfigurera PAM-förtroendet
 
 > [!div class="step-by-step"]
-> [« Steg 5](sp1-step5-configuring-pam.md)
-> [Steg 7 »](sp1-step7-setup-sidhistory-sidfiltering.md)
+> [«Steg 5](sp1-step5-configuring-pam.md)
+> [steg 7»](sp1-step7-setup-sidhistory-sidfiltering.md)
 
 **Detta krävs inte för en miljö med endast PRIV** Logga in på PAMServer med MIMAdmin-kontot.
 
@@ -35,5 +35,5 @@ ms.locfileid: "79043774"
    När du uppmanas att göra det anger du autentiseringsuppgifterna för CORP-administratörskontot. När du har angett autentiseringsuppgifterna upprättas förtroendet och konfigurationen är klar.
 
 > [!div class="step-by-step"]
-> [« Steg 5](sp1-step5-configuring-pam.md)
-> [Steg 7 »](sp1-step7-setup-sidhistory-sidfiltering.md)
+> [«Steg 5](sp1-step5-configuring-pam.md)
+> [steg 7»](sp1-step7-setup-sidhistory-sidfiltering.md)

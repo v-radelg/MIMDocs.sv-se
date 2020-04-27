@@ -8,17 +8,17 @@ ms.date: 03/10/2020
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.openlocfilehash: 4586b9998a9526a867ffe7ace9489fe56fff146c
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044216"
 ---
 # <a name="convert-microsoft-identity-manager-specific-services-to-use-group-managed-service-accounts"></a>Konvertera Microsoft Identity Manager-/regionsspecifika tjänster för att använda grupphanterade tjänst konton
 
 Den här artikeln är en guide för att konfigurera Microsoft Identity Manager tjänster som stöds för att använda grupphanterade tjänst konton (gMSA). När du har förkonfigurerat din miljö är det enkelt att konvertera till gMSA.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 - Hämta och installera följande nödvändiga snabb korrigering: [Microsoft Identity Manager 4.5.26.0 eller senare](https://docs.microsoft.com/microsoft-identity-manager/reference/version-history).
 
@@ -47,8 +47,8 @@ Den här artikeln är en guide för att konfigurera Microsoft Identity Manager t
 
     - Rot nycklar används av KDS-tjänsten (Key Distribution Services) för att skapa lösen ord och annan information på domänkontrollanter.
     - Skapa bara en rot nyckel en gång per domän, om det behövs.  
-    - Ta med `Add-KDSRootKey –EffectiveImmediately`. "– EffectiveImmediately" innebär att det kan ta upp till 10 timmar att replikera rot nyckeln till alla domänkontrollanter. Det kan ta ungefär en timme att replikera till två domänkontrollanter. 
-    ![strängen "– EffectiveImmediately"](media/7fbdf01a847ea0e330feeaf062e30668.png)
+    - Inkludera `Add-KDSRootKey –EffectiveImmediately`. "– EffectiveImmediately" innebär att det kan ta upp till 10 timmar att replikera rot nyckeln till alla domänkontrollanter. Det kan ta ungefär en timme att replikera till två domänkontrollanter. 
+    ![Strängen "– EffectiveImmediately"](media/7fbdf01a847ea0e330feeaf062e30668.png)
 
 ## <a name="actions-to-run-on-the-active-directory-domain-controller"></a>Åtgärder som ska köras på Active Directory-domän kontrollanten
 
@@ -102,11 +102,11 @@ Den här artikeln är en guide för att konfigurera Microsoft Identity Manager t
 
    ![Fönstret underhålls alternativ](media/dc98c011bec13a33b229a0e792b78404.png)
 
-   d. I fönstret **konfigurera Microsoft Identity Manager synkroniseringstjänst** rensar du standardvärdet i rutan **tjänst konto** och anger sedan **MIMSyncGMSA $** . Se till att ta med symbolen dollar tecken ($), som du ser i följande bild. Lämna rutan **lösen ord** tom.
+   d. I fönstret **konfigurera Microsoft Identity Manager synkroniseringstjänst** rensar du standardvärdet i rutan **tjänst konto** och anger sedan **MIMSyncGMSA $**. Se till att ta med symbolen dollar tecken ($), som du ser i följande bild. Lämna rutan **lösen ord** tom.
 
    ![Fönstret Konfigurera Microsoft Identity Manager synkroniseringstjänst](media/38df9369bf13e1c3066a49ed20e09041.png)
 
-   e. Välj **nästa** > **Nästa** > **Installera**.  
+   e. Välj **Nästa** > **Nästa** > **installation**.  
    f. Återställ nyckel uppsättningen från *miiskeys. bin* -filen som du sparade tidigare.
 
    ![Alternativ för att återställa nyckel uppsättnings konfigurationen](media/44cd474323584feb6d8b48b80cfceb9b.png)

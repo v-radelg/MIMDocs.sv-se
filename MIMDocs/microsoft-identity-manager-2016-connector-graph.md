@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
 ms.openlocfilehash: 462b649ca02519e5af5c3b1243506a74efa7052a
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044267"
 ---
 # <a name="microsoft-identity-manager-connector-for-microsoft-graph"></a>Microsoft Identity Manager koppling för Microsoft Graph
@@ -50,15 +50,15 @@ Anslutningen kan användas för andra särskilda identitets hanterings scenarier
 
 ![](media/microsoft-identity-manager-2016-ma-graph/724d3fc33b4c405ab7eb9126e7fe831f.png)
 
-Bild 1. Ny program registrering
+Bild 1. Ny programregistrering
 
 2.  Öppna det skapade programmet i Azure Portal och spara program-ID: t, som ett klient-ID som du kan använda senare på sidan för MA: s anslutnings barhet:
 
 ![](media/microsoft-identity-manager-2016-ma-graph/ecfcb97674790290aa9ca2dcaccdafbc.png)
 
-Bild 2. Program-ID
+Bild 2. Program-ID:t
 
-3.  Generera en ny klient hemlighet genom att öppna alla inställningar-\> nycklar. Ange en nyckel beskrivning och välj Needful varaktighet. Spara ändringar. Ett hemligt värde är inte tillgängligt när du har lämnat sidan.
+3.  Generera en ny klient hemlighet genom att öppna alla\> inställningar – nycklar. Ange en nyckel beskrivning och välj Needful varaktighet. Spara ändringar. Ett hemligt värde är inte tillgängligt när du har lämnat sidan.
 
 ![](media/microsoft-identity-manager-2016-ma-graph/fdbae443f9e6ccb650a0cb73c9e1a56f.png)
 
@@ -68,14 +68,14 @@ Bild 3. Ny klient hemlighet
 
 ![](media/microsoft-identity-manager-2016-ma-graph/908788fbf8c3c75101f7b663a8d78a4b.png)
 
-Bild 4. Lägg till nytt API
+Bild 4. Lägga till ett nytt API
 
 Följande behörighet ska läggas till i programmet så att den kan använda "Microsoft Graph API", beroende på scenariot:
 
 | Åtgärd med objekt | Behörighet krävs                                                                  | Behörighets typ |
 |-----------------------|--------------------------------------------------------------------------------------|-----------------|
 | Importera grupp          | `Group.Read.All` eller `Group.ReadWrite.All`                                                | Program     |
-| Importera användare           | `User.Read.All`, `User.ReadWrite.All`, `Directory.Read.All` eller `Directory.ReadWrite.All` | Program     |
+| Importera användare           | `User.Read.All`, `User.ReadWrite.All` `Directory.Read.All` eller`Directory.ReadWrite.All` | Program     |
 
 Mer information om de behörigheter som krävs finns [här](https://developer.microsoft.com/en-us/graph/docs/concepts/permissions_reference).
 
@@ -98,8 +98,8 @@ Mer information om de behörigheter som krävs finns [här](https://developer.mi
 
 
 
-9.  I Synchronization Service Manager användar gränssnitt väljer du **kopplingar** och **skapa**.
-Välj **Graph (Microsoft)**  , skapa en koppling och ge den ett beskrivande namn.
+9.  I Synchronization Service Manager användar gränssnitt väljer du **anslutningar** och **skapa**.
+Välj **Graph (Microsoft)** , skapa en koppling och ge den ett beskrivande namn.
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/d95c6b2cc7951b607388cbd25920d7d0.png)
 
@@ -151,9 +151,9 @@ Listan över attributtyper som stöds:
 
 -   `Edm.String`
 
--   `Edm.DateTimeOffset` (sträng i kopplings området)
+-   `Edm.DateTimeOffset`(sträng i kopplings området)
 
--   `microsoft.graph.directoryObject` (referens i kopplings utrymme till något av de objekt som stöds)
+-   `microsoft.graph.directoryObject`(referens i kopplings utrymme till något av de objekt som stöds)
 
 -   `microsoft.graph.contact`
 
@@ -165,7 +165,7 @@ Anslutningen använder attributet "`id`" för ankare och DN för alla objekt.  D
 ## <a name="access-token-lifetime"></a>Livstid för åtkomsttoken
 
 
-Ett diagram program kräver en åtkomsttoken för att få åtkomst till Graph API. En anslutning begär en ny åtkomsttoken för varje import upprepning (import upprepning är beroende av sid storlek). Till exempel:
+Ett diagram program kräver en åtkomsttoken för att få åtkomst till Graph API. En anslutning begär en ny åtkomsttoken för varje import upprepning (import upprepning är beroende av sid storlek). Ett exempel:
 
 -   Azure AD innehåller 10000 objekt
 
@@ -180,7 +180,7 @@ Under exporten begärs en ny åtkomsttoken för varje objekt som måste läggas 
 
 **Aktivera loggar**
 
-Om det finns några problem i grafen kan loggarna användas för att lokalisera problemet. Spårningen kan därför aktive ras på [samma sätt som för allmänna anslutningar](https://social.technet.microsoft.com/wiki/contents/articles/21086.fim-2010-r2-troubleshooting-how-to-enable-etw-tracing-for-connectors.aspx). Eller bara genom att lägga till följande i `miiserver.exe.config` (i `system.diagnostics/sources` avsnittet):
+Om det finns några problem i grafen kan loggarna användas för att lokalisera problemet. Spårningen kan därför aktive ras på [samma sätt som för allmänna anslutningar](https://social.technet.microsoft.com/wiki/contents/articles/21086.fim-2010-r2-troubleshooting-how-to-enable-etw-tracing-for-connectors.aspx). Eller bara genom att lägga till följande `miiserver.exe.config` i ( `system.diagnostics/sources` avsnitt):
 
 ```
 \<source name="ConnectorsLog" switchValue="Verbose"\>
@@ -200,7 +200,7 @@ DateTime, Timestamp, Call stack" /\>
 \</source\>
 ```
 >[!NOTE]
->Om "kör den här hanterings agenten i en separat process" är aktive rad ska `dllhost.exe.config` användas i stället för `miiserver.exe.config`.
+>Om "kör den här hanterings agenten i en separat process" är `dllhost.exe.config` aktive rad, ska `miiserver.exe.config`användas i stället för.
 
 **Förfallo fel för åtkomsttoken**
 
@@ -216,7 +216,7 @@ Exempel på detta med [Azure AD PowerShell module offentlig för hands version](
 
 ![](media/microsoft-identity-manager-2016-ma-graph/a26ded518f94b9b557064b73615c71f6.png)
 
-New-AzureADPolicy-definition \@({"TokenLifetimePolicy": {"version": 1, **"AccessTokenLifetime": "5:00:00"** }})-DisplayName "OrganizationDefaultPolicyScenario"-IsOrganizationDefault \$True-Type "TokenLifetimePolicy"
+New-AzureADPolicy-definition \@({"TokenLifetimePolicy": {"version": 1, **"AccessTokenLifetime": "5:00:00"**}})-DisplayName "OrganizationDefaultPolicyScenario"-IsOrganizationDefault \$True-Type "TokenLifetimePolicy"
 
 ## <a name="next-steps"></a>Nästa steg
 

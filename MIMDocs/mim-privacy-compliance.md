@@ -11,10 +11,10 @@ ms.prod: microsoft-identity-manager
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.suite: ems
 ms.openlocfilehash: e95cf26b62e582eaa3c07c40e551bc5930d3b1b0
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044114"
 ---
 # <a name="microsoft-identity-manager-data-handling"></a>Microsoft Identity Manager data hantering 
@@ -34,7 +34,7 @@ Nedan visas några scenarier som kunderna behöver tänka på och svara på föl
 För att hjälpa dig att förstå en aktuell MIM-miljö kan du använda följande verktyg för att dokumentera MIM-miljön, eller Överlåt dig till implementerings design dokumenten.
 - [MIM-Dokumentor – tillåter export av den aktuella konfigurationen](https://github.com/Microsoft/MIMConfigDocumenter)
 
-## <a name="searching-for-and-identifying-personal-data"></a>Söka efter och identifiera personliga data
+## <a name="searching-for-and-identifying-personal-data"></a>Söker efter och identifierar personuppgifter
 Sökning av data i MIM är beroende av konfigurationen och konfigurationen. De flesta miljöer är sammankopplade, men för tydlighets skull kan vi dela upp dem med hög nivå komponent.
 
 ### <a name="synchronization-service"></a>Synkroniseringstjänst
@@ -47,7 +47,7 @@ Om du inte är säker på källan till utfärdaren kan du spåra den här använ
     - Öppna tjänsten synkroniseringstjänst
         - Med hjälp av metaversum Designer kan du se import och prioritet för Attribute Flow.
 ![MIM-Privacy-compliance_1. PNG](media/mim-privacy-compliance/mim-privacy-compliance_1.PNG)
-        - Med hjälp av metaversum-sökningen kan du söka efter objekt och attribut i databasen ![MIM-Privacy-compliance_2. PNG](media/mim-privacy-compliance/mim-privacy-compliance_2.PNG)
+        - Med hjälp av metaversum-sökningen kan du söka efter objekt och attribut i databasen ![MIM-privacy-COMPLIANCE_2. png](media/mim-privacy-compliance/mim-privacy-compliance_2.PNG)
  
 När du har hittat objektet öppnas sidan användar profil när du klickar på objektet. Objekt informationen ger dig fullständig information om objektet, dess attribut, senast ändrad och källan till utfärdaren och relaterad ansluten data källa härledda från konfigurations exemplet för hanterings agenten nedan.
 
@@ -132,7 +132,7 @@ Användare i certifikat hanterings tjänsten är en reflektion från Active Dire
 ## <a name="deleting-personal-data"></a>Ta bort personliga data
 
 >[!Note] 
-> Den här artikeln innehåller rikt linjer för hur du tar bort personliga data från Microsoft Identity Manager och som kan användas för att stödja dina skyldigheter enligt GDPR. Om du letar efter allmän information om GDPR finns den i [GDPR-avsnittet i Service Trust-portalen](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
+> Den här artikeln innehåller rikt linjer för hur du tar bort personliga data från Microsoft Identity Manager och som kan användas för att stödja dina skyldigheter enligt GDPR. Om du letar efter allmän information om GDPR hittar du det i [GDPR-avsnittet på Service Trust Portal](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
 Data i MIM synkroniseras och uppdateras alltid från den anslutna data källan. När ett objekt tas bort i mål, kan objektets data i MIM upprätthållas i samband med säkerhets undersökningen. Objekt borttagning har kon figurer ATS per ansluten data käll regler eller regel tillägg (kod) och/eller objekt borttagnings regler.
 
@@ -155,7 +155,7 @@ Vi rekommenderar att du behåller tjänst & portalen att du behåller standard k
 BHOLD som de flesta system som är anslutna till synkroniseringstjänsten kan konfigureras att ta bort när källobjektet som HR tas bort. Detta är konfigurerat på hanterings agenten. och kontrol leras av reglerna för borttagning av objekt enligt beskrivningen i funktionerna i synkroniseringen.
 
 Ett annat alternativ är att ta bort användar objekt direkt från BHOLD Core-användargränssnittet. Beroende på installationen kan detta fungera, men antecknings etablerings logiken kan återskapa den här användaren om den inte togs bort vid källan.
-![MIM-Privacy-Compliance-bholdr. PNG-](media/mim-privacy-compliance/mim-privacy-compliance-bholdr.PNG)
+![MIM-Privacy-Compliance-bholdr. KÄLLFIL](media/mim-privacy-compliance/mim-privacy-compliance-bholdr.PNG)
 
 
 ### <a name="certificate-management"></a>Certifikathantering
@@ -177,7 +177,7 @@ eller redigera registret och Ställ in värdet på 0: (komponent) CEIP HKLM\SOFT
 
 ![MIM-Privacy-Compliance-ceip2. KÄLLFIL](media/mim-privacy-compliance/mim-privacy-compliance-ceip2.PNG)
 
-## <a name="next-steps"></a>Nästa steg 
+## <a name="next-steps"></a>Efterföljande moment 
 - [Råd om SQL-relaterad sekretess](https://docs.microsoft.com/sql/relational-databases/security/microsoft-sql-and-the-gdpr-requirements?view=sql-server-2017)
 - [Avsnittet GDPR i service Trust-portalen](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted)
 - [FIM 2010-Arkiv: ramp up – implementera Forefront Identity Manager 2010](https://social.technet.microsoft.com/wiki/contents/articles/35789.fim-2010-archive-ramp-up-implementing-forefront-identity-manager-2010.aspx)

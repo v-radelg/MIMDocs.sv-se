@@ -12,10 +12,10 @@ ms.assetid: 5e532b67-64a6-4af6-a806-980a6c11a82d
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 81cf34959ccdea5ad9eb463f85a25d26bc1d8ede
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042431"
 ---
 # <a name="install-mim-2016-synchronize-active-directory-and-mim-service"></a>Installera MIM 2016: synkronisera Active Directory och MIM-tjänsten
@@ -24,10 +24,10 @@ ms.locfileid: "79042431"
 > [« MIM-tjänst och portal](install-mim-service-portal.md)
 > 
 > [!NOTE]
-> Den här genomgången använder exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
+> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Ett exempel:
 > - Namn på domänkontrollant – **mimservername**
 > - Domännamn – **contoso**
-> - Lösenord – <strong>Pass@word1</strong>
+> - Ords<strong>Pass@word1</strong>
 
 MIM-synkroniseringstjänsten (Sync) har som standard inga anslutningar konfigurerade.  Normalt är första steget att använda MIM Sync för att lägg till befintliga Active Directory-konton i MIM-tjänstdatabasen. För att göra detta använder du MIM Sync-tjänstprogrammet.
 
@@ -45,7 +45,7 @@ När du ska konfigurera en MIM-hanteringsagent måste du ange ett användarkonto
 
 2.  Öppna guiden skapa hanterings agent genom att ändra till sidan **hanterings agenter** och sedan klicka på **skapa**på menyn **åtgärder** .
 
-3.  På sidan **Skapa hanteringsagent** anger du följande inställningar och klickar sedan på **Nästa**.
+3.  På sidan **skapa hanterings agent** anger du följande inställningar och klickar sedan på **Nästa**.
 
     -   Hanteringsagent för: FIM-tjänstens hanteringsagent
 
@@ -56,7 +56,7 @@ När du ska konfigurera en MIM-hanteringsagent måste du ange ett användarkonto
 
     -   Databas: FIMService
 
-    -   Bas adress för MIM-tjänst: http://localhost:5725
+    -   Bas adress för MIM-tjänst:http://localhost:5725
 
     -   Autentiseringsläge: Windows-integrerad autentisering
 
@@ -111,14 +111,14 @@ När du ska konfigurera en MIM-hanteringsagent måste du ange ett användarkonto
 
     | **Attribut för datakälla** | **Flödesriktning** | **Attribut för metaversum** |
     |-|-|-|
-    | Kontonamn | Exportera | kontonamn |
-    | DisplayName | Exportera | visningsnamn |
+    | AccountName | Exportera | accountName |
+    | DisplayName | Exportera | displayName |
     | Domain | Exportera | domän |
     | E-post | Exportera | e-post |
     | EmployeeID | Exportera | anställnings-ID |
     | Anställningstyp | Exportera | anställningstyp |
-    | Förnamn | Exportera | förnamn |
-    | Efternamn | Exportera | efternamn |
+    | FirstName | Exportera | firstName |
+    | LastName | Exportera | lastName |
     | Objekt-SID | Exportera | objekt-SID |
 
     -   Välj **Grupp** som typ av datakällobjekt och metaversumobjekt.
@@ -137,8 +137,8 @@ När du ska konfigurera en MIM-hanteringsagent måste du ange ett användarkonto
 
     | **Attribut för datakälla** | **Flödesriktning** | **Attribut för metaversum** |
     |-|-|-|
-    | Kontonamn | Exportera | kontonamn |
-    | DisplayName | Exportera | visningsnamn |
+    | AccountName | Exportera | accountName |
+    | DisplayName | Exportera | displayName |
     | Domain | Exportera | domän |
     | E-post | Exportera | e-post |
     | Smeknamn för e-post | Exportera | smeknamn för e-post |
@@ -148,9 +148,9 @@ När du ska konfigurera en MIM-hanteringsagent måste du ange ett användarkonto
     | Typ | Exportera | typ |
     | Lägg till arbetsflöde för medlemskap | Exportera | lägg till arbetsflöde för medlemskap |
     | Medlemskap låst | Exportera | medlemskap låst |
-    | Kontonamn | Importera | kontonamn |
+    | AccountName | Importera | accountName |
     | Visad ägare | Importera | visad ägare |
-    | DisplayName | Importera | visningsnamn |
+    | DisplayName | Importera | displayName |
     | Smeknamn för e-post | Importera | smeknamn för e-post |
     | Medlem | Importera | medlem |
     | Omfång | Importera | omfång |
@@ -189,19 +189,19 @@ Active Directory-hanteringsagenten är en anslutning för AD-domäntjänster. An
 
 5. På sidan **Konfigurera etableringshierarki** klickar du på **Nästa**.
 
-6. På sidan **Välj objekttyper**  anger du följande inställningar och klickar sedan på **Nästa**
+6. På sidan **Välj objekttyper ** anger du följande inställningar och klickar sedan på **Nästa**
 
     - I listan **Objekttyper** väljer du **användare** och **grupp**.
 
 7. På sidan **Välj attribut** markerar du **Visa ALLA**, väljer följande attribut och klickar på **Nästa**:
 
-    -   företag
-    -   visningsnamn
+    -   company
+    -   displayName
     -   anställnings-ID
     -   anställningstyp
     -   förnamn
     -   grupptyp
-    -   hanteradAv
+    -   managedBy
     -   manager
     -   medlem
     -   objekt-SID
@@ -230,7 +230,7 @@ Skapa körnings profiler för ADMA-och MIMMA-anslutningarna.
 
 Den här tabellen visar de fem körningsprofiler du ska skapa för ADMA-anslutningen:
 
-| Namn | Typ |
+| Name | Typ |
 | ---- | ---- |
 | Profil1 | Fullständig import (endast mellanlagring) |
 | Profil2 | Fullständig synkronisering |
@@ -262,7 +262,7 @@ För att skapa körningsprofiler för ADMA-anslutningen:
 
 I den här tabellen visas de fem matchande körningsprofilerna för MIMMA-anslutningen:
 
-| Namn | Typ |
+| Name | Typ |
 | -------- | -------- |
 | Profil1 | Fullständig import (endast mellanlagring) |
 | Profil2 | Fullständig synkronisering |
@@ -323,12 +323,12 @@ Så här skapar du regeln för inkommande synkronisering av AD-användare:
 
     | Flödesregel | Källa | Mål |
     |-|-|-|
-    |Regel 1|samAccountName|kontonamn|
-    |Regel 2|visningsnamn|visningsnamn|
+    |Regel 1|samAccountName|accountName|
+    |Regel 2|displayName|displayName|
     |Regel 3|Anställningstyp|anställningstyp|
-    |Regel 4|förnamn|förnamn|
-    |Regel 5|sn|efternamn|
-    |Regel 6|Manager|manager|
+    |Regel 4|förnamn|firstName|
+    |Regel 5|sn|lastName|
+    |Regel 6|Ansvarig|manager|
     |Regel 7|objekt-SID|Objekt-SID|
     |Regel 8|”Contoso”|domän|
 
@@ -368,7 +368,7 @@ Kör en fullständig synkroniseringscykel på den här anslutningen. Den fullst�
 
 Följ dessa steg för att köra var och en av de fyra körningsprofilerna.
 
-1. Öppna Hanteraren för synkroniseringstjänsten. På menyn **Verktyg** klickar du sedan på **Hanteringsagenter**.
+1. Öppna Synchronization Service Manager och klicka på **hanterings agenter**på **verktyg** -menyn.
 
 2. I listan **Hanteringsagenter** väljer du **MIMMA**.
 
@@ -420,11 +420,11 @@ Följ dessa steg för att köra var och en av de tre körningsprofilerna.
 
 2. Välj **MIMMA** i listan **Hanteringsagenter**.
 
-3. Klicka på **Kör** på menyn **Åtgärder** för att öppna dialogrutan Kör hanteringsagenten.
+3. Klicka på **Kör** på menyn **åtgärder** för att öppna dialog rutan Kör hanterings agenten.
 
 4. Utför följande steg för varje körningsprofil som anges ovan:
 
-    - Klicka på **Kör** på menyn **Åtgärder** för att öppna dialogrutan Kör hanteringsagenten.
+    - Klicka på **Kör** på menyn **åtgärder** för att öppna dialog rutan Kör hanterings agenten.
     - Välj den körningsprofil du vill köra i listan **Körningsprofiler**.
     - Klicka på **OK** för att starta körningsprofilen.
 

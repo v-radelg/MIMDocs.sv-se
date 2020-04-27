@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: c4dfb4184292ba1b5da8c4e3e176d53e6a885ed8
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042278"
 ---
 # <a name="bhold-core-installation"></a>BHOLD Core-installation
@@ -30,10 +30,10 @@ BHOLD Core-modulen utgör grunden för Microsoft BHOLD Suite. Du måste installe
 
 |          |        |          |
 |----------|--------|----------|
-|**Komponent** |**Lägst** | **Rekommenderas** |
+|**Komponent** |**Minimum** | **Rekommenderas** |
 |Processor | 64-bitars processor | Multicore 64-bitars processor |
 | Minne |3 GB | 6 GB eller mer |
-|Lagring| 30 GB tillgängligt |Är beroende av distributions storlek |
+|Storage| 30 GB tillgängligt |Är beroende av distributions storlek |
 |Nätverkskort| 100 Mbps-anslutning till SQL-och Forefront Identity Manager (FIM)-Server | 1Gbps anslutning till SQL och FIM-Server|
 
 De här rekommendationerna baseras på vanliga implementeringar och tar inte hänsyn till andra program som körs på servern. Du kan behöva använda mer avancerade komponenter beroende på din specifika miljö.
@@ -70,7 +70,7 @@ BHOLD Core-modulen måste kunna logga in på domänen med ett användar konto so
 
 3.  I dialog rutan **nytt objekt – grupp** , i **grupp namn**, skriver du namnet på gruppen (BHOLD default: BHOLDApplicationGroup) och klickar sedan på **OK**.
 
-4.  Högerklicka på **Användare**, peka på **Nya**, och klicka sedan på **Användare**.
+4.  Högerklicka på **användare**, peka på **ny**och klicka sedan på **användare**.
 
 5.  I **fullständigt namn**skriver du ett namn som hjälper dig att identifiera kontot, till exempel BHOLD Core Service-konto.
 
@@ -94,10 +94,10 @@ Innan du börjar installera BHOLD Core-modulen måste du vara beredd på att til
 
 ### <a name="account-settings"></a>Kontoinställningar
 
-| **Konfigurationsobjektet**                                    | **Beskrivning**                                                                                                                                                                                                                                                                                             | **Värde**                                                                                                                                                          |
+| **Objekt**                                    | **Beskrivning**                                                                                                                                                                                                                                                                                             | **Värde**                                                                                                                                                          |
 |---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Använd säkerhetsprovidern på domän/dator** | När du väljer det här anger du att Active Directory Domain Services säkerhet ska styra åtkomsten till BHOLD-kärnan.                                                                                                                                                                                                  | Markera kryss rutan. **Viktigt:** Installationen Miss kommer om den här kryss rutan inte är markerad.                                                                 |
-| **Domän**                                  | Anger den domän som innehåller BHOLD-servern, tjänst kontot och program gruppen. **Viktigt:** Ange domän namnet med hjälp av NetBIOS-namnet (Short), inte det fullständigt kvalificerade domän namnet (FQDN). Om FQDN för domänen till exempel är fabrikam.com anger du domän namnet som CONTOSO. | Skriv domän namnet här:                                                                                                                                        |
+| **Använd säkerhetsprovidern på domän/dator** | När du väljer det här anger du att Active Directory Domain Services säkerhet ska styra åtkomsten till BHOLD-kärnan.                                                                                                                                                                                                  | Markera kryssrutan. **Viktigt:** Installationen Miss kommer om den här kryss rutan inte är markerad.                                                                 |
+| **Domain**                                  | Anger den domän som innehåller BHOLD-servern, tjänst kontot och program gruppen. **Viktigt:** Ange domän namnet med hjälp av NetBIOS-namnet (Short), inte det fullständigt kvalificerade domän namnet (FQDN). Om FQDN för domänen till exempel är fabrikam.com anger du domän namnet som CONTOSO. | Skriv domän namnet här:                                                                                                                                        |
 | **Program grupp**                       | Anger namnet på den säkerhets grupp som du skapade tidigare i den [begärda användaren och gruppen](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx#rug).                                                                                                                                  | Skriv grupp namnet här:                                                                                                                                         |
 | **Tjänst användare**                            | Anger inloggnings namnet för det tjänst användar konto som du skapade tidigare i den [begärda användaren och gruppen](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx#rug).                                                                                                                      | Skriv användar kontots namn här:                                                                                                                                  |
 | **Lösenord**                                | Anger lösen ordet för BHOLD Core Service-användarkontot.                                                                                                                                                                                                                                              | Skriv lösen ordet här: **viktigt:** se till att behålla det här lösen ordet på en dold, säker plats.                                                                |
@@ -105,12 +105,12 @@ Innan du börjar installera BHOLD Core-modulen måste du vara beredd på att til
 
 ### <a name="database-settings"></a>Databas inställningar
 
-| **Konfigurationsobjektet**                                       | **Beskrivning**                                                                                                                                                                                                                                                           | **Värde**                                                                                                                                                                                                                                                                                                                                                                                             |
+| **Objekt**                                       | **Beskrivning**                                                                                                                                                                                                                                                           | **Värde**                                                                                                                                                                                                                                                                                                                                                                                             |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Använd integrerad säkerhet**                    | Anger att Windows-autentisering används för att komma åt databasen.                                                                                                                                                                                                     | Markera kryss rutan om Windows-autentisering används för att ansluta till SQL Server. Avmarkera kryss rutan om SQL Server autentisering används. Databasen måste ha skapats innan du kör BHOLD Core-installationen om SQL Server autentisering används. **Obs:** Om Windows-autentisering används måste du vara inloggad med ett konto som har rollen sysadmin-server på databas servern. |
 | **Databas användare** och **databas lösen ord** | Anger användar namn och lösen ord för en användare med Server rollen sysadmin på databas servern. Dessa värden anges bara när SQL Server autentisering används.                                                                                               | Skriv SQL Server användar namn här: Skriv SQL Server användar lösen ord här: **Obs!** se till att behålla det här lösen ordet på en dold, säker plats.                                                                                                                                                                                                                                                  |
-| **Databas server** och **databas namn**   | Anger NetBIOS-namnet på databas servern och namnet på databasen (standard: B1) som BHOLD Core-installationen kommer att skapa. Om du inte använder standard instansen av databas servern anger du databas Server instansen i formatet *\<server\>* \\ *\<instans\>* . | Skriv Server namnet (eller server och instans) här: Skriv databas namnet här:                                                                                                                                                                                                                                                                                                                   |
-| **Gör begränsningar för databas användaren**    | Föråldrad.                                                                                                                                                                                                                                                                 | Ändra inte standardvärdet                                                                                                                                                                                                                                                                                                                                                                       |
+| **Databas server** och **databas namn**   | Anger NetBIOS-namnet på databas servern och namnet på databasen (standard: B1) som BHOLD Core-installationen kommer att skapa. Om du inte använder standard instansen av databas servern anger du databas Server instansen i * \<form\>Server*\\*\<-instansen\>*. | Skriv Server namnet (eller server och instans) här: Skriv databas namnet här:                                                                                                                                                                                                                                                                                                                   |
+| **Gör begränsningar för databas användaren**    | Föråldrade.                                                                                                                                                                                                                                                                 | Ändra inte standardvärdet                                                                                                                                                                                                                                                                                                                                                                       |
 |                                                |                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                       |
 |                                                |                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                       |
 
@@ -118,9 +118,9 @@ Innan du börjar installera BHOLD Core-modulen måste du vara beredd på att til
 
 Om du vill installera BHOLD Core-modulen loggar du in som medlem i gruppen domän administratörer, laddar ned följande fil och kör den som administratör på den server som du vill installera BHOLD Core-modulen på: 
 
-- BholdCore *\<Version\>* \_release. msi
+- BholdCore * \<version\>*\_release. msi
 
-Ersätt *\<version\>* med versions numret för den BHOLD Core-version som du installerar.
+Ersätt * \<version\> * med versions numret för den BHOLD Core-version som du installerar.
 
 Om du vill köra program filen som administratör högerklickar du på filen och klickar sedan på **Kör som administratör**.
 
@@ -171,17 +171,17 @@ Om nätverks namnet som används för att kontakta BHOLD-webbplatsen inte är sa
 > [!IMPORTANT]
 > Om modulen BHOLD Core är installerad på samma dator som FIM-portalen måste du skapa DNS-resursposter (CNAME eller A) med olika värdnamn för servrarna som kör BHOLD Core och servern som kör FIM-portalen. Det går bara att upprätta ett tjänst huvud namn för ett visst par av typen tjänst-typ/Server-alias, och därför kräver BHOLD Core och FIM-portalen separata SPN-namn eftersom de ofta körs under olika konton. Setspn-kommandot rapporterar ett fel om ett SPN redan har upprättats under ett annat konto.
 
-Det krävs minst medlemskap i **Domänadministratörer**, eller motsvarande, för att kunna slutföra den här proceduren.
+Det krävs minst medlemskap i **domän administratörer**, eller motsvarande, för att kunna slutföra den här proceduren.
 
 #### <a name="to-establish-the-spn-of-the-bhold-website"></a>Så här upprättar du SPN för webbplatsen BHOLD
 
 1.  Klicka på **Start**på Active Directory Domain Services domänkontrollant, klicka på **alla program**, klicka på **tillbehör**, högerklicka på **kommando tolken**och klicka sedan på **Kör som administratör**.
 
-2.  Skriv följande kommando i kommando tolken och tryck sedan på RETUR: setspn – S HTTP/ *\<networkalias\> \<domän\>* \\ *\<AccountName\>* där:
+2.  Skriv följande kommando i kommando tolken och tryck sedan på RETUR: setspn – S http/ * \<\> \<networkalias Domain\> * * \<\> * \\ AccountName där:
 
-    -   *\<networkalias\>* är den adress som klienter använder för att kontakta BHOLD-webbplatsen
+    -   networkalias är den adress som klienter använder för att kontakta BHOLD-webbplatsen * \<\> *
 
-    -   *\<domän\>* \\ *\<AccountName\>* är domänen och användar namnet för BHOLD Core-tjänstkontot som du skapade när du installerade BHOLD Core.
+    -   *\<domän\>*\\AccountName är domänen och användar namnet för BHOLD Core-tjänstkontot som du skapade när du installerade BHOLD Core.*\<\> *
 
 3.  Upprepa föregående steg för alla andra namn som klienter använder för att kontakta BHOLD-webbplatsen, till exempel CNAME-alias, namn som innehåller ett fullständigt kvalificerat domän namn eller namn som innehåller ett NetBIOS-domännamn (Short).
 
@@ -189,14 +189,14 @@ Det krävs minst medlemskap i **Domänadministratörer**, eller motsvarande, fö
 
 För att verifiera att installationen av BHOLD Core-modulen lyckades, öppnar du BHOLD Core-portalen och visar systemattributen. För att se till att modulen BHOLD Core fungerar korrekt i din miljö kan du ändra följande BHOLD-systemattribut efter behov:
 
-| **Basattributet**                | **Beskrivning**                                                                                                                                                                                                                                                                                                      |
+| **Attribut**                | **Beskrivning**                                                                                                                                                                                                                                                                                                      |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Ingen historik**                | Ange till Y om webbplatsen för BHOLD körs på en klustrad webb tjänst för att säkerställa att nyligen visade objekt fungerar korrekt. Ange till N om webbplatsen för BHOLD körs på en fristående IIS-server.                                                                                                                      |
 | **MoveorgunitToSameorgtype** | Ange till Y för att säkerställa att organisationsenheter (orgunits) bara kan flyttas till orgunits med samma organisations typ som den överordnade orgunit. Detta förhindrar till exempel att en Project-orgunit flyttas till en avdelnings-orgunit. Ange till N om du vill tillåta att en orgunit placeras i en orgunit av en annan typ. |
 | **Dagar mellan ABA-körning**     | Ange ett tvåsiffrigt heltal för att ange intervallet (i dagar) mellan två ABA-körningar (Attribute-based Authorization). Om du till exempel vill ange att ABA-körningar ska avgränsas med två dagar skriver du 02.                                                                                                                     |
 | **Start timme för ABA-körning**    | Ange ett tvåsiffrigt heltal för att ange den timme på dagen då en attribut-baserad auktoriseringsfel ska utföras. Om du till exempel vill ange att ABA-körningen ska ske kl 11:00 (23:00), skriv 23.                                                                                                             |
 | **Systemets kardinalitet**       | Ange till N om du inte vill ha en kontroll av systemets kardinalitet i BHOLD. Standardvärdet är Y.                                                                                                                                                                                                                             |
-| **Logging**                  | Ange till N om du inte vill att ändringar ska loggas. Standardvärdet är Y.                                                                                                                                                                                                                                            |
+| **Loggning**                  | Ange till N om du inte vill att ändringar ska loggas. Standardvärdet är Y.                                                                                                                                                                                                                                            |
 | **SystemQueue-bearbetning**   | Ange till N om du inte vill att system kön ska behandlas. Ändra inte det här värdet om inget annat har inriktats av produkt supporten.                                                                                                                                                                                           |
 
 Du måste vara inloggad som medlem i gruppen domän administratörer för att kunna utföra den här proceduren.
@@ -205,7 +205,7 @@ Du måste vara inloggad som medlem i gruppen domän administratörer för att ku
 
 1.  Klicka på **Start**, klicka på **alla program**och klicka sedan på **Internet Explorer**.
 
-2.  I rutan adress skriver du, där *\<server\>* är namnet på BHOLD-webbplats servern och *\<porten\>* är port numret som är kopplat till webbplatsen.
+2.  I rutan adress skriver du, där * \<Server\> * är namnet på BHOLD-webbplatsens Server och * \<port\> * är port numret som är kopplat till webbplatsen.
 
 3.  Klicka på **Start**, klicka på **värden**och klicka sedan på **ändra**.
 

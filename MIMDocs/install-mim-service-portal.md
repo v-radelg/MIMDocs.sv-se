@@ -12,23 +12,23 @@ ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: markwahl-msft
 ms.suite: ems
 ms.openlocfilehash: e381bb418ce8215dafc369bf33782483a6e4de3e
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042448"
 ---
 # <a name="install-mim-2016-mim-service-and-portal"></a>Installera MIM 2016: MIM-tjänst och -portal
 
 > [!div class="step-by-step"]
-> [«Synkroniseringstjänst för MIM](install-mim-sync.md)
-> [Synkronisera databaser»](install-mim-sync-ad-service.md)
+> [«MIM-](install-mim-sync.md)
+> synkroniseringstjänst[Synkronisera databaser»](install-mim-sync-ad-service.md)
  
 > [!NOTE]
-> Den här genomgången använder exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Till exempel:
+> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Ett exempel:
 > - Namn på domänkontrollant – **mimservername**
 > - Domännamn – **contoso**
-> - Lösenord – <strong>Pass@word1</strong>
+> - Ords<strong>Pass@word1</strong>
 > - Namn på tjänstkontot – **MIMService**
 
 Om du inte installerade MIM-installationspaketet under det föregående steget ska du gå tillbaka och installera Microsoft Identity Manager 2016-komponenterna innan du fortsätter.
@@ -57,21 +57,21 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
     >[!NOTE]
     >När **Använd Exchange Online** -alternativet är valt, för att aktivera MIM-tjänsten för att bearbeta godkännande svar från MIM Outlook-tillägget, måste du ange register nyckeln HKLM\SYSTEM\CurrentControlSet\Services\FIMService-värdet för PollExchangeEnabled till 1 efter installationen.
 
-    ![Bild på Konfigurera anslutning till e-postserver](media/install-mim-service-portal/MIM_Install11.png)
+    ![Bild på Konfigurera e-postserveranslutning](media/install-mim-service-portal/MIM_Install11.png)
 
 8. Ange att du vill generera ett nytt självsignerat certifikat eller välj relevant certifikat.
 
 9. Ange namnet på det tjänstkonto du ska använda, till exempel *MIMService*, lösenordet till tjänstkontot, till exempel <em>Pass@word1</em>, din tjänstkontodomän, till exempel *contoso*, samt tjänst-e-postkontot, till exempel *contoso*.
     >[!NOTE]
-    >MIM 2016 SP2 och senare: om du använder grupphanterade tjänst konton måste du se till att **$** -tecknen är i slutet av namnet på tjänst kontot, t. ex. MIMService $, och lämnar fältet lösen ord för tjänst konto tomt.
+    >MIM 2016 SP2 och senare: om du använder grupphanterade tjänst konton måste du se till att **$** tecknen är i slutet av namnet på tjänst kontot, t. ex. MIMService $, och lämnar fältet lösen ord för tjänst konto tomt.
 
-    ![Bild på Konfigurera MIM-tjänstkontot](media/install-mim-service-portal/MIM_Install12.png)
+    ![Bild av Konfigurera MIM-tjänstkontot](media/install-mim-service-portal/MIM_Install12.png)
 
 10. Observera att en varning kan komma att visas om att tjänstkontots nuvarande konfiguration inte är säker.
 
 11. Acceptera standardvärdena för platsen för synkroniseringstjänsten och ange kontot för MIM-hanterings agenten som *contoso\MIMMA*.
     >[!NOTE]
-    >MIM 2016 SP2 och senare: om du planerar att använda det hanterade tjänst kontot för MIM-synkroniseringstjänsten i MIM-synkronisering och aktiverar funktionen Använd MIM Sync-konto anger du MIM-gMSA namn som MIM MA-kontot, t. ex. *contoso\MIMSync $* .
+    >MIM 2016 SP2 och senare: om du planerar att använda det hanterade tjänst kontot för MIM-synkroniseringstjänsten i MIM-synkronisering och aktiverar funktionen Använd MIM Sync-konto anger du MIM-gMSA namn som MIM MA-kontot, t. ex. *contoso\MIMSync $*.
 
     ![Bild på Konfigurera MIM-tjänsten och -portalen](media/install-mim-service-portal/MIM_Install13.png)
 
@@ -79,7 +79,7 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 13. Ange `http://mim.contoso.com` som URL för SharePoint-webbplatssamling.
 
-14. Ange `http://passwordregistration.contoso.com` som URL-port 80 för lösen ords registrering, rekommenderar att du uppdaterar senare med SSL-certifikat på 443.
+14. Ange `http://passwordregistration.contoso.com` som URL för lösen ords registrering, som är 80, rekommenderar att du uppdaterar senare med SSL-certifikat på 443.
 
 15. Ange `http://passwordreset.contoso.com` som URL-port 80 för lösen ords återställning, rekommenderar att du uppdaterar senare med SSL-certifikat på 443.
 
@@ -99,7 +99,7 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 ## <a name="configure-mim-password-reset-portal"></a>Konfigurera MIM-portalen för återställning av lösenord
 
-1. Ange namnet på tjänst kontot för SSPR-registrering till *Contoso\MIMSSPR* och lösen ordet till <em>Pass@word1</em>.
+1. Ange namnet på tjänst kontot för SSPR-registrering till *Contoso\MIMSSPR* och lösen ordet <em>Pass@word1</em>till.
 
 2. Ange *PasswordReset.contoso.com* som värd namn för MIM-portalen för återställning av lösen ord och Ställ in porten på **80**. Aktivera alternativet **Öppna port i brandväggen**.
 
@@ -115,14 +115,14 @@ När alla förberedande definitioner för installationen är klara klickar du p�
 
 Verifiera att MIM-portalen är aktiv när installationen är klar.
 
-1. Starta Internet Explorer och Anslut till MIM-portalen på *http://mim.contoso.com/identitymanagement* . Observera att det kan finnas en kort fördröjning för det första besöket på den här sidan.
+1. Starta Internet Explorer och Anslut till MIM-portalen på *http://mim.contoso.com/identitymanagement*. Observera att det kan finnas en kort fördröjning för det första besöket på den här sidan.
     - Vid behov kan du autentisera som *contoso\miminstall* i Internet Explorer.
 
-2. I Internet Explorer går du till **Internetalternativ**, sedan till fliken **Säkerhet** och lägger till webbplatsen i zonen **Lokalt nätverk** om den inte redan finns där.  Stäng dialogrutan **Internetalternativ**.
+2. I Internet Explorer öppnar du **Internet alternativ**, ändrar till fliken **säkerhet** och lägger till webbplatsen i zonen **Lokalt intranät** om den inte redan finns där.  Stäng dialogrutan **Internetalternativ**.
 
 3. Tillåt användare att visa sina egna poster i MIM.
 
-    1.  Gå till **MIM-portalen** i Internet Explorer och klicka på **Hanteringsprincipregler (MPR)** .
+    1.  Gå till **MIM-portalen** i Internet Explorer och klicka på **Hanteringsprincipregler (MPR)**.
 
     2.  Sök efter hanteringsprincipregeln **Användarhantering: användare får läsa sina egna attribut**.
 
@@ -147,11 +147,11 @@ Verifiera att MIM-portalen är aktiv när installationen är klar.
 
     6.  Verifiera att det finns ett aktivt nätverk listat som contoso.local som ett domännätverk.
 
-    7.  Stäng **kontrollpanelen**.
+    7.  Stäng **kontroll panelen**.
 
 > [!NOTE]
 > Valfritt: nu kan du installera MIM-tillägg.
  
 > [!div class="step-by-step"]  
-> [«Synkroniseringstjänst för MIM](install-mim-sync.md)
-> [Synkronisera databaser»](install-mim-sync-ad-service.md)
+> [«MIM-](install-mim-sync.md)
+> synkroniseringstjänst[Synkronisera databaser»](install-mim-sync-ad-service.md)

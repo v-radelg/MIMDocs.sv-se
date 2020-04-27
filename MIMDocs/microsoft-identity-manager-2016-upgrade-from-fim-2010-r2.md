@@ -12,10 +12,10 @@ ms.assetid: 9471ccc1-bafe-46ee-b169-1464262380e1
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 7df1a4ca7a33aa2a00ac0b2c3ef24056c9720b5b
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043247"
 ---
 # <a name="upgrade-from-forefront-identity-manager-2010-r2"></a>Uppgradera från Forefront Identity Manager 2010 R2
@@ -99,7 +99,7 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 
 6.  Välj de MIM-funktioner och -komponenter du vill installera och klicka  på **Nästa** när du är klar.
 
-    ![Bild av Anpassad installation](media/MIM-UpgSP4.png)
+    ![Bild på anpassad installation](media/MIM-UpgSP4.png)
 
     1.  **MIM-tjänsten:** den här funktionen måste finnas på minst en server och kräver en SQL Server-databasserver som antingen är samordnad eller finns på en annan server.
 
@@ -109,13 +109,13 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 
     4.  **MIM-portal för återställning av lösenord:** den här funktionen krävs för återställning av lösenord.
 
-7.  Ange information om den SQL Server som används för FIM-tjänstdatabasen. Välj alternativet att återanvända den befintliga databasen och spara dessa data. Klicka på **Nästa** för att gå vidare.
+7.  Ange information om den SQL Server som används för FIM-tjänstdatabasen. Välj alternativet att återanvända den befintliga databasen och spara dessa data. Klicka på **Nästa** för att fortsätta.
 
 8. Om alternativet att återanvända den befintliga databasen har valts visas en påminnelse om att säkerhetskopiera databasen.
 
-9. Ange information om e-postservern. Om e-postservern finns på den aktuella servern anger du ”localhost” som plats för e-postservern. Klicka på **Nästa** för att gå vidare.
+9. Ange information om e-postservern. Om e-postservern finns på den aktuella servern anger du ”localhost” som plats för e-postservern. Klicka på **Nästa** för att fortsätta.
 
-    ![Bild på Konfigurera anslutning till e-postserver](media/MIM-UpgSP6.png)
+    ![Bild på Konfigurera e-postserveranslutning](media/MIM-UpgSP6.png)
 
 10. Välj ett certifikat för tjänsten som ska användas för att validera klienter. Du bör använda det befintliga certifikatet från det lokala certifikatarkivet som tidigare användes av FIM-tjänsten.
 
@@ -127,7 +127,7 @@ Den här guiden förutsätter att du redan har konfigurerat följande:
 
 11. Konfigurera autentiseringsuppgifterna för tjänstkontot för MIM-tjänsten. Observera att tjänstkontot inte får vara samma tjänstkonto som används av synkroniseringstjänsten. Det måste vara samma konto som användes av FIM-tjänsten.
 
-    ![Bild på Konfigurera MIM-tjänstkontot](media/MIM-UpgSP9.png)
+    ![Bild av Konfigurera MIM-tjänstkontot](media/MIM-UpgSP9.png)
 
 12. Konfigurera uppgifterna om MIM Sync-servern enligt distributionen av MIM-tjänsten som du konfigurerade i ett föregående steg.
 

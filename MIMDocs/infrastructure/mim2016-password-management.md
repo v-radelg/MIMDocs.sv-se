@@ -10,10 +10,10 @@ ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: b28c9623e3a05168adafc19c43634d686dc7e8e2
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042414"
 ---
 # <a name="microsoft-identity-manager-2016-password-management"></a>Lösenordshantering i Microsoft Identity Manager 2016
@@ -53,7 +53,7 @@ Hanteringsagenter för katalogservrar stöder åtgärder för lösenordsändring
 | Sun och Netscape Directory Servers                                        | IBM DB2 Universal Database                                                                         |
 |                                                                           | LDAP Data Interchange Format (LDIF)                                                                |
 |                                                                           | Microsoft SQL Server                                                                               |
-|                                                                           | Oracle Database                                                                                    |
+|                                                                           | Oracle-databas                                                                                    |
 
 ## <a name="password-synchronization"></a>Lösenordssynkronisering
 
@@ -148,7 +148,7 @@ Helst synkroniseras ändringen utan fel när en användare ändrar ett lösenord
 
 En del fel är så allvarliga att det inte är sannolikt att åtgärden lyckas oavsett hur många återförsök som genomförs. I dessa fall loggas en felhändelse och processen stoppas. Nya försök görs inte för följande händelser:
 
-| Händelse | Allvarlighetsgrad    | Beskrivning                                                                                                                                                            |
+| Händelse | Severity    | Beskrivning                                                                                                                                                            |
 |-------|-------------|-----------|
 | 6919  | Information | En åtgärd för lösenordssynkronisering utfördes inte på grund av att tidsstämpeln var för gammal.                                                                      |
 | 6921  | Fel       | Åtgärden för lösenordssynkronisering bearbetades inte på grund av att lösenordshantering inte har aktiverats på hanteringsagenten som är mål.                                |

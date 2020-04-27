@@ -11,10 +11,10 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 68df2817-2040-407d-b6d2-f46b9a9a3dbb
 ms.suite: ems
 ms.openlocfilehash: fd0efd3e3d5c42f4b67d0abd42f6dab8254573e5
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044352"
 ---
 # <a name="work-with-hybrid-reporting-in-identity-manager"></a>Arbeta med hybrid rapportering i Identity Manager
@@ -39,7 +39,7 @@ De första tre Microsoft Identity Manager-rapporterna som är tillgängliga i Az
 > * Den tidigare hybrid rapporterings agenten måste avinstalleras.
 > * Avinstallera hybrid rapporter genom att avinstallera MIMreportingAgent. msi-agenten.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 * Identity Manager 2016 SP1 Identity Manager-tjänsten, rekommenderad build- [4.4.1749.0](https://support.microsoft.com/en-us/help/4050936/hotfix-rollup-package-build-4-4-1749-0-for-microsoft-identity-manager) .
 
@@ -56,10 +56,10 @@ Kraven för att använda hybrid rapportering i Identity Manager visas i följand
 |                                      Azure AD Premium                                       |                                                                                                        Hybrid rapportering är en Azure AD Premium-funktion och kräver Azure AD Premium. </br>Mer information finns i [komma igång med Azure AD Premium](https://docs.microsoft.com/azure/active-directory/active-directory-get-started-premium). </br>Få en [kostnads fri 30-dagars utvärderings version av Azure AD Premium](https://azure.microsoft.com/trial/get-started-active-directory/).                                                                                                         |
 |                     Du måste vara global administratör för din Azure AD                     |                                                                   Som standard kan endast globala administratörer installera och konfigurera agenterna för att komma igång, få åtkomst till portalen och utföra alla åtgärder i Azure. </br>**Viktigt**: det konto som du använder när du installerar agenterna måste vara ett arbets-eller skol konto. Det kan inte vara ett Microsoft-konto. Mer information finns i [Registrera dig för Azure som en organisation](https://docs.microsoft.com/azure/active-directory/sign-up-organization).                                                                   |
 | Identity Manager-hybrid agenten installeras på varje mål server för identitets hanterare |                                                                                                                                                                                                       För att ta emot data och tillhandahålla funktioner för övervakning och analys kräver hybrid rapportering att agenterna installeras och konfigureras på mål servrar.  </br>                                                                                                                                                                                                       |
-|                    Utgående anslutning till Azure-tjänstslutpunkter                     | Agenten kräver anslutning till Azure-tjänstslutpunkter under installation och körning. Om utgående anslutning blockeras av brand väggar kontrollerar du att följande slut punkter har lagts till i listan över tillåtna:<ul><li>\*. blob.core.windows.net </li><li>\*. servicebus.windows.net-port: 5671 </li><li>\*. adhybridhealth.azure.com/</li><li><https://management.azure.com> </li><li><https://policykeyservice.dc.ad.msft.net/></li><li><https://login.windows.net></li><li><https://login.microsoftonline.com></li><li><https://secure.aadcdn.microsoftonline-p.com></li></ul> |
+|                    Utgående anslutning till Azure-tjänstens slutpunkter                     | Agenten kräver anslutning till Azure-tjänstslutpunkter under installation och körning. Om utgående anslutning blockeras av brand väggar kontrollerar du att följande slut punkter har lagts till i listan över tillåtna:<ul><li>\*.blob.core.windows.net </li><li>\*. servicebus.windows.net-port: 5671 </li><li>\*. adhybridhealth.azure.com/</li><li><https://management.azure.com> </li><li><https://policykeyservice.dc.ad.msft.net/></li><li><https://login.windows.net></li><li><https://login.microsoftonline.com></li><li><https://secure.aadcdn.microsoftonline-p.com></li></ul> |
 |                         Utgående anslutningar baserat på IP-adresser                         |                                                                                                                                                                                                                      För IP-adresser baserade på filtrering av brand väggar, se [Azure IP-intervallen](https://www.microsoft.com/download/details.aspx?id=41653).                                                                                                                                                                                                                      |
 |                 SSL-kontroll för utgående trafik filtreras eller inaktive ras                 |                                                                                                                                                                                                               Det kan hända att agent registrerings steget eller data överförings åtgärderna Miss söker om SSL-kontroll eller avslutning av utgående trafik på nätverks nivå.                                                                                                                                                                                                                |
-|                      Brand Väggs portar på servern som kör agenten                       |                                                                                                                                                                                                          För att kommunicera med Azure-tjänstens slut punkter kräver agenten att följande brand Väggs portar är öppna:<ul><li>TCP port 443</li><li>TCP port 5671</li></ul>                                                                                                                                                                                                          |
+|                      Brand Väggs portar på servern som kör agenten                       |                                                                                                                                                                                                          För att kommunicera med Azure-tjänstens slut punkter kräver agenten att följande brand Väggs portar är öppna:<ul><li>TCP-port 443</li><li>TCP-port 5671</li></ul>                                                                                                                                                                                                          |
 |          Tillåt vissa webbplatser om förbättrad säkerhet i Internet Explorer är aktiverat           |                                                                                Om förbättrad säkerhet i Internet Explorer är aktiverat måste följande webbplatser tillåtas på den server där agenten är installerad:<ul><li><https://login.microsoftonline.com></li><li><https://secure.aadcdn.microsoftonline-p.com></li><li><https://login.windows.net></li><li>Federations servern för din organisation är betrodd av Azure Active Directory (till exempel <https://sts.contoso.com>).</li></ul>                                                                                |
 
 </BR>
@@ -101,7 +101,7 @@ När rapport agenten har installerats exporteras data från Identity Manager-akt
 
 3.  Välj klient katalogen i listan över tillgängliga kataloger för din prenumeration.
 
-4.  Välj **gransknings loggar**.
+4.  Välj **Granskningsloggar**.
 
 5.  I list rutan **kategori** kontrollerar du att **MIM-tjänsten** är vald.
 
@@ -112,7 +112,7 @@ När rapport agenten har installerats exporteras data från Identity Manager-akt
 Avinstallera hybrid rapporterings agenten om du vill avbryta uppladdningen av rapport gransknings data från Identity Manager till Azure AD. Använd verktyget Windows Lägg till eller ta bort program för att avinstallera hybrid rapportering i Identity Manager.
 
 ## <a name="windows-events-used-for-hybrid-reporting"></a>Windows-händelser som används för hybridrapportering
-Händelser som genereras av identitets hanteraren lagras i händelse loggen i Windows. Du kan visa händelserna i **Loggboken** genom att välja **program-och tjänst loggar** > **identitets hanterarens begär ande logg**. Varje begäran om identitets hanteraren exporteras som en händelse i händelse loggen i Windows i JSON-strukturen. Du kan exportera resultatet till SIEM-systemet (Security information and Event Management).
+Händelser som genereras av identitets hanteraren lagras i händelse loggen i Windows. Du kan visa händelserna i **Loggboken** genom att välja **program och tjänster loggar** > **identitets hanteraren begär logg**. Varje begäran om identitets hanteraren exporteras som en händelse i händelse loggen i Windows i JSON-strukturen. Du kan exportera resultatet till SIEM-systemet (Security information and Event Management).
 
 |Händelsetyp|ID|Händelseinformation|
 |--------------|------|-----------------|

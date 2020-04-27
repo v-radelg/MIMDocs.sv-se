@@ -12,17 +12,17 @@ ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: ''
 ms.suite: ems
 ms.openlocfilehash: 41c1ff575bafb4c892d0657234554387680b75f1
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043757"
 ---
 # <a name="step-8-pam-deployment-verification"></a>Steg 8 Verifiera PAM-distributionen
 
 > [!div class="step-by-step"]
-> [« Steg 7](sp1-step7-setup-sidhistory-sidfiltering.md)
-> [Tillägg »](sp1-pam-deployment-addendum.md)
+> [«Steg 7](sp1-step7-setup-sidhistory-sidfiltering.md)
+> [tillägg»](sp1-pam-deployment-addendum.md)
 
 Distributionspaketet innehåller verifieringsskript som kan köra ett PAM-scenario för att bekräfta att PAM-distributionen fungerar som förväntat.
 Om du vill använda distributionsverifieringen redigerar du avsnittet <PamValidation/> i PAMDeploymentConfig.xml.
@@ -64,7 +64,7 @@ Steg 3:
 
 I det här steget uppmanas du att ange autentiseringsuppgifterna för CORPAdmin. När autentiseringsuppgifterna har angetts läggs nödvändiga användarna till i grupperna ”Användare av fjärrskrivbord” och ”Fjärrhanteringsanvändare”.
 Använd följande kommando på CORP-klienten för att öppna PowerShell som den PRIV-användare som du verifierar. </br></br>
-**Runas/u:<PRIV domain>\PRIV.pamRequestor PowerShell. exe**  </br></br>
+**Runas /u:<PRIV domain>\PRIV.pamRequestor powershell.exe**  </br></br>
 Skriv följande i PowerShell-fönstret:
 
 1. cd $env:SYSTEMDRIVE\PAM
@@ -77,5 +77,5 @@ Skriv följande i PowerShell-fönstret:
   Skriptet använder standardvärdet (11 minuter) som varaktighet för begäran.
 
 > [!div class="step-by-step"]
-> [« Steg 7](sp1-step7-setup-sidhistory-sidfiltering.md)
-> [Tillägg »](sp1-pam-deployment-addendum.md)
+> [«Steg 7](sp1-step7-setup-sidhistory-sidfiltering.md)
+> [tillägg»](sp1-pam-deployment-addendum.md)

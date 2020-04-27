@@ -12,10 +12,10 @@ ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: cf8261c4e6f6529fd82760206b62b689a75d0acb
-ms.sourcegitcommit: c214bb0b1373b65b1c9c215379fd820ab0c13f0f
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/14/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79382315"
 ---
 # <a name="set-up-an-identity-management-server-windows-server-2016-or-2019"></a>Konfigurera en server för identitets hantering: Windows Server 2016 eller 2019
@@ -30,13 +30,13 @@ ms.locfileid: "79382315"
 
 
 > [!NOTE]
-> Den här genomgången använder exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Exempel:
+> I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Ett exempel:
 > - Domänkontrollantens namn – **corpdc**
 > - Domännamn – **contoso**
 > - Server namn för MIM-tjänst – **corpservice**
 > - MIM Sync Server-namn – **corpsync**
 > - SQL Server namn – **corpsql**
-> - Lösenord – <strong>Pass@word1</strong>
+> - Ords<strong>Pass@word1</strong>
 
 ## <a name="join-windows-server-2016-to-your-domain"></a>Anslut Windows Server 2016 till din domän
 
@@ -84,7 +84,7 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 
     ![Bild för Lokal säkerhetsprincip](media/MIM-DeployWS3.png)
 
-4. Klicka på **Lägg till användare eller grupp**, och i text rutan skriver du följande baserat på roll `contoso\MIMSync; contoso\MIMMA; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\MIMSSPR`, klicka på **kontrol lera namn**och klicka på **OK**.
+4. Klicka på **Lägg till användare eller grupp**och skriv följande i text rutan som följer efter `contoso\MIMSync; contoso\MIMMA; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\MIMSSPR`roll, klicka på **kontrol lera namn**och klicka på **OK**.
 
 5. Klicka på **OK** för att stänga fönstret **Logga in som en tjänst Egenskaper**.
 
@@ -106,7 +106,7 @@ Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapa
 
 Innan du installerar MIM 2016 SP2-komponenter måste du kontrol lera att du installerar alla program varu krav:
 
-13. Installera [Visual C++ 2013 Redistributable-paket](https://www.microsoft.com/download/details.aspx?id=40784).
+13. Installera [Visual C++ 2013 Redistributable Packages](https://www.microsoft.com/download/details.aspx?id=40784).
 
 14. Installera .NET Framework 4,6.
 

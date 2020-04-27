@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.openlocfilehash: 6f7e0979246eb2124604f594c57b40ec11cc7140
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79042024"
 ---
 # <a name="bhold-model-generator-installation"></a>Installation av BHOLD-modell Generator
@@ -39,18 +39,18 @@ Microsoft Access Database Engine 2010 Redistributable
 
  
 
-*Från \<* <http://daipvstf:8080/tfs/ActiveDirectory/IAM/_workitems> *\>*
+*Som\<*<http://daipvstf:8080/tfs/ActiveDirectory/IAM/_workitems>*\>*
 
  
 
 <https://www.microsoft.com/en-us/download/confirmation.aspx?id=13255>
 
-**Konto inställningar**
+**Kontoinställningar**
 
-| **Konfigurationsobjektet**                                    | **Beskrivning**                                                                                                                                                                                                           | **Värde**                                                                                                                                                                                                                                                                                                            |
+| **Objekt**                                    | **Beskrivning**                                                                                                                                                                                                           | **Värde**                                                                                                                                                                                                                                                                                                            |
 |---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Använd säkerhetsprovidern på domän/dator** | När du väljer det här anger du att Active Directory Domain Services säkerhet ska styra åtkomsten till BHOLD-kärnan.                                                                                                                | Markera kryss rutan. **Viktigt:** Installationen Miss kommer om den här kryss rutan inte är markerad.                                                                                                                                                                                                                   |
-| **Domän**                                  | Anger den domän som innehåller det tjänst konto som du skapade när du installerade BHOLD-kärnan. Mer information finns i [BHOLD Core-installation](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | Domän namnet anges automatiskt av guiden. Ändra bara namnet om det är felaktigt. **Viktigt:** Ange domän namnet med hjälp av NetBIOS-namnet (Short), inte det fullständigt kvalificerade domän namnet (FQDN). Om FQDN för domänen till exempel är fabrikam.com anger du domän namnet som FABRIKAM. |
+| **Använd säkerhetsprovidern på domän/dator** | När du väljer det här anger du att Active Directory Domain Services säkerhet ska styra åtkomsten till BHOLD-kärnan.                                                                                                                | Markera kryssrutan. **Viktigt:** Installationen Miss kommer om den här kryss rutan inte är markerad.                                                                                                                                                                                                                   |
+| **Domain**                                  | Anger den domän som innehåller det tjänst konto som du skapade när du installerade BHOLD-kärnan. Mer information finns i [BHOLD Core-installation](https://technet.microsoft.com/library/jj134095(v=ws.10).aspx). | Domän namnet anges automatiskt av guiden. Ändra bara namnet om det är felaktigt. **Viktigt:** Ange domän namnet med hjälp av NetBIOS-namnet (Short), inte det fullständigt kvalificerade domän namnet (FQDN). Om FQDN för domänen till exempel är fabrikam.com anger du domän namnet som FABRIKAM. |
 | **Användare**                                    | Anger inloggnings namnet för BHOLD Core Service-användarkontot.                                                                                                                                                          | Skriv användar kontots namn här:                                                                                                                                                                                                                                                                                    |
 | **Lösenord**                                | Anger lösen ordet för tjänstens användar konto.                                                                                                                                                                       | Skriv lösen ordet här: **viktigt:** se till att behålla det här lösen ordet på en dold, säker plats.                                                                                                                                                                                                                  |
 
@@ -60,15 +60,15 @@ Microsoft Access Database Engine 2010 Redistributable
 |---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Använd integrerad säkerhet**                 | Anger att Windows-autentisering används för att komma åt databasen.                                                                                                                                                                                                                                                                                                                                                        | Markera kryss rutan om Windows-autentisering används för att ansluta till SQL Server. Avmarkera kryss rutan om SQL Server autentisering används. Databasen måste ha skapats innan du kör BHOLD Core-installationen om SQL Server autentisering används. **Obs:** Om Windows-autentisering används måste du vara inloggad med ett konto som har rollen sysadmin-server på databas servern. **Viktigt:** Använd endast SQL Server autentisering i test miljöer. Microsoft rekommenderar starkt att du använder Windows-autentisering i produktions distributioner. |
 | **Databas användare** och **databas lösen ord** | Anger användar namn och lösen ord för en användare med Server rollen sysadmin på databas servern. Dessa värden anges bara när SQL Server autentisering används.                                                                                                                                                                                                                                                  | Skriv SQL Server användar namn här: Skriv SQL Server användar lösen ord här: </br></br> **Viktigt:** Se till att behålla det här lösen ordet på en dold, säker plats.                                                                                                                                                                                                                                                                                                                                                                                                           |
-| **Databas server** och **databas namn**   | Anger NetBIOS-namnet på databas servern och namnet på den säkerhets kopierings databas som skapas av installations programmet för BHOLD modell Generator. Om du inte använder standard instansen av databas servern anger du databas Server instansen i formatet *\<server\>* \\ *\<instans\>* .  Microsoft rekommenderar att du namnger säkerhets kopierings databasen med namnet på BHOLD Core-databasen följt av \_säkerhets kopiering, till exempel B1_BACKUP. | Skriv Server namnet (eller server och instans) här: </br> Skriv databas namnet här:
+| **Databas server** och **databas namn**   | Anger NetBIOS-namnet på databas servern och namnet på den säkerhets kopierings databas som skapas av installations programmet för BHOLD modell Generator. Om du inte använder standard instansen av databas servern anger du databas Server instansen i * \<form\>Server*\\*\<-instansen\>*.  Microsoft rekommenderar att du namnger säkerhets kopierings databasen med namnet på BHOLD Core-databasen följt av \_backup, till exempel B1_BACKUP. | Skriv Server namnet (eller server och instans) här: </br> Skriv databas namnet här:
 
 ## <a name="bhold-model-generator-setup"></a>Installation av BHOLD modell Generator
 
 Om du vill installera modulen BHOLD modell Generator loggar du in som medlem i gruppen domän administratörer, laddar ned följande fil och kör den som administratör på den server som du vill installera BHOLD Core-modulen på:
 
-- BholdModelGenerator *\<Version\>* \_release. msi
+- BholdModelGenerator * \<version\>*\_release. msi
 
-Ersätt *\<version\>* med versions numret för den version av BHOLD modell generator som du installerar.
+Ersätt * \<version\> * med versions numret för den version av BHOLD modell generator som du installerar.
 
 Om du vill köra program filen som administratör högerklickar du på filen och klickar sedan på **Kör som administratör**.
 

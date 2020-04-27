@@ -14,10 +14,10 @@ ms.suite: ems
 experimental: true
 experiment_id: kgremban_images
 ms.openlocfilehash: 1d00b232d8c7b09fea72e033a51dd590992291c3
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043910"
 ---
 # <a name="privileged-access-management-for-active-directory-domain-services"></a>Privileged Access Management för Active Directory Domain Services
@@ -111,4 +111,4 @@ Det här arbetsflödet är speciellt avsett för dessa administratörskonton. Ad
 ## <a name="next-steps"></a>Nästa steg
 
 - [Minimera pass-The-hash-attacker (PtH) och annan stöld av autentiseringsuppgifter, version 1 och 2](https://www.microsoft.com/download/details.aspx?id=36036)
-- [Privileged Access Management-cmdletar](https://docs.microsoft.com/powershell/identitymanager/mimpam/vlatest/mimpam)
+- [Cmdlets för privilegierad åtkomsthantering](https://docs.microsoft.com/powershell/identitymanager/mimpam/vlatest/mimpam)

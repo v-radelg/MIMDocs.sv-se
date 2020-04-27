@@ -12,10 +12,10 @@ ms.assetid: c6e3cd02-1e32-4194-a8ed-3a0b3d022a43
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 4fb5689400d170adc19f15cbbc2d45915cb39fe3
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043604"
 ---
 # <a name="tier-model-for-partitioning-administrative-privileges"></a>Nivåmodell för partitionering av administratörsbehörighet
@@ -38,7 +38,7 @@ Vanligen måste man omforma de administrativa metoderna för att minska risken f
 
 Nästa steg är att implementera inloggningsbegränsningar och aktivera processer och metoder för att uppfylla kraven för nivåmodellen. Helst bör exponering av autentiseringsuppgifter också reduceras till det lägsta privilegium som krävs för rollen inom varje nivå.
 
-Inloggningsbegränsningar bör tillämpas för att säkerställa att konton med höga privilegier inte har åtkomst till mindre säkra resurser. Till exempel:
+Inloggningsbegränsningar bör tillämpas för att säkerställa att konton med höga privilegier inte har åtkomst till mindre säkra resurser. Ett exempel:
 
 - Domänadministratörer (nivå 0) kan inte logga in på företagsservrar (nivå 1) och standardanvändares arbetsstationer (nivå 2).
 - Serveradministratörer (nivå 1) kan inte logga in på standardanvändare arbetsstationer (nivå 2).
@@ -49,7 +49,7 @@ Inloggningsbegränsningar bör tillämpas för att säkerställa att konton med 
 Inloggningsbegränsningar kan tillämpas med:
 
 - Grupprincipbegränsningar för inloggningsrättigheter, bland annat:
-    - Neka tillgång till den här datorn från nätverket
+    - Neka åtkomst till den här datorn från nätverket
     - Neka inloggning som batchjobb
     - Neka att logga in som en tjänst
     - Neka lokal inloggning

@@ -13,17 +13,17 @@ ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 7a0a0437e767f793150d875bcaf31213a7fdf627
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79043672"
 ---
 # <a name="step-3--prepare-a-pam-server"></a>Steg 3 – Förbereda en PAM-server
 
 > [!div class="step-by-step"]
-> [« Steg 2](step-2-prepare-priv-domain-controller.md)
-> [Steg 4 »](step-4-install-mim-components-on-pam-server.md)
+> [«Steg 2](step-2-prepare-priv-domain-controller.md)
+> [steg 4»](step-4-install-mim-components-on-pam-server.md)
 
 ## <a name="install-windows-server-2012-r2"></a>Installera Windows Server 2012 R2
 
@@ -67,18 +67,18 @@ Lägg till roller för webbserver (IIS) och programserver, .NET Framework 3.5-fu
 Konfigurera säkerhetsprincipen för servern så att de konton som nyligen skapats kan köras som tjänster.
 
 1.  Starta programmet för **lokal säkerhetsprincip**.   
-2.  Gå till **Lokala principer** > **Tilldelning av användarrättigheter**.  
+2.  Navigera till **lokala principer** > **tilldelning av användar rättigheter**.  
 3.  Högerklicka på **Logga in som en tjänst** i informationsfönstret och välj **Egenskaper**.  
 4.  Klicka på **Lägg till användare eller grupp** och skriv *priv\mimmonitor; priv\MIMService; priv\SharePoint; priv\mimcomponent; priv\SqlServer* i Användar- och gruppnamn. Klicka på **Kontrollera namn** och klicka på **OK**.  
 
-5.  Klicka på **OK** för att stänga fönstret Egenskaper.
+5.  Stäng Fönstret Egenskaper genom att klicka på **OK** .
 6.  Högerklicka på **Neka åtkomst till den här datorn från nätverket** i informationsfönstret och välj **Egenskaper**.  
 7.  Klicka på **Lägg till användare eller grupp** och skriv*priv\mimmonitor; priv\MIMService; priv\mimcomponent* i Användar- och gruppnamn. Klicka på **OK**.  
-8.  Klicka på **OK** för att stänga fönstret Egenskaper.
+8.  Klicka på **OK** för att stänga egenskapsfönstret.
 
 9. Högerklicka på **Neka inloggning lokalt** i informationsfönstret och välj **Egenskaper**.  
 10. Klicka på **Lägg till användare eller grupp** och skriv*priv\mimmonitor; priv\MIMService; priv\mimcomponent* i Användar- och gruppnamn. Klicka på **OK**.  
-11. Klicka på **OK** för att stänga fönstret Egenskaper.  
+11. Klicka på **OK** för att stänga egenskapsfönstret.  
 12. Stäng fönstret för lokala säkerhetsprinicper.  
 
 13. Öppna kontrollpanelen och växla till **Användarkonton**.
@@ -115,7 +115,7 @@ Om SQL Server inte är i skyddsmiljön, installerar du antingen SQL Server 2012 
 1. Kontrollera att du är inloggad som MIMAdmin.
 2. Högerklicka på PowerShell och välj **Kör som administratör**.
 3. Gå till den katalog där installationsprogrammet för SQL Server finns.  
-4. Skriv in följande kommando:  
+4. Ange följande kommando.  
     ```
     .\setup.exe /Q /IACCEPTSQLSERVERLICENSETERMS /ACTION=install /FEATURES=SQL,SSMS /INSTANCENAME=MSSQLSERVER /SQLSVCACCOUNT="PRIV\SqlServer" /SQLSVCPASSWORD="Pass@word1" /AGTSVCSTARTUPTYPE=Automatic /AGTSVCACCOUNT="NT AUTHORITY\Network Service" /SQLSYSADMINACCOUNTS="PRIV\MIMAdmin"
     ```
@@ -143,11 +143,11 @@ När alla nödvändiga SharePoint-komponenter har installerats installerar du Sh
 
 Konfigurera SharePoint genom att köra Konfigurationsguiden för SharePoint-produkter.
 
-1.  På fliken Anslut till en servergrupp ändrar du till **Skapa en ny servergrupp**.  
+1.  På fliken Anslut till en Server grupp ändrar du för att **skapa en ny server grupp**.  
 2.  Ange **PAMSRV** som databasserver för konfigurationsdatabasen och **PRIV\SharePoint** som det konto för databasåtkomst som SharePoint ska använda.  
 3.  Ange ett lösenord som lösenfras för gruppsäkerhet (du kommer inte att använda igen under genomgången).  
 4.  I det här läget accepterar du resten av standardinställningarna i konfigurationsguiden för SharePoint för att skapa en enskild server-grupp.    
-5.  När konfigurationsguiden har slutfört konfigurationsåtgärd 10 av 10 klickar du på **Slutför** och en webbläsare öppnas.  
+5.  När konfigurations guiden Slutför konfigurations åtgärd 10 av 10 klickar du på **Slutför** och en webbläsare öppnas.  
 6.  I popup-fönstret i Internet Explorer autentiserar du dig som domänadministratör (PRIV\MIMAdmin) för att kunna fortsätta.  
 7.  Starta guiden i webbappen för att konfigurera SharePoint-gruppen.  
 8.  Välj att använda det befintliga hanterade kontot (PRIV\SharePoint), avmarkera kryssrutan för att inaktivera alla valfria tjänster och klicka på **Nästa**.  
@@ -186,7 +186,7 @@ Sedan skapar du en SharePoint-webbplatssamling som är kopplade till den webbapp
 
     Kontrollera att variabeln **CompatibilityLevel** är inställd på *14*. Om den returnerar *15* skapades inte webbplatssamlingen för 2010-versionen. Ta bort webbplatssamlingen och skapa den igen.
 
-2.  Kör följande PowerShell-kommandon i **SharePoint 2013 Management Shell**. Det inaktiverar vytillståndet på SharePoint Server-sidan och SharePoint-uppgiften **Hälsoanalysjobb (Varje timme, Microsoft SharePoint Foundation-timer, alla servrar)** .
+2.  Kör följande PowerShell-kommandon i **SharePoint 2013 Management Shell**. Det inaktiverar vytillståndet på SharePoint Server-sidan och SharePoint-uppgiften **Hälsoanalysjobb (Varje timme, Microsoft SharePoint Foundation-timer, alla servrar)**.
 
     ```PowerShell
     $contentService = [Microsoft.SharePoint.Administration.SPWebService]::ContentService;
@@ -216,5 +216,5 @@ Gå till **Tjänster** (i Administrationsverktyg) och starta **SharePoints admin
 I steg 4 börjar du installera MIM-komponenterna på PAM-servern.
 
 > [!div class="step-by-step"]
-> [« Steg 2](step-2-prepare-priv-domain-controller.md)
-> [Steg 4 »](step-4-install-mim-components-on-pam-server.md)
+> [«Steg 2](step-2-prepare-priv-domain-controller.md)
+> [steg 4»](step-4-install-mim-components-on-pam-server.md)

@@ -12,10 +12,10 @@ ms.assetid: 66060045-d0be-4874-914b-5926fd924ede
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 2adf1152aaf874d0ff0d93079fb4bfbfcf731b60
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044301"
 ---
 # <a name="mim-certificate-manager-windows-store-application-deployment"></a>MIM Certificate Manager Windows Store program distribution
@@ -38,9 +38,9 @@ Du skapar en certifikatmall för CM-appen på samma sätt som du normalt skapar 
 
 2. Öppna MMC.
 
-3. Klicka på **arkiv &gt; Lägg till/ta bort snapin-modul**.
+3. Klicka **på &gt; Arkiv Lägg till/ta bort snapin-modul**.
 
-4. I listan Tillgängliga snapin-moduler klickar du på **Certifikatmallar** och sedan på **Lägg till**.
+4. I listan Tillgängliga snapin-moduler klickar du på **certifikatmallar** och sedan på **Lägg till**.
 
 5. Du ser nu **Certifikatmallar** under **Konsolrot** i MMC. Dubbelklicka på den för att se alla tillgängliga certifikatmallar.
 
@@ -66,7 +66,7 @@ Du skapar en certifikatmall för CM-appen på samma sätt som du normalt skapar 
 
 13. Välj **Arkiv** och klicka på **Lägg till/ta bort snapin-modulen** för att lägga till snapin-modulen för certifikatutfärdaren till MMC-konsolen. När du tillfrågas om vilken dator du vill hantera väljer du **Lokal dator**.
 
-14. Expandera **Certifikatutfärdare (lokal)** i rutan till vänster i MMC och expandera sedan din certifikatutfärdare i listan med certifikatutfärdare.
+14. Expandera **certifikat utfärdare (lokal)** i den vänstra rutan i MMC och expandera sedan din certifikat utfärdare i listan certifikat utfärdare.
 
 15. Högerklicka på **Certifikatmallar**, klicka på **Ny &gt; certifikatmall** för att utfärda.
 
@@ -76,13 +76,13 @@ Du skapar en certifikatmall för CM-appen på samma sätt som du normalt skapar 
 
 När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta bort det virtuella smartkortet och att ta bort insamlade data. CM-appen kan inte hantera insamlade data, så det är viktigt att inaktivera den. Det gör du så här:
 
-1.  Logga in på CM-portalen som användare med administratörsbehörighet.
+1.  Logga in på CM-portalen som en användare med administratörsbehörighet.
 
-2.  Gå till administration &gt; hantera mallar. Kontrol lera att rutan är markerad bredvid **MIM cm exempel på smartkorts logg i profil mal len** och klicka på Kopiera en vald profil mall.
+2.  Gå till administration &gt; hantera mallar för profiler. Kontrol lera att rutan är markerad bredvid **MIM cm exempel på smartkorts logg i profil mal len** och klicka på Kopiera en vald profil mall.
 
 3.  Skriv in profilmallens namn och klicka på **OK**.
 
-4.  På nästa sida klickar du på **Lägg till ny certifikatmall** och se till att kryssrutan bredvid certifikatutfärdarens namn är markerad.
+4.  På nästa skärm klickar du på **Lägg till ny certifikatmall**. Se till att markera kryssrutan bredvid namnet på Certifikatutfärdaren.
 
 5.  Markera rutan bredvid namnet på profilmallen **Inloggning** och klicka på **Lägg till**.
 
@@ -90,7 +90,7 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
 7.  Bläddra ned till slutet av sidan och klicka på **Ändra inställningar**.
 
-8.  Markera kryssrutorna bredvid **Skapa/ta bort virtuellt smartkort** och  **Distribuera admin-nyckel**.
+8.  Markera kryssrutorna bredvid **Skapa/ta bort virtuellt smartkort** och ** Distribuera admin-nyckel**.
 
 9. Under **Princip för användar-PIN** väljer du **Anges av användaren**.
 
@@ -115,8 +115,8 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
    |                     |                                                                                                                                                                                                          |
    |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   |      URL för MIMCM      |                                              FQDN för portalen som du använde för att konfigurera CM. Till exempel https://mimcmServerAddress/certificatemanagement                                              |
-   |      URL för ADFS       | Ange URL:en för din AD FS om du tänker använda AD FS. Till exempel <https://adfsServerSame/adfs> </br> Om ADFS inte används konfigurerar du den här inställningen med en tom sträng.  Till exempel ```<ADFS URL=""/>``` |
+   |      URL för MIMCM      |                                              FQDN för portalen som du använde för att konfigurera CM. Till exempel, https://mimcmServerAddress/certificatemanagement                                              |
+   |      URL för ADFS       | Ange URL:en för din AD FS om du tänker använda AD FS. Till exempel, <https://adfsServerSame/adfs> </br> Om ADFS inte används konfigurerar du den här inställningen med en tom sträng.  Till exempel```<ADFS URL=""/>``` |
    |     PrivacyUrl      |                                         Du kan inkludera en webbadress till en sida som förklarar hanteringen av användarinformation som samlas in för certifikatregistrering.                                          |
    |     SupportMail     |                                                                           Du kan ange en e-postadress för supportfrågor.                                                                           |
    | LobComplianceEnable |                                                                     Du kan ställa in den här variabeln på sant eller falskt. Som standard är den inställd på sant.                                                                      |
@@ -125,7 +125,7 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
    > [!IMPORTANT]
    > Ett värde måste anges för ADFS-URL: en. Om inget värde anges kommer den moderna appen att bli fel vid den första användningen.
-4. Spara filen och avsluta redigeraren.
+4. Spara filen och avsluta redigeringsprogrammet.
 
 5. Vid signeringen av paketet skapas en signeringsfil, så du måste ta bort den ursprungliga signeringsfilen med namnet AppxSignature.p7x.
 
@@ -135,7 +135,7 @@ När du skapar en profilmall ska du se till att du konfigurerar den att skapa/ta
 
 8. I elementet &lt;Identitet&gt; ändrar du värdet för attributet Publisher, så att det blir identiskt med ämnet som anges i signeringscertifikatet, till exempel ”CN = ÄMNE”.
 
-9. Spara filen och avsluta redigeraren.
+9. Spara filen och avsluta redigeringsprogrammet.
 
 10. I Kommandotolken kör du följande kommando för att packa och signera .appx-filen på nytt,
 
@@ -268,4 +268,4 @@ När du konfigurerar CM-appen hämtar du filen MIMDMModernApp_&lt;version&gt;_An
 ## <a name="next-steps"></a>Nästa steg
 
 - [Konfigurera mallar](https://technet.microsoft.com/library/cc708656)
-- [Hantera program för smartkort](https://technet.microsoft.com/library/cc708681)
+- [Hantera smartkorts program](https://technet.microsoft.com/library/cc708681)

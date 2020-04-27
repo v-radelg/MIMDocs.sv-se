@@ -17,10 +17,10 @@ ms.author: esergeev
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: f6e43abea8b58ccff7fa376b266a91cb138f5aa9
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79044401"
 ---
 # <a name="connect-to-your-directories"></a>Anslut till katalogerna
@@ -33,7 +33,7 @@ Den här artikeln beskriver de anslutningar som ingår & som stöds i MIM, men a
 
 ## <a name="supported-connectors-in-mim-2016-sp1"></a>Anslutningar som stöds i MIM 2016 SP1
 
-| Namn | Versioner som stöds av den anslutna data källan & tekniska länkar |
+| Name | Versioner som stöds av den anslutna data källan & tekniska länkar |
 | ---- | ----------------------------------------------- |
 | Active Directory Domain Services | Active Directory i Windows Server 2012-2019 |
 | ADLDS (Active Directory Lightweight Directory Services) | ADLDS (Active Directory Lightweight Directory Services) |
@@ -43,23 +43,23 @@ Den här artikeln beskriver de anslutningar som ingår & som stöds i MIM, men a
 | IBM DB2 Universal Database | IBM DB2 version 9,5 eller 9,7; IBM DB2 OLEDB v 9.5 FP5 eller v 9.7 FP1 |
 | IBM Directory Server | IBM Tivoli Directory Server 6.x |
 | Novell eDirectory | Novell eDirectory version 8.7.3, 8.8.5 och 8.8.6 |
-| Oracle Database | Oracle Database 10 g eller 11 g: 64-bitarsklient |
+| Oracle-databas | Oracle Database 10 g eller 11 g: 64-bitarsklient |
 | Microsoft SQL Server | SQL Server 2012-2017 |
 | Oracle (tidigare Sun och Netscape) Directory Servers | Sun Directory Server 6.x, 7.x och Oracle 11 |
-| [Windows PowerShell-anslutning](https://msdn.microsoft.com/library/dn640417.aspx) | Windows PowerShell 2.0 eller bättre |
+| [Windows PowerShell-anslutningsapp](https://msdn.microsoft.com/library/dn640417.aspx) | Windows PowerShell 2.0 eller bättre |
 | [Microsoft Azure Active Directory koppling](https://msdn.microsoft.com/library/dn511001.aspx) | Microsoft Azure Active Directory (rekommenderas inte för nya distributioner) |
-| [Allmän LDAP-anslutning](https://msdn.microsoft.com/library/dn510997.aspx) | [LDAP v3-Server (RFC 4510-kompatibel)](reference/microsoft-identity-manager-2016-connector-genericldap.md#overview-of-the-generic-ldap-connector) |
-| [Allmän SQL-anslutning](reference/microsoft-identity-manager-2016-connector-genericsql.md) | [Anslutningen stöds med alla 64-bitars ODBC-drivrutiner](reference/microsoft-identity-manager-2016-connector-genericsql.md#overview-of-the-generic-sql-connector) |
-| [Connector för Lotus Domino](https://msdn.microsoft.com/library/hh859750.aspx) | Lotus Notes, version v 8.5. x, v 9.0. x |
+| [Allmän LDAP-anslutningsapp](https://msdn.microsoft.com/library/dn510997.aspx) | [LDAP v3-server (RFC 4510-kompatibel)](reference/microsoft-identity-manager-2016-connector-genericldap.md#overview-of-the-generic-ldap-connector) |
+| [Allmän SQL-anslutningsapp](reference/microsoft-identity-manager-2016-connector-genericsql.md) | [Anslutningen stöds med alla 64-bitars ODBC-drivrutiner](reference/microsoft-identity-manager-2016-connector-genericsql.md#overview-of-the-generic-sql-connector) |
+| [Anslutningsprogram för Lotus Domino](https://msdn.microsoft.com/library/hh859750.aspx) | Lotus Notes, version v 8.5. x, v 9.0. x |
 | [SharePoint Services Connector-UPA](https://msdn.microsoft.com/library/dn511003.aspx) | SharePoint Server 2013-2019 med användar profil tjänst program (UPA) |
-| [Connector för Web Services](https://www.microsoft.com/en-us/download/details.aspx?id=51495) | [SAP ECC 5,0 eller 6,0; Oracle, 9,1; Oracle eBusiness 12,1 och andra SOAP-och REST-API: er](https://docs.microsoft.com/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws) |
-| [Text filen för attribut-värdepar](https://technet.microsoft.com/library/cc708644(v=ws.10).aspx) | Textfiler med attributvärdespar |
+| [Anslutning för Web Services](https://www.microsoft.com/en-us/download/details.aspx?id=51495) | [SAP ECC 5,0 eller 6,0; Oracle, 9,1; Oracle eBusiness 12,1 och andra SOAP-och REST-API: er](https://docs.microsoft.com/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws) |
+| [Textfil med attributvärdespar](https://technet.microsoft.com/library/cc708644(v=ws.10).aspx) | Textfiler med attributvärdespar |
 | [Avgränsad textfil](https://technet.microsoft.com/library/cc720612(v=ws.10).aspx) | Avgränsade textfiler |
 | [DSML (Directory Services mark-up Language)](https://technet.microsoft.com/library/cc720660(v=ws.10).aspx) | DSML 2.0 (Directory Services Markup Language) |
 | [Textfil med fast bredd](https://technet.microsoft.com/library/cc720633(v=ws.10).aspx) | Textfiler med fast bredd |
-| [LDIF (LDAP Data Interchange Format)](https://technet.microsoft.com/library/cc708662(v=ws.10).aspx) | LDAP Data Interchange Format (LDIF) |
+| [LDAP Data Interchange Format (LDIF)](https://technet.microsoft.com/library/cc708662(v=ws.10).aspx) | LDAP Data Interchange Format (LDIF) |
 | [Microsoft Graph koppling](microsoft-identity-manager-2016-connector-graph.md) | Microsoft Graph |
 
-## <a name="related-topics"></a>Närliggande information
+## <a name="related-topics"></a>Relaterade ämnen
 
 [Hanteringsagenter i FIM 2010 R2](https://technet.microsoft.com/library/jj133885.aspx)
