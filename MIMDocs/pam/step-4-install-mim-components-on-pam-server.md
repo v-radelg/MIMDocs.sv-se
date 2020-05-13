@@ -12,18 +12,18 @@ ms.assetid: ef605496-7ed7-40f4-9475-5e4db4857b4f
 ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 0456f463357aea69913804b8d15241737932ff4d
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: 070e85177a28c3091834cafd2e61611aa9043ea8
+ms.sourcegitcommit: 80507a128d2bc28ff3f1b96377c61fa97a4e7529
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79043689"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83280022"
 ---
 # <a name="step-4--install-mim-components-on-pam-server-and-workstation"></a>Steg 4 – installera MIM-komponenter på PAM-servern och arbetsstationen
 
 > [!div class="step-by-step"]
-> [«Steg 3](step-3-prepare-pam-server.md)
-> [steg 5»](step-5-establish-trust-between-priv-corp-forests.md)
+> [«Steg 3](step-3-prepare-pam-server.md) 
+>  [Steg 5»](step-5-establish-trust-between-priv-corp-forests.md)
 
 På PAMSRV loggar du in som PRIV\Administratör för att kunna installera MIM-tjänsten och portalen och exempelwebbappen för portalen.
 
@@ -51,7 +51,7 @@ Följ riktlinjerna i installationsprogrammet och slutför installationen.
 
 5. Ange följande autentiseringsuppgifter för kontot:
    - Namn på tjänstkonto: *MIMService*  
-   - Lösen ord för tjänst <em>Pass@word1</em> konto: (eller lösen ordet du skapade i steg 2)  
+   - Lösen ord för tjänst konto: <em>Pass@word1</em> (eller lösen ordet du skapade i steg 2)  
    - Domän för tjänstkonto: *PRIV*  
    - E-postkonto för tjänst:<em>MIMService@priv.contoso.local</em>  
 
@@ -59,7 +59,7 @@ Följ riktlinjerna i installationsprogrammet och slutför installationen.
 
 7. Ange *PAMSRV* som MIM-tjänstens serveradress.
 
-8. Ange *http://pamsrv.priv.contoso.local:82* som webb adress för SharePoint-webbplats samling.
+8. Ange `http://pamsrv.priv.contoso.local:82` som webb adress för SharePoint-webbplats samling.
 
 9. Lämna Registrering av portal-URL tomt.
 
@@ -80,14 +80,14 @@ Följ riktlinjerna i installationsprogrammet och slutför installationen.
 
 13. Konfigurera MIM PAM-komponenttjänsten:
     - Namn på tjänstkontot – *MIMComponent*
-    - Lösen ord för tjänst <em>Pass@word1</em> konto: (eller lösen ordet du skapade i steg 2)  
+    - Lösen ord för tjänst konto: <em>Pass@word1</em> (eller lösen ordet du skapade i steg 2)  
     - Domän för tjänstkonto: *PRIV*
 
     ![Autentiseringsuppgifter för PAM-komponenttjänstkonto – skärmbild](./media/PAM_GS_Configure_MIM_PAM_component_service.png)
 
 14. Konfigurera PAM-övervakningstjänsten:
     - Namn på tjänstkonto: *MIMMonitor*  
-    - Lösen ord för tjänst <em>Pass@word1</em> konto: (eller lösen ordet du skapade i steg 2)  
+    - Lösen ord för tjänst konto: <em>Pass@word1</em> (eller lösen ordet du skapade i steg 2)  
     - Domän för tjänstkonto: *PRIV*  
 
     ![Autentiseringsuppgifter för PAM-övervakningstjänstkonto – skärmbild](./media/PAM_GS_Configur_PAM_Monitoring_service.png)
@@ -100,7 +100,7 @@ När installationen är klar startas servern om. Kontrollera att MIM-portalen ä
 
 1. När PAMSRV startat om loggar du in som PRIV\Administratör.
 
-2. Starta Internet Explorer och Anslut till MIM-portalen på http://pamsrv.priv.contoso.local:82/identitymanagement. Det kan ske en kort fördröjning den första gången sidan finns.
+2. Starta Internet Explorer och Anslut till MIM-portalen på `http://pamsrv.priv.contoso.local:82/identitymanagement` . Det kan ske en kort fördröjning den första gången sidan finns.
 
 3. Om det behövs loggar du in som PRIV\Administratör för Internet Explorer.
 
@@ -121,7 +121,7 @@ Brandväggen ska tillåta inkommande anslutningar till TCP-portarna 5725, 5726, 
 3.  Kontrollera att de här två reglerna visas:  
     - Forefront Identity Manager-tjänsten (STS)
     - Forefront Identity Manager-tjänsten (Webbtjänst)  
-4.  Klicka på **ny regel** > **port** > **TCP**och ange de angivna lokala portarna *8086* och *8090*. Klicka dig igenom guiden och acceptera standardinställningarna, ge regeln ett namn och klicka på **Slutför**.  
+4.  Klicka på **ny regel**  >  **port**  >  **TCP**och ange de angivna lokala portarna *8086* och *8090*. Klicka dig igenom guiden och acceptera standardinställningarna, ge regeln ett namn och klicka på **Slutför**.  
 5.  Slutför guiden och stäng programmet Windows-brandvägg.
 
 6.  Starta **kontrollpanelen**.  
@@ -155,7 +155,7 @@ I det här avsnittet ska du installera och konfigurera exempelwebbappen för RES
    </httpProtocol>
    ```
 
-5. Konfigurera exempelwebbappen. Med en textredigerare, till exempel Anteckningar, redigerar du filen **C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Portal\js\utils.js**. Ange värdet för **pamRespApiUrl** till *http://pamsrv.priv.contoso.local:8086/api/pamresources/*.
+5. Konfigurera exempelwebbappen. Med en textredigerare, till exempel Anteckningar, redigerar du filen **C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Portal\js\utils.js**. Ange värdet för **pamRespApiUrl** till `http://pamsrv.priv.contoso.local:8086/api/pamresources/` .
 
 6. Starta om IIS med följande kommando för att ändringarna ska börja gälla.
 
@@ -163,7 +163,7 @@ I det här avsnittet ska du installera och konfigurera exempelwebbappen för RES
    iisreset
    ```
 
-7. (Valfritt) Kontrollera att användaren kan autentiseras för REST-API:t. Öppna en webbläsare som administratör på PAMSRV.  Navigera till webbplats-URL http://pamsrv.priv.contoso.local:8086/api/pamresources/pamroles/: en, autentisera vid behov och se till att en hämtning sker.
+7. (Valfritt) Kontrollera att användaren kan autentiseras för REST-API:t. Öppna en webbläsare som administratör på PAMSRV.  Navigera till webbplats-URL `http://pamsrv.priv.contoso.local:8086/api/pamresources/pamroles/` : en, autentisera vid behov och se till att en hämtning sker.
 
 ## <a name="install-the-mim-pam-requestor-cmdlets"></a>Installera MIM PAM-cmdletarna för begärande
 
@@ -179,12 +179,12 @@ Installera MIM PAM-cmdletarna för begärande på arbetsstationen du konfigurera
 
 5.  På den anpassade installationen anger du den **PAM-klient** som ska installeras, men inte **MIM-tillägg för Outlook** och **MIM-lösenord och autentiseringstillägg**.
 
-6.  I PAM-Server-adressen anger du *pamsrv.priv.contoso.local* som värdnamnet för PRIV MIM-servern.
+6.  Ange som värdnamn för den föreg MIM-servern på PAM-serveradressen `pamsrv.priv.contoso.local` .
 
 När installationen är klar startar du om CORPWKSTN för att slutföra registreringen av den nya PowerShell-modulen.
 
 I nästa steg ska du upprätta förtroende mellan PRIV- och CORP-skogar.
 
 > [!div class="step-by-step"]
-> [«Steg 3](step-3-prepare-pam-server.md)
-> [steg 5»](step-5-establish-trust-between-priv-corp-forests.md)
+> [«Steg 3](step-3-prepare-pam-server.md) 
+>  [Steg 5»](step-5-establish-trust-between-priv-corp-forests.md)

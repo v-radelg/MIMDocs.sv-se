@@ -9,12 +9,12 @@ ms.date: 10/02/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: 0d5f970168934f3fcc4c721aad0a439e2babcfe7
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: 60af5cee7d05eb8b8c5fb279f4f182d901e91632
+ms.sourcegitcommit: 80507a128d2bc28ff3f1b96377c61fa97a4e7529
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79381513"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83280124"
 ---
 <a name="azure-ad-business-to-business-b2b-collaboration-with-microsoft-identity-managermim-2016-sp1-with-azure-application-proxy"></a>Azure AD Business-to-Business (B2B)-samarbete med Microsoft Identity Manager (MIM) 2016 SP1 med Azure Application Proxy
 ============================================================================================================================
@@ -68,7 +68,7 @@ Mer information finns i [Azure AD Connect Sync: Konfigurera filtrering](https://
 
 
 Obs! innan du skapar i MIM synkroniserar du hanterings agenten för graf Connector, kontrollerar att du har granskat guiden för att distribuera [graf Connector](microsoft-identity-manager-2016-connector-graph.md)och skapat ett program med klient-ID och hemlighet.
-Se till att programmet har godkänts för minst en av följande behörigheter `User.Read.All`:, `User.ReadWrite.All` `Directory.Read.All` eller. `Directory.ReadWrite.All` 
+Se till att programmet har godkänts för minst en av följande behörigheter: `User.Read.All` , `User.ReadWrite.All` `Directory.Read.All` eller `Directory.ReadWrite.All` . 
 
 ## <a name="create-the-new-management-agent"></a>Skapa den nya hanterings agenten
 
@@ -132,7 +132,7 @@ På sidan Konfigurera fäst punkt krävs ett obligatoriskt steg när du konfigur
 
 #### <a name="configure-connector-filter"></a>Konfigurera anslutningsfilter
 
-På sidan Konfigurera anslutnings filter kan du använda MIM för att filtrera bort objekt baserat på attribut filter. I det här scenariot för B2B är målet att bara hämta användare med värdet för `userType` attributet som är lika `Guest`med och inte användare med userType som är lika med. `member`
+På sidan Konfigurera anslutnings filter kan du använda MIM för att filtrera bort objekt baserat på attribut filter. I det här scenariot för B2B är målet att bara hämta användare med värdet för `userType` attributet som är lika med `Guest` och inte användare med userType som är lika med `member` .
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/d90691fce652ba41c7a98c9a863ee710.png)
 
@@ -209,24 +209,24 @@ I steget Relations villkor, se till att välja "skapa resurs i FIM".
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/0ac7f4d0fd55f4bffd9e6508b494aa74.png)
 
-Konfigurera följande flödes regler för inkommande attribut.  Var noga med att fylla `accountName`i `userPrincipalName` attributen, och `uid` när de ska användas senare i det här scenariot:
+Konfigurera följande flödes regler för inkommande attribut.  Var noga med att fylla `accountName` i `userPrincipalName` `uid` attributen, och när de ska användas senare i det här scenariot:
 
 | **Endast initialt flöde** | **Använd som Existenss test** | **Flow (käll värde ⇒ FIM-attribut)**                          |
 |-----------------------|---------------------------|-----------------------------------------------------------------------|
-|                       |                           | [displayName ⇒ displayName] (Java Script: void (0);)                        |
-|                       |                           | [Left (ID, 20) ⇒ accountName] (Java Script: void (0);)                        |
-|                       |                           | [ID ⇒ UID] (Java Script: void (0);)                                         |
-|                       |                           | [userType ⇒ employeeType] (Java Script: void (0);)                          |
-|                       |                           | [givenName ⇒ givenName] (Java Script: void (0);)                            |
-|                       |                           | [efter namn ⇒ SN] (Java Script: void (0);)                                     |
-|                       |                           | [userPrincipalName ⇒ userPrincipalName] (Java Script: void (0);)            |
-|                       |                           | [ID ⇒ CN] (Java Script: void (0);)                                          |
-|                       |                           | [e-⇒ e-post] (Java Script: void (0);)                                      |
-|                       |                           | [mobilePhone⇒mobilePhone] (Java Script: void (0);)                        |
+|                       |                           | `[displayName⇒displayName](javascript:void(0);)`                        |
+|                       |                           | `[Left(id,20)⇒accountName](javascript:void(0);)`                        |
+|                       |                           | `[id⇒uid](javascript:void(0);)`                                         |
+|                       |                           | `[userType⇒employeeType](javascript:void(0);)`                          |
+|                       |                           | `[givenName⇒givenName](javascript:void(0);)`                            |
+|                       |                           | `[surname⇒sn](javascript:void(0);)`                                     |
+|                       |                           | `[userPrincipalName⇒userPrincipalName](javascript:void(0);)`            |
+|                       |                           | `[id⇒cn](javascript:void(0);)`                                          |
+|                       |                           | `[mail⇒mail](javascript:void(0);)`                                      |
+|                       |                           | `[mobilePhone⇒mobilePhone](javascript:void(0);)`                        |
 
 ### <a name="synchronization-rule-create-guest-user-account-to-active-directory"></a>Synkroniseringsregel: skapa ett gäst användar konto som ska Active Directory 
 
-Den här synkroniseringsregeln skapar användaren i Active Directory.  Se till att flödet för `dn` måste placera användaren i organisationsenheten som uteslöts från Azure AD Connect.  Uppdatera även flödet för `unicodePwd` att uppfylla din AD-lösenord – användaren behöver inte känna till lösen ordet.  Observera värdet för `262656` för att `userAccountControl` koda flaggorna `SMARTCARD_REQUIRED` och. `NORMAL_ACCOUNT`
+Den här synkroniseringsregeln skapar användaren i Active Directory.  Se till att flödet för `dn` måste placera användaren i organisationsenheten som uteslöts från Azure AD Connect.  Uppdatera även flödet för `unicodePwd` att uppfylla din AD-lösenord – användaren behöver inte känna till lösen ordet.  Observera värdet för `262656` för att `userAccountControl` koda flaggorna `SMARTCARD_REQUIRED` och `NORMAL_ACCOUNT` .
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/3463e11aeb9fb566685e775d4e1b825c.png)
 
@@ -251,7 +251,7 @@ Flödes regler:
 
 Den här regeln för inkommande synkronisering hämtar användarens SID-attribut från Active Directory tillbaka till MIM, så att användaren kan komma åt MIM-portalen.  MIM-portalen kräver att användaren har attributen `samAccountName` `domain` och `objectSid` ifyllt i MIM-tjänstens databas.
 
-Konfigurera det externa käll systemet som `ADMA`, eftersom `objectSid` attributet ska ställas in automatiskt av AD när MIM skapar användaren.
+Konfigurera det externa käll systemet som `ADMA` , eftersom `objectSid` attributet ska ställas in automatiskt av AD när MIM skapar användaren.
  
 Observera att om du konfigurerar användare att skapas i MIM-tjänsten bör du se till att de inte omfattas av några uppsättningar som är avsedda för de anställdas SSPR hanterings princip regler.  Du kan behöva ändra uppsättnings definitionerna för att utesluta användare som har skapats av B2B-flödet. 
 
@@ -280,7 +280,7 @@ Sedan bjuder vi in användaren och kör sedan reglerna för hanterings agenten i
 
 -   Fullständig import och synkronisering av `ADMA` hanterings agenten.  Detta säkerställer att MIM och Active Directory är konsekventa.  I det här läget kommer det ännu inte finnas några väntande exporter för gäster.
 
--   Fullständig import och synkronisering på hanterings agenten för B2B-grafen.  Detta ger gäst användarna till metaversum.  Ett eller flera konton väntar nu på att exporteras för `ADMA`.  Om det inte finns någon väntande export kontrollerar du att gäst användare har importer ATS till anslutnings utrymmet och att reglerna har kon figurer ATS för att få AD-konton.
+-   Fullständig import och synkronisering på hanterings agenten för B2B-grafen.  Detta ger gäst användarna till metaversum.  Ett eller flera konton väntar nu på att exporteras för `ADMA` .  Om det inte finns någon väntande export kontrollerar du att gäst användare har importer ATS till anslutnings utrymmet och att reglerna har kon figurer ATS för att få AD-konton.
 
 -   Exportera, delta import och synkronisering på `ADMA` hanterings agenten.  Om exporten misslyckades kontrollerar du regel konfigurationen och kontrollerar om det fanns några saknade schema krav. 
 
@@ -307,7 +307,7 @@ När alla har kon figurer ATS, har du B2B-användar inloggning och kan se progra
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/e1a9d7b8c87021de4e43a3501826fa81.png)
 
-<a name="next-steps"></a>Efterföljande moment
+<a name="next-steps"></a>Nästa steg
 ----------
 
 [Hur etablerar jag användare i AD DS](https://technet.microsoft.com/library/ff686263(v=ws.10).aspx)

@@ -11,18 +11,18 @@ ms.prod: microsoft-identity-manager
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: markwahl-msft
 ms.suite: ems
-ms.openlocfilehash: e381bb418ce8215dafc369bf33782483a6e4de3e
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: a85a8eeaf999c193a3e2bbd3f2cdf75cef65e574
+ms.sourcegitcommit: 80507a128d2bc28ff3f1b96377c61fa97a4e7529
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79042448"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83280005"
 ---
 # <a name="install-mim-2016-mim-service-and-portal"></a>Installera MIM 2016: MIM-tjänst och -portal
 
 > [!div class="step-by-step"]
-> [«MIM-](install-mim-sync.md)
-> synkroniseringstjänst[Synkronisera databaser»](install-mim-sync-ad-service.md)
+> [«MIM-synkroniseringstjänst](install-mim-sync.md) 
+>  [Synkronisera databaser»](install-mim-sync-ad-service.md)
  
 > [!NOTE]
 > I den här genomgången används exempelnamn och -värden från företaget Contoso. Ersätt dem med dina egna namn och värden. Ett exempel:
@@ -99,7 +99,7 @@ Om du inte installerade MIM-installationspaketet under det föregående steget s
 
 ## <a name="configure-mim-password-reset-portal"></a>Konfigurera MIM-portalen för återställning av lösenord
 
-1. Ange namnet på tjänst kontot för SSPR-registrering till *Contoso\MIMSSPR* och lösen ordet <em>Pass@word1</em>till.
+1. Ange namnet på tjänst kontot för SSPR-registrering till *Contoso\MIMSSPR* och lösen ordet till <em>Pass@word1</em> .
 
 2. Ange *PasswordReset.contoso.com* som värd namn för MIM-portalen för återställning av lösen ord och Ställ in porten på **80**. Aktivera alternativet **Öppna port i brandväggen**.
 
@@ -115,7 +115,7 @@ När alla förberedande definitioner för installationen är klara klickar du p�
 
 Verifiera att MIM-portalen är aktiv när installationen är klar.
 
-1. Starta Internet Explorer och Anslut till MIM-portalen på *http://mim.contoso.com/identitymanagement*. Observera att det kan finnas en kort fördröjning för det första besöket på den här sidan.
+1. Starta Internet Explorer och Anslut till MIM-portalen på `http://mim.contoso.com/identitymanagement` . Observera att det kan finnas en kort fördröjning för det första besöket på den här sidan.
     - Vid behov kan du autentisera som *contoso\miminstall* i Internet Explorer.
 
 2. I Internet Explorer öppnar du **Internet alternativ**, ändrar till fliken **säkerhet** och lägger till webbplatsen i zonen **Lokalt intranät** om den inte redan finns där.  Stäng dialogrutan **Internetalternativ**.
@@ -153,5 +153,5 @@ Verifiera att MIM-portalen är aktiv när installationen är klar.
 > Valfritt: nu kan du installera MIM-tillägg.
  
 > [!div class="step-by-step"]  
-> [«MIM-](install-mim-sync.md)
-> synkroniseringstjänst[Synkronisera databaser»](install-mim-sync-ad-service.md)
+> [«MIM-synkroniseringstjänst](install-mim-sync.md) 
+>  [Synkronisera databaser»](install-mim-sync-ad-service.md)

@@ -9,12 +9,12 @@ manager: daveba
 ms.date: 09/04/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: b157b2a8716d20ce3b472d5655d393e64f2baa6b
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: 284345d79cda8d60d055a642d047e28e63ea20cb
+ms.sourcegitcommit: 80507a128d2bc28ff3f1b96377c61fa97a4e7529
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79044369"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83279954"
 ---
 # <a name="use-a-custom-multi-factor-authentication-provider-via-an-api-during-pam-role-activation-or-in-sspr"></a>Använd en anpassad Multi-Factor Authentication-provider via ett API vid aktivering av PAM-rollen eller i SSPR
 
@@ -39,17 +39,17 @@ För att kunna använda ett anpassat Multi-Factor Authentication-provider-API me
 
 ### <a name="step-1-ensure-mim-service-is-at-version-452020-or-later"></a>Steg 1: se till att MIM-tjänsten är i version 4.5.202.0 eller senare
 
-Hämta och installera MIM Hotfix [4.5.202.0](https://www.microsoft.com/download/details.aspx?id=57278) eller en senare version.
+Hämta och installera MIM Hotfix [4.5.202.0](https://support.microsoft.com/help/4346632/hotfix-rollup-package-build-4-5-202-0-is-available-for-microsoft) eller en senare version.
 
 ### <a name="step-2-create-a-dll-which-implements-the-iphoneserviceprovider-interface"></a>Steg 2: skapa en DLL som implementerar IPhoneServiceProvider-gränssnittet
 
 DLL-filen måste innehålla en klass som implementerar tre metoder:
 
-- `InitiateCall`: MIM-tjänsten kommer att anropa den här metoden. Tjänsten skickar telefonnumret och begärande-ID som parametrar.  Metoden måste `PhoneCallStatus` returnera ett värde av `Pending` `Success` eller. `Failed`
-- `GetCallStatus`: Om ett tidigare anrop till `initiateCall` returnerat `Pending`, kommer MIM-tjänsten att anropa den här metoden. Den här metoden returnerar `PhoneCallStatus` även värdet `Pending`, `Success` eller `Failed`.
-- `GetFailureMessage`: Om ett tidigare anrop `InitiateCall` eller `GetCallStatus` returnerades `Failed`, kommer MIM-tjänsten att anropa den här metoden. Den här metoden returnerar ett diagnostiskt meddelande.
+- `InitiateCall`: MIM-tjänsten kommer att anropa den här metoden. Tjänsten skickar telefonnumret och begärande-ID som parametrar.  Metoden måste returnera ett `PhoneCallStatus` värde av `Pending` `Success` eller `Failed` .
+- `GetCallStatus`: Om ett tidigare anrop till `initiateCall` returnerat `Pending` , kommer MIM-tjänsten att anropa den här metoden. Den här metoden returnerar även `PhoneCallStatus` värdet `Pending` , `Success` eller `Failed` .
+- `GetFailureMessage`: Om ett tidigare anrop `InitiateCall` eller `GetCallStatus` returnerades `Failed` , kommer MIM-tjänsten att anropa den här metoden. Den här metoden returnerar ett diagnostiskt meddelande.
 
-Implementeringarna av dessa metoder måste vara tråd säkra, och dessutom måste implementeringen av `GetCallStatus` och `GetFailureMessage` inte förutsätta att de kommer att anropas av samma tråd som ett tidigare anrop till. `InitiateCall`
+Implementeringarna av dessa metoder måste vara tråd säkra, och dessutom måste implementeringen av `GetCallStatus` och `GetFailureMessage` inte förutsätta att de kommer att anropas av samma tråd som ett tidigare anrop till `InitiateCall` .
 
 Lagra DLL-filen i `C:\Program Files\Microsoft Forefront Identity Manager\2010\Service\` katalogen.
 
@@ -154,7 +154,7 @@ När tjänsten har startats om använder du SSPR och/eller PAM för att validera
 > Om du vill återställa inställningen ersätter du MfaSettings. xml med säkerhets kopian i steg 3
 
 
-## <a name="next-steps"></a>Efterföljande moment
+## <a name="next-steps"></a>Nästa steg
 
 - [Komma igång med Azure Multi-Factor Authentication Server](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy)
 - [Vad är Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)

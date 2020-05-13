@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 03e521cd-cbf0-49f8-9797-dbc284c63018
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 67ce70e6bc0603a991731cf1e5fb95751f5016c6
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: 2153fdb0559a78bcc82ca6901ee7cb0cabc01f23
+ms.sourcegitcommit: 80507a128d2bc28ff3f1b96377c61fa97a4e7529
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79043978"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83280107"
 ---
 # <a name="high-availability-and-disaster-recovery-considerations-for-the-bastion-environment"></a>Överväganden för hög tillgänglighet och haveriberedskap i skyddsmiljön
 
@@ -53,7 +53,7 @@ När du ska upprätta förtroende måste de befintliga domänkontrollanterna i s
 
 ### <a name="user-and-group-migration"></a>Migrering av användare och grupper
 
-När förtroende har upprättats kan du skapa skuggrupper i skyddsmiljön, samt användarkonton för medlemmarna i dessa grupper och godkännare. Det gör att användarna kan aktivera privilegierade roller och återfå giltiga gruppmedlemskap.
+När förtroende har upprättats kan du skapa skuggrupper i skyddsmiljön, samt användarkonton för medlemmarna i dessa grupper och godkännare. Detta gör att användarna kan aktivera privilegierade roller och återfå effektiva grupp medlemskap.
 
 När du ska migrera användare och grupper måste de befintliga domänkontrollanterna i skogen vara online, liksom MIM- och AD-komponenterna i skyddsmiljön.   Om det inte går att nå de befintliga domänkontrollanterna i skogen går det inte att lägga till fler användare och grupper i skyddsmiljön, men befintliga användare och grupper påverkas inte. Om det sker ett avbrott i någon av komponenterna under migreringen kan administratören försöka igen när avbrottet åtgärdats.
 
@@ -77,7 +77,7 @@ För resurshantering krävs det att en domänkontrollant för resursen är onlin
 
 ### <a name="monitoring-of-users-and-groups-in-the-existing-forest"></a>Övervakning av användare och grupper i den befintliga skogen
 
-MIM innehåller också en PAM-övervakningstjänst som regelbundet kontrollerar användarna och grupperna i de befintliga domänerna och uppdaterar MIM-databasen och AD.  Den här tjänsten behöver inte vara online för rollaktivering och under resurshantering.
+MIM innehåller även en PAM Monitoring-tjänst, som regelbundet kontrollerar användare och grupper i de befintliga domänerna och uppdaterar MIM-databasen och AD i enlighet med detta.  Den här tjänsten behöver inte vara online för rollaktivering och under resurshantering.
 
 När du ska övervaka begäran måste de befintliga domänkontrollanterna i skogen vara online, liksom MIM- och AD-komponenterna i skyddsmiljön.  
 
@@ -95,7 +95,7 @@ Värddatorerna för Active Directory Domain Services och MIM-tjänsterna i skydd
 - användare ska kunna begära aktivering
 - användare ska kunna ha Kerberos-biljetter som kan användas av resurser i den befintliga skogen
 - MIM ska kunna övervaka den befintliga skogens domäner
-- MIM ska kunna skicka e-post via e-postservrarna i den befintliga skogen.
+- MIM för att skicka e-post via e-postservrar som finns i den befintliga skogen.
 
 ### <a name="minimal-high-availability-topologies"></a>Minimitopologier för hög tillgänglighet
 
@@ -182,7 +182,7 @@ Anvisningar för att lägga till en ytterligare domänkontrollant finns i [Insta
 
 Se till att minst en domänkontrollant finns i skyddsmiljön innan du startar om andra servrar efter ett avbrott.
 
-Active Directory distribuerar FSMO-rollerna ( Flexible Single Master Operation) mellan domänkontrollanter inom en domän enligt beskrivningen i [Så här fungerar åtgärdshanterare](https://technet.microsoft.com/library/cc780487.aspx).  Vid ett avbrott för en domänkontrollant kan du behöva överföra en eller flera av de [Domänkontrollant-roller ](https://technet.microsoft.com/library/cc786438.aspx) som har tilldelats domänkontrollanten.
+Active Directory distribuerar FSMO-rollerna ( Flexible Single Master Operation) mellan domänkontrollanter inom en domän enligt beskrivningen i [Så här fungerar åtgärdshanterare](https://technet.microsoft.com/library/cc780487.aspx).  Om en domänkontrollant har misslyckats kan det vara nödvändigt att överföra en eller flera av [roller som domänkontrollanten har tilldelats.
 
 När du har fastställt att en domänkontrollant inte kan återgå i produktion ska du kontrollera om några roller har tilldelats domänkontrollanten och överföra dem efter behov. Anvisningar finns i [Visa de aktuella innehavarna av verksamhetshanterarrollen](https://technet.microsoft.com/library/cc816893.aspx) och relaterade artiklar.
 
@@ -214,7 +214,7 @@ MIM-tjänsten måste också bearbeta aktiveringsbegäran.  Om värddatorn för M
 
 #### <a name="preparation"></a>Förberedelse
 Du rekommenderas att distribuera MIM-tjänsten på flera servrar som är anslutna till PRIV-domänen.
-Information om hög tillgänglighet finns i Windows Server-dokumenten [ Maskinvarukrav och lagringsalternativ för redundanskluster](https://technet.microsoft.com/library/jj612869.aspx) och [Skapa ett redundanskluster för Windows Server 2012](https://blogs.msdn.com/b/clustering/archive/2012/05/01/10299698.aspx).
+Information om hög tillgänglighet finns i Windows Server-dokumenten [ Maskinvarukrav och lagringsalternativ för redundanskluster](https://technet.microsoft.com/library/jj612869.aspx) och [Skapa ett redundanskluster för Windows Server 2012](https://techcommunity.microsoft.com/t5/failover-clustering/creating-a-windows-server-2012-failover-cluster/ba-p/371763).
 
 Vid produktionsdistribution över flera servrar kan du kan använda Utjämning av nätverksbelastning för att distribuera bearbetningsbelastningen.  Du bör även ha ett enda alias (till exempel A- eller CNAME-poster) så att ett allmänt namn visas för användaren.
 
