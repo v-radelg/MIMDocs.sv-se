@@ -2,6 +2,7 @@
 ## [Vad är MIM 2016?](microsoft-identity-manager-2016.md)
 ## [Lär dig mer om PAM](./pam/privileged-identity-management-for-active-directory-domain-services.md)
 ## [Hybridrapportering i Azure](identity-manager-hybrid-reporting-azure.md)
+## [Supportprocess för Azure AD](support-update-for-azure-active-directory-premium-customers.md)
 # [Planera och utforma](microsoft-identity-manager-2016-supported-platforms.md)
 ## [Plattformar som stöds](microsoft-identity-manager-2016-supported-platforms.md)
 ## [Språk som stöds](microsoft-identity-manager-2016-language-support.md)
