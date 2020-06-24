@@ -1,0 +1,53 @@
+### YamlMime:Landing
+title: Microsoft Identity Manager dokumentation
+summary: Microsoft Identity Manager 2016 binder samman Microsofts identitets- och åtkomsthanteringslösningar genom att smidigt förena flera lokala autentiseringslager som Active Directory, LDAP, Oracle och andra program med Azure Active Directory. Detta ger en enhetlig upplevelse av alla lokala LOB-program och SaaS-lösningar.
+metadata:
+  title: Microsoft Identity Manager dokumentation
+  description: Lär dig hur du använder Microsoft Identity Manager.
+  ms.topic: landing-page
+  ms.date: 06/09/2020
+  ms.openlocfilehash: 7d8aec6e750d60e6d654de94d99f566f3e55872a
+  ms.sourcegitcommit: aad5dbabd5e42db9ad11d96a2f6fde6173d9ce0a
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 06/17/2020
+  ms.locfileid: "84880094"
+landingContent:
+- title: En översikt över Microsoft Identity Manager
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Nya uppdateringar i Microsoft Identity Manager 2016 Service Pack 1
+      url: reference/version-history.md
+  - linkListType: overview
+    links:
+    - text: Läs om Microsoft Identity Manager
+      url: microsoft-identity-manager-2016.md
+  - linkListType: deploy
+    links:
+    - text: DistribueraMicrosoft Identity Manager 2016
+      url: microsoft-identity-manager-deploy.md
+- title: Referens
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Privileged Access Management REST API-referens
+      url: /microsoft-identity-manager/reference/privileged-access-management-rest-api-reference
+    - text: Certificate Management REST API-referens
+      url: /microsoft-identity-manager/reference/certificate-management-rest-api-reference
+    - text: Supportteamsblogg för identitets- och åtkomsthantering
+      url: https://blogs.technet.microsoft.com/iamsupport/
+- title: Lösningar
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Hantera åtkomst i stor skala
+      url: /enterprise-mobility-security/solutions/manage-access-at-scale
+- title: Livs cykel för Forefront Identity Manager (FIM)
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Uppgradera till Microsoft Identity Manager 2016 (FIM-mainstream-support avslutad 10/10/2017)
+      url: microsoft-identity-manager-2016-upgrade-from-fim-2010-r2.md
+    - text: FIM-livscykelns information
+      url: https://support.microsoft.com/lifecycle/search?alpha=Microsoft%20Forefront%20Identity%20Manager%202010%20R2%20Service%20Pack%201,Microsoft%20Identity%20Manager%202016,Microsoft%20Forefront%20Identity%20Manager%202010)

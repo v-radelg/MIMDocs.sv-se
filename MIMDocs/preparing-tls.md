@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 50345fda-56d7-4b6e-a861-f49ff90a8376
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: f8d0be0cb9ffa0f32415f11b407954cb0c985024
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: 4e208e2f42c206ae50febefb6a8206dc3823e084
+ms.sourcegitcommit: c9f5f960fd39745bf5b57161a2fd0238c88d035a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79043451"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133540"
 ---
 # <a name="planning-mim-2016-sp2-in-tls-12-or-fips-mode-environments"></a>Planera MIM 2016 SP2 i miljöer med TLS 1,2 eller FIPS-läge
 
@@ -32,12 +32,15 @@ När du installerar MIM 2016 SP2 i den låsta miljön som har alla krypterings p
 - För att upprätta en säker TLS 1,2-anslutning med SQL Server krävs [SQL Native Client 11.0.7001.0](https://www.microsoft.com/download/details.aspx?id=50402) eller senare i MIM-synkroniseringstjänsten och inbyggd SQL-hanteringsserver.
 
 ## <a name="mim-service"></a>MIM-tjänst
+   >[!NOTE]
+   >MIM 2016 SP2 obevakad installation Miss lyckas i miljön TLS 1,2. Installera MIM-tjänsten i interaktivt läge eller, om du installerar obevakad, se till att TLS 1,1 är aktiverat. När en obevakad installation har slutförts ska du framtvinga TLS 1,2 om det behövs.
+
 - Självsignerade certifikat kan inte användas av MIM-tjänsten i endast en miljö med TLS 1,2. Välj starkt kryptering kompatibelt certifikat utfärdat av en betrodd certifikat utfärdare när du installerar MIM-tjänsten.
 - Installations programmet för MIM-tjänsten kräver dessutom [OLE DB driv rutin för SQL Server version 18,2](https://www.microsoft.com/download/details.aspx?id=56730) eller senare.
 
 ## <a name="fips-mode-considerations"></a>Överväganden för FIPS-läge
 
-Om du installerar MIM-tjänsten på en server där FIPS-läge är aktiverat måste du inaktivera verifiering av FIPS-principer för att tillåta att MIM-tjänstearbets flöden körs. Det gör du genom att lägga till *enforceFIPSPolicy Enabled = false* element i avsnittet *runtime* i filen *Microsoft. ResourceManagement. service. exe. config* mellan *runtime* -och *assemblyBinding* -avsnitten enligt nedan:
+Om du installerar MIM-tjänsten på en server där FIPS-läge är aktiverat måste du inaktivera verifiering av FIPS-principer för att tillåta att MIM-tjänstearbets flöden körs. Det gör du genom att lägga till *enforceFIPSPolicy Enabled = false* element i avsnittet *runtime* i *Microsoft.ResourceManagement.Service.exe.config* -filen mellan *runtime* -och *assemblyBinding* -avsnitten som visas nedan:
 
 ```XML
 <runtime>
