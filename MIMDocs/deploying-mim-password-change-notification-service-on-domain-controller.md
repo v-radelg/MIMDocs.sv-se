@@ -18,7 +18,7 @@ ms.contentlocale: sv-SE
 ms.lasthandoff: 04/21/2020
 ms.locfileid: "79041972"
 ---
-# <a name="deploy-the-mim-password-change-notification-service-on-a-domain-controller"></a>Distribuera MIM:s tjänst för meddelanden om lösenordsändring till en domänkontrollant
+# <a name="deploy-the-mim-password-change-notification-service-on-a-domain-controller"></a>Distribuera MIM:s tjänst för meddelanden om lösenordsändring till en domänkontrollant<!--test-->
 
 ## <a name="install-the-password-change-notification-service"></a>Installera Tjänsten för meddelanden om lösenordsändring
 Tjänsten för meddelanden om lösenordsändring (PCNS) är en tjänst som du installerar på domänkontrollanterna och som gör det möjligt för MIM att synkronisera lösenord med andra system, t.ex. en annan leverantörs katalogserver. Vid synkronisering av lösenord installerar du PCNS på alla domänkontrollantservrar.
